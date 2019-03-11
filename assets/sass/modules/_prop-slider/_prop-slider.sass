@@ -1,0 +1,58 @@
+.prop-slider
+    position: relative
+    background-position: 0 0
+    background-size: cover
+    transition: .6s all
+    overflow: hidden
+    &_content
+        position: relative
+        margin-top: 208px
+        margin-right: auto
+        margin-left: auto
+    &_container
+        position: relative
+        width: 100%
+    &_card
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        text-align: center
+        opacity: 0
+        visibility: hidden
+        transition: .6s all
+        &__active
+            position: relative
+            opacity: 1
+            visibility: visible
+        &__title
+            position: relative
+            display: inline-block
+            &:after
+                content: ''
+                position: absolute
+                right: 0
+                bottom: 0
+                left: 0
+                height: 2rem
+                background: $white
+                opacity: 0.2
+    &_pagination
+        position: relative
+        margin-top: 180px
+        &__el
+            opacity: .6
+            cursor: pointer
+        &__active
+            opacity: 1
+
+@media only screen and (max-width: 768px)
+    .prop-slider
+        &_content
+            margin-top: 128px
+        &_pagination
+            margin-top: 128px
+            &__el
+                margin-right: 0
+                margin-left: 0
+                

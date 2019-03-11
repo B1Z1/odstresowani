@@ -1,0 +1,152 @@
+.header
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 9
+    transition: .6s all
+    &__active
+        background: $white
+        color: $black
+        .header_sygnet__black
+            visibility: visible
+            opacity: 1
+        .header_sygnet__white
+            opacity: 0
+            visibility: hidden
+
+    &:hover
+        background: $white
+        color: $black
+    &:hover .header_menu__hover:before
+        background: $black
+    &:hover .header_sygnet__black
+        opacity: 1
+        visibility: visible
+        
+    &_list
+        & li:hover .header_submenu
+            visibility: visible
+            opacity: 1 
+    &_sygnets
+        position: relative
+        width: 50px
+        height: 50px
+        margin-right: 14px
+        transform-style: preserve-3d
+        transition: .3s all
+    &_sygnet
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        width: 100%
+        height: 100%
+        backface-visibility: hidden
+        transition: .3s all
+        &__black
+            opacity: 0
+            visibility: hidden
+    &_hamburger
+        position: relative
+        display: none
+        cursor: pointer
+    &_menu
+        &__hover
+            position: relative
+            &:before
+                content: ''
+                position: absolute
+                bottom: -7px
+                left: calc(50% - 2px)
+                width: 4px
+                height: 4px
+                border-radius: 50%
+                background: $white
+                visibility: hidden
+                opacity: 0
+                transition: .3s all
+                z-index: 99
+            &:hover:before
+                visibility: visible
+                opacity: 1
+    &_submenu
+        position: absolute
+        top: 100%
+        right: 0
+        left: 0
+        visibility: hidden
+        opacity: 0
+        transition: .5s all
+        &__list
+            box-sizing: border-box
+            padding-left: 21px
+            padding-right: 21px
+            margin: auto
+    &_mobilenav
+        box-sizing: border-box
+        position: fixed
+        display: none
+        top: 0
+        right: -30vw
+        bottom: 0
+        width: 30vw
+        height: 100vh
+        overflow-y: auto
+        transition: .4s all
+        z-index: 10
+        &__active
+            right: 0!important
+        &__close
+            position: absolute
+            top: 8px
+            right: 8px
+            width: 24px
+            height: 24px
+            z-index: 10
+            cursor: pointer
+            img
+                width: 100%
+        &__list
+            li
+                margin-top: 16px
+                &:first-child
+                    margin-top: 0
+
+@media only screen and (max-width: 1366px)
+    .header
+        &_menu
+            display: none
+        &_hamburger
+            display: block
+            font-size: 1.5rem
+        &_mobilenav
+            display: block
+
+@media only screen and (max-width: 768px)
+    .header
+        margin: 0
+        padding: 8px 24px
+        background: $white
+        color: $black
+        &_sygnets
+            width: 36px
+            height: 36px
+            margin-right: 8px
+        &_sygnet__black
+            visibility: visible
+            opacity: 1
+        &_sygnet__white
+            visibility: hidden
+            opacity: 0
+        &_extramenu
+            display: none
+        &_hamburger
+            margin: 0
+        &_mobilenav
+            right: -100vw
+            width: 100vw
+            transition: .8s all
+            &__list
+                columns: 2
