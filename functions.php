@@ -44,4 +44,10 @@ require get_template_directory() . '/includes/functions-fields.php';
  * Require Footer Hooks
  *
  */
+require get_template_directory() . '/includes/hooks/functions-header.php';
+/**
+ *
+ * Require Footer Hooks
+ *
+ */
 require get_template_directory() . '/includes/hooks/functions-footer.php';

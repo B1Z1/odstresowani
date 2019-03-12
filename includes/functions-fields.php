@@ -51,6 +51,31 @@ function crb_attach_theme_options() {
         ) );
     /**
      *
+     * Page meta new block
+     *
+     */
+    Container::make( 'post_meta', 'Czy dana strona jest stroną postów?' )
+        ->where( 'post_type', '=', 'page' )
+        ->add_fields(array(
+           Field::make('select', 'page_type_posts', __('Wybierz typ postów (Ta opcja jest potrzebna, jeśli strona jest listą postów)'))
+                ->set_options(array(
+                   0 => 'Nie jest',
+                   'category' => 'Artykuły',
+                   'strefa-wiedzy-kategorie' => 'Strefa wiedzy',
+                )),
+        ));
+    /**
+     *
+     * Nav menu items
+     *
+     */
+    Container::make( 'nav_menu_item', __( 'Menu Settings' ) )
+        ->add_fields( array(
+            Field::make( 'checkbox', 'menu_cat', __( 'Czy to jest strona z postami?' ) )
+                ->set_option_value('yes'),
+        ));
+    /**
+     *
      * Theme options container
      *
      */

@@ -6,7 +6,7 @@
  */
 add_action( 'init', 'register_post_types' );
 function register_post_types(){
-    register_post_type('knowledge_zone', array(
+    register_post_type('strefa-wiedzy', array(
         'label'  => 'Strefa wiedzy',
         'labels' => array(
             'name'               => 'Strefa wiedzy',
@@ -22,7 +22,7 @@ function register_post_types(){
         ),
         'public'              => true,
         'show_in_menu'        => true,
-        'menu_position'       => 10,
+        'menu_position'       => 5,
         'menu_icon'           => 'dashicons-format-aside',
         'supports'            => array('title','editor','thumbnail'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
         'show_in_rest'        => true,
@@ -38,7 +38,7 @@ function register_post_types(){
  */
 add_action( 'init', 'create_taxonomy' );
 function create_taxonomy(){
-    register_taxonomy('Kategorie', 'knowledge_zone', array(
+    register_taxonomy('strefa-wiedzy-kategorie', 'strefa-wiedzy', array(
         'labels'                => array(
             'name'              => 'Kategorie',
             'singular_name'     => 'Kategoria',
@@ -54,9 +54,10 @@ function create_taxonomy(){
             'menu_name'         => 'Kategorie',
         ),
         'public'                => true,
-        'show_in_rest'          => null, // добавить в REST API
-        'hierarchical'          => false,
+        'show_in_rest'          => true, // добавить в REST API
+        'hierarchical'          => true,
         'rewrite'               => true,
+        'query_var' => true,
         'capabilities'          => array(),
         'show_admin_column'     => false, // Позволить или нет авто-создание колонки таксономии в таблице ассоциированного типа записи. (с версии 3.5)
     ) );
