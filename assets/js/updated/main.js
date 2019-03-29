@@ -10,6 +10,20 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 window.onload = function () {
   /**
+   *
+   * Remove all empty containers from page
+   *
+   */
+  (function () {
+    var containers = _toConsumableArray(document.querySelectorAll('.container'));
+
+    containers.forEach(function (el) {
+      if (el.children.length == 0) {
+        el.remove();
+      }
+    });
+  })();
+  /**
    * 
    * Module of classlist manipulations
    * @addClass -> adding class to element (class, el)
@@ -18,6 +32,8 @@ window.onload = function () {
    * @containClass -> check element of contain class (class, el)
    * 
    */
+
+
   var Mclass = function () {
     return {
       'addClass': function addClass(elclass, el) {
@@ -64,9 +80,9 @@ window.onload = function () {
 
     function header_scroll_func(header) {
       var triggers = _toConsumableArray(document.querySelectorAll('.header__triger')),
-          window_height = 0 - (window.innerHeight - header.offsetHeight - 20),
+          window_height = 0 - (window.innerHeight - header.offsetHeight - 50),
           options = {
-        threshold: [0.1],
+        threshold: [0],
         rootMargin: "0px 0px ".concat(window_height, "px 0px")
       },
           io = new IntersectionObserver(header_entry, options);
@@ -79,22 +95,6 @@ window.onload = function () {
 
       triggers.forEach(function (el) {
         io.observe(el);
-      });
-      /**
-       * 
-       * On resize change values
-       * 
-       */
-
-      window.addEventListener('resize', function () {
-        window_height = 0 - (window.innerHeight - header.offsetHeight - 20);
-        options = {
-          threshold: [0.1],
-          rootMargin: "0px 0px ".concat(window_height, "px 0px")
-        };
-        triggers.forEach(function (el) {
-          io.observe(el);
-        });
       });
       /**
        * 
@@ -176,6 +176,15 @@ window.onload = function () {
               card_title = card.dataset.title,
               card_name = card.dataset.name,
               card_back = '';
+          /**
+           *
+           * Trick for initialize "Swiper.js", because
+           * If element is hidden, that library isn't see
+           * the block
+           *
+           */
+
+          Mclass.removeClass(classes.card_active, card);
 
           if (has_back) {
             card_back = card.querySelector(".".concat(object.slider_has_back)).dataset.back;
@@ -278,25 +287,11 @@ window.onload = function () {
     }
   }();
   /**
-   * 
-   * Initialize button press for mobile menu
-   * 
-   */
+  * 
+  * Initialize slider proposition posts
+  * 
+  */
 
-
-  Mheader.mobileList();
-  /**
-   * 
-   * Initialize header on scroll function
-   * 
-   */
-
-  Mheader.header_scroll();
-  /**
-   * 
-   * Initialize slider proposition posts
-   * 
-   */
 
   var propSlider = new Mslider.init({
     slider_block: 'prop-slider',
@@ -322,35 +317,34 @@ window.onload = function () {
    */
 
   var recentSlider = new Mslider.init({
-    slider_block: 'recent-posts',
-    slider_cards: 'recent-posts_block',
-    slider_pagination: 'recent-posts_pagination',
+    slider_block: 'swiper-recent_posts',
+    slider_cards: 'recent-posts_vh',
+    slider_pagination: 'recent-posts_vh_pagination',
     slider_has_back: '',
-    slider_title: 'recent-posts_block',
+    slider_title: 'recent-posts_vh',
     pagination_wrap: {
       wrapper: 'h3',
       classes: 'reset'
     },
     classes: {
       pag_active: 'recent-posts_nav__active',
-      card_active: 'recent-posts_block__active',
+      card_active: 'recent-posts_vh__active',
       pagination_el: 'recent-posts_nav__el',
       extra: 'ml16 mr16'
     }
   });
-  var mySwiper = new Swiper('.recent-posts_block', {
-    speed: 400,
-    slidesPerView: 2,
-    pagination: {
-      el: '.recent-posts_pagination',
-      type: 'bullets',
-      clickable: 'true'
-    },
-    breakpoints: {
-      // when window width is <= 640px
-      768: {
-        slidesPerView: 1
-      }
-    }
-  });
+  /**
+   * 
+   * Initialize button press for mobile menu
+   * 
+   */
+
+  Mheader.mobileList();
+  /**
+   * 
+   * Initialize header on scroll function
+   * 
+   */
+
+  Mheader.header_scroll();
 };

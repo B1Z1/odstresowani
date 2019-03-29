@@ -1,55 +1,107 @@
 <?php
 /**
- * The template for displaying search results pages
+ * The template for displaying all pages
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site may use a
+ * different template.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package OdstresowaniPortal
  */
 
 get_header();
-?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main">
+$sygnet = wp_get_attachment_image_src(carbon_get_theme_option('general_sygnet_search'), 'full')[0]; ?>
 
-		<?php if ( have_posts() ) : ?>
+    <div class="wrapper">
 
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'odstresowani' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1>
-			</header><!-- .page-header -->
+        <!-- ------------------ -->
+        <!-- Main section start -->
+        <!-- ------------------ -->
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+        <main class="main">
+            <?php if (have_posts()): ?>
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
+                <div class="post_title mb160 pt128 pb160 bck-gm">
+                    <div class="container container_960">
+                        <h3 class="reset f-san">Posty szukane według: "<?php echo get_search_query(); ?>"</h3>
+                        <img src="<?php echo $sygnet; ?>" alt="Category sygnet" class="post_sygnet">
+                    </div>
+                </div>
+                <!-- Search block -->
+                
 
-			endwhile;
+                    <div class="header__triger search-page">
+                        <div class="d-flex fwrap">
 
-			the_posts_navigation();
+                        <?php while (have_posts()): the_post(); ?>
 
-		else :
+                            <div class="pc-col-4">
+                                <?php
+                                /**
+                                 *
+                                 * Post type action
+                                 * -> Block
+                                 *
+                                 */
+                                $args['url'] = get_permalink();
+                                $args['title'] = get_the_title();
+                                $args['image'] = get_the_post_thumbnail(get_the_ID(), 'full');
 
-			get_template_part( 'template-parts/content', 'none' );
+                                do_action('post_card_mini', $args);
+                                ?>
+                            </div>
 
-		endif;
-		?>
+                        <?php endwhile; ?>
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+                        </div>
+                    </div>
+
+                <!-- Search block -->
+
+            <?php else: ?>
+
+                <?php
+                $video_mp4 = wp_get_attachment_url(carbon_get_theme_option('search_film_mp4'));
+                $video_ogg = wp_get_attachment_url(carbon_get_theme_option('search_film_ogg')); ?>
+
+                <!-- Search not fount -->
+                <section class="search-page_nfound block block_hidden pt128 pb128 c-wh">
+
+                    <div class="filter filter_back filter_zmax bck-blck"></div>
+                    <?php if ($video_mp4): ?>
+                        <video class="filter filter_video" muted autoplay loop>
+                            <source src="<?php echo $video_mp4; ?>" type="video/mp4">
+                            <?php if ($video_ogg): ?>
+                                <source src="<?php echo $video_ogg; ?>" type="video/ogg">
+                            <?php endif; ?>
+                            Your browser does not support the video tag.
+                        </video>
+                    <?php endif; ?>
+                    <div class="search-page_content block">
+                        <div class="container">
+                            <div class="row">
+                                <div class="ntb-col-6">
+                                    <h1 class="reset">Nie znależliśmy posta, którego właśnie szukałeś</h1>
+                                    <h3 class="reset_top">Spróbuj wpisać coś innego</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+                <!-- Search not fount -->
+
+            <?php endif; ?>
+
+        </main>
+
+        <!-- ------------------ -->
+        <!--  Main section end  -->
+        <!-- ------------------ -->
 
 <?php
-get_sidebar();
 get_footer();

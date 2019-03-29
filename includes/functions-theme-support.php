@@ -41,7 +41,7 @@ if ( ! function_exists( 'odstresowani_setup' ) ) :
             'comment-list',
             'caption',
         ) );
-
+        add_theme_support( 'html5', array( 'search-form' ) );
     }
 endif;
 add_action( 'after_setup_theme', 'odstresowani_setup' );

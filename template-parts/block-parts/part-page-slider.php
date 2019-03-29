@@ -9,13 +9,11 @@ $slides = $block['page_slide'];
             <div class="row">
                 <div class="prop-slider_content tbl-col-8 ntb-col-6">
                     <div class="prop-slider_container">
-                        <?php foreach ( $slides as $key=>$slide ):
-                            $id = $slide['page_slide_page'];
-
-                            $title = get_the_title($id);
+                        <?php foreach ( $slides as $key => $slide ):
+                            $title = $slide['page_slide_page'];
+                            $page = get_page_by_title($title);
                             $name = $title . '_' . $key;
-                            $url = get_permalink($id);
-
+                            $url = get_the_permalink($page->ID);
                             $back = wp_get_attachment_image_src($slide['page_slide_image'], 'full')[0];
                             $content = $slide['page_slide_content'];
                         ?>

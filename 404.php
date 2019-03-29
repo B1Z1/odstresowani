@@ -1,60 +1,55 @@
 <?php
 /**
- * The template for displaying 404 pages (not found)
  *
- * @link https://codex.wordpress.org/Creating_an_Error_404_Page
+ *
+ * The template for displaying all pages
+ *
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site may use a
+ * different template.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package OdstresowaniPortal
  */
 
 get_header();
-?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+$video_mp4 = wp_get_attachment_url(carbon_get_theme_option('404_film_mp4'));
+$video_ogg = wp_get_attachment_url(carbon_get_theme_option('404_film_ogg')); ?>
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'odstresowani' ); ?></h1>
-				</header><!-- .page-header -->
+    <!-- ------------------ -->
+    <!-- Main section start -->
+    <!-- ------------------ -->
 
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'odstresowani' ); ?></p>
+    <main class="main">
 
-					<?php
-					get_search_form();
+        <section class="er-404 m16 block block_hidden c-wh">
+            <div class="filter filter_back filter_zmax bck-blck"></div>
 
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
+            <?php if ( $video_mp4 ): ?>
+                <video class="filter filter_video" muted autoplay loop>
+                    <source src="<?php echo $video_mp4; ?>" type="video/mp4">
+                    <?php if ( $video_ogg ): ?>
+                        <source src="<?php echo $video_ogg; ?>" type="video/ogg">
+                    <?php endif; ?>
+                    Your browser does not support the video tag.
+                </video>
+            <?php endif; ?>
 
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'odstresowani' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-							?>
-						</ul>
-					</div><!-- .widget -->
+            <div class="er-404_content block flex-kit jcc">
+                <h3><span class="er-404__404">404</span>Nie możemy znależć twojej strony</h3>
+            </div>
+        </section>
 
-					<?php
-					/* translators: %1$s: smiley */
-					$odstresowani_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'odstresowani' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$odstresowani_archive_content" );
+    </main>
 
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
+    <!-- ------------------ -->
+    <!--  Main section end  -->
+    <!-- ------------------ -->
 
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
+    <?php wp_footer(); ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php
-get_footer();
+    </body>
+</html>

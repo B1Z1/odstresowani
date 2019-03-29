@@ -10,23 +10,31 @@ $locations = get_nav_menu_locations();
  * Submenu function
  *
  */
-function submenu($items,$item, $url, $title){
-        $parent = $item->menu_item_parent;
-        ?>
+function submenu($items, $item){
+    $parent = $item->ID;
+    $children = array();
+    ?>
+    <?php
+    foreach ( $items as $sub_item ){
+        if ( $parent == $sub_item->menu_item_parent ) {
+            $sub_url = $sub_item->url;
+            $sub_title = $sub_item->title;
+            $sub = array( 'url' => $sub_url, 'title' => $sub_title);
+            array_push($children, $sub);
+        }
+    }
+    ?>
+    <?php if ( !empty($children) ): ?>
         <div class="header_submenu c-blck bck-gs">
             <div class="container container_968">
                 <ul class="header_submenu__list header_list reset_list pt32 pb32 flex-kit">
-                    <?php foreach ( $items as $sub_item ): ?>
-                        <?php if ( $parent = $sub_item->menu_item_parent ):
-                            $sub_url = $sub_item->url;
-                            $sub_title = $sub_item->title;
-                            ?>
-                            <li class="mr16 ml16"><a href="<?php echo $sub_url; ?>" class="header_menu__hover reset_link"><?php echo $sub_title; ?></a></li>
-                        <?php endif; ?>
+                    <?php foreach ( $children as $child ): ?>
+                        <li class="mr16 ml16"><a href="<?php echo $child['url']; ?>" class="header_menu__hover reset_link"><?php echo $child['title']; ?></a></li>
                     <?php endforeach; ?>
                 </ul>
             </div>
         </div>
+    <?php endif; ?>
 <?php }
 
 /**
@@ -37,28 +45,38 @@ function submenu($items,$item, $url, $title){
  * Submenu with posts function
  *
  */
-function submenu_category($item, $url, $title){
-    $page_term = carbon_get_post_meta($item->object_id, 'page_type_posts');
-    $categories = get_categories(array(
-            'taxonomy' => $page_term,
+function submenu_category($post_type, $url, $title){
+    $categories = get_terms(array(
+        'taxonomy' => $post_type,
     ));
     ?>
     <li class="mr16 ml16"><a href="<?php echo $url; ?>" class="header_menu__hover reset_link"><?php echo $title; ?></a>
-        <div class="header_submenu pt32 pr24 pb32 pl24 c-wh bck-op">
-            <ul class="header_submenu__list header_list reset_list flex-kit">
-                <li class="f-vb mr24">Kategorie</li>
-                <?php foreach ( $categories as $cateogory ):
-                    $title = $cateogory->cat_name;
-                    $url = get_term_link($cateogory->slug, $page_term);
-                    $active = ' link_category__active';
-                    ?>
-                    <li class="mr16">
-                        <a href="<?php echo $url; ?>" class="link link_category reset_link<?php echo is_tax($page_term,$cateogory->slug) ? $active:''; ?>"><?php echo $title; ?></a>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
+    <div class="header_submenu pt24 pr24 pb24 pl24 c-wh bck-gt">
+        <div class="d-flex fwrap row">
+            <div class="ntb-col-1">
+                <div class="f-vb mr24 mt16 mb8">Kategorie</div>
+            </div>
+            <div class="ntb-col-9">
+                <ul class="header_submenu__list header_list reset_list flex-kit fwrap">
+                    <?php foreach ( $categories as $category ):
+                        $title = $category->name;
+                        $url = get_term_link($category->slug, $post_type);
+                        $active = ' link_category__active';
+                        ?>
+                        <li class="mr16 mt8 mb8">
+                            <a href="<?php echo $url; ?>" class="link link_category reset_link <?php
+                            if ( is_tax($post_type, $category->slug) || is_category($category->slug) ){
+                                echo $active;
+                            }; ?>"><?php echo $title; ?></a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+            <div class="ntb-col-2">
+                <?php get_search_form(); ?>
+            </div>
         </div>
-    </li>
+    </div>
 <?php }
 
 add_action('odstresowani_header_mobile_nav', 'nav_mobile', 10);
@@ -66,32 +84,91 @@ if ( !function_exists('nav_mobile') ) {
     function nav_mobile(){ global $locations;
         $location = 'header_mb';
         $items = wp_get_nav_menu_items($locations[$location]);
-        ?>
-        <!-- Mobile menu start -->
-        <nav class="header_mobilenav c-blck bck-wh p32">
-            <div class="header_mobilenav__close">
-                <?php $close_button = carbon_get_theme_option('general_close_button'); ?>
-                <img src="<?php echo wp_get_attachment_image_src($close_button, 'full')[0]; ?>" alt="Close button">
-            </div>
-            <ul class="header_mobilenav__list reset_list">
-            <?php foreach ($items as $item):
-                $url = $item->url;
-                $title = $item->title;
-                ?>
-                <li><a href="<?php echo $url; ?>" class="reset_link"><?php echo $title; ?></a></li>
-            <?php endforeach; ?>
-            </ul>
-        </nav>
-        <!-- Mobile menu end -->
+        $urls = array();
+        $categories = array();
+
+        /**
+         *
+         * Im foreach the $items array for sort normal links and links with categories
+         * When it has sorted, I'm merging this two arrays in one $page
+         *
+         */
+        foreach ($items as $key => $item){
+            $have_children = carbon_get_nav_menu_item_meta($item->ID, 'menu_cat');
+            if ( $have_children ){
+                $categories[$key] = array(
+                    'url' => $item->url,
+                    'title' => $item->title,
+                    'cat' => $have_children,
+                );
+            }
+            else{
+                $urls[$key] = array(
+                    'url' => $item->url,
+                    'title' => $item->title,
+                    'cat' => false,
+                );
+            }
+        }
+        $pages = array_merge($urls, $categories); ?>
+
+        <?php if ( $items ): ?>
+
+            <!-- Mobile menu start -->
+            <nav class="header_mobilenav c-blck bck-wh p32">
+                <div class="header_mobilenav__close">
+                    <?php $close_button = carbon_get_theme_option('general_close_button'); ?>
+                    <img src="<?php echo wp_get_attachment_image_src($close_button, 'full')[0]; ?>" alt="Close button">
+                </div>
+                <ul class="header_mobilenav__list reset_list">
+
+                    <?php foreach ($pages as $page):
+                    $url = $page['url'];
+                    $title = $page['title'];
+                    if ( $page['cat'] ){
+                        $cat_tax = $page['cat'];
+                        $categories = get_terms(array(
+                            'taxonomy' => $cat_tax,
+                        ));
+                    }
+                    ?>
+
+                    <?php if ( $cat_tax ): ?>
+
+                </ul>
+                <h3 class="mt16 mb16 f-vb"><a href="<?php echo $url; ?>" class="reset_link"><?php echo $title; ?></a></h3>
+                <ul class="header_mobilenav__list reset_list">
+
+                    <?php foreach ($categories as $category):
+                        $title_tax = $category->name;
+                        $url_tax = get_term_link($category->slug, $cat_tax); ?>
+
+                        <li><a href="<?php echo $url_tax; ?>" class="reset_link"><?php echo $title_tax; ?></a></li>
+
+                    <?php endforeach; ?>
+
+                    <?php else: ?>
+
+                        <li><a href="<?php echo $url; ?>" class="reset_link"><?php echo $title; ?></a></li>
+
+                    <?php endif; ?>
+
+                    <?php endforeach; ?>
+
+                </ul>
+            </nav>
+            <!-- Mobile menu end -->
+
+        <?php endif; ?>
     <?php }
 }
 
 add_action('odstresowani_header_wrapper_start', 'header_wrapper_start', 10);
 if ( !function_exists('header_wrapper_start') ){
-    function header_wrapper_start(){ ?>
-        <header class="header mr16 ml16 pt32 pr24 pb16 pl24 c-wh">
-            <div class="flex-kit jcsb row">
-    <?php }
+function header_wrapper_start(){ ?>
+    <header class="header mr16 ml16 pt32 pr24 pb16 pl24 c-wh">
+    <div class="flex-kit jcsb row">
+<?php }
 }
 
 add_action('odstresowani_header_inside', 'header_sygnet', 10);
@@ -102,17 +179,17 @@ if ( !function_exists('header_sygnet') ){
                 <a href="<?php echo get_home_url(); ?>" class="flex-kit reset_link">
                     <div class="header_sygnets">
                         <?php
-                        $logo_front = carbon_get_theme_option('general_logo_front');
-                        $logo_back = carbon_get_theme_option('general_logo_back');
+                        $sygnet_front = wp_get_attachment_image_src(carbon_get_theme_option('general_sygnet_front'), 'full')[0];
+                        $sygnet_back = wp_get_attachment_image_src(carbon_get_theme_option('general_sygnet_back'), 'full')[0];
                         ?>
-                        <?php if ( $logo_front ): ?>
-                            <img class="header_sygnet header_sygnet__white" src="<?php echo wp_get_attachment_image_src($logo_front, 'full')[0]; ?>" alt="Sygnet">
+                        <?php if ( $sygnet_front ): ?>
+                            <img class="header_sygnet header_sygnet__white" src="<?php echo $sygnet_front; ?>" alt="Sygnet">
                         <?php endif; ?>
-                        <?php if ( $logo_back ): ?>
-                            <img class="header_sygnet header_sygnet__black" src="<?php echo wp_get_attachment_image_src($logo_back, 'full')[0]; ?>" alt="Sygnet">
+                        <?php if ( $sygnet_back ): ?>
+                            <img class="header_sygnet header_sygnet__black" src="<?php echo $sygnet_back; ?>" alt="Sygnet">
                         <?php endif; ?>
                     </div>
-                    <h4 class="reset"><?php echo get_bloginfo('name'); ?></h4>
+                    <h4 class="header_logo reset"><?php echo get_bloginfo('name'); ?></h4>
                 </a>
             </figure>
         </div>
@@ -124,24 +201,26 @@ if ( !function_exists('header_menu') ){
     function header_menu(){ global $locations;
         $location = 'header';
         $items = wp_get_nav_menu_items($locations[$location]);
-    ?>
+        ?>
         <div class="header_menu mbl-col-6">
             <nav class="row">
                 <ul class="header_list reset_list flex-kit jcc">
-                    <?php foreach ( $items as $item ):
-                        $url = $item->url;
-                        $title = $item->title;
-                        $is_post = carbon_get_nav_menu_item_meta($item->ID, 'menu_cat');
-                        ?>
-                        <?php if ( $is_post ):
-                            submenu_category($item, $url, $title);
+                    <?php if ( $items ): ?>
+                        <?php foreach ( $items as $item ):
+                            $url = $item->url;
+                            $title = $item->title;
+                            $post_type = carbon_get_nav_menu_item_meta($item->ID, 'menu_cat');
+                            ?>
+                            <?php if ( $post_type ):
+                            submenu_category($post_type, $url, $title);
                         elseif ( $item->menu_item_parent == 0 ): ?>
                             <li class="mr16 ml16">
                                 <a href="<?php echo $url; ?>" class="header_menu__hover reset_link"><?php echo $title; ?></a>
-                                <?php submenu($items,$item, $url, $title);  ?>
+                                <?php submenu($items, $item);  ?>
                             </li>
                         <?php endif; ?>
-                    <?php endforeach; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 </ul>
             </nav>
         </div>
@@ -161,12 +240,14 @@ if ( !function_exists('header_extra_menu') ){
                 </div>
                 <nav class="header_extramenu f-vb fr">
                     <ul class="header_list reset_list flex-kit">
-                    <?php foreach ($items as $item):
-                        $url = $item->url;
-                        $title = $item->title;
-                        ?>
-                        <li class="mr16 ml16"><a href="<?php echo $url; ?>" class="reset_link"><?php echo $title; ?></a></li>
-                    <?php endforeach; ?>
+                        <?php if ( $items ): ?>
+                            <?php foreach ($items as $item):
+                                $url = $item->url;
+                                $title = $item->title;
+                                ?>
+                                <li class="mr16 ml16"><a href="<?php echo $url; ?>" class="reset_link"><?php echo $title; ?></a></li>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                     </ul>
                 </nav>
             </div>
@@ -177,7 +258,7 @@ if ( !function_exists('header_extra_menu') ){
 add_action('odstresowani_header_wrapper_end', 'header_wrapper_end', 10);
 if ( !function_exists('header_wrapper_end') ){
     function header_wrapper_end(){ ?>
-            </div>
+        </div>
         </header>
     <?php }
 }

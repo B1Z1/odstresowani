@@ -3,31 +3,42 @@
     top: 0
     left: 0
     right: 0
-    z-index: 9
+    z-index: 9999
     transition: .6s all
     &__active
         background: $white
         color: $black
         .header_sygnet__black
-            visibility: visible
             opacity: 1
+            visibility: visible
         .header_sygnet__white
             opacity: 0
             visibility: hidden
-
+        .header_logo
+            background: #63ebd2
+            background: linear-gradient(to bottom, #63ebd2 35%,#a951bb 80%)
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#63ebd2', endColorstr='#a951bb',GradientType=0 )
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
     &:hover
         background: $white
+    &:hover .header_menu, &:hover .header_extramenu
         color: $black
     &:hover .header_menu__hover:before
-        background: $black
+        background: $grey-tertiary
     &:hover .header_sygnet__black
         opacity: 1
         visibility: visible
-        
+    &:hover .header_logo
+        background: #63ebd2
+        background: linear-gradient(to bottom, #63ebd2 35%,#a951bb 80%)
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#63ebd2', endColorstr='#a951bb',GradientType=0 )
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
     &_list
         & li:hover .header_submenu
+            opacity: 1
             visibility: visible
-            opacity: 1 
     &_sygnets
         position: relative
         width: 50px
@@ -63,7 +74,6 @@
                 width: 4px
                 height: 4px
                 border-radius: 50%
-                background: $white
                 visibility: hidden
                 opacity: 0
                 transition: .3s all
@@ -93,7 +103,7 @@
         height: 100vh
         overflow-y: auto
         transition: .4s all
-        z-index: 10
+        z-index: 99999
         &__active
             right: 0!important
         &__close

@@ -4,35 +4,13 @@
     padding-bottom: 128px
     background-size: cover
     background-position: 0 0
+    overflow: hidden
     &_content
         position: relative
         text-align: center
-    &_links
-        &__more
-            position: relative
-            text-transform: uppercase
-            &:before
-                content: ''
-                position: absolute
-                bottom: -1px
-                left: 0
-                right: 50%
-                height: 1px
-                background: $white
-                transition: .5s all
-            &:after
-                content: ''
-                position: absolute
-                bottom: -1px
-                left: 50%
-                right: 0
-                height: 1px
-                background: $white
-                transition: .5s all
-            &:hover:before
-                left: 100%
-            &:hover:after
-                right: 100%
+        z-index: 12
+    &_center
+        background-position: center
 
 @media only screen and (max-width: 1024px)
     .hero

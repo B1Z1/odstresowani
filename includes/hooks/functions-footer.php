@@ -9,7 +9,7 @@ if ( !function_exists('footer_wrapper_start') ){
 add_action('odstresowani_footer_upper_start', 'footer_upper_start', 10);
 if ( !function_exists('footer_upper_start') ){
     function footer_upper_start(){ ?>
-    <div class="footer_upper bck-blck pt64 pb32 c-wh">
+    <div class="footer_upper bck-gt pt64 pb32 c-wh">
         <div class="container">
             <div class="row">
     <?php }
@@ -25,11 +25,15 @@ if ( !function_exists('footer_upper_blocks') ){
                 <div class="mbl-col-12 tbl-col-6 ntb-col-3">
                     <div class="footer_block mb32">
                         <ul class="reset_list">
-                            <?php foreach ( $block as $item ): $id = $item['footer_block_page'] ?>
+                            <?php foreach ( $block as $item ): 
+                                $title = $item['footer_block_page']; 
+                                $page = get_page_by_title($title);
+                                $url = get_permalink($page->ID);
+                                ?>
                                 <li class="mb16">
                                     <h3 class="reset">
-                                        <a href="<?php echo get_permalink($id) ?>" class="reset_link">
-                                            <?php echo get_the_title($id); ?>
+                                        <a href="<?php echo $url; ?>" class="reset_link">
+                                            <?php echo $title; ?>
                                         </a>
                                     </h3>
                                 </li>
@@ -50,10 +54,7 @@ if ( !function_exists('footer_upper_social') ){
         ?>
 
         <div class="clearfix">
-            <div class="ntb-col-2 fl">
-                <h4 class="reset"><?php bloginfo('name'); ?></h4>
-            </div>
-            <div class="footer_social ntb-col-10 flex-kit jce fwrap fr">
+            <div class="footer_social ntb-col-12 flex-kit jce fwrap fr">
                 <ul class="reset_list d-flex">
                     <?php foreach ( $footer_social as $footer_list ): ?>
                         <li class="footer_social__el mr16 ml16">
@@ -104,9 +105,12 @@ if ( !function_exists('footer_bottom_links') ){
         ?>
         <div class="ntb-col-8 fr">
             <ul class="footer_politics reset_list flex-kit jce fwrap">
-                <?php foreach ( $footer_bottom_list as $item ): $id = $item['footer_block_page']; ?>
-                    <li class="mr16 ml16"><a href="<?php echo get_permalink($id) ?>" class="reset_link"><?php echo get_the_title($id); ?></a></li>
-                <?php endforeach; ?>
+                <?php foreach ( $footer_bottom_list as $item ): 
+						$title = $item['footer_bottom_pages']; 
+						$page = get_page_by_title($title); 
+						$url = get_permalink($page->ID); ?>
+                    <li class="mr16 ml16"><a href="<?php echo $url; ?>" class="reset_link"><?php echo $title; ?></a></li>
+                <?php wp_reset_postdata(); endforeach; ?>
             </ul>
         </div>
     <?php }

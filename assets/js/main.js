@@ -1,5 +1,19 @@
 window.onload = function(){
     /**
+     *
+     * Remove all empty containers from page
+     *
+     */
+    (function () {
+        let containers = [... document.querySelectorAll('.container')];
+        containers.forEach(function (el) {
+            if ( el.children.length == 0 ){
+                el.remove();
+            }
+        })
+    })();
+
+    /**
      * 
      * Module of classlist manipulations
      * @addClass -> adding class to element (class, el)
@@ -54,9 +68,9 @@ window.onload = function(){
          */
         function header_scroll_func(header){
             let triggers = [... document.querySelectorAll('.header__triger')],
-                window_height = 0 - (window.innerHeight - header.offsetHeight - 20),
+                window_height = 0 - (window.innerHeight - header.offsetHeight - 50),
                 options = {
-                    threshold: [0.1],
+                    threshold: [0],
                     rootMargin: `0px 0px ${window_height}px 0px`
                 },
                 io = new IntersectionObserver(header_entry, options);
@@ -68,22 +82,6 @@ window.onload = function(){
              */
             triggers.forEach(function(el){
                 io.observe(el);
-            });
-
-            /**
-             * 
-             * On resize change values
-             * 
-             */
-            window.addEventListener('resize', function(){
-                window_height = 0 - (window.innerHeight - header.offsetHeight - 20);
-                options = {
-                    threshold: [0.1],
-                    rootMargin: `0px 0px ${window_height}px 0px`
-                };
-                triggers.forEach(function(el){
-                    io.observe(el);
-                });
             });
 
 
@@ -167,6 +165,15 @@ window.onload = function(){
                         card_title = card.dataset.title,
                         card_name = card.dataset.name,
                         card_back = '';
+
+                    /**
+                     *
+                     * Trick for initialize "Swiper.js", because
+                     * If element is hidden, that library isn't see
+                     * the block
+                     *
+                     */
+                    Mclass.removeClass(classes.card_active, card);
 
                     if ( has_back ){
                         card_back = card.querySelector(`.${object.slider_has_back}`).dataset.back;
@@ -268,6 +275,51 @@ window.onload = function(){
         }
 
     }());
+        /**
+     * 
+     * Initialize slider proposition posts
+     * 
+     */
+    let propSlider = new Mslider.init({
+        slider_block: 'prop-slider',
+        slider_cards: 'prop-slider_card',
+        slider_pagination: 'prop-slider_pagination',
+        slider_has_back: 'prop-slider_card__back',
+        slider_title: 'prop-slider_card__title',
+        pagination_wrap: {
+            wrapper: 'span',
+            classes: '',
+        },
+        classes: {
+            pag_active: 'prop-slider_pagination__active',
+            card_active: 'prop-slider_card__active',
+            pagination_el: 'prop-slider_pagination__el',
+            extra: 'ml16 mr16',
+        }
+    });
+
+    /**
+     * 
+     * Initialize slider Recent posts
+     * 
+     */
+    let recentSlider = new Mslider.init({
+        slider_block: 'swiper-recent_posts',
+        slider_cards: 'recent-posts_vh',
+        slider_pagination: 'recent-posts_vh_pagination',
+        slider_has_back: '',
+        slider_title: 'recent-posts_vh',
+        pagination_wrap: {
+            wrapper: 'h3',
+            classes: 'reset'
+        },
+        classes: {
+            pag_active: 'recent-posts_nav__active',
+            card_active: 'recent-posts_vh__active',
+            pagination_el: 'recent-posts_nav__el',
+            extra: 'ml16 mr16',
+        }
+    });
     /**
      * 
      * Initialize button press for mobile menu
@@ -280,68 +332,6 @@ window.onload = function(){
      * 
      */
     Mheader.header_scroll();
-
-    /**
-     * 
-     * Initialize slider proposition posts
-     * 
-     */
-    let propSlider = new Mslider.init({
-            slider_block: 'prop-slider',
-            slider_cards: 'prop-slider_card',
-            slider_pagination: 'prop-slider_pagination',
-            slider_has_back: 'prop-slider_card__back',
-            slider_title: 'prop-slider_card__title',
-            pagination_wrap: {
-                wrapper: 'span',
-                classes: '',
-            },
-            classes: {
-                pag_active: 'prop-slider_pagination__active',
-                card_active: 'prop-slider_card__active',
-                pagination_el: 'prop-slider_pagination__el',
-                extra: 'ml16 mr16',
-            }
-        });
-
-    /**
-     * 
-     * Initialize slider Recent posts
-     * 
-     */
-    let recentSlider = new Mslider.init({
-        slider_block: 'recent-posts',
-        slider_cards: 'recent-posts_block',
-        slider_pagination: 'recent-posts_pagination',
-        slider_has_back: '',
-        slider_title: 'recent-posts_block',
-        pagination_wrap: {
-            wrapper: 'h3',
-            classes: 'reset'
-        },
-        classes: {
-            pag_active: 'recent-posts_nav__active',
-            card_active: 'recent-posts_block__active',
-            pagination_el: 'recent-posts_nav__el',
-            extra: 'ml16 mr16',
-        }
-    });
-
-    let mySwiper = new Swiper('.recent-posts_block', {
-        speed: 400,
-        slidesPerView: 2,
-        pagination: {
-            el: '.recent-posts_pagination',
-            type: 'bullets',
-            clickable: 'true',
-        },
-        breakpoints: {
-            // when window width is <= 640px
-            768: {
-                slidesPerView: 1,
-            }
-        }
-    });
 
 }
 

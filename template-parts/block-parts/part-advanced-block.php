@@ -6,7 +6,7 @@ $content = $block['advanced_text'];
 
 ?>
 <!-- Classic block start -->
-<div class="container header__triger <?php echo $classes; ?>" style="text-align: center">
+<div class="header__triger <?php echo $classes; ?>" style="text-align: center">
     <div class="row">
         <section class="block tbl-col-8">
             <?php echo $content; ?>

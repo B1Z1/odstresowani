@@ -6,6 +6,26 @@
  *
  * @package OdstresowaniPortal
  */
+$currlang = pll_current_language();
+
+
+
+/**
+ *
+ * Shuffle posts
+ *
+ */
+add_filter('the_posts', 'shuffle_the_posts', 10, 2);
+if ( !function_exists( 'shuffle_the_posts' ) ){
+    function shuffle_the_posts($posts, WP_Query $query){
+        if ( $pick = $query->get('_shuffle_and_pick') ){
+            shuffle($posts);
+            $posts = array_splice( $posts, 0, (int)$pick );
+        }
+        return $posts;
+    }
+}
+
 /**
  *
  * Require Nav menu
@@ -51,3 +71,15 @@ require get_template_directory() . '/includes/hooks/functions-header.php';
  *
  */
 require get_template_directory() . '/includes/hooks/functions-footer.php';
+/**
+ *
+ * Require Posts Hooks
+ *
+ */
+require get_template_directory() . '/includes/hooks/functions-posts.php';
+/**
+ *
+ * Require Pagination filter
+ *
+ */
+require get_template_directory() . '/includes/functions-pagination.php';
