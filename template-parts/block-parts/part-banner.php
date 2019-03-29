@@ -7,8 +7,8 @@ $icon = wp_get_attachment_image_src( carbon_get_theme_option('general_sygnet_min
 <?php if ( $image ): ?>
     </div>
         <div class="block mt128 mb64">
-            <div class="block_image block_image__<?php echo $size ?>">
-                <img src="<?php echo $image; ?>" class="block_image__el" alt="Sygnet">
+            <div class="block-image block-image--<?php echo $size ?>">
+                <img src="<?php echo $image; ?>" class="block-image__el" alt="Sygnet">
                 <div class="icon bck-wh">
                     <div class="icon_sygnet">
                         <img src="<?php echo $icon; ?>" alt="Sygnet">
@@ -16,7 +16,7 @@ $icon = wp_get_attachment_image_src( carbon_get_theme_option('general_sygnet_min
                 </div>
             </div>
             <?php if ( $autor ): ?>
-                <h4 class="block_texcen f-san c-gt">Autor obrazu: <?php echo $autor; ?></h4>
+                <h4 class="block--texcen f-san c-gt">Autor obrazu: <?php echo $autor; ?></h4>
             <?php endif; ?>
         </div>
     <div class="container container_960 header__triger">

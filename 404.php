@@ -25,7 +25,7 @@ $video_ogg = wp_get_attachment_url(carbon_get_theme_option('404_film_ogg')); ?>
 
     <main class="main">
 
-        <section class="er-404 m16 block block_hidden c-wh">
+        <section class="er-404 m16 block block--hidden c-wh">
             <div class="filter filter_back filter_zmax bck-blck"></div>
 
             <?php if ( $video_mp4 ): ?>

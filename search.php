@@ -69,7 +69,7 @@ $sygnet = wp_get_attachment_image_src(carbon_get_theme_option('general_sygnet_se
                 $video_ogg = wp_get_attachment_url(carbon_get_theme_option('search_film_ogg')); ?>
 
                 <!-- Search not fount -->
-                <section class="search-page_nfound block block_hidden pt128 pb128 c-wh">
+                <section class="search-page_nfound block block--hidden pt128 pb128 c-wh">
 
                     <div class="filter filter_back filter_zmax bck-blck"></div>
                     <?php if ($video_mp4): ?>

@@ -930,13 +930,6 @@ strong {
     .header__active .header_sygnet__white {
       opacity: 0;
       visibility: hidden; }
-    .header__active .header_logo {
-      background: #63ebd2;
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(35%, #63ebd2), color-stop(80%, #a951bb));
-      background: linear-gradient(to bottom, #63ebd2 35%, #a951bb 80%);
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#63ebd2', endColorstr='#a951bb',GradientType=0 );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent; }
   .header:hover {
     background: white; }
   .header:hover .header_menu, .header:hover .header_extramenu {
@@ -1127,33 +1120,32 @@ strong {
   position: relative;
   margin-right: auto;
   margin-left: auto; }
-  .block_hidden {
-    overflow: hidden; }
-  .block_texcen {
-    text-align: center; }
-  .block_image {
-    position: relative;
-    width: 100%; }
-    .block_image__full {
-      height: 992px; }
-    .block_image__small {
-      height: 499px; }
-    .block_image__el {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      -o-object-fit: cover;
-      object-fit: cover; }
-  .block_photo > .card:last-of-type {
+  .block__photo > .card:last-of-type {
     margin-bottom: 0; }
+  .block--texcen {
+    text-align: center; }
+  .block--hidden {
+    overflow: hidden; }
+
+.block-image {
+  position: relative;
+  width: 100%; }
+  .block-image--full {
+    height: 992px; }
+  .block-image--small {
+    height: 499px; }
+  .block-image__el {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover; }
 
 @media only screen and (max-width: 768px) {
-  .block_image__full, .block_image__small {
-    height: 50vh; }
-  .block_mind {
-    height: auto; } }
+  .block-image--full, .block-image--small {
+    height: 50vh; } }
 
 .post_title {
   position: relative;

@@ -28,7 +28,7 @@ $video_ogg = wp_get_attachment_url(carbon_get_theme_option('contact_film_ogg'));
 
         <main class="main">
 
-            <section class="contact block block_hidden pt128 pb128 c-wh">
+            <section class="contact block block--hidden pt128 pb128 c-wh">
                 <div class="filter filter_back filter_zmax bck-blck"></div>
                 <?php if ( $video_mp4 ): ?>
                     <video class="filter filter_video" muted autoplay loop>

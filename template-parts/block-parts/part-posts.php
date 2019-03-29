@@ -37,52 +37,48 @@ $args_p = array(
 
     <?php if ( $post_type == 'ciekawostki' ): ?>
 
-        <div class="block_texcen c-wh">
-           <div class="block_photo row">
-               <div class="d-flex fwrap">
-				   <?php if ( $posts->have_posts() ) {
-					   while ($posts->have_posts()) {
-						   $posts->the_post();
-						   $args['describe'] = get_the_title();
-						   $args['image'] = get_the_post_thumbnail(get_the_ID(), 'full');
-						   $args['date'] = get_the_date('j M Y', get_the_ID());
-						   $args['icon'] = wp_get_attachment_image_src(carbon_get_theme_option('general_sygnet_front'), 'full')[0];
-						   ?>
-						   <div class="tbl-col-10 ntb-col-6 pc-col-4 mauto">
-							   <?php
-							   /**
-								*
-								* Action gets arguments
-								* @url
-								* @title
-								* @describe
-								* @image
-								* @date
-								* @category
-								*
-								*
-								*/
-							   do_action('post_card_photo', $args);
-							   ?>
-						   </div>
-						   <?php
-					   }
-				   }
-				   ?>
-			   </div>
-               <?php if ( paginate_links( $args_p ) ): ?>
-                   <nav class="block navigation c-blck mt64" role="navigation">
-                       <div class="nav-links block_texcen">
-                           <?php echo paginate_links( $args_p ); ?>
-                       </div>
-                   </nav>
-               <?php endif; ?>
-           </div>
+        <div class="block__photo block--texcen c-wh row d-flex fwrap">
+            <?php if ( $posts->have_posts() ) {
+                while ($posts->have_posts()) {
+                    $posts->the_post();
+                    $args['describe'] = get_the_title();
+                    $args['image'] = get_the_post_thumbnail(get_the_ID(), 'full');
+                    $args['date'] = get_the_date('j M Y', get_the_ID());
+                    $args['icon'] = wp_get_attachment_image_src(carbon_get_theme_option('general_sygnet_front'), 'full')[0];
+                    ?>
+                    <div class="tbl-col-10 ntb-col-6 pc-col-4 mauto">
+                        <?php
+                        /**
+                        *
+                        * Action gets arguments
+                        * @url
+                        * @title
+                        * @describe
+                        * @image
+                        * @date
+                        * @category
+                        *
+                        *
+                        */
+                        do_action('post_card_photo', $args);
+                        ?>
+                    </div>
+                    <?php
+                }
+            }
+            ?>
+            <?php if ( paginate_links( $args_p ) ): ?>
+                <nav class="block navigation c-blck mt64" role="navigation">
+                    <div class="nav-links block--texcen">
+                        <?php echo paginate_links( $args_p ); ?>
+                    </div>
+                </nav>
+            <?php endif; ?>
         </div>
 
     <?php else: ?>
 
-            <h3 class="block_texcen reset f-san">Artykuły</h3>
+            <h3 class="block--texcen reset f-san">Artykuły</h3>
             <div class="mt64 d-flex fwrap row">
                 <?php
                 if ( $posts->have_posts() ) {
@@ -126,7 +122,7 @@ $args_p = array(
             </div>
 
             <nav class="block navigation" role="navigation">
-                <div class="nav-links block_texcen">
+                <div class="nav-links block--texcen">
                     <?php echo paginate_links( $args_p ); ?>
                 </div>
             </nav>

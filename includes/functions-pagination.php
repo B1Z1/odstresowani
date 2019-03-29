@@ -11,7 +11,7 @@ function my_navigation_template( $template, $class ){
 
     return '
 	<nav class="block navigation mb64 %1$s" role="navigation">
-		<div class="nav-links block_texcen">%3$s</div>
+		<div class="nav-links block--texcen">%3$s</div>
 	</nav>    
 	';
 }
