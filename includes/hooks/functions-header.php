@@ -27,9 +27,9 @@ function submenu($items, $item){
     <?php if ( !empty($children) ): ?>
         <div class="header_submenu c-blck bck-gs">
             <div class="container container_968">
-                <ul class="header_submenu__list header_list reset_list pt32 pb32 flex-kit">
+                <ul class="header_submenu__list header_list reset-list pt32 pb32 flex-kit">
                     <?php foreach ( $children as $child ): ?>
-                        <li class="mr16 ml16"><a href="<?php echo $child['url']; ?>" class="header_menu__hover reset_link"><?php echo $child['title']; ?></a></li>
+                        <li class="mr16 ml16"><a href="<?php echo $child['url']; ?>" class="header_menu__hover reset-link"><?php echo $child['title']; ?></a></li>
                     <?php endforeach; ?>
                 </ul>
             </div>
@@ -50,21 +50,21 @@ function submenu_category($post_type, $url, $title){
         'taxonomy' => $post_type,
     ));
     ?>
-    <li class="mr16 ml16"><a href="<?php echo $url; ?>" class="header_menu__hover reset_link"><?php echo $title; ?></a>
+    <li class="mr16 ml16"><a href="<?php echo $url; ?>" class="header_menu__hover reset-link"><?php echo $title; ?></a>
     <div class="header_submenu pt24 pr24 pb24 pl24 c-wh bck-gt">
         <div class="d-flex fwrap row">
             <div class="ntb-col-1">
                 <div class="f-vb mr24 mt16 mb8">Kategorie</div>
             </div>
             <div class="ntb-col-9">
-                <ul class="header_submenu__list header_list reset_list flex-kit fwrap">
+                <ul class="header_submenu__list header_list reset-list flex-kit fwrap">
                     <?php foreach ( $categories as $category ):
                         $title = $category->name;
                         $url = get_term_link($category->slug, $post_type);
-                        $active = ' link_category__active';
+                        $active = ' link-category--active';
                         ?>
                         <li class="mr16 mt8 mb8">
-                            <a href="<?php echo $url; ?>" class="link link_category reset_link <?php
+                            <a href="<?php echo $url; ?>" class="link link-category reset-link <?php
                             if ( is_tax($post_type, $category->slug) || is_category($category->slug) ){
                                 echo $active;
                             }; ?>"><?php echo $title; ?></a>
@@ -120,7 +120,7 @@ if ( !function_exists('nav_mobile') ) {
                     <?php $close_button = carbon_get_theme_option('general_close_button'); ?>
                     <img src="<?php echo wp_get_attachment_image_src($close_button, 'full')[0]; ?>" alt="Close button">
                 </div>
-                <ul class="header_mobilenav__list reset_list">
+                <ul class="header_mobilenav__list reset-list">
 
                     <?php foreach ($pages as $page):
                     $url = $page['url'];
@@ -136,20 +136,20 @@ if ( !function_exists('nav_mobile') ) {
                     <?php if ( $cat_tax ): ?>
 
                 </ul>
-                <h3 class="mt16 mb16 f-vb"><a href="<?php echo $url; ?>" class="reset_link"><?php echo $title; ?></a></h3>
-                <ul class="header_mobilenav__list reset_list">
+                <h3 class="mt16 mb16 f-vb"><a href="<?php echo $url; ?>" class="reset-link"><?php echo $title; ?></a></h3>
+                <ul class="header_mobilenav__list reset-list">
 
                     <?php foreach ($categories as $category):
                         $title_tax = $category->name;
                         $url_tax = get_term_link($category->slug, $cat_tax); ?>
 
-                        <li><a href="<?php echo $url_tax; ?>" class="reset_link"><?php echo $title_tax; ?></a></li>
+                        <li><a href="<?php echo $url_tax; ?>" class="reset-link"><?php echo $title_tax; ?></a></li>
 
                     <?php endforeach; ?>
 
                     <?php else: ?>
 
-                        <li><a href="<?php echo $url; ?>" class="reset_link"><?php echo $title; ?></a></li>
+                        <li><a href="<?php echo $url; ?>" class="reset-link"><?php echo $title; ?></a></li>
 
                     <?php endif; ?>
 
@@ -176,7 +176,7 @@ if ( !function_exists('header_sygnet') ){
     function header_sygnet(){ ?>
         <div class="header_logo mbl-col-10 pc-col-3">
             <figure class="f-vb">
-                <a href="<?php echo get_home_url(); ?>" class="flex-kit reset_link">
+                <a href="<?php echo get_home_url(); ?>" class="flex-kit reset-link">
                     <div class="header_sygnets">
                         <?php
                         $sygnet_front = wp_get_attachment_image_src(carbon_get_theme_option('general_sygnet_front'), 'full')[0];
@@ -204,7 +204,7 @@ if ( !function_exists('header_menu') ){
         ?>
         <div class="header_menu mbl-col-6">
             <nav class="row">
-                <ul class="header_list reset_list flex-kit jcc">
+                <ul class="header_list reset-list flex-kit jcc">
                     <?php if ( $items ): ?>
                         <?php foreach ( $items as $item ):
                             $url = $item->url;
@@ -215,7 +215,7 @@ if ( !function_exists('header_menu') ){
                             submenu_category($post_type, $url, $title);
                         elseif ( $item->menu_item_parent == 0 ): ?>
                             <li class="mr16 ml16">
-                                <a href="<?php echo $url; ?>" class="header_menu__hover reset_link"><?php echo $title; ?></a>
+                                <a href="<?php echo $url; ?>" class="header_menu__hover reset-link"><?php echo $title; ?></a>
                                 <?php submenu($items, $item);  ?>
                             </li>
                         <?php endif; ?>
@@ -239,13 +239,13 @@ if ( !function_exists('header_extra_menu') ){
                     <i class="fas fa-bars"></i>
                 </div>
                 <nav class="header_extramenu f-vb fr">
-                    <ul class="header_list reset_list flex-kit">
+                    <ul class="header_list reset-list flex-kit">
                         <?php if ( $items ): ?>
                             <?php foreach ($items as $item):
                                 $url = $item->url;
                                 $title = $item->title;
                                 ?>
-                                <li class="mr16 ml16"><a href="<?php echo $url; ?>" class="reset_link"><?php echo $title; ?></a></li>
+                                <li class="mr16 ml16"><a href="<?php echo $url; ?>" class="reset-link"><?php echo $title; ?></a></li>
                             <?php endforeach; ?>
                         <?php endif; ?>
                     </ul>

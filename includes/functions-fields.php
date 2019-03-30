@@ -321,4 +321,20 @@ function crb_attach_theme_options() {
             include(locate_template('template-parts/block-parts/part-banner.php',false, false) );
         });
 
+    /**
+     *
+     * Block Form for "Operacja rzeka"
+     *
+     */
+    Block::make(__('Operacja rzeka'))
+        ->add_fields(array(
+            Field::make('rich_text', 'operation_text', __('Tekst nad przyciskiem')),
+            Field::make('text', 'operation_button', __('Tekst przycisku')),
+            Field::make('text', 'operation_form', __('Shortcode formy')),
+            Field::make('text', 'operation_text_scroll', __('Tekst dla scrollu')),
+        ))
+        ->set_render_callback(function ($block) {
+            include(locate_template('template-parts/block-parts/part-operation-river.php',false, false) );
+        });
+
 }

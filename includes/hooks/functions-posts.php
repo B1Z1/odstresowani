@@ -74,7 +74,7 @@ if ( !function_exists( 'post_card_block' ) ){
 
         <!-- Post card for posts start -->
 
-        <a href="<?php echo $url; ?>" class="reset_link">
+        <a href="<?php echo $url; ?>" class="reset-link">
             <div class="card">
                 <div class="card_image card_image__192">
                     <?php echo $image; ?>
@@ -82,7 +82,7 @@ if ( !function_exists( 'post_card_block' ) ){
                 <div class="card_title mt16">
                     <h2 class="reset f-vb"><?php echo $title; ?></h2>
                 </div>
-                <ul class="flex-kit reset_list c-gt mt16">
+                <ul class="flex-kit reset-list c-gt mt16">
                     <?php if ( $cat_list ): ?>
                         <li class="card_cat f-san">
                             <span>
@@ -173,7 +173,7 @@ if ( !function_exists( 'post_card_list' ) ){
 
         <!-- Post card for posts start -->
 
-        <a href="<?php echo $url; ?>" class="reset_link mb32">
+        <a href="<?php echo $url; ?>" class="reset-link mb32">
             <div class="card flex-kit fwrap row">
                 <div class="ntb-col-5 pc-col-6">
                     <div class="card_image card_image__328">
@@ -184,7 +184,7 @@ if ( !function_exists( 'post_card_list' ) ){
                     <div class="card_title mt16">
                         <h2 class="reset f-vb"><?php echo $title; ?></h2>
                     </div>
-                    <ul class="flex-kit reset_list c-gt mt16">
+                    <ul class="flex-kit reset-list c-gt mt16">
                         <?php if ( $cat_list ): ?>
                             <li class="card_cat f-san">
                         <span>
@@ -225,7 +225,7 @@ if ( !function_exists( 'post_card_mini' ) ){
         $url= $args['url'];
         ?>
         <div class="card mb32">
-            <a href="<?php echo $url; ?>" class="reset_link">
+            <a href="<?php echo $url; ?>" class="reset-link">
                 <div class="card_image card_image__192 mb32">
                     <?php echo $image; ?>
                 </div>

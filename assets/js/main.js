@@ -1,3 +1,5 @@
+import { wrap } from "module";
+
 window.onload = function(){
     /**
      *
@@ -275,7 +277,54 @@ window.onload = function(){
         }
 
     }());
-        /**
+
+    let MExtentions = (function(){
+        return {
+            'operation' : function(object){
+                operation(object);
+            }
+        }  
+
+        function operation(object){
+            let button = document.querySelector(`.${object.button}`),
+                wrapper = document.querySelector(`.${object.wrapper}`),
+                form_inputs = [... document.querySelectorAll(`.${object.form_inputs}`)],
+                classes = object.classes;
+
+            if ( button && wrapper && form_inputs ){
+
+                let wrapper_height = `${wrapper.offsetHeight}px`;
+                Mclass.addClass(classes.wrapper__disable, wrapper);
+
+                button.addEventListener('click', function(){
+                    wrapper.style.maxHeight = wrapper_height;
+
+                    //Manipulations with classes
+                    Mclass.addClass(classes.button__disable, this);
+                    Mclass.removeClass(classes.wrapper__disable, wrapper);
+
+                    //Remove max-height from wrapper
+                    setTimeout(() => { wrapper.style.maxHeight = 'none'; }, 800);
+
+                    //Remove button
+                    this.remove();
+
+                    //Fade for inputs
+                    form_inputs.forEach((el, index) => {
+                        let input = el;
+
+                        setTimeout(()=>{
+                            Mclass.removeClass(classes.input__disable, input);
+                        }, index * 400);
+                    });
+                });
+
+            }
+
+        }
+    }());
+
+    /**
      * 
      * Initialize slider proposition posts
      * 
@@ -320,18 +369,36 @@ window.onload = function(){
             extra: 'ml16 mr16',
         }
     });
+
     /**
      * 
      * Initialize button press for mobile menu
      * 
      */
-    Mheader.mobileList();
+    new Mheader.mobileList();
+
     /**
      * 
      * Initialize header on scroll function
      * 
      */
-    Mheader.header_scroll();
+    new Mheader.header_scroll();
+
+    /**
+     * 
+     * Initialize operation block
+     * 
+     */
+    new MExtentions.operation({
+        button: 'block-operation__button',
+        wrapper: 'block-operation__wrapper',
+        form_inputs: 'form-operation__visibility',
+        classes:{
+            button__disable: 'block-operation__button--disabled',
+            wrapper__disable: 'block-operation__wrapper--disabled',
+            input__disable: 'form-operation__visibility--disabled',
+        },
+    });
 
 }
 

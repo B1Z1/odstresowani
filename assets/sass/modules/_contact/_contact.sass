@@ -1,63 +1,12 @@
 .contact
-  &_content
-    z-index: 11
-  &_form
-    position: relative
-    width: 100%
-    p
-      display: flex
-      flex-wrap: wrap
-      justify-content: center
-    .wpcf7-validation-errors, .ajax-loader
-      display: none!important
-    .your-name, .your-email, .your-message
-      input, textarea
-        box-sizing: border-box
-        width: 100%
-        padding: 16px
-        margin-bottom: 16px
-        color: $black
-        border: none
-        outline: none
-        font-size: 1rem
-        font-family: value-regular
-        &::placeholder
-          color: $black
-      textarea
-        resize: none
-    .wpcf7-not-valid-tip
-      margin-bottom: 16px
-      text-decoration: underline
-      color: $white
-    .your-name, .your-email
-      display: block
-      width: calc( 50% - 16px)
-    .your-name
-      margin-right: 16px
-    .your-email
-      margin-left: 16px
-    .your-message
-      width: 100%
-    .wpcf7-submit
-      padding: 8px 64px
-      background: $white
-      border: none
-      outline: none
-      font-size: 1rem
-      font-family: value-regular
-      cursor: pointer
-    .wpcf7-mail-sent-ok, .wpcf7-response-output, .wpcf7-mail-sent-ng, .wpcf7-spam-blocked, .wpcf7-validation-errors
-      font-size: 1.5rem
-      border: none
-      font-family: value-black
-      text-decoration: underline
-      text-align: center
+    &_content
+        z-index: 11
 
 .grecaptcha-badge
-  z-index: 999
+    z-index: 999
 @media only screen and (max-width: 768px)
-  .contact
-    .your-name, .your-email
-      width: 100%
-      margin-right: 0
-      margin-left: 0
+    .contact
+        .your-name, .your-email
+            width: 100%
+            margin-right: 0
+            margin-left: 0

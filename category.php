@@ -35,7 +35,7 @@ $cat_describe = $cat_object->category_description;
                 <div class="hero_content">
                     <div class="container">
                         <?php if ( strlen($cat_title) > 0 ): ?>
-                            <h3 class="reset_top f-san"><?php echo $cat_title; ?></h3>
+                            <h3 class="reset-top f-san"><?php echo $cat_title; ?></h3>
                         <?php endif; ?>
                         <?php if ( strlen($cat_describe) > 0 ): ?>
                             <h1 class="reset"><?php echo $cat_describe; ?></h1>

@@ -286,11 +286,50 @@ window.onload = function () {
       pagination_block.appendChild(template);
     }
   }();
+
+  var MExtentions = function () {
+    return {
+      'operation': function operation(object) {
+        _operation(object);
+      }
+    };
+
+    function _operation(object) {
+      var button = document.querySelector(".".concat(object.button)),
+          wrapper = document.querySelector(".".concat(object.wrapper)),
+          form_inputs = _toConsumableArray(document.querySelectorAll(".".concat(object.form_inputs))),
+          classes = object.classes;
+
+      if (button && wrapper && form_inputs) {
+        var wrapper_height = "".concat(wrapper.offsetHeight, "px");
+        Mclass.addClass(classes.wrapper__disable, wrapper);
+        button.addEventListener('click', function () {
+          wrapper.style.maxHeight = wrapper_height; //Manipulations with classes
+
+          Mclass.addClass(classes.button__disable, this);
+          Mclass.removeClass(classes.wrapper__disable, wrapper); //Remove max-height from wrapper
+
+          setTimeout(function () {
+            wrapper.style.maxHeight = 'none';
+          }, 800); //Remove button
+
+          this.remove(); //Fade for inputs
+
+          form_inputs.forEach(function (el, index) {
+            var input = el;
+            setTimeout(function () {
+              Mclass.removeClass(classes.input__disable, input);
+            }, index * 400);
+          });
+        });
+      }
+    }
+  }();
   /**
-  * 
-  * Initialize slider proposition posts
-  * 
-  */
+   * 
+   * Initialize slider proposition posts
+   * 
+   */
 
 
   var propSlider = new Mslider.init({
@@ -339,12 +378,28 @@ window.onload = function () {
    * 
    */
 
-  Mheader.mobileList();
+  new Mheader.mobileList();
   /**
    * 
    * Initialize header on scroll function
    * 
    */
 
-  Mheader.header_scroll();
+  new Mheader.header_scroll();
+  /**
+   * 
+   * Initialize operation block
+   * 
+   */
+
+  new MExtentions.operation({
+    button: 'block-operation__button',
+    wrapper: 'block-operation__wrapper',
+    form_inputs: 'form-operation__visibility',
+    classes: {
+      button__disable: 'block-operation__button--disabled',
+      wrapper__disable: 'block-operation__wrapper--disabled',
+      input__disable: 'form-operation__visibility--disabled'
+    }
+  });
 };

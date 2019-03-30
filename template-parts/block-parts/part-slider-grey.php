@@ -25,10 +25,10 @@ $sygnet = wp_get_attachment_image(carbon_get_theme_option('general_sygnet_mini')
                                     <div class="ntb-col-4 reset">
                                         <div class="pt32 pr16 pb64 pl64">
                                             <div class="card_title">
-                                                <h2 class="reset_top mb32"><?php echo $title; ?></h2>
+                                                <h2 class="reset-top mb32"><?php echo $title; ?></h2>
                                             </div>
                                             <div class="card_more">
-                                                <a href="<?php echo $url; ?>" class="link link_more link_more__black reset_link">Czytaj więcej</a>
+                                                <a href="<?php echo $url; ?>" class="link link-more link-more--black reset-link">Czytaj więcej</a>
                                             </div>
                                         </div>
                                     </div>

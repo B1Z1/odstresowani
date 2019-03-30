@@ -9,7 +9,7 @@ $post_names = array('Aktualności','Strefa wiedzy');
 
         <div class="row">
 
-            <ul class="recent-posts_vh_pagination pt64 pb64 flex-kit jcc fwrap reset_list">
+            <ul class="recent-posts_vh_pagination pt64 pb64 flex-kit jcc fwrap reset-list">
             </ul>
             <?php foreach ( $post_types as $key => $post_type ): $posts = new WP_Query('post_type=' . $post_type); ?>
 

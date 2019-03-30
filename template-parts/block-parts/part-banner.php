@@ -19,5 +19,5 @@ $icon = wp_get_attachment_image_src( carbon_get_theme_option('general_sygnet_min
                 <h4 class="block--texcen f-san c-gt">Autor obrazu: <?php echo $autor; ?></h4>
             <?php endif; ?>
         </div>
-    <div class="container container_960 header__triger">
+    <div class="container container-960 header__triger">
 <?php endif; ?>

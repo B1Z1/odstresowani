@@ -32,7 +32,7 @@ $cat_describe = $cat_id->description;
             <div class="filter_back bck-blck"></div>
             <div class="hero_content">
                 <div class="container">
-                    <h3 class="reset_top f-san"><?php echo $cat_title; ?></h3>
+                    <h3 class="reset-top f-san"><?php echo $cat_title; ?></h3>
                     <h1 class="reset"><?php echo $cat_describe; ?></h1>
                 </div>
             </div>

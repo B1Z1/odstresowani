@@ -49,21 +49,25 @@ table {
 .reset {
   padding: 0 !important;
   margin: 0 !important; }
-  .reset_top {
-    padding-top: 0 !important;
-    margin-top: 0 !important; }
-  .reset_bottom {
-    padding-bottom: 0 !important;
-    margin-bottom: 0 !important; }
-  .reset_link {
-    color: inherit;
-    text-decoration: none; }
-  .reset_list {
-    list-style: none; }
-    .reset_list li:first-child {
-      margin-left: 0; }
-    .reset_list li:last-child {
-      margin-right: 0; }
+
+.reset-top {
+  padding-top: 0 !important;
+  margin-top: 0 !important; }
+
+.reset-bottom {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important; }
+
+.reset-link {
+  color: inherit;
+  text-decoration: none; }
+
+.reset-list {
+  list-style: none; }
+  .reset-list li:first-child {
+    margin-left: 0; }
+  .reset-list li:last-child {
+    margin-right: 0; }
 
 /* Include Fonts */
 @font-face {
@@ -160,11 +164,12 @@ table {
 .bck-op {
   background: #0052C3; }
 
-.bck-gradbp {
-  background: #63ebd2;
-  background: -webkit-gradient(linear, left top, left bottom, from(#63ebd2), to(#a951bb));
-  background: linear-gradient(to bottom, #63ebd2 0%, #a951bb 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#63ebd2', endColorstr='#a951bb',GradientType=0 ); }
+/* Background gradient */
+.bck-gradient--blue {
+  background: #4693ff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#4693ff), to(#0051c3));
+  background: linear-gradient(to bottom, #4693ff 0%, #0051c3 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4693ff', endColorstr='#0051c3', GradientType=1 ); }
 
 .filter_zmax {
   z-index: 10; }
@@ -206,6 +211,7 @@ html, body {
   line-height: 24px;
   font-family: 'value-regular', sans-serif;
   font-weight: 400;
+  scroll-behavior: smooth;
   overflow-x: hidden; }
 
 p {
@@ -907,10 +913,9 @@ strong {
   padding-left: 16px;
   margin-right: auto;
   margin-left: auto; }
-  .container_960 {
-    max-width: 960px; }
-  .container_640 {
-    max-width: 640px; }
+
+.container-960 {
+  max-width: 960px; }
 
 /* Modules */
 .header {
@@ -940,7 +945,7 @@ strong {
     opacity: 1;
     visibility: visible; }
   .header:hover .header_logo {
-    background: black; }
+    color: black; }
   .header_list li:hover .header_submenu {
     opacity: 1;
     visibility: visible; }
@@ -1138,6 +1143,24 @@ strong {
     -o-object-fit: cover;
     object-fit: cover; }
 
+/* Block for page "River Operation" */
+.block-operation {
+  text-align: center; }
+  .block-operation__button {
+    border-radius: 4px;
+    -webkit-transition: .3s all;
+    transition: .3s all; }
+    .block-operation__button--disabled {
+      opacity: 0;
+      visibility: hidden; }
+  .block-operation__wrapper {
+    text-align: left;
+    overflow: hidden;
+    -webkit-transition: .8s all;
+    transition: .8s all; }
+    .block-operation__wrapper--disabled {
+      max-height: 0; }
+
 @media only screen and (max-width: 768px) {
   .block-image--full, .block-image--small {
     height: 50vh; } }
@@ -1241,11 +1264,15 @@ strong {
   .card_image__328, .card_image__swiper {
     height: 256px; } }
 
-.page_title {
+.page__title {
   position: relative;
   text-align: center; }
 
-.page_mind {
+.page__content p {
+  font-size: 1.5rem;
+  line-height: 2.25rem; }
+
+.page__mind {
   position: relative;
   height: 60vh; }
 
@@ -1350,69 +1377,6 @@ strong {
 .contact_content {
   z-index: 11; }
 
-.contact_form {
-  position: relative;
-  width: 100%; }
-  .contact_form p {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center; }
-  .contact_form .wpcf7-validation-errors, .contact_form .ajax-loader {
-    display: none !important; }
-  .contact_form .your-name input, .contact_form .your-name textarea, .contact_form .your-email input, .contact_form .your-email textarea, .contact_form .your-message input, .contact_form .your-message textarea {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 16px;
-    margin-bottom: 16px;
-    color: black;
-    border: none;
-    outline: none;
-    font-size: 1rem;
-    font-family: value-regular; }
-    .contact_form .your-name input::-webkit-input-placeholder, .contact_form .your-name textarea::-webkit-input-placeholder, .contact_form .your-email input::-webkit-input-placeholder, .contact_form .your-email textarea::-webkit-input-placeholder, .contact_form .your-message input::-webkit-input-placeholder, .contact_form .your-message textarea::-webkit-input-placeholder {
-      color: black; }
-    .contact_form .your-name input:-ms-input-placeholder, .contact_form .your-name textarea:-ms-input-placeholder, .contact_form .your-email input:-ms-input-placeholder, .contact_form .your-email textarea:-ms-input-placeholder, .contact_form .your-message input:-ms-input-placeholder, .contact_form .your-message textarea:-ms-input-placeholder {
-      color: black; }
-    .contact_form .your-name input::-ms-input-placeholder, .contact_form .your-name textarea::-ms-input-placeholder, .contact_form .your-email input::-ms-input-placeholder, .contact_form .your-email textarea::-ms-input-placeholder, .contact_form .your-message input::-ms-input-placeholder, .contact_form .your-message textarea::-ms-input-placeholder {
-      color: black; }
-    .contact_form .your-name input::placeholder, .contact_form .your-name textarea::placeholder, .contact_form .your-email input::placeholder, .contact_form .your-email textarea::placeholder, .contact_form .your-message input::placeholder, .contact_form .your-message textarea::placeholder {
-      color: black; }
-  .contact_form .your-name textarea, .contact_form .your-email textarea, .contact_form .your-message textarea {
-    resize: none; }
-  .contact_form .wpcf7-not-valid-tip {
-    margin-bottom: 16px;
-    text-decoration: underline;
-    color: white; }
-  .contact_form .your-name, .contact_form .your-email {
-    display: block;
-    width: calc( 50% - 16px); }
-  .contact_form .your-name {
-    margin-right: 16px; }
-  .contact_form .your-email {
-    margin-left: 16px; }
-  .contact_form .your-message {
-    width: 100%; }
-  .contact_form .wpcf7-submit {
-    padding: 8px 64px;
-    background: white;
-    border: none;
-    outline: none;
-    font-size: 1rem;
-    font-family: value-regular;
-    cursor: pointer; }
-  .contact_form .wpcf7-mail-sent-ok, .contact_form .wpcf7-response-output, .contact_form .wpcf7-mail-sent-ng, .contact_form .wpcf7-spam-blocked, .contact_form .wpcf7-validation-errors {
-    font-size: 1.5rem;
-    border: none;
-    font-family: value-black;
-    text-decoration: underline;
-    text-align: center; }
-
 .grecaptcha-badge {
   z-index: 999; }
 
@@ -1434,7 +1398,7 @@ strong {
   .er-404__404 {
     font-size: 10rem; }
 
-.link_category {
+.link-category {
   display: inline-block;
   padding-top: 8px;
   padding-right: 24px;
@@ -1449,21 +1413,21 @@ strong {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
-  .link_category:hover {
+  .link-category:hover {
     color: #B9B9B9;
     background: white; }
-  .link_category__active {
+  .link-category--active {
     color: #DFE0DE;
     background: white; }
 
-.link_more {
+.link-more {
   position: relative;
   text-transform: uppercase; }
-  .link_more__black:before {
+  .link-more--black:before {
     background: black !important; }
-  .link_more__black:after {
+  .link-more--black:after {
     background: black !important; }
-  .link_more:before {
+  .link-more:before {
     content: '';
     position: absolute;
     bottom: -1px;
@@ -1473,7 +1437,7 @@ strong {
     background: white;
     -webkit-transition: .5s all;
     transition: .5s all; }
-  .link_more:after {
+  .link-more:after {
     content: '';
     position: absolute;
     bottom: -1px;
@@ -1483,12 +1447,12 @@ strong {
     background: white;
     -webkit-transition: .5s all;
     transition: .5s all; }
-  .link_more:hover:before {
+  .link-more:hover:before {
     left: 100%; }
-  .link_more:hover:after {
+  .link-more:hover:after {
     right: 100%; }
 
-.link_share {
+.link-share {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1504,12 +1468,170 @@ strong {
   border-radius: 12px;
   border: 2px solid #DFE0DE; }
 
+.link-icon {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px; }
+  .link-icon__icon {
+    width: 100%;
+    vertical-align: middle; }
+
 @media only screen and (max-width: 425px) {
-  .link_share {
+  .link-share {
     margin-right: 0;
     margin-left: 0; }
-    .link_share:last-child {
+    .link-share:last-child {
       margin-top: 16px; } }
+
+.button {
+  font-size: 1rem;
+  font-family: value-regular;
+  border: none;
+  outline: none;
+  cursor: pointer; }
+
+.button-scroll {
+  position: fixed;
+  bottom: 16px;
+  right: 20px;
+  padding: 8px;
+  background: white;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 999; }
+  .button-scroll__sygnet {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle; }
+  .button-scroll--disabled {
+    visibility: hidden;
+    opacity: 0; }
+
+.form .wpcf7-mail-sent-ok, .form .wpcf7-response-output, .form .wpcf7-mail-sent-ng, .form .wpcf7-spam-blocked, .form .wpcf7-validation-errors {
+  font-size: 1rem;
+  border: none;
+  font-family: value-black;
+  text-decoration: underline;
+  text-align: center; }
+
+.form__input {
+  padding-top: 8px;
+  padding-right: 16px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  border-radius: 4px;
+  font-family: value-regular;
+  font-size: .9rem;
+  outline: none; }
+
+/* Form operation for page "Operation river" */
+.form-operation span.wpcf7-list-item, .form-operation__checkbox, .form-operation p {
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0; }
+
+.form-operation__visibility {
+  -webkit-transition: .5s all;
+  transition: .5s all; }
+  .form-operation__visibility--disabled {
+    opacity: 0;
+    visibility: hidden; }
+
+.form-operation__input {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 16px;
+  color: #DFE0DE;
+  border: 1px solid #DFE0DE;
+  font-size: 1rem; }
+  .form-operation__input:focus {
+    color: #0052C3;
+    border: 1px solid #0052C3; }
+
+.form-operation__radio input[type=radio] {
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  vertical-align: middle; }
+
+.form-operation__radio span.wpcf7-list-item {
+  margin-right: 32px;
+  font-size: 1rem;
+  line-height: 1.5rem; }
+  .form-operation__radio span.wpcf7-list-item label {
+    cursor: pointer; }
+
+.form-operation__button {
+  margin-top: 16px;
+  padding-top: 8px;
+  padding-right: 16px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  color: white;
+  background: #4693ff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#4693ff), to(#0051c3));
+  background: linear-gradient(to bottom, #4693ff 0%, #0051c3 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4693ff', endColorstr='#0051c3', GradientType=1 );
+  border-radius: 4px; }
+  .form-operation__button:disabled {
+    background: #DFE0DE; }
+
+/* Contact form for page "Contact" */
+.form-contact {
+  position: relative;
+  width: 100%; }
+  .form-contact p {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .form-contact .wpcf7-validation-errors, .form-contact .ajax-loader {
+    display: none !important; }
+  .form-contact .your-name input, .form-contact .your-name textarea, .form-contact .your-email input, .form-contact .your-email textarea, .form-contact .your-message input, .form-contact .your-message textarea {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 16px;
+    color: black;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-family: value-regular;
+    color: black; }
+  .form-contact .your-name textarea, .form-contact .your-email textarea, .form-contact .your-message textarea {
+    resize: none; }
+  .form-contact .wpcf7-not-valid-tip {
+    margin-bottom: 16px;
+    text-decoration: underline;
+    color: white; }
+  .form-contact .your-name, .form-contact .your-email {
+    display: block;
+    width: calc( 50% - 16px); }
+  .form-contact .your-name {
+    margin-right: 16px; }
+  .form-contact .your-email {
+    margin-left: 16px; }
+  .form-contact .your-message {
+    width: 100%; }
+  .form-contact .wpcf7-submit {
+    padding: 8px 64px;
+    background: white;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-family: value-regular;
+    cursor: pointer; }
 
 .icon {
   display: -webkit-box;

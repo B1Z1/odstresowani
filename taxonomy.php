@@ -30,7 +30,7 @@ $cat_image = wp_get_attachment_image_src(carbon_get_term_meta($cat->term_id, 'ca
             <div class="filter_back bck-blck"></div>
             <div class="hero_content">
                 <div class="container">
-                    <h3 class="reset_top f-san"><?php echo single_cat_title(); ?></h3>
+                    <h3 class="reset-top f-san"><?php echo single_cat_title(); ?></h3>
                     <?php if ( category_description() ): ?>
                         <h1 class="reset"><?php echo wp_strip_all_tags(category_description()); ?></h1>
                     <?php endif; ?>

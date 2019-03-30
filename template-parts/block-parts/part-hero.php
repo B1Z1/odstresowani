@@ -36,7 +36,7 @@ $link = $block['hero_url'];
 
                 <?php if ( $title ): ?>
 
-                    <h3 class="reset_top f-san"><?php echo $title; ?></h3>
+                    <h3 class="reset-top f-san"><?php echo $title; ?></h3>
 
                 <?php endif; ?>
 
@@ -49,7 +49,7 @@ $link = $block['hero_url'];
                 <?php if ( $link ): ?>
 
                     <div class="hero_links f-vb mt64">
-                        <a href="<?php echo $link; ?>" class="link link_more reset_link">Czytaj więcej</a>
+                        <a href="<?php echo $link; ?>" class="link link-more reset-link">Czytaj więcej</a>
                     </div>
 
                 <?php endif; ?>

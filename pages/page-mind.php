@@ -26,17 +26,17 @@ $categories = get_terms('strefa-wiedzy-kategorie', array(
 
     <main class="main mb64">
         <section class="page">
-            <div class="page_title mb160 pt160">
-                <div class="container container_960">
+            <div class="page__title mb160 pt160">
+                <div class="container container-960">
                     <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'full'); ?>" alt="Page sygnet" class="post_sygnet">
                 </div>
             </div>
-            <div class="container container_960 header__triger">
+            <div class="container container-960 header__triger">
                 <!--  Breadcrumbs start  --> 
-                <?php yoast_breadcrumb( '<div id="breadcrumbs" class="breadcrumbs reset_top f-vb c-gs mb64">','</div>' ); ?>
+                <?php yoast_breadcrumb( '<div id="breadcrumbs" class="breadcrumbs reset-top f-vb c-gs mb64">','</div>' ); ?>
                 <!--  Breadcrumbs end  --> 
                 
-                <div class="page_mind">
+                <div class="page__mind">
                     <?php foreach ( $categories as $category ):
                         $cat_id = $category->term_id;
                         $title = $category->name;
@@ -59,7 +59,7 @@ $categories = get_terms('strefa-wiedzy-kategorie', array(
                             }
                         </style>
                         <div class="mind mind_<?php echo $cat_id; ?>">
-                            <a href="<?php echo $url; ?>" class="mind_cat mind_cat_<?php echo $cat_id; ?> reset_link f-vb"><?php echo $title; ?></a>
+                            <a href="<?php echo $url; ?>" class="mind_cat mind_cat_<?php echo $cat_id; ?> reset-link f-vb"><?php echo $title; ?></a>
                             <ul class="mind_posts">
                                 <?php
                                 $args_p = array(
@@ -73,7 +73,7 @@ $categories = get_terms('strefa-wiedzy-kategorie', array(
                                 if ( $posts->have_posts() ):
                                     while ( $posts->have_posts() ): $posts->the_post(); ?>
 
-                                        <li><a href="<?php the_permalink(); ?>" class="reset_link"><?php echo wp_trim_words(get_the_title(), 2, '...'); ?></a></li>
+                                        <li><a href="<?php the_permalink(); ?>" class="reset-link"><?php echo wp_trim_words(get_the_title(), 2, '...'); ?></a></li>
 
                                     <?php endwhile; ?>
                                 <?php wp_reset_postdata(); endif; ?>
