@@ -460,7 +460,7 @@ class Association_Field extends Field {
 	public function get_post_options_sql_select_clause( $fields ) {
 		global $wpdb;
 
-		return $fields . " , `{$wpdb->posts}`.`post_title` AS `title`, 'post' AS `type`, `{$wpdb->posts}`.`post_type` AS `subtype` ";
+		return $fields . " , `{$wpdb->posts}`.`post__title` AS `title`, 'post' AS `type`, `{$wpdb->posts}`.`post_type` AS `subtype` ";
 	}
 
 	/**

@@ -18,11 +18,11 @@ $link = $block['hero_url'];
 </div>
     <!-- Hero banner start -->
     <section class="hero c-wh" <?php if ( $back_image ): ?>style="background-image: url( <?php echo $back_image; ?> )"<?php endif; ?>>
-        <div class="filter filter_back filter_zmax bck-blck"></div>
+        <div class="filter filter-back filter--zmax bck-blck"></div>
 
         <?php if ( $check == 'video' ): ?>
 
-            <video class="filter filter_video" muted autoplay loop>
+            <video class="filter filter-video" muted autoplay loop>
                 <source src="<?php echo $video_mp4; ?>" type="video/mp4">
                 <?php if ( $video_ogg ): ?>
                     <source src="<?php echo $video_ogg; ?>" type="video/ogg">

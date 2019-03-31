@@ -381,13 +381,6 @@ window.onload = function () {
   new Mheader.mobileList();
   /**
    * 
-   * Initialize header on scroll function
-   * 
-   */
-
-  new Mheader.header_scroll();
-  /**
-   * 
    * Initialize operation block
    * 
    */
@@ -402,4 +395,11 @@ window.onload = function () {
       input__disable: 'form-operation__visibility--disabled'
     }
   });
+  /**
+   * 
+   * Initialize header on scroll function
+   * 
+   */
+
+  new Mheader.header_scroll();
 };

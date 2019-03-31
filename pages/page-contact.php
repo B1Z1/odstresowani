@@ -29,9 +29,9 @@ $video_ogg = wp_get_attachment_url(carbon_get_theme_option('contact_film_ogg'));
         <main class="main">
 
             <section class="contact block block--hidden pt128 pb128 c-wh">
-                <div class="filter filter_back filter_zmax bck-blck"></div>
+                <div class="filter filter-back filter--zmax bck-blck"></div>
                 <?php if ( $video_mp4 ): ?>
-                    <video class="filter filter_video" muted autoplay loop>
+                    <video class="filter filter-video" muted autoplay loop>
                         <source src="<?php echo $video_mp4; ?>" type="video/mp4">
                         <?php if ( $video_ogg ): ?>
                             <source src="<?php echo $video_ogg; ?>" type="video/ogg">
@@ -39,7 +39,7 @@ $video_ogg = wp_get_attachment_url(carbon_get_theme_option('contact_film_ogg'));
                         Your browser does not support the video tag.
                     </video>
                 <?php endif; ?>
-                <div class="contact_content post block">
+                <div class="contact__content post block">
                     <div class="container">
                         <div class="row">
                             <div class="ntb-col-10 mauto">

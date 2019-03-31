@@ -1,30 +1,29 @@
 .footer
     position: relative
-    &_social
-        &__el
-            a
-                position: relative
-                display: inline-block
-                width: 24px
-                height: 24px
-                vertical-align: middle
-                img
-                    width: 100%
-                    height: 100%
-        
+.footer-social
+    &__el a
+        position: relative
+        display: inline-block
+        width: 24px
+        height: 24px
+        vertical-align: middle
+        img
+            width: 100% 
+            height: 100%
+          
 @media only screen and (max-width: 768px)
     .footer
         position: relative
-        &_social, &_politics
+        &-social, &-politics 
             margin-top: 16px
-        &_social
+        &-social
             justify-content: flex-start
-        &_politics
+        &-politics
             justify-content: center
             li:last-child
                 margin-right: 16px
             li:first-child
                 margin-left: 16px
-        &_rights
+        &-rights
             text-align: center
 

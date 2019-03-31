@@ -10,21 +10,21 @@ $sygnet = wp_get_attachment_image(carbon_get_theme_option('general_sygnet_mini')
                     <div class="swiper-wrapper">
                         <?php foreach ( $elements as $element ):
                             $post = get_page_by_title($element['grey_slider_post'], 'OBJECT', array('post', 'strefa-wiedzy', 'trudne-sprawy'));
-                            $title = $post->post_title;
+                            $title = $post->post__title;
                             $url = get_permalink($post->ID);
                             $image = get_the_post_thumbnail($post->ID, 'full'); ?>
 
                                 <!-- Swiper slide start -->
                                 <div class="swiper-slide card flex-kit fwrap bck-gm">
                                     <div class="card_wrapper ntb-col-6 reset">
-                                        <div class="card_image card_image__swiper">
-                                            <div class="filter_grad__black"></div>
+                                        <div class="card__image card__image__swiper">
+                                            <div class="filter-grad--black"></div>
                                             <?php echo $image; ?>
                                         </div>
                                     </div>
                                     <div class="ntb-col-4 reset">
                                         <div class="pt32 pr16 pb64 pl64">
-                                            <div class="card_title">
+                                            <div class="card__title">
                                                 <h2 class="reset-top mb32"><?php echo $title; ?></h2>
                                             </div>
                                             <div class="card_more">

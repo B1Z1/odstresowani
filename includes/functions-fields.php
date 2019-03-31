@@ -58,7 +58,7 @@ function crb_attach_theme_options() {
     $posts_ids = array_merge($posts_ids, $knowledge_ids);
     /**
      *
-     * Category container
+     * Term taxonomy = category
      *
      *
      */
@@ -68,6 +68,11 @@ function crb_attach_theme_options() {
             Field::make( 'image', 'category_sygnet', __( 'Sygnet kategorii' ) ),
             Field::make( 'image', 'category_image', __( 'Obraz kategorii' ) ),
         ) );
+    /**
+     * 
+     * Term taxonomy = strefa-wiedzy-kategorie
+     * 
+     */
     Container::make( 'term_meta', __( 'Category Properties' ) )
         ->where( 'term_taxonomy', '=', 'strefa-wiedzy-kategorie' )
         ->add_fields( array(
@@ -81,11 +86,26 @@ function crb_attach_theme_options() {
                 ->set_attribute('type', 'number')
                 ->set_attribute('max', 100),
         ) );
+    /**
+     * 
+     * Term taxonomy = trudne-sprawy-kategorie
+     * 
+     */
     Container::make( 'term_meta', __( 'Category Properties' ) )
         ->where( 'term_taxonomy', '=', 'trudne-sprawy-kategorie' )
         ->add_fields( array(
             Field::make( 'image', 'category_sygnet', __( 'Sygnet kategorii' ) ),
             Field::make( 'image', 'category_image', __( 'Obraz kategorii' ) ),
+        ) );
+    /**
+     * 
+     * Term taxonomy = page
+     * 
+     */
+    Container::make( 'post_meta', __( 'Category Properties' ) )
+        ->where( 'post_type', '=', 'page' )
+        ->add_fields( array(
+            Field::make( 'image', 'page_sygnet', __( 'Sygnet strony' ) ),
         ) );
     /**
      *

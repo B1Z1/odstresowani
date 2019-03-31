@@ -76,28 +76,28 @@ if ( !function_exists( 'post_card_block' ) ){
 
         <a href="<?php echo $url; ?>" class="reset-link">
             <div class="card">
-                <div class="card_image card_image__192">
+                <div class="card__image card__image--192">
                     <?php echo $image; ?>
                 </div>
-                <div class="card_title mt16">
+                <div class="card__title mt16">
                     <h2 class="reset f-vb"><?php echo $title; ?></h2>
                 </div>
                 <ul class="flex-kit reset-list c-gt mt16">
                     <?php if ( $cat_list ): ?>
-                        <li class="card_cat f-san">
+                        <li class="card__cat f-san">
                             <span>
                                 <?php echo $cat_list; ?>
                             </span>
                         </li>
                     <?php endif; ?>
-                    <li class="card_date">
+                    <li class="card__date">
                         <span>
                              <i class="far fa-calendar-alt"></i>
                             <?php echo $date; ?>
                         </span>
                     </li>
                 </ul>
-                <div class="card_describe mt32">
+                <div class="card__describe mt32">
                     <h4 class="reset"><?php echo $describe; ?></h4>
                 </div>
             </div>
@@ -125,7 +125,7 @@ if ( !function_exists( 'post_card_photo' ) ){
         <!-- Post card for posts start -->
 
         <div class="card bck-gt pt16 pr16 pb32 pl16 mb64">
-            <div class="card_image card_image__192">
+            <div class="card__image card__image--192">
                 <?php echo $image; ?>
                 <div class="icon bck-gt">
                     <div class="icon_sygnet">
@@ -133,10 +133,10 @@ if ( !function_exists( 'post_card_photo' ) ){
                     </div>
                 </div>
             </div>
-            <div class="card_describe mbl-col-12 mauto pt32 f-san">
+            <div class="card__describe mbl-col-12 mauto pt32 f-san">
                 <h4 class="reset"><?php echo $describe; ?></h4>
             </div>
-            <div class="card_date card_date__abr">
+            <div class="card__date card__date--abr">
                 <?php echo $date; ?>
             </div>
         </div>
@@ -176,30 +176,30 @@ if ( !function_exists( 'post_card_list' ) ){
         <a href="<?php echo $url; ?>" class="reset-link mb32">
             <div class="card flex-kit fwrap row">
                 <div class="ntb-col-5 pc-col-6">
-                    <div class="card_image card_image__328">
+                    <div class="card__image card__image--328">
                         <?php echo $image; ?>
                     </div>
                 </div>
                 <div class="ntb-col-7 pc-col-6">
-                    <div class="card_title mt16">
+                    <div class="card__title mt16">
                         <h2 class="reset f-vb"><?php echo $title; ?></h2>
                     </div>
                     <ul class="flex-kit reset-list c-gt mt16">
                         <?php if ( $cat_list ): ?>
-                            <li class="card_cat f-san">
+                            <li class="card__cat f-san">
                         <span>
                             <?php echo $cat_list; ?>
                         </span>
                             </li>
                         <?php endif; ?>
-                        <li class="card_date">
+                        <li class="card__date">
                         <span>
                              <i class="far fa-calendar-alt"></i>
                             <?php echo $date; ?>
                         </span>
                         </li>
                     </ul>
-                    <div class="card_describe mt32">
+                    <div class="card__describe mt32">
                         <h4 class="reset"><?php echo $describe; ?></h4>
                     </div>
                 </div>
@@ -226,10 +226,10 @@ if ( !function_exists( 'post_card_mini' ) ){
         ?>
         <div class="card mb32">
             <a href="<?php echo $url; ?>" class="reset-link">
-                <div class="card_image card_image__192 mb32">
+                <div class="card__image card__image--192 mb32">
                     <?php echo $image; ?>
                 </div>
-                <div class="card_title card_title__center">
+                <div class="card__title card__image--center">
                     <h2 class="f-vb"><?php echo $title; ?></h2>
                 </div>
             </a>

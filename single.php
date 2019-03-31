@@ -26,11 +26,11 @@ get_header();
                     $cat_sygnet = wp_get_attachment_image_src($cat_image_id, 'full')[0];
                     ?>
 
-                    <div class="post_title mb160 pt128 pb160 bck-gm">
+                    <div class="post__title mb160 pt128 pb160 bck-gm">
                         <div class="container">
                             <h3 class="reset f-san"><?php the_title(); ?></h3>
                             <?php if ( $cat_sygnet ): ?>
-                                <img src="<?php echo $cat_sygnet; ?>" alt="Category sygnet" class="post_sygnet">
+                                <img src="<?php echo $cat_sygnet; ?>" alt="Category sygnet" class="post__sygnet">
                             <?php endif; ?>
                         </div>
                     </div>
@@ -41,7 +41,7 @@ get_header();
                         <?php the_content(); ?>
                         <?php get_template_part('template-parts/content', 'share'); ?>
                     </div>
-                    <div class="post_avatar mt64 mb64 mauto">
+                    <div class="post__avatar mt64 mb64 mauto">
                         <img src="<?php echo get_avatar_url(get_the_author_meta('id')); ?>" alt="Avatar">
                     </div>
 

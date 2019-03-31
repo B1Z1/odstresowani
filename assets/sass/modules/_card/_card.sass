@@ -2,34 +2,34 @@
     box-sizing: border-box
     position: relative
     width: 100%
-    &_image, &_title, &_cat, &_date, &_describe
+    &__image, &__title, &__cat, &__date, &__describe
         position: relative
-    &_wrapper
+    &__wrapper
         height: 100%
-    &_image
+    &__image
         position: relative
         width: 100%
         height: 100%
-        &__328
+        &--328
             height: 328px
-        &__192
+        &--192
             height: 192px
         img
-            position: absolute
+            position: absolute 
             top: 0
             left: 0
             width: 100%
             height: 100%
             object-fit: cover
-    &_title
-        &__center
+    &__title
+        &--center
             text-align: center
-    &_cat
+    &__cat
         padding-right: 14px
         margin-right: 16px
         border-right: 1px dotted $grey-tertiary
-    &_date
-        &__abr
+    &__date
+        &--abr
             position: absolute
             bottom: 4px
             right: 16px
@@ -38,12 +38,12 @@
 
 @media only screen and (max-width: 1366px)
     .card
-        &_image
-            &__328
+        &__image
+            &--328
                 height: 288px
 
 @media only screen and (max-width: 768px)
     .card
-        &_image
-            &__328, &__swiper
+        &__image
+            &--328, &__swiper
                 height: 256px

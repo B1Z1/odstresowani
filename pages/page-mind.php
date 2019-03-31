@@ -28,7 +28,7 @@ $categories = get_terms('strefa-wiedzy-kategorie', array(
         <section class="page">
             <div class="page__title mb160 pt160">
                 <div class="container container-960">
-                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'full'); ?>" alt="Page sygnet" class="post_sygnet">
+                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'full'); ?>" alt="Page sygnet" class="post__sygnet">
                 </div>
             </div>
             <div class="container container-960 header__triger">

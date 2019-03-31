@@ -15,9 +15,9 @@ class WP_Toolset {
 	 * @param int $id
 	 * @return string $title The title of the item.
 	 */
-	public function get_post_title( $id ) {
+	public function get_post__title( $id ) {
 		$post = get_post( $id );
-		return $post ? $post->post_title : '';
+		return $post ? $post->post__title : '';
 	}
 
 	/**

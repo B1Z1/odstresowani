@@ -25,10 +25,10 @@ $sygnet = wp_get_attachment_image_src(carbon_get_theme_option('general_sygnet_se
         <main class="main">
             <?php if (have_posts()): ?>
 
-                <div class="post_title mb160 pt128 pb160 bck-gm">
+                <div class="post__title mb160 pt128 pb160 bck-gm">
                     <div class="container container-960">
                         <h3 class="reset f-san">Posty szukane według: "<?php echo get_search_query(); ?>"</h3>
-                        <img src="<?php echo $sygnet; ?>" alt="Category sygnet" class="post_sygnet">
+                        <img src="<?php echo $sygnet; ?>" alt="Category sygnet" class="post__sygnet">
                     </div>
                 </div>
                 <!-- Search block -->
@@ -71,9 +71,9 @@ $sygnet = wp_get_attachment_image_src(carbon_get_theme_option('general_sygnet_se
                 <!-- Search not fount -->
                 <section class="search-page_nfound block block--hidden pt128 pb128 c-wh">
 
-                    <div class="filter filter_back filter_zmax bck-blck"></div>
+                    <div class="filter filter-back filter--zmax bck-blck"></div>
                     <?php if ($video_mp4): ?>
-                        <video class="filter filter_video" muted autoplay loop>
+                        <video class="filter filter-video" muted autoplay loop>
                             <source src="<?php echo $video_mp4; ?>" type="video/mp4">
                             <?php if ($video_ogg): ?>
                                 <source src="<?php echo $video_ogg; ?>" type="video/ogg">

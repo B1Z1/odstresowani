@@ -93,21 +93,23 @@ if ( !function_exists('nav_mobile') ) {
          * When it has sorted, I'm merging this two arrays in one $page
          *
          */
-        foreach ($items as $key => $item){
-            $have_children = carbon_get_nav_menu_item_meta($item->ID, 'menu_cat');
-            if ( $have_children ){
-                $categories[$key] = array(
-                    'url' => $item->url,
-                    'title' => $item->title,
-                    'cat' => $have_children,
-                );
-            }
-            else{
-                $urls[$key] = array(
-                    'url' => $item->url,
-                    'title' => $item->title,
-                    'cat' => false,
-                );
+        if ( $items ){
+            foreach ($items as $key => $item){
+                $have_children = carbon_get_nav_menu_item_meta($item->ID, 'menu_cat');
+                if ( $have_children ){
+                    $categories[$key] = array(
+                        'url' => $item->url,
+                        'title' => $item->title,
+                        'cat' => $have_children,
+                    );
+                }
+                else{
+                    $urls[$key] = array(
+                        'url' => $item->url,
+                        'title' => $item->title,
+                        'cat' => false,
+                    );
+                }
             }
         }
         $pages = array_merge($urls, $categories); ?>

@@ -25,11 +25,11 @@ $video_ogg = wp_get_attachment_url(carbon_get_theme_option('404_film_ogg')); ?>
 
     <main class="main">
 
-        <section class="er-404 m16 block block--hidden c-wh">
-            <div class="filter filter_back filter_zmax bck-blck"></div>
+        <section class="er404 m16 block block--hidden c-wh">
+            <div class="filter filter-back filter--zmax bck-blck"></div>
 
             <?php if ( $video_mp4 ): ?>
-                <video class="filter filter_video" muted autoplay loop>
+                <video class="filter filter-video" muted autoplay loop>
                     <source src="<?php echo $video_mp4; ?>" type="video/mp4">
                     <?php if ( $video_ogg ): ?>
                         <source src="<?php echo $video_ogg; ?>" type="video/ogg">
@@ -38,8 +38,8 @@ $video_ogg = wp_get_attachment_url(carbon_get_theme_option('404_film_ogg')); ?>
                 </video>
             <?php endif; ?>
 
-            <div class="er-404_content block flex-kit jcc">
-                <h3><span class="er-404__404">404</span>Nie możemy znależć twojej strony</h3>
+            <div class="er404__content block flex-kit jcc">
+                <h3><span class="er404__404">404</span>Nie możemy znależć twojej strony</h3>
             </div>
         </section>
 
