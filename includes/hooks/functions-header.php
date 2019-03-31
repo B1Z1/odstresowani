@@ -25,11 +25,11 @@ function submenu($items, $item){
     }
     ?>
     <?php if ( !empty($children) ): ?>
-        <div class="header_submenu c-blck bck-gs">
+        <div class="header-submenu c-blck bck-gs">
             <div class="container container_968">
-                <ul class="header_submenu__list header_list reset-list pt32 pb32 flex-kit">
+                <ul class="header-submenu__list header-menu__list reset-list pt32 pb32 flex-kit">
                     <?php foreach ( $children as $child ): ?>
-                        <li class="mr16 ml16"><a href="<?php echo $child['url']; ?>" class="header_menu__hover reset-link"><?php echo $child['title']; ?></a></li>
+                        <li class="mr16 ml16"><a href="<?php echo $child['url']; ?>" class="header-menu__hover reset-link"><?php echo $child['title']; ?></a></li>
                     <?php endforeach; ?>
                 </ul>
             </div>
@@ -50,14 +50,14 @@ function submenu_category($post_type, $url, $title){
         'taxonomy' => $post_type,
     ));
     ?>
-    <li class="mr16 ml16"><a href="<?php echo $url; ?>" class="header_menu__hover reset-link"><?php echo $title; ?></a>
-    <div class="header_submenu pt24 pr24 pb24 pl24 c-wh bck-gt">
+    <li class="mr16 ml16"><a href="<?php echo $url; ?>" class="header-menu__hover reset-link"><?php echo $title; ?></a>
+    <div class="header-submenu pt24 pr24 pb24 pl24 c-wh bck-gt">
         <div class="d-flex fwrap row">
             <div class="ntb-col-1">
                 <div class="f-vb mr24 mt16 mb8">Kategorie</div>
             </div>
             <div class="ntb-col-9">
-                <ul class="header_submenu__list header_list reset-list flex-kit fwrap">
+                <ul class="header-submenu__list header-menu__list reset-list flex-kit fwrap">
                     <?php foreach ( $categories as $category ):
                         $title = $category->name;
                         $url = get_term_link($category->slug, $post_type);
@@ -117,12 +117,12 @@ if ( !function_exists('nav_mobile') ) {
         <?php if ( $items ): ?>
 
             <!-- Mobile menu start -->
-            <nav class="header_mobilenav c-blck bck-wh p32">
-                <div class="header_mobilenav__close">
+            <nav class="header-mobilenav c-blck bck-wh p32">
+                <div class="header-mobilenav__close">
                     <?php $close_button = carbon_get_theme_option('general_close_button'); ?>
                     <img src="<?php echo wp_get_attachment_image_src($close_button, 'full')[0]; ?>" alt="Close button">
                 </div>
-                <ul class="header_mobilenav__list reset-list">
+                <ul class="header-mobilenav__list reset-list">
 
                     <?php foreach ($pages as $page):
                     $url = $page['url'];
@@ -139,7 +139,7 @@ if ( !function_exists('nav_mobile') ) {
 
                 </ul>
                 <h3 class="mt16 mb16 f-vb"><a href="<?php echo $url; ?>" class="reset-link"><?php echo $title; ?></a></h3>
-                <ul class="header_mobilenav__list reset-list">
+                <ul class="header-mobilenav__list reset-list">
 
                     <?php foreach ($categories as $category):
                         $title_tax = $category->name;
@@ -176,22 +176,22 @@ function header_wrapper_start(){ ?>
 add_action('odstresowani_header_inside', 'header_sygnet', 10);
 if ( !function_exists('header_sygnet') ){
     function header_sygnet(){ ?>
-        <div class="header_logo mbl-col-10 pc-col-3">
+        <div class="header-logo mbl-col-10 pc-col-3">
             <figure class="f-vb">
                 <a href="<?php echo get_home_url(); ?>" class="flex-kit reset-link">
-                    <div class="header_sygnets">
+                    <div class="header-sygnets">
                         <?php
                         $sygnet_front = wp_get_attachment_image_src(carbon_get_theme_option('general_sygnet_front'), 'full')[0];
                         $sygnet_back = wp_get_attachment_image_src(carbon_get_theme_option('general_sygnet_back'), 'full')[0];
                         ?>
                         <?php if ( $sygnet_front ): ?>
-                            <img class="header_sygnet header_sygnet__white" src="<?php echo $sygnet_front; ?>" alt="Sygnet">
+                            <img class="header-sygnets__sygnet header-sygnets__sygnet--white" src="<?php echo $sygnet_front; ?>" alt="Sygnet">
                         <?php endif; ?>
                         <?php if ( $sygnet_back ): ?>
-                            <img class="header_sygnet header_sygnet__black" src="<?php echo $sygnet_back; ?>" alt="Sygnet">
+                            <img class="header-sygnets__sygnet header-sygnets__sygnet--black" src="<?php echo $sygnet_back; ?>" alt="Sygnet">
                         <?php endif; ?>
                     </div>
-                    <h4 class="header_logo reset"><?php echo get_bloginfo('name'); ?></h4>
+                    <h4 class="reset"><?php echo get_bloginfo('name'); ?></h4>
                 </a>
             </figure>
         </div>
@@ -204,9 +204,9 @@ if ( !function_exists('header_menu') ){
         $location = 'header';
         $items = wp_get_nav_menu_items($locations[$location]);
         ?>
-        <div class="header_menu mbl-col-6">
+        <div class="header-menu mbl-col-6">
             <nav class="row">
-                <ul class="header_list reset-list flex-kit jcc">
+                <ul class="header-menu__list reset-list flex-kit jcc">
                     <?php if ( $items ): ?>
                         <?php foreach ( $items as $item ):
                             $url = $item->url;
@@ -217,7 +217,7 @@ if ( !function_exists('header_menu') ){
                             submenu_category($post_type, $url, $title);
                         elseif ( $item->menu_item_parent == 0 ): ?>
                             <li class="mr16 ml16">
-                                <a href="<?php echo $url; ?>" class="header_menu__hover reset-link"><?php echo $title; ?></a>
+                                <a href="<?php echo $url; ?>" class="header-menu__hover reset-link"><?php echo $title; ?></a>
                                 <?php submenu($items, $item);  ?>
                             </li>
                         <?php endif; ?>
@@ -237,11 +237,11 @@ if ( !function_exists('header_extra_menu') ){
         ?>
         <div class="mbl-col-2 pc-col-3">
             <div class="clearfix">
-                <div class="header_hamburger ml32 fr">
+                <div class="header__hamburger ml32 fr">
                     <i class="fas fa-bars"></i>
                 </div>
-                <nav class="header_extramenu f-vb fr">
-                    <ul class="header_list reset-list flex-kit">
+                <nav class="header-extramenu f-vb fr">
+                    <ul class="header-menu__list reset-list flex-kit">
                         <?php if ( $items ): ?>
                             <?php foreach ($items as $item):
                                 $url = $item->url;

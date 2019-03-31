@@ -39,19 +39,18 @@ window.onload = function(){
                 return el.classList.contains(elclass);
             }
         }
-    }());
-
+    }()); 
+ 
     let Mheader = (function(){
         let header = document.querySelector('.header'),
-            header_list = document.querySelector('.header_list'),
-            header_mobilenav = document.querySelector('.header_mobilenav'),
+            header_mobilenav = document.querySelector('.header-mobilenav'),
             buttons = {
-                'close': document.querySelector('.header_mobilenav__close'),
-                'open': document.querySelector('.header_hamburger'),
+                'close': document.querySelector('.header-mobilenav__close'),
+                'open': document.querySelector('.header__hamburger'),
             };
             
         return {
-            'mobileList': function(){
+            'mobileList': function(){ 
                 if ( header ){
                     mobileList(header_mobilenav, buttons);
                 }
@@ -97,10 +96,10 @@ window.onload = function(){
                 el.forEach(entry => {
                     let is = entry.isIntersecting;
                     if ( is ){
-                        Mclass.addClass('header__active',header);
+                        Mclass.addClass('header--active',header);
                     }
                     else{
-                        Mclass.removeClass('header__active',header);
+                        Mclass.removeClass('header--active',header);
                     }
                 });
             }
@@ -119,11 +118,11 @@ window.onload = function(){
                 open = buttons.open;
 
             open.addEventListener('click', function(){
-                Mclass.containClass('header_mobilenav__active', nav) ? Mclass.removeClass('header_mobilenav__active', nav) :
-                                                                       Mclass.addClass('header_mobilenav__active', nav); 
+                Mclass.containClass('header-mobilenav--active', nav) ? Mclass.removeClass('header-mobilenav--active', nav) :
+                                                                       Mclass.addClass('header-mobilenav--active', nav); 
             });
             close.addEventListener('click', function(){
-                Mclass.removeClass('header_mobilenav__active', nav);
+                Mclass.removeClass('header-mobilenav--active', nav);
             });
         }
 
