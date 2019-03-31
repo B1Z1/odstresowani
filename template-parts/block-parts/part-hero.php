@@ -11,7 +11,7 @@ else{
 }
 
 $title = $block['hero_heading'];
-$content = $block['hero_content'];
+$content = $block['hero__content'];
 $link = $block['hero_url'];
 
 ?>
@@ -31,7 +31,7 @@ $link = $block['hero_url'];
             </video>
         <?php endif; ?>
 
-        <div class="hero_content">
+        <div class="hero__content">
             <div class="container">
 
                 <?php if ( $title ): ?>

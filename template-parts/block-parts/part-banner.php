@@ -10,7 +10,7 @@ $icon = wp_get_attachment_image_src( carbon_get_theme_option('general_sygnet_min
             <div class="block-image block-image--<?php echo $size ?>">
                 <img src="<?php echo $image; ?>" class="block-image__el" alt="Sygnet">
                 <div class="icon bck-wh">
-                    <div class="icon_sygnet">
+                    <div class="icon__sygnet">
                         <img src="<?php echo $icon; ?>" alt="Sygnet">
                     </div>
                 </div>

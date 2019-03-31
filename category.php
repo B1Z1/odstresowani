@@ -28,11 +28,11 @@ $cat_describe = $cat_object->category_description;
         <main class="main">
 
             <!-- Hero banner start -->
-            <section class="hero hero_center c-wh mb64" <?php if ( $cat_image ): ?>
+            <section class="hero hero--backcenter c-wh mb64" <?php if ( $cat_image ): ?>
                                             style="background-image: url( <?php echo wp_get_attachment_image_src($cat_image, 'full')[0]; ?>)"
                                             <?php endif; ?>>
                 <div class="filter-back bck-blck"></div>
-                <div class="hero_content">
+                <div class="hero__content">
                     <div class="container">
                         <?php if ( strlen($cat_title) > 0 ): ?>
                             <h3 class="reset-top f-san"><?php echo $cat_title; ?></h3>

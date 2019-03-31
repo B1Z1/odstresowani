@@ -128,7 +128,7 @@ if ( !function_exists( 'post_card_photo' ) ){
             <div class="card__image card__image--192">
                 <?php echo $image; ?>
                 <div class="icon bck-gt">
-                    <div class="icon_sygnet">
+                    <div class="icon__sygnet">
                         <img src="<?php echo $icon; ?>" alt="Sygnet">
                     </div>
                 </div>

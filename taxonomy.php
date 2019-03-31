@@ -26,9 +26,9 @@ $cat_image = wp_get_attachment_image_src(carbon_get_term_meta($cat->term_id, 'ca
     <main class="main">
 
         <!-- Hero banner start -->
-        <section class="hero hero_center c-wh mb64" <?php if ( $cat_image ): ?>style="background-image: url( <?php echo $cat_image; ?> )"<?php endif; ?>>
+        <section class="hero hero--backcenter c-wh mb64" <?php if ( $cat_image ): ?>style="background-image: url( <?php echo $cat_image; ?> )"<?php endif; ?>>
             <div class="filter-back bck-blck"></div>
-            <div class="hero_content">
+            <div class="hero__content">
                 <div class="container">
                     <h3 class="reset-top f-san"><?php echo single_cat_title(); ?></h3>
                     <?php if ( category_description() ): ?>

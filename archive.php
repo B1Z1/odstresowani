@@ -28,9 +28,9 @@ $cat_describe = $cat_id->description;
     <main class="main">
 
         <!-- Hero banner start -->
-        <section class="hero hero_center c-wh mb64" style="background-image: url( <?php echo wp_get_attachment_image_src($cat_image, 'full')[0]; ?> )">
+        <section class="hero hero--backcenter c-wh mb64" style="background-image: url( <?php echo wp_get_attachment_image_src($cat_image, 'full')[0]; ?> )">
             <div class="filter-back bck-blck"></div>
-            <div class="hero_content">
+            <div class="hero__content">
                 <div class="container">
                     <h3 class="reset-top f-san"><?php echo $cat_title; ?></h3>
                     <h1 class="reset"><?php echo $cat_describe; ?></h1>

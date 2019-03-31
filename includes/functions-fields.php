@@ -209,7 +209,7 @@ function crb_attach_theme_options() {
                 )),
             Field::make('text', 'hero_heading', __('Tytuł'))
                 ->set_attribute('maxLength', '60'),
-            Field::make('text', 'hero_content', __('Mały opis'))
+            Field::make('text', 'hero__content', __('Mały opis'))
                 ->set_attribute('maxLength', '140'),
             Field::make('text', 'hero_url', __('Link czytaj więcej')),
         ))

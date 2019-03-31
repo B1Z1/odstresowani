@@ -34,7 +34,7 @@ $sygnet = wp_get_attachment_image(carbon_get_theme_option('general_sygnet_mini')
                                     </div>
                                     <?php if ( $sygnet ): ?>
                                         <div class="icon bck-wh">
-                                            <div class="icon_sygnet">
+                                            <div class="icon__sygnet">
                                                 <?php echo $sygnet; ?>
                                             </div>
                                         </div>

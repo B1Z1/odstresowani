@@ -1343,9 +1343,9 @@ strong {
   position: absolute;
   -webkit-transition: .3s all;
   transition: .3s all; }
-  .mind:hover .mind_cat {
+  .mind:hover .mind__cat {
     z-index: 21; }
-  .mind:hover .mind_posts {
+  .mind:hover .mind__posts {
     top: calc(-150px + 1rem);
     left: calc(-250px + 50%);
     width: 500px;
@@ -1354,12 +1354,12 @@ strong {
     opacity: 1;
     visibility: visible;
     z-index: 20; }
-  .mind_cat {
+  .mind__cat {
     position: relative;
     z-index: 10;
     -webkit-transition: .5s all;
     transition: .5s all; }
-  .mind_posts {
+  .mind__posts {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1372,25 +1372,25 @@ strong {
     -webkit-transition: .5s all;
     transition: .5s all;
     z-index: 9; }
-    .mind_posts li {
+    .mind__posts li {
       position: absolute;
       display: inline-block;
       width: 128px;
       -webkit-hyphens: auto;
       -ms-hyphens: auto;
       hyphens: auto; }
-      .mind_posts li:nth-child(2), .mind_posts li:nth-child(3) {
+      .mind__posts li:nth-child(2), .mind__posts li:nth-child(3) {
         top: calc(50% - 1rem); }
-      .mind_posts li:nth-child(1), .mind_posts li:nth-child(4) {
+      .mind__posts li:nth-child(1), .mind__posts li:nth-child(4) {
         width: 100%;
         text-align: center; }
-      .mind_posts li:nth-child(1) {
+      .mind__posts li:nth-child(1) {
         top: 32px; }
-      .mind_posts li:nth-child(2) {
+      .mind__posts li:nth-child(2) {
         left: 16px; }
-      .mind_posts li:nth-child(3) {
+      .mind__posts li:nth-child(3) {
         right: 16px; }
-      .mind_posts li:nth-child(4) {
+      .mind__posts li:nth-child(4) {
         bottom: 32px; }
 
 @media only screen and (max-width: 768px) {
@@ -1401,7 +1401,7 @@ strong {
     left: 0 !important;
     margin-left: 4px;
     margin-right: 4px; }
-    .mind:hover .mind_posts {
+    .mind:hover .mind__posts {
       opacity: 0;
       visibility: hidden; } }
 
@@ -1681,11 +1681,11 @@ strong {
   height: 64px;
   border-radius: 50%;
   z-index: 999; }
-  .icon_sygnet {
+  .icon__sygnet {
     position: relative;
     width: 36px;
     height: 36px; }
-    .icon_sygnet img {
+    .icon__sygnet img {
       width: 100%; }
 
 .hero {
@@ -1699,7 +1699,7 @@ strong {
     position: relative;
     text-align: center;
     z-index: 12; }
-  .hero_center {
+  .hero--backcenter {
     background-position: center; }
 
 @media only screen and (max-width: 1024px) {

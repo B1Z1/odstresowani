@@ -53,14 +53,14 @@ $categories = get_terms('strefa-wiedzy-kategorie', array(
                                 top: <?php echo $top; ?>;
                                 left: <?php echo $left; ?>;
                             }
-                            .mind_cat_<?php echo $cat_id; ?>{
+                            .mind__cat_<?php echo $cat_id; ?>{
                                 color: <?php echo $color; ?>;
                                 font-size: <?php echo $font_s; ?>;
                             }
                         </style>
                         <div class="mind mind_<?php echo $cat_id; ?>">
-                            <a href="<?php echo $url; ?>" class="mind_cat mind_cat_<?php echo $cat_id; ?> reset-link f-vb"><?php echo $title; ?></a>
-                            <ul class="mind_posts">
+                            <a href="<?php echo $url; ?>" class="mind__cat mind__cat_<?php echo $cat_id; ?> reset-link f-vb"><?php echo $title; ?></a>
+                            <ul class="mind__posts">
                                 <?php
                                 $args_p = array(
                                     'post_type' => 'strefa-wiedzy',
