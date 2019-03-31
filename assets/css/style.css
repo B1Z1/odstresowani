@@ -1309,12 +1309,12 @@ strong {
 
 .searchform {
   text-align: right; }
-  .searchform_button, .searchform_input {
+  .searchform__button, .searchform__input {
     border: none;
     outline: none;
     color: white;
     background: transparent; }
-  .searchform_input {
+  .searchform__input {
     padding-top: 8px;
     padding-right: 16px;
     padding-bottom: 8px;
@@ -1323,18 +1323,18 @@ strong {
     transition: .3s all;
     font-family: value-regular;
     font-size: .9rem; }
-    .searchform_input:hover {
+    .searchform__input:hover {
       color: black;
       background: white; }
-    .searchform_input::-webkit-input-placeholder {
+    .searchform__input::-webkit-input-placeholder {
       color: white; }
-    .searchform_input:-ms-input-placeholder {
+    .searchform__input:-ms-input-placeholder {
       color: white; }
-    .searchform_input::-ms-input-placeholder {
+    .searchform__input::-ms-input-placeholder {
       color: white; }
-    .searchform_input::placeholder {
+    .searchform__input::placeholder {
       color: white; }
-  .searchform_button {
+  .searchform__button {
     padding: 8px;
     cursor: pointer;
     font-size: 1rem; }
