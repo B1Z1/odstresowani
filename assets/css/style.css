@@ -1123,7 +1123,7 @@ strong {
   position: relative;
   margin-right: auto;
   margin-left: auto; }
-  .block__photo > .card:last-of-type {
+  .block__photo > .card:last-of-typeb {
     margin-bottom: 0; }
   .block--texcen {
     text-align: center; }
@@ -1137,6 +1137,8 @@ strong {
     height: 992px; }
   .block-image--small {
     height: 499px; }
+  .block-image--256 {
+    height: 256px; }
   .block-image__el {
     position: absolute;
     top: 0;
@@ -1145,6 +1147,9 @@ strong {
     height: 100%;
     -o-object-fit: cover;
     object-fit: cover; }
+    .block-image__el--contain {
+      -o-object-fit: contain;
+      object-fit: contain; }
 
 /* Block for page "River Operation" */
 .block-operation {
