@@ -38,7 +38,7 @@ $categories = get_terms('strefa-wiedzy-kategorie', array(
                 
                 <div class="page__mind">
                     <?php foreach ( $categories as $category ):
-                        $cat_id = $category->term_id;
+                        $cat_id = pll_get_term($category->term_id);
                         $title = $category->name;
                         $url = get_term_link($cat_id);
                         $color = carbon_get_term_meta($cat_id, 'category_color');

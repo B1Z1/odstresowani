@@ -34,7 +34,7 @@ get_header();
                             <?php endif; ?>
                         </div>
                     </div>
-                    <div class="container container-960 header__triger">
+                    <div class="container container-960 post__content header__triger">
                         <!--  Breadcrumbs start  --> 
                         <?php yoast_breadcrumb( '<div id="breadcrumbs" class="breadcrumbs reset-top f-vb c-gs mb64">','</div>' ); ?>
                         <!--  Breadcrumbs end  --> 

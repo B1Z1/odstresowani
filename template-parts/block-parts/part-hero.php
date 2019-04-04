@@ -11,7 +11,7 @@ else{
 }
 
 $title = $block['hero_heading'];
-$content = $block['hero__content'];
+$content = $block['hero_content'];
 $link = $block['hero_url'];
 
 ?>

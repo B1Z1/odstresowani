@@ -1,6 +1,7 @@
 <?php
-$post_types = array('post','strefa-wiedzy');
-$post_names = array('Aktualności','Strefa wiedzy');
+global $currlang;
+$post_types = array('post','strefa-wiedzy'); 
+$post_names = array(pll__('Aktualności'),pll__('Strefa Wiedzy'));
 ?>
 </div>
 <!-- Recent posts slider start -->
@@ -11,13 +12,13 @@ $post_names = array('Aktualności','Strefa wiedzy');
 
             <ul class="recent-posts_vh_pagination pt64 pb64 flex-kit jcc fwrap reset-list">
             </ul>
-            <?php foreach ( $post_types as $key => $post_type ): $posts = new WP_Query('post_type=' . $post_type); ?>
+            <?php foreach ( $post_types as $key => $post_type ): ?>
 
                 <!-- Recent posts block start -->
                 <div class="recent-posts_vh recent-posts_vh__active" data-name="<?php echo $post_names[$key]; ?>" data-title="<?php echo $post_names[$key]; ?>">
                     <div class="swiper-wrapper recent-posts_cards">
                         <?php
-                        $posts = new WP_Query('post_type=' . $post_type . '&posts_per_page=8');
+                        $posts = new WP_Query('post_type=' . $post_type . '&posts_per_page=8&lang=' . $currlang );
                         if ( $posts->have_posts() ): ?>
 
                             <?php while ($posts->have_posts()):

@@ -78,7 +78,7 @@ $args_p = array(
 
     <?php else: ?>
 
-            <h3 class="block--texcen reset f-san">Artykuły</h3>
+            <h3 class="block--texcen reset f-san"><?php pll_e('Artykuły') ?></h3>
             <div class="mt64 d-flex fwrap row">
                 <?php
                 if ( $posts->have_posts() ) {

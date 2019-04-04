@@ -354,23 +354,25 @@ window.onload = function () {
    * 
    */
 
-  var recentSlider = new Mslider.init({
-    slider_block: 'swiper-recent_posts',
-    slider_cards: 'recent-posts_vh',
-    slider_pagination: 'recent-posts_vh_pagination',
-    slider_has_back: '',
-    slider_title: 'recent-posts_vh',
-    pagination_wrap: {
-      wrapper: 'h3',
-      classes: 'reset'
-    },
-    classes: {
-      pag_active: 'recent-posts_nav__active',
-      card_active: 'recent-posts_vh__active',
-      pagination_el: 'recent-posts_nav__el',
-      extra: 'ml16 mr16'
-    }
-  });
+  setTimeout(function () {
+    var recentSlider = new Mslider.init({
+      slider_block: 'swiper-recent_posts',
+      slider_cards: 'recent-posts_vh',
+      slider_pagination: 'recent-posts_vh_pagination',
+      slider_has_back: '',
+      slider_title: 'recent-posts_vh',
+      pagination_wrap: {
+        wrapper: 'h3',
+        classes: 'reset'
+      },
+      classes: {
+        pag_active: 'recent-posts_nav__active',
+        card_active: 'recent-posts_vh__active',
+        pagination_el: 'recent-posts_nav__el',
+        extra: 'ml16 mr16'
+      }
+    });
+  }, 500);
   /**
    * 
    * Initialize button press for mobile menu

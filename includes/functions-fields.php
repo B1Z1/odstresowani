@@ -25,7 +25,8 @@ function ods_get_pages($type){
     $pages = new WP_Query();
     $pages = $pages->query( array(
         'post_type' => $type,
-		'posts_per_page' => -1,
+        'posts_per_page' => -1,
+        'lang' => 'pl',
     ) );
     $pages_url_object = array();
 
@@ -209,7 +210,7 @@ function crb_attach_theme_options() {
                 )),
             Field::make('text', 'hero_heading', __('Tytuł'))
                 ->set_attribute('maxLength', '60'),
-            Field::make('text', 'hero__content', __('Mały opis'))
+            Field::make('text', 'hero_content', __('Mały opis'))
                 ->set_attribute('maxLength', '140'),
             Field::make('text', 'hero_url', __('Link czytaj więcej')),
         ))
@@ -269,22 +270,6 @@ function crb_attach_theme_options() {
             include(locate_template('template-parts/block-parts/part-recent-posts.php',false, false) );
         });
 
-    /**
-     *
-     * Block Slider recent posts on grey background and fullwidth
-     *
-     */
-    Block::make(__('Slajder postów na szarym tle'))
-        ->add_fields(array(
-            Field::make('complex', 'grey_slider', __('Slajd dla strony'))
-                ->add_fields(array(
-                    Field::make('select', 'grey_slider_post', __('Wybierz post dla slajdera'))
-                        ->set_options($posts_ids),
-                ))
-        ))
-        ->set_render_callback(function ($block) {
-            include(locate_template('template-parts/block-parts/part-slider-grey.php',false, false) );
-        });
 
     /**
      *
@@ -356,5 +341,28 @@ function crb_attach_theme_options() {
         ->set_render_callback(function ($block) {
             include(locate_template('template-parts/block-parts/part-operation-river.php',false, false) );
         });
+
+    /**
+     * 
+     * 
+     * Not actual need
+     * 
+     */
+        // /**
+        //  *
+        //  * Block Slider recent posts on grey background and fullwidth
+        //  *
+        //  */
+        // Block::make(__('Slajder postów na szarym tle'))
+        //     ->add_fields(array(
+        //         Field::make('complex', 'grey_slider', __('Slajd dla strony'))
+        //             ->add_fields(array(
+        //                 Field::make('select', 'grey_slider_post', __('Wybierz post dla slajdera'))
+        //                     ->set_options($posts_ids),
+        //             ))
+        //     ))
+        //     ->set_render_callback(function ($block) {
+        //         include(locate_template('template-parts/block-parts/part-slider-grey.php',false, false) );
+        //     });
 
 }

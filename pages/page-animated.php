@@ -29,7 +29,7 @@ get_header();
                     </div>
                 </div>
 
-                <div class="container container-960 header__triger">
+                <div class="container header__triger">
                     <?php if ( have_posts() ):  ?>
 
                         <?php while (have_posts()): the_post(); ?>

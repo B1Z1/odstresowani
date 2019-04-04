@@ -25,7 +25,7 @@ function submenu($items, $item){
     }
     ?>
     <?php if ( !empty($children) ): ?>
-        <div class="header-submenu c-blck bck-gs">
+        <div class="header-submenu c-blck bck-op">
             <div class="container container_968">
                 <ul class="header-submenu__list header-menu__list reset-list pt32 pb32 flex-kit">
                     <?php foreach ( $children as $child ): ?>
@@ -51,7 +51,7 @@ function submenu_category($post_type, $url, $title){
     ));
     ?>
     <li class="mr16 ml16"><a href="<?php echo $url; ?>" class="header-menu__hover reset-link"><?php echo $title; ?></a>
-    <div class="header-submenu pt24 pr24 pb24 pl24 c-wh bck-gt">
+    <div class="header-submenu pt24 pr24 pb24 pl24 c-wh bck-op">
         <div class="d-flex fwrap row">
             <div class="ntb-col-1">
                 <div class="f-vb mr24 mt16 mb8">Kategorie</div>
@@ -176,7 +176,7 @@ function header_wrapper_start(){ ?>
 add_action('odstresowani_header_inside', 'header_sygnet', 10);
 if ( !function_exists('header_sygnet') ){
     function header_sygnet(){ ?>
-        <div class="header-logo mbl-col-10 pc-col-3">
+        <div class="header-logo mbl-col-9 tbl-col-6 pc-col-3">
             <figure class="f-vb">
                 <a href="<?php echo get_home_url(); ?>" class="flex-kit reset-link">
                     <div class="header-sygnets">
@@ -235,12 +235,12 @@ if ( !function_exists('header_extra_menu') ){
         $location = 'header_extra';
         $items = wp_get_nav_menu_items($locations[$location]);
         ?>
-        <div class="mbl-col-2 pc-col-3">
+        <div class="header-extra mbl-col-3 tbl-col-6 pc-col-3">
             <div class="clearfix">
                 <div class="header__hamburger ml32 fr">
                     <i class="fas fa-bars"></i>
                 </div>
-                <nav class="header-extramenu f-vb fr">
+                <nav class="header-extra__menu f-vb fr">
                     <ul class="header-menu__list reset-list flex-kit">
                         <?php if ( $items ): ?>
                             <?php foreach ($items as $item):

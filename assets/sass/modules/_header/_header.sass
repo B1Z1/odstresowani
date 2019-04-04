@@ -10,11 +10,7 @@
         visibility: visible
     &:hover
         background: $white
-    &:hover .header-menu, &:hover .header_extramenu, &:hover .header__hamburger
-        color: $black
-    &:hover .header-menu__hover:before
-        background: $grey-tertiary
-    &:hover .header-logo
+    &:hover .header-menu, &:hover .header-extra__menu, &:hover .header__hamburger, &:hover .header-logo
         color: $black
     &--active 
         background: $white
@@ -65,6 +61,7 @@
             left: calc(50% - 2px)
             width: 4px
             height: 4px
+            background: $operative
             border-radius: 50%
             visibility: hidden
             opacity: 0
@@ -134,7 +131,7 @@
         color: $black
         &__hamburger
             margin: 0
-    .header-extramenu
+    .header-extra__menu
         display: none
     .header-mobilenav
         right: -100vw

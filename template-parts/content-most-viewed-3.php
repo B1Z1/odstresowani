@@ -21,7 +21,7 @@ $posts = new WP_Query($args_q);
 <?php endif; ?>
 
     <div class="most-viewed block mt128 mb128">
-        <h3 class="reset-top block--texcen mb64">Najchętniej czytane</h3>
+        <h3 class="reset-top block--texcen mb64"><?php pll_e('Najchętniej czytane'); ?></h3>
         <div class="d-flex fwrap row jcc">
             <?php if ( $posts->have_posts() ): ?>
                 <?php while ( $posts->have_posts() ): $posts->the_post(); ?>

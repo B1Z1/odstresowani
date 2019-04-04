@@ -1,4 +1,7 @@
 <?php
+global $currlang;
+
+
 add_action('odstresowani_footer_start', 'footer_wrapper_start', 10);
 if ( !function_exists('footer_wrapper_start') ){
     function footer_wrapper_start(){ ?>
@@ -28,7 +31,9 @@ if ( !function_exists('footer_upper_blocks') ){
                             <?php foreach ( $block as $item ): 
                                 $title = $item['footer_block_page']; 
                                 $page = get_page_by_title($title);
+                                $page = get_post(pll_get_post($page->ID,  $currlang));
                                 $url = get_permalink($page->ID);
+                                $title = $page->post_title;
                                 ?>
                                 <li class="mb16">
                                     <h3 class="reset">
@@ -37,7 +42,7 @@ if ( !function_exists('footer_upper_blocks') ){
                                         </a>
                                     </h3>
                                 </li>
-                            <?php endforeach; ?>
+                            <?php wp_reset_postdata(); endforeach; ?>
                         </ul>
                     </div>
                 </div>
@@ -106,9 +111,11 @@ if ( !function_exists('footer_bottom_links') ){
         <div class="ntb-col-8 fr">
             <ul class="footer-politics reset-list flex-kit jce fwrap">
                 <?php foreach ( $footer_bottom_list as $item ): 
-						$title = $item['footer_bottom_pages']; 
-						$page = get_page_by_title($title); 
-						$url = get_permalink($page->ID); ?>
+                        $title = $item['footer_bottom_pages']; 
+						$page = get_page_by_title($title);
+                        $page = get_post(pll_get_post($page->ID,  $currlang));
+                        $url = get_permalink($page->ID);
+                        $title = $page->post_title; ?>
                     <li class="mr16 ml16"><a href="<?php echo $url; ?>" class="reset-link"><?php echo $title; ?></a></li>
                 <?php wp_reset_postdata(); endforeach; ?>
             </ul>

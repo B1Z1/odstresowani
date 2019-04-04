@@ -83,3 +83,9 @@ require get_template_directory() . '/includes/hooks/functions-posts.php';
  *
  */
 require get_template_directory() . '/includes/functions-pagination.php';
+/**
+ *
+ * Require Translations
+ *
+ */
+require get_template_directory() . '/includes/functions-translates.php';
