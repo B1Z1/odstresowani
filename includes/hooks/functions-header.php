@@ -25,17 +25,17 @@ function submenu($items, $item){
     }
     ?>
     <?php if ( !empty($children) ): ?>
-        <div class="header-submenu c-blck bck-op">
+        <div class="header-submenu c-wh bck-op">
             <div class="container container_968">
                 <ul class="header-submenu__list header-menu__list reset-list pt32 pb32 flex-kit">
                     <?php foreach ( $children as $child ): ?>
-                        <li class="mr16 ml16"><a href="<?php echo $child['url']; ?>" class="header-menu__hover reset-link"><?php echo $child['title']; ?></a></li>
+                        <li class="mr16 ml16"><a href="<?php echo $child['url']; ?>" class="header-menu__hover header-menu__hover--submenu reset-link"><?php echo $child['title']; ?></a></li>
                     <?php endforeach; ?>
                 </ul>
             </div>
         </div>
     <?php endif; ?>
-<?php }
+<?php } 
 
 /**
  * @param $item

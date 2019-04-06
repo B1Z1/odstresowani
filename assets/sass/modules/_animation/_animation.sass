@@ -1,0 +1,137 @@
+$brain: #F0BC5E
+$head: #CCCCCC
+
+.animation
+    position: relative
+    width: 100%
+    &__line
+        position: absolute
+        border-radius: 50%
+        border: 8px solid transparent
+        border-top: 8px solid $black
+        border-left: 8px solid $black
+        transform-origin: 50%
+    &__rect
+        position: absolute
+        width: 13px
+        height: 13px
+        background: $head
+    &__image
+        width: 100%
+        height: auto
+
+.animation-head
+    transform: rotate(10deg)
+    &__image
+        height: 384px
+    &__linesmall
+        position: absolute
+        top: 80px
+        right: 80px
+        width: 60px
+        height: 60px
+        animation: rotate360 3s infinite linear
+    &__linebig
+        position: absolute
+        top: 59px
+        right: 57px
+        width: 100px
+        height: 100px
+        animation: rotate-360 5s infinite linear
+    &__rect
+        &--first
+            top: 68px
+            right: 176px
+            transform: rotate(45deg)
+            animation: rect-black 2s infinite linear
+            animation-delay: 1s
+        &--second
+            top: 32px
+            right: 105px
+            animation: rect-black 2s infinite linear
+            animation-delay: 3s
+        &--third
+            top: 68px
+            right: 46px
+            transform: rotate(45deg)
+            animation: rect-black 2s infinite linear
+            animation-delay: 5s
+
+.animation-brain
+    &__circle
+        position: relative
+        width: 180px
+        height: 180px
+        margin: auto
+        background: $brain
+        border-radius: 50%
+    &__linesmall
+        box-sizing: border-box
+        position: absolute
+        top: calc(50% - 50px)
+        left: calc(50% - 50px)
+        width: 100px
+        height: 100px
+        border-radius: 50%
+        border: 16px solid transparent
+        border-top: 16px solid $black
+        border-left: 16px solid $black
+        animation: rotate360 5s infinite linear
+    &__linebig
+        box-sizing: border-box
+        position: absolute
+        top: -5px
+        right: -5px
+        width: calc(100% + 10px)
+        height: calc(100% + 10px)
+        border: 16px solid transparent
+        border-top: 16px solid $black
+        border-left: 16px solid $black
+        animation: rotate-360 6s infinite linear
+    &__rect
+        width: 20px
+        height: 20px
+        &--first
+            top: calc(50% - 10px)
+            left: -64px
+            animation: rect-black 2s infinite linear
+            animation-delay: 1s
+        &--second
+            top: -64px
+            left: calc(50% - 10px)
+            animation: rect-black 2s infinite linear
+            animation-delay: 3s
+        &--third
+            top: calc(50% - 10px)
+            right: -64px
+            animation: rect-black 2s infinite linear
+            animation-delay: 5s
+
+.animation-team
+    &__vehicle
+        position: absolute
+        top: 12%
+        left: 40%
+        width: 20%
+        height: 20%
+        animation: rotate360 5s infinite linear
+
+@keyframes rotate360
+    100%
+        transform: rotate(360deg)
+
+@keyframes rotate-360
+    100%
+        transform: rotate(-360deg)
+
+@keyframes rect-black
+    0
+        background: $head
+    50%
+        background: $black
+    100%
+        background: $head
+
+@media only screen and (max-width: 1367px)
+    .animation
+        display: none
