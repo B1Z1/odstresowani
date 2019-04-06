@@ -229,6 +229,9 @@ function crb_attach_theme_options() {
         ->add_fields(array(
             //Block main options start
 
+            Field::make('checkbox', 'advanced_header', __('Czy ma pojawiać się nagłówek strony'))
+                ->set_option_value(true),
+
             //Padding top of block
             Field::make('select', 'advanced_pt', __('Marginez wewnętrzny górny w pikselach'))
                 ->set_options(array(
@@ -459,17 +462,16 @@ function crb_attach_theme_options() {
      */
     Block::make(__('Blok z opiniami'))
         ->add_fields(array(
-            Field::make('complex', 'page_slide', __('Slajd dla strony'))
+            Field::make('text', 'reviews_title', __('Tytuł')),
+            Field::make('complex', 'reviews', __('Block dla opinii'))
                 ->add_fields(array(
-                    Field::make('image', 'page_slide_image', __('Tło slajdu')),
-                    Field::make('select', 'page_slide_page', __('Strona slajdu'))
-                        ->set_options( $page_ids ),
-                    Field::make('textarea', 'page_slide_content', __('Krótki opis tego slajdu'))
-                        ->set_attribute('maxLength', '300'),
-                ))
+                    Field::make('textarea', 'reviews_text', __('Opinia')),
+                    Field::make('text', 'reviews_name', __('Autor opinii')),
+                    Field::make('image', 'reviews_image', __('Zdjęcie opinii')),
+                )),
         ))
         ->set_render_callback(function ($block) {
-            include(locate_template('template-parts/block-parts/part-page-review.php',false, false) );
+            include(locate_template('template-parts/block-parts/part-review.php',false, false) );
         });
 
 

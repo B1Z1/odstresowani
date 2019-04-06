@@ -98,10 +98,10 @@ table {
 
 /* All font elements */
 .f-san {
-  font-family: 'sanchez-regular', sans-serif; }
+  font-family: "sanchez-regular", sans-serif !important; }
 
 .f-vb {
-  font-family: 'value-black', sans-serif; }
+  font-family: "value-black", sans-serif !important; }
 
 /* Font sizes */
 .f-48 {
@@ -262,6 +262,9 @@ strong {
   content: '';
   display: block;
   clear: both; }
+
+.d-ib {
+  display: inline-block; }
 
 /* Flex */
 .d-flex {
@@ -1173,6 +1176,8 @@ strong {
   position: relative;
   margin-right: auto;
   margin-left: auto; }
+  .block__title {
+    font-family: value-regular !important; }
   .block__photo > .card:last-of-typeb {
     margin-bottom: 0; }
   .block--texcen {
@@ -1200,17 +1205,16 @@ strong {
     .block-image__el--contain {
       -o-object-fit: contain;
       object-fit: contain; }
+  .block-image__underblock {
+    position: absolute;
+    top: calc(100% - 190px);
+    left: calc(50% - 190px);
+    max-width: 380px;
+    max-height: 380px; }
 
 /* Block for page "River Operation" */
 .block-operation {
   text-align: center; }
-  .block-operation__button {
-    border-radius: 4px;
-    -webkit-transition: .3s all;
-    transition: .3s all; }
-    .block-operation__button--disabled {
-      opacity: 0;
-      visibility: hidden; }
   .block-operation__wrapper {
     text-align: left;
     overflow: hidden;
@@ -1221,16 +1225,6 @@ strong {
 
 .block-advanced p {
   margin-top: 0 !important; }
-
-.block-advanced__title {
-  font-family: value-regular !important; }
-
-.block-advanced__image {
-  position: absolute;
-  top: calc(100% - 190px);
-  left: calc(50% - 190px);
-  max-width: 380px;
-  max-height: 380px; }
 
 .block-advanced__icon {
   position: relative;
@@ -1278,11 +1272,30 @@ strong {
       height: 2px;
       background: #3687D0; }
 
+.block-review {
+  border-bottom: 2px solid #3687D0; }
+  .block-review__avatar {
+    width: 64px;
+    height: 64px; }
+
 @media only screen and (max-width: 768px) {
+  .block-image__advanced {
+    width: 50%; }
+  .block-image__underblock {
+    top: calc(100% - 128px);
+    left: calc(50% - 128px);
+    max-width: 256px;
+    max-height: 256px; }
   .block-image--full, .block-image--small {
     height: 50vh; }
   .block-list__el:before {
-    top: 26px; } }
+    top: 26px; }
+  .block-hidden {
+    margin-bottom: 0;
+    text-align: left; }
+    .block-hidden__describe {
+      opacity: 1;
+      visibility: visible; } }
 
 .post__title {
   position: relative;
@@ -1820,6 +1833,8 @@ strong {
   border: none;
   outline: none;
   cursor: pointer; }
+  .button--br4 {
+    border-radius: 4px; }
 
 .button-scroll {
   position: fixed;
@@ -1839,6 +1854,13 @@ strong {
   .button-scroll--disabled {
     visibility: hidden;
     opacity: 0; }
+
+.button-river {
+  -webkit-transition: .3s all;
+  transition: .3s all; }
+  .button-river--disabled {
+    opacity: 0;
+    visibility: hidden; }
 
 .form .wpcf7-mail-sent-ok, .form .wpcf7-response-output, .form .wpcf7-mail-sent-ng, .form .wpcf7-spam-blocked, .form .wpcf7-validation-errors {
   font-size: 1rem;

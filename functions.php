@@ -89,3 +89,9 @@ require get_template_directory() . '/includes/functions-pagination.php';
  *
  */
 require get_template_directory() . '/includes/functions-translates.php';
+/**
+ *
+ * Require ShortCodes
+ *
+ */
+require get_template_directory() . '/includes/functions-shortcodes.php';

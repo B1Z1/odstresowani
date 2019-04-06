@@ -384,11 +384,11 @@ window.onload = function(){
      * 
      */
     new MExtentions.operation({
-        button: 'block-operation__button',
+        button: 'button-river',
         wrapper: 'block-operation__wrapper',
         form_inputs: 'form-operation__visibility',
         classes:{
-            button__disable: 'block-operation__button--disabled',
+            button__disable: 'button-river--disabled',
             wrapper__disable: 'block-operation__wrapper--disabled',
             input__disable: 'form-operation__visibility--disabled',
         },

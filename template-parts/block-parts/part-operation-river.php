@@ -8,7 +8,7 @@
 
 <div id="block-operation" class="block-operation pt64 mb32">
     <?php echo $text; ?>
-    <button class="button block-operation__button bck-gradient--blue c-wh pt8 pr32 pb8 pl32">
+    <button class="button button--br4 button-river bck-gradient--blue c-wh pt8 pr32 pb8 pl32">
         <h4 class="reset"><?php echo __($button_text); ?></h4>
     </button>
  

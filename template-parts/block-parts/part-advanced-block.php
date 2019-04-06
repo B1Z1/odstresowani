@@ -11,6 +11,9 @@ $mt = $block['advanced_mt'] == 'none' ? '':$block['advanced_mt'];
 //Margin bottom
 $mb = $block['advanced_mb'] == 'none' ? '':$block['advanced_mb'];
 
+//Header triger
+$header_triger = $block['advanced_header'] ? 'header__triger':'';
+
 //Title of block
 $title = $block['advanced_title'];
 
@@ -24,7 +27,7 @@ $image_under = wp_get_attachment_image_url($block['advanced_blockimage'], 'full'
 $back_color_class = $block['advanced_backcolor'];
 
 //Block classes
-$block_classes = ' ' . $back_color_class . ' '  . $pt . ' ' . $pb . ' ' . $mt . ' ' . $mb;
+$block_classes = ' ' . $back_color_class . ' '  . $pt . ' ' . $pb . ' ' . $mt . ' ' . $mb . ' ' . $header_triger;
 
 //Align blocks
 $align_class = $block['advanced_blockalign']; 
@@ -44,7 +47,7 @@ $columns = $block['advanced_col'];
         
         <?php if ( $title ): ?>
             <!-- Title of block start --> 
-            <h2 class="block-advanced__title reset-bottom f-48" <?php if ( $title_align ):  ?> style="text-align: <?php echo $title_align; ?>" <?php endif; ?>><?php echo $title; ?></h2>
+            <h2 class="block__title reset-bottom f-48" <?php if ( $title_align ):  ?> style="text-align: <?php echo $title_align; ?>" <?php endif; ?>><?php echo $title; ?></h2>
             <!-- Title of block end --> 
         <?php endif; ?>
         
@@ -128,7 +131,7 @@ $columns = $block['advanced_col'];
 
                             <?php }
                             else if ( $col_type == 'image' ){ ?>
-                                <img src="<?php echo $col_image; ?>" alt="Image Odstresowani" class="block-image">
+                                <img src="<?php echo $col_image; ?>" alt="Image Odstresowani" class="block-image block-image__advanced">
                             <?php }
                             //If column type == animated_image
                             else { 
@@ -160,7 +163,7 @@ $columns = $block['advanced_col'];
     
     <?php if ( $image_under ): ?>
         <!-- Image block start -->
-        <img src="<?php echo $image_under; ?>" alt="Odstresowani Image" class="block-advanced__image">
+        <img src="<?php echo $image_under; ?>" alt="Odstresowani Image" class="block-image__underblock">
         <!--  Image block end  -->
     <?php endif; ?>
 

@@ -2,6 +2,8 @@
     position: relative
     margin-right: auto
     margin-left: auto
+    &__title
+        font-family: value-regular!important
     &__photo > .card:last-of-typeb 
         margin-bottom: 0
     &--texcen
@@ -17,7 +19,7 @@
     &--small
         height: 499px
     &--256
-        height: 256px
+        height: 256px 
     &__el
         position: absolute
         top: 0
@@ -27,16 +29,16 @@
         object-fit: cover
         &--contain
             object-fit: contain
+    &__underblock
+        position: absolute
+        top: calc(100% - 190px)
+        left: calc(50% - 190px)
+        max-width: 380px 
+        max-height: 380px 
 
 /* Block for page "River Operation" */
 .block-operation
     text-align: center
-    &__button
-        border-radius: 4px
-        transition: .3s all
-        &--disabled
-            opacity: 0
-            visibility: hidden
     &__wrapper
         text-align: left
         overflow: hidden
@@ -48,14 +50,6 @@
 .block-advanced
     p
         margin-top: 0!important
-    &__title
-        font-family: value-regular!important
-    &__image
-        position: absolute
-        top: calc(100% - 190px)
-        left: calc(50% - 190px)
-        max-width: 380px 
-        max-height: 380px 
     &__icon
         position: relative
         margin-right: auto
@@ -99,12 +93,30 @@
             left: 0
             height: 2px
             background: $operative
-            
+
+.block-review
+    border-bottom: 2px solid $operative
+    &__avatar
+        width: 64px
+        height: 64px
 
 @media only screen and (max-width: 768px)
     .block-image
+        &__advanced
+            width: 50%
+        &__underblock
+            top: calc(100% - 128px)
+            left: calc(50% - 128px)
+            max-width: 256px 
+            max-height: 256px 
         &--full, &--small
             height: 50vh
     .block-list
         &__el:before
             top: 26px
+    .block-hidden
+        margin-bottom: 0
+        text-align: left
+        &__describe
+            opacity: 1
+            visibility: visible
