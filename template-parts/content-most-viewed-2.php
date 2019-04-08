@@ -22,30 +22,28 @@ $posts = new WP_Query($args_q);
 
     <div class="most-viewed block mt128 mb128">
         <h3 class="reset-top block--texcen mb64"><?php pll_e('Najchętniej czytane'); ?></h3>
-        <div class="container">
-            <div class="d-flex fwrap row">
-                <?php if ( $posts->have_posts() ): ?>
-                    <?php while ( $posts->have_posts() ): $posts->the_post(); ?>
+        <div class="d-flex fwrap row">
+            <?php if ( $posts->have_posts() ): ?>
+                <?php while ( $posts->have_posts() ): $posts->the_post(); ?>
 
-                            <?php
-                            /**
-                             *
-                             * Post type action
-                             * -> Mini card
-                             *
-                             */
-                            $args['url'] = get_permalink();
-                            $args['title'] = get_the_title();
-                            $args['describe'] = wp_trim_words(get_the_content(), 20);
-                            $args['image'] = get_the_post_thumbnail(get_the_ID(), 'full');
-                            $args['date'] = get_the_date('j M Y', get_the_ID());
-                            $args['category'] = post_get_cat(); ?>
-                            <div class="ntb-col-6 mb64">
-                                <?php do_action('post_card_block', $args); ?>
-                            </div>
-                    <?php endwhile; ?>
-                <?php endif; ?>
-            </div>
+                        <?php
+                        /**
+                         *
+                         * Post type action
+                         * -> Mini card
+                         *
+                         */
+                        $args['url'] = get_permalink();
+                        $args['title'] = get_the_title();
+                        $args['describe'] = wp_trim_words(get_the_content(), 20);
+                        $args['image'] = get_the_post_thumbnail(get_the_ID(), 'full');
+                        $args['date'] = get_the_date('j M Y', get_the_ID());
+                        $args['category'] = post_get_cat(); ?>
+                        <div class="ntb-col-6 mb64">
+                            <?php do_action('post_card_block', $args); ?>
+                        </div>
+                <?php endwhile; ?>
+            <?php endif; ?>
         </div>
     </div>
 

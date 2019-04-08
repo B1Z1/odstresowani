@@ -242,6 +242,7 @@ function crb_attach_theme_options() {
                    'none' => '0',
                 )),
 
+
             //Padding bottom of block
             Field::make('select', 'advanced_pb', __('Marginez wewnętrzny dolny w pikselach'))
                 ->set_options(array(
@@ -275,14 +276,25 @@ function crb_attach_theme_options() {
                 )),
 
             //Title of block
-            Field::make('text', 'advanced_title', __('Tytuł bloku')),
+            Field::make('textarea', 'advanced_title', __('Tytuł bloku')),
+
+            //Padding top of block
+            Field::make('select', 'advanced_size_title', __('Rozmiar nagłówku'))
+            ->set_options(array(
+               '1' => '1',
+               '2' => '2',
+               '3' => '3',
+               '4' => '4',
+               '5' => '5',
+               '6' => '6',
+            )),
 
             //Text align for title
             Field::make('select', 'advanced_aligntext_title', __('Pozycjonowanie nagłówku'))
                 ->set_options(array(
-                    'left' => 'Lewo',
-                    'center' => 'Centr',
-                    'right' => 'Prawo',
+                    'block--texleft' => 'Lewo',
+                    'block--texcen' => 'Centr',
+                    'block--texright' => 'Prawo',
                 )),
 
             //If has image, give for him position absolute and go to bottom of block
@@ -349,9 +361,9 @@ function crb_attach_theme_options() {
                     //Choose align text
                     Field::make('select', 'advanced_aligntext', __('Pozycjonowanie tekstu'))
                     ->set_options(array(
-                        'left' => 'Lewo',
-                        'center' => 'Centr',
-                        'right' => 'Prawo',
+                        'block--texleft' => 'Lewo',
+                        'block--texcen' => 'Centr',
+                        'block--texright' => 'Prawo',
                     )),
 
                     //Choose type of column

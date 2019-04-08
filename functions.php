@@ -95,3 +95,9 @@ require get_template_directory() . '/includes/functions-translates.php';
  *
  */
 require get_template_directory() . '/includes/functions-shortcodes.php';
+/**
+ *
+ * Require Advanced block options
+ *
+ */
+require get_template_directory() . '/includes/functions-advanced-block.php';

@@ -1,71 +1,67 @@
 <?php
-//Padding top
-$pt = $block['advanced_pt'] == 'none' ? '':$block['advanced_pt'];
 
-//Padding bottom
-$pb = $block['advanced_pb'] == 'none' ? '':$block['advanced_pb'];
-
-//Margin top
-$mt = $block['advanced_mt'] == 'none' ? '':$block['advanced_mt'];
-
-//Margin bottom
-$mb = $block['advanced_mb'] == 'none' ? '':$block['advanced_mb'];
-
-//Header triger
-$header_triger = $block['advanced_header'] ? 'header__triger':'';
-
-//Title of block
-$title = $block['advanced_title'];
-
-//Title align
-$title_align = $block['advanced_aligntext_title'];
-
-//Image under the block if exists
-$image_under = wp_get_attachment_image_url($block['advanced_blockimage'], 'full');
-
-//Background color of block
-$back_color_class = $block['advanced_backcolor'];
-
-//Block classes
-$block_classes = ' ' . $back_color_class . ' '  . $pt . ' ' . $pb . ' ' . $mt . ' ' . $mb . ' ' . $header_triger;
-
-//Align blocks
-$align_class = $block['advanced_blockalign']; 
-
-//Justify blocks
-$justify_class = $block['advanced_blockjustify']; 
+//Block Constructor
+$advanced_block = new AdvancedBlock();
+$string_block_classes = $advanced_block->generate_string(
+    array(
+        $block['advanced_pt'] == 'none' ? '':$block['advanced_pt'],
+        $block['advanced_pb'] == 'none' ? '':$block['advanced_pb'],
+        $block['advanced_mt'] == 'none' ? '':$block['advanced_mt'],
+        $block['advanced_mb'] == 'none' ? '':$block['advanced_mb'],
+        $block['advanced_backcolor'] == 'none' ? '':$block['advanced_backcolor'],
+        $block['advanced_header'] ? 'header__triger':'',
+    )
+);
+//Flex constructor
+$string_flex_classes = $advanced_block->generate_string(
+    array(
+        $block['advanced_blockalign'] == 'none' ? '' : $block['advanced_blockalign'],
+        $block['advanced_blockjustify'] == 'none' ? '' : $block['advanced_blockjustify'],
+    )
+);
+//Title constructor
+$title_html = $advanced_block->generate_title(
+    array(
+        'text' => $block['advanced_title'],
+        'align' => $block['advanced_aligntext_title'] ? $block['advanced_aligntext_title'] : '',
+        'size' => $block['advanced_size_title'] ? $block['advanced_size_title'] : '2',
+    )
+);
 
 //Columns
 $columns = $block['advanced_col'];
+//Image under the block if exists
+$image_under = wp_get_attachment_image_url($block['advanced_blockimage'], 'full');
 
 ?>
 <!-- Classic block start -->
 </div>
-<section class="block block-advanced<?php echo $block_classes; ?>">
+<section class="block block-advanced <?php echo $string_block_classes; ?>">
 
     <div class="container">
         
-        <?php if ( $title ): ?>
+        <?php if ( $title_html ): ?>
             <!-- Title of block start --> 
-            <h2 class="block__title reset-bottom f-48" <?php if ( $title_align ):  ?> style="text-align: <?php echo $title_align; ?>" <?php endif; ?>><?php echo $title; ?></h2>
+            <?php echo $title_html; ?>
             <!-- Title of block end --> 
         <?php endif; ?>
         
-        <!-- Main block start -->
-        <div class="d-flex fwrap row <?php echo $align_class . ' ' . $justify_class; ?> mt64">
+        <?php if ( $columns ): ?>
 
-            <?php if ( $columns ): ?>
-
+            <!-- Main block start -->
+            <div class="d-flex fwrap row mt64 <?php echo $string_flex_classes ?>">
                 <?php foreach ($columns as $column): ?>
                 <?php 
-                    //Column size
-                    $col_size = $column['advanced_column'];
+                    //Columns classes
+                    $string_col_classes = $advanced_block->generate_string(
+                        array(
+                            $column['advanced_column'] ? "pc-col-{$column['advanced_column']}" : "",
+                            $column['advanced_aligntext'] ? $column['advanced_aligntext'] : "",
+                            $column['advanced_textcolor'] ? $column['advanced_textcolor'] : "",
+                        )
+                    );
                     //Column type
                     $col_type = $column['advanced_choose_text'];
-                    //Column align text
-                    $col_align = $column['advanced_aligntext'];
-                    //Text color of block
-                    $col_color_class = $column['advanced_textcolor'];
 
                     //Get variables by type of column
                     switch ( $col_type ) {
@@ -89,7 +85,7 @@ $columns = $block['advanced_col'];
                     }
                 ?>
 
-                    <div class="mbl-col-12 pc-col-<?php echo $col_size . ' ' . $col_color_class; ?>" style="text-align: <?php echo $col_align ?>" >
+                    <div class="mbl-col-12 <?php echo $string_col_classes; ?>">
                     
                         <?php
                             //If column type == text
@@ -153,10 +149,10 @@ $columns = $block['advanced_col'];
 
                 <?php endforeach; ?>
 
-            <?php endif; ?>
+            </div>
+            <!-- Main block end -->
 
-        </div>
-        <!-- Main block end -->
+        <?php endif; ?>
 
     </div>
 

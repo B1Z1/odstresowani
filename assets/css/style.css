@@ -1180,8 +1180,12 @@ strong {
     font-family: value-regular !important; }
   .block__photo > .card:last-of-typeb {
     margin-bottom: 0; }
+  .block--texleft {
+    text-align: left; }
   .block--texcen {
     text-align: center; }
+  .block--texright {
+    text-align: right; }
   .block--hidden {
     overflow: hidden; }
 
