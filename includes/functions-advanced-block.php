@@ -9,11 +9,9 @@ class AdvancedBlock{
 
         foreach ( $array as $key => $class ){
             $string .= $class;
-            $string .= $class != '' ? ' ':'';
-
-            if ( $key == ( count($array) - 1 ) ){
-                $string = substr($string, 0, -1);
-            }
+            //Check if this is not end of the array or the class is empty
+            if ( $key != ( count($array) - 1 ) && $class != '' )
+                $string .= ' ';
         }
 
         return $string;
@@ -25,6 +23,3 @@ class AdvancedBlock{
     }
 
 }
-
-
-//Title classes generate

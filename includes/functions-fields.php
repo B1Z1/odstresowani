@@ -229,6 +229,7 @@ function crb_attach_theme_options() {
         ->add_fields(array(
             //Block main options start
 
+            //Header trigger
             Field::make('checkbox', 'advanced_header', __('Czy ma pojawiać się nagłówek strony'))
                 ->set_option_value(true),
 
@@ -278,7 +279,7 @@ function crb_attach_theme_options() {
             //Title of block
             Field::make('textarea', 'advanced_title', __('Tytuł bloku')),
 
-            //Padding top of block
+            //Size of title
             Field::make('select', 'advanced_size_title', __('Rozmiar nagłówku'))
             ->set_options(array(
                '1' => '1',
@@ -627,24 +628,17 @@ function crb_attach_theme_options() {
     /**
      * 
      * 
-     * Not actual need
+     * Genoraport block
      * 
      */
-        // /**
-        //  *
-        //  * Block Slider recent posts on grey background and fullwidth
-        //  *
-        //  */
-        // Block::make(__('Slajder postów na szarym tle'))
-        //     ->add_fields(array(
-        //         Field::make('complex', 'grey_slider', __('Slajd dla strony'))
-        //             ->add_fields(array(
-        //                 Field::make('select', 'grey_slider_post', __('Wybierz post dla slajdera'))
-        //                     ->set_options($posts_ids),
-        //             ))
-        //     ))
-        //     ->set_render_callback(function ($block) {
-        //         include(locate_template('template-parts/block-parts/part-slider-grey.php',false, false) );
-        //     });
-
+    Block::make(__('Genoraport'))
+        ->add_fields(array(
+            Field::make('image', 'genoraport_image', __('Obraz raportu')),
+            Field::make('image', 'genoraport_arrow', __('Strzalka')),
+            Field::make('file', 'genoraport_document', __('PDF dla genraportu')),
+            Field::make('text', 'genoraport_text', __('Text dla pobrania')),
+        ))
+        ->set_render_callback(function ($block) {
+            include(locate_template('template-parts/block-parts/part-genoraport.php',false, false) );
+        });
 }
