@@ -130,6 +130,7 @@ function crb_attach_theme_options() {
             Field::make( 'image', 'general_sygnet_mini', 'Miniaturka logotypu na postach' ),
             Field::make( 'image', 'general_sygnet_search', 'Logotyp na stronie z wyszukiwaniem' ),
             Field::make( 'image', 'general_close_button', 'Przycisk zamknięcia' ),
+            Field::make( 'image', 'general_post_wave', 'Linia pod postem' ),
         ))
         ->add_tab('Stopka strony', array(
             Field::make('complex', 'footer_social', __('Social linki'))

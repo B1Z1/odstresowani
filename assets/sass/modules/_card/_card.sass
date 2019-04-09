@@ -2,6 +2,8 @@
     box-sizing: border-box
     position: relative
     width: 100%
+    &:hover &__wave
+        animation: wave 15s infinite linear
     &__image, &__title, &__cat, &__date, &__describe
         position: relative
     &__wrapper
@@ -24,7 +26,13 @@
     &__title
         &--center
             text-align: center
-    &__cat
+    &__wave
+        position: absolute
+        top: 100%
+        left: 5%
+        width: 80%
+    &__cat  
+        position: relative
         padding-right: 14px
         margin-right: 16px
         border-right: 1px dotted $grey-tertiary
@@ -35,6 +43,10 @@
             right: 16px
         i
             margin-right: 14px
+
+@keyframes wave
+    100%
+        background-position-x: 1000%
 
 @media only screen and (max-width: 1366px)
     .card

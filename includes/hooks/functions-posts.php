@@ -55,6 +55,7 @@ if ( !function_exists( 'post_category_sygnet' ) ){
 add_action('post_card_block', 'post_card_block', 10, 1);
 if ( !function_exists( 'post_card_block' ) ){
     function post_card_block($args){
+        $wave = wp_get_attachment_url(carbon_get_theme_option('general_post_wave'), 'full');
         $url = $args['url'];
         $title = $args['title'];
         $describe = $args['describe'];
@@ -85,6 +86,7 @@ if ( !function_exists( 'post_card_block' ) ){
                 <ul class="flex-kit reset-list c-gt mt16">
                     <?php if ( $cat_list ): ?>
                         <li class="card__cat f-san">
+                            <object data="<?php echo $wave; ?>" class="card__wave" type="image/svg+xml">Twoja przeglądarka nie obsłubuje SVG</object>
                             <span>
                                 <?php echo $cat_list; ?>
                             </span>
@@ -92,7 +94,7 @@ if ( !function_exists( 'post_card_block' ) ){
                     <?php endif; ?>
                     <li class="card__date">
                         <span>
-                             <i class="far fa-calendar-alt"></i>
+                            <i class="far fa-calendar-alt"></i>
                             <?php echo $date; ?>
                         </span>
                     </li>
