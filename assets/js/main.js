@@ -1,18 +1,23 @@
-import { wrap } from "module";
-
 window.onload = function(){
+
     /**
      *
      * Remove all empty containers from page
      *
      */
     (function () {
-        let containers = [... document.querySelectorAll('.container')];
+        let containers = [... document.querySelectorAll('.container')],
+            p_el = [... document.querySelectorAll('p')];
         containers.forEach(function (el) {
             if ( el.children.length == 0 ){
                 el.remove();
             }
-        })
+        });
+        p_el.forEach(function (el) {
+            if ( el.childNodes.length == 0 ){
+                el.remove();
+            }
+        });
     })();
 
     /**
@@ -279,11 +284,28 @@ window.onload = function(){
 
     let MExtentions = (function(){
         return {
+            //Function for page operation river
             'operation' : function(object){
                 operation(object);
+            },
+            //Function for relax page
+            'relax' : function(object){
+                relax(object);
             }
         }  
 
+        //Function for generate image to synget
+        function relax(object){
+            let svgs = [... document.querySelectorAll(object.svg)],
+                slides = [... document.querySelectorAll(object.slide)];
+
+            slides.forEach(function(slide, index){
+                let src = slide.dataset.image;
+                svgs[index].contentDocument.querySelector('image').setAttribute('xlink:href', src);
+            });
+        }
+
+        //Function for page operation river
         function operation(object){
             let button = document.querySelector(`.${object.button}`),
                 wrapper = document.querySelector(`.${object.wrapper}`),
@@ -396,11 +418,20 @@ window.onload = function(){
 
     /**
      * 
+     * Initialize Relax function
+     * 
+     */
+    new MExtentions.relax({
+        slide: '.block-relax__slide',
+        svg: '.block-relax__logo',
+    });
+
+    /**
+     * 
      * Initialize header on scroll function
      * 
      */
     new Mheader.header_scroll();
-
 
 }
 

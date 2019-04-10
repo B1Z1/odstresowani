@@ -74,12 +74,12 @@ function register_strefa_wiedzy_kategorie(){
  * Register new post type "Ciekawostki" start
  *
  */
-add_action( 'init', 'register_ciekawostki' );
-function register_ciekawostki(){
-    register_post_type('ciekawostki', array(
-        'label'  => 'Ciekawostki',
+add_action( 'init', 'register_relax' );
+function register_relax(){
+    register_post_type('relax', array(
+        'label'  => 'Techniki relaksacyjne',
         'labels' => array(
-            'name'               => 'Ciekawostki',
+            'name'               => 'Techniki relaksacyjne',
             'singular_name'      => 'Posty',
             'add_new'            => 'Dodaj post',
             'add_new_item'       => 'Dodawanie postu',
@@ -95,7 +95,7 @@ function register_ciekawostki(){
         'publicly_queryable' => true,
         'menu_position'       => 6,
         'menu_icon'           => 'dashicons-smiley',
-        'supports'            => array('title','thumbnail'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+        'supports'            => array('title','thumbnail', 'editor'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
         'rewrite'             => true,
         'query_var'           => true,
     ) );

@@ -8,8 +8,6 @@
  */
 $currlang = pll_current_language();
 
-
-
 /**
  *
  * Shuffle posts

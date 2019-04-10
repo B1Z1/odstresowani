@@ -86,7 +86,9 @@ if ( !function_exists( 'post_card_block' ) ){
                 <ul class="flex-kit reset-list c-gt mt16">
                     <?php if ( $cat_list ): ?>
                         <li class="card__cat f-san">
-                            <object data="<?php echo $wave; ?>" class="card__wave" type="image/svg+xml">Twoja przeglądarka nie obsłubuje SVG</object>
+                            <?php if ( $wave ): ?>
+                                <object data="<?php echo $wave; ?>" class="card__wave" type="image/svg+xml">Twoja przeglądarka nie obsłubuje SVG</object>
+                            <?php endif; ?>
                             <span>
                                 <?php echo $cat_list; ?>
                             </span>
