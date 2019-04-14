@@ -1357,7 +1357,7 @@ strong {
   .block-relax__pagination {
     left: 50% !important; } }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 769px) {
   .block-image__advanced {
     width: 50%; }
   .block-image__underblock {
@@ -1375,6 +1375,10 @@ strong {
     .block-hidden__describe {
       opacity: 1;
       visibility: visible; } }
+
+@media only screen and (max-width: 425px) {
+  .block-relax__content {
+    height: 100vh; } }
 
 .post__title {
   position: relative;
