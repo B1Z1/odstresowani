@@ -3,6 +3,8 @@
 /**
  * 
  * This is the block gallery of images
+ * That block gallery created for insert
+ * Images. Used in "Operation river"
  * 
  */
 $images = $block['mini_images']; ?>

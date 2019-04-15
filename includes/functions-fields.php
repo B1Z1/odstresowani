@@ -643,14 +643,4 @@ function crb_attach_theme_options() {
             include(locate_template('template-parts/block-parts/part-genoraport.php',false, false) );
         });
 
-    /**
-     * 
-     * Relax block slider
-     * 
-     */
-    Block::make(__('Techniki relaksacyjne'))
-    ->add_fields(array())
-    ->set_render_callback(function ($block) {
-        include(locate_template('template-parts/block-parts/part-relax.php',false, false) );
-    });
 }
