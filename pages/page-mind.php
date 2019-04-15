@@ -15,7 +15,7 @@ get_header();
 $categories = get_terms('strefa-wiedzy-kategorie', array(
     'hide_empty' => false,
 ));
-
+$sygnet = carbon_get_post_meta(get_the_ID(), 'page_sygnet');
 ?>
 
     <div class="wrapper">
@@ -26,9 +26,10 @@ $categories = get_terms('strefa-wiedzy-kategorie', array(
 
     <main class="main mb64">
         <section class="page">
-            <div class="page__title mb160 pt160">
+            <div class="page__title mb160 pt128 pb160 bck-gm">
                 <div class="container container-960">
-                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'full'); ?>" alt="Page sygnet" class="post__sygnet">
+                    <h3 class="reset f-san"><?php the_title(); ?></h3>
+                    <img src="<?php echo wp_get_attachment_image_src($sygnet,'full')[0]; ?>" alt="Page sygnet" class="post__sygnet">
                 </div>
             </div>
             <div class="container container-960 header__triger">

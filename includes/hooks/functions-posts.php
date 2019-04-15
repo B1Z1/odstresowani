@@ -87,18 +87,18 @@ if ( !function_exists( 'post_card_block' ) ){
                     <?php if ( $cat_list ): ?>
                         <li class="card__cat f-san">
                             <?php if ( $wave ): ?>
-                                <object data="<?php echo $wave; ?>" class="card__wave" type="image/svg+xml">Twoja przeglądarka nie obsłubuje SVG</object>
+                                <object data="<?php echo $wave; ?>" class="card__wave" type="image/svg+xml"></object>
                             <?php endif; ?>
-                            <span>
+                            <h4 class="reset">
                                 <?php echo $cat_list; ?>
-                            </span>
+                            </h4>
                         </li>
                     <?php endif; ?>
                     <li class="card__date">
-                        <span>
+                        <h4 class="reset">
                             <i class="far fa-calendar-alt"></i>
                             <?php echo $date; ?>
-                        </span>
+                        </h4>
                     </li>
                 </ul>
                 <div class="card__describe mt32">

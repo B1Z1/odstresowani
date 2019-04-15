@@ -537,6 +537,20 @@ function crb_attach_theme_options() {
                     'list' => 'List',
                     'blocks' => 'Kafelki',
                 ) ),
+            Field::make('select', 'posts_position', __('Wybierz rozmiar postów'))
+                ->set_conditional_logic(array(
+                    'relation' => 'OR',
+                    array(
+                        'field' => 'posts_style',
+                        'value' => 'blocks',
+                        'compare' => '=',
+                    )
+                ))
+                ->set_options(array(
+                    '3' => '4 na linie',
+                    '4' => '3 na linie',
+                    '6' => '2 na linie',
+                )),
         ))
         ->set_render_callback(function ($block) {
             include(locate_template('template-parts/block-parts/part-posts.php',false, false) );

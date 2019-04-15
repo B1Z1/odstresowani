@@ -64,6 +64,7 @@ table {
   text-decoration: none; }
 
 .reset-list {
+  padding-left: 0 !important;
   list-style: none !important; }
   .reset-list li:first-child {
     margin-left: 0 !important; }
@@ -972,6 +973,16 @@ strong {
 .container-960 {
   max-width: 960px; }
 
+.container-posts {
+  max-width: 100%;
+  padding-right: 48px;
+  padding-left: 48px; }
+
+@media only screen and (max-width: 768px) {
+  .container-posts {
+    padding-right: 16px;
+    padding-left: 16px; } }
+
 /* Modules */
 .header {
   position: fixed;
@@ -1304,8 +1315,9 @@ strong {
   height: auto;
   overflow-x: hidden; }
   .block-relax__slide {
+    background-repeat: no-repeat;
     background-size: cover;
-    background-position: center; }
+    background-position: -25vw center; }
   .block-relax__content {
     height: calc(100vh - 32px);
     overflow-y: auto; }

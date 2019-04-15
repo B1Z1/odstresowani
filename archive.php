@@ -39,9 +39,9 @@ $cat_describe = $cat_id->description;
         </section>
         <!-- Hero banner end -->
 
-        <div class="pt32 container header__triger">
+        <div class="container container-posts pt32 header__triger">
             <div class="d-flex fwrap">
-                <?php if ( have_posts() ):  ?>
+                <?php if ( have_posts() ):  ?> 
                     <?php while (have_posts()): the_post(); ?>
                         <?php
                         /**
@@ -56,7 +56,7 @@ $cat_describe = $cat_id->description;
                         $args['image'] = get_the_post_thumbnail(get_the_ID(), 'full');
                         $args['date'] = get_the_date('j M Y', get_the_ID());
                         $args['category'] = post_get_cat(); ?>
-                        <div class="ntb-col-6 mb64">
+                        <div class="ntb-col-6 pc-col-4 mb64">
                             <?php do_action('post_card_block', $args); ?>
                         </div>
                     <?php endwhile; ?>

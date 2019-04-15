@@ -39,7 +39,7 @@ $cat_image = wp_get_attachment_image_src(carbon_get_term_meta($cat->term_id, 'ca
         </section>
         <!-- Hero banner end -->
 
-        <div class="pt32 container header__triger">
+        <div class="container container-posts pt32 header__triger">
             <div class="d-flex fwrap row">
                 <?php if ( have_posts() ):  ?>
                     <?php while (have_posts()): the_post(); ?>
@@ -63,7 +63,7 @@ $cat_image = wp_get_attachment_image_src(carbon_get_term_meta($cat->term_id, 'ca
                             </div>
                         <?php }
                         else{ ?>
-                            <div class="ntb-col-6 mb64">
+                            <div class="ntb-col-6 pc-col-4 mb64">
                                 <?php do_action('post_card_block', $args); ?>
                             </div>
                         <?php }

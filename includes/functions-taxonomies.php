@@ -92,7 +92,7 @@ function register_relax(){
         ),
         'public'              => true,
         'show_in_menu'        => true,
-        'publicly_queryable' => true,
+        'publicly_queryable' => false,
         'menu_position'       => 6,
         'menu_icon'           => 'dashicons-smiley',
         'supports'            => array('title','thumbnail', 'editor'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'

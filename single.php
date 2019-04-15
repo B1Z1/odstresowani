@@ -50,6 +50,7 @@ get_header();
             <?php endif; ?>
 
         </article>
+        <div class="container">
         <?php
             /**
              *
@@ -58,6 +59,7 @@ get_header();
              */
             get_template_part('template-parts/content', 'most-viewed-2');
         ?>
+        </div>
     </main>
 
     <!-- ------------------ -->

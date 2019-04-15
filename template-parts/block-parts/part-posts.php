@@ -78,7 +78,6 @@ $args_p = array(
 
     <?php else: ?>
 
-            <h3 class="block--texcen reset f-san"><?php pll_e('Artykuły') ?></h3>
             <div class="mt64 d-flex fwrap row">
                 <?php
                 if ( $posts->have_posts() ) {
@@ -112,10 +111,12 @@ $args_p = array(
                                 <?php do_action('post_card_list', $args); ?>
                             </div>
                         <?php }
-                        else { ?>
-                            <div class="ntb-col-6 mb64">
+                        else { 
+                            $column = $block['posts_position'];
+                            ?>
+                            <div class="ntb-col-6 pc-col-<?php echo $column ?> mb64">
                                 <?php do_action('post_card_block', $args); ?>
-                            </div>
+                            </div> 
                         <?php }
                     }
                 } ?>
