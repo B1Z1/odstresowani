@@ -1844,6 +1844,92 @@ strong {
   .animation {
     display: none; } }
 
+.map-relax {
+  position: relative;
+  width: 100%;
+  height: 90vh; }
+  .map-relax__alert {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.32);
+    color: rgba(255, 255, 255, 0.7);
+    z-index: 10;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity .4s, visibility .4s;
+    transition: opacity .4s, visibility .4s; }
+    .map-relax__alert--active {
+      visibility: visible;
+      opacity: 1; }
+  .map-relax__marker {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    font-size: .8rem;
+    line-height: 1.6rem;
+    color: white;
+    background: black;
+    border-radius: 50%;
+    cursor: pointer; }
+  .map-relax__circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 50%;
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+    .map-relax__circle:nth-child(1) {
+      -webkit-animation: pulse 3s infinite linear;
+      animation: pulse 3s infinite linear; }
+    .map-relax__circle:nth-child(2) {
+      -webkit-animation: pulse 3s infinite linear;
+      animation: pulse 3s infinite linear;
+      -webkit-animation-delay: .8s;
+      animation-delay: .8s; }
+    .map-relax__circle:nth-child(3) {
+      -webkit-animation: pulse 3s infinite linear;
+      animation: pulse 3s infinite linear;
+      -webkit-animation-delay: 1.6s;
+      animation-delay: 1.6s; }
+    .map-relax__circle:nth-child(4) {
+      -webkit-animation: pulse 3s infinite linear;
+      animation: pulse 3s infinite linear;
+      -webkit-animation-delay: 2.4s;
+      animation-delay: 2.4s; }
+
+@-webkit-keyframes pulse {
+  to {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+    opacity: 0; } }
+
+@keyframes pulse {
+  to {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+    opacity: 0; } }
+
 .link-category {
   display: inline-block;
   padding-top: 8px;

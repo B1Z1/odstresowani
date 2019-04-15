@@ -163,6 +163,13 @@ function crb_attach_theme_options() {
         ->add_tab('Strona 404', array(
            Field::make('file', '404_film_mp4', __('Video na tle MP4')),
            Field::make('file', '404_film_ogg', __('Video na tle OGG')),
+        ))
+        ->add_tab('Miejsca Relaxu', array(
+            Field::make( 'complex', 'map', __( 'Linki na dolnej części stopki' ) )
+                ->add_fields(array(
+                    Field::make('text', 'map_city', __('Adres')),
+                    Field::make('rich_text', 'map_description', __('Opis miejsca')),
+                )),
         ));
 
     /**
