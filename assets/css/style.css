@@ -210,6 +210,11 @@ table {
   -o-object-fit: cover;
   object-fit: cover; }
 
+@supports ((-o-object-fit: cover) or (object-fit: cover)) and (-ms-ime-align: auto) {
+  .filter-video {
+    -webkit-transform: scale(2);
+    transform: scale(2); } }
+
 /* Include Base styles */
 html, body {
   font-size: 16px;
@@ -1496,10 +1501,6 @@ strong {
     padding-right: 14px;
     margin-right: 16px;
     border-right: 1px dotted #B9B9B9; }
-  .card__date--abr {
-    position: absolute;
-    bottom: 4px;
-    right: 16px; }
   .card__date i {
     margin-right: 14px; }
 

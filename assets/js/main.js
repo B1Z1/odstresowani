@@ -56,7 +56,7 @@ window.onload = function(){
             
         return {
             'mobileList': function(){ 
-                if ( header ){
+                if ( header && header_mobilenav){
                     mobileList(header_mobilenav, buttons);
                 }
             },
@@ -291,8 +291,39 @@ window.onload = function(){
             //Function for relax page
             'relax' : function(object){
                 relax(object);
+            },
+            //Infinity Scroll for 
+            'infinityScroll' : function(object){
+                infinityScroll(object);
             }
         }  
+
+        //Infinity scroll for posts
+        function infinityScroll(object){
+            const container = document.querySelector(object.container),
+                  cards = container ? [... container.children]:null;
+            let newCards = [];
+            
+            if ( cards ){
+                //Clear container
+                container.innerHTML = '';
+                manipulateContainer();
+                window.addEventListener('scroll', function(ev){
+                    //Get breakpoint for initialize function
+                    let containerBreakPoint = 0 - (container.getBoundingClientRect().top - this.innerHeight);
+                    if ( containerBreakPoint > container.offsetHeight && cards.length > 0)
+                        manipulateContainer();
+                });
+            }
+            function manipulateContainer(){
+                //Take from array first 9 elements
+                newCards = cards.slice(0,9);
+                //Remove from main array first 9 elements
+                cards.splice(0,9);
+                //Append container
+                newCards.forEach(card=>{ container.appendChild(card); });
+            }
+        }
 
         //Function for generate image to synget
         function relax(object){
@@ -424,6 +455,15 @@ window.onload = function(){
     new MExtentions.relax({
         slide: '.block-relax__slide',
         svg: '.block-relax__logo',
+    });
+
+    /**
+     * 
+     * Initialize Relax function
+     * 
+     */
+    new MExtentions.infinityScroll({
+        container: '.infinity-scroll',
     });
 
     /**

@@ -40,7 +40,7 @@ $cat_image = wp_get_attachment_image_src(carbon_get_term_meta($cat->term_id, 'ca
         <!-- Hero banner end -->
 
         <div class="container container-posts pt32 header__triger">
-            <div class="d-flex fwrap row">
+            <div class="d-flex fwrap row infinity-scroll">
                 <?php if ( have_posts() ):  ?>
                     <?php while (have_posts()): the_post(); ?>
                         <?php
@@ -71,23 +71,6 @@ $cat_image = wp_get_attachment_image_src(carbon_get_term_meta($cat->term_id, 'ca
                     <?php endwhile; ?>
                 <?php endif; ?>
             </div>
-
-            <?php
-            /**
-             *
-             * Pagination
-             *
-             */
-            $args_p = array(
-                'show_all'     => false,
-                'end_size'     => 1,
-                'mid_size'     => 1,
-                'prev_next'    => true,
-                'prev_text'    => __('« Previous'),
-                'next_text'    => __('Next »'),
-            );
-            the_posts_pagination();
-            ?>
 
         </div>
 

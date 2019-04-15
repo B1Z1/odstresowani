@@ -531,21 +531,7 @@ function crb_attach_theme_options() {
         ->add_fields(array(
             Field::make('select', 'posts', __('Wybierz typ postów'))
                 ->set_options($posts),
-            Field::make('select', 'posts_style', __('Wybierz pozycjonowanie postów (Działa na wszystkie oprócz ciekawostek)'))
-                ->set_options( array(
-                    '' => 'Nic',
-                    'list' => 'List',
-                    'blocks' => 'Kafelki',
-                ) ),
             Field::make('select', 'posts_position', __('Wybierz rozmiar postów'))
-                ->set_conditional_logic(array(
-                    'relation' => 'OR',
-                    array(
-                        'field' => 'posts_style',
-                        'value' => 'blocks',
-                        'compare' => '=',
-                    )
-                ))
                 ->set_options(array(
                     '3' => '4 na linie',
                     '4' => '3 na linie',

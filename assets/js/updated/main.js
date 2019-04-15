@@ -66,7 +66,7 @@ window.onload = function () {
     };
     return {
       'mobileList': function mobileList() {
-        if (header) {
+        if (header && header_mobilenav) {
           _mobileList(header_mobilenav, buttons);
         }
       },
@@ -301,9 +301,42 @@ window.onload = function () {
       //Function for relax page
       'relax': function relax(object) {
         _relax(object);
-      } //Function for generate image to synget
+      },
+      //Infinity Scroll for 
+      'infinityScroll': function infinityScroll(object) {
+        _infinityScroll(object);
+      } //Infinity scroll for posts
 
     };
+
+    function _infinityScroll(object) {
+      var container = document.querySelector(object.container),
+          cards = container ? _toConsumableArray(container.children) : null;
+      var newCards = [];
+
+      if (cards) {
+        //Clear container
+        container.innerHTML = '';
+        manipulateContainer();
+        window.addEventListener('scroll', function (ev) {
+          //Get breakpoint for initialize function
+          var containerBreakPoint = 0 - (container.getBoundingClientRect().top - this.innerHeight);
+          if (containerBreakPoint > container.offsetHeight && cards.length > 0) manipulateContainer();
+        });
+      }
+
+      function manipulateContainer() {
+        //Take from array first 9 elements
+        newCards = cards.slice(0, 9); //Remove from main array first 9 elements
+
+        cards.splice(0, 9); //Append container
+
+        newCards.forEach(function (card) {
+          container.appendChild(card);
+        });
+      }
+    } //Function for generate image to synget
+
 
     function _relax(object) {
       var svgs = _toConsumableArray(document.querySelectorAll(object.svg)),
@@ -428,6 +461,15 @@ window.onload = function () {
   new MExtentions.relax({
     slide: '.block-relax__slide',
     svg: '.block-relax__logo'
+  });
+  /**
+   * 
+   * Initialize Relax function
+   * 
+   */
+
+  new MExtentions.infinityScroll({
+    container: '.infinity-scroll'
   });
   /**
    * 

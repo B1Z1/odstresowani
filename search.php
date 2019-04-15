@@ -35,7 +35,7 @@ $sygnet = wp_get_attachment_image_src(carbon_get_theme_option('general_sygnet_se
                 
 
                     <div class="header__triger search-page">
-                        <div class="d-flex fwrap">
+                        <div class="d-flex fwrap infinity-scroll">
 
                         <?php while (have_posts()): the_post(); ?>
 

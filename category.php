@@ -46,7 +46,7 @@ $cat_describe = $cat_object->category_description;
             <!-- Hero banner end -->
 
             <div class="container container-posts pt32 header__triger">
-                <div class="d-flex fwrap">
+                <div class="d-flex fwrap infinity-scroll">
                     <?php if ( have_posts() ):  ?>
                         <?php while (have_posts()): the_post(); ?>
                             <?php
@@ -68,22 +68,6 @@ $cat_describe = $cat_object->category_description;
                         <?php endwhile; ?>
                     <?php endif; ?>
                 </div>
-                <?php
-                /**
-                 *
-                 * Pagination
-                 *
-                 */
-                $args_p = array(
-                    'show_all'     => false,
-                    'end_size'     => 1,
-                    'mid_size'     => 1,
-                    'prev_next'    => true,
-                    'prev_text'    => __('« Previous'),
-                    'next_text'    => __('Next »'),
-                );
-                the_posts_pagination();
-                ?>
             </div>
         </main>
 
