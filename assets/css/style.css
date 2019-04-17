@@ -164,10 +164,10 @@ table {
 
 /* Operative */
 .c-op {
-  color: #3687D0; }
+  color: #5FA73F; }
 
 .bck-op {
-  background: #3687D0; }
+  background: #5FA73F; }
 
 /* Background gradient */
 .bck-gradient--blue {
@@ -1056,7 +1056,7 @@ strong {
     left: calc(50% - 2px);
     width: 4px;
     height: 4px;
-    background: #3687D0;
+    background: #5FA73F;
     border-radius: 50%;
     visibility: hidden;
     opacity: 0;
@@ -1269,7 +1269,7 @@ strong {
     left: 0;
     width: 48px;
     height: 2px;
-    background: #3687D0; }
+    background: #5FA73F; }
 
 .block-hidden {
   -webkit-user-select: none;
@@ -1297,10 +1297,10 @@ strong {
       bottom: 0;
       left: 0;
       height: 2px;
-      background: #3687D0; }
+      background: #5FA73F; }
 
 .block-review {
-  border-bottom: 2px solid #3687D0; }
+  border-bottom: 2px solid #5FA73F; }
   .block-review__avatar {
     width: 64px;
     height: 64px; }
@@ -1946,10 +1946,10 @@ strong {
   -ms-user-select: none;
   user-select: none; }
   .link-category:hover {
-    color: #3687D0;
+    color: #5FA73F;
     background: white; }
   .link-category--active {
-    color: #3687D0;
+    color: #5FA73F;
     background: white; }
 
 .link-more {
@@ -2091,8 +2091,8 @@ strong {
   border: 1px solid #DFE0DE;
   font-size: 1rem; }
   .form-operation__input:focus {
-    color: #3687D0;
-    border: 1px solid #3687D0; }
+    color: #5FA73F;
+    border: 1px solid #5FA73F; }
 
 .form-operation__radio input[type=radio] {
   margin-top: 0;
@@ -2200,8 +2200,8 @@ strong {
 
 .hero {
   position: relative;
-  padding-top: 208px;
-  padding-bottom: 128px;
+  padding-top: 264px;
+  padding-bottom: 264px;
   background-size: cover;
   background-position: 0 0;
   overflow: hidden; }
