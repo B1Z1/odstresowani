@@ -165,12 +165,21 @@ function crb_attach_theme_options() {
            Field::make('file', '404_film_ogg', __('Video na tle OGG')),
         ))
         ->add_tab('Miejsca Relaxu', array(
-            Field::make( 'complex', 'map', __( 'Linki na dolnej części stopki' ) )
+            Field::make( 'complex', 'map', __( 'Miejsce' ) )
                 ->add_fields(array(
                     Field::make('text', 'map_city', __('Adres')),
                     Field::make('text', 'map_title', __('Nazwa miejsca')),
                     Field::make('rich_text', 'map_description', __('Opis miejsca')),
                     Field::make('image', 'map_image', __('Obraz miejsca')),
+                )),
+        ))
+        ->add_tab('Techniki', array(
+            Field::make( 'complex', 'techs', __( 'Technika' ) )
+                ->add_fields(array(
+                    Field::make('text', 'map_city', __('Adres')),
+                    Field::make('text', 'map_title', __('Tytuł')),
+                    Field::make('rich_text', 'map_description', __('Opis')),
+                    Field::make('image', 'map_image', __('Obraz')),
                 )),
         ));
 

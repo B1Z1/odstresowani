@@ -7,7 +7,9 @@
 
 get_header();
 
-$marks = carbon_get_theme_option('map');
+$markers_relax = carbon_get_theme_option('map');
+$markers_techs = carbon_get_theme_option('techs');
+$all_markers = [$markers_relax, $markers_techs];
 
 ?>
 <!-- : Map script init start : -->
@@ -15,57 +17,47 @@ $marks = carbon_get_theme_option('map');
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
 <script src='https://unpkg.com/es6-promise@4.2.4/dist/es6-promise.auto.min.js'></script>
 <script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.1.0/mapbox-gl-compare.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.1.0/mapbox-gl-compare.css' type='text/css' />
 <!-- : Map script init end : -->
 
-    <div class="wrapper">
+<div class="wrapper">
 
-        <!-- ------------------ -->
-        <!-- Main section start -->
-        <!-- ------------------ -->
+    <!-- ------------------ -->
+    <!-- Main section start -->
+    <!-- ------------------ -->
 
-        <main class="main">
-            <div id="map-relax" class="map-relax">
-                <div class="map-relax__alert d-flex aic jcc">
+    <main class="main">
+        <div class="maps-relax">
+            <div id="maps-relax__relax" class="maps-relax__map">
+                <div class="maps-relax__alert d-flex aic jcc">
                     <h3>Kliknij CTRL i przekręć kółkiem aby zoomować</h3>
                 </div>
             </div>
-        </main>
+            <div id="maps-relax__tech" class="maps-relax__map"></div>
+        </div>
+    </main>
 
-        <!-- ------------------ -->
-        <!--  Main section end  -->
-        <!-- ------------------ -->
+    <!-- ------------------ -->
+    <!--  Main section end  -->
+    <!-- ------------------ -->
+
+    <div class="map-hidden">
+        <?php foreach ( $all_markers as $parent_key => $elements ): ?>
+            <?php foreach ( $elements as $key => $marker ):
+                        $city = $marker['map_city'];
+                        $title = $marker['map_title']; 
+                        $description = $marker['map_description']; 
+                        $image = wp_get_attachment_image_url($marker['map_image'], 'full'); ?>
+                <div data-id="<?php echo $parent_key; ?>"
+                        data-city="<?php echo $city; ?>" 
+                        data-title="<?php echo $title; ?>" 
+                        data-description="<?php echo $description; ?>" 
+                        data-image="<?php echo $image; ?>"></div>
+            <?php endforeach; ?>
+        <?php endforeach; ?>
+    </div>
+
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/updated/map-relax.js"></script>
-<script>
-    //Init Markers data
-    let dataMarkers = [];
-    //Init data for map
-    <?php foreach ( $marks as $key => $mark ): 
-        $name = $mark['map_city'];
-        $title = $mark['map_title']; 
-        $description = $mark['map_description']; 
-        $image = wp_get_attachment_image_url($mark['map_image'], 'full');
-    ?>
-    dataMarkers.push({
-        'place':'<?php echo $name; ?>', 
-        'title': '<?php echo $title; ?>',
-        'description': '<?php echo $description; ?>',
-        'image': '<?php echo $image; ?>',
-        });
-    <?php endforeach; ?>
-
-    //Init map
-    window.addEventListener('load', function() {
-        var map = new MapRelax({
-            token: 'pk.eyJ1IjoiaWx5YW1pc2hraW4iLCJhIjoiY2p1aWRrbDl2MTRrcDQ0cGdlMTN3ZWJ1cCJ9.tTVIhbBmMOhuH_Z5DKUN4A',
-            container: 'map-relax',
-            style: 'mapbox://styles/ilyamishkin/cjuifjhya0m221fqkauhk7fyv',
-            center: [21,52],
-            zoom: 6,
-            dataMarkers: dataMarkers,
-            //Alert element
-            mapAlert: '.map-relax__alert',
-        });
-    });
-</script>
 <?php
 get_footer();

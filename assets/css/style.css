@@ -1847,11 +1847,18 @@ strong {
   .animation {
     display: none; } }
 
-.map-relax {
+.maps-relax {
   position: relative;
   width: 100%;
-  height: 90vh; }
-  .map-relax__alert {
+  height: 90vh;
+  overflow: hidden; }
+  .maps-relax__map {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  .maps-relax__alert {
     position: absolute;
     top: 0;
     left: 0;
@@ -1869,10 +1876,10 @@ strong {
     opacity: 0;
     -webkit-transition: opacity .4s, visibility .4s;
     transition: opacity .4s, visibility .4s; }
-    .map-relax__alert--active {
+    .maps-relax__alert--active {
       visibility: visible;
       opacity: 1; }
-  .map-relax__marker {
+  .maps-relax__marker {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1889,9 +1896,11 @@ strong {
     line-height: 1.6rem;
     color: white;
     background: #5FA73F;
+    background-size: cover;
+    background-position: center;
     border-radius: 50%;
     cursor: pointer; }
-  .map-relax__circle {
+  .maps-relax__circle {
     position: absolute;
     top: 0;
     left: 0;
@@ -1902,31 +1911,38 @@ strong {
     opacity: 1;
     -webkit-transform: scale(1);
     transform: scale(1); }
-    .map-relax__circle:nth-child(1) {
+    .maps-relax__circle:nth-child(1) {
       -webkit-animation: pulse 3s infinite linear;
       animation: pulse 3s infinite linear; }
-    .map-relax__circle:nth-child(2) {
+    .maps-relax__circle:nth-child(2) {
       -webkit-animation: pulse 3s infinite linear;
       animation: pulse 3s infinite linear;
       -webkit-animation-delay: .8s;
       animation-delay: .8s; }
-    .map-relax__circle:nth-child(3) {
+    .maps-relax__circle:nth-child(3) {
       -webkit-animation: pulse 3s infinite linear;
       animation: pulse 3s infinite linear;
       -webkit-animation-delay: 1.6s;
       animation-delay: 1.6s; }
-    .map-relax__circle:nth-child(4) {
+    .maps-relax__circle:nth-child(4) {
       -webkit-animation: pulse 3s infinite linear;
       animation: pulse 3s infinite linear;
       -webkit-animation-delay: 2.4s;
       animation-delay: 2.4s; }
 
-.mapboxgl-popup {
-  width: 384px; }
+.map-hidden {
+  display: none; }
 
-.map-popup {
+.mapboxgl-popup {
+  width: 512px;
+  height: 312px; }
+
+.mapboxgl-compare .compare-swiper {
+  background-color: #5FA73F !important; }
+
+.maps-popup {
   position: relative; }
-  .map-popup__image {
+  .maps-popup__image {
     width: 100%;
     height: 256px;
     background-size: cover;

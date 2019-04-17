@@ -1,7 +1,14 @@
-.map-relax
+.maps-relax
     position: relative
     width: 100%
     height: 90vh
+    overflow: hidden
+    &__map
+        position: absolute!important
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
     &__alert
         position: absolute
         top: 0
@@ -30,6 +37,8 @@
         line-height: 1.6rem
         color: $white
         background: $operative
+        background-size: cover
+        background-position: center
         border-radius: 50%
         cursor: pointer
     &__circle
@@ -54,10 +63,17 @@
             animation: pulse 3s infinite linear
             animation-delay: 2.4s
 
-.mapboxgl-popup
-    width: 384px
+.map-hidden
+    display: none
 
-.map-popup
+.mapboxgl-popup
+    width: 512px
+    height: 312px
+
+.mapboxgl-compare .compare-swiper
+    background-color: $operative!important
+
+.maps-popup
     position: relative
     &__image
         width: 100%
