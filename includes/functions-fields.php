@@ -168,7 +168,9 @@ function crb_attach_theme_options() {
             Field::make( 'complex', 'map', __( 'Linki na dolnej części stopki' ) )
                 ->add_fields(array(
                     Field::make('text', 'map_city', __('Adres')),
+                    Field::make('text', 'map_title', __('Nazwa miejsca')),
                     Field::make('rich_text', 'map_description', __('Opis miejsca')),
+                    Field::make('image', 'map_image', __('Obraz miejsca')),
                 )),
         ));
 

@@ -62,7 +62,7 @@ gulp.task('clean', function(){
  * 
  */
 gulp.task('babel', function(){
-    return gulp.src('assets/js/main.js')
+    return gulp.src('assets/js/*.js') 
                 .pipe(babel({
                     presets: ['@babel/env']
                 }))

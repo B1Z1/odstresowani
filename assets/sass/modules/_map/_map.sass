@@ -29,7 +29,7 @@
         font-size: .8rem
         line-height: 1.6rem
         color: $white
-        background: $black
+        background: $operative
         border-radius: 50%
         cursor: pointer
     &__circle
@@ -38,7 +38,7 @@
         left: 0
         width: 30px
         height: 30px
-        border: 1px solid $black
+        border: 1px solid $operative
         border-radius: 50%
         opacity: 1
         transform: scale(1)
@@ -46,13 +46,25 @@
             animation: pulse 3s infinite linear
         &:nth-child(2)
             animation: pulse 3s infinite linear
-            animation-delay: .8s
+            animation-delay: .8s 
         &:nth-child(3)
             animation: pulse 3s infinite linear
             animation-delay: 1.6s
         &:nth-child(4)
             animation: pulse 3s infinite linear
             animation-delay: 2.4s
+
+.mapboxgl-popup
+    width: 384px
+
+.map-popup
+    position: relative
+    &__image
+        width: 100%
+        height: 256px
+        background-size: cover
+        background-position: center
+        background-repeat: no-repeat
 
 @keyframes pulse
     to
