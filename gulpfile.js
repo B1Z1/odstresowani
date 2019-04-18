@@ -14,9 +14,9 @@ gulp.task('start', function(){
 
     gulp.watch('assets/js/*.js', gulp.parallel('babel'));
 
-    gulp.watch('assets/sass/*.sass', gulp.series('sass', gulp.parallel('clean')));
-    gulp.watch('assets/sass/**/*.sass', gulp.series('sass', gulp.parallel('clean')));
-    gulp.watch('assets/sass/**/**/*.sass', gulp.series('sass', gulp.parallel('clean')));
+    gulp.watch('assets/sass/*.{sass,scss}', gulp.series('sass', gulp.parallel('clean')));
+    gulp.watch('assets/sass/**/*.{sass,scss}', gulp.series('sass', gulp.parallel('clean')));
+    gulp.watch('assets/sass/**/**/*.{sass,scss}', gulp.series('sass', gulp.parallel('clean')));
 
 })
 
@@ -28,7 +28,7 @@ gulp.task('start', function(){
  * 
  */
 gulp.task('sass', function(){
-    return gulp.src('assets/sass/*.sass')
+    return gulp.src('assets/sass/*.{sass,scss}')
             .pipe(sass().on('error', sass.logError))
             .pipe(autoprefixer({
                 browsers: ['last 2 versions'],

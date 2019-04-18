@@ -992,6 +992,7 @@ strong {
     padding-left: 16px; } }
 
 /* Modules */
+/* : Header module : */
 .header {
   position: fixed;
   top: 0;
@@ -1155,6 +1156,7 @@ strong {
       visibility: hidden;
       opacity: 0; } }
 
+/* : Footer module : */
 .footer {
   position: relative; }
 
@@ -1188,6 +1190,7 @@ strong {
     .footer-rights {
       text-align: center; } }
 
+/* : Wrapper module : */
 .wrapper {
   padding: 16px; }
 
@@ -1195,6 +1198,7 @@ strong {
   .wrapper {
     padding: 0; } }
 
+/* : Blocks modules : */
 .block {
   position: relative;
   margin-right: auto;
@@ -1212,6 +1216,7 @@ strong {
   .block--hidden {
     overflow: hidden; }
 
+/* : Image block : */
 .block-image {
   position: relative;
   width: 100%; }
@@ -1242,6 +1247,17 @@ strong {
     max-width: 380px;
     max-height: 380px; }
 
+@media only screen and (max-width: 769px) {
+  .block-image__advanced {
+    width: 50%; }
+  .block-image__underblock {
+    top: calc(100% - 128px);
+    left: calc(50% - 128px);
+    max-width: 256px;
+    max-height: 256px; }
+  .block-image--full, .block-image--small {
+    height: 50vh; } }
+
 /* Block for page "River Operation" */
 .block-operation {
   text-align: center; }
@@ -1253,6 +1269,7 @@ strong {
     .block-operation__wrapper--disabled {
       max-height: 0; }
 
+/* : Block advanced used in "advanced block" : */
 .block-advanced p {
   margin-top: 0 !important; }
 
@@ -1263,17 +1280,7 @@ strong {
   width: 64px;
   height: auto; }
 
-.block-list__el--underline {
-  position: relative; }
-  .block-list__el--underline:before {
-    content: '';
-    position: absolute;
-    top: 32px;
-    left: 0;
-    width: 48px;
-    height: 2px;
-    background: #5FA73F; }
-
+/* : BLock hidden, used in "advanced block" : */
 .block-hidden {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1302,12 +1309,15 @@ strong {
       height: 2px;
       background: #5FA73F; }
 
-.block-review {
-  border-bottom: 2px solid #5FA73F; }
-  .block-review__avatar {
-    width: 64px;
-    height: 64px; }
+@media only screen and (max-width: 769px) {
+  .block-hidden {
+    margin-bottom: 0;
+    text-align: left; }
+    .block-hidden__describe {
+      opacity: 1;
+      visibility: visible; } }
 
+/* : Block for Genoraport page : */
 .block-genoraport {
   position: relative; }
   .block-genoraport__arrow {
@@ -1319,86 +1329,9 @@ strong {
     transform: translate(-12%, -40%);
     z-index: -1; }
 
-.block-relax {
-  height: auto;
-  overflow-x: hidden; }
-  .block-relax__slide {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: -25vw center; }
-  .block-relax__content {
-    height: calc(100vh - 32px);
-    overflow-y: auto; }
-    .block-relax__content::-webkit-scrollbar {
-      width: 4px; }
-    .block-relax__content::-webkit-scrollbar-track {
-      background: transparent; }
-    .block-relax__content::-webkit-scrollbar-thumb {
-      background: #3687D0;
-      border-radius: 4px; }
-    .block-relax__content p {
-      font-size: 1.5rem;
-      line-height: 2.25rem; }
-  .block-relax__pagination {
-    position: absolute !important;
-    left: 25% !important;
-    top: 100% !important;
-    right: inherit !important;
-    bottom: inherit !important;
-    -webkit-transform: translate(-50%, -100%) !important;
-    transform: translate(-50%, -100%) !important;
-    z-index: 999; }
-  .block-relax__link {
-    position: relative !important;
-    width: 64px !important;
-    height: 64px !important;
-    margin-right: auto !important;
-    margin-left: auto !important;
-    background: white !important;
-    border-radius: 50% !important;
-    overflow: hidden !important;
-    cursor: pointer !important;
-    opacity: 1 !important;
-    outline: none !important; }
-  .block-relax__logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 50%;
-    height: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    pointer-events: none; }
-
 @media only screen and (max-width: 1367px) {
   .block-genoraport {
-    display: none; }
-  .block-relax__pagination {
-    left: 50% !important; } }
-
-@media only screen and (max-width: 769px) {
-  .block-image__advanced {
-    width: 50%; }
-  .block-image__underblock {
-    top: calc(100% - 128px);
-    left: calc(50% - 128px);
-    max-width: 256px;
-    max-height: 256px; }
-  .block-image--full, .block-image--small {
-    height: 50vh; }
-  .block-list__el:before {
-    top: 26px; }
-  .block-hidden {
-    margin-bottom: 0;
-    text-align: left; }
-    .block-hidden__describe {
-      opacity: 1;
-      visibility: visible; } }
-
-@media only screen and (max-width: 425px) {
-  .block-relax__content {
-    height: 100vh; } }
+    display: none; } }
 
 .post__title {
   position: relative;

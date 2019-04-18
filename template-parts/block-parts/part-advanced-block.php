@@ -90,29 +90,20 @@ $image_under = wp_get_attachment_image_url($block['advanced_blockimage'], 'full'
                         <?php
                             //If column type == text
                             if ( $col_type == 'text' ){ ?>
-
                                 <?php echo $col_content; ?>
-        
                                 <?php if ( $col_icon ): ?>
-
                                     <img src="<?php echo $col_icon; ?>" alt="Odstresowani Image" class="block-advanced__icon">
-
                                 <?php endif; ?>
-
                             <?php }
 
                             //If column type == list
                             else if( $col_type == 'list'  ){ ?>
 
                                 <ul class="block-list reset reset-list">
-
                                     <?php foreach ( $col_list as $el ): ?>
-
                                         <?php $list_text = $el['advanced_list_el']; ?>
                                         <li class="block-list__el block-list__el--underline pb16"><?php echo $list_text; ?></li>
-
                                     <?php endforeach; ?>
-
                                 </ul>
 
                             <?php }

@@ -487,25 +487,6 @@ function crb_attach_theme_options() {
             include(locate_template('template-parts/block-parts/part-advanced-block.php',false, false) );
         });
 
-    /**
-     * 
-     * Block Last Reviews for product
-     * 
-     */
-    Block::make(__('Blok z opiniami'))
-        ->add_fields(array(
-            Field::make('text', 'reviews_title', __('Tytuł')),
-            Field::make('complex', 'reviews', __('Block dla opinii'))
-                ->add_fields(array(
-                    Field::make('textarea', 'reviews_text', __('Opinia')),
-                    Field::make('text', 'reviews_name', __('Autor opinii')),
-                    Field::make('image', 'reviews_image', __('Zdjęcie opinii')),
-                )),
-        ))
-        ->set_render_callback(function ($block) {
-            include(locate_template('template-parts/block-parts/part-review.php',false, false) );
-        });
-
 
     /**
      *
@@ -659,6 +640,24 @@ function crb_attach_theme_options() {
         ))
         ->set_render_callback(function ($block) {
             include(locate_template('template-parts/block-parts/part-genoraport.php',false, false) );
+        });
+
+    /**
+     * 
+     * 
+     * Video gallery block
+     * 
+     */
+    Block::make(__('Wideo galeria'))
+        ->add_fields(array(
+            Field::make('complex', 'videogallery', __('Tekst nad przyciskiem'))
+                ->add_fields(array(
+                    Field::make('file', 'videogallery_film', __('Obraz raportu')),
+                    Field::make('text', 'videogallery_name', __('Imię i nazwisko authora')),
+                ))
+        ))
+        ->set_render_callback(function ($block) {
+            include(locate_template('template-parts/block-parts/part-videogallery.php',false, false) );
         });
 
 }
