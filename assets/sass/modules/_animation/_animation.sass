@@ -94,7 +94,7 @@ $head: #CCCCCC
         &--first
             top: calc(50% - 10px)
             left: -64px
-            animation: rect-black 2s infinite linear
+            animation: rect-black 2s infinite linear 
             animation-delay: 1s
         &--second
             top: -64px
@@ -115,6 +115,10 @@ $head: #CCCCCC
         width: 20%
         height: 20%
         animation: rotate360 5s infinite linear
+
+.fade
+    opacity: 0
+    visibility: hidden
 
 @keyframes rotate360
     100%

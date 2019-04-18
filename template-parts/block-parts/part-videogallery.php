@@ -19,7 +19,7 @@ $gallery = $block['videogallery'];
                 </video>
             </div>
             
-            <div class="filter filter-back filter-back--7 bck-blck"></div>
+            <div class="filter filter-back filter-back__video bck-blck"></div>
 
             <div class="block-videogallery__controls video-controls">
                 <div class="video-controls__button video-controls__play bck-wh c-op"><i class="video-controls__icon fas fa-play"></i></div>
@@ -31,5 +31,4 @@ $gallery = $block['videogallery'];
 <div class="container header__triger">
 
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/videogallery.js"></script>
-
 <?php endif; ?>

@@ -188,7 +188,7 @@ table {
   opacity: .4;
   -webkit-transition: .3s all;
   transition: .3s all; }
-  .filter-back--7 {
+  .filter-back__video {
     opacity: .7; }
 
 .filter-grad--black {
@@ -1836,6 +1836,10 @@ strong {
   height: 20%;
   -webkit-animation: rotate360 5s infinite linear;
   animation: rotate360 5s infinite linear; }
+
+.fade {
+  opacity: 0;
+  visibility: hidden; }
 
 @-webkit-keyframes rotate360 {
   100% {

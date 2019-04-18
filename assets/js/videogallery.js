@@ -1,14 +1,17 @@
 class VideoGallery{
     constructor(object){
         this.elements = document.querySelectorAll(`.${object.element.container}`) ? [... document.querySelectorAll(`.${object.element.container}`)]:null;
-        this.active = object.element.active;
+        this.activeElement = object.element.active;
 
         //Video
         this.video = object.video;
         this.controls = object.controls;
 
+        //Start for video
+        this.currentTime = 1;
+
         //Remember last element for remove active class
-        this.last;
+        this.last; //<- this variable changes from undefined to element <->
 
         if ( this.elements )
             this.init();
@@ -17,51 +20,63 @@ class VideoGallery{
 
     init(){
         this.elements.forEach((element, index)=>{
-            let video = element.querySelector(`.${this.video} video`),
-                controls = element.querySelector(`.${this.controls.container}`),
-                play = controls.querySelector(`.${this.controls.play}`),
-                stop = controls.querySelector(`.${this.controls.stop.el}`);
-            video.currentTime = 1;
-            this.onPlay(play, video, stop, element);            
-            this.onStop(play, video, stop, element);            
+            const video = element.querySelector(`.${this.video} video`), //Take from video block -> video tag
+                  controls = element.querySelector(`.${this.controls.container}`), //Control block
+                  play = controls.querySelector(`.${this.controls.play}`), //Take from control block -> play button
+                  stop = controls.querySelector(`.${this.controls.stop.el}`); //Take from control block -> stop button
+
+            
+            //Install current time for view
+            this.installCurrentTime(video);
+
+            //Init function for play button
+            this.onPlay(play, video, stop, element);
+
+            //Init function for stop button        
+            this.onStop(video, stop, element);            
 
         });
     }
 
-    onStop(play, video, stop, element){
+    onStop(video, stop, element){
         stop.addEventListener('click', (ev) => {
-            this.last = undefined;
+            this.last = undefined; //Reset last element
+            element.classList.remove(this.activeElement);//Remove from element active class
 
-            element.classList.remove(this.active);
             setTimeout(()=>{
-                video.pause(); 
-                stop.classList.remove(this.controls.stop.active);
-                video.currentTime = 1;
-                element.querySelector('.filter-back').style.visibility = 'visible';
-                element.querySelector('.filter-back').style.opacity = .7;
+                video.pause();//Pause the video
+                stop.classList.remove(this.controls.stop.active);//Remove from stop button active class
+                this.installCurrentTime(video);//Install current time for view
+                element.querySelector('.filter-back').classList.remove('fade');//Remove "fade" class from filter 
             },500);
+
         });
     }
 
     onPlay(play, video, stop, element){
         play.addEventListener('click', (ev)=>{
             if ( this.last !== undefined ){
-                this.last.classList.remove(this.active);
-                this.last.querySelector('video').pause();
-                this.last.querySelector('video').currentTime = 1;
-                this.last.querySelector(`.${this.controls.stop.el}`).classList.remove(this.controls.stop.active);
+                this.last.querySelector('video').pause(); //Pause the video
+                this.installCurrentTime(this.last.querySelector('video'));//Install current time for view
+                this.last.classList.remove(this.activeElement); //Remove active class from Video Block
+                this.last.querySelector(`.${this.controls.stop.el}`).classList.remove(this.controls.stop.active);//Remove from stop button active class
             }
-            video.currentTime = 1;
-            element.classList.add(this.active);
-            this.last = element;
+            this.installCurrentTime(video);//Install current time for view
+            element.classList.add(this.activeElement);//Add active class to element
+            this.last = element;//Save last element to detach
+
             setTimeout(()=>{ 
-                window.scrollTo(0, element.getBoundingClientRect().top + window.scrollY);
-                video.play(); 
-                stop.classList.add(this.controls.stop.active);
-                element.querySelector('.filter-back').style.visibility = 'hidden';
-                element.querySelector('.filter-back').style.opacity = 0;
+                window.scrollTo(0, element.getBoundingClientRect().top + window.scrollY);//Scroll window to video position
+                video.play();
+                stop.classList.add(this.controls.stop.active);//Add to stop button active class
+                element.querySelector('.filter-back').classList.add('fade');//Add "fade" class from filter 
             },500);
         });
+    }
+
+    //Install currentTime
+    installCurrentTime(element){
+        element.currentTime = this.currentTime;
     }
 
 }

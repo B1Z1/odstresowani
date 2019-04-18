@@ -21,12 +21,15 @@ function () {
     _classCallCheck(this, VideoGallery);
 
     this.elements = document.querySelectorAll(".".concat(object.element.container)) ? _toConsumableArray(document.querySelectorAll(".".concat(object.element.container))) : null;
-    this.active = object.element.active; //Video
+    this.activeElement = object.element.active; //Video
 
     this.video = object.video;
-    this.controls = object.controls; //Remember last element for remove active class
+    this.controls = object.controls; //Start for video
 
-    this.last;
+    this.currentTime = 1; //Remember last element for remove active class
+
+    this.last; //<- this variable changes from undefined to element <->
+
     if (this.elements) this.init();
   }
 
@@ -37,30 +40,42 @@ function () {
 
       this.elements.forEach(function (element, index) {
         var video = element.querySelector(".".concat(_this.video, " video")),
-            controls = element.querySelector(".".concat(_this.controls.container)),
-            play = controls.querySelector(".".concat(_this.controls.play)),
-            stop = controls.querySelector(".".concat(_this.controls.stop.el));
-        video.currentTime = 1;
+            //Take from video block -> video tag
+        controls = element.querySelector(".".concat(_this.controls.container)),
+            //Control block
+        play = controls.querySelector(".".concat(_this.controls.play)),
+            //Take from control block -> play button
+        stop = controls.querySelector(".".concat(_this.controls.stop.el)); //Take from control block -> stop button
+        //Install current time for view
 
-        _this.onPlay(play, video, stop, element);
+        _this.installCurrentTime(video); //Init function for play button
 
-        _this.onStop(play, video, stop, element);
+
+        _this.onPlay(play, video, stop, element); //Init function for stop button        
+
+
+        _this.onStop(video, stop, element);
       });
     }
   }, {
     key: "onStop",
-    value: function onStop(play, video, stop, element) {
+    value: function onStop(video, stop, element) {
       var _this2 = this;
 
       stop.addEventListener('click', function (ev) {
-        _this2.last = undefined;
-        element.classList.remove(_this2.active);
+        _this2.last = undefined; //Reset last element
+
+        element.classList.remove(_this2.activeElement); //Remove from element active class
+
         setTimeout(function () {
-          video.pause();
-          stop.classList.remove(_this2.controls.stop.active);
-          video.currentTime = 1;
-          element.querySelector('.filter-back').style.visibility = 'visible';
-          element.querySelector('.filter-back').style.opacity = .7;
+          video.pause(); //Pause the video
+
+          stop.classList.remove(_this2.controls.stop.active); //Remove from stop button active class
+
+          _this2.installCurrentTime(video); //Install current time for view
+
+
+          element.querySelector('.filter-back').classList.remove('fade'); //Remove "fade" class from filter 
         }, 500);
       });
     }
@@ -71,26 +86,41 @@ function () {
 
       play.addEventListener('click', function (ev) {
         if (_this3.last !== undefined) {
-          _this3.last.classList.remove(_this3.active);
+          _this3.last.querySelector('video').pause(); //Pause the video
 
-          _this3.last.querySelector('video').pause();
 
-          _this3.last.querySelector('video').currentTime = 1;
+          _this3.installCurrentTime(_this3.last.querySelector('video')); //Install current time for view
 
-          _this3.last.querySelector(".".concat(_this3.controls.stop.el)).classList.remove(_this3.controls.stop.active);
+
+          _this3.last.classList.remove(_this3.activeElement); //Remove active class from Video Block
+
+
+          _this3.last.querySelector(".".concat(_this3.controls.stop.el)).classList.remove(_this3.controls.stop.active); //Remove from stop button active class
+
         }
 
-        video.currentTime = 1;
-        element.classList.add(_this3.active);
-        _this3.last = element;
+        _this3.installCurrentTime(video); //Install current time for view
+
+
+        element.classList.add(_this3.activeElement); //Add active class to element
+
+        _this3.last = element; //Save last element to detach
+
         setTimeout(function () {
-          window.scrollTo(0, element.getBoundingClientRect().top + window.scrollY);
+          window.scrollTo(0, element.getBoundingClientRect().top + window.scrollY); //Scroll window to video position
+
           video.play();
-          stop.classList.add(_this3.controls.stop.active);
-          element.querySelector('.filter-back').style.visibility = 'hidden';
-          element.querySelector('.filter-back').style.opacity = 0;
+          stop.classList.add(_this3.controls.stop.active); //Add to stop button active class
+
+          element.querySelector('.filter-back').classList.add('fade'); //Add "fade" class from filter 
         }, 500);
       });
+    } //Install currentTime
+
+  }, {
+    key: "installCurrentTime",
+    value: function installCurrentTime(element) {
+      element.currentTime = this.currentTime;
     }
   }]);
 
