@@ -652,7 +652,7 @@ function crb_attach_theme_options() {
         ->add_fields(array(
             Field::make('complex', 'videogallery', __('Tekst nad przyciskiem'))
                 ->add_fields(array(
-                    Field::make('file', 'videogallery_film', __('Obraz raportu')),
+                    Field::make('file', 'videogallery_film_mp4', __('Filmik MP4')),
                     Field::make('text', 'videogallery_name', __('Imię i nazwisko authora')),
                 ))
         ))
