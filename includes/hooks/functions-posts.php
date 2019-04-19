@@ -12,7 +12,6 @@ if ( !function_exists( 'post_get_cat' ) ) {
 
         switch ($post_type){
             case 'strefa-wiedzy': $post_term = 'strefa-wiedzy-kategorie'; break;
-            case 'trudne-sprawy': $post_term = 'trudne-sprawy-kategorie'; break;
         }
 
         if ( $post_term != '' ){

@@ -34,9 +34,13 @@ require get_template_directory() . '/includes/functions-nav-menu.php';
 /**
  *
  * Require Taxonomies
+ *  ->Strefa Wiedzy
+ *  ->Miejsca Relaxu
  *
  */
-require get_template_directory() . '/includes/functions-taxonomies.php';
+require get_template_directory() . '/includes/taxonomies/functions-strefa-wiedzy.php';
+require get_template_directory() . '/includes/taxonomies/functions-miejsca.php';
+require get_template_directory() . '/includes/taxonomies/functions-techniki.php';
 
 /**
  * Enqueue scripts and styles.
@@ -56,6 +60,22 @@ require get_template_directory() . '/includes/functions-theme-support.php';
  *
  */
 require get_template_directory() . '/includes/functions-fields.php';
+require get_template_directory() . '/includes/fields/fields-theme-options.php';
+require get_template_directory() . '/includes/fields/fields-taxonomy-category.php';
+require get_template_directory() . '/includes/fields/fields-taxonomy-strefa-wiedzy.php';
+require get_template_directory() . '/includes/fields/fields-taxonomy-page.php';
+require get_template_directory() . '/includes/fields/fields-navmenu.php';
+//Blocks
+require get_template_directory() . '/includes/fields/fields-block-banner.php';
+require get_template_directory() . '/includes/fields/fields-block-advanced.php';
+require get_template_directory() . '/includes/fields/fields-block-page-slider.php';
+require get_template_directory() . '/includes/fields/fields-block-recent-slider.php';
+require get_template_directory() . '/includes/fields/fields-block-all-posts.php';
+require get_template_directory() . '/includes/fields/fields-block-most-viewed.php';
+require get_template_directory() . '/includes/fields/fields-block-post-banner.php';
+require get_template_directory() . '/includes/fields/fields-block-operation-river.php';
+require get_template_directory() . '/includes/fields/fields-block-image-gallery.php';
+require get_template_directory() . '/includes/fields/fields-block-video-gallery.php';
 
 /**
  *
