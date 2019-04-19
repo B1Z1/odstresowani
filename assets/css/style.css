@@ -1000,7 +1000,7 @@ strong {
     -webkit-transform: scale(2);
     transform: scale(2); } }
 
-/* : Header module : */
+/* : Header modules : */
 .header {
   position: fixed;
   top: 0;
@@ -1164,7 +1164,7 @@ strong {
       visibility: hidden;
       opacity: 0; } }
 
-/* : Footer module : */
+/* : Footer modules : */
 .footer {
   position: relative; }
 
@@ -1198,7 +1198,7 @@ strong {
     .footer-rights {
       text-align: center; } }
 
-/* : Wrapper module : */
+/* : Wrapper modules : */
 .wrapper {
   padding: 16px; }
 
@@ -1653,7 +1653,7 @@ strong {
     opacity: 0;
     visibility: hidden; }
 
-/* Card modules */
+/* : Card modules :  */
 .card {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -1703,7 +1703,7 @@ strong {
   .card__image--328, .card__image__swiper {
     height: 256px; } }
 
-/* Contact modules */
+/* : Contact modules :  */
 .contact__content {
   z-index: 11; }
 
@@ -1912,18 +1912,6 @@ strong {
     .mind:hover .mind__posts {
       opacity: 0;
       visibility: hidden; } }
-
-.er404 {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  width: calc(100vw - 32px);
-  height: calc(100vh - 32px); }
-  .er404__content {
-    width: 100%;
-    height: 100%;
-    z-index: 11; }
-  .er404__404 {
-    font-size: 10rem; }
 
 .maps-relax {
   position: relative;
@@ -2457,3 +2445,16 @@ strong {
   .breadcrumbs a {
     color: inherit;
     text-decoration: none; }
+
+/* : Error 404 modules : */
+.er404 {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: calc(100vw - 32px);
+  height: calc(100vh - 32px); }
+  .er404__content {
+    width: 100%;
+    height: 100%;
+    z-index: 11; }
+  .er404__404 {
+    font-size: 10rem; }
