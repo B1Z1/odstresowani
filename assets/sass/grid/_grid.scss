@@ -1,0 +1,61 @@
+/* Floats */
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.clearfix{
+    &:after{
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
+.d-ib{
+    display: inline-block;
+}
+
+/* Flex */
+.d-flex{
+    display: flex;
+}
+.flex-kit{
+    display: flex;
+    align-items: center;
+}
+.fwrap{
+    flex-wrap: wrap;
+}
+.row{
+    margin-right: -16px;
+    margin-left: -16px;
+}
+    
+.fd-col{
+    flex-direction: column;
+}
+
+.jcs{
+    justify-content: flex-start;
+}
+.jcc{
+    justify-content: center;
+}
+.jce{
+    justify-content: flex-end;
+}
+.jcsb{
+    justify-content: space-between;
+}
+
+.ais{
+    align-items: flex-start;
+}
+.aic{
+    align-items: center;
+}
+.aie{
+    align-items: flex-end;
+}
