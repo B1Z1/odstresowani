@@ -1167,16 +1167,15 @@ strong {
 /* : Footer modules : */
 .footer {
   position: relative; }
-
-.footer-social__el a {
-  position: relative;
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  vertical-align: middle; }
-  .footer-social__el a img {
-    width: 100%;
-    height: 100%; }
+  .footer__social__el a {
+    position: relative;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle; }
+    .footer__social__el a img {
+      width: 100%;
+      height: 100%; }
 
 @media only screen and (max-width: 768px) {
   .footer {
