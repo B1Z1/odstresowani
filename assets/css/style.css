@@ -2093,7 +2093,7 @@ strong {
       opacity: 0;
       visibility: hidden; } }
 
-/* Page modules */
+/* : Page modules : */
 .page__title {
   position: relative;
   text-align: center; }
@@ -2126,6 +2126,7 @@ strong {
   position: relative;
   height: 60vh; }
 
+/* : Post modules : */
 .post__title {
   position: relative;
   text-align: center; }
@@ -2485,16 +2486,6 @@ strong {
     height: auto; }
     .recent-posts_s496_pagination {
       display: none; } }
-
-.navigation .nav-links .page-numbers {
-  margin-right: 8px;
-  margin-left: 8px;
-  color: inherit;
-  text-decoration: none; }
-  .navigation .nav-links .page-numbers:first-child {
-    margin-left: 0px; }
-  .navigation .nav-links .page-numbers:last-child {
-    margin-right: 0px; }
 
 .breadcrumbs {
   text-align: center;
