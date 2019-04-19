@@ -1,0 +1,23 @@
+.hero{
+    position: relative;
+    padding-top: 264px;
+    padding-bottom: 264px;
+    background-size: cover;
+    background-position: 0 0;
+    overflow: hidden;
+    &__content{
+        position: relative;
+        text-align: center; 
+        z-index: 12;
+    }
+    &--backcenter{
+        background-position: center;
+    }
+}
+ 
+@media only screen and (max-width: 1024px){
+    .hero{
+        padding-top: 64px;
+        padding-bottom: 32px;
+    }
+}

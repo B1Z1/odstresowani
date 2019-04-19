@@ -1894,6 +1894,26 @@ strong {
     margin-right: 0;
     margin-left: 0; } }
 
+/* : Hero modules : */
+.hero {
+  position: relative;
+  padding-top: 264px;
+  padding-bottom: 264px;
+  background-size: cover;
+  background-position: 0 0;
+  overflow: hidden; }
+  .hero__content {
+    position: relative;
+    text-align: center;
+    z-index: 12; }
+  .hero--backcenter {
+    background-position: center; }
+
+@media only screen and (max-width: 1024px) {
+  .hero {
+    padding-top: 64px;
+    padding-bottom: 32px; } }
+
 .post__title {
   position: relative;
   text-align: center; }
@@ -2313,25 +2333,6 @@ strong {
     height: 36px; }
     .icon__sygnet img {
       width: 100%; }
-
-.hero {
-  position: relative;
-  padding-top: 264px;
-  padding-bottom: 264px;
-  background-size: cover;
-  background-position: 0 0;
-  overflow: hidden; }
-  .hero__content {
-    position: relative;
-    text-align: center;
-    z-index: 12; }
-  .hero--backcenter {
-    background-position: center; }
-
-@media only screen and (max-width: 1024px) {
-  .hero {
-    padding-top: 64px;
-    padding-bottom: 32px; } }
 
 .prop-slider {
   position: relative;
