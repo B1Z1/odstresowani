@@ -1,0 +1,38 @@
+.header-menu{
+    &__list{
+        & li:hover .header-submenu{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    &__hover{ 
+        position: relative;
+        &:before{
+            content: '';
+            position: absolute;
+            bottom: -7px;
+            left: calc(50% - 2px);
+            width: 4px;
+            height: 4px;
+            background: $operative;
+            border-radius: 50%;
+            visibility: hidden;
+            opacity: 0;
+            transition: .3s all;
+            z-index: 99;
+        }
+        &:hover:before{
+            visibility: visible;
+            opacity: 1;
+        }
+        &--submenu:before{
+            background: $white;
+        }
+    }
+}
+
+@media only screen and (max-width: 1366px){
+    .header-menu{
+        display: none;
+    }
+}
