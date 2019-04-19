@@ -1,26 +1,36 @@
-.page
-    &__title
-        position: relative
-        text-align: center
-    &__content  
-        p
-            margin-top: 32px
-            margin-bottom: 32px
-            font-size: 1.5rem
-            line-height: 2.25rem
-        ul, ol
-            padding-left: 32px
-            font-size: 1.5rem
-            line-height: 2.25rem
-        ul
-            list-style:  disc
-        ol
-            list-style:  decimal
-        h1,h2,h3,h4,h5,h6
-            font-family: Sanchez
-        a
-            font-family: value-black
-            color: inherit
-    &__mind
-        position: relative
-        height: 60vh
+.page{
+    &__title{
+        position: relative;
+        text-align: center;
+    }
+    &__content{
+        p{
+            margin-top: 32px;
+            margin-bottom: 32px;
+            font-size: 1.5rem;
+            line-height: 2.25rem;
+        }
+        ul, ol{
+            padding-left: 32px;
+            font-size: 1.5rem;
+            line-height: 2.25rem;
+        }
+        ul{
+            list-style:  disc;
+        }
+        ol{
+            list-style:  decimal;
+        }
+        h1,h2,h3,h4,h5,h6{
+            font-family: Sanchez;
+        }
+        a{
+            font-family: value-black;
+            color: inherit;
+        }
+    }
+    &__mind{
+        position: relative;
+        height: 60vh;
+    }
+}

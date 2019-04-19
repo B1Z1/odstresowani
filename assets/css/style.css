@@ -2093,6 +2093,39 @@ strong {
       opacity: 0;
       visibility: hidden; } }
 
+/* Page modules */
+.page__title {
+  position: relative;
+  text-align: center; }
+
+.page__content p {
+  margin-top: 32px;
+  margin-bottom: 32px;
+  font-size: 1.5rem;
+  line-height: 2.25rem; }
+
+.page__content ul, .page__content ol {
+  padding-left: 32px;
+  font-size: 1.5rem;
+  line-height: 2.25rem; }
+
+.page__content ul {
+  list-style: disc; }
+
+.page__content ol {
+  list-style: decimal; }
+
+.page__content h1, .page__content h2, .page__content h3, .page__content h4, .page__content h5, .page__content h6 {
+  font-family: Sanchez; }
+
+.page__content a {
+  font-family: value-black;
+  color: inherit; }
+
+.page__mind {
+  position: relative;
+  height: 60vh; }
+
 .post__title {
   position: relative;
   text-align: center; }
@@ -2158,38 +2191,6 @@ strong {
     left: calc(50% - 80px);
     width: 160px;
     height: 160px; } }
-
-.page__title {
-  position: relative;
-  text-align: center; }
-
-.page__content p {
-  margin-top: 32px;
-  margin-bottom: 32px;
-  font-size: 1.5rem;
-  line-height: 2.25rem; }
-
-.page__content ul, .page__content ol {
-  padding-left: 32px;
-  font-size: 1.5rem;
-  line-height: 2.25rem; }
-
-.page__content ul {
-  list-style: disc; }
-
-.page__content ol {
-  list-style: decimal; }
-
-.page__content h1, .page__content h2, .page__content h3, .page__content h4, .page__content h5, .page__content h6 {
-  font-family: Sanchez; }
-
-.page__content a {
-  font-family: value-black;
-  color: inherit; }
-
-.page__mind {
-  position: relative;
-  height: 60vh; }
 
 .searchform {
   text-align: right; }
