@@ -39,7 +39,7 @@ function () {
     value: function init() {
       var _this = this;
 
-      this.elements.forEach(function (element, index) {
+      this.elements.forEach(function (element) {
         var video = element.querySelector(".".concat(_this.video, " video")),
             //Take from video block -> video tag
         videoSrc = video.dataset.src,
@@ -67,7 +67,7 @@ function () {
     value: function onStop(video, stop, element) {
       var _this2 = this;
 
-      stop.addEventListener('click', function (ev) {
+      stop.addEventListener('click', function () {
         _this2.last = undefined; //Reset last element
 
         element.classList.remove(_this2.activeElement); //Remove from element active class
@@ -89,7 +89,7 @@ function () {
     value: function onPlay(play, video, videoSrc, stop, element) {
       var _this3 = this;
 
-      play.addEventListener('click', function (ev) {
+      play.addEventListener('click', function () {
         if (_this3.last !== undefined) {
           _this3.last.querySelector('video').pause(); //Pause the video
 
@@ -113,7 +113,9 @@ function () {
 
         video.querySelector('source[type="video/mp4"]').src = videoSrc;
         setTimeout(function () {
-          window.scrollTo(0, element.getBoundingClientRect().top + window.scrollY); //Scroll window to video position
+          window.scrollTo({
+            top: element.getBoundingClientRect().top + window.scrollY
+          }); //Scroll window to video position
 
           video.load();
           video.play();

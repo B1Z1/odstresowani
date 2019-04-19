@@ -20,7 +20,7 @@ class VideoGallery{
     }
 
     init(){
-        this.elements.forEach((element, index)=>{
+        this.elements.forEach((element)=>{
             const video = element.querySelector(`.${this.video} video`), //Take from video block -> video tag
                   videoSrc = video.dataset.src, //Control block
                   controls = element.querySelector(`.${this.controls.container}`), //Control block
@@ -42,7 +42,7 @@ class VideoGallery{
     }
 
     onStop(video, stop, element){
-        stop.addEventListener('click', (ev) => {
+        stop.addEventListener('click', () => {
             this.last = undefined; //Reset last element
             element.classList.remove(this.activeElement);//Remove from element active class
 
@@ -57,7 +57,7 @@ class VideoGallery{
     }
 
     onPlay(play, video, videoSrc, stop, element){
-        play.addEventListener('click', (ev)=>{
+        play.addEventListener('click', ()=>{
             if ( this.last !== undefined ){
                 this.last.querySelector('video').pause(); //Pause the video
                 this.installCurrentTime(this.last.querySelector('video'));//Install current time for view
@@ -69,7 +69,9 @@ class VideoGallery{
             this.last = element;//Save last element to detach
             video.querySelector('source[type="video/mp4"]').src = videoSrc;
             setTimeout(()=>{ 
-                window.scrollTo(0, element.getBoundingClientRect().top + window.scrollY);//Scroll window to video position
+                window.scrollTo({
+                    top: element.getBoundingClientRect().top + window.scrollY
+                });//Scroll window to video position
                 video.load();
                 video.play();
                 stop.classList.add(this.controls.stop.active);//Add to stop button active class
