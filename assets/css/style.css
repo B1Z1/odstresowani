@@ -1914,6 +1914,31 @@ strong {
     padding-top: 64px;
     padding-bottom: 32px; } }
 
+/* : Icons modules : */
+.icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: absolute;
+  left: calc(50% - 32px);
+  bottom: -32px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  z-index: 999; }
+  .icon__sygnet {
+    position: relative;
+    width: 36px;
+    height: 36px; }
+    .icon__sygnet img {
+      width: 100%; }
+
 .post__title {
   position: relative;
   text-align: center; }
@@ -2309,30 +2334,6 @@ strong {
     margin-left: 0; }
     .link-share:last-child {
       margin-top: 16px; } }
-
-.icon {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: absolute;
-  left: calc(50% - 32px);
-  bottom: -32px;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  z-index: 999; }
-  .icon__sygnet {
-    position: relative;
-    width: 36px;
-    height: 36px; }
-    .icon__sygnet img {
-      width: 100%; }
 
 .prop-slider {
   position: relative;
