@@ -26,7 +26,8 @@ function () {
     this.video = object.video;
     this.controls = object.controls; //Start for video
 
-    this.currentTime = 1; //Remember last element for remove active class
+    this.currentTime = 1;
+    this.currentVolume = .1; //Remember last element for remove active class
 
     this.last; //<- this variable changes from undefined to element <->
 
@@ -41,6 +42,8 @@ function () {
       this.elements.forEach(function (element, index) {
         var video = element.querySelector(".".concat(_this.video, " video")),
             //Take from video block -> video tag
+        videoSrc = video.dataset.src,
+            //Control block
         controls = element.querySelector(".".concat(_this.controls.container)),
             //Control block
         play = controls.querySelector(".".concat(_this.controls.play)),
@@ -48,10 +51,12 @@ function () {
         stop = controls.querySelector(".".concat(_this.controls.stop.el)); //Take from control block -> stop button
         //Install current time for view
 
-        _this.installCurrentTime(video); //Init function for play button
+        _this.installCurrentTime(video); //Install current volume
 
 
-        _this.onPlay(play, video, stop, element); //Init function for stop button        
+        video.volume = _this.currentVolume; //Init function for play button
+
+        _this.onPlay(play, video, videoSrc, stop, element); //Init function for stop button        
 
 
         _this.onStop(video, stop, element);
@@ -81,7 +86,7 @@ function () {
     }
   }, {
     key: "onPlay",
-    value: function onPlay(play, video, stop, element) {
+    value: function onPlay(play, video, videoSrc, stop, element) {
       var _this3 = this;
 
       play.addEventListener('click', function (ev) {
@@ -106,9 +111,11 @@ function () {
 
         _this3.last = element; //Save last element to detach
 
+        video.querySelector('source[type="video/mp4"]').src = videoSrc;
         setTimeout(function () {
           window.scrollTo(0, element.getBoundingClientRect().top + window.scrollY); //Scroll window to video position
 
+          video.load();
           video.play();
           stop.classList.add(_this3.controls.stop.active); //Add to stop button active class
 

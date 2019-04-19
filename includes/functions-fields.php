@@ -654,6 +654,7 @@ function crb_attach_theme_options() {
                 ->add_fields(array(
                     Field::make('file', 'videogallery_film_mp4', __('Filmik MP4')),
                     Field::make('text', 'videogallery_name', __('Imię i nazwisko authora')),
+                    Field::make('image', 'videogallery_poster', __('Poster Filmiku')),
                 ))
         ))
         ->set_render_callback(function ($block) {

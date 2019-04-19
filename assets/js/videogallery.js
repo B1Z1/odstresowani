@@ -9,6 +9,7 @@ class VideoGallery{
 
         //Start for video
         this.currentTime = 1;
+        this.currentVolume = .1;
 
         //Remember last element for remove active class
         this.last; //<- this variable changes from undefined to element <->
@@ -21,16 +22,18 @@ class VideoGallery{
     init(){
         this.elements.forEach((element, index)=>{
             const video = element.querySelector(`.${this.video} video`), //Take from video block -> video tag
+                  videoSrc = video.dataset.src, //Control block
                   controls = element.querySelector(`.${this.controls.container}`), //Control block
                   play = controls.querySelector(`.${this.controls.play}`), //Take from control block -> play button
                   stop = controls.querySelector(`.${this.controls.stop.el}`); //Take from control block -> stop button
-
             
             //Install current time for view
             this.installCurrentTime(video);
+            //Install current volume
+            video.volume = this.currentVolume;
 
             //Init function for play button
-            this.onPlay(play, video, stop, element);
+            this.onPlay(play, video, videoSrc, stop, element);
 
             //Init function for stop button        
             this.onStop(video, stop, element);            
@@ -53,7 +56,7 @@ class VideoGallery{
         });
     }
 
-    onPlay(play, video, stop, element){
+    onPlay(play, video, videoSrc, stop, element){
         play.addEventListener('click', (ev)=>{
             if ( this.last !== undefined ){
                 this.last.querySelector('video').pause(); //Pause the video
@@ -64,9 +67,10 @@ class VideoGallery{
             this.installCurrentTime(video);//Install current time for view
             element.classList.add(this.activeElement);//Add active class to element
             this.last = element;//Save last element to detach
-
+            video.querySelector('source[type="video/mp4"]').src = videoSrc;
             setTimeout(()=>{ 
                 window.scrollTo(0, element.getBoundingClientRect().top + window.scrollY);//Scroll window to video position
+                video.load();
                 video.play();
                 stop.classList.add(this.controls.stop.active);//Add to stop button active class
                 element.querySelector('.filter-back').classList.add('fade');//Add "fade" class from filter 

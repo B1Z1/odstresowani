@@ -176,49 +176,6 @@ table {
   background: linear-gradient(to bottom, #4693ff 0%, #0051c3 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4693ff', endColorstr='#0051c3', GradientType=1 ); }
 
-.filter--zmax {
-  z-index: 10; }
-
-.filter-back {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  opacity: .4;
-  -webkit-transition: .3s all;
-  transition: .3s all; }
-  .filter-back__video {
-    opacity: .7; }
-
-.filter-grad--black {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 125px;
-  background: -webkit-gradient(linear, left bottom, left top, from(black), to(rgba(231, 56, 39, 0)));
-  background: linear-gradient(to top, black 0%, rgba(231, 56, 39, 0) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#e73827', GradientType=1 );
-  opacity: .75;
-  z-index: 1; }
-
-.filter-video {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover; }
-
-@supports ((-o-object-fit: cover) or (object-fit: cover)) and (-ms-ime-align: auto) {
-  .filter-video {
-    -webkit-transform: scale(2);
-    transform: scale(2); } }
-
 /* Include Base styles */
 html, body {
   font-size: 16px;
@@ -995,7 +952,54 @@ strong {
     padding-right: 16px;
     padding-left: 16px; } }
 
-/* Modules */
+/* --------------------------> Modules <------------------------ */
+/* : Filter modules : */
+.filter--zmax {
+  z-index: 10; }
+
+/* : Filter background + is needed extra color from color classes : */
+.filter-back {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: .4;
+  -webkit-transition: .3s all;
+  transition: .3s all; }
+  .filter-back__video {
+    opacity: .7; }
+
+/* : Filter gradient : */
+.filter-grad--black {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 125px;
+  background: -webkit-gradient(linear, left bottom, left top, from(black), to(rgba(231, 56, 39, 0)));
+  background: linear-gradient(to top, black 0%, rgba(231, 56, 39, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#e73827', GradientType=1 );
+  opacity: .75;
+  z-index: 1; }
+
+/* : Video filter : */
+.filter-video {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover; }
+
+@supports ((-o-object-fit: cover) or (object-fit: cover)) and (-ms-ime-align: auto) {
+  .filter-video {
+    -webkit-transform: scale(2);
+    transform: scale(2); } }
+
 /* : Header module : */
 .header {
   position: fixed;
