@@ -1,19 +1,16 @@
 <?php
-
-$check = $block['hero_check'];
-
+$check = $block['hero_check']; //Which options is need video:photo
+$links = carbon_get_theme_option('footer_social'); //Link if exist
+$title = $block['hero_heading']; //Title of block
+$content = $block['hero_content']; //Content of block
+$link = $block['hero_url'];
 if ( $check == 'video' ){
-    $video_mp4 = wp_get_attachment_url($block['hero_video_mp4']);
-    $video_ogg = wp_get_attachment_url($block['hero_video_ogg']);
+    $videos = $block['hero_videos'];
+    $video = videoByDate($videos); //Get video by date of year
 }
 else{
-    $back_image = wp_get_attachment_image_url($block['hero_photo'], 'full');
+    $back_image = wp_get_attachment_image_url($block['hero_photo'], 'full'); //Get image
 }
-
-$title = $block['hero_heading'];
-$content = $block['hero_content'];
-$link = $block['hero_url'];
-
 ?>
 </div>
     <!-- Hero banner start -->
@@ -23,12 +20,10 @@ $link = $block['hero_url'];
         <?php if ( $check == 'video' ): ?>
 
             <video class="filter filter-video" muted autoplay loop>
-                <source src="<?php echo $video_mp4; ?>" type="video/mp4">
-                <?php if ( $video_ogg ): ?>
-                    <source src="<?php echo $video_ogg; ?>" type="video/ogg">
-                <?php endif; ?>
+                <source src="<?php echo $video; ?>" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
+
         <?php endif; ?>
 
         <div class="hero__content">

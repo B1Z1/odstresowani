@@ -77,12 +77,6 @@ require get_template_directory() . '/includes/hooks/functions-footer.php';
 require get_template_directory() . '/includes/hooks/functions-posts.php';
 /**
  *
- * Require Pagination filter
- *
- */
-require get_template_directory() . '/includes/functions-pagination.php';
-/**
- *
  * Require Translations
  *
  */
@@ -99,3 +93,9 @@ require get_template_directory() . '/includes/functions-shortcodes.php';
  *
  */
 require get_template_directory() . '/includes/functions-advanced-block.php';
+/**
+ *
+ * Require function, which get video by date of year
+ *
+ */
+require get_template_directory() . '/includes/functions-datevideo.php';

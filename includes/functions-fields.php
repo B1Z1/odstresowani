@@ -201,16 +201,10 @@ function crb_attach_theme_options() {
                    'photo' => 'Zdjęcie',
                    'video' => 'Video',
                 )),
-            Field::make( 'file', 'hero_video_mp4', __('Wybierz filmik MP4') )
-                ->set_conditional_logic(array(
-                    'relation' => 'OR',
-                    array(
-                        'field' => 'hero_check',
-                        'value' => 'video',
-                        'compare' => '=',
-                    )
-                )),
-            Field::make( 'file', 'hero_video_ogg', __('Wybierz filmik OGG') )
+            Field::make('complex', 'hero_videos', __('Filmiki na codzien, może być tylko 7'))
+                ->add_fields(array(
+                    Field::make( 'file', 'hero_video_mp4', __('Wybierz filmik MP4') )
+                ))
                 ->set_conditional_logic(array(
                     'relation' => 'OR',
                     array(
