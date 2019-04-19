@@ -1,0 +1,64 @@
+/* White */
+.c-wh{
+   color: $white;
+} 
+.bck-wh{
+    background: $white;
+}
+
+/* Black */
+.c-blck{
+   color: $black;
+}
+.bck-blck{
+    background: $black;
+}
+
+/* Cobe color (Purple) */
+.c-cb{
+   color: $cobe;
+} 
+.bck-cb{
+    background: $cobe;
+}
+
+/* ***** 50 faces of Grey ***** */
+
+/* Main */
+.c-gm{
+   color: $grey-main;
+} 
+.bck-gm{
+    background: $grey-main;
+}
+
+/* Secondary */
+.c-gs{
+   color: $grey-secondary;
+} 
+.bck-gs {
+    background: $grey-secondary;
+}
+
+/* Tertiary */
+.c-gt{
+   color: $grey-tertiary;
+} 
+.bck-gt{
+    background: $grey-tertiary;
+}
+
+/* Operative */
+.c-op{
+   color: $operative;
+}
+.bck-op{
+    background: $operative;
+}
+
+/* Background gradient */
+.bck-gradient--blue{
+    background: rgba(70,147,255,1);
+    background: linear-gradient(to bottom, rgba(70,147,255,1) 0%, rgba(0,81,195,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4693ff', endColorstr='#0051c3', GradientType=1 );
+}
