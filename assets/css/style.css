@@ -1830,6 +1830,93 @@ strong {
   .form-operation__button:disabled {
     background: #DFE0DE; }
 
+/* : Link modules : */
+.link-category {
+  display: inline-block;
+  padding-top: 8px;
+  padding-right: 24px;
+  padding-bottom: 8px;
+  padding-left: 24px;
+  border: 1px solid white;
+  border-radius: 4px;
+  color: white;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  .link-category:hover {
+    color: #5FA73F;
+    background: white; }
+  .link-category--active {
+    color: #5FA73F;
+    background: white; }
+
+.link-more {
+  position: relative;
+  text-transform: uppercase; }
+  .link-more--black:before {
+    background: black !important; }
+  .link-more--black:after {
+    background: black !important; }
+  .link-more:before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 50%;
+    height: 1px;
+    background: white;
+    -webkit-transition: .5s all;
+    transition: .5s all; }
+  .link-more:after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    right: 0;
+    height: 1px;
+    background: white;
+    -webkit-transition: .5s all;
+    transition: .5s all; }
+  .link-more:hover:before {
+    left: 100%; }
+  .link-more:hover:after {
+    right: 100%; }
+
+.link-icon {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px; }
+  .link-icon__icon {
+    width: 100%;
+    vertical-align: middle; }
+
+.link-share {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 176px;
+  height: 64px;
+  text-transform: lowercase;
+  border-radius: 12px;
+  border: 2px solid #DFE0DE; }
+
+@media only screen and (max-width: 425px) {
+  .link-share {
+    margin-right: 0;
+    margin-left: 0; }
+    .link-share:last-child {
+      margin-top: 16px; } }
+
 /* : Card modules :  */
 .card {
   -webkit-box-sizing: border-box;
@@ -2248,92 +2335,6 @@ strong {
     -webkit-transform: scale(2);
     transform: scale(2);
     opacity: 0; } }
-
-.link-category {
-  display: inline-block;
-  padding-top: 8px;
-  padding-right: 24px;
-  padding-bottom: 8px;
-  padding-left: 24px;
-  border: 1px solid white;
-  border-radius: 4px;
-  color: white;
-  -webkit-transition: .3s all;
-  transition: .3s all;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none; }
-  .link-category:hover {
-    color: #5FA73F;
-    background: white; }
-  .link-category--active {
-    color: #5FA73F;
-    background: white; }
-
-.link-more {
-  position: relative;
-  text-transform: uppercase; }
-  .link-more--black:before {
-    background: black !important; }
-  .link-more--black:after {
-    background: black !important; }
-  .link-more:before {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    right: 50%;
-    height: 1px;
-    background: white;
-    -webkit-transition: .5s all;
-    transition: .5s all; }
-  .link-more:after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 50%;
-    right: 0;
-    height: 1px;
-    background: white;
-    -webkit-transition: .5s all;
-    transition: .5s all; }
-  .link-more:hover:before {
-    left: 100%; }
-  .link-more:hover:after {
-    right: 100%; }
-
-.link-share {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 176px;
-  height: 64px;
-  text-transform: lowercase;
-  border-radius: 12px;
-  border: 2px solid #DFE0DE; }
-
-.link-icon {
-  position: relative;
-  display: inline-block;
-  width: 24px;
-  height: 24px; }
-  .link-icon__icon {
-    width: 100%;
-    vertical-align: middle; }
-
-@media only screen and (max-width: 425px) {
-  .link-share {
-    margin-right: 0;
-    margin-left: 0; }
-    .link-share:last-child {
-      margin-top: 16px; } }
 
 .prop-slider {
   position: relative;

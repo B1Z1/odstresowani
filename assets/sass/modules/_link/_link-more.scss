@@ -1,0 +1,38 @@
+.link-more{
+    position: relative;
+    text-transform: uppercase;
+    &--black{
+        &:before{
+            background: $black!important;
+        }
+        &:after{
+            background: $black!important;
+        }
+    }
+    &:before{
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        right: 50%;
+        height: 1px;
+        background: $white;
+        transition: .5s all;
+    }
+    &:after{
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 50%;
+        right: 0;
+        height: 1px;
+        background: $white;
+        transition: .5s all;
+    }   
+    &:hover:before{
+        left: 100%;
+    }
+    &:hover:after{
+        right: 100%;
+    }
+}

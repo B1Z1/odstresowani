@@ -1,0 +1,20 @@
+.link-category{
+    display: inline-block;
+    padding-top: 8px;
+    padding-right: 24px;
+    padding-bottom: 8px;
+    padding-left: 24px;
+    border: 1px solid $white;
+    border-radius: 4px;
+    color: $white;
+    transition: .3s all;
+    user-select: none;
+    &:hover{
+        color: $operative;
+        background: $white;
+    }
+    &--active{
+        color: $operative;
+        background: $white;
+    }
+}
