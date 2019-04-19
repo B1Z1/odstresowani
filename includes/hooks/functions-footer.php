@@ -59,10 +59,10 @@ if ( !function_exists('footer_upper_social') ){
         ?>
 
         <div class="clearfix">
-            <div class="footer-social ntb-col-12 flex-kit jce fwrap fr">
+            <div class="footer__social ntb-col-12 flex-kit jce fwrap fr">
                 <ul class="reset-list d-flex">
                     <?php foreach ( $footer_social as $footer_list ): ?>
-                        <li class="footer-social__el mr16 ml16">
+                        <li class="footer__social__el mr16 ml16">
                             <a href="<?php echo $footer_list['footer_social_url']; ?>" class="reset-link">
                                 <?php $footer_social_icon = wp_get_attachment_image($footer_list['footer_social_image'], 'full'); ?>
                                 <?php echo $footer_social_icon; ?>
@@ -97,7 +97,7 @@ if ( !function_exists('footer_bottom_start') ){
 add_action('odstresowani_footer_bottom_elements', 'footer_bottom_rights', 10);
 if ( !function_exists('footer_bottom_rights') ){
     function footer_bottom_rights(){ ?>
-        <div class="footer-rights ntb-col-4 fl">
+        <div class="footer__rights ntb-col-4 fl">
             <span>© 2018 Odstresowani.pl  All rights reserved.</span>
         </div>
     <?php }
@@ -109,7 +109,7 @@ if ( !function_exists('footer_bottom_links') ){
         $footer_bottom_list = carbon_get_theme_option('footer_bottom_blocks');
         ?>
         <div class="ntb-col-8 fr">
-            <ul class="footer-politics reset-list flex-kit jce fwrap">
+            <ul class="footer__politics reset-list flex-kit jce fwrap">
                 <?php foreach ( $footer_bottom_list as $item ): 
                         $title = $item['footer_bottom_pages']; 
 						$page = get_page_by_title($title);

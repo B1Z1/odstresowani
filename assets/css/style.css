@@ -1181,21 +1181,21 @@ strong {
 @media only screen and (max-width: 768px) {
   .footer {
     position: relative; }
-    .footer-social, .footer-politics {
+    .footer__social, .footer__politics {
       margin-top: 16px; }
-    .footer-social {
+    .footer__social {
       -webkit-box-pack: start;
       -ms-flex-pack: start;
       justify-content: flex-start; }
-    .footer-politics {
+    .footer__politics {
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center; }
-      .footer-politics li:last-child {
+      .footer__politics li:last-child {
         margin-right: 16px; }
-      .footer-politics li:first-child {
+      .footer__politics li:first-child {
         margin-left: 16px; }
-    .footer-rights {
+    .footer__rights {
       text-align: center; } }
 
 /* : Wrapper modules : */
