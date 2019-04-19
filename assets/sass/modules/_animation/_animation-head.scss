@@ -1,0 +1,44 @@
+.animation-head {
+    transform: rotate(10deg);
+    &__image {
+        height: 384px;
+    }
+    &__linesmall {
+        position: absolute;
+        top: 80px;
+        right: 80px;
+        width: 60px;
+        height: 60px;
+        animation: rotate360 3s infinite linear;
+    }
+    &__linebig {
+        position: absolute;
+        top: 59px;
+        right: 57px;
+        width: 100px;
+        height: 100px;
+        animation: rotate-360 5s infinite linear;
+    }
+    &__rect {
+        &--first {
+            top: 68px;
+            right: 176px;
+            transform: rotate(45deg);
+            animation: rect-black 2s infinite linear;
+            animation-delay: 1s;
+        }
+        &--second {
+            top: 32px;
+            right: 105px;
+            animation: rect-black 2s infinite linear;
+            animation-delay: 3s;
+        }
+        &--third {
+            top: 68px;
+            right: 46px;
+            transform: rotate(45deg);
+            animation: rect-black 2s infinite linear;
+            animation-delay: 5s;
+        }
+    }
+}
