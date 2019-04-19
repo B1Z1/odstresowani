@@ -2193,6 +2193,157 @@ strong {
     width: 160px;
     height: 160px; } }
 
+/* : Prop slider modules : */
+.prop-slider {
+  position: relative;
+  background-position: 0 0;
+  background-size: cover;
+  -webkit-transition: .6s all;
+  transition: .6s all;
+  overflow: hidden; }
+  .prop-slider_content {
+    position: relative;
+    margin-top: 208px;
+    margin-right: auto;
+    margin-left: auto; }
+  .prop-slider_container {
+    position: relative;
+    width: 100%; }
+  .prop-slider_card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: .6s all;
+    transition: .6s all; }
+    .prop-slider_card__active {
+      position: relative;
+      opacity: 1;
+      visibility: visible; }
+    .prop-slider_card__title {
+      position: relative;
+      display: inline-block; }
+      .prop-slider_card__title:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 2rem;
+        background: white;
+        opacity: 0.2; }
+  .prop-slider_pagination {
+    position: relative;
+    margin-top: 180px; }
+    .prop-slider_pagination__el {
+      opacity: .6;
+      cursor: pointer; }
+    .prop-slider_pagination__active {
+      opacity: 1; }
+
+@media only screen and (max-width: 768px) {
+  .prop-slider_content {
+    margin-top: 128px; }
+  .prop-slider_pagination {
+    margin-top: 128px; }
+    .prop-slider_pagination__el {
+      margin-right: 0;
+      margin-left: 0; } }
+
+/* : Recent posts slider modules : */
+.recent-posts {
+  position: relative;
+  overflow: hidden;
+  /* For recent double slider */
+  /* For recent normal slider */ }
+  .recent-posts_nav__el {
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: .3s all;
+    transition: .3s all; }
+    .recent-posts_nav__el:after {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: black;
+      visibility: hidden;
+      opacity: 0;
+      -webkit-transition: .3s all;
+      transition: .3s all; }
+  .recent-posts_nav__active:after {
+    visibility: visible;
+    opacity: 1; }
+  .recent-posts_vh {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0; }
+    .recent-posts_vh__active {
+      position: relative;
+      visibility: visible;
+      opacity: 1; }
+    .recent-posts_vh_pagination > .swiper-pagination-bullet {
+      width: 16px !important;
+      height: 16px !important;
+      background: transparent !important;
+      border: 2px solid #B9B9B9 !important;
+      cursor: pointer;
+      opacity: 1 !important; }
+    .recent-posts_vh_pagination > .swiper-pagination-bullet-active {
+      background: #B9B9B9 !important; }
+  .recent-posts_s496 {
+    position: relative;
+    width: 100%;
+    height: 496px;
+    cursor: default; }
+    .recent-posts_s496_pagination {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 999; }
+      .recent-posts_s496_pagination > .swiper-pagination-bullet {
+        width: 8px !important;
+        height: 8px !important;
+        margin-right: 10px !important;
+        margin-left: 10px !important;
+        background: rgba(255, 255, 255, 0.25) !important;
+        cursor: pointer;
+        opacity: 1 !important;
+        -webkit-transition: .3s all;
+        transition: .3s all; }
+      .recent-posts_s496_pagination > .swiper-pagination-bullet-active {
+        -webkit-transform: scale(2);
+        transform: scale(2);
+        background: white !important; }
+    .recent-posts_s496 > .swiper-pagination-bullets {
+      bottom: 0 !important;
+      width: 50% !important; }
+
+@media only screen and (max-width: 1366px) {
+  .recent-posts_vh_pagination {
+    padding-top: 64px; } }
+
+@media only screen and (max-width: 768px) {
+  .recent-posts_nav__el {
+    margin-top: 8px;
+    margin-bottom: 8px; }
+  .recent-posts_s496 {
+    height: auto; }
+    .recent-posts_s496_pagination {
+      display: none; } }
+
+/* : Search modules : */
 .searchform {
   text-align: right; }
   .searchform__button, .searchform__input {
@@ -2338,154 +2489,6 @@ strong {
     -webkit-transform: scale(2);
     transform: scale(2);
     opacity: 0; } }
-
-.prop-slider {
-  position: relative;
-  background-position: 0 0;
-  background-size: cover;
-  -webkit-transition: .6s all;
-  transition: .6s all;
-  overflow: hidden; }
-  .prop-slider_content {
-    position: relative;
-    margin-top: 208px;
-    margin-right: auto;
-    margin-left: auto; }
-  .prop-slider_container {
-    position: relative;
-    width: 100%; }
-  .prop-slider_card {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transition: .6s all;
-    transition: .6s all; }
-    .prop-slider_card__active {
-      position: relative;
-      opacity: 1;
-      visibility: visible; }
-    .prop-slider_card__title {
-      position: relative;
-      display: inline-block; }
-      .prop-slider_card__title:after {
-        content: '';
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        height: 2rem;
-        background: white;
-        opacity: 0.2; }
-  .prop-slider_pagination {
-    position: relative;
-    margin-top: 180px; }
-    .prop-slider_pagination__el {
-      opacity: .6;
-      cursor: pointer; }
-    .prop-slider_pagination__active {
-      opacity: 1; }
-
-@media only screen and (max-width: 768px) {
-  .prop-slider_content {
-    margin-top: 128px; }
-  .prop-slider_pagination {
-    margin-top: 128px; }
-    .prop-slider_pagination__el {
-      margin-right: 0;
-      margin-left: 0; } }
-
-.recent-posts {
-  position: relative;
-  overflow: hidden;
-  /* For recent double slider */
-  /* For recent normal slider */ }
-  .recent-posts_nav__el {
-    position: relative;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-transition: .3s all;
-    transition: .3s all; }
-    .recent-posts_nav__el:after {
-      content: '';
-      position: absolute;
-      bottom: 4px;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: black;
-      visibility: hidden;
-      opacity: 0;
-      -webkit-transition: .3s all;
-      transition: .3s all; }
-  .recent-posts_nav__active:after {
-    visibility: visible;
-    opacity: 1; }
-  .recent-posts_vh {
-    position: absolute;
-    top: 0;
-    left: 0;
-    visibility: hidden;
-    opacity: 0; }
-    .recent-posts_vh__active {
-      position: relative;
-      visibility: visible;
-      opacity: 1; }
-    .recent-posts_vh_pagination > .swiper-pagination-bullet {
-      width: 16px !important;
-      height: 16px !important;
-      background: transparent !important;
-      border: 2px solid #B9B9B9 !important;
-      cursor: pointer;
-      opacity: 1 !important; }
-    .recent-posts_vh_pagination > .swiper-pagination-bullet-active {
-      background: #B9B9B9 !important; }
-  .recent-posts_s496 {
-    position: relative;
-    width: 100%;
-    height: 496px;
-    cursor: default; }
-    .recent-posts_s496_pagination {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      z-index: 999; }
-      .recent-posts_s496_pagination > .swiper-pagination-bullet {
-        width: 8px !important;
-        height: 8px !important;
-        margin-right: 10px !important;
-        margin-left: 10px !important;
-        background: rgba(255, 255, 255, 0.25) !important;
-        cursor: pointer;
-        opacity: 1 !important;
-        -webkit-transition: .3s all;
-        transition: .3s all; }
-      .recent-posts_s496_pagination > .swiper-pagination-bullet-active {
-        -webkit-transform: scale(2);
-        transform: scale(2);
-        background: white !important; }
-    .recent-posts_s496 > .swiper-pagination-bullets {
-      bottom: 0 !important;
-      width: 50% !important; }
-
-@media only screen and (max-width: 1366px) {
-  .recent-posts_vh_pagination {
-    padding-top: 64px; } }
-
-@media only screen and (max-width: 768px) {
-  .recent-posts_nav__el {
-    margin-top: 8px;
-    margin-bottom: 8px; }
-  .recent-posts_s496 {
-    height: auto; }
-    .recent-posts_s496_pagination {
-      display: none; } }
 
 .breadcrumbs {
   text-align: center;
