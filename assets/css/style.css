@@ -61,21 +61,13 @@ table {
 /* Include Fonts */
 @font-face {
   font-family: 'value-black';
-  src: url("../fonts/Value/value-black-web/value-black.eot");
-  src: url("../fonts/Value/value-black-web/value-black.eot?#iefix") format("embedded-opentype");
-  src: url("../fonts/Value/value-black-web/value-black.woff") format("woff");
-  src: url("../fonts/Value/value-black-web/value-black.woff2") format("woff2");
-  src: url("../fonts/Value/value-black-web/value-black.ttf") format("truetype");
+  src: url("../fonts/Value/value-black-web/value-black.eot"), url("../fonts/Value/value-black-web/value-black.eot?#iefix") format("embedded-opentype"), url("../fonts/Value/value-black-web/value-black.woff") format("woff"), url("../fonts/Value/value-black-web/value-black.woff2") format("woff2"), url("../fonts/Value/value-black-web/value-black.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'value-regular';
-  src: url("../fonts/Value/value-regular-web/value-regular.eot");
-  src: url("../fonts/Value/value-regular-web/value-regular.eot?#iefix") format("embedded-opentype");
-  src: url("../fonts/Value/value-regular-web/value-regular.woff") format("woff");
-  src: url("../fonts/Value/value-regular-web/value-regular.woff2") format("woff2");
-  src: url("../fonts/Value/value-regular-web/value-regular.ttf") format("truetype");
+  src: url("../fonts/Value/value-regular-web/value-regular.eot"), url("../fonts/Value/value-regular-web/value-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Value/value-regular-web/value-regular.woff") format("woff"), url("../fonts/Value/value-regular-web/value-regular.woff2") format("woff2"), url("../fonts/Value/value-regular-web/value-regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
