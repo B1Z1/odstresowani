@@ -21,22 +21,21 @@ function () {
     _classCallCheck(this, OdstresowaniMap);
 
     this.dataMarkers = this.getData(_toConsumableArray(document.querySelector(".".concat(object.dataMarkers.container)).children));
-    this.token = object.token;
-    this.map = object.map;
-    this.marker = object.marker !== undefined ? object.marker : null;
-    this.popup = object.popup !== undefined ? object.popup : null;
-    this.mapBoxClient = mapboxSdk({
-      accessToken: object.token
-    }); //Variables for alert
 
-    this.alert = object.alert !== undefined ? {
-      el: document.querySelector(".".concat(object.alert.el)),
-      active: object.alert.active
-    } : null;
-    this.timeout;
-    this.isCTRL = false; //Coordinates for Line draw
+    if (this.dataMarkers !== null) {
+      this.token = object.token;
+      this.map = object.map;
+      this.marker = object.marker !== undefined ? object.marker : null;
+      this.popup = object.popup !== undefined ? object.popup : null;
+      this.mapBoxClient = mapboxSdk({
+        accessToken: object.token
+      }); //Coordinates for Line draw
 
-    if (object.lineDraw) this.coords = [];
+      if (object.lineDraw) this.coords = [];
+      this.init();
+    } else {
+      return null;
+    }
   }
 
   _createClass(OdstresowaniMap, [{
@@ -44,10 +43,6 @@ function () {
     value: function init() {
       var _this = this;
 
-      this.map.scrollZoom.disable();
-      this.onCTRLDown();
-      this.onCTRLUp();
-      if (this.alert) this.onMouseWheel();
       this.dataMarkers.forEach(function (data, index) {
         var markerHTML = _this.marker ? _this.getTemplateMarker(data.image, index) : console.log('Marker is NULL'),
             popupHTML = _this.popup ? _this.getTemplatePopUp(data.image, data.title, data.description, data.link) : console.log('PopUp is NULL'),
@@ -105,68 +100,6 @@ function () {
     }
     /**
      * 
-     * On CTRL down, enable zoom
-     * 
-     */
-
-  }, {
-    key: "onCTRLDown",
-    value: function onCTRLDown() {
-      var _this3 = this;
-
-      window.addEventListener('keydown', function (ev) {
-        if (ev.ctrlKey) {
-          _this3.map.scrollZoom.enable();
-
-          _this3.isCTRL = true;
-          if (_this3.alert) _this3.alert.el.classList.remove(_this3.alert.active);
-        }
-      });
-    }
-    /**
-     * 
-     * On CTRL up, disable zoom
-     * 
-     */
-
-  }, {
-    key: "onCTRLUp",
-    value: function onCTRLUp() {
-      var _this4 = this;
-
-      window.addEventListener('keyup', function (ev) {
-        _this4.map.scrollZoom.disable();
-
-        _this4.isCTRL = false;
-      });
-    }
-    /**
-     * 
-     * On mouse wheel enable alert
-     * 
-     */
-
-  }, {
-    key: "onMouseWheel",
-    value: function onMouseWheel() {
-      var _this5 = this;
-
-      //Mousewheel event for Mozilla Firefox
-      var mousewheelevent = /Firefox/i.test(navigator.userAgent) ? "DOMMouseScroll" : "mousewheel";
-      window.addEventListener(mousewheelevent, function (ev) {
-        if (ev.target.closest('.maps-relax') && !_this5.isCTRL) {
-          clearTimeout(_this5.timeout);
-
-          _this5.alert.el.classList.add(_this5.alert.active);
-
-          _this5.timeout = setTimeout(function () {
-            _this5.alert.el.classList.remove(_this5.alert.active);
-          }, 1000);
-        }
-      });
-    }
-    /**
-     * 
      * Generate Template for popup
      * 
      */
@@ -212,6 +145,11 @@ function () {
     value: function getData(children) {
       var elements = children,
           markers = [];
+
+      if (elements === undefined || elements.length === 0) {
+        return null;
+      }
+
       elements[0].parentNode.remove();
       elements.forEach(function (el) {
         var dataObject = {
@@ -259,11 +197,6 @@ window.addEventListener('load', function () {
     popup: {
       classes: ['maps-popup']
     },
-    //AlertBlock
-    alert: {
-      el: 'maps-alert',
-      active: 'maps-alert--active'
-    },
     lineDraw: false
   });
   var map_tech = new OdstresowaniMap({
@@ -293,9 +226,9 @@ window.addEventListener('load', function () {
     },
     //LineDraw
     lineDraw: true
-  }); //Init Maps
+  });
 
-  map_relax.init();
-  map_tech.init();
-  var map = new mapboxgl.Compare(map_relax.map, map_tech.map, {});
+  if (map_relax.dataMarkers !== null || map_tech.dataMarkers !== null) {
+    var map = new mapboxgl.Compare(map_relax.map, map_tech.map, {});
+  }
 });

@@ -1,28 +1,24 @@
 class OdstresowaniMap{
     constructor(object){
         this.dataMarkers = this.getData([... document.querySelector(`.${object.dataMarkers.container}`).children]);
-        this.token = object.token;
-        this.map = object.map;
-        this.marker = object.marker !== undefined ? object.marker:null;
-        this.popup = object.popup !== undefined ? object.popup:null;
-        this.mapBoxClient = mapboxSdk({ accessToken: object.token });
-        
-        //Variables for alert
-        this.alert = object.alert !== undefined ? {el:document.querySelector(`.${object.alert.el}`), active: object.alert.active}:null;
-        this.timeout;
-        this.isCTRL = false;
+        if ( this.dataMarkers !== null ){
+            this.token = object.token;
+            this.map = object.map;
+            this.marker = object.marker !== undefined ? object.marker:null;
+            this.popup = object.popup !== undefined ? object.popup:null;
+            this.mapBoxClient = mapboxSdk({ accessToken: object.token });
 
-        //Coordinates for Line draw
-        if ( object.lineDraw )
-            this.coords = [];
+            //Coordinates for Line draw
+            if ( object.lineDraw )
+                this.coords = [];
+            this.init();
+        }
+        else {
+            return null;
+        }
     }
 
     init(){
-        this.map.scrollZoom.disable();
-        this.onCTRLDown();
-        this.onCTRLUp();
-        if ( this.alert ) 
-            this.onMouseWheel();
 
         this.dataMarkers.forEach((data, index) => {
             let markerHTML = this.marker ? this.getTemplateMarker(data.image, index) : console.log('Marker is NULL'),
@@ -85,54 +81,6 @@ class OdstresowaniMap{
 
     /**
      * 
-     * On CTRL down, enable zoom
-     * 
-     */
-    onCTRLDown(){
-        window.addEventListener('keydown', (ev)=>{
-            if ( ev.ctrlKey ){
-                this.map.scrollZoom.enable();
-                this.isCTRL = true;
-                if ( this.alert )
-                    this.alert.el.classList.remove(this.alert.active);
-            }
-        });
-    }
-
-    /**
-     * 
-     * On CTRL up, disable zoom
-     * 
-     */
-    onCTRLUp(){
-        window.addEventListener('keyup', (ev)=>{
-            this.map.scrollZoom.disable();
-            this.isCTRL = false;
-        });
-    }
-
-    /**
-     * 
-     * On mouse wheel enable alert
-     * 
-     */
-    onMouseWheel(){
-        //Mousewheel event for Mozilla Firefox
-        let mousewheelevent = (/Firefox/i.test(navigator.userAgent))? "DOMMouseScroll" : "mousewheel";
-        
-        window.addEventListener(mousewheelevent, (ev)=>{
-            if ( ev.target.closest('.maps-relax') && !this.isCTRL ){
-                clearTimeout(this.timeout);
-                this.alert.el.classList.add(this.alert.active);
-                this.timeout = setTimeout(()=>{
-                    this.alert.el.classList.remove(this.alert.active);
-                },1000);
-            }
-        });
-    }
-
-    /**
-     * 
      * Generate Template for popup
      * 
      */
@@ -183,6 +131,9 @@ class OdstresowaniMap{
     getData(children){
         let elements = children,
             markers = [];
+        if ( elements === undefined || elements.length === 0 ){ 
+            return null;
+        }
         elements[0].parentNode.remove();
         elements.forEach((el)=>{
             let dataObject = {
@@ -233,11 +184,6 @@ window.addEventListener('load', function(){
                 'maps-popup'
             ]
         },
-        //AlertBlock
-        alert: {
-            el: 'maps-alert',
-            active: 'maps-alert--active'
-        },
         lineDraw: false
     });
     let map_tech = new OdstresowaniMap({
@@ -273,10 +219,9 @@ window.addEventListener('load', function(){
         lineDraw: true
     });
 
-    //Init Maps
-    map_relax.init();
-    map_tech.init();
-    let map = new mapboxgl.Compare(map_relax.map, map_tech.map, {});
+    if ( map_relax.dataMarkers !== null || map_tech.dataMarkers !== null){
+        let map = new mapboxgl.Compare(map_relax.map, map_tech.map, {});
+    }
 });
 
 

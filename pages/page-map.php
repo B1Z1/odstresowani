@@ -32,9 +32,6 @@ $techs_markers = $mapData->getData('techniki');
         <div class="maps-relax">
             <div id="maps-relax__relax" class="maps-relax__map">
                 <h3 class="maps-title maps-title__relax f-vb">Miejsca Relaxu</h3>
-                <div class="maps-alert d-flex aic jcc">
-                    <h3>Kliknij CTRL i przekręć kółkiem aby zoomować</h3>
-                </div>
             </div>
             <div id="maps-relax__tech" class="maps-relax__map maps-relax__tech">
                 <h3 class="maps-title maps-title__techs f-vb">Techniki</h3>
@@ -83,4 +80,4 @@ $techs_markers = $mapData->getData('techniki');
 
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/updated/map-relax.js"></script>
 <?php
-get_footer();
+wp_footer();
