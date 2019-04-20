@@ -1,0 +1,21 @@
+.maps-title{
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    &__relax{
+        left: 25%;
+        transform: translateX(-50%);
+    }
+    &__techs{
+        left: 75%;
+        transform: translateX(-50%);
+    }
+}
+
+@media only screen and ( max-width: 768px ){
+    .maps-title{
+        &__relax, &__techs{
+            left: 50%;
+        }
+    }
+}

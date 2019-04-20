@@ -20,7 +20,7 @@ function register_techniki(){
             'not_found'          => 'Nie znaleziono',
             'not_found_in_trash' => 'Nie znaleziono w koszu',
         ),
-        'publicly_queryable'  => false,
+        'publicly_queryable'  => true,
         'public'              => true,
         'show_in_menu'        => true,
         'menu_position'       => 5,

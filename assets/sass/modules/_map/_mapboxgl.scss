@@ -1,0 +1,16 @@
+.mapboxgl-popup{
+    width: 512px;
+    height: 312px;
+}
+.mapboxgl-compare {
+    z-index: 3!important;
+    & .compare-swiper{
+        left: -24px!important;
+        margin: -24px 1px 0!important;
+        width: 48px!important;
+        height: 48px!important;
+        background-color: $operative!important;
+        background-position: center;
+        background-size: contain;
+    }
+}

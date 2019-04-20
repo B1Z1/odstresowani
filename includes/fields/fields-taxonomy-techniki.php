@@ -13,7 +13,10 @@ if ( !function_exists('crb_register_term_techniki') ){
         Container::make( 'post_meta', __( 'Adres miejsca techniki' ) )
             ->where( 'post_type', '=', 'techniki' )
             ->add_fields( array(
-                Field::make( 'text', 'adress', __( 'Adres Techniki' ) ),
+                Field::make( 'text', 'adress', __( 'Adres Techniki' ) )
+                    ->set_required(true),
+                Field::make( 'image', 'sygnet', __( 'Sygnet na szarym tle' ) )
+                    ->set_required(true),
             ) );
     }
 }

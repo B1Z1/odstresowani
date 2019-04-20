@@ -50,7 +50,7 @@ function () {
       if (this.alert) this.onMouseWheel();
       this.dataMarkers.forEach(function (data, index) {
         var markerHTML = _this.marker ? _this.getTemplateMarker(data.image, index) : console.log('Marker is NULL'),
-            popupHTML = _this.popup ? _this.getTemplatePopUp(data.image, data.title, data.description) : console.log('PopUp is NULL'),
+            popupHTML = _this.popup ? _this.getTemplatePopUp(data.image, data.title, data.description, data.link) : console.log('PopUp is NULL'),
             popUp = new mapboxgl.Popup({
           offset: 25
         }).setHTML(popupHTML);
@@ -151,7 +151,9 @@ function () {
     value: function onMouseWheel() {
       var _this5 = this;
 
-      window.addEventListener('mousewheel', function (ev) {
+      //Mousewheel event for Mozilla Firefox
+      var mousewheelevent = /Firefox/i.test(navigator.userAgent) ? "DOMMouseScroll" : "mousewheel";
+      window.addEventListener(mousewheelevent, function (ev) {
         if (ev.target.closest('.maps-relax') && !_this5.isCTRL) {
           clearTimeout(_this5.timeout);
 
@@ -171,8 +173,8 @@ function () {
 
   }, {
     key: "getTemplatePopUp",
-    value: function getTemplatePopUp(image, title, description) {
-      return "<div class=\"maps-popup d-flex\">\n                    <div class=\"mbl-col-5 reset\">\n                        <div class=\"maps-popup__image\" style=\"background-image: url(".concat(image, ");\"></div>\n                    </div>\n                    <div class=\"mbl-col-7\">\n                        <h5 class=\"reset-top mb8 f-vb\">").concat(title, "</h5>\n                        ").concat(description, "\n                    </div>\n                </div>");
+    value: function getTemplatePopUp(image, title, description, link) {
+      return "<div class=\"maps-popup d-flex\">\n                    <div class=\"mbl-col-5 reset\">\n                        <div class=\"maps-popup__image\" style=\"background-image: url(".concat(image, ");\"></div>\n                    </div>\n                    <div class=\"mbl-col-7\">\n                        <h5 class=\"reset-top mb8 f-vb\"><a href=\"").concat(link, "\" class=\"link link--underline reset-link\">").concat(title, "</a></h5>\n                        ").concat(description, "\n                    </div>\n                </div>");
     }
     /**
      * 
@@ -192,7 +194,7 @@ function () {
       if (this.marker.pulse) {
         for (var i = 0; i < 4; i++) {
           var circle = document.createElement('div');
-          circle.classList.add('maps-relax__circle');
+          circle.classList.add('maps-marker__circle');
           markerHTML.appendChild(circle);
         }
       }
@@ -216,7 +218,8 @@ function () {
           title: el.dataset.title ? el.dataset.title : null,
           description: el.dataset.description ? el.dataset.description : null,
           image: el.dataset.image ? el.dataset.image : null,
-          adress: el.dataset.adress ? el.dataset.adress : null
+          adress: el.dataset.adress ? el.dataset.adress : null,
+          link: el.dataset.link ? el.dataset.link : null
         };
         markers.push(dataObject);
       });
@@ -246,7 +249,7 @@ window.addEventListener('load', function () {
     //Marker configuration
     marker: {
       el: 'div',
-      classes: ['maps-relax__marker'],
+      classes: ['maps-marker'],
       pulse: true,
       isNumeric: true,
       hasImage: false,
@@ -258,8 +261,8 @@ window.addEventListener('load', function () {
     },
     //AlertBlock
     alert: {
-      el: 'maps-relax__alert',
-      active: 'maps-relax__alert--active'
+      el: 'maps-alert',
+      active: 'maps-alert--active'
     },
     lineDraw: false
   });
@@ -279,7 +282,7 @@ window.addEventListener('load', function () {
     //Marker configuration
     marker: {
       el: 'div',
-      classes: ['maps-relax__marker'],
+      classes: ['maps-marker'],
       pulse: false,
       isNumeric: false,
       hasImage: true

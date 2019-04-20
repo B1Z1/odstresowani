@@ -6,7 +6,7 @@ class OdstresowaniMap{
         this.marker = object.marker !== undefined ? object.marker:null;
         this.popup = object.popup !== undefined ? object.popup:null;
         this.mapBoxClient = mapboxSdk({ accessToken: object.token });
-
+        
         //Variables for alert
         this.alert = object.alert !== undefined ? {el:document.querySelector(`.${object.alert.el}`), active: object.alert.active}:null;
         this.timeout;
@@ -21,12 +21,12 @@ class OdstresowaniMap{
         this.map.scrollZoom.disable();
         this.onCTRLDown();
         this.onCTRLUp();
-        if ( this.alert )
+        if ( this.alert ) 
             this.onMouseWheel();
 
         this.dataMarkers.forEach((data, index) => {
             let markerHTML = this.marker ? this.getTemplateMarker(data.image, index) : console.log('Marker is NULL'),
-                popupHTML = this.popup ? this.getTemplatePopUp(data.image, data.title, data.description):console.log('PopUp is NULL'),
+                popupHTML = this.popup ? this.getTemplatePopUp(data.image, data.title, data.description, data.link):console.log('PopUp is NULL'),
                 popUp = new mapboxgl.Popup({ offset: 25 })
                         .setHTML(popupHTML);
             
@@ -56,7 +56,6 @@ class OdstresowaniMap{
     }
 
     lineDraw(){
-        
         this.map.on('load', ()=>{
             this.map.addLayer({
                 "id": "route",
@@ -118,7 +117,10 @@ class OdstresowaniMap{
      * 
      */
     onMouseWheel(){
-        window.addEventListener('mousewheel', (ev)=>{
+        //Mousewheel event for Mozilla Firefox
+        let mousewheelevent = (/Firefox/i.test(navigator.userAgent))? "DOMMouseScroll" : "mousewheel";
+        
+        window.addEventListener(mousewheelevent, (ev)=>{
             if ( ev.target.closest('.maps-relax') && !this.isCTRL ){
                 clearTimeout(this.timeout);
                 this.alert.el.classList.add(this.alert.active);
@@ -134,13 +136,13 @@ class OdstresowaniMap{
      * Generate Template for popup
      * 
      */
-    getTemplatePopUp(image, title, description){
+    getTemplatePopUp(image, title, description, link){
         return `<div class="maps-popup d-flex">
                     <div class="mbl-col-5 reset">
                         <div class="maps-popup__image" style="background-image: url(${image});"></div>
                     </div>
                     <div class="mbl-col-7">
-                        <h5 class="reset-top mb8 f-vb">${title}</h5>
+                        <h5 class="reset-top mb8 f-vb"><a href="${link}" class="link link--underline reset-link">${title}</a></h5>
                         ${description}
                     </div>
                 </div>`;
@@ -165,7 +167,7 @@ class OdstresowaniMap{
         if ( this.marker.pulse ){
             for ( let i = 0; i < 4; i++ ){
                 let circle = document.createElement('div');
-                circle.classList.add('maps-relax__circle');
+                circle.classList.add('maps-marker__circle');
                 markerHTML.appendChild(circle);
             }
         }
@@ -188,6 +190,7 @@ class OdstresowaniMap{
                 description: el.dataset.description ? el.dataset.description:null,
                 image: el.dataset.image ? el.dataset.image:null,
                 adress: el.dataset.adress ? el.dataset.adress:null,
+                link: el.dataset.link ? el.dataset.link:null,
             }
             markers.push(dataObject);
         });
@@ -217,7 +220,7 @@ window.addEventListener('load', function(){
         marker: {
             el: 'div',
             classes: [
-                'maps-relax__marker'
+                'maps-marker'
             ],
             pulse: true,
             isNumeric: true,
@@ -232,8 +235,8 @@ window.addEventListener('load', function(){
         },
         //AlertBlock
         alert: {
-            el: 'maps-relax__alert',
-            active: 'maps-relax__alert--active'
+            el: 'maps-alert',
+            active: 'maps-alert--active'
         },
         lineDraw: false
     });
@@ -254,7 +257,7 @@ window.addEventListener('load', function(){
         marker: {
             el: 'div',
             classes: [
-                'maps-relax__marker'
+                'maps-marker'
             ],
             pulse: false,
             isNumeric: false,

@@ -123,8 +123,13 @@
 /* : Search modules : */
 @import "modules/_search/search";
 
-/* : Map modules : */
-@import "modules/_map/map";
+/* : Map modules : */ 
+@import "modules/_map/maps";
+@import "modules/_map/maps-alert";
+@import "modules/_map/maps-popup";
+@import "modules/_map/maps-title";
+@import "modules/_map/maps-marker";
+@import "modules/_map/mapboxgl";
 
 /* : Breadcrumbs modules : */
 @import "modules/_breadcrumbs/breadcrumbs";

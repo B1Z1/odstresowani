@@ -8,10 +8,10 @@
 get_header();
 
 $mapData = new OdsMap();
+
 $relax_markers = $mapData->getData('miejsca_relaxu');
 $techs_markers = $mapData->getData('techniki');
 
-// $all_markers = [$markers_relax, $markers_techs];
 
 ?>
 <!-- : Map script init start : -->
@@ -22,7 +22,6 @@ $techs_markers = $mapData->getData('techniki');
 <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.1.0/mapbox-gl-compare.js'></script>
 <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.1.0/mapbox-gl-compare.css' type='text/css' />
 <!-- : Map script init end : -->
-
 <div class="wrapper">
 
     <!-- ------------------ -->
@@ -32,11 +31,14 @@ $techs_markers = $mapData->getData('techniki');
     <main class="main">
         <div class="maps-relax">
             <div id="maps-relax__relax" class="maps-relax__map">
-                <div class="maps-relax__alert d-flex aic jcc">
+                <h3 class="maps-title maps-title__relax f-vb">Miejsca Relaxu</h3>
+                <div class="maps-alert d-flex aic jcc">
                     <h3>Kliknij CTRL i przekręć kółkiem aby zoomować</h3>
                 </div>
             </div>
-            <div id="maps-relax__tech" class="maps-relax__map"></div>
+            <div id="maps-relax__tech" class="maps-relax__map maps-relax__tech">
+                <h3 class="maps-title maps-title__techs f-vb">Techniki</h3>
+            </div>
         </div>
     </main>
 
@@ -51,12 +53,14 @@ $techs_markers = $mapData->getData('techniki');
                     $title = $marker['title'];
                     $description = $marker['description']; 
                     $image = $marker['image'];  
-                    $adress = $marker['adress'];  ?>
+                    $adress = $marker['adress'];  
+                    $link = $marker['link'];  ?>
                     <div data-type="<?php echo $type; ?>"
                         data-title="<?php echo $title; ?>" 
                         data-description="<?php echo $description; ?>" 
                         data-image="<?php echo $image; ?>"
-                        data-adress="<?php echo $adress; ?>"></div>
+                        data-adress="<?php echo $adress; ?>"
+                        data-link="<?php echo $link; ?>"></div>
             <?php endforeach; ?>
         </div>
         <div class="map-hidden__techs">
@@ -65,12 +69,14 @@ $techs_markers = $mapData->getData('techniki');
                     $title = $marker['title'];
                     $description = $marker['description']; 
                     $image = $marker['image'];  
-                    $adress = $marker['adress'];  ?>
+                    $adress = $marker['adress'];
+                    $link = $marker['link'];  ?>
                     <div data-type="<?php echo $type; ?>"
                         data-title="<?php echo $title; ?>" 
                         data-description="<?php echo $description; ?>" 
                         data-image="<?php echo $image; ?>"
-                        data-adress="<?php echo $adress; ?>"></div>
+                        data-adress="<?php echo $adress; ?>"
+                        data-link="<?php echo $link; ?>"></div>
             <?php endforeach; ?>
         </div>
     </div>
