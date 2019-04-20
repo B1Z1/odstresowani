@@ -20,7 +20,7 @@ function () {
   function OdstresowaniMap(object) {
     _classCallCheck(this, OdstresowaniMap);
 
-    this.dataMarkers = this.getData(_toConsumableArray(document.querySelector(".".concat(object.dataMarkers.container)).children), object.dataMarkers.id);
+    this.dataMarkers = this.getData(_toConsumableArray(document.querySelector(".".concat(object.dataMarkers.container)).children));
     this.token = object.token;
     this.map = object.map;
     this.marker = object.marker !== undefined ? object.marker : null;
@@ -34,7 +34,9 @@ function () {
       active: object.alert.active
     } : null;
     this.timeout;
-    this.isCTRL = false;
+    this.isCTRL = false; //Coordinates for Line draw
+
+    if (object.lineDraw) this.coords = [];
   }
 
   _createClass(OdstresowaniMap, [{
@@ -53,14 +55,50 @@ function () {
           offset: 25
         }).setHTML(popupHTML);
 
-        _this.mapBoxClient.geocoding.forwardGeocode({
-          query: data.city,
-          autocomplete: false,
-          limit: 1
-        }).send().then(function (response) {
-          if (response && response.body && response.body.features && response.body.features.length) {
-            var feature = response.body.features[0];
-            new mapboxgl.Marker(markerHTML).setLngLat(feature.center).setPopup(popUp).addTo(_this.map);
+        if (data.adress) {
+          _this.mapBoxClient.geocoding.forwardGeocode({
+            query: data.adress,
+            autocomplete: false,
+            limit: 1
+          }).send().then(function (response) {
+            if (response && response.body && response.body.features && response.body.features.length) {
+              var feature = response.body.features[0]; //Get coordinates from marker
+
+              if (_this.coords) _this.coords.push(response.body.features[0].center);
+              new mapboxgl.Marker(markerHTML).setLngLat(feature.center).setPopup(popUp).addTo(_this.map);
+            }
+          });
+        }
+      });
+      if (this.coords) this.lineDraw();
+    }
+  }, {
+    key: "lineDraw",
+    value: function lineDraw() {
+      var _this2 = this;
+
+      this.map.on('load', function () {
+        _this2.map.addLayer({
+          "id": "route",
+          "type": "line",
+          "source": {
+            "type": "geojson",
+            "data": {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "LineString",
+                "coordinates": _this2.coords
+              }
+            }
+          },
+          "layout": {
+            "line-join": "round",
+            "line-cap": "round"
+          },
+          "paint": {
+            "line-color": "#5fa73f",
+            "line-width": 4
           }
         });
       });
@@ -74,14 +112,14 @@ function () {
   }, {
     key: "onCTRLDown",
     value: function onCTRLDown() {
-      var _this2 = this;
+      var _this3 = this;
 
       window.addEventListener('keydown', function (ev) {
         if (ev.ctrlKey) {
-          _this2.map.scrollZoom.enable();
+          _this3.map.scrollZoom.enable();
 
-          _this2.isCTRL = true;
-          if (_this2.alert) _this2.alert.el.classList.remove(_this2.alert.active);
+          _this3.isCTRL = true;
+          if (_this3.alert) _this3.alert.el.classList.remove(_this3.alert.active);
         }
       });
     }
@@ -94,12 +132,12 @@ function () {
   }, {
     key: "onCTRLUp",
     value: function onCTRLUp() {
-      var _this3 = this;
+      var _this4 = this;
 
       window.addEventListener('keyup', function (ev) {
-        _this3.map.scrollZoom.disable();
+        _this4.map.scrollZoom.disable();
 
-        _this3.isCTRL = false;
+        _this4.isCTRL = false;
       });
     }
     /**
@@ -111,16 +149,16 @@ function () {
   }, {
     key: "onMouseWheel",
     value: function onMouseWheel() {
-      var _this4 = this;
+      var _this5 = this;
 
       window.addEventListener('mousewheel', function (ev) {
-        if (ev.target.closest('.maps-relax') && !_this4.isCTRL) {
-          clearTimeout(_this4.timeout);
+        if (ev.target.closest('.maps-relax') && !_this5.isCTRL) {
+          clearTimeout(_this5.timeout);
 
-          _this4.alert.el.classList.add(_this4.alert.active);
+          _this5.alert.el.classList.add(_this5.alert.active);
 
-          _this4.timeout = setTimeout(function () {
-            _this4.alert.el.classList.remove(_this4.alert.active);
+          _this5.timeout = setTimeout(function () {
+            _this5.alert.el.classList.remove(_this5.alert.active);
           }, 1000);
         }
       });
@@ -169,22 +207,18 @@ function () {
 
   }, {
     key: "getData",
-    value: function getData(children, id) {
-      var dataObject = children,
+    value: function getData(children) {
+      var elements = children,
           markers = [];
-      dataObject.forEach(function (el) {
-        var el_data = el.dataset,
-            el_id = parseInt(el_data.id);
-
-        if (el_id == id) {
-          markers.push({
-            id: id,
-            city: el_data.city,
-            title: el_data.title,
-            description: el_data.description,
-            image: el_data.image
-          });
-        }
+      elements[0].parentNode.remove();
+      elements.forEach(function (el) {
+        var dataObject = {
+          title: el.dataset.title ? el.dataset.title : null,
+          description: el.dataset.description ? el.dataset.description : null,
+          image: el.dataset.image ? el.dataset.image : null,
+          adress: el.dataset.adress ? el.dataset.adress : null
+        };
+        markers.push(dataObject);
       });
       return markers;
     }
@@ -200,9 +234,7 @@ window.addEventListener('load', function () {
     token: mapboxgl.accessToken,
     //Take data
     dataMarkers: {
-      container: 'map-hidden',
-      id: 0 //Id must be < 2
-
+      container: 'map-hidden__relax'
     },
     //Map initialization
     map: new mapboxgl.Map({
@@ -217,7 +249,8 @@ window.addEventListener('load', function () {
       classes: ['maps-relax__marker'],
       pulse: true,
       isNumeric: true,
-      hasImage: false
+      hasImage: false,
+      lineDraw: false
     },
     //PopupConfiguration
     popup: {
@@ -227,15 +260,14 @@ window.addEventListener('load', function () {
     alert: {
       el: 'maps-relax__alert',
       active: 'maps-relax__alert--active'
-    }
+    },
+    lineDraw: false
   });
   var map_tech = new OdstresowaniMap({
     token: mapboxgl.accessToken,
     //Take data
     dataMarkers: {
-      container: 'map-hidden',
-      id: 1 //Id must be < 2
-
+      container: 'map-hidden__techs'
     },
     //Map initialization
     map: new mapboxgl.Map({
@@ -255,7 +287,9 @@ window.addEventListener('load', function () {
     //PopupConfiguration
     popup: {
       classes: ['maps-popup']
-    }
+    },
+    //LineDraw
+    lineDraw: true
   }); //Init Maps
 
   map_relax.init();

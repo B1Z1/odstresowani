@@ -7,9 +7,11 @@
 
 get_header();
 
-$markers_relax = carbon_get_theme_option('map');
-$markers_techs = carbon_get_theme_option('techs');
-$all_markers = [$markers_relax, $markers_techs];
+$mapData = new OdsMap();
+$relax_markers = $mapData->getData('miejsca_relaxu');
+$techs_markers = $mapData->getData('techniki');
+
+// $all_markers = [$markers_relax, $markers_techs];
 
 ?>
 <!-- : Map script init start : -->
@@ -26,7 +28,7 @@ $all_markers = [$markers_relax, $markers_techs];
     <!-- ------------------ -->
     <!-- Main section start -->
     <!-- ------------------ -->
-
+    
     <main class="main">
         <div class="maps-relax">
             <div id="maps-relax__relax" class="maps-relax__map">
@@ -43,19 +45,34 @@ $all_markers = [$markers_relax, $markers_techs];
     <!-- ------------------ -->
 
     <div class="map-hidden">
-        <?php foreach ( $all_markers as $parent_key => $elements ): ?>
-            <?php foreach ( $elements as $key => $marker ):
-                        $city = $marker['map_city'];
-                        $title = $marker['map_title']; 
-                        $description = $marker['map_description']; 
-                        $image = wp_get_attachment_image_url($marker['map_image'], 'full'); ?>
-                <div data-id="<?php echo $parent_key; ?>"
-                        data-city="<?php echo $city; ?>" 
+        <div class="map-hidden__relax">
+            <?php foreach ( $relax_markers as $key => $marker ): 
+                    $type = $marker['type'];
+                    $title = $marker['title'];
+                    $description = $marker['description']; 
+                    $image = $marker['image'];  
+                    $adress = $marker['adress'];  ?>
+                    <div data-type="<?php echo $type; ?>"
                         data-title="<?php echo $title; ?>" 
                         data-description="<?php echo $description; ?>" 
-                        data-image="<?php echo $image; ?>"></div>
+                        data-image="<?php echo $image; ?>"
+                        data-adress="<?php echo $adress; ?>"></div>
             <?php endforeach; ?>
-        <?php endforeach; ?>
+        </div>
+        <div class="map-hidden__techs">
+            <?php foreach ( $techs_markers as $key => $marker ): 
+                    $type = $marker['type'];
+                    $title = $marker['title'];
+                    $description = $marker['description']; 
+                    $image = $marker['image'];  
+                    $adress = $marker['adress'];  ?>
+                    <div data-type="<?php echo $type; ?>"
+                        data-title="<?php echo $title; ?>" 
+                        data-description="<?php echo $description; ?>" 
+                        data-image="<?php echo $image; ?>"
+                        data-adress="<?php echo $adress; ?>"></div>
+            <?php endforeach; ?>
+        </div>
     </div>
 
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/updated/map-relax.js"></script>

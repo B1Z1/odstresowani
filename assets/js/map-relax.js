@@ -1,6 +1,6 @@
 class OdstresowaniMap{
     constructor(object){
-        this.dataMarkers = this.getData([... document.querySelector(`.${object.dataMarkers.container}`).children], object.dataMarkers.id);
+        this.dataMarkers = this.getData([... document.querySelector(`.${object.dataMarkers.container}`).children]);
         this.token = object.token;
         this.map = object.map;
         this.marker = object.marker !== undefined ? object.marker:null;
@@ -11,6 +11,10 @@ class OdstresowaniMap{
         this.alert = object.alert !== undefined ? {el:document.querySelector(`.${object.alert.el}`), active: object.alert.active}:null;
         this.timeout;
         this.isCTRL = false;
+
+        //Coordinates for Line draw
+        if ( object.lineDraw )
+            this.coords = [];
     }
 
     init(){
@@ -26,8 +30,9 @@ class OdstresowaniMap{
                 popUp = new mapboxgl.Popup({ offset: 25 })
                         .setHTML(popupHTML);
             
-            this.mapBoxClient.geocoding.forwardGeocode({
-                    query: data.city,
+            if ( data.adress ){
+                this.mapBoxClient.geocoding.forwardGeocode({
+                    query: data.adress,
                     autocomplete: false,
                     limit: 1
                 })
@@ -35,13 +40,48 @@ class OdstresowaniMap{
                     .then(response => {
                         if (response && response.body && response.body.features && response.body.features.length) {
                             var feature = response.body.features[0];
+                            //Get coordinates from marker
+                            if( this.coords )
+                                this.coords.push(response.body.features[0].center);
                             new mapboxgl.Marker(markerHTML)
                                 .setLngLat(feature.center)
                                 .setPopup(popUp)
                                 .addTo(this.map);
                         }
                     });
-        });       
+            }
+        });   
+        if ( this.coords )
+            this.lineDraw();
+    }
+
+    lineDraw(){
+        
+        this.map.on('load', ()=>{
+            this.map.addLayer({
+                "id": "route",
+                "type": "line",
+                "source": {
+                    "type": "geojson",
+                    "data": {
+                        "type": "Feature",
+                        "properties": {},
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": this.coords
+                        }
+                    }
+                },
+                "layout": {
+                    "line-join": "round",
+                    "line-cap": "round"
+                },
+                "paint": {
+                    "line-color": "#5fa73f",
+                    "line-width": 4
+                }
+            });
+        });
     }
 
     /**
@@ -138,25 +178,20 @@ class OdstresowaniMap{
      * Get data from HTML
      * 
      */
-    getData(children, id){
-        let dataObject = children,
+    getData(children){
+        let elements = children,
             markers = [];
-            
-        dataObject.forEach((el)=>{
-            let el_data = el.dataset,
-                el_id = parseInt(el_data.id);
-
-            if ( el_id == id ){
-                markers.push({
-                    id: id,
-                    city: el_data.city,
-                    title: el_data.title,
-                    description: el_data.description,
-                    image: el_data.image,
-                });
-            }   
+        elements[0].parentNode.remove();
+        elements.forEach((el)=>{
+            let dataObject = {
+                title: el.dataset.title ? el.dataset.title:null,
+                description: el.dataset.description ? el.dataset.description:null,
+                image: el.dataset.image ? el.dataset.image:null,
+                adress: el.dataset.adress ? el.dataset.adress:null,
+            }
+            markers.push(dataObject);
         });
-        
+
         return markers;
     }
 
@@ -169,8 +204,7 @@ window.addEventListener('load', function(){
         token: mapboxgl.accessToken,
         //Take data
         dataMarkers: {
-            container: 'map-hidden',
-            id: 0, //Id must be < 2
+            container: 'map-hidden__relax',
         },
         //Map initialization
         map: new mapboxgl.Map({
@@ -187,7 +221,8 @@ window.addEventListener('load', function(){
             ],
             pulse: true,
             isNumeric: true,
-            hasImage: false
+            hasImage: false,
+            lineDraw: false
         },
         //PopupConfiguration
         popup: {
@@ -199,14 +234,14 @@ window.addEventListener('load', function(){
         alert: {
             el: 'maps-relax__alert',
             active: 'maps-relax__alert--active'
-        }
+        },
+        lineDraw: false
     });
     let map_tech = new OdstresowaniMap({
         token: mapboxgl.accessToken,
         //Take data
         dataMarkers: {
-            container: 'map-hidden',
-            id: 1, //Id must be < 2
+            container: 'map-hidden__techs',
         },
         //Map initialization
         map: new mapboxgl.Map({
@@ -230,7 +265,9 @@ window.addEventListener('load', function(){
             classes: [
                 'maps-popup'
             ]
-        }
+        },
+        //LineDraw
+        lineDraw: true
     });
 
     //Init Maps

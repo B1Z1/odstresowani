@@ -36,6 +36,7 @@ require get_template_directory() . '/includes/functions-nav-menu.php';
  * Require Taxonomies
  *  ->Strefa Wiedzy
  *  ->Miejsca Relaxu
+ *  ->Techniki
  *
  */
 require get_template_directory() . '/includes/taxonomies/functions-strefa-wiedzy.php';
@@ -63,6 +64,8 @@ require get_template_directory() . '/includes/functions-fields.php';
 require get_template_directory() . '/includes/fields/fields-theme-options.php';
 require get_template_directory() . '/includes/fields/fields-taxonomy-category.php';
 require get_template_directory() . '/includes/fields/fields-taxonomy-strefa-wiedzy.php';
+require get_template_directory() . '/includes/fields/fields-taxonomy-miejsca.php';
+require get_template_directory() . '/includes/fields/fields-taxonomy-techniki.php';
 require get_template_directory() . '/includes/fields/fields-taxonomy-page.php';
 require get_template_directory() . '/includes/fields/fields-navmenu.php';
 //Blocks
@@ -119,3 +122,9 @@ require get_template_directory() . '/includes/functions-advanced-block.php';
  *
  */
 require get_template_directory() . '/includes/functions-datevideo.php';
+/**
+ *
+ * Require function, which get places/techs from datebase
+ *
+ */
+require get_template_directory() . '/includes/functions-map.php';
