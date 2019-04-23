@@ -107,7 +107,7 @@ function () {
   }, {
     key: "getTemplatePopUp",
     value: function getTemplatePopUp(image, title, description, link) {
-      return "<div class=\"maps-popup d-flex\">\n                    <div class=\"mbl-col-5 reset\">\n                        <div class=\"maps-popup__image\" style=\"background-image: url(".concat(image, ");\"></div>\n                    </div>\n                    <div class=\"mbl-col-7\">\n                        <h5 class=\"reset-top mb8 f-vb\"><a href=\"").concat(link, "\" class=\"link link--underline reset-link\">").concat(title, "</a></h5>\n                        ").concat(description, "\n                    </div>\n                </div>");
+      return "<div class=\"maps-popup d-flex\">\n                    <div class=\"mbl-col-5 reset\">\n                        <div class=\"maps-popup__image\" style=\"background-image: url(".concat(image, ");\"></div>\n                    </div>\n                    <div class=\"mbl-col-7\">\n                        <h5 class=\"reset-top mb8 f-vb\"><a ").concat(link ? "href=\"".concat(link, "\"") : '', " class=\"link link--underline reset-link\">").concat(title, "</a></h5>\n                        ").concat(description, "\n                    </div>\n                </div>");
     }
     /**
      * 
@@ -145,12 +145,12 @@ function () {
     value: function getData(children) {
       var elements = children,
           markers = [];
+      console.log(children);
 
       if (elements === undefined || elements.length === 0) {
         return null;
       }
 
-      elements[0].parentNode.remove();
       elements.forEach(function (el) {
         var dataObject = {
           title: el.dataset.title ? el.dataset.title : null,
@@ -167,68 +167,3 @@ function () {
 
   return OdstresowaniMap;
 }();
-
-window.addEventListener('load', function () {
-  //Token for map
-  mapboxgl.accessToken = 'pk.eyJ1IjoiaWx5YW1pc2hraW4iLCJhIjoiY2p1aWRrbDl2MTRrcDQ0cGdlMTN3ZWJ1cCJ9.tTVIhbBmMOhuH_Z5DKUN4A';
-  var map_relax = new OdstresowaniMap({
-    token: mapboxgl.accessToken,
-    //Take data
-    dataMarkers: {
-      container: 'map-hidden__relax'
-    },
-    //Map initialization
-    map: new mapboxgl.Map({
-      container: 'maps-relax__relax',
-      style: 'mapbox://styles/ilyamishkin/cjuifjhya0m221fqkauhk7fyv',
-      center: [20, 52],
-      zoom: 6
-    }),
-    //Marker configuration
-    marker: {
-      el: 'div',
-      classes: ['maps-marker'],
-      pulse: true,
-      isNumeric: true,
-      hasImage: false,
-      lineDraw: false
-    },
-    //PopupConfiguration
-    popup: {
-      classes: ['maps-popup']
-    },
-    lineDraw: false
-  });
-  var map_tech = new OdstresowaniMap({
-    token: mapboxgl.accessToken,
-    //Take data
-    dataMarkers: {
-      container: 'map-hidden__techs'
-    },
-    //Map initialization
-    map: new mapboxgl.Map({
-      container: 'maps-relax__tech',
-      style: 'mapbox://styles/ilyamishkin/cjuifjhya0m221fqkauhk7fyv',
-      center: [20, 52],
-      zoom: 6
-    }),
-    //Marker configuration
-    marker: {
-      el: 'div',
-      classes: ['maps-marker'],
-      pulse: false,
-      isNumeric: false,
-      hasImage: true
-    },
-    //PopupConfiguration
-    popup: {
-      classes: ['maps-popup']
-    },
-    //LineDraw
-    lineDraw: true
-  });
-
-  if (map_relax.dataMarkers !== null || map_tech.dataMarkers !== null) {
-    var map = new mapboxgl.Compare(map_relax.map, map_tech.map, {});
-  }
-});

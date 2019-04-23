@@ -79,6 +79,7 @@ require get_template_directory() . '/includes/fields/fields-block-post-banner.ph
 require get_template_directory() . '/includes/fields/fields-block-operation-river.php';
 require get_template_directory() . '/includes/fields/fields-block-image-gallery.php';
 require get_template_directory() . '/includes/fields/fields-block-video-gallery.php';
+require get_template_directory() . '/includes/fields/fields-block-map.php';
 
 /**
  *

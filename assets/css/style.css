@@ -2089,29 +2089,25 @@ strong {
   position: relative;
   text-align: center; }
 
-.page__content p {
-  margin-top: 32px;
-  margin-bottom: 32px;
-  font-size: 1.5rem;
-  line-height: 2.25rem; }
-
-.page__content ul, .page__content ol {
-  padding-left: 32px;
-  font-size: 1.5rem;
-  line-height: 2.25rem; }
-
-.page__content ul {
-  list-style: disc; }
-
-.page__content ol {
-  list-style: decimal; }
-
-.page__content h1, .page__content h2, .page__content h3, .page__content h4, .page__content h5, .page__content h6 {
-  font-family: Sanchez; }
-
-.page__content a {
-  font-family: value-black;
-  color: inherit; }
+.page__content {
+  font-size: 1rem;
+  line-height: 1.5em; }
+  .page__content p {
+    margin-top: 32px;
+    margin-bottom: 32px;
+    font-size: 1.5rem;
+    line-height: 2.25rem; }
+  .page__content ul, .page__content ol {
+    padding-left: 32px; }
+  .page__content ul {
+    list-style: disc; }
+  .page__content ol {
+    list-style: decimal; }
+  .page__content h1, .page__content h2, .page__content h3, .page__content h4, .page__content h5, .page__content h6 {
+    font-family: Sanchez; }
+  .page__content a {
+    font-family: value-black;
+    color: inherit; }
 
 .page__mind {
   position: relative;
@@ -2368,7 +2364,7 @@ strong {
     font-size: 1rem; }
 
 /* : Map modules : */
-.maps-relax {
+.maps {
   position: relative;
   width: 100%;
   height: calc(100vh - 32px);
@@ -2377,16 +2373,16 @@ strong {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
-  .maps-relax__map {
+  .maps__map {
     position: absolute !important;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%; }
-  .maps-relax__tech {
+  .maps__tech {
     z-index: 1; }
 
-.maps-hidden {
+.map-hidden {
   display: none; }
 
 @-webkit-keyframes pulse {
@@ -2410,21 +2406,21 @@ strong {
     background-position: center;
     background-repeat: no-repeat; }
 
-.maps-title {
+.map-title {
   position: absolute;
   bottom: 0;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
   z-index: 1; }
-  .maps-title__relax {
-    left: 25%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%); }
-  .maps-title__techs {
-    left: 75%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%); }
+  .map-title--left {
+    left: 25%; }
+  .map-title--right {
+    left: 75%; }
+  .map-title--center {
+    left: 50%; }
 
 @media only screen and (max-width: 768px) {
-  .maps-title__relax, .maps-title__techs {
+  .map-title--left, .map-title--right {
     left: 50%; } }
 
 .maps-marker {

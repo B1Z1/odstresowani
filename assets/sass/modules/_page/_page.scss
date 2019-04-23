@@ -4,6 +4,8 @@
         text-align: center;
     }
     &__content{
+        font-size: 1rem;
+        line-height: 1.5em;
         p{
             margin-top: 32px;
             margin-bottom: 32px;
@@ -12,8 +14,6 @@
         }
         ul, ol{
             padding-left: 32px;
-            font-size: 1.5rem;
-            line-height: 2.25rem;
         }
         ul{
             list-style:  disc;

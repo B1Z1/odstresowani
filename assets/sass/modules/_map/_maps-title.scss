@@ -1,20 +1,22 @@
-.maps-title{
+.map-title{
     position: absolute;
     bottom: 0;
+    transform: translateX(-50%);
     z-index: 1;
-    &__relax{
+    &--left{
         left: 25%;
-        transform: translateX(-50%);
     }
-    &__techs{
+    &--right{
         left: 75%;
-        transform: translateX(-50%);
+    }
+    &--center{
+        left: 50%;
     }
 }
 
 @media only screen and ( max-width: 768px ){
-    .maps-title{
-        &__relax, &__techs{
+    .map-title{
+        &--left, &--right{
             left: 50%;
         }
     }

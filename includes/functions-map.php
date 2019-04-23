@@ -11,7 +11,7 @@ class OdsMap{
                 $postQuerys->the_post();
                 $id = get_the_ID();
                 $title = get_the_title();
-                $description = $query == 'techniki' ? wp_trim_words(get_the_content(), 20, '...'):get_the_content();
+                $description = $query == 'techniki' ? wp_strip_all_tags(wp_trim_words(get_the_content(), 50, '...')):wp_strip_all_tags(get_the_content());
                 $image = get_the_post_thumbnail_url($id, 'full');
                 $adress = carbon_get_post_meta($id, 'adress');
                 $link = !empty(carbon_get_post_meta($id, 'link')) ? carbon_get_post_meta($id, 'link'):get_post_permalink($id);

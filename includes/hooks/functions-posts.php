@@ -80,7 +80,7 @@ if ( !function_exists( 'post_card_block' ) ){
                     <?php echo $image; ?>
                 </div>
                 <div class="card__title mt16">
-                    <h2 class="reset f-vb"><?php echo $title; ?></h2>
+                    <h3 class="reset f-vb"><?php echo $title; ?></h3>
                 </div>
                 <ul class="flex-kit reset-list c-gt mt16">
                     <?php if ( $cat_list ): ?>
@@ -88,16 +88,16 @@ if ( !function_exists( 'post_card_block' ) ){
                             <?php if ( $wave ): ?>
                                 <object data="<?php echo $wave; ?>" class="card__wave" type="image/svg+xml"></object>
                             <?php endif; ?>
-                            <h4 class="reset">
+                            <h6 class="reset">
                                 <?php echo $cat_list; ?>
-                            </h4>
+                            </h6>
                         </li>
                     <?php endif; ?>
                     <li class="card__date">
-                        <h4 class="reset">
+                        <h6 class="reset">
                             <i class="far fa-calendar-alt"></i>
                             <?php echo $date; ?>
-                        </h4>
+                        </h6>
                     </li>
                 </ul>
                 <div class="card__describe mt32">
