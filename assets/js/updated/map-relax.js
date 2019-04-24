@@ -45,10 +45,11 @@ function () {
 
       this.dataMarkers.forEach(function (data, index) {
         var markerHTML = _this.marker ? _this.getTemplateMarker(data.image, index) : console.log('Marker is NULL'),
-            popupHTML = _this.popup ? _this.getTemplatePopUp(data.image, data.title, data.description, data.link) : console.log('PopUp is NULL'),
+            popupHTML = _this.popup ? _this.getPopUpByType(data) : console.log('PopUp is NULL'),
             popUp = new mapboxgl.Popup({
           offset: 25
         }).setHTML(popupHTML);
+        console.log(data);
 
         if (data.adress) {
           _this.mapBoxClient.geocoding.forwardGeocode({
@@ -105,9 +106,50 @@ function () {
      */
 
   }, {
-    key: "getTemplatePopUp",
-    value: function getTemplatePopUp(image, title, description, link) {
+    key: "getPopUpByType",
+    value: function getPopUpByType(data) {
+      var type = data.type,
+          title = data.title,
+          description = data.description,
+          image = data.image,
+          phone = data.phone,
+          full_adress = data.full_adress,
+          link = data.link;
+
+      switch (type) {
+        case 'normal':
+          return this.popUpTemplateNormal(title, description, link, image);
+
+        case 'pack':
+          return this.popUpTemplateNormal(title, description, link, image);
+
+        case 'river':
+          return this.popUpTemplateRiver(title, description, phone, full_adress);
+      }
+    }
+    /**
+     * 
+     * 
+     * Template PopUp: Normal
+     * 
+     */
+
+  }, {
+    key: "popUpTemplateNormal",
+    value: function popUpTemplateNormal(title, description, link, image) {
       return "<div class=\"maps-popup d-flex\">\n                    <div class=\"mbl-col-5 reset\">\n                        <div class=\"maps-popup__image\" style=\"background-image: url(".concat(image, ");\"></div>\n                    </div>\n                    <div class=\"mbl-col-7\">\n                        <h5 class=\"reset-top mb8 f-vb\"><a ").concat(link ? "href=\"".concat(link, "\"") : '', " class=\"link link--underline reset-link\">").concat(title, "</a></h5>\n                        ").concat(description, "\n                    </div>\n                </div>");
+    }
+    /**
+     * 
+     * 
+     * Template PopUp: River
+     * 
+     */
+
+  }, {
+    key: "popUpTemplateRiver",
+    value: function popUpTemplateRiver(title, description, phone, full_adress) {
+      return "<div class=\"maps-popup row\">\n                    <div class=\"mbl-col-12\">\n                        <h5 class=\"reset\">".concat(title, "</h5>\n                    </div>\n                    <div class=\"mbl-col-12\">\n                        ").concat(description, "\n                    </div>\n                    <div class=\"mbl-col-6\">\n                        Telefon: ").concat(phone, "\n                    </div>\n                    <div class=\"mbl-col-6\">\n                        Adress: ").concat(full_adress, "\n                    </div>\n                </div>");
     }
     /**
      * 
@@ -155,9 +197,12 @@ function () {
 
       elements.forEach(function (el) {
         var dataObject = {
+          type: el.dataset.type ? el.dataset.type : null,
           title: el.dataset.title ? el.dataset.title : null,
           description: el.dataset.description ? el.dataset.description : null,
           image: el.dataset.image ? el.dataset.image : null,
+          phone: el.dataset.phone ? el.dataset.phone : null,
+          full_adress: el.dataset.full_adress ? el.dataset.full_adress : null,
           adress: el.dataset.adress ? el.dataset.adress : null,
           link: el.dataset.link ? el.dataset.link : null
         };

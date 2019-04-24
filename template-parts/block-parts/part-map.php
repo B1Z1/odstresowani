@@ -5,6 +5,7 @@ $map_object = new OdsMap();
 
 foreach ( $maps as $key => $map ){
     $map_title = $map['map_title'];
+    $markers_type = $map['markers_which'];
     $markers = array();
     $marker_parameters = array(
         'pulse' => $map['marker_pulse'] ? 'true':'false',
@@ -13,22 +14,36 @@ foreach ( $maps as $key => $map ){
         'linedraw' => $map['marker_linedraw'] ? 'true':'false',
         'alert' => $map['marker_alert'] ? 'true':'false',
     );
-    if ( $map['markers_which'] ){
-        $markers = $map_object->getData($map['markers_ready']);
-    }
-    else{
-        foreach ( $map['markers_new'] as $key_2 => $marker ){
-            array_push($markers, array(
-                'title' => $marker['markers_new_title'],
-                'description' => $marker['markers_new_description'],
-                'image' => wp_get_attachment_image_url($marker['markers_new_image'], 'full'),
-                'adress' => $marker['markers_new_adress'],
-                'link' => $marker['markers_new_link'],
-            ));
-        }
+    switch ( $markers_type ){
+        case 'normal': 
+            foreach ( $map['markers_normal'] as $key_2 => $marker ){
+                array_push($markers, array(
+                    'title' => $marker['marker_title'],
+                    'description' => $marker['marker_description'],
+                    'image' => wp_get_attachment_image_url($marker['marker_image'], 'full'),
+                    'adress' => $marker['marker_adress'],
+                    'link' => $marker['marker_link'],
+                ));
+            }
+        break;
+        case 'river':
+            foreach ( $map['markers_river'] as $key_2 => $marker ){
+                array_push($markers, array(
+                    'title' => $marker['marker_title'],
+                    'description' => $marker['marker_description'],
+                    'phone' => $marker['marker_phone'],
+                    'full_adress' => $marker['marker_full_adress'],
+                    'adress' => $marker['marker_adress'],
+                ));
+            }
+        break;
+        case 'pack':
+            $markers = $map_object->getData($map['markers_ready']);
+        break;
     }
     array_push($maps_data, array(
         'id' => $key + 1,
+        'type' => $markers_type,
         'title' => $map_title,
         'marker_parameters' => $marker_parameters,
         'markers' => $markers,
@@ -51,7 +66,7 @@ foreach ( $maps as $key => $map ){
             $position = 'center';
         }
          ?>
-        <div id="maps-<?php echo $id; ?>" class="maps__map">
+        <div id="maps-<?php echo $id; ?>" class="maps__map maps__<?php echo $id; ?>">
             <h3 class="map-title map-title--<?php echo $position; ?> f-vb"><?php echo $title; ?></h3>
         </div>
     <?php endforeach; ?>
@@ -60,18 +75,23 @@ foreach ( $maps as $key => $map ){
  
 <div class="map-hidden">
     <?php foreach ( $maps_data as $data ): 
-        $id = $data['id']; ?>
+        $type = $data['type']; ?>
         <div class="map-hidden__<?php echo $id; ?>">
         <?php foreach ( $data['markers'] as $marker ): 
             $title = $marker['title'];
             $description = $marker['description']; 
             $image = $marker['image'];  
+            $phone = $marker['phone'];  
+            $full_adress = $marker['full_adress'];  
             $adress = $marker['adress'];  
             $link = $marker['link']; ?>
             <div 
+                data-type="<?php echo $type; ?>" 
                 data-title="<?php echo $title; ?>" 
                 data-description="<?php echo $description; ?>" 
                 data-image="<?php echo $image; ?>"
+                data-phone="<?php echo $phone; ?>"
+                data-full_adress="<?php echo $full_adress; ?>"
                 data-adress="<?php echo $adress; ?>"
                 data-link="<?php echo $link; ?>"></div>
         <?php endforeach; ?>

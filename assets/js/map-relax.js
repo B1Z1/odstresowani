@@ -21,10 +21,10 @@ class OdstresowaniMap{
     init(){
         this.dataMarkers.forEach((data, index) => {
             let markerHTML = this.marker ? this.getTemplateMarker(data.image, index) : console.log('Marker is NULL'),
-                popupHTML = this.popup ? this.getTemplatePopUp(data.image, data.title, data.description, data.link):console.log('PopUp is NULL'),
+                popupHTML = this.popup ? this.getPopUpByType(data):console.log('PopUp is NULL'),
                 popUp = new mapboxgl.Popup({ offset: 25 })
                         .setHTML(popupHTML);
-            
+            console.log(data);
             if ( data.adress ){
                 this.mapBoxClient.geocoding.forwardGeocode({
                     query: data.adress,
@@ -83,7 +83,33 @@ class OdstresowaniMap{
      * Generate Template for popup
      * 
      */
-    getTemplatePopUp(image, title, description, link){
+    getPopUpByType(data){
+        let type = data.type,
+            title = data.title,
+            description = data.description,
+            image = data.image,
+            phone = data.phone,
+            full_adress = data.full_adress,
+            link = data.link;
+
+        switch (type){
+            case 'normal': 
+                return this.popUpTemplateNormal(title, description, link, image); 
+            case 'pack': 
+                return this.popUpTemplateNormal(title, description, link, image); 
+            case 'river': 
+                return this.popUpTemplateRiver(title, description, phone, full_adress); 
+        }
+        
+    }
+
+    /**
+     * 
+     * 
+     * Template PopUp: Normal
+     * 
+     */
+    popUpTemplateNormal(title, description, link, image){
         return `<div class="maps-popup d-flex">
                     <div class="mbl-col-5 reset">
                         <div class="maps-popup__image" style="background-image: url(${image});"></div>
@@ -91,6 +117,29 @@ class OdstresowaniMap{
                     <div class="mbl-col-7">
                         <h5 class="reset-top mb8 f-vb"><a ${ link ? `href="${link}"` : '' } class="link link--underline reset-link">${title}</a></h5>
                         ${description}
+                    </div>
+                </div>`;
+    }
+
+    /**
+     * 
+     * 
+     * Template PopUp: River
+     * 
+     */
+    popUpTemplateRiver(title, description, phone, full_adress){
+        return `<div class="maps-popup row">
+                    <div class="mbl-col-12">
+                        <h5 class="reset">${title}</h5>
+                    </div>
+                    <div class="mbl-col-12">
+                        ${description}
+                    </div>
+                    <div class="mbl-col-6">
+                        Telefon: ${phone}
+                    </div>
+                    <div class="mbl-col-6">
+                        Adress: ${full_adress}
                     </div>
                 </div>`;
     }
@@ -140,9 +189,12 @@ class OdstresowaniMap{
         }
         elements.forEach((el)=>{
             let dataObject = {
+                type: el.dataset.type ? el.dataset.type:null,
                 title: el.dataset.title ? el.dataset.title:null,
                 description: el.dataset.description ? el.dataset.description:null,
                 image: el.dataset.image ? el.dataset.image:null,
+                phone: el.dataset.phone ? el.dataset.phone:null,
+                full_adress: el.dataset.full_adress ? el.dataset.full_adress:null,
                 adress: el.dataset.adress ? el.dataset.adress:null,
                 link: el.dataset.link ? el.dataset.link:null,
             }
