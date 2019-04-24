@@ -11,6 +11,7 @@ foreach ( $maps as $key => $map ){
         'isnumeric' => $map['marker_isnumeric'] ? 'true':'false',
         'hasimage' => $map['marker_hasimage'] ? 'true':'false',
         'linedraw' => $map['marker_linedraw'] ? 'true':'false',
+        'alert' => $map['marker_alert'] ? 'true':'false',
     );
     if ( $map['markers_which'] ){
         $markers = $map_object->getData($map['markers_ready']);
@@ -106,9 +107,10 @@ window.addEventListener('load', function(){
             classes: [
                 'maps-marker'
             ],
-            pulse: <?php echo $parameters['pulse'] ?>,
-            isNumeric: <?php echo $parameters['isnumeric'] ?>,
-            hasImage: <?php echo $parameters['hasimage'] ?>
+            pulse: <?php echo $parameters['pulse']; ?>,
+            isNumeric: <?php echo $parameters['isnumeric']; ?>,
+            hasImage: <?php echo $parameters['hasimage']; ?>,
+            alert: <?php echo $parameters['alert']; ?>
         },
         //PopupConfiguration
         popup: {
@@ -116,12 +118,14 @@ window.addEventListener('load', function(){
                 'maps-popup'
             ]
         },
-        lineDraw: <?php echo $parameters['linedraw'] ?>
+        lineDraw: <?php echo $parameters['linedraw']; ?>
     });
     <?php endforeach; ?>
-    if ( map_1.dataMarkers !== null && map_2.dataMarkers !== null){
-        let map = new mapboxgl.Compare(map_1.map, map_2.map, {});
-    }
+    <?php if ( count($maps_data) > 1 ): ?>
+        if ( map_1.dataMarkers !== null && map_2.dataMarkers !== null){
+            let map = new mapboxgl.Compare(map_1.map, map_2.map, {});
+        }
+    <?php endif; ?>
 });
 
 </script>

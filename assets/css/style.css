@@ -2444,6 +2444,10 @@ strong {
   background-position: center;
   border-radius: 50%;
   cursor: pointer; }
+  .maps-marker--alert {
+    background: #c01807; }
+    .maps-marker--alert .maps-marker__circle {
+      border: 1px solid #c01807; }
   .maps-marker__circle {
     position: absolute;
     top: 0;

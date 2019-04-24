@@ -122,7 +122,10 @@ function () {
       this.marker.classes.forEach(function (el) {
         markerHTML.classList.add(el);
       });
-      if (this.marker.isNumeric) markerHTML.textContent = index + 1;else if (this.marker.hasImage && image) markerHTML.style.backgroundImage = "url(".concat(image, ")");
+      if (this.marker.isNumeric) markerHTML.textContent = index + 1;else if (this.marker.hasImage && image) markerHTML.style.backgroundImage = "url(".concat(image, ")");else if (this.marker.alert) {
+        markerHTML.textContent = '!';
+        markerHTML.classList.add('maps-marker--alert');
+      }
 
       if (this.marker.pulse) {
         for (var i = 0; i < 4; i++) {
@@ -145,7 +148,6 @@ function () {
     value: function getData(children) {
       var elements = children,
           markers = [];
-      console.log(children);
 
       if (elements === undefined || elements.length === 0) {
         return null;

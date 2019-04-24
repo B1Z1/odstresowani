@@ -27,6 +27,8 @@ if ( !function_exists('crb_register_block_map') ){
                             ->set_option_value( 'Tak' ),
                         Field::make('checkbox', 'marker_linedraw', __('Czy markery łączyć linią?'))
                             ->set_option_value( 'Tak' ),
+                        Field::make('checkbox', 'marker_alert', __('Czy to są alertowe markery?'))
+                            ->set_option_value( 'Tak' ),
                         Field::make('checkbox', 'markers_which', __('Czy chcesz wybrać gotowy zestaw?'))
                             ->set_option_value( 'Tak' ),
                         Field::make('complex', 'markers_new', __('Nowe Markery'))

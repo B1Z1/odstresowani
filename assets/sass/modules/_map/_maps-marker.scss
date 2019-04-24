@@ -13,6 +13,12 @@
     background-position: center;
     border-radius: 50%;
     cursor: pointer;
+    &--alert{
+        background: rgb(192,24,7);
+        & .maps-marker__circle{
+            border: 1px solid rgb(192,24,7);
+        }
+    }
     &__circle{
         position: absolute;
         top: 0;

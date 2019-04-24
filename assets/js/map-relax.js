@@ -19,7 +19,6 @@ class OdstresowaniMap{
     }
 
     init(){
-
         this.dataMarkers.forEach((data, index) => {
             let markerHTML = this.marker ? this.getTemplateMarker(data.image, index) : console.log('Marker is NULL'),
                 popupHTML = this.popup ? this.getTemplatePopUp(data.image, data.title, data.description, data.link):console.log('PopUp is NULL'),
@@ -111,6 +110,10 @@ class OdstresowaniMap{
             markerHTML.textContent = index + 1;
         else if ( this.marker.hasImage && image )
             markerHTML.style.backgroundImage = `url(${image})`;
+        else if ( this.marker.alert ){
+            markerHTML.textContent = '!';
+            markerHTML.classList.add('maps-marker--alert');
+        }
 
         if ( this.marker.pulse ){
             for ( let i = 0; i < 4; i++ ){
@@ -131,7 +134,7 @@ class OdstresowaniMap{
     getData(children){
         let elements = children,
             markers = [];
-        console.log(children);
+
         if ( elements === undefined || elements.length === 0 ){ 
             return null;
         }
