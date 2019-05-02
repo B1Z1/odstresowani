@@ -18,13 +18,13 @@ class OdstresowaniMap{
         }
     }
 
-    init(){
+    init(){ 
         this.dataMarkers.forEach((data, index) => {
             let markerHTML = this.marker ? this.getTemplateMarker(data.image, index) : console.log('Marker is NULL'),
                 popupHTML = this.popup ? this.getPopUpByType(data):console.log('PopUp is NULL'),
                 popUp = new mapboxgl.Popup({ offset: 25 })
                         .setHTML(popupHTML);
-            console.log(data);
+
             if ( data.adress ){
                 this.mapBoxClient.geocoding.forwardGeocode({
                     query: data.adress,

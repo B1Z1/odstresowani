@@ -75,6 +75,7 @@ foreach ( $maps as $key => $map ){
  
 <div class="map-hidden">
     <?php foreach ( $maps_data as $data ): 
+        $id = $data['id'];
         $type = $data['type']; ?>
         <div class="map-hidden__<?php echo $id; ?>">
         <?php foreach ( $data['markers'] as $marker ): 

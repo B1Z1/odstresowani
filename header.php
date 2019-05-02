@@ -21,13 +21,22 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
         <!-- Facebook Meta properties start -->
-        <?php if ( is_single() ): if( have_posts() ): while ( have_posts() ): the_post(); ?>
-            <meta property="og:url"           content="<?php the_permalink(); ?>" />
-            <meta property="og:type"          content="article" />
-            <meta property="og:title"         content="<?php the_title(); ?>" />
-            <meta property="og:description"   content="<?php echo wp_strip_all_tags(wp_trim_words(get_the_content(), 32)); ?>" />
-            <meta property="og:image"         content="<?php echo get_the_post_thumbnail_url(); ?>" />
-        <?php endwhile; endif; endif; ?>
+        <?php if ( is_single() ): ?>
+            <?php if( have_posts() ): while ( have_posts() ): the_post(); ?>
+                <meta property="og:url"           content="<?php the_permalink(); ?>" />
+                <meta property="og:type"          content="article" />
+                <meta property="og:title"         content="<?php the_title(); ?>" />
+                <meta property="og:description"   content="<?php echo wp_strip_all_tags(wp_trim_words(get_the_content(), 32)); ?>" />
+                <meta property="og:image"         content="<?php echo get_the_post_thumbnail_url(); ?>" />
+            <?php endwhile; endif; ?>
+        <?php elseif( is_page() ): ?>
+            <?php if( have_posts() ): while ( have_posts() ): the_post(); ?>
+                <meta property="og:url"           content="<?php the_permalink(); ?>" />
+                <meta property="og:type"          content="page" />
+                <meta property="og:title"         content="<?php the_title(); ?>" />
+                <meta property="og:image"         content="<?php echo get_the_post_thumbnail_url(); ?>" />
+            <?php endwhile; endif; ?>
+        <?php endif; ?>
         <!-- Facebook Meta properties end -->
 
 		<!-- Google Tag Manager -->

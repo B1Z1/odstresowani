@@ -49,7 +49,6 @@ function () {
             popUp = new mapboxgl.Popup({
           offset: 25
         }).setHTML(popupHTML);
-        console.log(data);
 
         if (data.adress) {
           _this.mapBoxClient.geocoding.forwardGeocode({
