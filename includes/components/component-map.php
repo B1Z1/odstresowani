@@ -32,9 +32,11 @@ class CMap{
             $categoryData = new WP_Query(array(
                 'post_type' => 'miejsca',
                 'tax_query' => array(
-                    'taxonomy' => $this->termType,
-                    'field'    => 'slug',
-                    'terms' => $map['markers_category']
+                    array(
+                        'taxonomy' => $this->termType,
+                        'field'    => 'slug',
+                        'terms' => $map['markers_category']
+                    )
                 )
             ));
             $markers = $this->getCategoryData($categoryData);
@@ -45,6 +47,7 @@ class CMap{
                 'markerParametres' => $markerParameters,
                 'markers' => $markers
             ));
+            wp_reset_postdata();
         }      
         return $this->mapsData;
     }
@@ -61,9 +64,7 @@ class CMap{
                 $markerDescription = get_the_content() ?
                                      wp_trim_words(get_the_content(), 25, '...') :
                                      null;
-                $markerImage = wp_get_attachment_image_url(get_the_ID(), 'full') ?
-                               wp_get_attachment_image_url(get_the_ID(), 'full') :
-                               null;
+                $markerImage = get_the_post_thumbnail_url();
                 $markerLink = carbon_get_post_meta(get_the_ID(), 'link') ? 
                              carbon_get_post_meta(get_the_ID(), 'link') :
                              get_the_permalink();

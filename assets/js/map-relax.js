@@ -96,7 +96,7 @@ class OdstresowaniMap{
             case 'default': 
                 return this.popUpTemplateNormal(title, description, link, image); 
             case 'default_without_image': 
-                return this.popUpTemplateNormal(title, description, link, image);
+                return this.popUpTemplateWithoutImage(title, description, phone, image);
         }
         
     }
@@ -133,12 +133,16 @@ class OdstresowaniMap{
                     <div class="mbl-col-12">
                         ${description}
                     </div>
-                    <div class="mbl-col-6">
-                        Telefon: ${phone}
-                    </div>
-                    <div class="mbl-col-6">
-                        Adress: ${full_adress}
-                    </div>
+                    ${phone ? 
+                        `<div class="mbl-col-6">
+                            Telefon: ${phone}
+                        </div>`:
+                        ''}
+                    ${full_adress ? 
+                        `<div class="mbl-col-6">
+                            Adress: ${full_adress}
+                        </div>`:
+                        ''}
                 </div>`;
     }
 
@@ -174,7 +178,7 @@ class OdstresowaniMap{
     }
 
     /**
-     * 
+     *  
      * Get data from HTML
      * 
      */

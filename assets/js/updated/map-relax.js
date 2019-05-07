@@ -120,7 +120,7 @@ function () {
           return this.popUpTemplateNormal(title, description, link, image);
 
         case 'default_without_image':
-          return this.popUpTemplateNormal(title, description, link, image);
+          return this.popUpTemplateWithoutImage(title, description, phone, image);
       }
     }
     /**
@@ -145,7 +145,7 @@ function () {
   }, {
     key: "popUpTemplateWithoutImage",
     value: function popUpTemplateWithoutImage(title, description, phone, full_adress) {
-      return "<div class=\"maps-popup row\">\n                    <div class=\"mbl-col-12\">\n                        <h5 class=\"reset\">".concat(title, "</h5>\n                    </div>\n                    <div class=\"mbl-col-12\">\n                        ").concat(description, "\n                    </div>\n                    <div class=\"mbl-col-6\">\n                        Telefon: ").concat(phone, "\n                    </div>\n                    <div class=\"mbl-col-6\">\n                        Adress: ").concat(full_adress, "\n                    </div>\n                </div>");
+      return "<div class=\"maps-popup row\">\n                    <div class=\"mbl-col-12\">\n                        <h5 class=\"reset\">".concat(title, "</h5>\n                    </div>\n                    <div class=\"mbl-col-12\">\n                        ").concat(description, "\n                    </div>\n                    ").concat(phone ? "<div class=\"mbl-col-6\">\n                            Telefon: ".concat(phone, "\n                        </div>") : '', "\n                    ").concat(full_adress ? "<div class=\"mbl-col-6\">\n                            Adress: ".concat(full_adress, "\n                        </div>") : '', "\n                </div>");
     }
     /**
      * 
@@ -176,7 +176,7 @@ function () {
       return markerHTML;
     }
     /**
-     * 
+     *  
      * Get data from HTML
      * 
      */
