@@ -34,12 +34,9 @@ require get_template_directory() . '/includes/functions-nav-menu.php';
 /**
  *
  * Require Taxonomies
- *  ->Miejsca Relaxu
- *  ->Techniki
+ *  ->Miejsca
  *
  */
-require get_template_directory() . '/includes/taxonomies/taxonomies-miejsca.php';
-require get_template_directory() . '/includes/taxonomies/taxonomies-techniki.php';
 require get_template_directory() . '/includes/taxonomies/taxonomies-places.php';
 
 /**
@@ -62,8 +59,7 @@ require get_template_directory() . '/includes/functions-theme-support.php';
 require get_template_directory() . '/includes/functions-fields.php';
 require get_template_directory() . '/includes/fields/fields-theme-options.php';
 require get_template_directory() . '/includes/fields/fields-taxonomy-category.php';
-require get_template_directory() . '/includes/fields/fields-taxonomy-miejsca.php';
-require get_template_directory() . '/includes/fields/fields-taxonomy-techniki.php';
+require get_template_directory() . '/includes/fields/fields-taxonomy-places.php';
 require get_template_directory() . '/includes/fields/fields-taxonomy-page.php';
 require get_template_directory() . '/includes/fields/fields-navmenu.php';
 //Blocks

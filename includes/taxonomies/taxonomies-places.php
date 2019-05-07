@@ -10,7 +10,7 @@ function register_post_miejsca(){
         'label'  => 'Miejsca',
         'labels' => array(
             'name'               => 'Miejsca',
-            'singular_name'      => 'Posty',
+            'singular_name'      => 'Miejsca',
             'add_new'            => 'Dodaj post',
             'add_new_item'       => 'Dodawanie postu',
             'edit_item'          => 'Redagowanie postu',
