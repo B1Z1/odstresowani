@@ -15,7 +15,7 @@ $posts = new WP_Query($args_q);
 
 ?>
 
-<section class="block header__triger pt64">
+<section class="block header__triger pt16">
 
 
     <div class="mt64 d-flex fwrap row infinity-scroll">
