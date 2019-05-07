@@ -116,14 +116,11 @@ function () {
           link = data.link;
 
       switch (type) {
-        case 'normal':
+        case 'default':
           return this.popUpTemplateNormal(title, description, link, image);
 
-        case 'pack':
+        case 'default_without_image':
           return this.popUpTemplateNormal(title, description, link, image);
-
-        case 'river':
-          return this.popUpTemplateRiver(title, description, phone, full_adress);
       }
     }
     /**
@@ -136,7 +133,7 @@ function () {
   }, {
     key: "popUpTemplateNormal",
     value: function popUpTemplateNormal(title, description, link, image) {
-      return "<div class=\"maps-popup d-flex\">\n                    <div class=\"mbl-col-5 reset\">\n                        <div class=\"maps-popup__image\" style=\"background-image: url(".concat(image, ");\"></div>\n                    </div>\n                    <div class=\"mbl-col-7\">\n                        <h5 class=\"reset-top mb8 f-vb\"><a ").concat(link ? "href=\"".concat(link, "\"") : '', " class=\"link link--underline reset-link\">").concat(title, "</a></h5>\n                        ").concat(description, "\n                    </div>\n                </div>");
+      return "<div class=\"maps-popup d-flex\">\n                    <div class=\"mbl-col-5 reset\">\n                        ".concat(image ? "<div class=\"maps-popup__image\" style=\"background-image: url(".concat(image, ");\"></div>") : '', "\n                    </div>\n                    <div class=\"mbl-col-7\">\n                        <h5 class=\"reset-top mb8 f-vb\"><a ").concat(link ? "href=\"".concat(link, "\"") : '', " class=\"link link--underline reset-link\">").concat(title, "</a></h5>\n                        ").concat(description, "\n                    </div>\n                </div>");
     }
     /**
      * 
@@ -146,8 +143,8 @@ function () {
      */
 
   }, {
-    key: "popUpTemplateRiver",
-    value: function popUpTemplateRiver(title, description, phone, full_adress) {
+    key: "popUpTemplateWithoutImage",
+    value: function popUpTemplateWithoutImage(title, description, phone, full_adress) {
       return "<div class=\"maps-popup row\">\n                    <div class=\"mbl-col-12\">\n                        <h5 class=\"reset\">".concat(title, "</h5>\n                    </div>\n                    <div class=\"mbl-col-12\">\n                        ").concat(description, "\n                    </div>\n                    <div class=\"mbl-col-6\">\n                        Telefon: ").concat(phone, "\n                    </div>\n                    <div class=\"mbl-col-6\">\n                        Adress: ").concat(full_adress, "\n                    </div>\n                </div>");
     }
     /**

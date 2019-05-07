@@ -1,57 +1,15 @@
 <?php 
 $maps = $block['maps'];
-$maps_data = array();
-$map_object = new OdsMap();
 
-foreach ( $maps as $key => $map ){
-    $map_title = $map['map_title'];
-    $markers_type = $map['markers_which'];
-    $markers = array();
-    $marker_parameters = array(
-        'pulse' => $map['marker_pulse'] ? 'true':'false',
-        'isnumeric' => $map['marker_isnumeric'] ? 'true':'false',
-        'hasimage' => $map['marker_hasimage'] ? 'true':'false',
-        'linedraw' => $map['marker_linedraw'] ? 'true':'false',
-        'alert' => $map['marker_alert'] ? 'true':'false',
-    );
-    switch ( $markers_type ){
-        case 'normal': 
-            foreach ( $map['markers_normal'] as $key_2 => $marker ){
-                array_push($markers, array(
-                    'title' => $marker['marker_title'],
-                    'description' => $marker['marker_description'],
-                    'image' => wp_get_attachment_image_url($marker['marker_image'], 'full'),
-                    'adress' => $marker['marker_adress'],
-                    'link' => $marker['marker_link'],
-                ));
-            }
-        break;
-        case 'river':
-            foreach ( $map['markers_river'] as $key_2 => $marker ){
-                array_push($markers, array(
-                    'title' => $marker['marker_title'],
-                    'description' => $marker['marker_description'],
-                    'phone' => $marker['marker_phone'],
-                    'full_adress' => $marker['marker_full_adress'],
-                    'adress' => $marker['marker_adress'],
-                ));
-            }
-        break;
-        case 'pack':
-            $markers = $map_object->getData($map['markers_ready']);
-        break;
-    }
-    array_push($maps_data, array(
-        'id' => $key + 1,
-        'type' => $markers_type,
-        'title' => $map_title,
-        'marker_parameters' => $marker_parameters,
-        'markers' => $markers,
-    ));
-}
+//If I will be need to change this type, go to the "fields-block-map" and change variable too
+$termType = 'miejsca-kategorie';
 
+$map = new CMap(array(
+    'maps' => $block['maps'],
+    'termType' => $termType
+));
 
-
+$maps_data = $map->init();
 ?>
 
 <div class="maps">
@@ -107,7 +65,7 @@ window.addEventListener('load', function(){
     mapboxgl.accessToken = 'pk.eyJ1IjoiaWx5YW1pc2hraW4iLCJhIjoiY2p1aWRrbDl2MTRrcDQ0cGdlMTN3ZWJ1cCJ9.tTVIhbBmMOhuH_Z5DKUN4A';
     <?php foreach ( $maps_data as $data ): 
         $id = $data['id'];
-        $parameters = $data['marker_parameters'];
+        $parameters = $data['markerParametres'];
         ?>
     let map_<?php echo $id; ?> = new OdstresowaniMap({
         token: mapboxgl.accessToken,

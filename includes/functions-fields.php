@@ -10,6 +10,7 @@ function crb_load() {
 //Public class for getting Posts/Pages/Posts py type
 class GetPosts{
     function __construct(){}
+        
     //Get post types
     public function getPostsTypes(){
         return array(
@@ -17,6 +18,7 @@ class GetPosts{
             'post' => 'Artykuły',
         );
     }
+
     //Get taxonomies
     public function getTaxTypes(){
         return array(
@@ -24,6 +26,7 @@ class GetPosts{
             'category' => 'Artykuły',
         );
     }
+
     //Query by type
     public function getByPostType($type){
         $query = new WP_Query();
@@ -39,6 +42,7 @@ class GetPosts{
         wp_reset_query();
         return $names;
     }
+
     //Query by taxonomy
     public function getTaxonomiesList($name){
         $terms = get_terms([
@@ -46,8 +50,9 @@ class GetPosts{
             'hide_empty' => false
         ]);
         $names = array();
+        $names['nic'] = 'Nic';
         foreach ( $terms as $term ){
-            $names[$term->name] = $term->name;
+            $names[$term->slug] = $term->name;
         }
         wp_reset_query();
         return $names;

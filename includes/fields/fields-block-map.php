@@ -13,8 +13,10 @@ add_action( 'carbon_fields_register_fields', 'crb_register_block_map', 10 );
 if ( !function_exists('crb_register_block_map') ){
     function crb_register_block_map(){
         global $getPosts;
-        $categories = $getPosts->getTaxonomiesList('miejsca-kategorie');
-        
+        //If I will be need to change this type, go to the "part-map" and change variable too
+        $type = 'miejsca-kategorie';
+        $categories = $getPosts->getTaxonomiesList($type);
+
         Block::make(__('Block z markerami'))
             ->add_fields(array(
                 Field::make('complex', 'maps', __('Mapa'))
@@ -37,8 +39,8 @@ if ( !function_exists('crb_register_block_map') ){
                                 'default' => 'Z obrazkiem',
                                 'default_without_image' => 'Bez obrazku'
                             ) ),
-                        Field::make('select', 'markers_category', __('Kategoria'))
-                            ->set_options($categories),
+                        Field::make('select', 'markers_category', __('Kategoria mapy'))
+                            ->set_options( $categories )
                     ))
             ))
             ->set_render_callback(function ($block) {

@@ -26,6 +26,15 @@ if ( !function_exists( 'shuffle_the_posts' ) ){
 }
 
 /**
+ * 
+ * Components
+ * 
+ */
+require get_template_directory() . '/includes/components/component-advanced-block.php';
+require get_template_directory() . '/includes/components/component-data-video.php';
+require get_template_directory() . '/includes/components/component-map.php';
+
+/**
  *
  * Require Nav menu
  *
@@ -105,21 +114,5 @@ require get_template_directory() . '/includes/functions-translates.php';
  *
  */
 require get_template_directory() . '/includes/functions-shortcodes.php';
-/**
- *
- * Require Advanced block options
- *
- */
-require get_template_directory() . '/includes/functions-advanced-block.php';
-/**
- *
- * Require function, which get video by date of year
- *
- */
-require get_template_directory() . '/includes/functions-datevideo.php';
-/**
- *
- * Require function, which get places/techs from datebase
- *
- */
-require get_template_directory() . '/includes/functions-map.php';
+
+

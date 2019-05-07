@@ -93,12 +93,10 @@ class OdstresowaniMap{
             link = data.link;
 
         switch (type){
-            case 'normal': 
+            case 'default': 
                 return this.popUpTemplateNormal(title, description, link, image); 
-            case 'pack': 
-                return this.popUpTemplateNormal(title, description, link, image); 
-            case 'river': 
-                return this.popUpTemplateRiver(title, description, phone, full_adress); 
+            case 'default_without_image': 
+                return this.popUpTemplateNormal(title, description, link, image);
         }
         
     }
@@ -112,7 +110,7 @@ class OdstresowaniMap{
     popUpTemplateNormal(title, description, link, image){
         return `<div class="maps-popup d-flex">
                     <div class="mbl-col-5 reset">
-                        <div class="maps-popup__image" style="background-image: url(${image});"></div>
+                        ${ image ? `<div class="maps-popup__image" style="background-image: url(${image});"></div>`: '' }
                     </div>
                     <div class="mbl-col-7">
                         <h5 class="reset-top mb8 f-vb"><a ${ link ? `href="${link}"` : '' } class="link link--underline reset-link">${title}</a></h5>
@@ -127,7 +125,7 @@ class OdstresowaniMap{
      * Template PopUp: River
      * 
      */
-    popUpTemplateRiver(title, description, phone, full_adress){
+    popUpTemplateWithoutImage(title, description, phone, full_adress){
         return `<div class="maps-popup row">
                     <div class="mbl-col-12">
                         <h5 class="reset">${title}</h5>
