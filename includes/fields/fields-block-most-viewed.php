@@ -12,8 +12,8 @@ use Carbon_Fields\Block;
 add_action( 'carbon_fields_register_fields', 'crb_register_block_most_viewed', 10 );
 if ( !function_exists('crb_register_block_most_viewed') ){
     function crb_register_block_most_viewed(){
-        global $get;
-        $posts = $get->getPostsTypes();
+        global $getPosts;
+        $posts = $getPosts->getPostsTypes();
 
         Block::make(__('Blok z najbardziej oglądającymi postami'))
             ->add_fields(array(

@@ -11,8 +11,8 @@ use Carbon_Fields\Block;
 add_action( 'carbon_fields_register_fields', 'crb_register_block_page_slider', 10 );
 if ( !function_exists('crb_register_block_page_slider') ){
     function crb_register_block_page_slider(){
-        global $get;
-        $page_ids = $get->getByType('page');
+        global $getPosts;
+        $page_ids = $getPosts->getByType('page');
         /**
          *
          * Block Slider for pages

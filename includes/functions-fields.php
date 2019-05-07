@@ -46,4 +46,4 @@ class GetPosts{
  * Get ids of page for footer list
  *
  */
-$get = new GetPosts;
+$getPosts = new GetPosts;

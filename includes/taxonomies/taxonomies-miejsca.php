@@ -7,7 +7,7 @@
 add_action( 'init', 'register_miejsca' );
 function register_miejsca(){
     register_post_type('miejsca_relaxu', array(
-        'label'  => 'Miejsca Relaxu',
+        'label'  => 'Miejsca',
         'labels' => array(
             'name'               => 'Miejsca Relaxu',
             'singular_name'      => 'Posty',

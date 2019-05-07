@@ -39,9 +39,10 @@ require get_template_directory() . '/includes/functions-nav-menu.php';
  *  ->Techniki
  *
  */
-require get_template_directory() . '/includes/taxonomies/functions-strefa-wiedzy.php';
-require get_template_directory() . '/includes/taxonomies/functions-miejsca.php';
-require get_template_directory() . '/includes/taxonomies/functions-techniki.php';
+require get_template_directory() . '/includes/taxonomies/taxonomies-strefa-wiedzy.php';
+require get_template_directory() . '/includes/taxonomies/taxonomies-miejsca.php';
+require get_template_directory() . '/includes/taxonomies/taxonomies-techniki.php';
+require get_template_directory() . '/includes/taxonomies/taxonomies-places.php';
 
 /**
  * Enqueue scripts and styles.
