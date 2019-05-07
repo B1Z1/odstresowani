@@ -12,7 +12,7 @@ add_action( 'carbon_fields_register_fields', 'crb_register_block_page_slider', 1
 if ( !function_exists('crb_register_block_page_slider') ){
     function crb_register_block_page_slider(){
         global $getPosts;
-        $page_ids = $getPosts->getByType('page');
+        $page_ids = $getPosts->getByPostType('page');
         /**
          *
          * Block Slider for pages

@@ -1,4 +1,6 @@
 <?php
+
+
 add_action( 'after_setup_theme', 'crb_load' );
 function crb_load() {
     require_once( get_template_directory() . '/plugins/carbon-fields/vendor/autoload.php' );
@@ -23,21 +25,34 @@ class GetPosts{
         );
     }
     //Query by type
-    public function getByType($type){
+    public function getByPostType($type){
         $query = new WP_Query();
         $pages = $query->query( array(
             'post_type' => $type,
             'posts_per_page' => -1,
             'lang' => 'pl',
         ) );
-        $pages_url_object = array();
-    
+        $names = array();
         foreach ( $pages as $page ){
-            $pages_url_object[$page->post_title] = $page->post_title;
+            $names[$page->post_title] = $page->post_title;
         }
         wp_reset_query();
-        return $pages_url_object;
+        return $names;
     }
+    //Query by taxonomy
+    public function getTaxonomiesList($name){
+        $terms = get_terms([
+            'taxonomy' => $name,
+            'hide_empty' => false
+        ]);
+        $names = array();
+        foreach ( $terms as $term ){
+            $names[$term->name] = $term->name;
+        }
+        wp_reset_query();
+        return $names;
+    }
+
 }
 /**
  *

@@ -12,34 +12,9 @@ use Carbon_Fields\Block;
 add_action( 'carbon_fields_register_fields', 'crb_register_block_map', 10 );
 if ( !function_exists('crb_register_block_map') ){
     function crb_register_block_map(){
-        //Type: Marker Normal
-        function markers_normal(){
-            return array(
-                Field::make('text', 'marker_title',  __('Tytuł'))
-                    ->set_required(true),
-                Field::make('textarea', 'marker_description',  __('Opis'))
-                    ->set_required(true),
-                Field::make('image', 'marker_image',  __('Obrazek')),
-                Field::make('text', 'marker_adress',  __('Miejsce'))
-                    ->set_required(true),
-                Field::make('text', 'marker_link',  __('Link jeśli jest potrzebny')),
-            );
-        }
-        //Type: Marker River
-        function markers_river(){
-            return array(
-                Field::make('text', 'marker_title',  __('Tytuł'))
-                    ->set_required(true),
-                Field::make('textarea', 'marker_description',  __('Opis'))
-                    ->set_required(true),
-                Field::make('text', 'marker_phone',  __('Numer telefonu')),
-                Field::make('text', 'marker_full_adress',  __('Adres dokładny'))
-                    ->set_required(true),
-                Field::make('text', 'marker_adress',  __('Miejsce na mapie'))
-                    ->set_required(true),
-            );
-        }
-
+        global $getPosts;
+        $categories = $getPosts->getTaxonomiesList('miejsca-kategorie');
+        
         Block::make(__('Block z markerami'))
             ->add_fields(array(
                 Field::make('complex', 'maps', __('Mapa'))
@@ -59,38 +34,11 @@ if ( !function_exists('crb_register_block_map') ){
                             ->set_option_value( 'Tak' ),
                         Field::make('select', 'markers_which', __('Jaki to ma być marker?'))
                             ->set_options( array(
-                                'normal' => 'Klasyczne',
-                                'pack' => 'Z zestawu',
-                                'river' => 'Dla operacji rzeka'
+                                'default' => 'Z obrazkiem',
+                                'default_without_image' => 'Bez obrazku'
                             ) ),
-                        Field::make('complex', 'markers_normal', __('Nowe Markery'))
-                            ->set_conditional_logic( array(
-                                    array(
-                                        'field' => 'markers_which',
-                                        'value' => 'normal',
-                                    )
-                            ) )
-                            ->add_fields(markers_normal()),
-                        Field::make('complex', 'markers_river', __('Nowe Markery'))
-                            ->set_conditional_logic( array(
-                                    array(
-                                        'field' => 'markers_which',
-                                        'value' => 'river',
-                                    )
-                            ) )
-                            ->add_fields(markers_river()),
-                        Field::make('select', 'markers_ready', __('Wybierz zestaw'))
-                            ->set_conditional_logic( array(
-                                    array(
-                                        'field' => 'markers_which',
-                                        'value' => 'pack',
-                                    )
-                            ) )
-                            ->set_options(array(
-                                'techniki' => 'Techniki',
-                                'miejsca_relaxu' => 'Miejsca Relaxu',
-                            ))
-                            ->set_required(true),
+                        Field::make('select', 'markers_category', __('Kategoria'))
+                            ->set_options($categories),
                     ))
             ))
             ->set_render_callback(function ($block) {

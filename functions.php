@@ -8,6 +8,7 @@
  */
 $currlang = pll_current_language();
 
+
 /**
  *
  * Shuffle posts
@@ -38,7 +39,6 @@ require get_template_directory() . '/includes/functions-nav-menu.php';
  *
  */
 require get_template_directory() . '/includes/taxonomies/taxonomies-places.php';
-
 /**
  * Enqueue scripts and styles.
  */

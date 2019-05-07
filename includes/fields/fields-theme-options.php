@@ -11,7 +11,7 @@ add_action( 'carbon_fields_register_fields', 'crb_register_theme_options', 10 );
 if ( !function_exists('crb_register_theme_options') ){
     function crb_register_theme_options(){
     global $getPosts; //Page ids from "function fields"
-    $page_ids = $getPosts->getByType('page');
+    $page_ids = $getPosts->getByPostType('page');
 
     Container::make( 'theme_options', __( 'Theme Options' ) )
         ->add_tab( 'Opcje generalne', array(
