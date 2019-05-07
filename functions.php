@@ -40,6 +40,7 @@ require get_template_directory() . '/includes/functions-nav-menu.php';
  */
 require get_template_directory() . '/includes/taxonomies/taxonomies-miejsca.php';
 require get_template_directory() . '/includes/taxonomies/taxonomies-techniki.php';
+require get_template_directory() . '/includes/taxonomies/taxonomies-places.php';
 
 /**
  * Enqueue scripts and styles.

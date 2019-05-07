@@ -15,8 +15,9 @@ if ( !function_exists('crb_register_term_miejsca') ){
             ->add_fields( array(
                 Field::make( 'text', 'adress', __( 'Adres Miejsca' ) ) 
                     ->set_required(true),
-                Field::make( 'text', 'link', __( 'Link do danego miejsca' ) )
-                    ->set_required(true),
+                Field::make('text', 'full_adress',  __('Adres dokładny')),
+                Field::make( 'text', 'link', __( 'Link do danego miejsca' ) ),
+                Field::make('text', 'phone',  __('Numer telefonu')),
             ) );
     }
 }

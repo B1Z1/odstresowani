@@ -32,6 +32,7 @@ $sygnet = carbon_get_post_meta(get_the_ID(), 'page_sygnet');
                         <img src="<?php echo wp_get_attachment_image_src($sygnet,'full')[0]; ?>" alt="Page sygnet" class="post__sygnet">
                     </div>
                 </div>
+                <!-- Mind Component Start -->
                 <div class="container container-960 header__triger">
                     <!--  Breadcrumbs start  --> 
                     <?php yoast_breadcrumb( '<div id="breadcrumbs" class="breadcrumbs reset-top f-vb c-gs mb64">','</div>' ); ?>
@@ -85,6 +86,8 @@ $sygnet = carbon_get_post_meta(get_the_ID(), 'page_sygnet');
                         <?php endforeach; ?>
                     </div>
                 </div>
+                <!-- Mind Component End -->
+                <!-- Main Content Start -->
                 <div class="page__content">
                     <div class="container container-posts header__triger">
                         
@@ -93,7 +96,6 @@ $sygnet = carbon_get_post_meta(get_the_ID(), 'page_sygnet');
                             <?php while (have_posts()): the_post(); ?>
                                 
                                 <?php the_content(); ?>
-                                <?php get_template_part('template-parts/content', 'share'); ?>
 
                             <?php endwhile; ?>
 
@@ -101,18 +103,8 @@ $sygnet = carbon_get_post_meta(get_the_ID(), 'page_sygnet');
 
                     </div>
                 </div>
+                <!-- Main Content End -->
             </section>
-
-            <div class="container">
-                <?php
-                /**
-                 *
-                 *  Most viewed posts
-                 *
-                 */
-                get_template_part('template-parts/content', 'most-viewed-2');
-                ?>
-            </div>
         </main>
 
         <!-- ------------------ -->
