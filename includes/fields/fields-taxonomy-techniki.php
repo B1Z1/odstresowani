@@ -4,7 +4,7 @@ use Carbon_Fields\Field;
 
 /**
  * 
- * Term taxonomy = strefa-wiedzy-kategorie
+ * Term taxonomy = techniki
  * 
  */
 add_action( 'carbon_fields_register_fields', 'crb_register_term_techniki', 10 );

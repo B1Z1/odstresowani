@@ -10,9 +10,9 @@ if ( !function_exists( 'post_get_cat' ) ) {
         $post_term = '';
         $pll_id = pll_get_term(get_the_ID());
 
-        switch ($post_type){
-            case 'strefa-wiedzy': $post_term = 'strefa-wiedzy-kategorie'; break;
-        }
+        // switch ($post_type){
+        //     //If ever have added new post type, add this here
+        // }
 
         if ( $post_term != '' ){
             $post_cat = get_the_terms($pll_id, $post_term);

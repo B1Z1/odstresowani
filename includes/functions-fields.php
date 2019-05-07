@@ -13,7 +13,6 @@ class GetPosts{
         return array(
             '' => 'Nie',
             'post' => 'Artykuły',
-            'strefa-wiedzy' => 'Strefa wiedzy',
         );
     }
     //Get taxonomies
@@ -21,7 +20,6 @@ class GetPosts{
         return array(
             '' => 'Nie',
             'category' => 'Artykuły',
-            'strefa-wiedzy-kategorie' => 'Strefa wiedzy',
         );
     }
     //Query by type
