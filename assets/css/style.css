@@ -708,11 +708,11 @@ strong {
 }
 
 .block-image--full {
-  height: 992px;
+  height: 80vh;
 }
 
 .block-image--small {
-  height: 499px;
+  height: 40vh;
 }
 
 .block-image--256 {
@@ -2340,6 +2340,37 @@ _______________*/
 .l-header--active .c-flip__front {
   opacity: 0;
   visibility: hidden;
+}
+
+/*_________________________
+
+Layout Public Image Start
+
+_______________*/
+
+/* --> : Component Elements : <-- */
+
+.l-pubimage__container {
+  position: relative;
+}
+
+/* --> : Component Modificators : <-- */
+
+.l-pubimage--full {
+  height: 80vh;
+}
+
+.l-pubimage--small {
+  height: 40vh;
+}
+
+.l-pubimage--256 {
+  height: 256px;
+}
+
+.l-pubimage--boxsh {
+  -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.16);
 }
 
 /* --> : Components Start : <-- */

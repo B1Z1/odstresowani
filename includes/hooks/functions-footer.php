@@ -27,7 +27,7 @@ if ( !function_exists('footer_upper_blocks') ){
             <?php foreach ( $footer_blocks as $footer_block ): $block = $footer_block['footer_block']; ?>
                 <div class="mbl-col-12 tbl-col-6 ntb-col-3">
                     <div class="footer-blocks__block mb32">
-                        <ul class="reset-list">
+                        <ul class="c-list">
                             <?php foreach ( $block as $item ): 
                                 $title = $item['footer_block_page']; 
                                 $page = get_page_by_title($title);
@@ -35,9 +35,9 @@ if ( !function_exists('footer_upper_blocks') ){
                                 $url = get_permalink($page->ID);
                                 $title = $page->post_title;
                                 ?>
-                                <li class="mb16">
-                                    <h3 class="reset">
-                                        <a href="<?php echo $url; ?>" class="reset-link">
+                                <li class="c-list__element mb16">
+                                    <h3 class="reset f-vr">
+                                        <a href="<?php echo $url; ?>" class="c-link">
                                             <?php echo $title; ?>
                                         </a>
                                     </h3>
@@ -60,10 +60,10 @@ if ( !function_exists('footer_upper_social') ){
 
         <div class="clearfix">
             <div class="footer__social ntb-col-12 flex-kit jce fwrap fr">
-                <ul class="reset-list d-flex">
+                <ul class="c-list d-flex">
                     <?php foreach ( $footer_social as $footer_list ): ?>
-                        <li class="footer__social__el mr16 ml16">
-                            <a href="<?php echo $footer_list['footer_social_url']; ?>" class="reset-link">
+                        <li class="c-list__element footer__social__el mr16 ml16">
+                            <a href="<?php echo $footer_list['footer_social_url']; ?>" class="c-link">
                                 <?php $footer_social_icon = wp_get_attachment_image($footer_list['footer_social_image'], 'full'); ?>
                                 <?php echo $footer_social_icon; ?>
                             </a>
@@ -109,14 +109,14 @@ if ( !function_exists('footer_bottom_links') ){
         $footer_bottom_list = carbon_get_theme_option('footer_bottom_blocks');
         ?>
         <div class="ntb-col-8 fr">
-            <ul class="footer__politics reset-list flex-kit jce fwrap">
+            <ul class="c-list footer__politics flex-kit jce fwrap">
                 <?php foreach ( $footer_bottom_list as $item ): 
                         $title = $item['footer_bottom_pages']; 
 						$page = get_page_by_title($title);
                         $page = get_post(pll_get_post($page->ID,  $currlang));
                         $url = get_permalink($page->ID);
                         $title = $page->post_title; ?>
-                    <li class="mr16 ml16"><a href="<?php echo $url; ?>" class="reset-link"><?php echo $title; ?></a></li>
+                    <li class="mr16 ml16"><a href="<?php echo $url; ?>" class="c-link"><?php echo $title; ?></a></li>
                 <?php wp_reset_postdata(); endforeach; ?>
             </ul>
         </div>

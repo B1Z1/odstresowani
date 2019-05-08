@@ -21,7 +21,8 @@ if ( !function_exists('crb_register_block_post_banner') ){
                         'full' => 'Duży',
                     ))
                     ->set_default_value('small'),
-
+                Field::make('checkbox', 'banner_type', __('Czy to jest gif?'))
+                    ->set_option_value( 'Tak' )
             ))
             ->set_render_callback(function ($block) {
                 include(locate_template('template-parts/block-parts/part-banner.php',false, false) );

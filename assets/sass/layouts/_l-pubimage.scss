@@ -1,0 +1,32 @@
+/*_________________________
+
+Layout Public Image Start
+
+_______________*/
+
+.l-pubimage{
+
+}
+
+/* --> : Component Elements : <-- */
+.l-pubimage{
+    &__container{
+        position: relative;
+    }
+}
+
+/* --> : Component Modificators : <-- */
+.l-pubimage{
+    &--full {
+        height: 80vh;
+    }
+    &--small {
+        height: 40vh;
+    }
+    &--256{
+        height: 256px;
+    }
+    &--boxsh{
+        box-shadow: 0 0 12px rgba(0,0,0,.16);
+    }
+}
