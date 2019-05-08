@@ -15,12 +15,12 @@ _______________*/
     padding-right: 24px;
     padding-bottom: 16px;
     padding-left: 24px;
-    z-index: 9999;
+    z-index: 9999; 
     transition: background-color .6s ease-in-out; 
     &:hover{
         background-color: $white;
     }
-    &:hover *{
+    &:hover .l-header__logo, &:hover .l-header__menu, &:hover .l-header__extra{
         color: $black;
     }
 }
