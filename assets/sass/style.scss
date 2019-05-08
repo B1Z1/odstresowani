@@ -1,19 +1,7 @@
 /************ Base styles start ****************/
-
+@import "colors/color-vars";
 /* Include Reset */
 @import "reset";
-
-/* Myreset */
-@import "myreset";
-
-
-/* Include Fonts */
-@import "fonts/fonts";
-@import "fonts/fonts-el";
-
-/* Colors define */
-@import "colors/color-vars";
-@import "colors/colors";
 
 /* Include Base styles */
 @import "base";
@@ -24,9 +12,6 @@
 @import "grid/grid";
 @import "grid/columns";
  
-/* Include paddings/margins */
-@import "pad-marg/paddings"; 
-@import "pad-marg/margins";
 
 /* --------------------------> Modules <------------------------ */
 
@@ -45,7 +30,6 @@
 @import "modules/_header/header";
 @import "modules/_header/header-sygnets";
 @import "modules/_header/header-menu";
-@import "modules/_header/header-sygnets";
 @import "modules/_header/header-submenu";
 @import "modules/_header/header-mobilenav";
 @import "modules/_header/header-extra";
@@ -135,3 +119,20 @@
 
 /* : Error 404 modules : */
 @import "modules/_er-404/er-404";
+
+
+
+/* --> Resets or colors UI <-- */
+/* Myreset */
+@import "myreset";
+
+/* Include Fonts */
+@import "fonts/fonts";
+@import "fonts/fonts-el";
+
+/* Colors define */
+@import "colors/colors";
+
+/* Include paddings/margins */
+@import "pad-marg/paddings"; 
+@import "pad-marg/margins";
