@@ -84,9 +84,6 @@
 /* : Hero modules : */
 @import "modules/_hero/hero"; 
 
-/* : Icons modules : */
-@import "modules/_icons/icons";
-
 /* : Mind modules : */ 
 @import "modules/_mind/mind";
 
@@ -121,14 +118,16 @@
 /* --> : Layouts Start : <-- */
 @import "./layouts/l-header";
 @import "./layouts/l-pubimage";
+@import "./layouts/l-gallery-image";
 
 /* --> : Components Start : <-- */
-@import "components/c-image";
-@import "components/c-flip";
-@import "components/c-hamburger";
-@import "components/c-navigation";
-@import "components/c-list";
-@import "components/c-link";
+@import "./components/c-image";
+@import "./components/c-flip";
+@import "./components/c-hamburger";
+@import "./components/c-navigation";
+@import "./components/c-list";
+@import "./components/c-link";
+@import "./components/c-sygnet";
 
 /* --> Resets or colors UI <-- */
 /* Myreset */

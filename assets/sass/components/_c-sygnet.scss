@@ -1,0 +1,29 @@
+/*_________________________
+
+Component Sygnet Start
+
+_______________*/
+
+.c-sygnet{
+    position: absolute;
+    left: calc(50% - 32px);
+    bottom: -32px;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    z-index: 999; 
+}
+
+/* --> : Component Elements : <-- */
+.c-sygnet{
+    &__element{
+        position: relative;
+        width: 36px;
+        height: 36px;
+    }
+}
+
+/* --> : Component Modificators : <-- */
+.c-sygnet{
+
+}

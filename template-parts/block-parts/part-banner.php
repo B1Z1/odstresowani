@@ -10,8 +10,8 @@ $type = $block['banner_type'];
         <div class="l-pubimage mt128 mb64">
             <div class="l-pubimage__container l-pubimage--<?php echo $size ?>">
                 <img src="<?php echo $image; ?>" class="c-image <?php if ( $type ){ echo 'c-image--contain'; } ?>" alt="Sygnet">
-                <div class="icon bck-wh">
-                    <div class="icon__sygnet">
+                <div class="c-sygnet bck-wh flex-kit jcc">
+                    <div class="c-sygnet__element">
                         <img src="<?php echo $icon; ?>" class="c-image c-image--contain" alt="Sygnet">
                     </div>
                 </div>
