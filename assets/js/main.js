@@ -47,11 +47,11 @@ window.onload = function(){
     }()); 
  
     let Mheader = (function(){
-        let header = document.querySelector('.header'),
+        let header = document.querySelector('.l-header'),
             header_mobilenav = document.querySelector('.header-mobilenav'),
             buttons = {
                 'close': document.querySelector('.header-mobilenav__close'),
-                'open': document.querySelector('.header__hamburger'),
+                'open': document.querySelector('.c-hamburger'),
             };
             
         return {
@@ -101,10 +101,10 @@ window.onload = function(){
                 el.forEach(entry => {
                     let is = entry.isIntersecting;
                     if ( is ){
-                        Mclass.addClass('header--active',header);
+                        Mclass.addClass('l-header--active',header);
                     }
                     else{
-                        Mclass.removeClass('header--active',header);
+                        Mclass.removeClass('l-header--active',header);
                     }
                 });
             }

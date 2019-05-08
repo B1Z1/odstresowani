@@ -1,0 +1,23 @@
+/*_________________________
+
+Component Image Start
+
+_______________*/
+
+.c-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --> : Component Elements : <-- */
+.c-image{
+
+}
+
+/* --> : Component Modificators : <-- */
+.c-image{
+    &--contain{
+        object-fit: contain;
+    }
+}

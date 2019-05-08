@@ -168,8 +168,8 @@ if ( !function_exists('nav_mobile') ) {
 add_action('odstresowani_header_wrapper_start', 'header_wrapper_start', 10);
 if ( !function_exists('header_wrapper_start') ){
 function header_wrapper_start(){ ?>
-    <header class="header mr16 ml16 pt32 pr24 pb16 pl24 c-wh">
-    <div class="flex-kit jcsb row">
+    <header class="l-header c-flip c-wh">
+        <div class="flex-kit jcsb row">
 <?php }
 }
 
@@ -177,21 +177,21 @@ add_action('odstresowani_header_inside', 'header_sygnet', 10);
 if ( !function_exists('header_sygnet') ){
     function header_sygnet(){ ?>
         <div class="header-logo mbl-col-9 tbl-col-6 pc-col-3">
-            <figure class="f-vb">
+            <figure>
                 <a href="<?php echo get_home_url(); ?>" class="flex-kit reset-link">
-                    <div class="header-sygnets">
+                    <div class="header-sygnets c-flip__container">
                         <?php
                         $sygnet_front = wp_get_attachment_image_src(carbon_get_theme_option('general_sygnet_front'), 'full')[0];
                         $sygnet_back = wp_get_attachment_image_src(carbon_get_theme_option('general_sygnet_back'), 'full')[0];
                         ?>
                         <?php if ( $sygnet_front ): ?>
-                            <img class="header-sygnets__sygnet header-sygnets__sygnet--white" src="<?php echo $sygnet_front; ?>" alt="Sygnet">
+                            <img class="c-image c-image--contain c-flip__front" src="<?php echo $sygnet_front; ?>" alt="Sygnet">
                         <?php endif; ?>
                         <?php if ( $sygnet_back ): ?>
-                            <img class="header-sygnets__sygnet header-sygnets__sygnet--black" src="<?php echo $sygnet_back; ?>" alt="Sygnet">
+                            <img class="c-image c-image--contain c-flip__back" src="<?php echo $sygnet_back; ?>" alt="Sygnet">
                         <?php endif; ?>
                     </div>
-                    <h4 class="reset f-vr"><?php echo get_bloginfo('name'); ?></h4>
+                    <h4 class="reset f-vb"><?php echo get_bloginfo('name'); ?></h4>
                 </a>
             </figure>
         </div>
@@ -237,7 +237,7 @@ if ( !function_exists('header_extra_menu') ){
         ?>
         <div class="header-extra mbl-col-3 tbl-col-6 pc-col-3">
             <div class="clearfix">
-                <div class="header__hamburger ml32 fr">
+                <div class="c-hamburger fr">
                     <i class="fas fa-bars"></i>
                 </div>
                 <nav class="header-extra__menu f-vb fr">

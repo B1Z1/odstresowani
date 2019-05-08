@@ -1,0 +1,26 @@
+/*_________________________
+
+Component Hamburger Start
+
+_______________*/
+
+.c-hamburger{
+    position: relative;
+    display: none;
+    margin-left: 32px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width: 1366px){
+    .c-hamburger{
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .c-hamburger{
+        margin-left: 0;
+    }
+}

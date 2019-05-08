@@ -58,11 +58,11 @@ window.onload = function () {
   }();
 
   var Mheader = function () {
-    var header = document.querySelector('.header'),
+    var header = document.querySelector('.l-header'),
         header_mobilenav = document.querySelector('.header-mobilenav'),
         buttons = {
       'close': document.querySelector('.header-mobilenav__close'),
-      'open': document.querySelector('.header__hamburger')
+      'open': document.querySelector('.c-hamburger')
     };
     return {
       'mobileList': function mobileList() {
@@ -113,9 +113,9 @@ window.onload = function () {
           var is = entry.isIntersecting;
 
           if (is) {
-            Mclass.addClass('header--active', header);
+            Mclass.addClass('l-header--active', header);
           } else {
-            Mclass.removeClass('header--active', header);
+            Mclass.removeClass('l-header--active', header);
           }
         });
       }

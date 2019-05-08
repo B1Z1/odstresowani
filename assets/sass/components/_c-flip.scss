@@ -1,0 +1,46 @@
+/*_________________________
+
+Component Flip Start
+
+_______________*/
+
+.c-flip{
+    &:hover &__back{
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* --> : Component Elements : <-- */
+
+.c-flip{
+    &__container{
+        transform-style: preserve-3d;
+    }
+    &__front, &__back{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        backface-visibility: hidden;
+        transition: opacity .6s ease-in-out, visibility .6s ease-in-out;
+    }
+    &__back{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .c-flip{
+        &__front{
+            visibility: hidden;
+            opacity: 0;
+        }
+        &__back{
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}

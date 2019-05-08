@@ -4,6 +4,9 @@
 /* ---> : Font includes : <--- */
 @import "fonts/fonts";
 
+/* ---> : Colors UI : <---*/
+@import "colors/colors";
+
 /*--------------> Base styles start <--------------*/
 /* Include Reset */
 @import "reset";
@@ -31,7 +34,6 @@
 @import "modules/_filter/filter-video";
 
 /* : Header modules : */
-@import "modules/_header/header";
 @import "modules/_header/header-sygnets";
 @import "modules/_header/header-menu";
 @import "modules/_header/header-submenu";
@@ -124,7 +126,13 @@
 /* : Error 404 modules : */
 @import "modules/_er-404/er-404";
 
+/* --> : Layouts Start : <-- */
+@import "./layouts/l-header";
 
+/* --> : Components Start : <-- */
+@import "components/c-image";
+@import "components/c-flip";
+@import "components/c-hamburger";
 
 /* --> Resets or colors UI <-- */
 /* Myreset */
@@ -132,9 +140,6 @@
 
 /* Include Fonts */
 @import "fonts/fonts-el";
-
-/* Colors define */
-@import "colors/colors";
 
 /* Include paddings/margins */
 @import "pad-marg/paddings"; 

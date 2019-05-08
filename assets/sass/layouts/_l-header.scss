@@ -1,0 +1,60 @@
+/*_________________________
+
+Layout Header Start
+
+_______________*/
+
+.l-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-right: 16px;
+    margin-left: 16px;
+    padding-top: 32px;
+    padding-right: 24px;
+    padding-bottom: 16px;
+    padding-left: 24px;
+    z-index: 9999;
+    transition: background-color .6s ease-in-out; 
+    &:hover{
+        background-color: $white;
+    }
+    &:hover .header-menu, &:hover .header-extra__menu, &:hover .header__hamburger, &:hover .header-logo{
+        color: $black;
+    }
+}
+
+/* ---> : Layout Elements Start : <--- */
+.l-header{
+
+}
+
+/* ---> : Layout Modificators Start : <--- */
+.l-header{
+    &--active{ 
+        background-color: $white;
+        color: $black;
+        .c-flip__back{
+            opacity: 1; 
+            visibility: visible;
+        } 
+        .c-flip__front{
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .l-header{
+        margin-right: 0;
+        margin-left: 0;
+        padding-top: 8px;
+        padding-right: 24px;
+        padding-bottom: 8px;
+        padding-left: 24px;
+        background: $white;
+        color: $black;
+    }
+}

@@ -4,7 +4,8 @@ var gulp                = require('gulp'),
     autoprefixer        = require('gulp-autoprefixer'),
     clean               = require('gulp-clean-css'),
     rename              = require('gulp-rename'),
-    babel               = require('gulp-babel');
+    babel               = require('gulp-babel'),
+    gcmq                = require('gulp-group-css-media-queries');
 
 gulp.task('start', function(){
     
@@ -22,8 +23,8 @@ gulp.task('start', function(){
 
 /**
  * 
- * Converter from sass to css
- * @Sass
+ * Converter from sass to css`
+ * @Sass`
  * @Autoprefixer last 2 versions
  * 
  */
@@ -34,6 +35,7 @@ gulp.task('sass', function(){
                 browsers: ['last 2 versions'],
                 cascade: false
             }))
+            .pipe(gcmq())
             .pipe(gulp.dest('assets/css'))
             .pipe(browserSync.reload({
                 stream: true,
