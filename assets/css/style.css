@@ -643,30 +643,6 @@ strong {
   }
 }
 
-/* : Header modules : */
-
-.header-mobilenav__close {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 24px;
-  height: 24px;
-  z-index: 10;
-  cursor: pointer;
-}
-
-.header-mobilenav__close img {
-  width: 100%;
-}
-
-.header-mobilenav__list li {
-  margin-top: 16px;
-}
-
-.header-mobilenav__list li:first-child {
-  margin-top: 0;
-}
-
 /* : Footer modules : */
 
 .footer {
@@ -3268,10 +3244,6 @@ _______________*/
 }
 
 @media only screen and (max-width: 1366px) {
-  .header-mobilenav {
-    display: block;
-  }
-
   .card__image--328 {
     height: 288px;
   }
@@ -3348,18 +3320,6 @@ _______________*/
   .container-posts {
     padding-right: 16px;
     padding-left: 16px;
-  }
-
-  .header-mobilenav {
-    right: -100vw;
-    width: 100vw;
-    -webkit-transition: .8s all;
-    transition: .8s all;
-  }
-
-  .header-mobilenav__list {
-    -webkit-columns: 2;
-    columns: 2;
   }
 
   .footer {
@@ -3508,6 +3468,13 @@ _______________*/
   .c-navigation__mobile {
     right: -100vw;
     width: 100vw;
+  }
+
+  /* ---> : Component Modificators Start : <--- */
+
+  .c-list--tabcol2 {
+    -webkit-columns: 2;
+    columns: 2;
   }
 
   /* 32px */

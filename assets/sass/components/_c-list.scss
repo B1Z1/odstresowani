@@ -25,3 +25,12 @@ _______________*/
 .c-list{
 
 }
+
+@media only screen and (max-width: 768px){
+    /* ---> : Component Modificators Start : <--- */
+    .c-list{
+        &--tabcol2{
+            columns: 2;
+        }
+    }
+}

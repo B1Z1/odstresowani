@@ -126,8 +126,7 @@ if ( !function_exists('nav_mobile') ) {
                     <?php $close_button = carbon_get_theme_option('general_close_button'); ?>
                     <img src="<?php echo wp_get_attachment_image_src($close_button, 'full')[0]; ?>" class="c-image" alt="Close button">
                 </div>
-                <ul class="c-list">
-
+                <ul class="c-list c-list--tabcol2">
                     <?php foreach ($pages as $page):
                         $url = $page['url'];
                         $title = $page['title'];
@@ -138,9 +137,7 @@ if ( !function_exists('nav_mobile') ) {
                             ));
                         }
                         ?>
-
                         <?php if ( $cat_tax ): ?>
-
                             </ul>
                             <h3 class="mt16 mb16 f-vb"><a href="<?php echo $url; ?>" class="c-link"><?php echo $title; ?></a></h3>
                             <ul class="c-list">
@@ -154,21 +151,15 @@ if ( !function_exists('nav_mobile') ) {
                                     </li>
 
                                 <?php endforeach; ?>
-
                         <?php else: ?>
-
                             <li class="c-list__element">
                                 <a href="<?php echo $url; ?>" class="c-link"><?php echo $title; ?></a>
                             </li>
-
                         <?php endif; ?>
-
                     <?php endforeach; ?>
-
                 </ul>
             </nav>
             <!-- Mobile menu end -->
-
         <?php endif; ?>
     <?php }
 }
