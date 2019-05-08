@@ -12,7 +12,7 @@
         border-radius: 50%;
         font-size: 1.8rem;
         cursor: pointer;
-        transform: translateX(-50%);
+        transform: translateX(-65%);
         transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
     }
     &__play{
@@ -20,7 +20,7 @@
             left: 3px;
         }
     }
-    &__stop{
+    &__stop{ 
         opacity: 0;
         visibility: hidden;
         &--active{
@@ -28,9 +28,9 @@
             visibility: visible;
         }
     }
-    &__icon{
+    &__icon{ 
         position: relative;
         top: 50%;
-        transform: translateY(-50%);
+        transform: translateY(-65%);
     }
 }

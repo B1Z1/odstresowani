@@ -912,8 +912,8 @@ strong {
   border-radius: 50%;
   font-size: 1.8rem;
   cursor: pointer;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-65%);
+  transform: translateX(-65%);
   -webkit-transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
   transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
 }
@@ -935,8 +935,8 @@ strong {
 .video-controls__icon {
   position: relative;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-65%);
+  transform: translateY(-65%);
 }
 
 /* : Animation modules : */

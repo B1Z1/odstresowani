@@ -7,7 +7,7 @@ $type = $block['banner_type'];
 ?>
 <?php if ( $image ): ?>
     </div>
-        <div class="l-pubimage mt128 mb64">
+        <div class="l-pubimage mt64 mb64">
             <div class="l-pubimage__container l-pubimage--<?php echo $size ?>">
                 <img src="<?php echo $image; ?>" class="c-image <?php if ( $type ){ echo 'c-image--contain'; } ?>" alt="Sygnet">
                 <div class="c-sygnet bck-wh flex-kit jcc">

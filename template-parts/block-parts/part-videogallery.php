@@ -5,7 +5,7 @@ $gallery = $block['videogallery'];
 <?php if ( $gallery ): ?>
 
     </div>
-    <div class="block block--texcen block-videogallery">
+    <div class="block block--texcen block-videogallery mt64 mb64">
         <?php foreach( $gallery as $post ): 
             $name = $post['videogallery_name'];
             $poster = wp_get_attachment_url($post['videogallery_poster'], 'full');
