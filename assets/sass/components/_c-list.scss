@@ -1,0 +1,27 @@
+/*_________________________
+
+Component List Start
+
+_______________*/
+
+.c-list{
+    padding-left: 0;
+    list-style: none;
+    li:first-child{
+        margin-top: 0;
+        margin-left: 0;
+    }
+    li:last-child{
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+}
+
+/* --> : Component Elements : <-- */
+.c-list{
+}
+
+/* ---> : Component Modificators Start : <--- */
+.c-list{
+
+}

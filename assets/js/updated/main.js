@@ -59,9 +59,9 @@ window.onload = function () {
 
   var Mheader = function () {
     var header = document.querySelector('.l-header'),
-        header_mobilenav = document.querySelector('.header-mobilenav'),
+        header_mobilenav = document.querySelector('.c-navigation__mobile'),
         buttons = {
-      'close': document.querySelector('.header-mobilenav__close'),
+      'close': document.querySelector('.c-navigation__close'),
       'open': document.querySelector('.c-hamburger')
     };
     return {
@@ -133,10 +133,10 @@ window.onload = function () {
       var close = buttons.close,
           open = buttons.open;
       open.addEventListener('click', function () {
-        Mclass.containClass('header-mobilenav--active', nav) ? Mclass.removeClass('header-mobilenav--active', nav) : Mclass.addClass('header-mobilenav--active', nav);
+        Mclass.containClass('c-navigation--mobactive', nav) ? Mclass.removeClass('c-navigation--mobactive', nav) : Mclass.addClass('c-navigation--mobactive', nav);
       });
       close.addEventListener('click', function () {
-        Mclass.removeClass('header-mobilenav--active', nav);
+        Mclass.removeClass('c-navigation--mobactive', nav);
       });
     }
   }();

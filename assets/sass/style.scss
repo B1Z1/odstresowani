@@ -34,9 +34,6 @@
 @import "modules/_filter/filter-video";
 
 /* : Header modules : */
-@import "modules/_header/header-sygnets";
-@import "modules/_header/header-menu";
-@import "modules/_header/header-submenu";
 @import "modules/_header/header-mobilenav";
 
 /* : Footer modules : */
@@ -77,7 +74,6 @@
 
 /* : Link modules : */
 @import "modules/_link/link";
-@import "modules/_link/link-category";
 @import "modules/_link/link-more";
 @import "modules/_link/link-icon";
 @import "modules/_link/link-share";
@@ -132,6 +128,9 @@
 @import "components/c-image";
 @import "components/c-flip";
 @import "components/c-hamburger";
+@import "components/c-navigation";
+@import "components/c-list";
+@import "components/c-link";
 
 /* --> Resets or colors UI <-- */
 /* Myreset */

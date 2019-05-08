@@ -1,18 +1,4 @@
 .header-mobilenav{
-    box-sizing: border-box;
-    position: fixed;
-    display: none;
-    top: 0;
-    right: -30vw; 
-    bottom: 0;
-    width: 30vw;
-    height: 100vh;
-    overflow-y: auto;
-    transition: .4s all;
-    z-index: 99999;
-    &--active{
-        right: 0!important;
-    }
     &__close{
         position: absolute;
         top: 8px;

@@ -20,15 +20,18 @@ _______________*/
     &:hover{
         background-color: $white;
     }
-    &:hover .header-menu, &:hover .header-extra__menu, &:hover .header__hamburger, &:hover .header-logo{
+    &:hover *{
         color: $black;
     }
 }
 
 /* ---> : Layout Elements Start : <--- */
 .l-header{
-    &__extra{
-
+    &__sygnets{
+        position: relative;
+        width: 50px;
+        height: 50px;
+        margin-right: 14px;
     }
 }
 
@@ -48,6 +51,15 @@ _______________*/
     }
 }
 
+@media only screen and (max-width: 1366px){
+    /* ---> : Layout Elements Start : <--- */
+    .l-header{
+        &__menu{
+            display: none;
+        }
+    }
+}
+
 @media only screen and (max-width: 768px){
     .l-header{
         margin-right: 0;
@@ -62,8 +74,10 @@ _______________*/
 
     /* ---> : Layout Elements Start : <--- */
     .l-header{
-        &__extra{
-            display: none;            
+        &__sygnets{
+            width: 36px;
+            height: 36px;
+            margin-right: 8px;   
         }
     }
 }

@@ -1,0 +1,78 @@
+/*_________________________
+
+Component Navigation Start
+
+_______________*/
+
+.c-navigation{
+
+}
+
+/* --> : Component Elements : <-- */
+.c-navigation{
+    &__submenu{
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        visibility: hidden; 
+        opacity: 0;
+        transition: .5s all;
+    }
+    &__trigger:hover &__submenu{
+        opacity: 1;
+        visibility: visible;
+    }
+    &__mobile{
+        box-sizing: border-box;
+        position: fixed;
+        display: none;
+        top: 0;
+        right: -30vw; 
+        bottom: 0;
+        width: 30vw;
+        height: 100vh;
+        overflow-y: auto;
+        transition: .8s all;
+        z-index: 99999;
+    }
+    &__close{
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 16px;
+        height: 16px;
+        z-index: 10;
+        cursor: pointer;
+    }
+}
+
+/* ---> : Component Modificators Start : <--- */
+.c-navigation{
+    &--mobactive{
+        right: 0!important;
+    }
+}
+
+@media only screen and (max-width: 1366px){
+    /* ---> : Component Elements Start : <--- */
+    .c-navigation{
+        &__mobile{
+            display: block;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px){
+    /* ---> : Component Elements Start : <--- */
+    .c-navigation{
+        &__extra{
+            display: none;
+        }
+        &__mobile{
+            right: -100vw;
+            width: 100vw;
+        }
+    }
+}
+

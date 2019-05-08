@@ -645,84 +645,6 @@ strong {
 
 /* : Header modules : */
 
-.header-sygnets {
-  position: relative;
-  width: 50px;
-  height: 50px;
-  margin-right: 14px;
-}
-
-.header-menu__list li:hover .header-submenu {
-  opacity: 1;
-  visibility: visible;
-}
-
-.header-menu__hover {
-  position: relative;
-}
-
-.header-menu__hover:before {
-  content: '';
-  position: absolute;
-  bottom: -7px;
-  left: calc(50% - 2px);
-  width: 4px;
-  height: 4px;
-  background: #5FA73F;
-  border-radius: 50%;
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: .3s all;
-  transition: .3s all;
-  z-index: 99;
-}
-
-.header-menu__hover:hover:before {
-  visibility: visible;
-  opacity: 1;
-}
-
-.header-menu__hover--submenu:before {
-  background: white;
-}
-
-.header-submenu {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  left: 0;
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: .5s all;
-  transition: .5s all;
-}
-
-.header-submenu__list {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  margin: auto;
-}
-
-.header-mobilenav {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  position: fixed;
-  display: none;
-  top: 0;
-  right: -30vw;
-  bottom: 0;
-  width: 30vw;
-  height: 100vh;
-  overflow-y: auto;
-  -webkit-transition: .4s all;
-  transition: .4s all;
-  z-index: 99999;
-}
-
-.header-mobilenav--active {
-  right: 0 !important;
-}
-
 .header-mobilenav__close {
   position: absolute;
   top: 8px;
@@ -1549,33 +1471,6 @@ strong {
   width: 100%;
   height: 2px;
   background: #5FA73F;
-}
-
-.link-category {
-  display: inline-block;
-  padding-top: 8px;
-  padding-right: 24px;
-  padding-bottom: 8px;
-  padding-left: 24px;
-  border: 1px solid white;
-  border-radius: 4px;
-  color: white;
-  -webkit-transition: .3s all;
-  transition: .3s all;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.link-category:hover {
-  color: #5FA73F;
-  background: white;
-}
-
-.link-category--active {
-  color: #5FA73F;
-  background: white;
 }
 
 .link-more {
@@ -2441,14 +2336,18 @@ _______________*/
   background-color: white;
 }
 
-.l-header:hover .header-menu,
-.l-header:hover .header-extra__menu,
-.l-header:hover .header__hamburger,
-.l-header:hover .header-logo {
+.l-header:hover * {
   color: black;
 }
 
 /* ---> : Layout Elements Start : <--- */
+
+.l-header__sygnets {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin-right: 14px;
+}
 
 /* ---> : Layout Modificators Start : <--- */
 
@@ -2539,6 +2438,159 @@ _______________*/
   margin-left: 32px;
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+/*_________________________
+
+Component Navigation Start
+
+_______________*/
+
+/* --> : Component Elements : <-- */
+
+.c-navigation__submenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: .5s all;
+  transition: .5s all;
+}
+
+.c-navigation__trigger:hover .c-navigation__submenu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.c-navigation__mobile {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: fixed;
+  display: none;
+  top: 0;
+  right: -30vw;
+  bottom: 0;
+  width: 30vw;
+  height: 100vh;
+  overflow-y: auto;
+  -webkit-transition: .8s all;
+  transition: .8s all;
+  z-index: 99999;
+}
+
+.c-navigation__close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 16px;
+  height: 16px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* ---> : Component Modificators Start : <--- */
+
+.c-navigation--mobactive {
+  right: 0 !important;
+}
+
+/*_________________________
+
+Component List Start
+
+_______________*/
+
+.c-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.c-list li:first-child {
+  margin-top: 0;
+  margin-left: 0;
+}
+
+.c-list li:last-child {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+/* --> : Component Elements : <-- */
+
+/* ---> : Component Modificators Start : <--- */
+
+/*_________________________
+
+Component List Start
+
+_______________*/
+
+.c-link {
+  color: inherit;
+  text-decoration: inherit;
+  font-size: inherit;
+}
+
+/* --> : Component Elements : <-- */
+
+.c-link__circle {
+  position: relative;
+}
+
+.c-link__circle:before {
+  content: '';
+  position: absolute;
+  bottom: -7px;
+  left: calc(50% - 2px);
+  width: 4px;
+  height: 4px;
+  background: #5FA73F;
+  border-radius: 50%;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+  z-index: 99;
+}
+
+.c-link__circle:hover:before {
+  visibility: visible;
+  opacity: 1;
+}
+
+.c-link__category {
+  display: inline-block;
+  padding-top: 8px;
+  padding-right: 24px;
+  padding-bottom: 8px;
+  padding-left: 24px;
+  border: 1px solid white;
+  border-radius: 4px;
+  color: white;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c-link__category:hover {
+  color: #5FA73F;
+  background: white;
+}
+
+/* ---> : Component Modificators Start : <--- */
+
+.c-link--backbefwhite:before {
+  background: white;
+}
+
+.c-link--catactive {
+  color: #5FA73F;
+  background: white;
 }
 
 /* --> Resets or colors UI <-- */
@@ -3216,10 +3268,6 @@ _______________*/
 }
 
 @media only screen and (max-width: 1366px) {
-  .header-menu {
-    display: none;
-  }
-
   .header-mobilenav {
     display: block;
   }
@@ -3232,7 +3280,19 @@ _______________*/
     padding-top: 64px;
   }
 
+  /* ---> : Layout Elements Start : <--- */
+
+  .l-header__menu {
+    display: none;
+  }
+
   .c-hamburger {
+    display: block;
+  }
+
+  /* ---> : Component Elements Start : <--- */
+
+  .c-navigation__mobile {
     display: block;
   }
 }
@@ -3288,12 +3348,6 @@ _______________*/
   .container-posts {
     padding-right: 16px;
     padding-left: 16px;
-  }
-
-  .header-sygnets {
-    width: 36px;
-    height: 36px;
-    margin-right: 8px;
   }
 
   .header-mobilenav {
@@ -3425,8 +3479,10 @@ _______________*/
 
   /* ---> : Layout Elements Start : <--- */
 
-  .l-header__extra {
-    display: none;
+  .l-header__sygnets {
+    width: 36px;
+    height: 36px;
+    margin-right: 8px;
   }
 
   .c-flip__front {
@@ -3441,6 +3497,17 @@ _______________*/
 
   .c-hamburger {
     margin-left: 0;
+  }
+
+  /* ---> : Component Elements Start : <--- */
+
+  .c-navigation__extra {
+    display: none;
+  }
+
+  .c-navigation__mobile {
+    right: -100vw;
+    width: 100vw;
   }
 
   /* 32px */
