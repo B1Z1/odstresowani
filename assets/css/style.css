@@ -3308,10 +3308,6 @@ _______________*/
     columns: 2;
   }
 
-  .header-extra__menu {
-    display: none;
-  }
-
   .footer {
     position: relative;
   }
@@ -3425,6 +3421,12 @@ _______________*/
     padding-left: 24px;
     background: white;
     color: black;
+  }
+
+  /* ---> : Layout Elements Start : <--- */
+
+  .l-header__extra {
+    display: none;
   }
 
   .c-flip__front {

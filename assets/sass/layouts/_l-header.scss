@@ -27,7 +27,9 @@ _______________*/
 
 /* ---> : Layout Elements Start : <--- */
 .l-header{
+    &__extra{
 
+    }
 }
 
 /* ---> : Layout Modificators Start : <--- */
@@ -56,5 +58,12 @@ _______________*/
         padding-left: 24px;
         background: $white;
         color: $black;
+    }
+
+    /* ---> : Layout Elements Start : <--- */
+    .l-header{
+        &__extra{
+            display: none;            
+        }
     }
 }
