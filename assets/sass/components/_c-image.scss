@@ -8,11 +8,15 @@ _______________*/
     width: 100%;
     height: 100%;
     object-fit: cover;
+    vertical-align: middle;
 }
 
 /* --> : Component Elements : <-- */
 .c-image{
-
+    &__icon{
+        width: 24px;
+        height: 24px;
+    }
 }
 
 /* --> : Component Modificators : <-- */

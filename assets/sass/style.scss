@@ -33,9 +33,6 @@
 @import "modules/_filter/filter-grad";
 @import "modules/_filter/filter-video";
 
-/* : Footer modules : */
-@import "modules/_footer/footer";
-
 /* : Wrapper modules : */
 @import "modules/_wrapper/wrapper"; 
 
@@ -117,6 +114,7 @@
 
 /* --> : Layouts Start : <-- */
 @import "./layouts/l-header";
+@import "./layouts/l-footer";
 @import "./layouts/l-pubimage";
 @import "./layouts/l-gallery-image";
 

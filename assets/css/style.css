@@ -644,25 +644,6 @@ strong {
   }
 }
 
-/* : Footer modules : */
-
-.footer {
-  position: relative;
-}
-
-.footer__social__el a {
-  position: relative;
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  vertical-align: middle;
-}
-
-.footer__social__el a img {
-  width: 100%;
-  height: 100%;
-}
-
 /* : Wrapper modules : */
 
 .wrapper {
@@ -2306,6 +2287,16 @@ _______________*/
 
 /*_________________________
 
+Layout Footer Start
+
+_______________*/
+
+.l-footer {
+  position: relative;
+}
+
+/*_________________________
+
 Layout Public Image Start
 
 _______________*/
@@ -2411,9 +2402,15 @@ _______________*/
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+  vertical-align: middle;
 }
 
 /* --> : Component Elements : <-- */
+
+.c-image__icon {
+  width: 24px;
+  height: 24px;
+}
 
 /* --> : Component Modificators : <-- */
 
@@ -2623,6 +2620,10 @@ _______________*/
 .c-link--catactive {
   color: #5FA73F;
   background: white;
+}
+
+.c-link--diblock {
+  display: inline-block;
 }
 
 /*_________________________
@@ -3402,39 +3403,6 @@ _______________*/
   .container-posts {
     padding-right: 16px;
     padding-left: 16px;
-  }
-
-  .footer {
-    position: relative;
-  }
-
-  .footer__social,
-  .footer__politics {
-    margin-top: 16px;
-  }
-
-  .footer__social {
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-  }
-
-  .footer__politics {
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-  }
-
-  .footer__politics li:last-child {
-    margin-right: 16px;
-  }
-
-  .footer__politics li:first-child {
-    margin-left: 16px;
-  }
-
-  .footer__rights {
-    text-align: center;
   }
 
   .wrapper {
