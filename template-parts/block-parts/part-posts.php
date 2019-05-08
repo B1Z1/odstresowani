@@ -26,7 +26,7 @@ $posts = new WP_Query($args_q);
                 $args['url'] = get_permalink();
                 $args['title'] = get_the_title();
                 $args['describe'] = wp_trim_words(get_the_content(), 20);
-                $args['image'] = get_the_post_thumbnail(get_the_ID(), 'full');
+                $args['image'] = get_the_post_thumbnail_url(get_the_ID(), 'full');
                 $args['date'] = get_the_date('j M Y', get_the_ID());
 
                 if ($post_type == 'post') {

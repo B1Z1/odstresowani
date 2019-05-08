@@ -72,9 +72,6 @@
 @import "modules/_link/link-icon";
 @import "modules/_link/link-share";
 
-/* : Card modules :  */
-@import "modules/_card/card";
-
 /* : Contact modules :  */
 @import "modules/_contact/contact";
 
@@ -126,6 +123,7 @@
 @import "./components/c-list";
 @import "./components/c-link";
 @import "./components/c-sygnet";
+@import "./components/c-card";
 
 /* --> Resets or colors UI <-- */
 /* Myreset */

@@ -37,7 +37,7 @@ $post_names = array(pll__('Aktualności'));
                                      * -> Mini card
                                      *
                                      */
-                                    $args['image'] = get_the_post_thumbnail(get_the_ID(), 'full');
+                                    $args['image'] = get_the_post_thumbnail_url(get_the_ID(), 'full');
                                     $args['title'] = get_the_title();
                                     $args['url'] = get_permalink();
                                     do_action('post_card_mini', $args);

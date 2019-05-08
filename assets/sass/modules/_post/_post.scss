@@ -12,24 +12,14 @@
     }
     &__content{
         p{
-            margin-top: 32px;
-            margin-bottom: 32px;
+            margin-top: 1em;
+            margin-bottom: 1em;
             font-size: 1.5rem;
-            line-height: 2.25rem;
+            line-height: 1.5em;
         }
         ul, ol{
-            padding-left: 32px;
             font-size: 1.5rem;
             line-height: 2.25rem;
-        }
-        ul{
-            list-style:  disc;
-        }
-        ol{
-            list-style:  decimal;
-        }
-        h1,h2,h3,h4,h5,h6{
-            font-family: Sanchez;
         }
         a{
             font-family: value-black;

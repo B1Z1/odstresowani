@@ -49,7 +49,7 @@ $sygnet = wp_get_attachment_image_src(carbon_get_theme_option('general_sygnet_se
                                  */
                                 $args['url'] = get_permalink();
                                 $args['title'] = get_the_title();
-                                $args['image'] = get_the_post_thumbnail(get_the_ID(), 'full');
+                                $args['image'] = get_the_post_thumbnail_url(get_the_ID(), 'full');
 
                                 do_action('post_card_mini', $args);
                                 ?>

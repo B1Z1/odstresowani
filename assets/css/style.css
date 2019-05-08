@@ -262,8 +262,6 @@ p,
 .p {
   margin-top: 1em;
   margin-bottom: 1em;
-  font-size: 1rem;
-  line-height: 1.5rem;
 }
 
 h1,
@@ -315,6 +313,19 @@ h6,
 
 strong {
   font-family: value-black;
+}
+
+ul,
+ol {
+  padding-left: 32px;
+}
+
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
 }
 
 /************  Base styles end  ****************/
@@ -1505,74 +1516,6 @@ strong {
   border: 2px solid #DFE0DE;
 }
 
-/* : Card modules :  */
-
-.card {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-}
-
-.card__image,
-.card__title,
-.card__cat,
-.card__date,
-.card__describe {
-  position: relative;
-}
-
-.card__wrapper {
-  height: 100%;
-}
-
-.card__image {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.card__image--328 {
-  height: 328px;
-}
-
-.card__image--192 {
-  height: 192px;
-}
-
-.card__image img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
-}
-
-.card__title--center {
-  text-align: center;
-}
-
-.card__wave {
-  position: absolute;
-  top: 100%;
-  left: 5%;
-  width: 80%;
-  max-height: 24px;
-}
-
-.card__cat {
-  position: relative;
-  padding-right: 14px;
-  margin-right: 16px;
-  border-right: 1px dotted #B9B9B9;
-}
-
-.card__date i {
-  margin-right: 14px;
-}
-
 /* : Contact modules :  */
 
 .contact__content {
@@ -1699,26 +1642,6 @@ strong {
   line-height: 1.5em;
 }
 
-.page__content p {
-  margin-top: 1em;
-  margin-bottom: 1em;
-  font-size: 1.5rem;
-  line-height: 1.5em;
-}
-
-.page__content ul,
-.page__content ol {
-  padding-left: 32px;
-}
-
-.page__content ul {
-  list-style: disc;
-}
-
-.page__content ol {
-  list-style: decimal;
-}
-
 .page__content a {
   font-family: value-black;
   color: inherit;
@@ -1745,34 +1668,16 @@ strong {
 }
 
 .post__content p {
-  margin-top: 32px;
-  margin-bottom: 32px;
+  margin-top: 1em;
+  margin-bottom: 1em;
   font-size: 1.5rem;
-  line-height: 2.25rem;
+  line-height: 1.5em;
 }
 
 .post__content ul,
 .post__content ol {
-  padding-left: 32px;
   font-size: 1.5rem;
   line-height: 2.25rem;
-}
-
-.post__content ul {
-  list-style: disc;
-}
-
-.post__content ol {
-  list-style: decimal;
-}
-
-.post__content h1,
-.post__content h2,
-.post__content h3,
-.post__content h4,
-.post__content h5,
-.post__content h6 {
-  font-family: Sanchez;
 }
 
 .post__content a {
@@ -2412,6 +2317,14 @@ _______________*/
   height: 24px;
 }
 
+.c-image__wave {
+  position: absolute;
+  top: 100%;
+  left: 5%;
+  width: 80%;
+  max-height: 24px;
+}
+
 /* --> : Component Modificators : <-- */
 
 .c-image--contain {
@@ -2651,6 +2564,37 @@ _______________*/
 }
 
 /* --> : Component Modificators : <-- */
+
+/*_________________________
+
+Component Card Start
+
+_______________*/
+
+.c-card {
+  position: relative;
+}
+
+/* --> : Component Elements : <-- */
+
+.c-card__cat {
+  position: relative;
+  border-right: 1px dotted #B9B9B9;
+}
+
+/* --> : Component Modificators : <-- */
+
+.c-card--328 {
+  height: 328px;
+}
+
+.c-card--192 {
+  height: 192px;
+}
+
+.c-card--center {
+  text-align: center;
+}
 
 /* --> Resets or colors UI <-- */
 
@@ -3327,10 +3271,6 @@ _______________*/
 }
 
 @media only screen and (max-width: 1366px) {
-  .card__image--328 {
-    height: 288px;
-  }
-
   .recent-posts_vh_pagination {
     padding-top: 64px;
   }
@@ -3349,6 +3289,12 @@ _______________*/
 
   .c-navigation__mobile {
     display: block;
+  }
+
+  /* --> : Component Modificators : <-- */
+
+  .c-card--328 {
+    height: 288px;
   }
 }
 
@@ -3417,11 +3363,6 @@ _______________*/
   .block-videogallery__controls {
     opacity: 1;
     visibility: visible;
-  }
-
-  .card__image--328,
-  .card__image__swiper {
-    height: 256px;
   }
 
   .contact .your-name,
@@ -3533,6 +3474,12 @@ _______________*/
   .c-list--tabcol2 {
     -webkit-columns: 2;
     columns: 2;
+  }
+
+  /* --> : Component Modificators : <-- */
+
+  .c-card--328 {
+    height: 256px;
   }
 
   /* 32px */
