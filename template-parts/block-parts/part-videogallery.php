@@ -12,7 +12,7 @@ $gallery = $block['videogallery'];
             $video_mp4 = wp_get_attachment_url($post['videogallery_film_mp4']);
             ?>
             <div class="block-videogallery__element pt64 pb64">
-                <span class="block-videogallery__name f-48 c-wh"><?php echo $name; ?></span>
+                <span class="block-videogallery__name c-wh h1"><?php echo $name; ?></span>
 
                 <div class="block-videogallery__video">
                     <video class="filter filter-video" data-src="<?php echo $video_mp4; ?>" poster="<?php echo $poster; ?>">

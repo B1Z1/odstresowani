@@ -191,7 +191,7 @@ if ( !function_exists('header_sygnet') ){
                             <img class="header-sygnets__sygnet header-sygnets__sygnet--black" src="<?php echo $sygnet_back; ?>" alt="Sygnet">
                         <?php endif; ?>
                     </div>
-                    <h4 class="reset"><?php echo get_bloginfo('name'); ?></h4>
+                    <h4 class="reset f-vr"><?php echo get_bloginfo('name'); ?></h4>
                 </a>
             </figure>
         </div>

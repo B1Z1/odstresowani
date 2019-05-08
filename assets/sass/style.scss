@@ -1,8 +1,12 @@
-/************ Base styles start ****************/
+/* ---> : Color Variables : <--- */
 @import "colors/color-vars";
+
+/* ---> : Font includes : <--- */
+@import "fonts/fonts";
+
+/*--------------> Base styles start <--------------*/
 /* Include Reset */
 @import "reset";
-
 /* Include Base styles */
 @import "base";
 
@@ -127,7 +131,6 @@
 @import "myreset";
 
 /* Include Fonts */
-@import "fonts/fonts";
 @import "fonts/fonts-el";
 
 /* Colors define */

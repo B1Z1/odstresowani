@@ -37,7 +37,7 @@ else{
 
                 <?php if ( $content ): ?>
 
-                    <h1 class="reset"><?php echo $content; ?></h1>
+                    <h1 class="reset f-vr"><?php echo $content; ?></h1>
 
                 <?php endif; ?>
 

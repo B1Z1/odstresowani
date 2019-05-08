@@ -1,4 +1,24 @@
-/************ Base styles start ****************/
+/* ---> : Color Variables : <--- */
+/* ---> : Font includes : <--- */
+@font-face {
+  font-family: 'value-black';
+  src: url("../fonts/Value/value-black-web/value-black.eot"), url("../fonts/Value/value-black-web/value-black.eot?#iefix") format("embedded-opentype"), url("../fonts/Value/value-black-web/value-black.woff") format("woff"), url("../fonts/Value/value-black-web/value-black.woff2") format("woff2"), url("../fonts/Value/value-black-web/value-black.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'value-regular';
+  src: url("../fonts/Value/value-regular-web/value-regular.eot"), url("../fonts/Value/value-regular-web/value-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Value/value-regular-web/value-regular.woff") format("woff"), url("../fonts/Value/value-regular-web/value-regular.woff2") format("woff2"), url("../fonts/Value/value-regular-web/value-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'sanchez-regular';
+  src: url("../fonts/Sanchez/Sanchez-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+/*--------------> Base styles start <--------------*/
 /* Include Reset */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
@@ -43,7 +63,8 @@ html, body {
   overflow-x: hidden; }
 
 p {
-  margin: 16px 0;
+  margin-top: 1em;
+  margin-bottom: 1em;
   font-size: 1rem;
   line-height: 1.5rem; }
 
@@ -54,6 +75,7 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
   margin: 32px 0;
+  font-family: Sanchez;
   line-height: 1.5em; }
 
 h1, .h1 {
@@ -81,7 +103,7 @@ strong {
   html, body {
     font-size: 13px;
     line-height: 26px; }
-  h1 {
+  h1, .h1 {
     font-size: 2.3rem;
     line-height: 3.45rem; } }
 
@@ -1588,27 +1610,23 @@ strong {
   position: relative;
   text-align: center; }
 
-.page__content p {
-  margin-top: 32px;
-  margin-bottom: 32px;
+.page__content {
   font-size: 1.5rem;
   line-height: 1.5em; }
-
-.page__content ul, .page__content ol {
-  padding-left: 32px; }
-
-.page__content ul {
-  list-style: disc; }
-
-.page__content ol {
-  list-style: decimal; }
-
-.page__content h1, .page__content h2, .page__content h3, .page__content h4, .page__content h5, .page__content h6 {
-  font-family: Sanchez; }
-
-.page__content a {
-  font-family: value-black;
-  color: inherit; }
+  .page__content p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 1.5rem;
+    line-height: 1.5em; }
+  .page__content ul, .page__content ol {
+    padding-left: 32px; }
+  .page__content ul {
+    list-style: disc; }
+  .page__content ol {
+    list-style: decimal; }
+  .page__content a {
+    font-family: value-black;
+    color: inherit; }
 
 .page__mind {
   position: relative;
@@ -2031,6 +2049,12 @@ strong {
   padding-bottom: 0;
   margin-bottom: 0; }
 
+.reset-margin {
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0; }
+
 .reset-link {
   color: inherit;
   text-decoration: inherit; }
@@ -2044,24 +2068,6 @@ strong {
     margin-right: 0; }
 
 /* Include Fonts */
-@font-face {
-  font-family: 'value-black';
-  src: url("../fonts/Value/value-black-web/value-black.eot"), url("../fonts/Value/value-black-web/value-black.eot?#iefix") format("embedded-opentype"), url("../fonts/Value/value-black-web/value-black.woff") format("woff"), url("../fonts/Value/value-black-web/value-black.woff2") format("woff2"), url("../fonts/Value/value-black-web/value-black.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'value-regular';
-  src: url("../fonts/Value/value-regular-web/value-regular.eot"), url("../fonts/Value/value-regular-web/value-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Value/value-regular-web/value-regular.woff") format("woff"), url("../fonts/Value/value-regular-web/value-regular.woff2") format("woff2"), url("../fonts/Value/value-regular-web/value-regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'sanchez-regular';
-  src: url("../fonts/Sanchez/Sanchez-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal; }
-
 /* All font elements */
 .f-san {
   font-family: "sanchez-regular", sans-serif !important; }
@@ -2071,16 +2077,6 @@ strong {
 
 .f-vr {
   font-family: "value-regular", sans-serif !important; }
-
-/* Font sizes */
-.f-48 {
-  font-size: 3rem !important;
-  line-height: 4.5rem !important; }
-
-@media only screen and (max-width: 768px) {
-  .f-48 {
-    font-size: 2.3rem !important;
-    line-height: 3.45rem !important; } }
 
 /* Colors define */
 /* White */
