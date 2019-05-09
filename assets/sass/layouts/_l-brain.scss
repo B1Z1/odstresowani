@@ -1,6 +1,24 @@
-$brain: #f0bc5e;
+/*_________________________
 
-.animation-brain {
+Layout Brain Start
+
+_______________*/
+
+.l-brain{
+
+}
+
+/* ---> : Layout Elements Start : <--- */
+.l-brain{
+    &__linesmall, &__linebig{
+        box-sizing: border-box;
+        position: absolute;
+		border-radius: 50%;
+		border: 16px solid transparent;
+        border-top: 16px solid $black;
+        border-left: 16px solid $black;
+		transform-origin: 50%;
+    }
     &__circle {
         position: relative;
         width: 180px;
@@ -10,50 +28,39 @@ $brain: #f0bc5e;
         border-radius: 50%;
     }
     &__linesmall {
-        box-sizing: border-box;
-        position: absolute;
         top: calc(50% - 50px);
         left: calc(50% - 50px);
         width: 100px;
         height: 100px;
-        border-radius: 50%;
-        border: 16px solid transparent;
-        border-top: 16px solid $black;
-        border-left: 16px solid $black;
         animation: rotate360 5s infinite linear;
     }
     &__linebig {
-        box-sizing: border-box;
-        position: absolute;
         top: -5px;
         right: -5px;
         width: calc(100% + 10px);
         height: calc(100% + 10px);
-        border: 16px solid transparent;
-        border-top: 16px solid $black;
-        border-left: 16px solid $black;
         animation: rotate-360 6s infinite linear;
     }
     &__rect {
-        width: 20px;
-        height: 20px;
-        &--first {
+		position: absolute;
+		width: 20px;
+		height: 20px;
+        background: $head;
+        animation: rect-black 2s infinite linear;
+        &:nth-of-type(1){
             top: calc(50% - 10px);
             left: -64px;
-            animation: rect-black 2s infinite linear;
             animation-delay: 1s;
         }
-        &--second {
+        &:nth-of-type(2){
             top: -64px;
             left: calc(50% - 10px);
-            animation: rect-black 2s infinite linear;
             animation-delay: 3s;
         }
-        &--third {
+        &:nth-of-type(3){
             top: calc(50% - 10px);
             right: -64px;
-            animation: rect-black 2s infinite linear;
             animation-delay: 5s;
         }
-    }
+	}
 }

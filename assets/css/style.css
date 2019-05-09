@@ -1069,78 +1069,6 @@ ol {
   animation-delay: 5s;
 }
 
-.animation-brain__circle {
-  position: relative;
-  width: 180px;
-  height: 180px;
-  margin: auto;
-  background: #f0bc5e;
-  border-radius: 50%;
-}
-
-.animation-brain__linesmall {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  position: absolute;
-  top: calc(50% - 50px);
-  left: calc(50% - 50px);
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 16px solid transparent;
-  border-top: 16px solid black;
-  border-left: 16px solid black;
-  -webkit-animation: rotate360 5s infinite linear;
-  animation: rotate360 5s infinite linear;
-}
-
-.animation-brain__linebig {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  width: calc(100% + 10px);
-  height: calc(100% + 10px);
-  border: 16px solid transparent;
-  border-top: 16px solid black;
-  border-left: 16px solid black;
-  -webkit-animation: rotate-360 6s infinite linear;
-  animation: rotate-360 6s infinite linear;
-}
-
-.animation-brain__rect {
-  width: 20px;
-  height: 20px;
-}
-
-.animation-brain__rect--first {
-  top: calc(50% - 10px);
-  left: -64px;
-  -webkit-animation: rect-black 2s infinite linear;
-  animation: rect-black 2s infinite linear;
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
-}
-
-.animation-brain__rect--second {
-  top: -64px;
-  left: calc(50% - 10px);
-  -webkit-animation: rect-black 2s infinite linear;
-  animation: rect-black 2s infinite linear;
-  -webkit-animation-delay: 3s;
-  animation-delay: 3s;
-}
-
-.animation-brain__rect--third {
-  top: calc(50% - 10px);
-  right: -64px;
-  -webkit-animation: rect-black 2s infinite linear;
-  animation: rect-black 2s infinite linear;
-  -webkit-animation-delay: 5s;
-  animation-delay: 5s;
-}
-
 .animation-team__vehicle {
   position: absolute;
   top: 12%;
@@ -2281,6 +2209,84 @@ _______________*/
 
 .l-404 {
   overflow: hidden;
+}
+
+/*_________________________
+
+Layout Brain Start
+
+_______________*/
+
+/* ---> : Layout Elements Start : <--- */
+
+.l-brain__linesmall,
+.l-brain__linebig {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  border-radius: 50%;
+  border: 16px solid transparent;
+  border-top: 16px solid black;
+  border-left: 16px solid black;
+  -webkit-transform-origin: 50%;
+  transform-origin: 50%;
+}
+
+.l-brain__circle {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: auto;
+  background: #f0bc5e;
+  border-radius: 50%;
+}
+
+.l-brain__linesmall {
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);
+  width: 100px;
+  height: 100px;
+  -webkit-animation: rotate360 5s infinite linear;
+  animation: rotate360 5s infinite linear;
+}
+
+.l-brain__linebig {
+  top: -5px;
+  right: -5px;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  -webkit-animation: rotate-360 6s infinite linear;
+  animation: rotate-360 6s infinite linear;
+}
+
+.l-brain__rect {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #ccc;
+  -webkit-animation: rect-black 2s infinite linear;
+  animation: rect-black 2s infinite linear;
+}
+
+.l-brain__rect:nth-of-type(1) {
+  top: calc(50% - 10px);
+  left: -64px;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.l-brain__rect:nth-of-type(2) {
+  top: -64px;
+  left: calc(50% - 10px);
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+}
+
+.l-brain__rect:nth-of-type(3) {
+  top: calc(50% - 10px);
+  right: -64px;
+  -webkit-animation-delay: 5s;
+  animation-delay: 5s;
 }
 
 /* --> : Components Start : <-- */
