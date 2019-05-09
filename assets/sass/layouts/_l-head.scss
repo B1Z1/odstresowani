@@ -1,10 +1,27 @@
-.animation-head {
+/*_________________________
+
+Layout Head Start
+
+_______________*/
+
+.l-head{
     transform: rotate(10deg);
+}
+
+/* ---> : Layout Elements Start : <--- */
+.l-head{
     &__image {
         height: 384px;
     }
-    &__linesmall {
+    &__linesmall, &__linebig{
         position: absolute;
+		border-radius: 50%;
+		border: 8px solid transparent;
+		border-top: 8px solid $black;
+		border-left: 8px solid $black;
+		transform-origin: 50%;
+    }
+    &__linesmall {
         top: 80px;
         right: 80px;
         width: 60px;
@@ -12,7 +29,6 @@
         animation: rotate360 3s infinite linear;
     }
     &__linebig {
-        position: absolute;
         top: 59px;
         right: 57px;
         width: 100px;
@@ -20,20 +36,24 @@
         animation: rotate-360 5s infinite linear;
     }
     &__rect {
-        &--first {
+        position: absolute;
+		width: 13px;
+		height: 13px;
+		background: $head;
+        &:nth-of-type(1) {
             top: 68px;
             right: 176px;
             transform: rotate(45deg);
             animation: rect-black 2s infinite linear;
             animation-delay: 1s;
         }
-        &--second {
+        &:nth-of-type(2) {
             top: 32px;
             right: 105px;
             animation: rect-black 2s infinite linear;
             animation-delay: 3s;
         }
-        &--third {
+        &:nth-of-type(3) {
             top: 68px;
             right: 46px;
             transform: rotate(45deg);

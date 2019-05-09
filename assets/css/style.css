@@ -1009,66 +1009,6 @@ ol {
   }
 }
 
-.animation-head {
-  -webkit-transform: rotate(10deg);
-  transform: rotate(10deg);
-}
-
-.animation-head__image {
-  height: 384px;
-}
-
-.animation-head__linesmall {
-  position: absolute;
-  top: 80px;
-  right: 80px;
-  width: 60px;
-  height: 60px;
-  -webkit-animation: rotate360 3s infinite linear;
-  animation: rotate360 3s infinite linear;
-}
-
-.animation-head__linebig {
-  position: absolute;
-  top: 59px;
-  right: 57px;
-  width: 100px;
-  height: 100px;
-  -webkit-animation: rotate-360 5s infinite linear;
-  animation: rotate-360 5s infinite linear;
-}
-
-.animation-head__rect--first {
-  top: 68px;
-  right: 176px;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  -webkit-animation: rect-black 2s infinite linear;
-  animation: rect-black 2s infinite linear;
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
-}
-
-.animation-head__rect--second {
-  top: 32px;
-  right: 105px;
-  -webkit-animation: rect-black 2s infinite linear;
-  animation: rect-black 2s infinite linear;
-  -webkit-animation-delay: 3s;
-  animation-delay: 3s;
-}
-
-.animation-head__rect--third {
-  top: 68px;
-  right: 46px;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  -webkit-animation: rect-black 2s infinite linear;
-  animation: rect-black 2s infinite linear;
-  -webkit-animation-delay: 5s;
-  animation-delay: 5s;
-}
-
 .animation-team__vehicle {
   position: absolute;
   top: 12%;
@@ -2285,6 +2225,90 @@ _______________*/
 .l-brain__rect:nth-of-type(3) {
   top: calc(50% - 10px);
   right: -64px;
+  -webkit-animation-delay: 5s;
+  animation-delay: 5s;
+}
+
+/*_________________________
+
+Layout Head Start
+
+_______________*/
+
+.l-head {
+  -webkit-transform: rotate(10deg);
+  transform: rotate(10deg);
+}
+
+/* ---> : Layout Elements Start : <--- */
+
+.l-head__image {
+  height: 384px;
+}
+
+.l-head__linesmall,
+.l-head__linebig {
+  position: absolute;
+  border-radius: 50%;
+  border: 8px solid transparent;
+  border-top: 8px solid black;
+  border-left: 8px solid black;
+  -webkit-transform-origin: 50%;
+  transform-origin: 50%;
+}
+
+.l-head__linesmall {
+  top: 80px;
+  right: 80px;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: rotate360 3s infinite linear;
+  animation: rotate360 3s infinite linear;
+}
+
+.l-head__linebig {
+  top: 59px;
+  right: 57px;
+  width: 100px;
+  height: 100px;
+  -webkit-animation: rotate-360 5s infinite linear;
+  animation: rotate-360 5s infinite linear;
+}
+
+.l-head__rect {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  background: #ccc;
+}
+
+.l-head__rect:nth-of-type(1) {
+  top: 68px;
+  right: 176px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-animation: rect-black 2s infinite linear;
+  animation: rect-black 2s infinite linear;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.l-head__rect:nth-of-type(2) {
+  top: 32px;
+  right: 105px;
+  -webkit-animation: rect-black 2s infinite linear;
+  animation: rect-black 2s infinite linear;
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+}
+
+.l-head__rect:nth-of-type(3) {
+  top: 68px;
+  right: 46px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-animation: rect-black 2s infinite linear;
+  animation: rect-black 2s infinite linear;
   -webkit-animation-delay: 5s;
   animation-delay: 5s;
 }

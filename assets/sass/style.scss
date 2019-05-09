@@ -52,7 +52,6 @@
 
 /* : Animation modules : */
 @import "modules/_animation/animation";
-@import "modules/_animation/animation-head";
 @import "modules/_animation/animation-team";
 
 /* : Button modules : */
@@ -113,6 +112,7 @@
 @import "./layouts/l-gallery-image";
 @import "./layouts/l-404";
 @import "./layouts/l-brain";
+@import "./layouts/l-head";
 
 /* --> : Components Start : <-- */
 @import "./components/c-wrapper";
