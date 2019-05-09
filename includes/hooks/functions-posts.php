@@ -90,20 +90,20 @@ if ( !function_exists( 'post_card_block' ) ){
                             <?php if ( $wave ): ?>
                                 <object data="<?php echo $wave; ?>" class="c-image__wave" type="image/svg+xml"></object>
                             <?php endif; ?>
-                            <h6 class="reset">
+                            <span class="reset h6">
                                 <?php echo $cat_list; ?>
-                            </h6>
+                            </span>
                         </li>
                     <?php endif; ?>
                     <li class="c-card__date">
-                        <h6 class="reset">
-                            <i class="mr16 far fa-calendar-alt"></i>
+                        <span class="reset h6">
+                            <i class="mr8 far fa-calendar-alt"></i>
                             <?php echo $date; ?>
-                        </h6>
+                        </span>
                     </li>
                 </ul>
                 <div class="c-card__describe mt32">
-                    <h4 class="reset"><?php echo $describe; ?></h4>
+                    <p class="reset h4 f-vr"><?php echo $describe; ?></p>
                 </div>
             </div>
         </a>
@@ -133,7 +133,7 @@ if ( !function_exists( 'post_card_mini' ) ){
                         <img src="<?php echo $image; ?>" alt="<?php echo $title; ?>" class="c-image">
                     <?php endif; ?>
                 </div>
-                <div class="c-card__title c-card--center">
+                <div class="c-card__title c-text--center">
                     <h2 class="f-vb"><?php echo $title; ?></h2>
                 </div>
             </div>

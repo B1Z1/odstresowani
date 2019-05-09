@@ -2298,6 +2298,18 @@ _______________*/
 
 /*_________________________
 
+Component Text Start
+
+_______________*/
+
+/* --> : Component Modificators : <-- */
+
+.c-text--center {
+  text-align: center;
+}
+
+/*_________________________
+
 Component Image Start
 
 _______________*/
@@ -2590,10 +2602,6 @@ _______________*/
 
 .c-card--192 {
   height: 192px;
-}
-
-.c-card--center {
-  text-align: center;
 }
 
 /* --> Resets or colors UI <-- */

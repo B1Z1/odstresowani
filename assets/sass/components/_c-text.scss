@@ -1,0 +1,16 @@
+/*_________________________
+
+Component Text Start
+
+_______________*/
+
+.c-text{
+
+}
+
+/* --> : Component Modificators : <-- */
+.c-text{
+    &--center{
+        text-align: center;
+    }
+}
