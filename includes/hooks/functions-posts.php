@@ -90,20 +90,20 @@ if ( !function_exists( 'post_card_block' ) ){
                             <?php if ( $wave ): ?>
                                 <object data="<?php echo $wave; ?>" class="c-image__wave" type="image/svg+xml"></object>
                             <?php endif; ?>
-                            <span class="reset h6">
+                            <span class="c-text-size--h6">
                                 <?php echo $cat_list; ?>
                             </span>
                         </li>
                     <?php endif; ?>
                     <li class="c-card__date">
-                        <span class="reset h6">
+                        <span class="c-text-size--h6">
                             <i class="mr8 far fa-calendar-alt"></i>
                             <?php echo $date; ?>
                         </span>
                     </li>
                 </ul>
                 <div class="c-card__describe mt32">
-                    <p class="reset h4 f-vr"><?php echo $describe; ?></p>
+                    <span class="c-text-size--h4 f-vr"><?php echo $describe; ?></span>
                 </div>
             </div>
         </a>

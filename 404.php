@@ -25,9 +25,7 @@ $video_ogg = wp_get_attachment_url(carbon_get_theme_option('404_film_ogg')); ?>
 
     <main class="main">
 
-        <section class="er404 m16 block block--hidden c-wh">
-            <div class="filter filter-back filter--zmax bck-blck"></div>
-
+        <section class="block c-wrapper c-wrapper--fullscreen er404 m16 block--hidden c-wh">
             <?php if ( $video_mp4 ): ?>
                 <video class="filter filter-video" muted autoplay loop>
                     <source src="<?php echo $video_mp4; ?>" type="video/mp4">
@@ -37,8 +35,9 @@ $video_ogg = wp_get_attachment_url(carbon_get_theme_option('404_film_ogg')); ?>
                     Your browser does not support the video tag.
                 </video>
             <?php endif; ?>
+            <div class="filter filter-back bck-blck"></div>
 
-            <div class="er404__content block flex-kit jcc">
+            <div class="c-wrapper flex-kit jcc">
                 <h3><span class="er404__404">404</span>Nie możemy znależć twojej strony</h3>
             </div>
         </section>

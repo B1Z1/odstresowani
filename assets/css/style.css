@@ -258,56 +258,44 @@ body {
   overflow-x: hidden;
 }
 
-p,
-.p {
+p {
   margin-top: 1em;
   margin-bottom: 1em;
 }
 
 h1,
-.h1,
 h2,
-.h2,
 h3,
-.h3,
 h4,
-.h4,
 h5,
-.h5,
-h6,
-.h6 {
-  margin: 32px 0;
+h6 {
+  margin-top: 32px;
+  margin-bottom: 32px;
   font-family: Sanchez;
   line-height: 1.5em;
 }
 
-h1,
-.h1 {
+h1 {
   font-size: 3rem;
 }
 
-h2,
-.h2 {
+h2 {
   font-size: 2rem;
 }
 
-h3,
-.h3 {
+h3 {
   font-size: 1.5rem;
 }
 
-h4,
-.h4 {
+h4 {
   font-size: 1.25rem;
 }
 
-h5,
-.h5 {
+h5 {
   font-size: 1.2rem;
 }
 
-h6,
-.h6 {
+h6 {
   font-size: 1.15rem;
 }
 
@@ -2114,16 +2102,8 @@ ol {
 /* : Error 404 modules : */
 
 .er404 {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
   width: calc(100vw - 32px);
   height: calc(100vh - 32px);
-}
-
-.er404__content {
-  width: 100%;
-  height: 100%;
-  z-index: 11;
 }
 
 .er404__404 {
@@ -2298,6 +2278,27 @@ _______________*/
 
 /*_________________________
 
+Component Wrapper Start
+
+_______________*/
+
+.c-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* --> : Component Elements : <-- */
+
+/* --> : Component Modificators : <-- */
+
+.c-wrapper--fullscreen {
+  width: calc(100vw - 32px);
+  height: calc(100vh - 32px);
+}
+
+/*_________________________
+
 Component Text Start
 
 _______________*/
@@ -2306,6 +2307,42 @@ _______________*/
 
 .c-text--center {
   text-align: center;
+}
+
+/*_________________________
+
+Component Text Size Start
+
+_______________*/
+
+/* --> : Component Modificators : <-- */
+
+.c-text-size--10r {
+  font-size: 10rem;
+}
+
+.c-text-size--h1 {
+  font-size: 3rem;
+}
+
+.c-text-size--h2 {
+  font-size: 2rem;
+}
+
+.c-text-size--h3 {
+  font-size: 1.5rem;
+}
+
+.c-text-size--h4 {
+  font-size: 1.25rem;
+}
+
+.c-text-size--h5 {
+  font-size: 1.2rem;
+}
+
+.c-text-size--h6 {
+  font-size: 1.15rem;
 }
 
 /*_________________________
@@ -3348,10 +3385,8 @@ _______________*/
     line-height: 26px;
   }
 
-  h1,
-  .h1 {
+  h1 {
     font-size: 2.3rem;
-    line-height: 3.45rem;
   }
 
   .container-posts {
@@ -3450,6 +3485,12 @@ _______________*/
   .l-gallery-image__prev {
     width: 16px;
     height: 32px;
+  }
+
+  /* --> : Component Modificators : <-- */
+
+  .c-text-size--h1 {
+    font-size: 2.3rem;
   }
 
   .c-flip__front {
