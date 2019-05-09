@@ -7,7 +7,7 @@
 
 ?>
 
-<div class="animation animation-team">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/animation/team.svg" alt="Team" class="animation__image">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/animation/Vehicle.svg" alt="Vehicle" class="animation__image animation-team__vehicle">
+<div class="l-team">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/animation/team.svg" alt="Team" class="c-image">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/animation/Vehicle.svg" alt="Vehicle" class="l-team__vehicle">
 </div>

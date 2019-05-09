@@ -919,106 +919,6 @@ ol {
   transform: translateY(-65%);
 }
 
-/* : Animation modules : */
-
-.animation {
-  position: relative;
-  width: 100%;
-}
-
-.animation__line {
-  position: absolute;
-  border-radius: 50%;
-  border: 8px solid transparent;
-  border-top: 8px solid black;
-  border-left: 8px solid black;
-  -webkit-transform-origin: 50%;
-  transform-origin: 50%;
-}
-
-.animation__rect {
-  position: absolute;
-  width: 13px;
-  height: 13px;
-  background: #ccc;
-}
-
-.animation__image {
-  width: 100%;
-  height: auto;
-}
-
-.fade {
-  opacity: 0;
-  visibility: hidden;
-}
-
-@-webkit-keyframes rotate360 {
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rotate360 {
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-@-webkit-keyframes rotate-360 {
-  100% {
-    -webkit-transform: rotate(-360deg);
-    transform: rotate(-360deg);
-  }
-}
-
-@keyframes rotate-360 {
-  100% {
-    -webkit-transform: rotate(-360deg);
-    transform: rotate(-360deg);
-  }
-}
-
-@-webkit-keyframes rect-black {
-  0% {
-    background: #ccc;
-  }
-
-  50% {
-    background: black;
-  }
-
-  100% {
-    background: #ccc;
-  }
-}
-
-@keyframes rect-black {
-  0% {
-    background: #ccc;
-  }
-
-  50% {
-    background: black;
-  }
-
-  100% {
-    background: #ccc;
-  }
-}
-
-.animation-team__vehicle {
-  position: absolute;
-  top: 12%;
-  left: 40%;
-  width: 20%;
-  height: 20%;
-  -webkit-animation: rotate360 5s infinite linear;
-  animation: rotate360 5s infinite linear;
-}
-
 /* : Button modules : */
 
 .button {
@@ -2313,7 +2213,90 @@ _______________*/
   animation-delay: 5s;
 }
 
+/*_________________________
+
+Layout Team Start
+
+_______________*/
+
+.l-team {
+  position: relative;
+}
+
+/* ---> : Layout Elements Start : <--- */
+
+.l-team__vehicle {
+  position: absolute;
+  top: 12%;
+  left: 40%;
+  width: 20%;
+  height: 20%;
+  -webkit-animation: rotate360 5s infinite linear;
+  animation: rotate360 5s infinite linear;
+}
+
 /* --> : Components Start : <-- */
+
+.fade {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@-webkit-keyframes rotate360 {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate360 {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes rotate-360 {
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes rotate-360 {
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+
+@-webkit-keyframes rect-black {
+  0% {
+    background: #ccc;
+  }
+
+  50% {
+    background: black;
+  }
+
+  100% {
+    background: #ccc;
+  }
+}
+
+@keyframes rect-black {
+  0% {
+    background: #ccc;
+  }
+
+  50% {
+    background: black;
+  }
+
+  100% {
+    background: #ccc;
+  }
+}
 
 /*_________________________
 
@@ -3328,7 +3311,15 @@ _______________*/
     display: none;
   }
 
-  .animation {
+  .l-brain {
+    display: none;
+  }
+
+  .l-head {
+    display: none;
+  }
+
+  .l-team {
     display: none;
   }
 }

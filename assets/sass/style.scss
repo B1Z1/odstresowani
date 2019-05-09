@@ -50,10 +50,6 @@
 @import "modules/_video/video";
 @import "modules/_video/video-controls";
 
-/* : Animation modules : */
-@import "modules/_animation/animation";
-@import "modules/_animation/animation-team";
-
 /* : Button modules : */
 @import "modules/_button/button";
 @import "modules/_button/button-scroll";
@@ -113,8 +109,10 @@
 @import "./layouts/l-404";
 @import "./layouts/l-brain";
 @import "./layouts/l-head";
+@import "./layouts/l-team";
 
 /* --> : Components Start : <-- */
+@import "./components/c-animations";
 @import "./components/c-wrapper";
 @import "./components/c-text";
 @import "./components/c-text-size";
