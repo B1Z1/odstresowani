@@ -106,14 +106,13 @@
 /* : Breadcrumbs modules : */
 @import "modules/_breadcrumbs/breadcrumbs";
 
-/* : Error 404 modules : */
-@import "modules/_er-404/er-404";
 
 /* --> : Layouts Start : <-- */
 @import "./layouts/l-header";
 @import "./layouts/l-footer";
 @import "./layouts/l-pubimage";
 @import "./layouts/l-gallery-image";
+@import "./layouts/l-404";
 
 /* --> : Components Start : <-- */
 @import "./components/c-wrapper";
@@ -125,7 +124,6 @@
 @import "./components/c-navigation";
 @import "./components/c-list";
 @import "./components/c-link";
-@import "./components/c-sygnet";
 @import "./components/c-card";
 
 /* --> Resets or colors UI <-- */

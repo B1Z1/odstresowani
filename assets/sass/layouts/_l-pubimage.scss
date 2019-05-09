@@ -13,6 +13,15 @@ _______________*/
     &__container{
         position: relative;
     }
+    &__sygnet{
+        position: absolute;
+        left: calc(50% - 32px);
+        bottom: -32px;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        z-index: 999; 
+    }
 }
 
 /* --> : Component Modificators : <-- */

@@ -2099,17 +2099,6 @@ ol {
   text-decoration: none;
 }
 
-/* : Error 404 modules : */
-
-.er404 {
-  width: calc(100vw - 32px);
-  height: calc(100vh - 32px);
-}
-
-.er404__404 {
-  font-size: 10rem;
-}
-
 /* --> : Layouts Start : <-- */
 
 /*_________________________
@@ -2192,6 +2181,16 @@ _______________*/
   position: relative;
 }
 
+.l-pubimage__sygnet {
+  position: absolute;
+  left: calc(50% - 32px);
+  bottom: -32px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  z-index: 999;
+}
+
 /* --> : Component Modificators : <-- */
 
 .l-pubimage--full {
@@ -2272,6 +2271,16 @@ _______________*/
 
 .l-gallery-image__prev {
   left: 16px;
+}
+
+/*_________________________
+
+Layout 404 Start
+
+_______________*/
+
+.l-404 {
+  overflow: hidden;
 }
 
 /* --> : Components Start : <-- */
@@ -2361,11 +2370,6 @@ _______________*/
 
 /* --> : Component Elements : <-- */
 
-.c-image__icon {
-  width: 24px;
-  height: 24px;
-}
-
 .c-image__wave {
   position: absolute;
   top: 100%;
@@ -2379,6 +2383,16 @@ _______________*/
 .c-image--contain {
   -o-object-fit: contain;
   object-fit: contain;
+}
+
+.c-image--36wh {
+  width: 36px;
+  height: 36px;
+}
+
+.c-image--24wh {
+  width: 24px;
+  height: 24px;
 }
 
 /*_________________________
@@ -2587,32 +2601,6 @@ _______________*/
 .c-link--diblock {
   display: inline-block;
 }
-
-/*_________________________
-
-Component Sygnet Start
-
-_______________*/
-
-.c-sygnet {
-  position: absolute;
-  left: calc(50% - 32px);
-  bottom: -32px;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  z-index: 999;
-}
-
-/* --> : Component Elements : <-- */
-
-.c-sygnet__element {
-  position: relative;
-  width: 36px;
-  height: 36px;
-}
-
-/* --> : Component Modificators : <-- */
 
 /*_________________________
 

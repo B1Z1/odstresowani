@@ -65,7 +65,7 @@ if ( !function_exists('footer_upper_social') ){
                         <li class="c-list__element mr16 ml16">
                             <a href="<?php echo $footer_list['footer_social_url']; ?>" class="c-link c-link--diblock">
                                 <?php $footer_social_icon = wp_get_attachment_image_url($footer_list['footer_social_image'], 'full'); ?>
-                                <img src="<?php echo $footer_social_icon; ?>" alt="Icon" class="c-image c-image__icon">
+                                <img src="<?php echo $footer_social_icon; ?>" alt="Icon" class="c-image c-image--24wh">
                             </a>
                         </li>
                     <?php endforeach; ?>

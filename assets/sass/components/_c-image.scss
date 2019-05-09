@@ -13,10 +13,6 @@ _______________*/
 
 /* --> : Component Elements : <-- */
 .c-image{
-    &__icon{
-        width: 24px;
-        height: 24px;
-    }
     &__wave{
         position: absolute;
         top: 100%;
@@ -30,5 +26,13 @@ _______________*/
 .c-image{
     &--contain{
         object-fit: contain;
+    }
+    &--36wh{
+        width: 36px;
+        height: 36px;
+    }
+    &--24wh{
+        width: 24px;
+        height: 24px;
     }
 }
