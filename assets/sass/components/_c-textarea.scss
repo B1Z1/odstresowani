@@ -1,0 +1,18 @@
+/*_________________________
+
+Component Textarea Start
+
+_______________*/
+
+.c-textarea{
+    @include input-reset(); 
+}
+
+/* ---> : Elements of Component : <--- */
+.c-textarea{
+    &__classic{
+        @include input-textarea-classic();
+        height: 328px;
+        resize: none;
+    }
+}

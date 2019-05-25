@@ -1,24 +1,28 @@
 /* ---> : Variables : <--- */
 @import "./base/variables";
 
+/* ---> : Mixins : <--- */
+@import "./mixins/input-res";
+@import "./mixins/inp-text-classic";
+
 /* ---> : Font includes : <--- */
-@import "fonts/fonts";
+@import "./fonts/fonts";
 
 /* ---> : Colors UI : <---*/
-@import "colors/colors";
+@import "./colors/colors";
 
 /*--------------> Base styles start <--------------*/
 /* Include Reset */
-@import "reset";
+@import "./reset";
 
 /* Include Base styles */
-@import "base/base";
+@import "./base/base";
 
 /************  Base styles end  ****************/
 
 /* Include grid */
-@import "grid/grid";
-@import "grid/columns";
+@import "./grid/grid";
+@import "./grid/columns";
  
 
 /* --------------------------> Modules <------------------------ */
@@ -42,14 +46,6 @@
 /* : Video modules : */
 @import "modules/_video/video";
 @import "modules/_video/video-controls";
-
-/* : Form modules : */
-@import "modules/_form/form";
-@import "modules/_form/form-contact";
-@import "modules/_form/form-operation";
-
-/* : Contact modules :  */
-@import "modules/_contact/contact";
 
 /* : Hero modules : */
 @import "modules/_hero/hero"; 
@@ -93,10 +89,13 @@
 @import "./layouts/l-head";
 @import "./layouts/l-team";
 @import "./layouts/l-welcome";
+@import "./layouts/l-contact";
 
 /* --> : Components Start : <-- */
 @import "./components/c-animations";
 @import "./components/c-button";
+@import "./components/c-input";
+@import "./components/c-textarea";
 @import "./components/c-wrapper";
 @import "./components/c-text";
 @import "./components/c-text-size";

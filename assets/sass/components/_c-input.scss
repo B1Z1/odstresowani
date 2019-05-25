@@ -1,0 +1,16 @@
+/*_________________________
+
+Component Input Start
+
+_______________*/
+
+.c-input{
+    @include input-reset();    
+}
+
+/* ---> : Elements of Component : <--- */
+.c-input{
+    &__classic{
+        @include input-textarea-classic();
+    }
+}

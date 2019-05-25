@@ -5,13 +5,7 @@ Component Button Start
 _______________*/
 
 .c-button{
-    color: inherit;
-    background: inherit;
-    border: inherit;
-    outline: inherit;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
+    @include input-reset();
     cursor: pointer;
 }
 
@@ -22,6 +16,7 @@ _______________*/
         padding-right: 24px;
         padding-bottom: 16px;
         padding-left: 24px;
+        color: $white;
         background-color: $operative;
     }
     &__buy{
@@ -36,5 +31,8 @@ _______________*/
 .c-button{
     &--br4{
         border-radius: 4px;
+    }
+    &--full{
+        width: 100%;
     }
 }

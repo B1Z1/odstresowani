@@ -1,0 +1,15 @@
+@mixin input-textarea-classic{
+    width: 100%;
+    padding-top: 24px;
+    padding-right: 32px;
+    padding-bottom: 24px;
+    padding-left: 32px;
+    font-size: 1rem;
+    border: 1px solid $grey-secondary;
+    color: $grey-secondary;
+    background-color: $white;
+    transition: color .3s ease-in-out;
+    &:focus{
+        color: $grey-tertiary;
+    }
+}

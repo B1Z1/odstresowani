@@ -16,9 +16,7 @@
  */
 
 get_header();
-
-$video_mp4 = wp_get_attachment_url(carbon_get_theme_option('contact_film_mp4'));
-$video_ogg = wp_get_attachment_url(carbon_get_theme_option('contact_film_ogg')); ?>
+?>
 
     <div class="c-wrapper">
 
@@ -28,28 +26,38 @@ $video_ogg = wp_get_attachment_url(carbon_get_theme_option('contact_film_ogg'));
 
         <main class="main">
 
-            <section class="contact block block--hidden pt128 pb128 c-wh">
-                <div class="filter filter-back filter--zmax bck-blck"></div>
-                <?php if ( $video_mp4 ): ?>
-                    <video class="filter filter-video" muted autoplay loop>
-                        <source src="<?php echo $video_mp4; ?>" type="video/mp4">
-                        <?php if ( $video_ogg ): ?>
-                            <source src="<?php echo $video_ogg; ?>" type="video/ogg">
-                        <?php endif; ?>
-                        Your browser does not support the video tag.
-                    </video>
-                <?php endif; ?>
-                <div class="contact__content post block">
-                    <div class="c-container">
-                        <div class="row">
-                            <div class="ntb-col-10 mauto">
-                                <?php if ( have_posts() ):  ?>
-                                    <?php while (have_posts()): the_post(); ?>
-                                        <?php the_content(); ?>
-                                    <?php endwhile; ?>
-                                <?php endif; ?>
-                            </div>
-                        </div>
+            <section class="l-contact">
+                <div class="pt64 pb128 c-gt bck-gm">
+                    <div class="c-container c-container--480">
+                        <h3 class="f-vb">
+                            <span class="c-op f-vb">
+                                Zarejestruj się
+                            </span>
+                        </h3>
+
+                        <form class="l-contact__form">
+                            <ul class="c-list">
+                                <li class="c-list__element mb32">
+                                    <input type="text" name="name" placeholder="Imię*" class="c-input c-input__classic">
+                                </li>
+                                <li class="c-list__element mb32">
+                                    <input type="text" name="surname" placeholder="Nazwisko*" class="c-input c-input__classic">
+                                </li>
+                                <li class="c-list__element mb32">
+                                    <input type="email" name="email" placeholder="E-Mail*" class="c-input c-input__classic">
+                                </li>
+                                <li class="c-list__element mb32">
+                                    <textarea class="c-textarea c-textarea__classic" name="massage" placeholder="Wiadomość*"></textarea>
+                                </li>
+                                <li class="c-list__element mb32">
+                                    <button class="c-button c-button__operative c-button--full">
+                                        <span class="f-vb pt16 pb16 d-ib">
+                                            Wyślij wiadomość
+                                        </span>
+                                    </button>              
+                                </li>
+                            </ul>
+                        </form>
                     </div>
                 </div>
             </section>

@@ -42,10 +42,6 @@ if ( !function_exists('crb_register_theme_options') ){
                         ->set_options( $page_ids )
                 )),
         ))
-        ->add_tab('Kontakt strona', array(
-            Field::make('file', 'contact_film_mp4', __('Video na tle MP4')),
-            Field::make('file', 'contact_film_ogg', __('Video na tle OGG')),
-        ))
         ->add_tab('Strona wyszukiwania', array(
             Field::make('file', 'search_film_mp4', __('Video na tle MP4')),
             Field::make('file', 'search_film_ogg', __('Video na tle OGG')),
