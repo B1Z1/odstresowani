@@ -284,10 +284,6 @@ window.onload = function(){
 
     let MExtentions = (function(){
         return {
-            //Function for page operation river
-            'operation' : function(object){
-                operation(object);
-            },
             //Function for relax page
             'relax' : function(object){
                 relax(object);
@@ -334,45 +330,6 @@ window.onload = function(){
                 let src = slide.dataset.image;
                 svgs[index].contentDocument.querySelector('image').setAttribute('xlink:href', src);
             });
-        }
-
-        //Function for page operation river
-        function operation(object){
-            let button = document.querySelector(`.${object.button}`),
-                wrapper = document.querySelector(`.${object.wrapper}`),
-                form_inputs = [... document.querySelectorAll(`.${object.form_inputs}`)],
-                classes = object.classes;
-
-            if ( button && wrapper && form_inputs ){
-
-                let wrapper_height = `${wrapper.offsetHeight}px`;
-                Mclass.addClass(classes.wrapper__disable, wrapper);
-
-                button.addEventListener('click', function(){
-                    wrapper.style.maxHeight = wrapper_height;
-
-                    //Manipulations with classes
-                    Mclass.addClass(classes.button__disable, this);
-                    Mclass.removeClass(classes.wrapper__disable, wrapper);
-
-                    //Remove max-height from wrapper
-                    setTimeout(() => { wrapper.style.maxHeight = 'none'; }, 800);
-
-                    //Remove button
-                    this.remove();
-
-                    //Fade for inputs
-                    form_inputs.forEach((el, index) => {
-                        let input = el;
-
-                        setTimeout(()=>{
-                            Mclass.removeClass(classes.input__disable, input);
-                        }, index * 400);
-                    });
-                });
-
-            }
-
         }
     }());
 
@@ -430,22 +387,6 @@ window.onload = function(){
      * 
      */
     new Mheader.mobileList();
-
-    /**
-     * 
-     * Initialize operation block
-     * 
-     */
-    new MExtentions.operation({
-        button: 'button-river',
-        wrapper: 'block-operation__wrapper',
-        form_inputs: 'form-operation__visibility',
-        classes:{
-            button__disable: 'button-river--disabled',
-            wrapper__disable: 'block-operation__wrapper--disabled',
-            input__disable: 'form-operation__visibility--disabled',
-        },
-    });
 
     /**
      * 

@@ -264,6 +264,13 @@ body {
   font-weight: 400;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+* {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 p {
@@ -2322,6 +2329,36 @@ _______________*/
 
 /*_________________________
 
+Component Button Start
+
+_______________*/
+
+.c-button {
+  color: inherit;
+  background: inherit;
+  border: inherit;
+  outline: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* ---> : Elements of Component : <--- */
+
+.c-button__river {
+  -webkit-transition: .3s all;
+  transition: .3s all;
+}
+
+/* ---> : Modificators of Component : <--- */
+
+.c-button--disabled {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/*_________________________
+
 Component Wrapper Start
 
 _______________*/
@@ -2355,6 +2392,10 @@ _______________*/
 
 .c-text--right {
   text-align: right;
+}
+
+.c-text--ttu {
+  text-transform: uppercase;
 }
 
 /*_________________________
@@ -3465,9 +3506,17 @@ _______________*/
   }
 
   .c-wrapper {
+    padding-top: 16px;
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-bottom: 16px;
+  }
+
+  .c-wrapper--fullscreen {
     margin-top: 16px;
     margin-right: 16px;
     margin-left: 16px;
+    margin-bottom: 16px;
   }
 }
 

@@ -35,6 +35,5 @@ get_header();
         <!--  Main section end  -->
         <!-- ------------------ -->
 
-    </div>
 <?php
 get_footer();

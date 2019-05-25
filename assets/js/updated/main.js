@@ -294,10 +294,6 @@ window.onload = function () {
 
   var MExtentions = function () {
     return {
-      //Function for page operation river
-      'operation': function operation(object) {
-        _operation(object);
-      },
       //Function for relax page
       'relax': function relax(object) {
         _relax(object);
@@ -346,38 +342,6 @@ window.onload = function () {
         var src = slide.dataset.image;
         svgs[index].contentDocument.querySelector('image').setAttribute('xlink:href', src);
       });
-    } //Function for page operation river
-
-
-    function _operation(object) {
-      var button = document.querySelector(".".concat(object.button)),
-          wrapper = document.querySelector(".".concat(object.wrapper)),
-          form_inputs = _toConsumableArray(document.querySelectorAll(".".concat(object.form_inputs))),
-          classes = object.classes;
-
-      if (button && wrapper && form_inputs) {
-        var wrapper_height = "".concat(wrapper.offsetHeight, "px");
-        Mclass.addClass(classes.wrapper__disable, wrapper);
-        button.addEventListener('click', function () {
-          wrapper.style.maxHeight = wrapper_height; //Manipulations with classes
-
-          Mclass.addClass(classes.button__disable, this);
-          Mclass.removeClass(classes.wrapper__disable, wrapper); //Remove max-height from wrapper
-
-          setTimeout(function () {
-            wrapper.style.maxHeight = 'none';
-          }, 800); //Remove button
-
-          this.remove(); //Fade for inputs
-
-          form_inputs.forEach(function (el, index) {
-            var input = el;
-            setTimeout(function () {
-              Mclass.removeClass(classes.input__disable, input);
-            }, index * 400);
-          });
-        });
-      }
     }
   }();
   /**
@@ -436,22 +400,6 @@ window.onload = function () {
    */
 
   new Mheader.mobileList();
-  /**
-   * 
-   * Initialize operation block
-   * 
-   */
-
-  new MExtentions.operation({
-    button: 'button-river',
-    wrapper: 'block-operation__wrapper',
-    form_inputs: 'form-operation__visibility',
-    classes: {
-      button__disable: 'button-river--disabled',
-      wrapper__disable: 'block-operation__wrapper--disabled',
-      input__disable: 'form-operation__visibility--disabled'
-    }
-  });
   /**
    * 
    * Initialize Relax function

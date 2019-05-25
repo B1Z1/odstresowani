@@ -23,4 +23,4 @@ $link = $block['link'];
     </div>
 </section>
 
-<div class="c-container"></div>
+<div class="c-container">

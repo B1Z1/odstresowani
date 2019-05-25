@@ -81,7 +81,6 @@ require get_template_directory() . '/includes/fields/fields-block-recent-slider.
 require get_template_directory() . '/includes/fields/fields-block-all-posts.php';
 require get_template_directory() . '/includes/fields/fields-block-most-viewed.php';
 require get_template_directory() . '/includes/fields/fields-block-post-banner.php';
-require get_template_directory() . '/includes/fields/fields-block-operation-river.php';
 require get_template_directory() . '/includes/fields/fields-block-image-gallery.php';
 require get_template_directory() . '/includes/fields/fields-block-video-gallery.php';
 require get_template_directory() . '/includes/fields/fields-block-map.php';
