@@ -10,7 +10,7 @@ $post_names = array(pll__('Aktualności'), pll__('Strefa wiedzy'));
         <div class="c-container">
             <div class="row">
                 <div class="pb128">
-                    <ul class="recent-posts_vh_pagination flex-kit jcc fwrap reset-list">
+                    <ul class="c-list recent-posts_vh_pagination flex-kit jcc fwrap">
                     </ul>
                 </div>
                 <?php foreach ( $post_types as $key => $post_type ): ?>

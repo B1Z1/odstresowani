@@ -10,6 +10,7 @@
 /*--------------> Base styles start <--------------*/
 /* Include Reset */
 @import "reset";
+
 /* Include Base styles */
 @import "base/base";
 
@@ -45,18 +46,11 @@
 /* : Button modules : */
 @import "modules/_button/button";
 @import "modules/_button/button-scroll";
-@import "modules/_button/button-river"; 
 
 /* : Form modules : */
 @import "modules/_form/form";
 @import "modules/_form/form-contact";
 @import "modules/_form/form-operation";
-
-/* : Link modules : */
-@import "modules/_link/link";
-@import "modules/_link/link-more";
-@import "modules/_link/link-icon";
-@import "modules/_link/link-share";
 
 /* : Contact modules :  */
 @import "modules/_contact/contact";

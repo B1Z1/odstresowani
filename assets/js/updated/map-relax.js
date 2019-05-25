@@ -133,7 +133,7 @@ function () {
   }, {
     key: "popUpTemplateNormal",
     value: function popUpTemplateNormal(title, description, link, image) {
-      return "<div class=\"maps-popup d-flex\">\n                    <div class=\"mbl-col-5 reset\">\n                        ".concat(image ? "<div class=\"maps-popup__image\" style=\"background-image: url(".concat(image, ");\"></div>") : '', "\n                    </div>\n                    <div class=\"mbl-col-7\">\n                        <h5 class=\"reset-top mb8 f-vb\"><a ").concat(link ? "href=\"".concat(link, "\"") : '', " class=\"link link--underline reset-link\">").concat(title, "</a></h5>\n                        ").concat(description, "\n                    </div>\n                </div>");
+      return "<div class=\"maps-popup d-flex\">\n                    <div class=\"mbl-col-5 reset\">\n                        ".concat(image ? "<div class=\"maps-popup__image\" style=\"background-image: url(".concat(image, ");\"></div>") : '', "\n                    </div>\n                    <div class=\"mbl-col-7\">\n                        <h5 class=\"reset-top mb8 f-vb\"><a ").concat(link ? "href=\"".concat(link, "\"") : '', " class=\"c-link c-link--tdu\">").concat(title, "</a></h5>\n                        ").concat(description, "\n                    </div>\n                </div>");
     }
     /**
      * 

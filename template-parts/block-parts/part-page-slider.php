@@ -22,7 +22,7 @@ $slides = $block['page_slide'];
                         <!-- Card of prop slider start -->
                         <div data-name="<?php echo $name; ?>" data-title="<?php echo $title; ?>" class="prop-slider_card">
                             <div class="prop-slider_card__back" data-back="<?php echo $back; ?>"></div>
-                            <a href="<?php echo $url; ?>" class="reset-link h1 f-vr">
+                            <a href="<?php echo $url; ?>" class="c-link h1 f-vr">
                                 <span class="prop-slider_card__title reset-margin pr16 pl16"><?php echo $title; ?></span>
                             </a>
                             <h3 class="f-vr"><?php echo $content; ?></h3>
@@ -30,7 +30,7 @@ $slides = $block['page_slide'];
                         <!-- Card of prop slider end -->
                         <?php endforeach; ?>
                     </div>
-                    <ul class="prop-slider_pagination flex-kit jcc fwrap reset-list">
+                    <ul class="c-list prop-slider_pagination flex-kit jcc fwrap">
                     </ul>
                 </div>
             </div>

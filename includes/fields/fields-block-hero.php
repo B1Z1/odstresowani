@@ -44,7 +44,6 @@ if ( !function_exists('crb_register_block_banner') ){
                     ->set_attribute('maxLength', '60'),
                 Field::make('text', 'hero_content', __('Mały opis'))
                     ->set_attribute('maxLength', '140'),
-                Field::make('text', 'hero_url', __('Link czytaj więcej')),
             ))
             ->set_render_callback(function ($block) {
                 include(locate_template('template-parts/block-parts/part-hero.php',false, false) );

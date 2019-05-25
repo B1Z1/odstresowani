@@ -74,7 +74,7 @@ require get_template_directory() . '/includes/fields/fields-taxonomy-places.php'
 require get_template_directory() . '/includes/fields/fields-taxonomy-page.php';
 require get_template_directory() . '/includes/fields/fields-navmenu.php';
 //Blocks
-require get_template_directory() . '/includes/fields/fields-block-banner.php';
+require get_template_directory() . '/includes/fields/fields-block-hero.php';
 require get_template_directory() . '/includes/fields/fields-block-advanced.php';
 require get_template_directory() . '/includes/fields/fields-block-page-slider.php';
 require get_template_directory() . '/includes/fields/fields-block-recent-slider.php';

@@ -113,7 +113,7 @@ class OdstresowaniMap{
                         ${ image ? `<div class="maps-popup__image" style="background-image: url(${image});"></div>`: '' }
                     </div>
                     <div class="mbl-col-7">
-                        <h5 class="reset-top mb8 f-vb"><a ${ link ? `href="${link}"` : '' } class="link link--underline reset-link">${title}</a></h5>
+                        <h5 class="reset-top mb8 f-vb"><a ${ link ? `href="${link}"` : '' } class="c-link c-link--tdu">${title}</a></h5>
                         ${description}
                     </div>
                 </div>`;

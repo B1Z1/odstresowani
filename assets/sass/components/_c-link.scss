@@ -12,6 +12,29 @@ _______________*/
 
 /* --> : Component Elements : <-- */
 .c-link{
+    &__share{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 176px;
+        height: 64px;
+        margin-right: 0;
+        margin-left: 0;
+        text-transform: lowercase;
+        border-radius: 12px;
+        border: 2px solid $grey-secondary;
+        &:last-child{
+            margin-top: 16px;
+        }
+        @media only screen and ( min-width: $bpoint-tab ) {
+            margin-right: 16px;
+            margin-left: 16px;
+            &:last-child{
+                margin-top: 0;
+                margin-right: 0;
+            }
+        }
+    }
     &__circle{
         position: relative;
         &:before{

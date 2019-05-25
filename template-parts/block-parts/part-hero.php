@@ -40,14 +40,7 @@ else{
                     <h1 class="reset f-vr"><?php echo $content; ?></h1>
 
                 <?php endif; ?>
-
-                <?php if ( $link ): ?>
-
-                    <div class="hero_links f-vb mt64">
-                        <a href="<?php echo $link; ?>" class="link link-more reset-link">Czytaj więcej</a>
-                    </div>
-
-                <?php endif; ?>
+                
             </div>
         </div>
     </section>
