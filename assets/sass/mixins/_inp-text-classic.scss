@@ -9,7 +9,11 @@
     color: $grey-secondary;
     background-color: $white;
     transition: color .3s ease-in-out;
-    &:focus{
+    &::placeholder{
+        color: $grey-secondary;
+        transition: color .3s ease-in-out;
+    }
+    &:focus::placeholder, &:focus{
         color: $grey-tertiary;
     }
 }

@@ -2044,6 +2044,46 @@ _______________*/
   transition: color .3s ease-in-out;
 }
 
+.c-input__classic::-webkit-input-placeholder {
+  color: #DFE0DE;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.c-input__classic:-ms-input-placeholder {
+  color: #DFE0DE;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.c-input__classic::-ms-input-placeholder {
+  color: #DFE0DE;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.c-input__classic::placeholder {
+  color: #DFE0DE;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.c-input__classic:focus::-webkit-input-placeholder,
+.c-input__classic:focus {
+  color: #B9B9B9;
+}
+
+.c-input__classic:focus:-ms-input-placeholder,
+.c-input__classic:focus {
+  color: #B9B9B9;
+}
+
+.c-input__classic:focus::-ms-input-placeholder,
+.c-input__classic:focus {
+  color: #B9B9B9;
+}
+
+.c-input__classic:focus::placeholder,
 .c-input__classic:focus {
   color: #B9B9B9;
 }
@@ -2082,6 +2122,46 @@ _______________*/
   resize: none;
 }
 
+.c-textarea__classic::-webkit-input-placeholder {
+  color: #DFE0DE;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.c-textarea__classic:-ms-input-placeholder {
+  color: #DFE0DE;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.c-textarea__classic::-ms-input-placeholder {
+  color: #DFE0DE;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.c-textarea__classic::placeholder {
+  color: #DFE0DE;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.c-textarea__classic:focus::-webkit-input-placeholder,
+.c-textarea__classic:focus {
+  color: #B9B9B9;
+}
+
+.c-textarea__classic:focus:-ms-input-placeholder,
+.c-textarea__classic:focus {
+  color: #B9B9B9;
+}
+
+.c-textarea__classic:focus::-ms-input-placeholder,
+.c-textarea__classic:focus {
+  color: #B9B9B9;
+}
+
+.c-textarea__classic:focus::placeholder,
 .c-textarea__classic:focus {
   color: #B9B9B9;
 }

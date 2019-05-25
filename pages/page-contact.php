@@ -31,33 +31,10 @@ get_header();
                     <div class="c-container c-container--480">
                         <h3 class="f-vb">
                             <span class="c-op f-vb">
-                                Zarejestruj się
+                                Wyślij do nas swoją wiadomość
                             </span>
                         </h3>
-
-                        <form class="l-contact__form">
-                            <ul class="c-list">
-                                <li class="c-list__element mb32">
-                                    <input type="text" name="name" placeholder="Imię*" class="c-input c-input__classic">
-                                </li>
-                                <li class="c-list__element mb32">
-                                    <input type="text" name="surname" placeholder="Nazwisko*" class="c-input c-input__classic">
-                                </li>
-                                <li class="c-list__element mb32">
-                                    <input type="email" name="email" placeholder="E-Mail*" class="c-input c-input__classic">
-                                </li>
-                                <li class="c-list__element mb32">
-                                    <textarea class="c-textarea c-textarea__classic" name="massage" placeholder="Wiadomość*"></textarea>
-                                </li>
-                                <li class="c-list__element mb32">
-                                    <button class="c-button c-button__operative c-button--full">
-                                        <span class="f-vb pt16 pb16 d-ib">
-                                            Wyślij wiadomość
-                                        </span>
-                                    </button>              
-                                </li>
-                            </ul>
-                        </form>
+                        <?php echo do_shortcode('[contact-form-7 id="55" title="Formularz"]'); ?>
                     </div>
                 </div>
             </section>
@@ -70,3 +47,27 @@ get_header();
 
 <?php
 get_footer();
+
+/**
+ * 
+ * Contact Form plugin template
+ * 
+ */
+
+// <ul class="c-list">
+//     <li class="c-list__element mb32">
+//         [text* name class:c-input class:c-input__classic placeholder "Imię*"]
+//     </li>
+//     <li class="c-list__element mb32">
+//         [text* surname class:c-input class:c-input__classic placeholder "Nazwisko*"]
+//     </li>
+//     <li class="c-list__element mb32">
+//         [email* email class:c-input class:c-input__classic placeholder "E-Mail*"]
+//     </li>
+//     <li class="c-list__element mb32">
+//         [textarea* massage class:c-textarea class:c-textarea__classic placeholder "Wiadomość*"]
+//     </li>
+//     <li class="c-list__element mb32">
+//         [submit class:c-button class:c-button__operative class:c-button--full class:f-vb class:pt32 class:pb32 class:d-ib "Wyślij wiadomość"]             
+//     </li>
+// </ul>
