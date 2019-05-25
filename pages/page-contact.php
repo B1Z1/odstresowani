@@ -20,7 +20,7 @@ get_header();
 $video_mp4 = wp_get_attachment_url(carbon_get_theme_option('contact_film_mp4'));
 $video_ogg = wp_get_attachment_url(carbon_get_theme_option('contact_film_ogg')); ?>
 
-    <div class="wrapper">
+    <div class="c-wrapper">
 
         <!-- ------------------ -->
         <!-- Main section start -->

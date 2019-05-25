@@ -7,7 +7,7 @@
 get_header();
 ?>
 
-    <div class="wrapper">
+    <div class="c-wrapper">
 
     <!-- ------------------ -->
     <!-- Main section start -->

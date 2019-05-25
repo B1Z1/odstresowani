@@ -1,0 +1,27 @@
+/*_________________________
+
+Layout Welcome Start
+
+_______________*/
+
+.l-welcome{
+    position: relative;
+}
+
+/* ---> : Layout Elements Start : <--- */
+.l-welcome{
+    &__phone{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        overflow: hidden;
+    }
+}
+
+/* ---> : Layout Modificators Start : <--- */
+.l-welcome{
+    &--scale{
+        transform: scale(1.5);
+    }
+}

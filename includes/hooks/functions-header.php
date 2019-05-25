@@ -57,7 +57,7 @@ function submenu_category($post_type, $url, $title){
         <nav class="c-navigation__submenu pt24 pr24 pb24 pl24 c-wh bck-op">
             <div class="d-flex fwrap row">
                 <div class="ntb-col-1">
-                    <div class="f-vb mr24 mt16 mb8">Kategorie</div>
+                    <div class="f-vb mr24 mt8 mb8">Kategorie</div>
                 </div>
                 <div class="ntb-col-9">
                     <ul class="c-list header-menu__list flex-kit fwrap">

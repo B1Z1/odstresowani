@@ -15,7 +15,7 @@
 get_header();
 ?>
 
-    <div class="wrapper">
+    <div class="c-wrapper">
 
         <!-- ------------------ -->
         <!-- Main section start -->
@@ -35,5 +35,6 @@ get_header();
         <!--  Main section end  -->
         <!-- ------------------ -->
 
+    </div>
 <?php
 get_footer();

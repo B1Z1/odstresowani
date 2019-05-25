@@ -1,7 +1,7 @@
 <?php
 global $currlang;
-$post_types = array('post'); 
-$post_names = array(pll__('Aktualności'));
+$post_types = array('post', 'strefa-wiedzy'); 
+$post_names = array(pll__('Aktualności'), pll__('Strefa wiedzy'));
 ?>
 </div>
 <!-- Recent posts slider start -->

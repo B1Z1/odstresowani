@@ -16,7 +16,7 @@ get_header();
 <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.1.0/mapbox-gl-compare.css' type='text/css' />
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/updated/map-relax.js"></script>
 <!-- : Map script init end : -->
-<div class="wrapper">
+<div class="c-wrapper">
 
     <!-- ------------------ -->
     <!-- Main section start -->

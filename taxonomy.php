@@ -17,7 +17,7 @@ $cat = get_queried_object();
 $cat_image = wp_get_attachment_image_src(carbon_get_term_meta($cat->term_id, 'category_image'), 'full')[0];
 ?>
 
-    <div class="wrapper">
+    <div class="c-wrapper">
 
     <!-- ------------------ -->
     <!-- Main section start -->

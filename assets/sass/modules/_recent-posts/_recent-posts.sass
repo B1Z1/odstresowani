@@ -6,6 +6,7 @@
             position: relative
             cursor: pointer
             user-select: none
+            color: $grey-tertiary
             transition: .3s all
             &:after
                 content: ''
@@ -18,9 +19,11 @@
                 visibility: hidden
                 opacity: 0
                 transition: .3s all
-        &__active:after
-            visibility: visible
-            opacity: 1
+        &__active
+            color: $black
+            &:after
+                visibility: visible
+                opacity: 1
     /* For recent double slider */
     &_vh
         position: absolute

@@ -15,7 +15,7 @@ get_header();
 $sygnet = carbon_get_post_meta(get_the_ID(), 'page_sygnet');
 ?>
 
-    <div class="wrapper">
+    <div class="c-wrapper">
 
         <!-- ------------------ -->
         <!-- Main section start -->

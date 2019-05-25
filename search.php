@@ -16,7 +16,7 @@ get_header();
 
 $sygnet = wp_get_attachment_image_src(carbon_get_theme_option('general_sygnet_search'), 'full')[0]; ?>
 
-    <div class="wrapper">
+    <div class="c-wrapper">
 
         <!-- ------------------ -->
         <!-- Main section start -->

@@ -24,7 +24,7 @@ $video_ogg = wp_get_attachment_url(carbon_get_theme_option('404_film_ogg')); ?>
     <!-- ------------------ -->
 
     <main class="main">
-        <section class="l-404 c-wrapper c-wrapper--fullscreen c-wh m16">
+        <section class="l-404 c-wrapper c-wrapper--fullscreen c-wh">
             <?php if ( $video_mp4 ): ?>
                 <video class="filter filter-video" muted autoplay loop>
                     <source src="<?php echo $video_mp4; ?>" type="video/mp4">
