@@ -25,7 +25,7 @@ $post_names = array(pll__('Aktualności'));
                                 $posts->the_post();
                                 $title = get_the_title();
                                 $url = get_the_permalink();
-                                $image = get_post_thumbnail_id();
+                                $image = get_the_post_thumbnail_url(get_the_ID(), 'full');
                                 ?>
 
                                 <!-- Card start -->
@@ -37,9 +37,9 @@ $post_names = array(pll__('Aktualności'));
                                      * -> Mini card
                                      *
                                      */
-                                    $args['image'] = get_the_post_thumbnail_url(get_the_ID(), 'full');
-                                    $args['title'] = get_the_title();
-                                    $args['url'] = get_permalink();
+                                    $args['image'] = $image;
+                                    $args['title'] = $title;
+                                    $args['url'] = $url;
                                     do_action('post_card_mini', $args);
                                     ?>
                                 </div>
