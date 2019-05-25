@@ -2206,6 +2206,21 @@ _______________*/
 
 /* ---> : Elements of Component : <--- */
 
+.c-button__operative {
+  padding-top: 16px;
+  padding-right: 24px;
+  padding-bottom: 16px;
+  padding-left: 24px;
+  background-color: #5FA73F;
+}
+
+.c-button__buy {
+  padding-top: 8px;
+  padding-right: 32px;
+  padding-bottom: 8px;
+  padding-left: 32px;
+}
+
 /* ---> : Modificators of Component : <--- */
 
 .c-button--br4 {

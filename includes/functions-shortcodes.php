@@ -12,8 +12,8 @@ function buy_button( $atts ){
         'text' => '',
 	), $atts );
     return "<div class='block d-flex aic mt16 mb16'>
-                <span class='c-wh'>
-                    <a href='{$a['link']}' class='c-link d-ib button--br4 pt8 pr32 pb8 pl32 bck-gradient--blue'>{$a['text']}</a>
+                <span class='c-wh d-ib'>
+                    <a href='{$a['link']}' class='c-link c-button__buy c-button--br4 bck-gradient--blue'>{$a['text']}</a>
                 </span>
                 <h2 class='reset-top reset-bottom d-ib pl32 f-vb'>{$a['price']} zł</h2>
             </div>";
@@ -25,10 +25,15 @@ function buttons( $atts ){
         'button-link' => '',
         'link' => ''
     ), $atts);
-    return "<div class='c-text--center'>
-                <a href='{$a['button-link']}' class='c-link'>Kontakt z nami</a>
+    return "<div class='c-text--center mt64 mb64'>
+                <span class='mr16 c-wh f-vb d-ib'>
+                    <a href='{$a['button-link']}' class='c-link c-button__operative c-button--br4'>Kontakt z nami</a>
+                </span>
                 albo
-                <a href='{$a['link']}' class='c-link c-text--ttu'>Czytaj więcej</a>
+                <span class='ml16 c-op f-vb c-text--ttu'>
+                    <a href='{$a['link']}' class='c-link c-link--tdu'>Czytaj więcej</a>
+                </span>
             </div>";
 }
+add_shortcode( 'Linki', 'buttons' );
 ?>
