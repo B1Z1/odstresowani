@@ -12,6 +12,7 @@ _______________*/
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
+    cursor: pointer;
 }
 
 /* ---> : Elements of Component : <--- */
@@ -21,5 +22,7 @@ _______________*/
 
 /* ---> : Modificators of Component : <--- */
 .c-button{
-
+    &--br4{
+        border-radius: 4px;
+    }
 }

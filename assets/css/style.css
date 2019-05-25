@@ -910,44 +910,6 @@ ol {
   transform: translateY(-65%);
 }
 
-/* : Button modules : */
-
-.button {
-  font-size: 1rem;
-  font-family: value-regular;
-  border: none;
-  outline: none;
-  cursor: pointer;
-}
-
-.button--br4 {
-  border-radius: 4px;
-}
-
-.button-scroll {
-  position: fixed;
-  bottom: 16px;
-  left: 20px;
-  padding: 8px;
-  background: white;
-  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  cursor: pointer;
-  z-index: 999;
-}
-
-.button-scroll__sygnet {
-  width: 24px;
-  height: 24px;
-  vertical-align: middle;
-}
-
-.button-scroll--disabled {
-  visibility: hidden;
-  opacity: 0;
-}
-
 /* : Form modules : */
 
 .form .wpcf7-mail-sent-ok,
@@ -2239,11 +2201,16 @@ _______________*/
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  cursor: pointer;
 }
 
 /* ---> : Elements of Component : <--- */
 
 /* ---> : Modificators of Component : <--- */
+
+.c-button--br4 {
+  border-radius: 4px;
+}
 
 /*_________________________
 
