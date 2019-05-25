@@ -1,7 +1,7 @@
 <!-- : Layout Footer Start : -->
 <footer class="l-footer">
     <div class="l-footer__upper bck-op pt64 pb32 c-wh">
-        <div class="container">
+        <div class="c-container">
             <div class="row">
                 <div class="l-footer__blocks flex-kit fwrap mb64">
                     <div class="mbl-col-12 tbl-col-6 ntb-col-3">
@@ -31,7 +31,7 @@
         </div>
     </div>
     <div class="l-footer__bottom mt32 mb16 c-blck">
-        <div class="container">
+        <div class="c-container">
             <div class="row flex-kit aic jcsb fwrap">
                 <div class="l-footer__rights ntb-col-4">
                     <span>© 2018 Odstresowani.pl  All rights reserved.</span>

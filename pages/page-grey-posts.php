@@ -27,13 +27,13 @@ $sygnet = carbon_get_post_meta(get_the_ID(), 'page_sygnet');
         <main class="main mb64">
             <section class="page">
                 <div class="page__title mb160 pt128 pb160 bck-gm">
-                    <div class="container container-960">
+                    <div class="c-container c-container--960">
                         <h3 class="reset f-san"><?php the_title(); ?></h3>
                         <img src="<?php echo wp_get_attachment_image_src($sygnet,'full')[0]; ?>" alt="Page sygnet" class="post__sygnet">
                     </div>
                 </div>
                 <!-- Mind Component Start -->
-                <div class="container container-960 header__triger">
+                <div class="c-container c-container--960 header__triger">
                     <!--  Breadcrumbs start  --> 
                     <?php yoast_breadcrumb( '<div id="breadcrumbs" class="breadcrumbs reset-top f-vb c-gs mb64">','</div>' ); ?>
                     <!--  Breadcrumbs end  --> 
@@ -89,7 +89,7 @@ $sygnet = carbon_get_post_meta(get_the_ID(), 'page_sygnet');
                 <!-- Mind Component End -->
                 <!-- Main Content Start -->
                 <div class="page__content">
-                    <div class="container container-posts header__triger">
+                    <div class="c-container c-container--posts header__triger">
                         
                         <?php if ( have_posts() ):  ?>
 

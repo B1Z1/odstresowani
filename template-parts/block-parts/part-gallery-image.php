@@ -72,4 +72,4 @@ $gallery = $block['gallery'];
 
 </div>
 
-<div class="container">
+<div class="c-container">

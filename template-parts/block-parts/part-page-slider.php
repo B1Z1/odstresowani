@@ -5,7 +5,7 @@ $slides = $block['page_slide'];
     <!-- Slider of proposition start -->
     <section class="prop-slider pt64 pb64 c-wh">
         <div class="filter-back bck-blck"></div>
-        <div class="container">
+        <div class="c-container">
             <div class="row">
                 <div class="prop-slider_content tbl-col-8 ntb-col-6">
                     <div class="prop-slider_container">
@@ -37,4 +37,4 @@ $slides = $block['page_slide'];
         </div>
     </section>
     <!-- Slider of proposition end -->
-<div class="container">
+<div class="c-container">

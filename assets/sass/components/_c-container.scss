@@ -1,0 +1,30 @@
+/*_________________________
+
+Component Container Start
+
+_______________*/
+
+.c-container{
+    box-sizing: border-box;
+    max-width: 1200px;
+    padding-right: 16px;
+    padding-left: 16px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* --> : Modificators of Element : <-- */
+.c-container{
+    &--960{
+        max-width: 960px;
+    }
+    &--posts{
+        max-width: 100%;
+        padding-right: 16px;
+        padding-left: 16px;
+        @media only screen and ( min-width: 768px ){
+            padding-right: 48px;
+            padding-left: 48px;
+        }
+    }
+}

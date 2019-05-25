@@ -38,7 +38,7 @@ $image_under = wp_get_attachment_image_url($block['advanced_blockimage'], 'full'
 </div>
 <section class="block block-advanced <?php echo $string_block_classes; ?>">
 
-    <div class="container">
+    <div class="c-container">
         
         <?php if ( $title_html ): ?>
             <!-- Title of block start --> 
@@ -155,6 +155,6 @@ $image_under = wp_get_attachment_image_url($block['advanced_blockimage'], 'full'
     <?php endif; ?>
 
 </section>
-<div class="container">
+<div class="c-container">
 
 <!-- Classic block end -->

@@ -40,7 +40,7 @@ $video_ogg = wp_get_attachment_url(carbon_get_theme_option('contact_film_ogg'));
                     </video>
                 <?php endif; ?>
                 <div class="contact__content post block">
-                    <div class="container">
+                    <div class="c-container">
                         <div class="row">
                             <div class="ntb-col-10 mauto">
                                 <?php if ( have_posts() ):  ?>

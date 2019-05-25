@@ -24,12 +24,12 @@ get_header();
 
             <section class="page">
                 <div class="page__title mb160 pt160">
-                    <div class="container container-960">
+                    <div class="c-container c-container-960">
                         <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'full'); ?>" alt="Page sygnet" class="post__sygnet">
                     </div>
                 </div>
 
-                <div class="container header__triger">
+                <div class="c-container header__triger">
                     <?php if ( have_posts() ):  ?>
 
                         <?php while (have_posts()): the_post(); ?>

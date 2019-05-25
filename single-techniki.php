@@ -23,14 +23,14 @@ get_header();
                     ?>
 
                     <div class="post__title mb160 pt128 pb160 bck-gm">
-                        <div class="container">
+                        <div class="c-container">
                             <h3 class="reset f-san"><?php the_title(); ?></h3>
                             <?php if ( $cat_sygnet ): ?>
                                 <img src="<?php echo $cat_sygnet; ?>" alt="Category sygnet" class="post__sygnet">
                             <?php endif; ?>
                         </div>
                     </div>
-                    <div class="container container-960 post__content header__triger">
+                    <div class="c-container c-container--960 post__content header__triger">
                         <!--  Breadcrumbs start  --> 
                         <?php yoast_breadcrumb( '<div id="breadcrumbs" class="breadcrumbs reset-top f-vb c-gs mb64">','</div>' ); ?>
                         <!--  Breadcrumbs end  --> 
@@ -46,7 +46,7 @@ get_header();
             <?php endif; ?>
 
         </article>
-        <div class="container">
+        <div class="c-container">
         <?php
             /**
              *

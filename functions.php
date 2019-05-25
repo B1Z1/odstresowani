@@ -84,6 +84,7 @@ require get_template_directory() . '/includes/fields/fields-block-image-gallery.
 require get_template_directory() . '/includes/fields/fields-block-video-gallery.php';
 require get_template_directory() . '/includes/fields/fields-block-map.php';
 require get_template_directory() . '/includes/fields/fields-block-gallery-image.php';
+require get_template_directory() . '/includes/fields/fields-block-custom-card.php';
 
 /**
  *

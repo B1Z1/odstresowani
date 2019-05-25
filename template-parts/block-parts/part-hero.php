@@ -27,7 +27,7 @@ else{
         <?php endif; ?>
 
         <div class="hero__content">
-            <div class="container">
+            <div class="c-container">
 
                 <?php if ( $title ): ?>
 
@@ -52,4 +52,4 @@ else{
         </div>
     </section>
     <!-- Hero banner end -->
-<div class="container">
+<div class="c-container">

@@ -2642,6 +2642,34 @@ _______________*/
   height: 192px;
 }
 
+/*_________________________
+
+Component Container Start
+
+_______________*/
+
+.c-container {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: 1200px;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* --> : Modificators of Element : <-- */
+
+.c-container--960 {
+  max-width: 960px;
+}
+
+.c-container--posts {
+  max-width: 100%;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
 /* --> Resets or colors UI <-- */
 
 /* Myreset */
@@ -3123,6 +3151,13 @@ _______________*/
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
     width: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .c-container--posts {
+    padding-right: 48px;
+    padding-left: 48px;
   }
 }
 

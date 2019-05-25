@@ -22,7 +22,7 @@ get_header();
         <!-- ------------------ -->
 
         <main class="main">
-            <div class="container">
+            <div class="c-container">
                 <?php if ( have_posts() ):  ?>
                     <?php while (have_posts()): the_post(); ?>
                         <?php the_content(); ?>

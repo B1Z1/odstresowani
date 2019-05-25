@@ -6,7 +6,7 @@ $post_names = array(pll__('Aktualności'));
 </div>
 <!-- Recent posts slider start -->
 <section class="recent-posts swiper-recent_posts header__triger pt64 pb64">
-    <div class="container">
+    <div class="c-container">
 
         <div class="row">
 
@@ -86,4 +86,4 @@ $post_names = array(pll__('Aktualności'));
     </script>
 </section>
 <!--  Recent posts slider end  -->
-<div class="container">
+<div class="c-container">

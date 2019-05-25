@@ -18,5 +18,5 @@ $type = $block['banner_type'];
                 <h4 class="block--texcen f-san c-gt">Autor obrazu: <?php echo $autor; ?></h4>
             <?php endif; ?>
         </div>
-    <div class="container container-960 header__triger">
+    <div class="c-container c-container--960 header__triger">
 <?php endif; ?>

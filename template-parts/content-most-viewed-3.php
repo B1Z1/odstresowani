@@ -47,5 +47,5 @@ $posts = new WP_Query($args_q);
     </div>
 
 <?php if ( $block['most_viewed_posts'] ): ?>
-<div class="container">
+<div class="c-container">
 <?php endif; ?>

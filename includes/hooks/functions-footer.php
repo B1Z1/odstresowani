@@ -13,7 +13,7 @@ add_action('odstresowani_footer_upper_start', 'footer_upper_start', 10);
 if ( !function_exists('footer_upper_start') ){
     function footer_upper_start(){ ?>
     <div class="l-footer__upper bck-op pt64 pb32 c-wh">
-        <div class="container">
+        <div class="c-container">
             <div class="row">
     <?php }
 }
@@ -89,7 +89,7 @@ add_action('odstresowani_footer_bottom_start', 'footer_bottom_start', 10);
 if ( !function_exists('footer_bottom_start') ){
     function footer_bottom_start(){ ?>
         <div class="l-footer__bottom mt32 mb16 c-blck">
-            <div class="container">
+            <div class="c-container">
                 <div class="row flex-kit aic jcsb fwrap">
     <?php }
 }

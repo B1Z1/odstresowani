@@ -6,7 +6,7 @@ window.onload = function(){
      *
      */
     (function () {
-        let containers = [... document.querySelectorAll('.container')],
+        let containers = [... document.querySelectorAll('.c-container')],
             p_el = [... document.querySelectorAll('p')];
         containers.forEach(function (el) {
             if ( el.children.length == 0 ){

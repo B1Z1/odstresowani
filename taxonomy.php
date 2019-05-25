@@ -29,7 +29,7 @@ $cat_image = wp_get_attachment_image_src(carbon_get_term_meta($cat->term_id, 'ca
         <section class="hero hero--backcenter c-wh mb64" <?php if ( $cat_image ): ?>style="background-image: url( <?php echo $cat_image; ?> )"<?php endif; ?>>
             <div class="filter-back bck-blck"></div>
             <div class="hero__content">
-                <div class="container">
+                <div class="c-container">
                     <h3 class="reset-top f-san"><?php echo single_cat_title(); ?></h3>
                     <?php if ( category_description() ): ?>
                         <h1 class="reset"><?php echo wp_strip_all_tags(category_description()); ?></h1>
@@ -39,7 +39,7 @@ $cat_image = wp_get_attachment_image_src(carbon_get_term_meta($cat->term_id, 'ca
         </section>
         <!-- Hero banner end -->
 
-        <div class="container container-posts pt32 header__triger">
+        <div class="c-container c-container--posts pt32 header__triger">
             <div class="d-flex fwrap row infinity-scroll">
                 <?php if ( have_posts() ):  ?>
                     <?php while (have_posts()): the_post(); ?>

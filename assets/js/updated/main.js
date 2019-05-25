@@ -15,7 +15,7 @@ window.onload = function () {
    *
    */
   (function () {
-    var containers = _toConsumableArray(document.querySelectorAll('.container')),
+    var containers = _toConsumableArray(document.querySelectorAll('.c-container')),
         p_el = _toConsumableArray(document.querySelectorAll('p'));
 
     containers.forEach(function (el) {
