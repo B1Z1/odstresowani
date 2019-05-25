@@ -1,5 +1,5 @@
-/* ---> : Color Variables : <--- */
-@import "colors/color-vars";
+/* ---> : Variables : <--- */
+@import "./base/variables";
 
 /* ---> : Font includes : <--- */
 @import "fonts/fonts";
@@ -11,7 +11,7 @@
 /* Include Reset */
 @import "reset";
 /* Include Base styles */
-@import "base";
+@import "base/base";
 
 /************  Base styles end  ****************/
 

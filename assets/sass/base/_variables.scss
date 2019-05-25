@@ -1,0 +1,31 @@
+/* ---> : Gutters : <--- */
+$gutters-full: (
+    8, 
+    16, 
+    24, 
+    (32, 32 * .8), 
+    (64, 64 * .8), 
+    (128, 128 * .8), 
+    (160, 160 * .8), 
+    (224, 224 * .8)
+);
+
+/* ---> : Directions : <--- */
+$directions: (
+    ('', ''), 
+    ('t', '-top'), 
+    ('r', '-right'), 
+    ('b', '-bottom'), 
+    ('l', '-left')
+);
+
+/* ---> : Colors : <--- */
+$black: black;
+$white: white;
+$operative: #5FA73F;
+$grey-main: #F8F8F8;
+$grey-secondary: #DFE0DE;
+$grey-tertiary: #B9B9B9;
+$cobe: #BC54E1;
+$brain: #f0bc5e;
+$head: #ccc;
