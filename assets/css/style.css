@@ -1568,16 +1568,21 @@ ol {
 }
 
 .recent-posts_vh_pagination > .swiper-pagination-bullet {
-  width: 16px !important;
-  height: 16px !important;
-  background: transparent !important;
-  border: 2px solid #B9B9B9 !important;
+  width: 8px !important;
+  height: 8px !important;
+  background: #5FA73F !important;
   cursor: pointer;
-  opacity: 1 !important;
+  opacity: 0.25 !important;
+  -webkit-transition: opacity .3s ease-in-out, -webkit-transform .3s ease-in-out;
+  transition: opacity .3s ease-in-out, -webkit-transform .3s ease-in-out;
+  transition: opacity .3s ease-in-out, transform .3s ease-in-out;
+  transition: opacity .3s ease-in-out, transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
 }
 
 .recent-posts_vh_pagination > .swiper-pagination-bullet-active {
-  background: #B9B9B9 !important;
+  opacity: 1 !important;
+  -webkit-transform: scale(2);
+  transform: scale(2);
 }
 
 .recent-posts_s496 {

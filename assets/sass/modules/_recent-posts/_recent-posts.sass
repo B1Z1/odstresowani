@@ -34,14 +34,15 @@
             opacity: 1
         &_pagination
             & > .swiper-pagination-bullet
-                width: 16px!important
-                height: 16px!important
-                background: transparent!important
-                border: 2px solid $grey-tertiary!important
+                width: 8px!important
+                height: 8px!important
+                background: $operative!important
                 cursor: pointer
-                opacity: 1!important
+                opacity: .25!important
+                transition: opacity .3s ease-in-out, transform .3s ease-in-out
             & > .swiper-pagination-bullet-active
-                background: $grey-tertiary!important
+                opacity: 1!important
+                transform: scale(2)
     /* For recent normal slider */
     &_s496
         position: relative

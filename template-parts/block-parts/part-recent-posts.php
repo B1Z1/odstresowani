@@ -5,58 +5,57 @@ $post_names = array(pll__('Aktualności'));
 ?>
 </div>
 <!-- Recent posts slider start -->
-<section class="recent-posts swiper-recent_posts header__triger pt64 pb64">
-    <div class="c-container">
-
-        <div class="row">
-
-            <ul class="recent-posts_vh_pagination pt64 pb64 flex-kit jcc fwrap reset-list">
-            </ul>
-            <?php foreach ( $post_types as $key => $post_type ): ?>
-
-                <!-- Recent posts block start -->
-                <div class="recent-posts_vh recent-posts_vh__active" data-name="<?php echo $post_names[$key]; ?>" data-title="<?php echo $post_names[$key]; ?>">
-                    <div class="swiper-wrapper recent-posts_cards">
-                        <?php
-                        $posts = new WP_Query('post_type=' . $post_type . '&posts_per_page=8&lang=' . $currlang );
-                        if ( $posts->have_posts() ): ?>
-
-                            <?php while ($posts->have_posts()):
-                                $posts->the_post();
-                                $title = get_the_title();
-                                $url = get_the_permalink();
-                                $image = get_the_post_thumbnail_url(get_the_ID(), 'full');
-                                ?>
-
-                                <!-- Card start -->
-                                <div class="swiper-slide mbl-col-12 ntb-col-6">
-                                    <?php
-                                    /**
-                                     *
-                                     * Post type action
-                                     * -> Mini card
-                                     *
-                                     */
-                                    $args['image'] = $image;
-                                    $args['title'] = $title;
-                                    $args['url'] = $url;
-                                    do_action('post_card_mini', $args);
-                                    ?>
-                                </div>
-                                <!-- Card end -->
-
-                            <?php endwhile; ?>
-
-                        <?php endif; wp_reset_postdata(); ?>
-                    </div>
-                    <div class="recent-posts_vh_pagination pt128 flex-kit jcc"></div>
+<section class="recent-posts swiper-recent_posts header__triger">
+    <div class="mt64 mb64 pt128 pb128 bck-gm">
+        <div class="c-container">
+            <div class="row">
+                <div class="pb128">
+                    <ul class="recent-posts_vh_pagination flex-kit jcc fwrap reset-list">
+                    </ul>
                 </div>
-                <!--  Recent posts block end  -->
+                <?php foreach ( $post_types as $key => $post_type ): ?>
+
+                    <!-- Recent posts block start -->
+                    <div class="recent-posts_vh recent-posts_vh__active" data-name="<?php echo $post_names[$key]; ?>" data-title="<?php echo $post_names[$key]; ?>">
+                        <div class="swiper-wrapper recent-posts_cards">
+                            <?php
+                            $posts = new WP_Query('post_type=' . $post_type . '&posts_per_page=8&lang=' . $currlang );
+                            if ( $posts->have_posts() ): ?>
+
+                                <?php while ($posts->have_posts()):
+                                    $posts->the_post();
+                                    $args = [
+                                        'image' => get_the_post_thumbnail_url(get_the_ID(), 'full'),
+                                        'title' => get_the_title(),
+                                        'url' => get_the_permalink()
+                                    ];
+                                    ?>
+
+                                    <!-- Card start -->
+                                    <div class="swiper-slide mbl-col-12 ntb-col-6">
+                                        <?php
+                                        /**
+                                         *
+                                         * Post type action
+                                         * -> Mini card
+                                         *
+                                         */
+                                        do_action('post_card_mini', $args);
+                                        ?>
+                                    </div>
+                                    <!-- Card end -->
+
+                                <?php endwhile; ?>
+
+                            <?php endif; wp_reset_postdata(); ?>
+                        </div>
+                        <div class="recent-posts_vh_pagination pt128 flex-kit jcc"></div>
+                    </div>
+                    <!--  Recent posts block end  -->
 
             <?php endforeach; ?>
-
+            </div>
         </div>
-
     </div>
     <script>
             let recent_blocks = [... document.querySelectorAll('.recent-posts_vh')],

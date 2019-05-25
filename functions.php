@@ -45,9 +45,11 @@ require get_template_directory() . '/includes/functions-nav-menu.php';
  *
  * Require Taxonomies
  *  ->Miejsca
+ *  ->Knowledge
  *
  */
-require get_template_directory() . '/includes/taxonomies/taxonomies-places.php';
+require get_template_directory() . '/includes/taxonomies/taxonomy-places.php';
+require get_template_directory() . '/includes/taxonomies/taxonomy-knowledge.php';
 /**
  * Enqueue scripts and styles.
  */

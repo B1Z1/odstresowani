@@ -16,6 +16,7 @@ class GetPosts{
         return array(
             '' => 'Nie',
             'post' => 'Artykuły',
+            'strefa-wiedzy' => 'Strefa wiedzy'
         );
     }
 
@@ -24,6 +25,7 @@ class GetPosts{
         return array(
             '' => 'Nie',
             'category' => 'Artykuły',
+            'strefa-wiedzy-kategoria' => 'Strefa wiedzy'
         );
     }
 
