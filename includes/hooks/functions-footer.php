@@ -12,7 +12,7 @@ if ( !function_exists('footer_wrapper_start') ){
 add_action('odstresowani_footer_upper_start', 'footer_upper_start', 10);
 if ( !function_exists('footer_upper_start') ){
     function footer_upper_start(){ ?>
-    <div class="l-footer__upper bck-op pt64 pb32 c-wh">
+    <div class="l-footer__upper bck-gradient--operative pt64 pb32 c-wh">
         <div class="c-container">
             <div class="row">
     <?php }

@@ -56,9 +56,16 @@
     background: $operative;
 }
 
+
 /* Background gradient */
-.bck-gradient--blue{
-    background: rgba(70,147,255,1);
-    background: linear-gradient(to bottom, rgba(70,147,255,1) 0%, rgba(0,81,195,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4693ff', endColorstr='#0051c3', GradientType=1 );
+.bck-gradient{
+    &--blue{
+        background: rgba(70,147,255,1);
+        background: linear-gradient(to bottom, rgba(70,147,255,1) 0%, rgba(0,81,195,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4693ff', endColorstr='#0051c3', GradientType=1 );
+    }
+    &--operative{
+        background: $operative;
+        background: $operative-grad;
+    }
 }

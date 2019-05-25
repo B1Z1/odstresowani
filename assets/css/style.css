@@ -100,11 +100,11 @@
 /* Operative */
 
 .c-op {
-  color: #5FA73F;
+  color: #76c250;
 }
 
 .bck-op {
-  background: #5FA73F;
+  background: #76c250;
 }
 
 /* Background gradient */
@@ -114,6 +114,11 @@
   background: -webkit-gradient(linear, left top, left bottom, from(#4693ff), to(#0051c3));
   background: linear-gradient(to bottom, #4693ff 0%, #0051c3 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4693ff', endColorstr='#0051c3', GradientType=1 );
+}
+
+.bck-gradient--operative {
+  background: #76c250;
+  background: linear-gradient(135deg, #7edb4e 0%, #6e965a 125%);
 }
 
 /*--------------> Base styles start <--------------*/
@@ -788,7 +793,7 @@ ol {
   bottom: 0;
   left: 0;
   height: 2px;
-  background: #5FA73F;
+  background: #76c250;
 }
 
 /* : Block for Genoraport page : */
@@ -1219,7 +1224,7 @@ ol {
 .recent-posts_vh_pagination > .swiper-pagination-bullet {
   width: 8px !important;
   height: 8px !important;
-  background: #5FA73F !important;
+  background: #76c250 !important;
   cursor: pointer;
   opacity: 0.25 !important;
   -webkit-transition: opacity .3s ease-in-out, -webkit-transform .3s ease-in-out;
@@ -1416,7 +1421,7 @@ ol {
   font-size: .8rem;
   line-height: 1.6rem;
   color: white;
-  background: #5FA73F;
+  background: #76c250;
   background-size: cover;
   background-position: center;
   border-radius: 50%;
@@ -1437,7 +1442,7 @@ ol {
   left: 0;
   width: 30px;
   height: 30px;
-  border: 1px solid #5FA73F;
+  border: 1px solid #76c250;
   border-radius: 50%;
   opacity: 1;
   -webkit-transform: scale(1);
@@ -1484,7 +1489,7 @@ ol {
   margin: -24px 1px 0 !important;
   width: 48px !important;
   height: 48px !important;
-  background-color: #5FA73F !important;
+  background-color: #76c250 !important;
   background-position: center;
   background-size: contain;
 }
@@ -1992,7 +1997,7 @@ _______________*/
   padding-bottom: 16px;
   padding-left: 24px;
   color: white;
-  background-color: #5FA73F;
+  background-color: #76c250;
 }
 
 .c-button__buy {
@@ -2470,7 +2475,7 @@ _______________*/
   left: calc(50% - 2px);
   width: 4px;
   height: 4px;
-  background: #5FA73F;
+  background: #76c250;
   border-radius: 50%;
   visibility: hidden;
   opacity: 0;
@@ -2502,7 +2507,7 @@ _______________*/
 }
 
 .c-link__category:hover {
-  color: #5FA73F;
+  color: #76c250;
   background: white;
 }
 
@@ -2513,7 +2518,7 @@ _______________*/
 }
 
 .c-link--catactive {
-  color: #5FA73F;
+  color: #76c250;
   background: white;
 }
 

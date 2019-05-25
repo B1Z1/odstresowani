@@ -25,7 +25,7 @@ function submenu($items, $item){
     }
     ?>
     <?php if ( !empty($children) ): ?>
-        <nav class="c-navigation c-navigation__submenu c-wh bck-op">
+        <nav class="c-navigation c-navigation__submenu c-wh bck-gradient--operative">
             <div class="c-container c-container--968">
                 <ul class="c-list mauto pt32 pb32 flex-kit">
                     <?php foreach ( $children as $child ): ?>
@@ -54,7 +54,7 @@ function submenu_category($post_type, $url, $title){
     ?>
     <li class="c-navigation__trigger c-list__element mr16 ml16">
         <a href="<?php echo $url; ?>" class="c-link c-link__circle"><?php echo $title; ?></a>
-        <nav class="c-navigation__submenu pt24 pr24 pb24 pl24 c-wh bck-op">
+        <nav class="c-navigation__submenu pt24 pr24 pb24 pl24 c-wh bck-gradient--operative">
             <div class="d-flex fwrap row">
                 <div class="ntb-col-1">
                     <div class="f-vb mr24 mt8 mb8">Kategorie</div>
@@ -64,9 +64,8 @@ function submenu_category($post_type, $url, $title){
                         <?php foreach ( $categories as $category ):
                             $title = $category->name;
                             $url = get_term_link($category->slug, $post_type);
-                            $active = ' c-link--catactive';
-                            ?>
-                            <li class="c-list__element mr16 mt8 mb8">
+                            $active = ' c-link--catactive'; ?>
+                            <li class="c-list__element mr16 mb8">
                                 <a href="<?php echo $url; ?>" class="c-link c-link__category<?php
                                 if ( is_tax($post_type, $category->slug) || is_category($category->slug) ){
                                     echo $active;
