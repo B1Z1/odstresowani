@@ -34,7 +34,7 @@ get_header();
                                 Wyślij do nas swoją wiadomość
                             </span>
                         </h3>
-                        <?php echo do_shortcode('[contact-form-7 id="55" title="Formularz"]'); ?>
+                        <?php echo do_shortcode('[contact-form-7 id="1781" title="Formularz"]'); ?>
                     </div>
                 </div>
             </section>
