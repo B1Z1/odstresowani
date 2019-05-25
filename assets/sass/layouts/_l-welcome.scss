@@ -17,11 +17,18 @@ _______________*/
         height: 100%;
         overflow: hidden;
     }
+    &__content{
+        position: relative;
+    }
+    &__image{
+        transform: translateY(55%) scale(1.5);
+        @media only screen and ( min-width: $bpoint-tab ){
+            transform: translateY(0) scale(1.5);
+        }
+    }
 }
 
 /* ---> : Layout Modificators Start : <--- */
 .l-welcome{
-    &--scale{
-        transform: scale(1.5);
-    }
+
 }

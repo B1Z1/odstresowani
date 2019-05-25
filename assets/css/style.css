@@ -2117,12 +2117,16 @@ _______________*/
   overflow: hidden;
 }
 
-/* ---> : Layout Modificators Start : <--- */
-
-.l-welcome--scale {
-  -webkit-transform: scale(1.5);
-  transform: scale(1.5);
+.l-welcome__content {
+  position: relative;
 }
+
+.l-welcome__image {
+  -webkit-transform: translateY(55%) scale(1.5);
+  transform: translateY(55%) scale(1.5);
+}
+
+/* ---> : Layout Modificators Start : <--- */
 
 /* --> : Components Start : <-- */
 
@@ -2974,6 +2978,11 @@ _______________*/
     max-width: 100%;
   }
 
+  .l-welcome__image {
+    -webkit-transform: translateY(0) scale(1.5);
+    transform: translateY(0) scale(1.5);
+  }
+
   .c-link__share {
     margin-right: 16px;
     margin-left: 16px;
@@ -3640,11 +3649,6 @@ _______________*/
   .prop-slider_pagination__el {
     margin-right: 0;
     margin-left: 0;
-  }
-
-  .recent-posts_nav__el {
-    margin-top: 8px;
-    margin-bottom: 8px;
   }
 
   .recent-posts_s496 {

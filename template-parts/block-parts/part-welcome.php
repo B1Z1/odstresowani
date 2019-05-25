@@ -7,7 +7,7 @@ $link = $block['link'];
 <section class="l-welcome">
     <div class="bck-gm">
         <div class="l-welcome__phone ntb-col-6">
-            <img src="<?php echo $image ?>" class="l-welcome--scale c-image" alt="Odstresowani Welcom Blog">
+            <img src="<?php echo $image ?>" class="l-welcome__image c-image" alt="Odstresowani Welcom Blog">
         </div>
         <div class="l-welcome__content">
             <div class="c-container">
