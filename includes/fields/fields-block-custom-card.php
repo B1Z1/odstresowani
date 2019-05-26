@@ -18,7 +18,7 @@ if ( !function_exists('crb_register_custom_card') ){
                     ->add_fields(array(
                         Field::make('image', 'image', __('Dodaj zdjęcie')),
                         Field::make('text', 'title', __('Wpisz tytuł')),
-                        Field::make('text', 'link', __('Wstaw link'))
+                        Field::make('text', 'url', __('Wstaw link'))
                     ))
                     ->set_max( 2 )
             ))

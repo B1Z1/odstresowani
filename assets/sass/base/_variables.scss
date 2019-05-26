@@ -17,7 +17,7 @@ $directions: (
     ('r', '-right'), 
     ('b', '-bottom'), 
     ('l', '-left')
-);
+);  
 
 /* ---> : BreakPoints : <--- */
 $bpoint-full: 1600px;
@@ -27,8 +27,8 @@ $bpoint-tab: 426px;
 /* ---> : Colors : <--- */
 $black: black;
 $white: white;
-$operative: #76c250;
-$operative-grad: linear-gradient(135deg, rgba(126,219,78,1) 0%, rgba(110,150,90,1) 125%);
+$operative: #6bad4a;
+$operative-grad: linear-gradient(135deg, rgb(113, 197, 71) 0%, rgba(110,150,90,1) 125%);
 $grey-main: #F8F8F8;
 $grey-secondary: #DFE0DE;
 $grey-tertiary: #B9B9B9;
