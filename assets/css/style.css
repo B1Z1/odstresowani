@@ -2633,6 +2633,66 @@ _______________*/
 
 /* Include paddings/margins */
 
+.p8 {
+  padding: 8px;
+}
+
+.pt8 {
+  padding-top: 8px;
+}
+
+.pr8 {
+  padding-right: 8px;
+}
+
+.pb8 {
+  padding-bottom: 8px;
+}
+
+.pl8 {
+  padding-left: 8px;
+}
+
+.p16 {
+  padding: 16px;
+}
+
+.pt16 {
+  padding-top: 16px;
+}
+
+.pr16 {
+  padding-right: 16px;
+}
+
+.pb16 {
+  padding-bottom: 16px;
+}
+
+.pl16 {
+  padding-left: 16px;
+}
+
+.p24 {
+  padding: 24px;
+}
+
+.pt24 {
+  padding-top: 24px;
+}
+
+.pr24 {
+  padding-right: 24px;
+}
+
+.pb24 {
+  padding-bottom: 24px;
+}
+
+.pl24 {
+  padding-left: 24px;
+}
+
 .p32 {
   padding: 25.6px;
 }
@@ -2731,6 +2791,66 @@ _______________*/
 
 .pl224 {
   padding-left: 179.2px;
+}
+
+.m8 {
+  margin: 8px;
+}
+
+.mt8 {
+  margin-top: 8px;
+}
+
+.mr8 {
+  margin-right: 8px;
+}
+
+.mb8 {
+  margin-bottom: 8px;
+}
+
+.ml8 {
+  margin-left: 8px;
+}
+
+.m16 {
+  margin: 16px;
+}
+
+.mt16 {
+  margin-top: 16px;
+}
+
+.mr16 {
+  margin-right: 16px;
+}
+
+.mb16 {
+  margin-bottom: 16px;
+}
+
+.ml16 {
+  margin-left: 16px;
+}
+
+.m24 {
+  margin: 24px;
+}
+
+.mt24 {
+  margin-top: 24px;
+}
+
+.mr24 {
+  margin-right: 24px;
+}
+
+.mb24 {
+  margin-bottom: 24px;
+}
+
+.ml24 {
+  margin-left: 24px;
 }
 
 .m32 {
@@ -2944,66 +3064,6 @@ _______________*/
     padding-left: 48px;
   }
 
-  .p8 {
-    padding: 8px;
-  }
-
-  .pt8 {
-    padding-top: 8px;
-  }
-
-  .pr8 {
-    padding-right: 8px;
-  }
-
-  .pb8 {
-    padding-bottom: 8px;
-  }
-
-  .pl8 {
-    padding-left: 8px;
-  }
-
-  .p16 {
-    padding: 16px;
-  }
-
-  .pt16 {
-    padding-top: 16px;
-  }
-
-  .pr16 {
-    padding-right: 16px;
-  }
-
-  .pb16 {
-    padding-bottom: 16px;
-  }
-
-  .pl16 {
-    padding-left: 16px;
-  }
-
-  .p24 {
-    padding: 24px;
-  }
-
-  .pt24 {
-    padding-top: 24px;
-  }
-
-  .pr24 {
-    padding-right: 24px;
-  }
-
-  .pb24 {
-    padding-bottom: 24px;
-  }
-
-  .pl24 {
-    padding-left: 24px;
-  }
-
   .p32 {
     padding: 32px;
   }
@@ -3102,66 +3162,6 @@ _______________*/
 
   .pl224 {
     padding-left: 224px;
-  }
-
-  .m8 {
-    margin: 8px;
-  }
-
-  .mt8 {
-    margin-top: 8px;
-  }
-
-  .mr8 {
-    margin-right: 8px;
-  }
-
-  .mb8 {
-    margin-bottom: 8px;
-  }
-
-  .ml8 {
-    margin-left: 8px;
-  }
-
-  .m16 {
-    margin: 16px;
-  }
-
-  .mt16 {
-    margin-top: 16px;
-  }
-
-  .mr16 {
-    margin-right: 16px;
-  }
-
-  .mb16 {
-    margin-bottom: 16px;
-  }
-
-  .ml16 {
-    margin-left: 16px;
-  }
-
-  .m24 {
-    margin: 24px;
-  }
-
-  .mt24 {
-    margin-top: 24px;
-  }
-
-  .mr24 {
-    margin-right: 24px;
-  }
-
-  .mb24 {
-    margin-bottom: 24px;
-  }
-
-  .ml24 {
-    margin-left: 24px;
   }
 
   .m32 {
