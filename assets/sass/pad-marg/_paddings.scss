@@ -3,11 +3,12 @@
         .p#{$direction-name}#{$gutter}{
             @if ( $gutter-tab ){
                 padding#{$direction}: #{$gutter-tab}px;
+                @media only screen and ( min-width: 768px ) {
+                    padding#{$direction}: #{$gutter}px;
+                }
             }
-            @media only screen and ( min-width: 768px ) {
-                &{
-                    padding#{$direction}: #{$gutter}px;                    
-                }                
+            @else{
+                padding#{$direction}: #{$gutter}px;
             }
         }
     }
