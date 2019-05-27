@@ -611,21 +611,6 @@ ol {
   opacity: .7;
 }
 
-/* : Filter gradient : */
-
-.filter-grad--black {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 125px;
-  background: -webkit-gradient(linear, left bottom, left top, from(black), to(rgba(231, 56, 39, 0)));
-  background: linear-gradient(to top, black 0%, rgba(231, 56, 39, 0) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#e73827', GradientType=1 );
-  opacity: .75;
-  z-index: 1;
-}
-
 /* : Video filter : */
 
 .filter-video {
