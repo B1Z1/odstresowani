@@ -151,7 +151,7 @@ if ( !function_exists('nav_mobile') ) {
 
                                 <?php endforeach; ?>
                         <?php else: ?>
-                            <li class="c-list__element">
+                            <li class="c-list__element mb16">
                                 <a href="<?php echo $url; ?>" class="c-link"><?php echo $title; ?></a>
                             </li>
                         <?php endif; ?>

@@ -274,7 +274,9 @@ body {
   box-sizing: border-box;
 }
 
-* {
+*,
+*::after,
+*::before {
   -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
@@ -1508,12 +1510,10 @@ _______________*/
   top: 0;
   left: 0;
   right: 0;
-  margin-right: 16px;
-  margin-left: 16px;
   padding-top: 32px;
-  padding-right: 24px;
+  padding-right: 40px;
   padding-bottom: 16px;
-  padding-left: 24px;
+  padding-left: 40px;
   z-index: 9999;
   -webkit-transition: background-color .6s ease-in-out;
   transition: background-color .6s ease-in-out;
@@ -2412,6 +2412,11 @@ _______________*/
 
 /* ---> : Component Modificators Start : <--- */
 
+.c-list--tabcol2 {
+  -webkit-columns: 2;
+  columns: 2;
+}
+
 /*_________________________
 
 Component List Start
@@ -2572,6 +2577,163 @@ _______________*/
   max-width: 100%;
   padding-right: 16px;
   padding-left: 16px;
+}
+
+/*_________________________
+
+Component Form Start
+
+_______________*/
+
+/* ---> : Element of Component : <--- */
+
+.c-form__calendar .wpbc_booking_form_structure .alert {
+  display: inline-block;
+  margin-top: 16px !important;
+  margin-left: 0 !important;
+}
+
+.c-form__calendar .wpbc_booking_form_structure .btn {
+  padding-top: 16px;
+  padding-right: 64px;
+  padding-bottom: 16px;
+  padding-left: 64px;
+  color: white;
+  background-color: #0052c3;
+}
+
+.c-form__calendar .wpbc_booking_form_structure div[style="font-size:9px;text-align:left;margin-top:3px;"] {
+  display: none !important;
+}
+
+.c-form__calendar .wpbc_booking_form_structure .bk_calendar_frame {
+  width: 100% !important;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.c-form__calendar .wpbc_booking_form_structure .calendar-links {
+  background: linear-gradient(135deg, #0052c3 0%, #002962 100%) !important;
+}
+
+.c-form__calendar .wpbc_booking_form_structure .date2approve {
+  background: #0052c3 !important;
+}
+
+.c-form__calendar .wpbc_booking_form_structure .datepick-header *,
+.c-form__calendar .wpbc_booking_form_structure .datepick-prev *,
+.c-form__calendar .wpbc_booking_form_structure .datepick-next *,
+.c-form__calendar .wpbc_booking_form_structure .date2approve * {
+  color: white !important;
+}
+
+.c-form__calendar .wpbc_booking_form_structure .wpbc_structure_calendar {
+  position: relative;
+  width: 100%;
+}
+
+.c-form__calendar .wpbc_booking_form_structure .wpbc_structure_form {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 32px;
+}
+
+.c-form__calendar .wpbc_booking_form_structure .form-group {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.c-form__calendar .wpbc_booking_form_structure .form-group:nth-child(5),
+.c-form__calendar .wpbc_booking_form_structure .form-group:last-child {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.c-form__calendar .wpbc_booking_form_structure .form-group:nth-child(5) textarea,
+.c-form__calendar .wpbc_booking_form_structure .form-group:last-child textarea {
+  resize: none;
+}
+
+.c-form__calendar .wpbc_booking_form_structure .form-group:last-child {
+  text-align: center;
+}
+
+.c-form__calendar .wpbc_booking_form_structure .form-group .input-xlarge {
+  -webkit-box-sizing: border-box !important;
+  box-sizing: border-box !important;
+  color: inherit;
+  background: inherit;
+  border: inherit;
+  outline: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  width: 100%;
+  padding-top: 24px;
+  padding-right: 32px;
+  padding-bottom: 24px;
+  padding-left: 32px;
+  font-size: 1rem;
+  border: 1px solid #DFE0DE;
+  color: #DFE0DE;
+  background-color: white;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.c-form__calendar .wpbc_booking_form_structure .form-group .input-xlarge::-webkit-input-placeholder {
+  color: #DFE0DE;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.c-form__calendar .wpbc_booking_form_structure .form-group .input-xlarge:-ms-input-placeholder {
+  color: #DFE0DE;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.c-form__calendar .wpbc_booking_form_structure .form-group .input-xlarge::-ms-input-placeholder {
+  color: #DFE0DE;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.c-form__calendar .wpbc_booking_form_structure .form-group .input-xlarge::placeholder {
+  color: #DFE0DE;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.c-form__calendar .wpbc_booking_form_structure .form-group .input-xlarge:focus::-webkit-input-placeholder,
+.c-form__calendar .wpbc_booking_form_structure .form-group .input-xlarge:focus {
+  color: #B9B9B9;
+}
+
+.c-form__calendar .wpbc_booking_form_structure .form-group .input-xlarge:focus:-ms-input-placeholder,
+.c-form__calendar .wpbc_booking_form_structure .form-group .input-xlarge:focus {
+  color: #B9B9B9;
+}
+
+.c-form__calendar .wpbc_booking_form_structure .form-group .input-xlarge:focus::-ms-input-placeholder,
+.c-form__calendar .wpbc_booking_form_structure .form-group .input-xlarge:focus {
+  color: #B9B9B9;
+}
+
+.c-form__calendar .wpbc_booking_form_structure .form-group .input-xlarge:focus::placeholder,
+.c-form__calendar .wpbc_booking_form_structure .form-group .input-xlarge:focus {
+  color: #B9B9B9;
 }
 
 /* --> Resets or colors UI <-- */
@@ -3636,13 +3798,6 @@ _______________*/
   .c-navigation__mobile {
     right: -100vw;
     width: 100vw;
-  }
-
-  /* ---> : Component Modificators Start : <--- */
-
-  .c-list--tabcol2 {
-    -webkit-columns: 2;
-    columns: 2;
   }
 
   /* --> : Component Modificators : <-- */

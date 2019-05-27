@@ -53,7 +53,6 @@ window.onload = function(){
                 'close': document.querySelector('.c-navigation__close'),
                 'open': document.querySelector('.c-hamburger'),
             };
-            
         return {
             'mobileList': function(){ 
                 if ( header && header_mobilenav){
@@ -121,7 +120,7 @@ window.onload = function(){
         function mobileList(nav, buttons){
             let close = buttons.close,
                 open = buttons.open;
-
+        
             open.addEventListener('click', function(){
                 Mclass.containClass('c-navigation--mobactive', nav) ? Mclass.removeClass('c-navigation--mobactive', nav) :
                                                                        Mclass.addClass('c-navigation--mobactive', nav); 

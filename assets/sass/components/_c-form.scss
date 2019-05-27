@@ -1,0 +1,79 @@
+/*_________________________
+
+Component Form Start
+
+_______________*/
+
+.c-form{
+
+}
+
+/* ---> : Element of Component : <--- */
+.c-form{
+    &__calendar{
+        & .wpbc_booking_form_structure{
+            & .alert{
+                display: inline-block;
+                margin-top: 16px!important;
+                margin-left: 0!important;
+            }
+            & .btn{
+                padding-top: 16px;
+                padding-right: 64px;
+                padding-bottom: 16px;
+                padding-left: 64px;
+                color: $white;
+                background-color: $operative;
+            }
+            & div[style="font-size:9px;text-align:left;margin-top:3px;"]{
+                display: none!important;
+            }
+            & .bk_calendar_frame{
+                width: 100%!important;
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+            & .calendar-links{
+                background: $operative-grad!important;
+            }
+            & .date2approve{
+                background: $operative!important;
+            }
+            & .datepick-header *, & .datepick-prev *, & .datepick-next *, & .date2approve *{
+                color: $white!important;
+            }
+            & .wpbc_structure_calendar{
+                position: relative;
+                width: 100%;
+            }
+            & .wpbc_structure_form{
+                position: relative;
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                margin-top: 32px;
+            }
+            & .form-group{
+                flex: 0 0 50%;
+                max-width: 50%;
+                padding-left: 16px;
+                padding-right: 16px;
+                &:nth-child(5), &:last-child{
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                    & textarea{
+                        resize: none;
+                    }
+                }
+                &:last-child{
+                    text-align: center;
+                }
+                & .input-xlarge{
+                    box-sizing: border-box!important;
+                    @include input-reset();
+                    @include input-textarea-classic();
+                }
+            }
+        }
+    }
+}
