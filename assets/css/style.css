@@ -100,11 +100,11 @@
 /* Operative */
 
 .c-op {
-  color: #6bad4a;
+  color: #0052c3;
 }
 
 .bck-op {
-  background: #6bad4a;
+  background: #0052c3;
 }
 
 /* Background gradient */
@@ -117,8 +117,8 @@
 }
 
 .bck-gradient--operative {
-  background: #6bad4a;
-  background: linear-gradient(135deg, #71c547 0%, #6e965a 125%);
+  background: #0052c3;
+  background: linear-gradient(135deg, #0052c3 0%, #002962 100%);
 }
 
 /*--------------> Base styles start <--------------*/
@@ -793,7 +793,7 @@ ol {
   bottom: 0;
   left: 0;
   height: 2px;
-  background: #6bad4a;
+  background: #0052c3;
 }
 
 /* : Block for Genoraport page : */
@@ -1224,7 +1224,7 @@ ol {
 .recent-posts_vh_pagination > .swiper-pagination-bullet {
   width: 8px !important;
   height: 8px !important;
-  background: #6bad4a !important;
+  background: #0052c3 !important;
   cursor: pointer;
   opacity: 0.25 !important;
   -webkit-transition: opacity .3s ease-in-out, -webkit-transform .3s ease-in-out;
@@ -1421,7 +1421,7 @@ ol {
   font-size: .8rem;
   line-height: 1.6rem;
   color: white;
-  background: #6bad4a;
+  background: #0052c3;
   background-size: cover;
   background-position: center;
   border-radius: 50%;
@@ -1442,7 +1442,7 @@ ol {
   left: 0;
   width: 30px;
   height: 30px;
-  border: 1px solid #6bad4a;
+  border: 1px solid #0052c3;
   border-radius: 50%;
   opacity: 1;
   -webkit-transform: scale(1);
@@ -1489,7 +1489,7 @@ ol {
   margin: -24px 1px 0 !important;
   width: 48px !important;
   height: 48px !important;
-  background-color: #6bad4a !important;
+  background-color: #0052c3 !important;
   background-position: center;
   background-size: contain;
 }
@@ -1997,7 +1997,7 @@ _______________*/
   padding-bottom: 16px;
   padding-left: 24px;
   color: white;
-  background-color: #6bad4a;
+  background-color: #0052c3;
 }
 
 .c-button__buy {
@@ -2475,7 +2475,7 @@ _______________*/
   left: calc(50% - 2px);
   width: 4px;
   height: 4px;
-  background: #6bad4a;
+  background: #0052c3;
   border-radius: 50%;
   visibility: hidden;
   opacity: 0;
@@ -2507,7 +2507,7 @@ _______________*/
 }
 
 .c-link__category:hover {
-  color: #6bad4a;
+  color: #0052c3;
   background: white;
 }
 
@@ -2518,7 +2518,7 @@ _______________*/
 }
 
 .c-link--catactive {
-  color: #6bad4a;
+  color: #0052c3;
   background: white;
 }
 
