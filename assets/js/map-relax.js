@@ -89,7 +89,6 @@ class OdstresowaniMap{
             description = data.description,
             image = data.image,
             phone = data.phone,
-            full_adress = data.full_adress,
             link = data.link;
 
         switch (type){
@@ -109,12 +108,14 @@ class OdstresowaniMap{
      */
     popUpTemplateNormal(title, description, link, image){
         return `<div class="maps-popup d-flex">
-                    <div class="mbl-col-5 reset">
-                        ${ image ? `<div class="maps-popup__image" style="background-image: url(${image});"></div>`: '' }
-                    </div>
-                    <div class="mbl-col-7">
+                    ${image ? `
+                        <div class="mbl-col-5 reset">
+                            <div class="maps-popup__image" style="background-image: url(${image});"></div>
+                        </div>`
+                    :''}
+                    <div class="${image ? `mbl-col-7`: `mbl-col-12` }">
                         <h5 class="reset-top mb8 f-vb"><a ${ link ? `href="${link}"` : '' } class="c-link c-link--tdu">${title}</a></h5>
-                        ${description}
+                        ${description ? description : ''}
                     </div>
                 </div>`;
     }

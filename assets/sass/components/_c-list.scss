@@ -19,11 +19,20 @@ _______________*/
 
 /* --> : Component Elements : <-- */
 .c-list{
+
 }
 
 /* ---> : Component Modificators Start : <--- */
 .c-list{
     &--tabcol2{
         columns: 2;
+    }
+    &--restb{
+        li:first-child{
+            margin-top: inherit;
+        }
+        li:last-child{
+            margin-bottom: inherit;
+        }
     }
 }

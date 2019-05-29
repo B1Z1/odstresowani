@@ -2417,6 +2417,14 @@ _______________*/
   columns: 2;
 }
 
+.c-list--restb li:first-child {
+  margin-top: inherit;
+}
+
+.c-list--restb li:last-child {
+  margin-bottom: inherit;
+}
+
 /*_________________________
 
 Component List Start
