@@ -132,7 +132,7 @@ function () {
   }, {
     key: "popUpTemplateNormal",
     value: function popUpTemplateNormal(title, description, link, image) {
-      return "<div class=\"maps-popup d-flex\">\n                    ".concat(image ? "\n                        <div class=\"mbl-col-5 reset\">\n                            <div class=\"maps-popup__image\" style=\"background-image: url(".concat(image, ");\"></div>\n                        </div>") : '', "\n                    <div class=\"").concat(image ? "mbl-col-7" : "mbl-col-12", "\">\n                        <h5 class=\"reset-top mb8 f-vb\"><a ").concat(link ? "href=\"".concat(link, "\"") : '', " class=\"c-link c-link--tdu\">").concat(title, "</a></h5>\n                        ").concat(description ? description : '', "\n                    </div>\n                </div>");
+      return "<div class=\"maps-popup d-flex\">\n                    ".concat(image ? "\n                        <div class=\"mbl-col-5 reset\">\n                            <div class=\"maps-popup__image\" style=\"background-image: url(".concat(image, ");\"></div>\n                        </div>") : '', "\n                    <div class=\"").concat(image ? "mbl-col-7" : "mbl-col-12 c-text--center", "\">\n                        <h5 class=\"reset-top mb8 f-vb\"><a ").concat(link && description ? "href=\"".concat(link, "\"") : '', " class=\"c-link c-link--tdu\">").concat(title, "</a></h5>\n                        ").concat(description ? description : '', "\n                    </div>\n                </div>");
     }
     /**
      * 

@@ -19,6 +19,7 @@ if ( !function_exists('crb_register_block_post_banner') ){
                     ->set_options( array(
                         'small' => 'Mały',
                         'full' => 'Duży',
+                        '2xfull' => 'Podwójnie Duży'
                     ))
                     ->set_default_value('small'),
                 Field::make('checkbox', 'banner_type', __('Czy to jest gif?'))

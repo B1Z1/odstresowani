@@ -26,6 +26,9 @@ _______________*/
 
 /* --> : Component Modificators : <-- */
 .l-pubimage{
+    &--2xfull{
+        height: 160vh;
+    }
     &--full {
         height: 80vh;
     }

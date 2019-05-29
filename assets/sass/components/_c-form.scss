@@ -24,6 +24,12 @@ _______________*/
                 padding-left: 64px;
                 color: $white;
                 background-color: $operative;
+                transition: opacity .3s ease-in-out;
+                &:hover{
+                    opacity: .7;
+                    background-color: $operative;
+                    color: $white;
+                }
             }
             & div[style="font-size:9px;text-align:left;margin-top:3px;"]{
                 display: none!important;

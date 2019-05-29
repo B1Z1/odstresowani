@@ -1589,6 +1589,10 @@ _______________*/
 
 /* --> : Component Modificators : <-- */
 
+.l-pubimage--2xfull {
+  height: 160vh;
+}
+
 .l-pubimage--full {
   height: 80vh;
 }
@@ -2608,6 +2612,14 @@ _______________*/
   padding-left: 64px;
   color: white;
   background-color: #0052c3;
+  -webkit-transition: opacity .3s ease-in-out;
+  transition: opacity .3s ease-in-out;
+}
+
+.c-form__calendar .wpbc_booking_form_structure .btn:hover {
+  opacity: .7;
+  background-color: #0052c3;
+  color: white;
 }
 
 .c-form__calendar .wpbc_booking_form_structure div[style="font-size:9px;text-align:left;margin-top:3px;"] {
