@@ -60,7 +60,7 @@ function submenu_category($post_type, $url, $title){
                     <div class="f-vb mr24 mt8 mb8">Kategorie</div>
                 </div>
                 <div class="ntb-col-9">
-                    <ul class="c-list c-list--restb header-menu__list flex-kit fwrap">
+                    <ul class="c-list header-menu__list d-flex fwrap">
                         <?php foreach ( $categories as $category ):
                             $title = $category->name;
                             $url = get_term_link($category->slug, $post_type);
@@ -125,7 +125,7 @@ if ( !function_exists('nav_mobile') ) {
                     <?php $close_button = carbon_get_theme_option('general_close_button'); ?>
                     <img src="<?php echo wp_get_attachment_image_src($close_button, 'full')[0]; ?>" class="c-image" alt="Close button">
                 </div>
-                <ul class="c-list c-list--restb c-list--tabcol2">
+                <ul class="c-list c-list--tabcol2">
                     <?php foreach ($pages as $page):
                         $url = $page['url'];
                         $title = $page['title'];
