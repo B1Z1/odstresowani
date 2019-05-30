@@ -60,10 +60,14 @@ _______________*/
                 margin-top: 32px;
             }
             & .form-group{
-                flex: 0 0 50%;
-                max-width: 50%;
+                flex: 0 0 100%;
+                max-width: 100%;
                 padding-left: 16px;
                 padding-right: 16px;
+                @media only screen and ( min-width: $bpoint-ntb ){
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                }
                 &:nth-child(5), &:last-child{
                     flex: 0 0 100%;
                     max-width: 100%;
