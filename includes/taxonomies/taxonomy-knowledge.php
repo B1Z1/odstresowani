@@ -54,6 +54,6 @@ register_taxonomy('strefa-wiedzy-kategoria', array('strefa-wiedzy'), array(
     'public'                => true,
     'publicly_queryable'    => true, // равен аргументу public
     'show_in_rest'          => true, // добавить в REST API
-    'hierarchical'          => false,
+    'hierarchical'          => true,
     'rewrite'               => true,
 ) );

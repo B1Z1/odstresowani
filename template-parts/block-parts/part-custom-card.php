@@ -7,7 +7,7 @@ $card_list = $block['list'];
 <div class="c-container">
     <div class="row">
         <div class="mt64">
-            <div class="d-flex fwrap">
+            <div class="d-flex jcc fwrap">
                 <?php foreach ( $card_list as $card ):
                     $args = [
                         'title' => $card['title'],
@@ -16,7 +16,9 @@ $card_list = $block['list'];
                     ];
                     ?>
                     <div class="ntb-col-6">
-                        <?php do_action('post_card_mini', $args); ?>
+                        <div class="mb64">
+                            <?php do_action('post_card_mini', $args); ?>
+                        </div>
                     </div>
                 <?php endforeach; ?>
             </div>

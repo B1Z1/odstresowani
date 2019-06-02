@@ -54,6 +54,6 @@ register_taxonomy('aktualnosci-kategoria', array('aktualnosci'), array(
     'public'                => true,
     'publicly_queryable'    => true, // равен аргументу public
     'show_in_rest'          => true, // добавить в REST API
-    'hierarchical'          => false,
+    'hierarchical'          => true,
     'rewrite'               => true,
 ) );

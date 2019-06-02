@@ -14,7 +14,15 @@
 
 get_header();
 $cat_object = get_queried_object();
-$cat_image = carbon_get_term_meta($cat_object->term_id, 'category_image');
+
+$cat_check = carbon_get_term_meta($cat_object->term_id, 'category_check');
+if ( $cat_check === 'film' ){
+    $cat_file = wp_get_attachment_url(carbon_get_term_meta($cat_object->term_id, 'category_video'));
+}
+else{
+    $cat_file = wp_get_attachment_image_src(carbon_get_term_meta($cat_object->term_id, 'category_image'), 'full')[0];
+}
+
 $cat_title = $cat_object->name;
 $cat_describe = $cat_object->category_description;
 
@@ -28,18 +36,27 @@ $cat_describe = $cat_object->category_description;
         <main class="main">
 
             <!-- Hero banner start -->
-            <section class="hero hero--backcenter c-wh mb64" <?php if ( $cat_image ): ?>
-                                            style="background-image: url( <?php echo wp_get_attachment_image_src($cat_image, 'full')[0]; ?>)"
-                                            <?php endif; ?>>
-                <div class="filter-back bck-blck"></div>
-                <div class="hero__content">
-                    <div class="c-container">
-                        <?php if ( strlen($cat_title) > 0 ): ?>
-                            <h3 class="reset-top f-san"><?php echo $cat_title; ?></h3>
-                        <?php endif; ?>
-                        <?php if ( strlen($cat_describe) > 0 ): ?>
-                            <h1 class="reset"><?php echo $cat_describe; ?></h1>
-                        <?php endif; ?>
+            <section class="hero hero--backcenter c-wh mb64" <?php if ( $cat_check === 'image' ): ?>
+                                                                style="background-image: url( <?php echo $cat_file; ?> )"
+                                                                <?php endif; ?>>
+                    <div class="filter-back filter--zmax bck-blck"></div>                    
+                    <?php if ( $cat_check == 'film' ): ?>
+
+                        <video class="filter filter-video" muted autoplay loop>
+                            <source src="<?php echo $cat_file; ?>" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+
+                    <?php endif; ?>
+                    <div class="hero__content">
+                        <div class="c-container">
+                            <?php if ( strlen($cat_title) > 0 ): ?>
+                                <h3 class="reset-top f-san"><?php echo $cat_title; ?></h3>
+                            <?php endif; ?>
+                            <?php if ( strlen($cat_describe) > 0 ): ?>
+                                <h1 class="reset"><?php echo $cat_describe; ?></h1>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 </div>
             </section>

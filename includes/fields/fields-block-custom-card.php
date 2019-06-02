@@ -20,7 +20,6 @@ if ( !function_exists('crb_register_custom_card') ){
                         Field::make('text', 'title', __('Wpisz tytuł')),
                         Field::make('text', 'url', __('Wstaw link'))
                     ))
-                    ->set_max( 2 )
             ))
             ->set_render_callback(function ($block) {
                 include(locate_template('template-parts/block-parts/part-custom-card.php',false, false) );

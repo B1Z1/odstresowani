@@ -15,14 +15,109 @@ if ( !function_exists('crb_register_term_category') ){
             ->where( 'term_taxonomy', '=', 'category' )
             ->add_fields( array(
                 Field::make( 'image', 'category_sygnet', __( 'Sygnet kategorii' ) ),
-                Field::make( 'image', 'category_image', __( 'Obraz kategorii' ) ),
-                Field::make('color', 'category_color', __('Kolor kategorii')),
-                Field::make('text', 'category_top', __('Wpisz pozycje kategorii według osiY w procentach (Max: 100%)'))
-                    ->set_attribute('type', 'number')
-                    ->set_attribute('max', 100),
-                Field::make('text', 'category_left', __('Wpisz pozycje kategorii według osiX w procentach (Max: 100%)'))
-                    ->set_attribute('type', 'number')
-                    ->set_attribute('max', 100),
+                Field::make('select', 'category_check', __('Wybierz typ filu'))
+                    ->add_options(array(
+                        'film' => 'Filmik',
+                        'image' => 'Obraz'
+                    )),
+                Field::make('image', 'category_image', __('Wybierz Obrazek'))
+                    ->set_conditional_logic(array(
+                        'relation' => 'AND',
+                        array(
+                            'field' => 'category_check',
+                            'value' => 'image',
+                            'compare' => '='
+                        )
+                    )),
+                Field::make( 'file', 'category_video', __( 'Wybierz filmik' ) )
+                    ->set_conditional_logic(array(
+                        'relation' => 'AND',
+                        array(
+                            'field' => 'category_check',
+                            'value' => 'film',
+                            'compare' => '='
+                        )
+                    )),
+            ) );
+    }
+}
+
+/**
+ *
+ * Term taxonomy = Category Knowledge Zone
+ *
+ *
+ */
+add_action( 'carbon_fields_register_fields', 'crb_register_term_knowledge', 10 );
+if ( !function_exists('crb_register_term_knowledge') ){
+    function crb_register_term_knowledge(){
+        Container::make( 'term_meta', __( 'Category Properties' ) )
+            ->where( 'term_taxonomy', '=', 'strefa-wiedzy-kategoria' )
+            ->add_fields( array(
+                Field::make( 'image', 'category_sygnet', __( 'Sygnet kategorii' ) ),
+                Field::make('select', 'category_check', __('Wybierz typ filu'))
+                    ->add_options(array(
+                        'film' => 'Filmik',
+                        'image' => 'Obraz'
+                    )),
+                Field::make('image', 'category_image', __('Wybierz Obrazek'))
+                    ->set_conditional_logic(array(
+                        'relation' => 'AND',
+                        array(
+                            'field' => 'category_check',
+                            'value' => 'image',
+                            'compare' => '='
+                        )
+                    )),
+                Field::make( 'file', 'category_video', __( 'Wybierz filmik' ) )
+                    ->set_conditional_logic(array(
+                        'relation' => 'AND',
+                        array(
+                            'field' => 'category_check',
+                            'value' => 'film',
+                            'compare' => '='
+                        )
+                    )),
+            ) );
+    }
+}
+
+/**
+ *
+ * Term taxonomy = Category Actual
+ *
+ *
+ */
+add_action( 'carbon_fields_register_fields', 'crb_register_term_actual', 10 );
+if ( !function_exists('crb_register_term_actual') ){
+    function crb_register_term_actual(){
+        Container::make( 'term_meta', __( 'Category Properties' ) )
+            ->where( 'term_taxonomy', '=', 'aktualnosci-kategoria' )
+            ->add_fields( array(
+                Field::make( 'image', 'category_sygnet', __( 'Sygnet kategorii' ) ),
+                Field::make('select', 'category_check', __('Wybierz typ filu'))
+                    ->add_options(array(
+                        'film' => 'Filmik',
+                        'image' => 'Obraz'
+                    )),
+                Field::make('image', 'category_image', __('Wybierz Obrazek'))
+                    ->set_conditional_logic(array(
+                        'relation' => 'AND',
+                        array(
+                            'field' => 'category_check',
+                            'value' => 'image',
+                            'compare' => '='
+                        )
+                    )),
+                Field::make( 'file', 'category_video', __( 'Wybierz filmik' ) )
+                    ->set_conditional_logic(array(
+                        'relation' => 'AND',
+                        array(
+                            'field' => 'category_check',
+                            'value' => 'film',
+                            'compare' => '='
+                        )
+                    )),
             ) );
     }
 }

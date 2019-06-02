@@ -14,7 +14,16 @@
 
 get_header();
 $cat = get_queried_object();
-$cat_image = wp_get_attachment_image_src(carbon_get_term_meta($cat->term_id, 'category_image'), 'full')[0];
+
+$cat_check = carbon_get_term_meta($cat_object->term_id, 'category_check');
+
+if ( $cat_check === 'film' ){
+    $cat_file = wp_get_attachment_url(carbon_get_term_meta($cat->term_id, 'category_video'));
+}
+else{
+    $cat_file = wp_get_attachment_image_src(carbon_get_term_meta($cat->term_id, 'category_image'), 'full')[0];
+}
+
 ?>
 
     <div class="c-wrapper">
@@ -26,8 +35,18 @@ $cat_image = wp_get_attachment_image_src(carbon_get_term_meta($cat->term_id, 'ca
     <main class="main">
 
         <!-- Hero banner start -->
-        <section class="hero hero--backcenter c-wh mb64" <?php if ( $cat_image ): ?>style="background-image: url( <?php echo $cat_image; ?> )"<?php endif; ?>>
-            <div class="filter-back bck-blck"></div>
+        <section class="hero hero--backcenter c-wh mb64" <?php if ( $cat_check === 'image' ): ?>
+                                                        style="background-image: url( <?php echo $cat_file; ?> )"
+                                                        <?php endif; ?>>
+            <div class="filter-back filter--zmax bck-blck"></div>
+            <?php if ( $cat_check == 'film' ): ?>
+
+                <video class="filter filter-video" muted autoplay loop>
+                    <source src="<?php echo $cat_file; ?>" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+            <?php endif; ?>
             <div class="hero__content">
                 <div class="c-container">
                     <h3 class="reset-top f-san"><?php echo single_cat_title(); ?></h3>
