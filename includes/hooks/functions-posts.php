@@ -10,9 +10,15 @@ if ( !function_exists( 'post_get_cat' ) ) {
         $post_term = '';
         $pll_id = pll_get_term(get_the_ID());
 
-        // switch ($post_type){
-        //     //If ever have added new post type, add this here
-        // }
+        switch ($post_type){
+            //If ever have added new post type, add this here
+            case 'news': 
+                $post_term = $post_type . '-kategoria';
+            break;
+            case 'strefa-wiedzy': 
+                $post_term = $post_type . '-kategoria';
+            break;
+        }
 
         if ( $post_term != '' ){
             $post_cat = get_the_terms($pll_id, $post_term);
@@ -62,14 +68,13 @@ if ( !function_exists( 'post_card_block' ) ){
         $date = $args['date'];
         $category = $args['category'];
 
-        if ( $category ){
+        if ( $category->name ){
             $cat_list = '';
             foreach ($category as $key => $cat){
                 $cat_list .= $cat->name . ', ';
             }
             $cat_list = substr($cat_list, 0, -2);
         }
-
         ?>
 
         <!-- Post card for posts start -->

@@ -1,14 +1,14 @@
 <?php
 /**
  *
- * Register new post type "Strefa wiedzy"
+ * Register new post type "News"
  *
  */
-register_post_type('aktualnosci', array(
-    'label'  => 'Aktualności',
+register_post_type('news', array(
+    'label'  => 'News',
     'labels' => array(
-        'name'               => 'Aktualności',
-        'singular_name'      => 'Aktualności',
+        'name'               => 'News',
+        'singular_name'      => 'News',
         'add_new'            => 'Dodaj post',
         'add_new_item'       => 'Dodawanie postu',
         'edit_item'          => 'Redagowanie postu',
@@ -32,10 +32,10 @@ register_post_type('aktualnosci', array(
 
 /**
  * 
- * Register "Miejsca kategorie" taxonomy for "Miejsca"
+ * Register "News Kategoria" taxonomy for "News"
  * 
  */
-register_taxonomy('aktualnosci-kategoria', array('aktualnosci'), array(
+register_taxonomy('news-kategoria', array('news'), array(
     'label'                 => 'Kategorie', // определяется параметром $labels->name
     'labels'                => array(
         'name'              => 'Kategorie',

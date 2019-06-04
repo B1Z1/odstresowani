@@ -23,7 +23,7 @@ if ( !function_exists('footer_upper_blocks') ){
     function footer_upper_blocks(){
         $footer_blocks = carbon_get_theme_option('footer_blocks'); ?>
 
-        <div class="l-footer__blocks flex-kit fwrap mb64">
+        <div class="l-footer__blocks d-flex jcsa fwrap mb64">
             <?php foreach ( $footer_blocks as $footer_block ): $block = $footer_block['footer_block']; ?>
                 <div class="mbl-col-12 tbl-col-6 ntb-col-3">
                     <nav class="c-navigation mb32">
@@ -60,7 +60,7 @@ if ( !function_exists('footer_upper_social') ){
 
         <div class="l-footer__social mbl-col-12 clearfix">
             <nav class="c-navigation fr">
-                <ul class="c-list d-flex aic">
+                <ul class="c-list d-flex">
                     <?php foreach ( $footer_social as $footer_list ): ?>
                         <li class="c-list__element mr16 ml16">
                             <a href="<?php echo $footer_list['footer_social_url']; ?>" class="c-link c-link--diblock">

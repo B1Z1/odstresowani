@@ -428,6 +428,12 @@ ol {
   justify-content: space-between;
 }
 
+.jcsa {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
 .ais {
   -webkit-box-align: start;
   -ms-flex-align: start;

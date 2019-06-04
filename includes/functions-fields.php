@@ -17,7 +17,7 @@ class GetPosts{
             '' => 'Nie',
             'post' => 'Artykuły',
             'strefa-wiedzy' => 'Strefa wiedzy',
-            'aktualnosci' => 'Aktualnosci'
+            'news' => 'News'
         );
     }
 
@@ -27,7 +27,7 @@ class GetPosts{
             '' => 'Nie',
             'category' => 'Artykuły',
             'strefa-wiedzy-kategoria' => 'Strefa wiedzy',
-            'aktualnosci-kategoria' => 'Aktualnosci'
+            'news-kategoria' => 'News'
         );
     }
 

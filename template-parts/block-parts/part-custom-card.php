@@ -4,7 +4,7 @@ $card_list = $block['list'];
 
 </div>
 
-<div class="c-container">
+<div class="c-container header__triger">
     <div class="row">
         <div class="mt64">
             <div class="d-flex jcc fwrap">

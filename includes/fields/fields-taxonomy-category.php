@@ -92,7 +92,7 @@ add_action( 'carbon_fields_register_fields', 'crb_register_term_actual', 10 );
 if ( !function_exists('crb_register_term_actual') ){
     function crb_register_term_actual(){
         Container::make( 'term_meta', __( 'Category Properties' ) )
-            ->where( 'term_taxonomy', '=', 'aktualnosci-kategoria' )
+            ->where( 'term_taxonomy', '=', 'news-kategoria' )
             ->add_fields( array(
                 Field::make( 'image', 'category_sygnet', __( 'Sygnet kategorii' ) ),
                 Field::make('select', 'category_check', __('Wybierz typ filu'))
