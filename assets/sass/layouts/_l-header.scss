@@ -10,11 +10,9 @@ _______________*/
     left: 0;
     right: 0;
     padding-top: 32px;
-    padding-right: 24px;
+    padding-right: 40px;
     padding-bottom: 16px;
-    padding-left: 24px;
-    margin-right: 16px;
-    margin-left: 16px;
+    padding-left: 40px;
     z-index: 9999; 
     transition: background-color .6s ease-in-out; 
     &:hover{
@@ -22,6 +20,12 @@ _______________*/
     }
     &:hover .l-header__logo, &:hover .l-header__menu, &:hover .l-header__extra{
         color: $black;
+    }
+    @media only screen and ( min-width: $bpoint-ntb ) {
+        margin-right: 16px;
+        margin-left: 16px;
+        padding-right: 24px;
+        padding-left: 24px;    
     }
 }
 

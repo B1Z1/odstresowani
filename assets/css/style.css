@@ -1517,11 +1517,9 @@ _______________*/
   left: 0;
   right: 0;
   padding-top: 32px;
-  padding-right: 24px;
+  padding-right: 40px;
   padding-bottom: 16px;
-  padding-left: 24px;
-  margin-right: 16px;
-  margin-left: 16px;
+  padding-left: 40px;
   z-index: 9999;
   -webkit-transition: background-color .6s ease-in-out;
   transition: background-color .6s ease-in-out;
@@ -3132,7 +3130,7 @@ _______________*/
   margin: auto;
 }
 
-@media only screen and (min-width: 426px) {
+@media only screen and (min-width: 768px) {
   .tbl-col-1 {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 8.33333%;
@@ -3231,9 +3229,7 @@ _______________*/
     margin-top: 0;
     margin-right: 0;
   }
-}
 
-@media only screen and (min-width: 768px) {
   .c-container--posts {
     padding-right: 48px;
     padding-left: 48px;
@@ -3523,6 +3519,13 @@ _______________*/
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
     max-width: 100%;
+  }
+
+  .l-header {
+    margin-right: 16px;
+    margin-left: 16px;
+    padding-right: 24px;
+    padding-left: 24px;
   }
 
   .c-wrapper {

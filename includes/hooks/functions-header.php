@@ -59,7 +59,7 @@ function submenu_category($post_type, $url, $title){
                 <div class="ntb-col-1">
                     <div class="f-vb mr24 mt8 mb8">Kategorie</div>
                 </div>
-                <div class="ntb-col-9">
+                <div class="ntb-col-8">
                     <ul class="c-list header-menu__list d-flex fwrap">
                         <?php foreach ( $categories as $category ):
                             $title = $category->name;
@@ -74,7 +74,7 @@ function submenu_category($post_type, $url, $title){
                         <?php endforeach; ?>
                     </ul>
                 </div>
-                <div class="ntb-col-2">
+                <div class="ntb-col-3">
                     <?php get_search_form(); ?>
                 </div>
             </div>
@@ -145,7 +145,7 @@ if ( !function_exists('nav_mobile') ) {
                                     $title_tax = $category->name;
                                     $url_tax = get_term_link($category->slug, $cat_tax); ?>
 
-                                    <li class="c-list__element">
+                                    <li class="c-list__element mt16">
                                         <a href="<?php echo $url_tax; ?>" class="c-link"><?php echo $title_tax; ?></a>
                                     </li>
 
@@ -174,7 +174,7 @@ function header_wrapper_start(){ ?>
 add_action('odstresowani_header_inside', 'header_sygnet', 10);
 if ( !function_exists('header_sygnet') ){
     function header_sygnet(){ ?>
-            <figure class="l-header__logo mbl-col-9 tbl-col-6 pc-col-3">
+            <figure class="l-header__logo mbl-col-9 tbl-col-3 pc-col-3">
                 <a href="<?php echo get_home_url(); ?>" class="c-link flex-kit">
                     <div class="l-header__sygnets c-flip__container">
                         <?php
@@ -230,12 +230,9 @@ if ( !function_exists('header_extra_menu') ){
         $location = 'header_extra';
         $items = wp_get_nav_menu_items($locations[$location]);
         ?>
-            <div class="l-header__extra mbl-col-3 tbl-col-6 pc-col-3">
-                <div class="clearfix">
-                    <div class="c-hamburger fr">
-                        <i class="fas fa-bars"></i>
-                    </div>
-                    <nav class="c-navigation__extra f-vb fr">
+            <div class="l-header__extra mbl-col-3 tbl-col-3 pc-col-3">
+                <div class="d-flex aic jce">
+                    <nav class="c-navigation__extra f-vb">
                         <ul class="c-list flex-kit">
                             <?php if ( $items ): ?>
                                 <?php foreach ($items as $item):
@@ -247,6 +244,9 @@ if ( !function_exists('header_extra_menu') ){
                             <?php endif; ?>
                         </ul>
                     </nav>
+                    <div class="c-hamburger">
+                        <i class="fas fa-bars"></i>
+                    </div>
                 </div>
             </div>
     <?php }

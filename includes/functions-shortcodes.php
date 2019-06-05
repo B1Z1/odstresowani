@@ -21,17 +21,21 @@ function buy_button( $atts ){
 add_shortcode( 'Przycisk_zakupu', 'buy_button' );
 
 function buttons( $atts ){
+    $words = [
+        'read_more' => pll__('Czytaj więcej'),
+        'contact_wu' => pll__('Kontakt z nami')
+    ];
     $a = shortcode_atts( array(
         'button-link' => '',
         'link' => ''
     ), $atts);
     return "<div class='c-text--center mt64 mb64'>
                 <span class='mr16 c-wh f-vb d-ib'>
-                    <a href='{$a['button-link']}' class='c-link c-button__operative c-button--br4'>Kontakt z nami</a>
+                    <a href='{$a['button-link']}' class='c-link c-button__operative c-button--br4'>{$words['contact_wu']}</a>
                 </span>
                 albo
                 <span class='ml16 c-op f-vb c-text--ttu'>
-                    <a href='{$a['link']}' class='c-link c-link--tdu'>Czytaj więcej</a>
+                    <a href='{$a['link']}' class='c-link c-link--tdu'>{$words['read_more']}</a>
                 </span>
             </div>";
 }
