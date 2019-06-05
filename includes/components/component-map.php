@@ -30,7 +30,7 @@ class CMap{
                 'alert' => $map['marker_alert'] ? 'true':'false',
             ); //All parametres for marker
             $categoryData = new WP_Query(array(
-                'post_type' => 'miejsca',
+                'post_type' => 'markers',
                 'tax_query' => array(
                     array(
                         'taxonomy' => $this->termType,

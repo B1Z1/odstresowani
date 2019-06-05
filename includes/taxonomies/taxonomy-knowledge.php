@@ -32,7 +32,7 @@ register_post_type('strefa-wiedzy', array(
 
 /**
  * 
- * Register "Miejsca kategorie" taxonomy for "Miejsca"
+ * Register "Strefa wiedzy kategorie" taxonomy for "Strefa wiedzy"
  * 
  */
 register_taxonomy('strefa-wiedzy-kategoria', array('strefa-wiedzy'), array(

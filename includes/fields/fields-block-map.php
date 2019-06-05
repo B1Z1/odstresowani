@@ -14,7 +14,7 @@ if ( !function_exists('crb_register_block_map') ){
     function crb_register_block_map(){
         global $getPosts;
         //If I will be need to change this type, go to the "part-map" and change variable too
-        $type = 'miejsca-kategorie';
+        $type = 'markers-kategorie';
         $categories = $getPosts->getTaxonomiesList($type);
 
         Block::make(__('Block z markerami'))

@@ -44,8 +44,9 @@ require get_template_directory() . '/includes/functions-nav-menu.php';
 /**
  *
  * Require Taxonomies
- *  ->Miejsca
+ *  ->Markers
  *  ->Knowledge
+ *  ->News
  *
  */
 require get_template_directory() . '/includes/taxonomies/taxonomy-places.php';

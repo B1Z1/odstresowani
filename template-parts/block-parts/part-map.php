@@ -2,7 +2,7 @@
 $maps = $block['maps'];
 
 //If I will be need to change this type, go to the "fields-block-map" and change variable too
-$termType = 'miejsca-kategorie';
+$termType = 'markers-kategorie';
 
 $map = new CMap(array(
     'maps' => $block['maps'],

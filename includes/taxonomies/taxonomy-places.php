@@ -1,14 +1,14 @@
 <?php
 /**
  *
- * Register new post type "Miejsca"
+ * Register new post type "Markery dla mapy"
  *
  */
-register_post_type('miejsca', array(
-    'label'  => 'Miejsca',
+register_post_type('markers', array(
+    'label'  => 'Markery dla mapy',
     'labels' => array(
-        'name'               => 'Miejsca',
-        'singular_name'      => 'Miejsca',
+        'name'               => 'Markery dla mapy',
+        'singular_name'      => 'Markery dla mapy',
         'add_new'            => 'Dodaj post',
         'add_new_item'       => 'Dodawanie postu',
         'edit_item'          => 'Redagowanie postu',
@@ -32,14 +32,14 @@ register_post_type('miejsca', array(
 
 /**
  * 
- * Register "Miejsca kategorie" taxonomy for "Miejsca"
+ * Register "Markery kategorie" taxonomy for "Markery dla mapy"
  * 
  */
-register_taxonomy('miejsca-kategorie', array('miejsca'), array(
-    'label'                 => 'Miejsca kategorie', // определяется параметром $labels->name
+register_taxonomy('markers-kategorie', array('markers'), array(
+    'label'                 => 'Markery kategorie', // определяется параметром $labels->name
     'labels'                => array(
-        'name'              => 'Miejsca kategorie',
-        'singular_name'     => 'Miejsca kategoria',
+        'name'              => 'Markery kategorie',
+        'singular_name'     => 'Markery kategoria',
         'search_items'      => 'Szukaj',
         'all_items'         => 'Wszystkie',
         'view_item '        => 'Obejrzeć',
@@ -49,7 +49,7 @@ register_taxonomy('miejsca-kategorie', array('miejsca'), array(
         'update_item'       => 'Odnów',
         'add_new_item'      => 'Dodaj nowy',
         'new_item_name'     => 'Nowa nazwa',
-        'menu_name'         => 'Miejsca kategorie',
+        'menu_name'         => 'Markery kategorie',
     ),
     'public'                => true,
     'publicly_queryable'    => false, // равен аргументу public
