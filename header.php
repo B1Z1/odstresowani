@@ -8,6 +8,8 @@
  *
  * @package OdstresowaniPortal
  */
+    $generalOptions = new GeneralOptions();
+    $keywords = $generalOptions->getKeywords(carbon_get_post_meta(get_the_ID(), 'seo_keywords'));
 
 ?>
 <!doctype html>
@@ -46,7 +48,11 @@
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-N4MN495');</script>
 		<!-- End Google Tag Manager -->
-		
+
+		<?php if ( $keywords ): ?>
+        <meta name="keywords" content="<?php echo $keywords; ?>">
+        <?php endif; ?>
+
         <?php wp_head(); ?>
     </head>
 

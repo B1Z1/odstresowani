@@ -14,6 +14,10 @@ if ( !function_exists('crb_register_term_page') ){
             ->where( 'post_type', '=', 'page' )
             ->add_fields( array(
                 Field::make( 'image', 'page_sygnet', __( 'Sygnet strony' ) ),
+                Field::make('complex', 'seo_keywords', __('Kluczowe słowa'))
+                    ->add_fields(array(
+                        Field::make('text', 'word', __('Słowo kluczowe'))
+                    ))
             ) );
     }
 }
