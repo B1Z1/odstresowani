@@ -70,11 +70,11 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       o = n(11),
       i = Object.prototype.toString;
 
-  function s(e) {
+  function a(e) {
     return "[object Array]" === i.call(e);
   }
 
-  function a(e) {
+  function s(e) {
     return null !== e && "object" == _typeof(e);
   }
 
@@ -82,8 +82,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     return "[object Function]" === i.call(e);
   }
 
-  function u(e, t) {
-    if (null != e) if ("object" != _typeof(e) && (e = [e]), s(e)) for (var n = 0, r = e.length; n < r; n++) {
+  function l(e, t) {
+    if (null != e) if ("object" != _typeof(e) && (e = [e]), a(e)) for (var n = 0, r = e.length; n < r; n++) {
       t.call(null, e[n], n, e);
     } else for (var o in e) {
       Object.prototype.hasOwnProperty.call(e, o) && t.call(null, e[o], o, e);
@@ -91,7 +91,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   }
 
   e.exports = {
-    isArray: s,
+    isArray: a,
     isArrayBuffer: function isArrayBuffer(e) {
       return "[object ArrayBuffer]" === i.call(e);
     },
@@ -108,7 +108,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     isNumber: function isNumber(e) {
       return "number" == typeof e;
     },
-    isObject: a,
+    isObject: s,
     isUndefined: function isUndefined(e) {
       return void 0 === e;
     },
@@ -123,7 +123,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     },
     isFunction: c,
     isStream: function isStream(e) {
-      return a(e) && c(e.pipe);
+      return s(e) && c(e.pipe);
     },
     isURLSearchParams: function isURLSearchParams(e) {
       return "undefined" != typeof URLSearchParams && e instanceof URLSearchParams;
@@ -131,7 +131,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     isStandardBrowserEnv: function isStandardBrowserEnv() {
       return ("undefined" == typeof navigator || "ReactNative" !== navigator.product && "NativeScript" !== navigator.product && "NS" !== navigator.product) && "undefined" != typeof window && "undefined" != typeof document;
     },
-    forEach: u,
+    forEach: l,
     merge: function e() {
       var t = {};
 
@@ -140,7 +140,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       }
 
       for (var r = 0, o = arguments.length; r < o; r++) {
-        u(arguments[r], n);
+        l(arguments[r], n);
       }
 
       return t;
@@ -153,13 +153,13 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       }
 
       for (var r = 0, o = arguments.length; r < o; r++) {
-        u(arguments[r], n);
+        l(arguments[r], n);
       }
 
       return t;
     },
     extend: function extend(e, t, n) {
-      return u(t, function (t, o) {
+      return l(t, function (t, o) {
         e[o] = n && "function" == typeof t ? r(t, n) : t;
       }), e;
     },
@@ -194,17 +194,17 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     if (!t) return e;
     var i;
     if (n) i = n(t);else if (r.isURLSearchParams(t)) i = t.toString();else {
-      var s = [];
+      var a = [];
       r.forEach(t, function (e, t) {
         null != e && (r.isArray(e) ? t += "[]" : e = [e], r.forEach(e, function (e) {
-          r.isDate(e) ? e = e.toISOString() : r.isObject(e) && (e = JSON.stringify(e)), s.push(o(t) + "=" + o(e));
+          r.isDate(e) ? e = e.toISOString() : r.isObject(e) && (e = JSON.stringify(e)), a.push(o(t) + "=" + o(e));
         }));
-      }), i = s.join("&");
+      }), i = a.join("&");
     }
 
     if (i) {
-      var a = e.indexOf("#");
-      -1 !== a && (e = e.slice(0, a)), e += (-1 === e.indexOf("?") ? "?" : "&") + i;
+      var s = e.indexOf("#");
+      -1 !== s && (e = e.slice(0, s)), e += (-1 === e.indexOf("?") ? "?" : "&") + i;
     }
 
     return e;
@@ -225,15 +225,15 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       "Content-Type": "application/x-www-form-urlencoded"
     };
 
-    function s(e, t) {
+    function a(e, t) {
       !r.isUndefined(e) && r.isUndefined(e["Content-Type"]) && (e["Content-Type"] = t);
     }
 
-    var a,
+    var s,
         c = {
-      adapter: (void 0 !== t && "[object process]" === Object.prototype.toString.call(t) ? a = n(6) : "undefined" != typeof XMLHttpRequest && (a = n(6)), a),
+      adapter: (void 0 !== t && "[object process]" === Object.prototype.toString.call(t) ? s = n(6) : "undefined" != typeof XMLHttpRequest && (s = n(6)), s),
       transformRequest: [function (e, t) {
-        return o(t, "Accept"), o(t, "Content-Type"), r.isFormData(e) || r.isArrayBuffer(e) || r.isBuffer(e) || r.isStream(e) || r.isFile(e) || r.isBlob(e) ? e : r.isArrayBufferView(e) ? e.buffer : r.isURLSearchParams(e) ? (s(t, "application/x-www-form-urlencoded;charset=utf-8"), e.toString()) : r.isObject(e) ? (s(t, "application/json;charset=utf-8"), JSON.stringify(e)) : e;
+        return o(t, "Accept"), o(t, "Content-Type"), r.isFormData(e) || r.isArrayBuffer(e) || r.isBuffer(e) || r.isStream(e) || r.isFile(e) || r.isBlob(e) ? e : r.isArrayBufferView(e) ? e.buffer : r.isURLSearchParams(e) ? (a(t, "application/x-www-form-urlencoded;charset=utf-8"), e.toString()) : r.isObject(e) ? (a(t, "application/json;charset=utf-8"), JSON.stringify(e)) : e;
       }],
       transformResponse: [function (e) {
         if ("string" == typeof e) try {
@@ -265,15 +265,15 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   var r = n(0),
       o = n(18),
       i = n(3),
-      s = n(20),
-      a = n(21),
+      a = n(20),
+      s = n(21),
       c = n(7);
 
   e.exports = function (e) {
-    return new Promise(function (t, u) {
-      var l = e.data,
+    return new Promise(function (t, l) {
+      var u = e.data,
           f = e.headers;
-      r.isFormData(l) && delete f["Content-Type"];
+      r.isFormData(u) && delete f["Content-Type"];
       var d = new XMLHttpRequest();
 
       if (e.auth) {
@@ -284,7 +284,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
       if (d.open(e.method.toUpperCase(), i(e.url, e.params, e.paramsSerializer), !0), d.timeout = e.timeout, d.onreadystatechange = function () {
         if (d && 4 === d.readyState && (0 !== d.status || d.responseURL && 0 === d.responseURL.indexOf("file:"))) {
-          var n = "getAllResponseHeaders" in d ? s(d.getAllResponseHeaders()) : null,
+          var n = "getAllResponseHeaders" in d ? a(d.getAllResponseHeaders()) : null,
               r = {
             data: e.responseType && "text" !== e.responseType ? d.response : d.responseText,
             status: d.status,
@@ -293,30 +293,30 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
             config: e,
             request: d
           };
-          o(t, u, r), d = null;
+          o(t, l, r), d = null;
         }
       }, d.onabort = function () {
-        d && (u(c("Request aborted", e, "ECONNABORTED", d)), d = null);
+        d && (l(c("Request aborted", e, "ECONNABORTED", d)), d = null);
       }, d.onerror = function () {
-        u(c("Network Error", e, null, d)), d = null;
+        l(c("Network Error", e, null, d)), d = null;
       }, d.ontimeout = function () {
-        u(c("timeout of " + e.timeout + "ms exceeded", e, "ECONNABORTED", d)), d = null;
+        l(c("timeout of " + e.timeout + "ms exceeded", e, "ECONNABORTED", d)), d = null;
       }, r.isStandardBrowserEnv()) {
         var m = n(22),
-            v = (e.withCredentials || a(e.url)) && e.xsrfCookieName ? m.read(e.xsrfCookieName) : void 0;
+            v = (e.withCredentials || s(e.url)) && e.xsrfCookieName ? m.read(e.xsrfCookieName) : void 0;
         v && (f[e.xsrfHeaderName] = v);
       }
 
       if ("setRequestHeader" in d && r.forEach(f, function (e, t) {
-        void 0 === l && "content-type" === t.toLowerCase() ? delete f[t] : d.setRequestHeader(t, e);
+        void 0 === u && "content-type" === t.toLowerCase() ? delete f[t] : d.setRequestHeader(t, e);
       }), e.withCredentials && (d.withCredentials = !0), e.responseType) try {
         d.responseType = e.responseType;
       } catch (t) {
         if ("json" !== e.responseType) throw t;
       }
       "function" == typeof e.onDownloadProgress && d.addEventListener("progress", e.onDownloadProgress), "function" == typeof e.onUploadProgress && d.upload && d.upload.addEventListener("progress", e.onUploadProgress), e.cancelToken && e.cancelToken.promise.then(function (e) {
-        d && (d.abort(), u(e), d = null);
-      }), void 0 === l && (l = null), d.send(l);
+        d && (d.abort(), l(e), d = null);
+      }), void 0 === u && (u = null), d.send(u);
     });
   };
 }, function (e, t, n) {
@@ -325,8 +325,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   var r = n(19);
 
   e.exports = function (e, t, n, o, i) {
-    var s = new Error(e);
-    return r(s, t, n, o, i);
+    var a = new Error(e);
+    return r(a, t, n, o, i);
   };
 }, function (e, t, n) {
   "use strict";
@@ -360,17 +360,17 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   var r = n(0),
       o = n(2),
       i = n(12),
-      s = n(8);
+      a = n(8);
 
-  function a(e) {
+  function s(e) {
     var t = new i(e),
         n = o(i.prototype.request, t);
     return r.extend(n, i.prototype, t), r.extend(n, t), n;
   }
 
-  var c = a(n(5));
+  var c = s(n(5));
   c.Axios = i, c.create = function (e) {
-    return a(s(c.defaults, e));
+    return s(a(c.defaults, e));
   }, c.Cancel = n(9), c.CancelToken = n(25), c.isCancel = n(4), c.all = function (e) {
     return Promise.all(e);
   }, c.spread = n(26), e.exports = c, e.exports["default"] = c;
@@ -390,8 +390,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   var r = n(0),
       o = n(3),
       i = n(13),
-      s = n(14),
-      a = n(8);
+      a = n(14),
+      s = n(8);
 
   function c(e) {
     this.defaults = e, this.interceptors = {
@@ -401,8 +401,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   }
 
   c.prototype.request = function (e) {
-    "string" == typeof e ? (e = arguments[1] || {}).url = arguments[0] : e = e || {}, (e = a(this.defaults, e)).method = e.method ? e.method.toLowerCase() : "get";
-    var t = [s, void 0],
+    "string" == typeof e ? (e = arguments[1] || {}).url = arguments[0] : e = e || {}, (e = s(this.defaults, e)).method = e.method ? e.method.toLowerCase() : "get";
+    var t = [a, void 0],
         n = Promise.resolve(e);
 
     for (this.interceptors.request.forEach(function (e) {
@@ -415,7 +415,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
     return n;
   }, c.prototype.getUri = function (e) {
-    return e = a(this.defaults, e), o(e.url, e.params, e.paramsSerializer).replace(/^\?/, "");
+    return e = s(this.defaults, e), o(e.url, e.params, e.paramsSerializer).replace(/^\?/, "");
   }, r.forEach(["delete", "get", "head", "options"], function (e) {
     c.prototype[e] = function (t, n) {
       return this.request(r.merge(n || {}, {
@@ -459,21 +459,21 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   var r = n(0),
       o = n(15),
       i = n(4),
-      s = n(5),
-      a = n(23),
+      a = n(5),
+      s = n(23),
       c = n(24);
 
-  function u(e) {
+  function l(e) {
     e.cancelToken && e.cancelToken.throwIfRequested();
   }
 
   e.exports = function (e) {
-    return u(e), e.baseURL && !a(e.url) && (e.url = c(e.baseURL, e.url)), e.headers = e.headers || {}, e.data = o(e.data, e.headers, e.transformRequest), e.headers = r.merge(e.headers.common || {}, e.headers[e.method] || {}, e.headers || {}), r.forEach(["delete", "get", "head", "post", "put", "patch", "common"], function (t) {
+    return l(e), e.baseURL && !s(e.url) && (e.url = c(e.baseURL, e.url)), e.headers = e.headers || {}, e.data = o(e.data, e.headers, e.transformRequest), e.headers = r.merge(e.headers.common || {}, e.headers[e.method] || {}, e.headers || {}), r.forEach(["delete", "get", "head", "post", "put", "patch", "common"], function (t) {
       delete e.headers[t];
-    }), (e.adapter || s.adapter)(e).then(function (t) {
-      return u(e), t.data = o(t.data, t.headers, e.transformResponse), t;
+    }), (e.adapter || a.adapter)(e).then(function (t) {
+      return l(e), t.data = o(t.data, t.headers, e.transformResponse), t;
     }, function (t) {
-      return i(t) || (u(e), t && t.response && (t.response.data = o(t.response.data, t.response.headers, e.transformResponse))), Promise.reject(t);
+      return i(t) || (l(e), t && t.response && (t.response.data = o(t.response.data, t.response.headers, e.transformResponse))), Promise.reject(t);
     });
   };
 }, function (e, t, n) {
@@ -495,11 +495,11 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     throw new Error("setTimeout has not been defined");
   }
 
-  function s() {
+  function a() {
     throw new Error("clearTimeout has not been defined");
   }
 
-  function a(e) {
+  function s(e) {
     if (n === setTimeout) return setTimeout(e, 0);
     if ((n === i || !n) && setTimeout) return n = setTimeout, setTimeout(e, 0);
 
@@ -522,36 +522,36 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     }
 
     try {
-      r = "function" == typeof clearTimeout ? clearTimeout : s;
+      r = "function" == typeof clearTimeout ? clearTimeout : a;
     } catch (e) {
-      r = s;
+      r = a;
     }
   }();
   var c,
-      u = [],
-      l = !1,
+      l = [],
+      u = !1,
       f = -1;
 
   function d() {
-    l && c && (l = !1, c.length ? u = c.concat(u) : f = -1, u.length && p());
+    u && c && (u = !1, c.length ? l = c.concat(l) : f = -1, l.length && p());
   }
 
   function p() {
-    if (!l) {
-      var e = a(d);
-      l = !0;
+    if (!u) {
+      var e = s(d);
+      u = !0;
 
-      for (var t = u.length; t;) {
-        for (c = u, u = []; ++f < t;) {
+      for (var t = l.length; t;) {
+        for (c = l, l = []; ++f < t;) {
           c && c[f].run();
         }
 
-        f = -1, t = u.length;
+        f = -1, t = l.length;
       }
 
-      c = null, l = !1, function (e) {
+      c = null, u = !1, function (e) {
         if (r === clearTimeout) return clearTimeout(e);
-        if ((r === s || !r) && clearTimeout) return r = clearTimeout, clearTimeout(e);
+        if ((r === a || !r) && clearTimeout) return r = clearTimeout, clearTimeout(e);
 
         try {
           r(e);
@@ -577,7 +577,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     if (arguments.length > 1) for (var n = 1; n < arguments.length; n++) {
       t[n - 1] = arguments[n];
     }
-    u.push(new h(e, t)), 1 !== u.length || l || a(p);
+    l.push(new h(e, t)), 1 !== l.length || u || s(p);
   }, h.prototype.run = function () {
     this.fun.apply(null, this.array);
   }, o.title = "browser", o.browser = !0, o.env = {}, o.argv = [], o.version = "", o.versions = {}, o.on = m, o.addListener = m, o.once = m, o.off = m, o.removeListener = m, o.removeAllListeners = m, o.emit = m, o.prependListener = m, o.prependOnceListener = m, o.listeners = function (e) {
@@ -639,13 +639,13 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     var t,
         n,
         i,
-        s = {};
+        a = {};
     return e ? (r.forEach(e.split("\n"), function (e) {
       if (i = e.indexOf(":"), t = r.trim(e.substr(0, i)).toLowerCase(), n = r.trim(e.substr(i + 1)), t) {
-        if (s[t] && o.indexOf(t) >= 0) return;
-        s[t] = "set-cookie" === t ? (s[t] ? s[t] : []).concat([n]) : s[t] ? s[t] + ", " + n : n;
+        if (a[t] && o.indexOf(t) >= 0) return;
+        a[t] = "set-cookie" === t ? (a[t] ? a[t] : []).concat([n]) : a[t] ? a[t] + ", " + n : n;
       }
-    }), s) : s;
+    }), a) : a;
   };
 }, function (e, t, n) {
   "use strict";
@@ -682,9 +682,9 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
   var r = n(0);
   e.exports = r.isStandardBrowserEnv() ? {
-    write: function write(e, t, n, o, i, s) {
-      var a = [];
-      a.push(e + "=" + encodeURIComponent(t)), r.isNumber(n) && a.push("expires=" + new Date(n).toGMTString()), r.isString(o) && a.push("path=" + o), r.isString(i) && a.push("domain=" + i), !0 === s && a.push("secure"), document.cookie = a.join("; ");
+    write: function write(e, t, n, o, i, a) {
+      var s = [];
+      s.push(e + "=" + encodeURIComponent(t)), r.isNumber(n) && s.push("expires=" + new Date(n).toGMTString()), r.isString(o) && s.push("path=" + o), r.isString(i) && s.push("domain=" + i), !0 === a && s.push("secure"), document.cookie = s.join("; ");
     },
     read: function read(e) {
       var t = document.cookie.match(new RegExp("(^|;\\s*)(" + e + ")=([^;]*)"));
@@ -832,37 +832,37 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
               pagination_el: t.classes.pagination_el,
               extra: t.classes.extra
             },
-                s = "" != t.slider_has_back;
+                a = "" != t.slider_has_back;
 
             if (n) {
-              r.forEach(function (r, a) {
+              r.forEach(function (r, s) {
                 var c = r,
-                    u = c.dataset.title,
-                    l = c.dataset.name,
+                    l = c.dataset.title,
+                    u = c.dataset.name,
                     f = "";
-                e.removeClass(i.card_active, c), s && (f = c.querySelector(".".concat(t.slider_has_back)).dataset.back, s = !0), 0 == a && (e.addClass(i.card_active, c), s && (n.style.backgroundImage = "url(".concat(f, ")"))), function (t, n, r, o, i, s) {
-                  var a = document.createElement("li"),
+                e.removeClass(i.card_active, c), a && (f = c.querySelector(".".concat(t.slider_has_back)).dataset.back, a = !0), 0 == s && (e.addClass(i.card_active, c), a && (n.style.backgroundImage = "url(".concat(f, ")"))), function (t, n, r, o, i, a) {
+                  var s = document.createElement("li"),
                       c = "";
-                  e.addClass(i.pagination_el, a), a.className += " ".concat(i.extra), 0 == o && e.addClass(i.pag_active, a), a.dataset.name = n, "" != s ? (c = document.createElement(s.wrapper), "" != s.classes && (c.className += s.classes), c.textContent = r, a.appendChild(c)) : a.textContent = r;
-                  t.appendChild(a);
-                }(o, l, u, a, i, t.pagination_wrap);
+                  e.addClass(i.pagination_el, s), s.className += " ".concat(i.extra), 0 == o && e.addClass(i.pag_active, s), s.dataset.name = n, "" != a ? (c = document.createElement(a.wrapper), "" != a.classes && (c.className += a.classes), c.textContent = r, s.appendChild(c)) : s.textContent = r;
+                  t.appendChild(s);
+                }(o, u, l, s, i, t.pagination_wrap);
               });
 
-              var a = _toConsumableArray(o.children);
+              var s = _toConsumableArray(o.children);
 
-              a.forEach(function (o) {
+              s.forEach(function (o) {
                 var c = o,
-                    u = c.dataset.name,
-                    l = r.find(function (e) {
-                  if (e.dataset.name == u) return e;
+                    l = c.dataset.name,
+                    u = r.find(function (e) {
+                  if (e.dataset.name == l) return e;
                 }),
                     f = "";
-                s && (f = l.querySelector(".".concat(t.slider_has_back)).dataset.back), c.addEventListener("click", function () {
+                a && (f = u.querySelector(".".concat(t.slider_has_back)).dataset.back), c.addEventListener("click", function () {
                   r.map(function (t) {
                     e.removeClass(i.card_active, t);
-                  }), a.map(function (t) {
+                  }), s.map(function (t) {
                     e.removeClass(i.pag_active, t);
-                  }), e.addClass(i.card_active, l), e.addClass(i.pag_active, c), s && (n.style.backgroundImage = "url(".concat(f, ")"));
+                  }), e.addClass(i.card_active, u), e.addClass(i.pag_active, c), a && (n.style.backgroundImage = "url(".concat(f, ")"));
                 });
               });
             }
@@ -949,12 +949,12 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       function _class(e) {
         _classCallCheck(this, _class);
 
-        this.element = document.querySelector(e.element), this.link = document.querySelector(e.link.element).dataset[e.link.data], this.needData = e.data, this.data = [], mapboxgl.accessToken = e.mapboxGl.accessToken, this.map = new mapboxgl.Map({
+        this.element = document.querySelector(e.element), this.linkElement = document.querySelector(e.link.element), this.categoryElement = document.querySelector(e.categoryLink.element), this.element && this.linkElement && this.categoryElement && (this.type = e.type, this.link = this.linkElement.dataset[e.link.data], this.linkCategory = this.categoryElement.dataset[e.categoryLink.data], this.needData = e.data, this.data = [], this.dataCategory = [], this.linkElement.remove(), this.categoryElement.remove(), mapboxgl.accessToken = e.mapboxGl.accessToken, this.map = new mapboxgl.Map({
           container: this.element.id,
           style: e.mapboxGl.mapStyle,
           center: e.mapboxGl.center,
           zoom: e.mapboxGl.zoom
-        }), this.init();
+        }), this.init());
       }
 
       _createClass(_class, [{
@@ -968,11 +968,27 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
             });
           })["catch"](function (e) {
             console.log(e);
-          }), console.log(this.data);
+          }), o.a.get(this.linkCategory).then(function (e) {
+            e.data.forEach(function (e) {
+              _this.dataCategory.push(_this.getCategoryData(e));
+            });
+          })["catch"](function (e) {
+            console.log(e);
+          }), console.log(this.dataCategory);
+        }
+      }, {
+        key: "getCategoryData",
+        value: function getCategoryData(e) {
+          return {
+            id: e.id,
+            name: e.name
+          };
         }
       }, {
         key: "getData",
         value: function getData(e) {
+          var _this2 = this;
+
           var t = {};
           return this.needData.forEach(function (n) {
             switch (n) {
@@ -982,6 +998,10 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
               case "content":
                 t[n] = e.content.rendered;
+                break;
+
+              case "categories":
+                t[n] = e["".concat(_this2.type, "-category")];
                 break;
 
               case "image":
@@ -1002,18 +1022,23 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
       return _class;
     }())({
+      type: "relax",
+      element: "[data-map-init]",
+      link: {
+        element: "[data-rest-link]",
+        data: "restLink"
+      },
+      categoryLink: {
+        element: "[data-rest-category-link]",
+        data: "restCategoryLink"
+      },
       mapboxGl: {
         accessToken: "pk.eyJ1IjoiaWx5YW1pc2hraW4iLCJhIjoiY2p1aWU0YnFtMGRqMjRlbmJzazljZWp0cCJ9.zrZV2rr_u2BwoHK7f7lZtg",
         mapStyle: "mapbox://styles/ilyamishkin/cjuifjhya0m221fqkauhk7fyv",
         center: [-74.5, 40],
         zoom: 9
       },
-      link: {
-        element: "[data-rest-link]",
-        data: "restLink"
-      },
-      element: "[data-map-init]",
-      data: ["title", "content", "image", "_adress", "_full_adress", "_phone"]
+      data: ["title", "content", "image", "categories", "_adress", "_phone"]
     }), new (
     /*#__PURE__*/
     function () {
@@ -1026,38 +1051,38 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       _createClass(_class2, [{
         key: "init",
         value: function init() {
-          var _this2 = this;
+          var _this3 = this;
 
           this.elements.forEach(function (e) {
-            var t = e.querySelector(".".concat(_this2.video, " video")),
+            var t = e.querySelector(".".concat(_this3.video, " video")),
                 n = t.dataset.src,
-                r = e.querySelector(".".concat(_this2.controls.container)),
-                o = r.querySelector(".".concat(_this2.controls.play)),
-                i = r.querySelector(".".concat(_this2.controls.stop.el));
-            _this2.installCurrentTime(t), t.volume = _this2.currentVolume, _this2.onPlay(o, t, n, i, e), _this2.onStop(t, i, e);
+                r = e.querySelector(".".concat(_this3.controls.container)),
+                o = r.querySelector(".".concat(_this3.controls.play)),
+                i = r.querySelector(".".concat(_this3.controls.stop.el));
+            _this3.installCurrentTime(t), t.volume = _this3.currentVolume, _this3.onPlay(o, t, n, i, e), _this3.onStop(t, i, e);
           });
         }
       }, {
         key: "onStop",
         value: function onStop(e, t, n) {
-          var _this3 = this;
+          var _this4 = this;
 
           t.addEventListener("click", function () {
-            _this3.last = void 0, n.classList.remove(_this3.activeElement), setTimeout(function () {
-              e.pause(), t.classList.remove(_this3.controls.stop.active), _this3.installCurrentTime(e), n.querySelector(".filter-back").classList.remove("fade");
+            _this4.last = void 0, n.classList.remove(_this4.activeElement), setTimeout(function () {
+              e.pause(), t.classList.remove(_this4.controls.stop.active), _this4.installCurrentTime(e), n.querySelector(".filter-back").classList.remove("fade");
             }, 500);
           });
         }
       }, {
         key: "onPlay",
         value: function onPlay(e, t, n, r, o) {
-          var _this4 = this;
+          var _this5 = this;
 
           e.addEventListener("click", function () {
-            void 0 !== _this4.last && (_this4.last.querySelector("video").pause(), _this4.installCurrentTime(_this4.last.querySelector("video")), _this4.last.classList.remove(_this4.activeElement), _this4.last.querySelector(".".concat(_this4.controls.stop.el)).classList.remove(_this4.controls.stop.active)), _this4.installCurrentTime(t), o.classList.add(_this4.activeElement), _this4.last = o, t.querySelector('source[type="video/mp4"]').src = n, setTimeout(function () {
+            void 0 !== _this5.last && (_this5.last.querySelector("video").pause(), _this5.installCurrentTime(_this5.last.querySelector("video")), _this5.last.classList.remove(_this5.activeElement), _this5.last.querySelector(".".concat(_this5.controls.stop.el)).classList.remove(_this5.controls.stop.active)), _this5.installCurrentTime(t), o.classList.add(_this5.activeElement), _this5.last = o, t.querySelector('source[type="video/mp4"]').src = n, setTimeout(function () {
               window.scrollTo({
                 top: o.getBoundingClientRect().top + window.scrollY
-              }), t.load(), t.play(), r.classList.add(_this4.controls.stop.active), o.querySelector(".filter-back").classList.add("fade");
+              }), t.load(), t.play(), r.classList.add(_this5.controls.stop.active), o.querySelector(".filter-back").classList.add("fade");
             }, 500);
           });
         }

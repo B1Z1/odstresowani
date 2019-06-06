@@ -4,21 +4,35 @@ import axios from 'axios';
 export default class{
     constructor(object){
         this.element = document.querySelector(object.element);
-        this.link = document.querySelector(object.link.element).dataset[object.link.data];
-        this.needData = object.data;
-        this.data = [];
+        this.linkElement = document.querySelector(object.link.element);
+        this.categoryElement = document.querySelector(object.categoryLink.element);
 
-        //Init MapBoxGL
-        mapboxgl.accessToken = object.mapboxGl.accessToken;
-        this.map = new mapboxgl.Map({
-            container: this.element.id,
-            style: object.mapboxGl.mapStyle, 
-            center: object.mapboxGl.center, 
-            zoom: object.mapboxGl.zoom
-        });
+        if ( this.element && this.linkElement && this.categoryElement ){
+            this.type = object.type;
+
+            this.link = this.linkElement.dataset[object.link.data];
+            this.linkCategory = this.categoryElement.dataset[object.categoryLink.data];
+
+            this.needData = object.data;
+
+            this.data = [];
+            this.dataCategory = [];
+
+            this.linkElement.remove();
+            this.categoryElement.remove();
+
+            //Init MapBoxGL
+            mapboxgl.accessToken = object.mapboxGl.accessToken;
+            this.map = new mapboxgl.Map({
+                container: this.element.id,
+                style: object.mapboxGl.mapStyle, 
+                center: object.mapboxGl.center, 
+                zoom: object.mapboxGl.zoom
+            });
 
 
-        this.init();
+            this.init();
+        }
     }
 
     init(){
@@ -32,7 +46,30 @@ export default class{
             .catch( error => {
                 console.log(error)
             });
-        console.log(this.data);
+
+        axios.get(this.linkCategory)
+            .then( response => {
+                response.data.forEach( el => {
+                    this.dataCategory.push(this.getCategoryData(el));
+                })
+            })
+            .catch( error =>{
+                console.log(error);
+            });    
+    }
+
+    /**
+     * 
+     * @param {*} element 
+     * Function gets data from all categories
+     * This will be need for filter by category id
+     * 
+     */
+    getCategoryData(element){
+        return  {    
+                    id: element.id,
+                    name: element.name
+                };
     }
 
     /**
@@ -54,6 +91,10 @@ export default class{
 
                 case 'content': 
                     localData[data] = element.content['rendered'];
+                break;
+
+                case 'categories': 
+                    localData[data] = element[`${this.type}-category`];
                 break;
 
                 case 'image': 

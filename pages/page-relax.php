@@ -7,6 +7,7 @@
 get_header();
 
 $rest_relax_link = carbon_get_theme_option('rest_api_markers');
+$rest_relax_category_link = carbon_get_theme_option('rest_api_markers_category');
 ?>
 <!-- : Map script init start : -->
 <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
@@ -32,6 +33,7 @@ $rest_relax_link = carbon_get_theme_option('rest_api_markers');
     <!-- ------------------ -->
 
     <div data-rest-link="<?php echo $rest_relax_link; ?>"></div>
+    <div data-rest-category-link="<?php echo $rest_relax_category_link; ?>"></div>
 
     <?php wp_footer(); ?>
 

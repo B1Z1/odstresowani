@@ -4,7 +4,7 @@
  * Register new post type "Markery dla mapy"
  *
  */
-register_post_type('markers', array(
+register_post_type('relax', array(
     'label'  => 'Markery dla mapy',
     'labels' => array(
         'name'               => 'Markery dla mapy',
@@ -35,7 +35,7 @@ register_post_type('markers', array(
  * Register "Markery kategorie" taxonomy for "Markery dla mapy"
  * 
  */
-register_taxonomy('markers-kategorie', array('markers'), array(
+register_taxonomy('relax-category', array('relax'), array(
     'label'                 => 'Markery kategorie', // определяется параметром $labels->name
     'labels'                => array(
         'name'              => 'Markery kategorie',
@@ -54,6 +54,6 @@ register_taxonomy('markers-kategorie', array('markers'), array(
     'public'                => true,
     'publicly_queryable'    => false, // равен аргументу public
     'show_in_rest'          => true, // добавить в REST API
-    'hierarchical'          => false,
+    'hierarchical'          => true,
     'rewrite'               => true,
 ) );
