@@ -1303,6 +1303,10 @@ ol {
   color: white;
 }
 
+.searchform__input::-moz-placeholder {
+  color: white;
+}
+
 .searchform__input:-ms-input-placeholder {
   color: white;
 }
@@ -2050,6 +2054,12 @@ _______________*/
   transition: color .3s ease-in-out;
 }
 
+.c-input__classic::-moz-placeholder {
+  color: #DFE0DE;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
 .c-input__classic:-ms-input-placeholder {
   color: #DFE0DE;
   -webkit-transition: color .3s ease-in-out;
@@ -2069,6 +2079,11 @@ _______________*/
 }
 
 .c-input__classic:focus::-webkit-input-placeholder,
+.c-input__classic:focus {
+  color: #B9B9B9;
+}
+
+.c-input__classic:focus::-moz-placeholder,
 .c-input__classic:focus {
   color: #B9B9B9;
 }
@@ -2128,6 +2143,12 @@ _______________*/
   transition: color .3s ease-in-out;
 }
 
+.c-textarea__classic::-moz-placeholder {
+  color: #DFE0DE;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
 .c-textarea__classic:-ms-input-placeholder {
   color: #DFE0DE;
   -webkit-transition: color .3s ease-in-out;
@@ -2147,6 +2168,11 @@ _______________*/
 }
 
 .c-textarea__classic:focus::-webkit-input-placeholder,
+.c-textarea__classic:focus {
+  color: #B9B9B9;
+}
+
+.c-textarea__classic:focus::-moz-placeholder,
 .c-textarea__classic:focus {
   color: #B9B9B9;
 }
@@ -2424,6 +2450,7 @@ _______________*/
 
 .c-list--tabcol2 {
   -webkit-columns: 2;
+  -moz-columns: 2;
   columns: 2;
 }
 
@@ -2724,6 +2751,12 @@ _______________*/
   transition: color .3s ease-in-out;
 }
 
+.c-form__calendar .wpbc_booking_form_structure .form-group .input-xlarge::-moz-placeholder {
+  color: #DFE0DE;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
 .c-form__calendar .wpbc_booking_form_structure .form-group .input-xlarge:-ms-input-placeholder {
   color: #DFE0DE;
   -webkit-transition: color .3s ease-in-out;
@@ -2743,6 +2776,11 @@ _______________*/
 }
 
 .c-form__calendar .wpbc_booking_form_structure .form-group .input-xlarge:focus::-webkit-input-placeholder,
+.c-form__calendar .wpbc_booking_form_structure .form-group .input-xlarge:focus {
+  color: #B9B9B9;
+}
+
+.c-form__calendar .wpbc_booking_form_structure .form-group .input-xlarge:focus::-moz-placeholder,
 .c-form__calendar .wpbc_booking_form_structure .form-group .input-xlarge:focus {
   color: #B9B9B9;
 }

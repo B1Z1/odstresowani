@@ -24,7 +24,7 @@ register_post_type('markers', array(
     'menu_position'       => 5,
     'menu_icon'           => 'dashicons-format-aside',
     'supports'            => array('title','editor','thumbnail'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
-    'show_in_rest'        => false,
+    'show_in_rest'        => true,
     'rewrite'             => true,
     'query_var'           => true,
 ) );
