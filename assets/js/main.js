@@ -1,3 +1,9 @@
+//Import Map Component
+import OdstresowaniMap from './components/map-relax';
+//Import VideoGallery Component
+import VideoGallery from './components/videogallery';
+
+
 window.onload = function(){
 
     /**
@@ -413,5 +419,32 @@ window.onload = function(){
      */
     new Mheader.header_scroll();
 
+    /**
+     * 
+     * Map relax include
+     * 
+     */
+    // let odstresowaniMap = new OdstresowaniMap();
+
+    /**
+     * 
+     * VideoGallery Init
+     * 
+     */
+    let videogallery = new VideoGallery({
+        element: {
+            container: 'block-videogallery__element',
+            active: 'block-videogallery__element--active'
+        },
+        video: 'block-videogallery__video',
+        controls: {
+            container: 'block-videogallery__controls',
+            play: 'video-controls__play',
+            stop: {
+                el: 'video-controls__stop',
+                active: 'video-controls__stop--active'
+            },
+        }
+    });
 }
 

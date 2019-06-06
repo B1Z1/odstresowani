@@ -1,4 +1,4 @@
-class VideoGallery{
+export default class {
     constructor(object){
         this.elements = document.querySelectorAll(`.${object.element.container}`) ? [... document.querySelectorAll(`.${object.element.container}`)]:null;
         this.activeElement = object.element.active;
@@ -86,21 +86,3 @@ class VideoGallery{
     }
 
 }
-
-window.addEventListener('load', ()=>{
-    let videogallery = new VideoGallery({
-        element: {
-            container: 'block-videogallery__element',
-            active: 'block-videogallery__element--active'
-        },
-        video: 'block-videogallery__video',
-        controls: {
-            container: 'block-videogallery__controls',
-            play: 'video-controls__play',
-            stop: {
-                el: 'video-controls__stop',
-                active: 'video-controls__stop--active'
-            },
-        },
-    });
-});

@@ -30,7 +30,6 @@ $gallery = $block['videogallery'];
             </div>
         <?php endforeach; ?>
     </div>
-    <script src="<?php echo get_template_directory_uri(); ?>/assets/js/updated/videogallery.js"></script>
     <div class="c-container header__triger">
 
 <?php endif; ?>

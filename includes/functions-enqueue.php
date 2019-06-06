@@ -16,7 +16,7 @@ function odstresowani_scripts() {
      * Scripts
      *
      */
-    wp_enqueue_script( 'odstresowani-main-script',get_template_directory_uri() . '/assets/js/updated/main.js' );
+    wp_enqueue_script( 'odstresowani-main-script',get_template_directory_uri() . '/assets/js/dest/main.js' );
     wp_enqueue_script( 'odstresowani-swiper-script',get_template_directory_uri() . '/assets/lib/Swiper/js/swiper.min.js' );
 }
 add_action( 'wp_enqueue_scripts', 'odstresowani_scripts' );
