@@ -7,3 +7,4 @@ pll_register_string('contact_with_us', 'Kontakt z nami');
 pll_register_string('read_more', 'Czytaj więcej');
 pll_register_string('enjoy', 'Zapraszamy na naszego');
 pll_register_string('blog', 'bloga');
+pll_register_string('send_to_us', 'Wyślij do nas swoją wiadomość');

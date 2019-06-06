@@ -31,7 +31,7 @@ get_header();
                     <div class="c-container c-container--480">
                         <h3 class="f-vb">
                             <span class="c-op f-vb">
-                                Wyślij do nas swoją wiadomość
+                                <?php echo pll__('Wyślij do nas swoją wiadomość'); ?>
                             </span>
                         </h3>
                         <?php echo do_shortcode('[contact-form-7 id="1781" title="Formularz"]'); ?>
