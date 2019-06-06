@@ -67,13 +67,6 @@
 /* : Search modules : */
 @import "modules/_search/search";
 
-/* : Map modules : */ 
-@import "modules/_map/maps";
-@import "modules/_map/maps-popup";
-@import "modules/_map/maps-title";
-@import "modules/_map/maps-marker";
-@import "modules/_map/mapboxgl";
-
 /* : Breadcrumbs modules : */
 @import "modules/_breadcrumbs/breadcrumbs";
 
@@ -107,6 +100,7 @@
 @import "./components/c-card"; 
 @import "./components/c-container";
 @import "./components/c-form";
+@import "./components/c-map";
 
 /* --> Resets or colors UI <-- */
 /* Myreset */

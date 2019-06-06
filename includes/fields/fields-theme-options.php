@@ -46,6 +46,9 @@ if ( !function_exists('crb_register_theme_options') ){
             Field::make('file', 'search_film_mp4', __('Video na tle MP4')),
             Field::make('file', 'search_film_ogg', __('Video na tle OGG')),
         ))
+        ->add_tab('REST API', array(
+            Field::make('text', 'rest_api_markers', __('REST API link dla markerów'))
+        ))
         ->add_tab('Strona 404', array(
             Field::make('file', '404_film_mp4', __('Video na tle MP4')),
             Field::make('file', '404_film_ogg', __('Video na tle OGG')),

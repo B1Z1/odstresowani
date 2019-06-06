@@ -4,8 +4,7 @@ import OdstresowaniMap from './components/map-relax';
 import VideoGallery from './components/videogallery';
 
 
-window.onload = function(){
-
+window.addEventListener('load', ()=>{
     /**
      *
      * Remove all empty containers from page
@@ -421,10 +420,23 @@ window.onload = function(){
 
     /**
      * 
-     * Map relax include
+     * Map include
      * 
      */
-    // let odstresowaniMap = new OdstresowaniMap();
+    let relaxMap = new OdstresowaniMap({
+        mapboxGl: {
+            accessToken: 'pk.eyJ1IjoiaWx5YW1pc2hraW4iLCJhIjoiY2p1aWU0YnFtMGRqMjRlbmJzazljZWp0cCJ9.zrZV2rr_u2BwoHK7f7lZtg',
+            mapStyle: 'mapbox://styles/ilyamishkin/cjuifjhya0m221fqkauhk7fyv',
+            center: [-74.50, 40],
+            zoom: 9
+        },
+        link: {
+            element: '[data-rest-link]',
+            data: 'restLink'
+        },
+        element: '[data-map-init]',
+        data: ['title', 'content', 'image', '_adress', '_full_adress', '_phone']
+    });
 
     /**
      * 
@@ -446,5 +458,5 @@ window.onload = function(){
             },
         }
     });
-}
+});
 

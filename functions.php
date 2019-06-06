@@ -33,7 +33,6 @@ if ( !function_exists( 'shuffle_the_posts' ) ){
 require get_template_directory() . '/includes/components/component-general.php';
 require get_template_directory() . '/includes/components/component-advanced-block.php';
 require get_template_directory() . '/includes/components/component-data-video.php';
-require get_template_directory() . '/includes/components/component-map.php';
 
 /**
  *
@@ -86,7 +85,6 @@ require get_template_directory() . '/includes/fields/fields-block-most-viewed.ph
 require get_template_directory() . '/includes/fields/fields-block-post-banner.php';
 require get_template_directory() . '/includes/fields/fields-block-image-gallery.php';
 require get_template_directory() . '/includes/fields/fields-block-video-gallery.php';
-require get_template_directory() . '/includes/fields/fields-block-map.php';
 require get_template_directory() . '/includes/fields/fields-block-gallery-image.php';
 require get_template_directory() . '/includes/fields/fields-block-custom-card.php';
 require get_template_directory() . '/includes/fields/fields-block-welcome.php';

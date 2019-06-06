@@ -1325,172 +1325,6 @@ ol {
   font-size: 1rem;
 }
 
-/* : Map modules : */
-
-.maps {
-  position: relative;
-  width: 100%;
-  height: calc(100vh - 32px);
-  overflow: hidden;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.maps__map {
-  position: absolute !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.maps__2 {
-  z-index: 1;
-}
-
-.map-hidden {
-  display: none;
-}
-
-@-webkit-keyframes pulse {
-  to {
-    -webkit-transform: scale(2);
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-
-@keyframes pulse {
-  to {
-    -webkit-transform: scale(2);
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-
-.maps-popup {
-  position: relative;
-}
-
-.maps-popup__image {
-  width: 100%;
-  height: 256px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.map-title {
-  position: absolute;
-  bottom: 0;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  z-index: 1;
-}
-
-.map-title--left {
-  left: 25%;
-}
-
-.map-title--right {
-  left: 75%;
-}
-
-.map-title--center {
-  left: 50%;
-}
-
-.maps-marker {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  font-size: .8rem;
-  line-height: 1.6rem;
-  color: white;
-  background: #0052c3;
-  background-size: cover;
-  background-position: center;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.maps-marker--alert {
-  background: #c01807;
-}
-
-.maps-marker--alert .maps-marker__circle {
-  border: 1px solid #c01807;
-}
-
-.maps-marker__circle {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 30px;
-  height: 30px;
-  border: 1px solid #0052c3;
-  border-radius: 50%;
-  opacity: 1;
-  -webkit-transform: scale(1);
-  transform: scale(1);
-}
-
-.maps-marker__circle:nth-child(1) {
-  -webkit-animation: pulse 3s infinite linear;
-  animation: pulse 3s infinite linear;
-}
-
-.maps-marker__circle:nth-child(2) {
-  -webkit-animation: pulse 3s infinite linear;
-  animation: pulse 3s infinite linear;
-  -webkit-animation-delay: .8s;
-  animation-delay: .8s;
-}
-
-.maps-marker__circle:nth-child(3) {
-  -webkit-animation: pulse 3s infinite linear;
-  animation: pulse 3s infinite linear;
-  -webkit-animation-delay: 1.6s;
-  animation-delay: 1.6s;
-}
-
-.maps-marker__circle:nth-child(4) {
-  -webkit-animation: pulse 3s infinite linear;
-  animation: pulse 3s infinite linear;
-  -webkit-animation-delay: 2.4s;
-  animation-delay: 2.4s;
-}
-
-.mapboxgl-popup {
-  width: 512px;
-  height: 312px;
-}
-
-.mapboxgl-compare {
-  z-index: 3 !important;
-}
-
-.mapboxgl-compare .compare-swiper {
-  left: -24px !important;
-  margin: -24px 1px 0 !important;
-  width: 48px !important;
-  height: 48px !important;
-  background-color: #0052c3 !important;
-  background-position: center;
-  background-size: contain;
-}
-
 /* : Breadcrumbs modules : */
 
 .breadcrumbs {
@@ -2800,6 +2634,19 @@ _______________*/
   color: #B9B9B9;
 }
 
+/*_________________________
+
+Component Map Start
+_______________*/
+
+.c-map {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /* --> Resets or colors UI <-- */
 
 /* Myreset */
@@ -3817,11 +3664,6 @@ _______________*/
 
   .recent-posts_s496_pagination {
     display: none;
-  }
-
-  .map-title--left,
-  .map-title--right {
-    left: 50%;
   }
 
   .l-header {
