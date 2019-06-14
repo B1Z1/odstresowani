@@ -2647,6 +2647,75 @@ _______________*/
   height: 100%;
 }
 
+/* ---> :Elements of Component: <--- */
+
+/*_________________________
+
+Component Map Start
+_______________*/
+
+.c-marker {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #0052c3;
+  color: white;
+  font-size: 1rem;
+}
+
+/* ---> :Elements of Component: <--- */
+
+.c-marker__circle {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #0052c3;
+  -webkit-animation: pulse 2s infinite ease-in-out;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.c-marker__circle:nth-of-type(1) {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.c-marker__circle:nth-of-type(2) {
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+
+.c-marker__circle:nth-of-type(3) {
+  -webkit-animation-delay: 1.2s;
+  animation-delay: 1.2s;
+}
+
+@-webkit-keyframes pulse {
+  to {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  to {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
 /* --> Resets or colors UI <-- */
 
 /* Myreset */

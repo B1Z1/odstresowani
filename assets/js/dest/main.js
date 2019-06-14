@@ -303,8 +303,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         l(c("timeout of " + e.timeout + "ms exceeded", e, "ECONNABORTED", d)), d = null;
       }, r.isStandardBrowserEnv()) {
         var m = n(22),
-            v = (e.withCredentials || s(e.url)) && e.xsrfCookieName ? m.read(e.xsrfCookieName) : void 0;
-        v && (f[e.xsrfHeaderName] = v);
+            g = (e.withCredentials || s(e.url)) && e.xsrfCookieName ? m.read(e.xsrfCookieName) : void 0;
+        g && (f[e.xsrfHeaderName] = g);
       }
 
       if ("setRequestHeader" in d && r.forEach(f, function (e, t) {
@@ -949,7 +949,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       function _class(e) {
         _classCallCheck(this, _class);
 
-        this.element = document.querySelector(e.element), this.linkElement = document.querySelector(e.link.element), this.categoryElement = document.querySelector(e.categoryLink.element), this.element && this.linkElement && this.categoryElement && (this.type = e.type, this.link = this.linkElement.dataset[e.link.data], this.linkCategory = this.categoryElement.dataset[e.categoryLink.data], this.needData = e.data, this.data = [], this.dataCategory = [], this.linkElement.remove(), this.categoryElement.remove(), mapboxgl.accessToken = e.mapboxGl.accessToken, this.map = new mapboxgl.Map({
+        this.element = document.querySelector(e.element), this.linkElement = document.querySelector(e.link.element), this.categoryElement = document.querySelector(e.categoryLink.element), this.element && this.linkElement && this.categoryElement && (this.type = e.type, this.link = this.linkElement.dataset[e.link.data], this.linkCategory = this.categoryElement.dataset[e.categoryLink.data], this.needData = e.data, this.data = [], this.dataCategory = [], this.linkElement.remove(), this.categoryElement.remove(), this.accessToken = e.mapboxGl.accessToken, mapboxgl.accessToken = this.accessToken, this.map = new mapboxgl.Map({
           container: this.element.id,
           style: e.mapboxGl.mapStyle,
           center: e.mapboxGl.center,
@@ -965,7 +965,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
           o.a.get(this.link).then(function (e) {
             e.data.forEach(function (e) {
               _this.data.push(_this.getData(e));
-            });
+            }), _this.generateMarkers();
           })["catch"](function (e) {
             console.log(e);
           }), o.a.get(this.linkCategory).then(function (e) {
@@ -974,7 +974,55 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
             });
           })["catch"](function (e) {
             console.log(e);
-          }), console.log(this.dataCategory);
+          });
+        }
+      }, {
+        key: "generateMarkers",
+        value: function generateMarkers() {
+          var _this2 = this;
+
+          var e = mapboxSdk({
+            accessToken: this.accessToken
+          });
+          this.data.forEach(function (t, n) {
+            var r = t;
+            e.geocoding.forwardGeocode({
+              query: r._adress,
+              autocomplete: !1,
+              limit: 1
+            }).send().then(function (e) {
+              if (e && e.body && e.body.features && e.body.features.length) {
+                var _t = e.body.features[0],
+                    _r = _this2.markerTemplates(n + 1);
+
+                new mapboxgl.Marker(_r).setLngLat(_t.center).addTo(_this2.map), console.log(_this2.map);
+              }
+            });
+          });
+        }
+      }, {
+        key: "markerTemplates",
+        value: function markerTemplates(e) {
+          var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "classic";
+
+          switch (t) {
+            case "classic":
+              return this.classicMarker(e);
+          }
+        }
+      }, {
+        key: "classicMarker",
+        value: function classicMarker(e) {
+          var t = document.createElement("div");
+          t.classList.add("c-marker"), t.textContent = e;
+
+          for (var _e = 0; _e <= 2; _e++) {
+            var _e2 = document.createElement("div");
+
+            _e2.classList.add("c-marker__circle"), t.appendChild(_e2);
+          }
+
+          return t;
         }
       }, {
         key: "getCategoryData",
@@ -987,7 +1035,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       }, {
         key: "getData",
         value: function getData(e) {
-          var _this2 = this;
+          var _this3 = this;
 
           var t = {};
           return this.needData.forEach(function (n) {
@@ -1001,12 +1049,12 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
                 break;
 
               case "categories":
-                t[n] = e["".concat(_this2.type, "-category")];
+                t[n] = e["".concat(_this3.type, "-category")];
                 break;
 
               case "image":
-                var _r = e._links["wp:featuredmedia"][0].href;
-                o.a.get(_r).then(function (e) {
+                var _r2 = e._links["wp:featuredmedia"][0].href;
+                o.a.get(_r2).then(function (e) {
                   t[n] = e.data.source_url;
                 })["catch"](function (e) {
                   console.log(e);
@@ -1035,8 +1083,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       mapboxGl: {
         accessToken: "pk.eyJ1IjoiaWx5YW1pc2hraW4iLCJhIjoiY2p1aWU0YnFtMGRqMjRlbmJzazljZWp0cCJ9.zrZV2rr_u2BwoHK7f7lZtg",
         mapStyle: "mapbox://styles/ilyamishkin/cjuifjhya0m221fqkauhk7fyv",
-        center: [-74.5, 40],
-        zoom: 9
+        center: [21.2123, 52.1118],
+        zoom: 10
       },
       data: ["title", "content", "image", "categories", "_adress", "_phone"]
     }), new (
@@ -1051,38 +1099,38 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       _createClass(_class2, [{
         key: "init",
         value: function init() {
-          var _this3 = this;
+          var _this4 = this;
 
           this.elements.forEach(function (e) {
-            var t = e.querySelector(".".concat(_this3.video, " video")),
+            var t = e.querySelector(".".concat(_this4.video, " video")),
                 n = t.dataset.src,
-                r = e.querySelector(".".concat(_this3.controls.container)),
-                o = r.querySelector(".".concat(_this3.controls.play)),
-                i = r.querySelector(".".concat(_this3.controls.stop.el));
-            _this3.installCurrentTime(t), t.volume = _this3.currentVolume, _this3.onPlay(o, t, n, i, e), _this3.onStop(t, i, e);
+                r = e.querySelector(".".concat(_this4.controls.container)),
+                o = r.querySelector(".".concat(_this4.controls.play)),
+                i = r.querySelector(".".concat(_this4.controls.stop.el));
+            _this4.installCurrentTime(t), t.volume = _this4.currentVolume, _this4.onPlay(o, t, n, i, e), _this4.onStop(t, i, e);
           });
         }
       }, {
         key: "onStop",
         value: function onStop(e, t, n) {
-          var _this4 = this;
+          var _this5 = this;
 
           t.addEventListener("click", function () {
-            _this4.last = void 0, n.classList.remove(_this4.activeElement), setTimeout(function () {
-              e.pause(), t.classList.remove(_this4.controls.stop.active), _this4.installCurrentTime(e), n.querySelector(".filter-back").classList.remove("fade");
+            _this5.last = void 0, n.classList.remove(_this5.activeElement), setTimeout(function () {
+              e.pause(), t.classList.remove(_this5.controls.stop.active), _this5.installCurrentTime(e), n.querySelector(".filter-back").classList.remove("fade");
             }, 500);
           });
         }
       }, {
         key: "onPlay",
         value: function onPlay(e, t, n, r, o) {
-          var _this5 = this;
+          var _this6 = this;
 
           e.addEventListener("click", function () {
-            void 0 !== _this5.last && (_this5.last.querySelector("video").pause(), _this5.installCurrentTime(_this5.last.querySelector("video")), _this5.last.classList.remove(_this5.activeElement), _this5.last.querySelector(".".concat(_this5.controls.stop.el)).classList.remove(_this5.controls.stop.active)), _this5.installCurrentTime(t), o.classList.add(_this5.activeElement), _this5.last = o, t.querySelector('source[type="video/mp4"]').src = n, setTimeout(function () {
+            void 0 !== _this6.last && (_this6.last.querySelector("video").pause(), _this6.installCurrentTime(_this6.last.querySelector("video")), _this6.last.classList.remove(_this6.activeElement), _this6.last.querySelector(".".concat(_this6.controls.stop.el)).classList.remove(_this6.controls.stop.active)), _this6.installCurrentTime(t), o.classList.add(_this6.activeElement), _this6.last = o, t.querySelector('source[type="video/mp4"]').src = n, setTimeout(function () {
               window.scrollTo({
                 top: o.getBoundingClientRect().top + window.scrollY
-              }), t.load(), t.play(), r.classList.add(_this5.controls.stop.active), o.querySelector(".filter-back").classList.add("fade");
+              }), t.load(), t.play(), r.classList.add(_this6.controls.stop.active), o.querySelector(".filter-back").classList.add("fade");
             }, 500);
           });
         }
