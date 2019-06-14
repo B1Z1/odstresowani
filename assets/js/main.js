@@ -1,5 +1,5 @@
 //Import Map Component
-import OdstresowaniMap from './components/map-relax';
+// import OdstresowaniMap from './components/map-relax';
 //Import VideoGallery Component
 import VideoGallery from './components/videogallery';
 
@@ -423,25 +423,25 @@ window.addEventListener('load', ()=>{
      * Map include
      * 
      */
-    let relaxMap = new OdstresowaniMap({
-        type: 'relax',
-        element: '[data-map-init]',
-        link: {
-            element: '[data-rest-link]',
-            data: 'restLink'
-        },
-        categoryLink: {
-            element: '[data-rest-category-link]',
-            data: 'restCategoryLink'
-        },
-        mapboxGl: {
-            accessToken: 'pk.eyJ1IjoiaWx5YW1pc2hraW4iLCJhIjoiY2p1aWU0YnFtMGRqMjRlbmJzazljZWp0cCJ9.zrZV2rr_u2BwoHK7f7lZtg',
-            mapStyle: 'mapbox://styles/ilyamishkin/cjuifjhya0m221fqkauhk7fyv',
-            center: [21.2123, 52.1118],
-            zoom: 10
-        },
-        data: ['title', 'content', 'image', 'categories', '_adress', '_phone']
-    });
+    // let relaxMap = new OdstresowaniMap({
+    //     type: 'relax',
+    //     element: '[data-map-init]',
+    //     link: {
+    //         element: '[data-rest-link]',
+    //         data: 'restLink'
+    //     },
+    //     categoryLink: {
+    //         element: '[data-rest-category-link]',
+    //         data: 'restCategoryLink'
+    //     },
+    //     mapboxGl: {
+    //         accessToken: 'pk.eyJ1IjoiaWx5YW1pc2hraW4iLCJhIjoiY2p1aWU0YnFtMGRqMjRlbmJzazljZWp0cCJ9.zrZV2rr_u2BwoHK7f7lZtg',
+    //         mapStyle: 'mapbox://styles/ilyamishkin/cjuifjhya0m221fqkauhk7fyv',
+    //         center: [21.2123, 52.1118],
+    //         zoom: 10
+    //     },
+    //     data: ['title', 'content', 'image', 'categories', '_adress', '_phone']
+    // });
 
     /**
      * 
