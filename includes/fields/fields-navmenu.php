@@ -10,8 +10,7 @@ use Carbon_Fields\Field;
 add_action( 'carbon_fields_register_fields', 'crb_register_navmenu', 10 );
 if ( !function_exists('crb_register_navmenu') ){
     function crb_register_navmenu(){
-        global $getPosts;
-        $posts_tax = $getPosts->getTaxTypes();
+        $posts_tax = GetPosts::getTaxTypes();
 
         Container::make( 'nav_menu_item', __( 'Menu Settings' ) )
             ->add_fields( array(

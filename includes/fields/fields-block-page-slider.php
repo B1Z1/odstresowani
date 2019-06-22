@@ -10,9 +10,8 @@ use Carbon_Fields\Block;
  */
 add_action( 'carbon_fields_register_fields', 'crb_register_block_page_slider', 10 );
 if ( !function_exists('crb_register_block_page_slider') ){
-    function crb_register_block_page_slider(){
-        global $getPosts;
-        $page_ids = $getPosts->getByPostType('page');
+    function crb_register_block_page_slider(){;
+        $page_ids = GetPosts::getByPostType('page');
         /**
          *
          * Block Slider for pages

@@ -11,8 +11,7 @@ use Carbon_Fields\Block;
 add_action( 'carbon_fields_register_fields', 'crb_register_block_all_posts', 10 );
 if ( !function_exists('crb_register_block_all_posts') ){
     function crb_register_block_all_posts(){
-        global $getPosts;
-        $posts = $getPosts->getPostsTypes();
+        $posts = GetPosts::getPostsTypes();
 
         Block::make(__('Blok ze wszystkimi postami'))
             ->add_fields(FieldsGlobal::getGaps())
