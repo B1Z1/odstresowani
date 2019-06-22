@@ -288,10 +288,6 @@ window.addEventListener('load', ()=>{
 
     let MExtentions = (function(){
         return {
-            //Function for relax page
-            'relax' : function(object){
-                relax(object);
-            },
             //Infinity Scroll for 
             'infinityScroll' : function(object){
                 infinityScroll(object);
@@ -323,17 +319,6 @@ window.addEventListener('load', ()=>{
                 //Append container
                 newCards.forEach(card=>{ container.appendChild(card); });
             }
-        }
-
-        //Function for generate image to synget
-        function relax(object){
-            let svgs = [... document.querySelectorAll(object.svg)],
-                slides = [... document.querySelectorAll(object.slide)];
-
-            slides.forEach(function(slide, index){
-                let src = slide.dataset.image;
-                svgs[index].contentDocument.querySelector('image').setAttribute('xlink:href', src);
-            });
         }
     }());
 

@@ -20,7 +20,7 @@ $cat_describe = $cat_id->description;
 
 ?>
 
-    <div class="c-wrapper">
+<div class="c-wrapper">
 
     <!-- ------------------ -->
     <!-- Main section start -->
@@ -41,8 +41,8 @@ $cat_describe = $cat_id->description;
 
         <div class="c-container c-container--posts pt32 header__triger">
             <div class="d-flex fwrap infinity-scroll">
-                <?php if ( have_posts() ): ?> 
-                    <?php while (have_posts()): the_post(); ?>
+                <?php if (have_posts()) : ?>
+                    <?php while (have_posts()) : the_post(); ?>
                         <?php
                         /**
                          *
@@ -69,5 +69,5 @@ $cat_describe = $cat_id->description;
     <!--  Main section end  -->
     <!-- ------------------ -->
 
-<?php
-get_footer();
+    <?php
+    get_footer();
