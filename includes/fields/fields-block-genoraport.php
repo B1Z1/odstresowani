@@ -13,6 +13,7 @@ add_action( 'carbon_fields_register_fields', 'crb_register_block_genoraport', 10
 if ( !function_exists('crb_register_block_genoraport') ){
     function crb_register_block_genoraport(){
         Block::make(__('Genoraport'))
+            ->add_fields(FieldsGlobal::getGaps())
             ->add_fields(array(
                 Field::make('image', 'genoraport_image', __('Obraz raportu')),
                 Field::make('image', 'genoraport_arrow', __('Strzalka')),

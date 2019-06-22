@@ -8,9 +8,10 @@ $raport = wp_get_attachment_image_url($block['genoraport_image'], 'full');
 $arrow = wp_get_attachment_image_url($block['genoraport_arrow'], 'full');
 $doc =  wp_get_attachment_url($block['genoraport_document']);
 $text = $block['genoraport_text'];
+$gapsClasses = GeneralOptions::getAllGapsFromArray($block); 
 ?>
 
-<div class="block">
+<div class="block <?php echo $gapsClasses; ?>">
     <div class="flex-kit fwrap jcc">
         <div class="pc-col-5">
             <div class="block-genoraport f-vb c-op">

@@ -10,7 +10,8 @@ $args_q = array(
     'lang' => $currlang,
 );
 $posts = new WP_Query($args_q);
-$gapsClasses = GeneralOptions::getAllGapsFromArray($block); ?>
+$gapsClasses = GeneralOptions::getAllGapsFromArray($block); 
+?>
 
 <section class="block header__triger <?php echo $gapsClasses; ?>">
 
