@@ -36,6 +36,7 @@ require get_template_directory() . '/includes/components/component-general.php';
 require get_template_directory() . '/includes/components/component-advanced-block.php';
 require get_template_directory() . '/includes/components/component-data-video.php';
 require get_template_directory() . '/includes/components/component-global-fields.php';
+require get_template_directory() . '/includes/components/component-posts.php';
 
 /**
  *
