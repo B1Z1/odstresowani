@@ -88,6 +88,7 @@ require get_template_directory() . '/includes/fields/fields-block-video-gallery.
 require get_template_directory() . '/includes/fields/fields-block-gallery-image.php';
 require get_template_directory() . '/includes/fields/fields-block-custom-card.php';
 require get_template_directory() . '/includes/fields/fields-block-welcome.php';
+require get_template_directory() . '/includes/fields/fields-block-genoraport.php';
 
 /**
  *
