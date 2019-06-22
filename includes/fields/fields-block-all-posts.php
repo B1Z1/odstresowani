@@ -1,5 +1,4 @@
 <?php
-use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 use Carbon_Fields\Block;
 
@@ -16,6 +15,7 @@ if ( !function_exists('crb_register_block_all_posts') ){
         $posts = $getPosts->getPostsTypes();
 
         Block::make(__('Blok ze wszystkimi postami'))
+            ->add_fields(FieldsGlobal::getGaps())
             ->add_fields(array(
                 Field::make('select', 'posts', __('Wybierz typ postów'))
                     ->set_options($posts),
