@@ -6,7 +6,7 @@ $post_names = array(pll__('Aktualności'), pll__('Strefa Wiedzy'));
 </div>
 <!-- Recent posts slider start -->
 <section class="recent-posts swiper-recent_posts header__triger">
-    <div class="mt64 mb64 pt128 pb128 bck-gm">
+    <div class="mt64 pt128 pb128 bck-gm">
         <div class="c-container">
             <div class="row">
                 <div class="pb128">

@@ -8,6 +8,8 @@
  */
 $currlang = pll_current_language();
 
+//Libs
+require get_template_directory() . '/includes/functions-fields.php';
 
 /**
  *
@@ -33,6 +35,7 @@ if ( !function_exists( 'shuffle_the_posts' ) ){
 require get_template_directory() . '/includes/components/component-general.php';
 require get_template_directory() . '/includes/components/component-advanced-block.php';
 require get_template_directory() . '/includes/components/component-data-video.php';
+require get_template_directory() . '/includes/components/component-global-fields.php';
 
 /**
  *
@@ -69,7 +72,6 @@ require get_template_directory() . '/includes/functions-theme-support.php';
  * Require Carbon fields
  *
  */
-require get_template_directory() . '/includes/functions-fields.php';
 require get_template_directory() . '/includes/fields/fields-theme-options.php';
 require get_template_directory() . '/includes/fields/fields-taxonomy-category.php';
 require get_template_directory() . '/includes/fields/fields-taxonomy-places.php';

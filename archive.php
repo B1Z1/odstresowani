@@ -41,7 +41,7 @@ $cat_describe = $cat_id->description;
 
         <div class="c-container c-container--posts pt32 header__triger">
             <div class="d-flex fwrap infinity-scroll">
-                <?php if ( have_posts() ):  ?> 
+                <?php if ( have_posts() ): ?> 
                     <?php while (have_posts()): the_post(); ?>
                         <?php
                         /**

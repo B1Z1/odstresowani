@@ -1,5 +1,4 @@
 <?php
-use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 use Carbon_Fields\Block;
 
@@ -14,49 +13,12 @@ add_action( 'carbon_fields_register_fields', 'crb_register_block_advanced', 10 )
 if ( !function_exists('crb_register_block_advanced') ){
     function crb_register_block_advanced(){
         Block::make(__('Blok zaawansowany'))
+            ->add_fields(FieldsGlobal::getGaps())
             ->add_fields(array(
                 //Block main options start
                 //Header trigger
                 Field::make('checkbox', 'advanced_header', __('Czy ma pojawiać się nagłówek strony'))
                     ->set_option_value(true),
-                //Padding top of block
-                Field::make('select', 'advanced_pt', __('Marginez wewnętrzny górny w pikselach'))
-                    ->set_options(array(
-                        'pt160' => '160',
-                        'pt128' => '128',
-                        'pt64' => '64',
-                        'pt32' => '32',
-                        'none' => '0',
-                    )),
-                //Padding bottom of block
-                Field::make('select', 'advanced_pb', __('Marginez wewnętrzny dolny w pikselach'))
-                    ->set_options(array(
-                        'pb160' => '160',
-                        'pb128' => '128',
-                        'pb64' => '64',
-                        'pb32' => '32',
-                        'none' => '0',
-                    )),
-                //Margin top of block
-                Field::make('select', 'advanced_mt', __('Marginez górny w pikselach'))
-                    ->set_options(array(
-                        'mt224' => '224',
-                        'mt160' => '160',
-                        'mt128' => '128',
-                        'mt64' => '64',
-                        'mt32' => '32',
-                        'none' => '0',
-                    )),
-                //Margin bottom of block
-                Field::make('select', 'advanced_mb', __('Marginez dolny w pikselach'))
-                    ->set_options(array(
-                        'mb224' => '224',
-                        'mb160' => '160',
-                        'mb128' => '128',
-                        'mb64' => '64',
-                        'mb32' => '32',
-                        'none' => '0',
-                    )),
                 //Title of block
                 Field::make('textarea', 'advanced_title', __('Tytuł bloku')),
                 //Size of title
