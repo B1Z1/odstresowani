@@ -8,9 +8,10 @@ use Carbon_Fields\Block;
  * This blocks used in archive pages 
  * 
  */
-add_action( 'carbon_fields_register_fields', 'crb_register_block_all_posts', 10 );
-if ( !function_exists('crb_register_block_all_posts') ){
-    function crb_register_block_all_posts(){
+add_action('carbon_fields_register_fields', 'crb_register_block_all_posts', 10);
+if (!function_exists('crb_register_block_all_posts')) {
+    function crb_register_block_all_posts()
+    {
         $posts = GetPosts::getPostsTypes();
 
         Block::make(__('Blok ze wszystkimi postami'))
@@ -26,7 +27,7 @@ if ( !function_exists('crb_register_block_all_posts') ){
                     )),
             ))
             ->set_render_callback(function ($block) {
-                include(locate_template('template-parts/block-parts/part-posts.php',false, false) );
+                include(locate_template('template-parts/block-parts/part-posts.php', false, false));
             });
     }
 }

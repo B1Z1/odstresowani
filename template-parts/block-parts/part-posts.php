@@ -10,7 +10,7 @@ $args_q = array(
     'lang' => $currlang,
 );
 $posts = new WP_Query($args_q);
-$gapsClasses = GeneralOptions::getAllGapsFromArray($block); 
+$gapsClasses = GeneralOptions::getAllGapsFromArray($block);
 ?>
 
 <section class="block header__triger <?php echo $gapsClasses; ?>">
@@ -18,7 +18,7 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
 
     <div class="d-flex fwrap row infinity-scroll">
         <?php
-        if ( $posts->have_posts() ) {
+        if ($posts->have_posts()) {
             while ($posts->have_posts()) {
                 $posts->the_post();
                 $args['url'] = get_permalink();
@@ -47,9 +47,9 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
                 $column = $block['posts_position']; ?>
                 <div class="ntb-col-6 pc-col-<?php echo $column ?> mb64">
                     <?php do_action('post_card_block', $args); ?>
-                </div> 
-                <?php }
-            } ?>
+                </div>
+            <?php }
+    } ?>
     </div>
 
 </section>
