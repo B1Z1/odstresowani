@@ -13,6 +13,7 @@ add_action( 'carbon_fields_register_fields', 'crb_register_custom_card', 10 );
 if ( !function_exists('crb_register_custom_card') ){
     function crb_register_custom_card(){
         Block::make(__('Block z Kartkami własnego wyrobu'))
+            ->add_fields(FieldsGlobal::getGaps())
             ->add_fields(array(
                 Field::make('complex', 'list', __('Dodaj Karte'))
                     ->add_fields(array(
