@@ -1,11 +1,12 @@
 <?php 
 $gallery = $block['videogallery'];
+$gapsClasses = GeneralOptions::getAllGapsFromArray($block);
 ?>
 
 <?php if ( $gallery ): ?>
 
     </div>
-    <div class="block block--texcen block-videogallery mt64 mb64">
+    <div class="block block--texcen block-videogallery <?php echo $gapsClasses; ?>">
         <?php foreach( $gallery as $post ): 
             $name = $post['videogallery_name'];
             $poster = wp_get_attachment_url($post['videogallery_poster'], 'full');
