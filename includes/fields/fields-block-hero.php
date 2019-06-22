@@ -13,6 +13,7 @@ add_action( 'carbon_fields_register_fields', 'crb_register_block_banner', 10 );
 if ( !function_exists('crb_register_block_banner') ){
     function crb_register_block_banner(){
         Block::make(__('Hero Banner'))
+            ->add_fields(FieldsGlobal::getGaps())
             ->add_fields(array(
                 Field::make('select', 'hero_check', __('Wybierz co chcesz'))
                     ->set_options(array(
