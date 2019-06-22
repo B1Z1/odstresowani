@@ -81,7 +81,6 @@ require get_template_directory() . '/includes/fields/fields-navmenu.php';
 //Blocks
 require get_template_directory() . '/includes/fields/fields-block-hero.php';
 require get_template_directory() . '/includes/fields/fields-block-advanced.php';
-require get_template_directory() . '/includes/fields/fields-block-page-slider.php';
 require get_template_directory() . '/includes/fields/fields-block-recent-slider.php';
 require get_template_directory() . '/includes/fields/fields-block-all-posts.php';
 require get_template_directory() . '/includes/fields/fields-block-most-viewed.php';
