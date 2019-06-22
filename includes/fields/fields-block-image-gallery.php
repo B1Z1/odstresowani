@@ -13,9 +13,9 @@ if (!function_exists('crb_register_block_image_gallery')) {
     function crb_register_block_image_gallery()
     {
         Block::make(__('Galeria obrazków'))
+            ->add_fields(FieldsGlobal::getGaps())
             ->add_fields(array(
                 Field::make('complex', 'mini_images', __('Tekst nad przyciskiem'))
-                    ->add_fields(FieldsGlobal::getGaps())
                     ->add_fields(array(
                         Field::make('image', 'mini_images_image', __('Obrazek')),
                         Field::make('text', 'mini_images_url', __('Link')),
