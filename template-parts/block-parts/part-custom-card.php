@@ -2,7 +2,6 @@
 
 $card_list = $block['list'];
 $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
-
 ?>
 
 </div>

@@ -22,7 +22,7 @@ class GeneralOptions
         $string = '';
 
         foreach ($types as $type) {
-            if ( $array[$type] !== 'none' )
+            if ( $array[$type] && $array[$type] !== 'none' )
                 $string .= "{$array[$type]} ";
         }
         $string = substr($string, 0, -1);
