@@ -2,11 +2,12 @@
 global $currlang;
 $post_types = array('post', 'strefa-wiedzy'); 
 $post_names = array(pll__('Aktualności'), pll__('Strefa Wiedzy'));
+$gapsClasses = GeneralOptions::getAllGapsFromArray($block);
 ?>
 </div>
 <!-- Recent posts slider start -->
 <section class="recent-posts swiper-recent_posts header__triger">
-    <div class="mt64 pt128 pb128 bck-gm">
+    <div class="bck-gm <?php echo $gapsClasses; ?>">
         <div class="c-container">
             <div class="row">
                 <div class="pb128">
