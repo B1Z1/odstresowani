@@ -2,16 +2,14 @@
 
 //Block Constructor
 $advanced_block = new AdvancedBlock();
-$string_block_classes = $advanced_block->generate_string(
+$gapsClasses = GeneralOptions::getAllGapsFromArray($block);
+$generalClasses = $advanced_block->generate_string(
     array(
-        $block['advanced_pt'] == 'none' ? '':$block['advanced_pt'],
-        $block['advanced_pb'] == 'none' ? '':$block['advanced_pb'],
-        $block['advanced_mt'] == 'none' ? '':$block['advanced_mt'],
-        $block['advanced_mb'] == 'none' ? '':$block['advanced_mb'],
-        $block['advanced_backcolor'] == 'none' ? '':$block['advanced_backcolor'],
+        $block['advanced_backcolor'] ? $block['advanced_backcolor']:'',
         $block['advanced_header'] ? 'header__triger':'',
     )
 );
+
 //Flex constructor
 $string_flex_classes = $advanced_block->generate_string(
     array(
@@ -36,7 +34,7 @@ $image_under = wp_get_attachment_image_url($block['advanced_blockimage'], 'full'
 ?>
 <!-- Classic block start -->
 </div>
-<section class="block block-advanced <?php echo $string_block_classes; ?>">
+<section class="block block-advanced <?php echo $generalClasses . ' ' . $gapsClasses; ?>">
 
     <div class="c-container">
         

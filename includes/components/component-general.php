@@ -21,11 +21,11 @@ class GeneralOptions
         $types = array('mt', 'mb', 'pt', 'pb');
         $string = '';
 
-        foreach ($types as $key => $type) {
+        foreach ($types as $type) {
             if ( $array[$type] !== 'none' )
-                $string .= $key === count($types) - 1 ? "{$array[$type]}":"{$array[$type]} ";
+                $string .= "{$array[$type]} ";
         }
-
+        $string = substr($string, 0, -1);
         return $string;
     }
 }
