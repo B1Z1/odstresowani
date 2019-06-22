@@ -19,54 +19,54 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 !function (e) {
   var t = {};
 
-  function n(i) {
-    if (t[i]) return t[i].exports;
-    var r = t[i] = {
-      i: i,
+  function i(n) {
+    if (t[n]) return t[n].exports;
+    var r = t[n] = {
+      i: n,
       l: !1,
       exports: {}
     };
-    return e[i].call(r.exports, r, r.exports, n), r.l = !0, r.exports;
+    return e[n].call(r.exports, r, r.exports, i), r.l = !0, r.exports;
   }
 
-  n.m = e, n.c = t, n.d = function (e, t, i) {
-    n.o(e, t) || Object.defineProperty(e, t, {
+  i.m = e, i.c = t, i.d = function (e, t, n) {
+    i.o(e, t) || Object.defineProperty(e, t, {
       enumerable: !0,
-      get: i
+      get: n
     });
-  }, n.r = function (e) {
+  }, i.r = function (e) {
     "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
       value: "Module"
     }), Object.defineProperty(e, "__esModule", {
       value: !0
     });
-  }, n.t = function (e, t) {
-    if (1 & t && (e = n(e)), 8 & t) return e;
+  }, i.t = function (e, t) {
+    if (1 & t && (e = i(e)), 8 & t) return e;
     if (4 & t && "object" == _typeof(e) && e && e.__esModule) return e;
-    var i = Object.create(null);
-    if (n.r(i), Object.defineProperty(i, "default", {
+    var n = Object.create(null);
+    if (i.r(n), Object.defineProperty(n, "default", {
       enumerable: !0,
       value: e
     }), 2 & t && "string" != typeof e) for (var r in e) {
-      n.d(i, r, function (t) {
+      i.d(n, r, function (t) {
         return e[t];
       }.bind(null, r));
     }
-    return i;
-  }, n.n = function (e) {
+    return n;
+  }, i.n = function (e) {
     var t = e && e.__esModule ? function () {
       return e["default"];
     } : function () {
       return e;
     };
-    return n.d(t, "a", t), t;
-  }, n.o = function (e, t) {
+    return i.d(t, "a", t), t;
+  }, i.o = function (e, t) {
     return Object.prototype.hasOwnProperty.call(e, t);
-  }, n.p = "", n(n.s = 0);
-}([function (e, t, n) {
+  }, i.p = "", i(i.s = 0);
+}([function (e, t, i) {
   "use strict";
 
-  n.r(t);
+  i.r(t);
   window.addEventListener("load", function () {
     !function () {
       var e = _toConsumableArray(document.querySelectorAll(".c-container")),
@@ -95,49 +95,49 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     },
         t = function () {
       var t = document.querySelector(".l-header"),
-          n = document.querySelector(".c-navigation__mobile"),
-          i = {
+          i = document.querySelector(".c-navigation__mobile"),
+          n = {
         close: document.querySelector(".c-navigation__close"),
         open: document.querySelector(".c-hamburger")
       };
       return {
         mobileList: function mobileList() {
-          t && n && function (t, n) {
-            var i = n.close;
-            n.open.addEventListener("click", function () {
+          t && i && function (t, i) {
+            var n = i.close;
+            i.open.addEventListener("click", function () {
               e.containClass("c-navigation--mobactive", t) ? e.removeClass("c-navigation--mobactive", t) : e.addClass("c-navigation--mobactive", t);
-            }), i.addEventListener("click", function () {
+            }), n.addEventListener("click", function () {
               e.removeClass("c-navigation--mobactive", t);
             });
-          }(n, i);
+          }(i, n);
         },
         header_scroll: function header_scroll() {
           t && function (t) {
-            var n = _toConsumableArray(document.querySelectorAll(".header__triger")),
-                i = 0 - (window.innerHeight - t.offsetHeight - 50),
-                r = new IntersectionObserver(function (n) {
-              n.forEach(function (n) {
-                var i = n.isIntersecting;
-                i ? e.addClass("l-header--active", t) : e.removeClass("l-header--active", t);
+            var i = _toConsumableArray(document.querySelectorAll(".header__triger")),
+                n = 0 - (window.innerHeight - t.offsetHeight - 50),
+                r = new IntersectionObserver(function (i) {
+              i.forEach(function (i) {
+                var n = i.isIntersecting;
+                n ? e.addClass("l-header--active", t) : e.removeClass("l-header--active", t);
               });
             }, {
               threshold: [0],
-              rootMargin: "0px 0px ".concat(i, "px 0px")
+              rootMargin: "0px 0px ".concat(n, "px 0px")
             });
 
-            n.forEach(function (e) {
+            i.forEach(function (e) {
               r.observe(e);
             });
           }(t);
         }
       };
     }(),
-        n = function () {
+        i = function () {
       return {
         init: function init(t) {
           !function (t) {
-            var n = document.querySelector(".".concat(t.slider_block)),
-                i = _toConsumableArray(document.querySelectorAll(".".concat(t.slider_cards))),
+            var i = document.querySelector(".".concat(t.slider_block)),
+                n = _toConsumableArray(document.querySelectorAll(".".concat(t.slider_cards))),
                 r = document.querySelector(".".concat(t.slider_pagination)),
                 o = {
               pag_active: t.classes.pag_active,
@@ -147,35 +147,35 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
             },
                 a = "" != t.slider_has_back;
 
-            if (n) {
-              i.forEach(function (i, l) {
-                var s = i,
-                    c = s.dataset.title,
-                    d = s.dataset.name,
+            if (i) {
+              n.forEach(function (n, s) {
+                var l = n,
+                    c = l.dataset.title,
+                    d = l.dataset.name,
                     u = "";
-                e.removeClass(o.card_active, s), a && (u = s.querySelector(".".concat(t.slider_has_back)).dataset.back, a = !0), 0 == l && (e.addClass(o.card_active, s), a && (n.style.backgroundImage = "url(".concat(u, ")"))), function (t, n, i, r, o, a) {
-                  var l = document.createElement("li"),
-                      s = "";
-                  e.addClass(o.pagination_el, l), l.className += " ".concat(o.extra), 0 == r && e.addClass(o.pag_active, l), l.dataset.name = n, "" != a ? (s = document.createElement(a.wrapper), "" != a.classes && (s.className += a.classes), s.textContent = i, l.appendChild(s)) : l.textContent = i;
-                  t.appendChild(l);
-                }(r, d, c, l, o, t.pagination_wrap);
+                e.removeClass(o.card_active, l), a && (u = l.querySelector(".".concat(t.slider_has_back)).dataset.back, a = !0), 0 == s && (e.addClass(o.card_active, l), a && (i.style.backgroundImage = "url(".concat(u, ")"))), function (t, i, n, r, o, a) {
+                  var s = document.createElement("li"),
+                      l = "";
+                  e.addClass(o.pagination_el, s), s.className += " ".concat(o.extra), 0 == r && e.addClass(o.pag_active, s), s.dataset.name = i, "" != a ? (l = document.createElement(a.wrapper), "" != a.classes && (l.className += a.classes), l.textContent = n, s.appendChild(l)) : s.textContent = n;
+                  t.appendChild(s);
+                }(r, d, c, s, o, t.pagination_wrap);
               });
 
-              var l = _toConsumableArray(r.children);
+              var s = _toConsumableArray(r.children);
 
-              l.forEach(function (r) {
-                var s = r,
-                    c = s.dataset.name,
-                    d = i.find(function (e) {
+              s.forEach(function (r) {
+                var l = r,
+                    c = l.dataset.name,
+                    d = n.find(function (e) {
                   if (e.dataset.name == c) return e;
                 }),
                     u = "";
-                a && (u = d.querySelector(".".concat(t.slider_has_back)).dataset.back), s.addEventListener("click", function () {
-                  i.map(function (t) {
+                a && (u = d.querySelector(".".concat(t.slider_has_back)).dataset.back), l.addEventListener("click", function () {
+                  n.map(function (t) {
                     e.removeClass(o.card_active, t);
-                  }), l.map(function (t) {
+                  }), s.map(function (t) {
                     e.removeClass(o.pag_active, t);
-                  }), e.addClass(o.card_active, d), e.addClass(o.pag_active, s), a && (n.style.backgroundImage = "url(".concat(u, ")"));
+                  }), e.addClass(o.card_active, d), e.addClass(o.pag_active, l), a && (i.style.backgroundImage = "url(".concat(u, ")"));
                 });
               });
             }
@@ -183,30 +183,20 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         }
       };
     }(),
-        i = function () {
+        n = function () {
       return {
-        relax: function relax(e) {
-          !function (e) {
-            var t = _toConsumableArray(document.querySelectorAll(e.svg));
-
-            _toConsumableArray(document.querySelectorAll(e.slide)).forEach(function (e, n) {
-              var i = e.dataset.image;
-              t[n].contentDocument.querySelector("image").setAttribute("xlink:href", i);
-            });
-          }(e);
-        },
         infinityScroll: function infinityScroll(e) {
           !function (e) {
             var t = document.querySelector(e.container),
-                n = t ? _toConsumableArray(t.children) : null;
-            var i = [];
-            n && (t.innerHTML = "", r(), window.addEventListener("scroll", function (e) {
-              var i = 0 - (t.getBoundingClientRect().top - this.innerHeight);
-              i > t.offsetHeight && n.length > 0 && r();
+                i = t ? _toConsumableArray(t.children) : null;
+            var n = [];
+            i && (t.innerHTML = "", r(), window.addEventListener("scroll", function (e) {
+              var n = 0 - (t.getBoundingClientRect().top - this.innerHeight);
+              n > t.offsetHeight && i.length > 0 && r();
             }));
 
             function r() {
-              i = n.slice(0, 9), n.splice(0, 9), i.forEach(function (e) {
+              n = i.slice(0, 9), i.splice(0, 9), n.forEach(function (e) {
                 t.appendChild(e);
               });
             }
@@ -215,7 +205,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       };
     }();
 
-    new n.init({
+    new i.init({
       slider_block: "prop-slider",
       slider_cards: "prop-slider_card",
       slider_pagination: "prop-slider_pagination",
@@ -233,7 +223,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       }
     });
     setTimeout(function () {
-      new n.init({
+      new i.init({
         slider_block: "swiper-recent_posts",
         slider_cards: "recent-posts_vh",
         slider_pagination: "recent-posts_vh_pagination",
@@ -250,10 +240,10 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
           extra: "ml16 mr16"
         }
       });
-    }, 500), new t.mobileList(), new i.relax({
+    }, 500), new t.mobileList(), new n.relax({
       slide: ".block-relax__slide",
       svg: ".block-relax__logo"
-    }), new i.infinityScroll({
+    }), new n.infinityScroll({
       container: ".infinity-scroll"
     }), new t.header_scroll();
     new (
@@ -272,34 +262,34 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
           this.elements.forEach(function (e) {
             var t = e.querySelector(".".concat(_this.video, " video")),
-                n = t.dataset.src,
-                i = e.querySelector(".".concat(_this.controls.container)),
-                r = i.querySelector(".".concat(_this.controls.play)),
-                o = i.querySelector(".".concat(_this.controls.stop.el));
-            _this.installCurrentTime(t), t.volume = _this.currentVolume, _this.onPlay(r, t, n, o, e), _this.onStop(t, o, e);
+                i = t.dataset.src,
+                n = e.querySelector(".".concat(_this.controls.container)),
+                r = n.querySelector(".".concat(_this.controls.play)),
+                o = n.querySelector(".".concat(_this.controls.stop.el));
+            _this.installCurrentTime(t), t.volume = _this.currentVolume, _this.onPlay(r, t, i, o, e), _this.onStop(t, o, e);
           });
         }
       }, {
         key: "onStop",
-        value: function onStop(e, t, n) {
+        value: function onStop(e, t, i) {
           var _this2 = this;
 
           t.addEventListener("click", function () {
-            _this2.last = void 0, n.classList.remove(_this2.activeElement), setTimeout(function () {
-              e.pause(), t.classList.remove(_this2.controls.stop.active), _this2.installCurrentTime(e), n.querySelector(".filter-back").classList.remove("fade");
+            _this2.last = void 0, i.classList.remove(_this2.activeElement), setTimeout(function () {
+              e.pause(), t.classList.remove(_this2.controls.stop.active), _this2.installCurrentTime(e), i.querySelector(".filter-back").classList.remove("fade");
             }, 500);
           });
         }
       }, {
         key: "onPlay",
-        value: function onPlay(e, t, n, i, r) {
+        value: function onPlay(e, t, i, n, r) {
           var _this3 = this;
 
           e.addEventListener("click", function () {
-            void 0 !== _this3.last && (_this3.last.querySelector("video").pause(), _this3.installCurrentTime(_this3.last.querySelector("video")), _this3.last.classList.remove(_this3.activeElement), _this3.last.querySelector(".".concat(_this3.controls.stop.el)).classList.remove(_this3.controls.stop.active)), _this3.installCurrentTime(t), r.classList.add(_this3.activeElement), _this3.last = r, t.querySelector('source[type="video/mp4"]').src = n, setTimeout(function () {
+            void 0 !== _this3.last && (_this3.last.querySelector("video").pause(), _this3.installCurrentTime(_this3.last.querySelector("video")), _this3.last.classList.remove(_this3.activeElement), _this3.last.querySelector(".".concat(_this3.controls.stop.el)).classList.remove(_this3.controls.stop.active)), _this3.installCurrentTime(t), r.classList.add(_this3.activeElement), _this3.last = r, t.querySelector('source[type="video/mp4"]').src = i, setTimeout(function () {
               window.scrollTo({
                 top: r.getBoundingClientRect().top + window.scrollY
-              }), t.load(), t.play(), i.classList.add(_this3.controls.stop.active), r.querySelector(".filter-back").classList.add("fade");
+              }), t.load(), t.play(), n.classList.add(_this3.controls.stop.active), r.querySelector(".filter-back").classList.add("fade");
             }, 500);
           });
         }

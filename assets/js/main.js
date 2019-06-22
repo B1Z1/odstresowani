@@ -1,5 +1,3 @@
-//Import Map Component
-// import OdstresowaniMap from './components/map-relax';
 //Import VideoGallery Component
 import VideoGallery from './components/videogallery';
 
