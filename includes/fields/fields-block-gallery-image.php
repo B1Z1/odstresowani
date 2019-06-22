@@ -13,6 +13,7 @@ add_action( 'carbon_fields_register_fields', 'crb_register_block_gallery_image',
 if ( !function_exists('crb_register_block_gallery_image') ){
     function crb_register_block_gallery_image(){
         Block::make(__('Slajder Orbazków'))
+            ->add_fields(FieldsGlobal::getGaps())
             ->add_fields(array(
                 Field::make('complex', 'gallery', __('Obrazki'))
                     ->add_fields(array(
