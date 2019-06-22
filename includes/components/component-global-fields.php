@@ -6,7 +6,7 @@ class FieldsGlobal{
     {
         $gaps = array(
             //Padding top of block
-            Field::make('select', 'advanced_pt', __('Marginez wewnętrzny górny w pikselach'))
+            Field::make('select', 'pt', __('Marginez wewnętrzny górny w pikselach'))
             ->set_options(array(
                 'pt160' => '160',
                 'pt128' => '128',
@@ -15,7 +15,7 @@ class FieldsGlobal{
                 'none' => '0',
             )),
             //Padding bottom of block
-            Field::make('select', 'advanced_pb', __('Marginez wewnętrzny dolny w pikselach'))
+            Field::make('select', 'pb', __('Marginez wewnętrzny dolny w pikselach'))
                 ->set_options(array(
                     'pb160' => '160',
                     'pb128' => '128',
@@ -24,7 +24,7 @@ class FieldsGlobal{
                     'none' => '0',
                 )),
             //Margin top of block
-            Field::make('select', 'advanced_mt', __('Marginez górny w pikselach'))
+            Field::make('select', 'mt', __('Marginez górny w pikselach'))
                 ->set_options(array(
                     'mt224' => '224',
                     'mt160' => '160',
@@ -34,7 +34,7 @@ class FieldsGlobal{
                     'none' => '0',
                 )),
             //Margin bottom of block
-            Field::make('select', 'advanced_mb', __('Marginez dolny w pikselach'))
+            Field::make('select', 'mb', __('Marginez dolny w pikselach'))
                 ->set_options(array(
                     'mb224' => '224',
                     'mb160' => '160',

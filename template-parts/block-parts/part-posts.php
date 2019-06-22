@@ -3,22 +3,19 @@ wp_reset_postdata();
 global $currlang;
 
 $post_type = $block['posts'];
-
 //Arguments for Query
 $args_q = array(
     'post_type' => $post_type,
     'posts_per_page' => -1,
     'lang' => $currlang,
 );
-
 $posts = new WP_Query($args_q);
+$gapsClasses = GeneralOptions::getAllGapsFromArray($block); ?>
 
-?>
-
-<section class="block header__triger pt16">
+<section class="block header__triger <?php echo $gapsClasses; ?>">
 
 
-    <div class="mt64 d-flex fwrap row infinity-scroll">
+    <div class="d-flex fwrap row infinity-scroll">
         <?php
         if ( $posts->have_posts() ) {
             while ($posts->have_posts()) {
