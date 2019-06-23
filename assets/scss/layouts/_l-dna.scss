@@ -3,9 +3,17 @@ Layout DNA Start
 _______________*/
 
 .l-dna{
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: calc(100vh - 32px);
+    height: 100vh;
+    @media only screen and ( min-width: $bpoint-ntb ) {
+        top: 16px;
+        left: 16px;
+        width: calc(100% - 32px);
+        height: calc(100vh - 32px);
+    }
 }
 
 /* ---> : Layout Elements Start : <--- */

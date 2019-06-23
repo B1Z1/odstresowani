@@ -5,8 +5,12 @@
     &__title{
         font-family: value-regular!important;
     }
-    &__photo > .card:last-of-typeb{  
+    &__photo > .card:last-of-type{  
         margin-bottom: 0;
+    }
+    &--full{
+        min-height: calc(100vh - 32px);
+        margin-bottom: 30vh;
     }
     &--texleft{
         text-align: left;

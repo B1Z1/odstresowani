@@ -13,4 +13,7 @@ _______________*/
     &__classic{
         @include input-textarea-classic();
     }
+    &__classic2{
+        @include input-textarea-classic2();
+    }
 }

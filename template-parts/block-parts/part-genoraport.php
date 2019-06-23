@@ -11,7 +11,7 @@ $text = $block['genoraport_text'];
 $gapsClasses = GeneralOptions::getAllGapsFromArray($block); 
 ?>
 
-<div class="block <?php echo $gapsClasses; ?>">
+<section class="block <?php echo $gapsClasses; ?>">
     <div class="flex-kit fwrap jcc">
         <div class="pc-col-5">
             <div class="block-genoraport f-vb c-op">
@@ -25,4 +25,4 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
             </a>
         </div>
     </div>
-</div>
+</section>

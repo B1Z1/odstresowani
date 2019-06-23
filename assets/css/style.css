@@ -652,8 +652,13 @@ ol {
   font-family: value-regular !important;
 }
 
-.block__photo > .card:last-of-typeb {
+.block__photo > .card:last-of-type {
   margin-bottom: 0;
+}
+
+.block--full {
+  min-height: calc(100vh - 32px);
+  margin-bottom: 30vh;
 }
 
 .block--texleft {
@@ -1747,9 +1752,11 @@ Layout DNA Start
 _______________*/
 
 .l-dna {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: calc(100vh - 32px);
+  height: 100vh;
 }
 
 /* ---> : Layout Elements Start : <--- */
@@ -1826,9 +1833,7 @@ _______________*/
 }
 
 /*_________________________
-
 Component Button Start
-
 _______________*/
 
 .c-button {
@@ -1957,10 +1962,79 @@ _______________*/
   color: #B9B9B9;
 }
 
+.c-input__classic2 {
+  width: 100%;
+  padding-bottom: 8px;
+  font-size: 1rem;
+  border-bottom: 2px solid #0052c3;
+  color: #0052c3;
+  background-color: transparent;
+  -webkit-transition: color .3s ease-in-out, border-bottom-color .3s ease-in-out;
+  transition: color .3s ease-in-out, border-bottom-color .3s ease-in-out;
+}
+
+.c-input__classic2::-webkit-input-placeholder {
+  color: #0052c3;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.c-input__classic2::-moz-placeholder {
+  color: #0052c3;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.c-input__classic2:-ms-input-placeholder {
+  color: #0052c3;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.c-input__classic2::-ms-input-placeholder {
+  color: #0052c3;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.c-input__classic2::placeholder {
+  color: #0052c3;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.c-input__classic2:focus::-webkit-input-placeholder,
+.c-input__classic2:focus {
+  color: black;
+  border-bottom-color: black;
+}
+
+.c-input__classic2:focus::-moz-placeholder,
+.c-input__classic2:focus {
+  color: black;
+  border-bottom-color: black;
+}
+
+.c-input__classic2:focus:-ms-input-placeholder,
+.c-input__classic2:focus {
+  color: black;
+  border-bottom-color: black;
+}
+
+.c-input__classic2:focus::-ms-input-placeholder,
+.c-input__classic2:focus {
+  color: black;
+  border-bottom-color: black;
+}
+
+.c-input__classic2:focus::placeholder,
+.c-input__classic2:focus {
+  color: black;
+  border-bottom-color: black;
+}
+
 /*_________________________
-
 Component Textarea Start
-
 _______________*/
 
 .c-textarea {
@@ -1971,6 +2045,7 @@ _______________*/
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  resize: none;
 }
 
 /* ---> : Elements of Component : <--- */
@@ -1988,7 +2063,6 @@ _______________*/
   -webkit-transition: color .3s ease-in-out;
   transition: color .3s ease-in-out;
   height: 328px;
-  resize: none;
 }
 
 .c-textarea__classic::-webkit-input-placeholder {
@@ -2046,6 +2120,78 @@ _______________*/
   color: #B9B9B9;
 }
 
+.c-textarea__classic {
+  width: 100%;
+  padding-bottom: 8px;
+  font-size: 1rem;
+  border-bottom: 2px solid #0052c3;
+  color: #0052c3;
+  background-color: transparent;
+  -webkit-transition: color .3s ease-in-out, border-bottom-color .3s ease-in-out;
+  transition: color .3s ease-in-out, border-bottom-color .3s ease-in-out;
+  height: 328px;
+}
+
+.c-textarea__classic::-webkit-input-placeholder {
+  color: #0052c3;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.c-textarea__classic::-moz-placeholder {
+  color: #0052c3;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.c-textarea__classic:-ms-input-placeholder {
+  color: #0052c3;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.c-textarea__classic::-ms-input-placeholder {
+  color: #0052c3;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.c-textarea__classic::placeholder {
+  color: #0052c3;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.c-textarea__classic:focus::-webkit-input-placeholder,
+.c-textarea__classic:focus {
+  color: black;
+  border-bottom-color: black;
+}
+
+.c-textarea__classic:focus::-moz-placeholder,
+.c-textarea__classic:focus {
+  color: black;
+  border-bottom-color: black;
+}
+
+.c-textarea__classic:focus:-ms-input-placeholder,
+.c-textarea__classic:focus {
+  color: black;
+  border-bottom-color: black;
+}
+
+.c-textarea__classic:focus::-ms-input-placeholder,
+.c-textarea__classic:focus {
+  color: black;
+  border-bottom-color: black;
+}
+
+.c-textarea__classic:focus::placeholder,
+.c-textarea__classic:focus {
+  color: black;
+  border-bottom-color: black;
+}
+
 /*_________________________
 
 Component Wrapper Start
@@ -2072,6 +2218,24 @@ _______________*/
 Component Text Start
 
 _______________*/
+
+/* --> : Component Elements : <-- */
+
+.c-text__line16 {
+  position: relative;
+}
+
+.c-text__line16:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  width: 16px;
+  height: 2px;
+  background-color: #0052c3;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
 
 /* --> : Component Modificators : <-- */
 
@@ -2780,6 +2944,26 @@ _______________*/
 
 /* Include paddings/margins */
 
+.p0 {
+  padding: 0px;
+}
+
+.pt0 {
+  padding-top: 0px;
+}
+
+.pr0 {
+  padding-right: 0px;
+}
+
+.pb0 {
+  padding-bottom: 0px;
+}
+
+.pl0 {
+  padding-left: 0px;
+}
+
 .p8 {
   padding: 8px;
 }
@@ -2938,6 +3122,26 @@ _______________*/
 
 .pl224 {
   padding-left: 179.2px;
+}
+
+.m0 {
+  margin: 0px;
+}
+
+.mt0 {
+  margin-top: 0px;
+}
+
+.mr0 {
+  margin-right: 0px;
+}
+
+.mb0 {
+  margin-bottom: 0px;
+}
+
+.ml0 {
+  margin-left: 0px;
 }
 
 .m8 {
@@ -3500,6 +3704,13 @@ _______________*/
     margin-left: 16px;
     padding-right: 24px;
     padding-left: 24px;
+  }
+
+  .l-dna {
+    top: 16px;
+    left: 16px;
+    width: calc(100% - 32px);
+    height: calc(100vh - 32px);
   }
 
   .c-wrapper {

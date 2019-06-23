@@ -17,7 +17,7 @@
 get_header();
 ?>
 
-    <div class="c-wrapper">
+    <div class="c-wrapper bck-gm">
 
         <!-- ------------------ -->
         <!-- Main section start -->
@@ -27,6 +27,130 @@ get_header();
             <div class="l-dna__canvas" data-dna-three></div>
         </div>
 
+        <div class="ntb-col-4 ml64">
+            <section class="block block--full d-flex fd-col jce pb32">
+                <h2 class="block__title mt0">Badanie genetyczne iDNA stres</h2>
+                <div class="block__content">
+                    <ul class="c-list c-text-size--h3">
+                        <li class="c-list__element mb16">
+                            Jak Twój organizm odbiera hormon stresu i jak osłabić jego oddziaływanie (tzw. Lifehacking) 
+                        </li>
+                        <li class="c-list__element mb16">
+                            Wpływ DNA na Twoje postrzeganie rzeczywistości
+                        </li>
+                        <li class="c-list__element mb16">
+                            Jak DNA wpływa na Twoja osobowość
+                        </li>
+                        <li class="c-list__element mb16">
+                            Działanie hormonu stresu i jak osłabić jego wpływ
+                        </li>
+                    </ul>
+                    <div class="d-flex aic mt32">
+                        <span class="c-wh d-ib c-text-size--h4">
+                            <a href="#buy" class="c-link c-button__buy c-button--br4 bck-gradient--blue">Zamów badanie</a>
+                        </span>
+                        <h2 class="reset-top reset-bottom d-ib pl32 f-vb">690 zł</h2>
+                    </div>
+                </div>
+            </section>
+
+            <section class="block block--full d-flex fd-col jce pb32">
+                <h2 class="block__title mt0">Czego się dowiesz w badaniu genetycznym</h2>
+                <div class="block__content">
+                    <ul class="c-list c-text-size--h3">
+                        <li class="c-list__element mb16">
+                            Skłonności introwertyczne i ekstrawertyczne
+                        </li>
+                        <li class="c-list__element mb16">
+                            Styl życia dostosowany do genów
+                        </li>
+                        <li class="c-list__element mb16">
+                            Jaki zawód i warunki pracy zapewnią Ci dobre samopoczucie
+                        </li>
+                        <li class="c-list__element mb16">
+                            W jaki sposób budować zdrowe relacje w oparciu o biochemię własnego mózgu
+                        </li>
+                        <li class="c-list__element mb16">
+                            Jaki typ zajęć w czasie wolnym i jaka aktywność fizyczna pomogą Ci się zrelaksować
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="block block--full d-flex fd-col jce pb32">
+                <h2 class="block__title mt0">W teście Stres badamy geny</h2>
+                <div class="block__content">
+                    <ul class="c-list c-text-size--h3">
+                        <li class="c-list__element mb16">
+                            <span class="pr32 c-text__line16">Relacje z bliskimi</span><span class="c-op">OXTR</span>
+                        </li>
+                        <li class="c-list__element mb16">
+                            <span class="pr32 c-text__line16">Podatność na stres</span><span class="c-op">FKBP5</span>
+                        </li>
+                        <li class="c-list__element mb16">
+                            <span class="pr32 c-text__line16">Pamięć, zdolność uczenia</span><span class="c-op">BDNF</span>
+                        </li>
+                        <li class="c-list__element mb16">
+                            <span class="pr32 c-text__line16">Transport serotoniny</span><span class="c-op">SLC6A4</span>
+                        </li>
+                        <li class="c-list__element mb16">
+                            <span class="pr32 c-text__line16">Osobowość</span><span class="c-op">COMT</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>            
+
+            <section class="block block--full d-flex fd-col jce pb32">
+                <h2 class="block__title mt0">Konsultacja z Genodoradcą</h2>
+                <div class="block__content c-text-size--h3">
+                    <p>
+                        Wraz z badaniem otrzymasz możliwość konsultacji z ekspertem. Podczas 30 minutowej 
+                        rozmowy telefonicznej nasz specjalista odpowie na Twoje pytania dotyczące otrzymanego Genoraportu:
+                    </p>
+                    <ul class="c-list c-gt mt64">
+                        <li class="c-list__element mb16">
+                            Wytłumaczy zalecenia
+                        </li>
+                        <li class="c-list__element mb16">
+                            Wyjaśni wyniki Twoich badań genetycznych
+                        </li>
+                        <li class="c-list__element mb16">
+                            Wskaże dalsze postępowanie
+                        </li>
+                    </ul>
+                </div>
+            </section>            
+
+            <section class="block block--full d-flex fd-col jce pb32">
+                <h2 class="block__title mt0">W ramach wybranego pakietu otrzymasz</h2>
+                <div class="block__content c-text-size--h3">
+                    <ul class="c-list c-op">
+                        <li class="c-list__element mb16">
+                            Zestaw do badania Stres
+                        </li>
+                        <li class="c-list__element mb16">
+                            30 minutową konsultację z Genodoradcą
+                        </li>
+                        <li class="c-list__element mb16">
+                            Wynik w dokumencie *.pdf
+                        </li>
+                    </ul>
+                </div>
+            </section>            
+
+            <section id="buy" class="block block--full d-flex fd-col jce pb32">
+                <h2 class="block__title mt0">Chcesz wiedzieć więcej?</h2>
+                <div class="block__content c-text-size--h3">
+                    <p>Nasi specjaliści są do twojej dyspozycji.</p>
+                    <p>
+                        Napisz do nas na office@odstresowani.pl lub zadzwoń
+                        +48 789 421 478 (pon – pt w godz. 10:00 – 18:00)
+                    </p>
+                    <?php echo do_shortcode('[contact-form-7 id="2432" html_class="mt64" title="iDNA Stres"]'); ?>
+                </div>
+            </section>            
+
+        </div>
         <!-- ------------------ -->
         <!--  Main section end  -->
         <!-- ------------------ -->

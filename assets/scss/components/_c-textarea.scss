@@ -1,11 +1,10 @@
 /*_________________________
-
 Component Textarea Start
-
 _______________*/
 
 .c-textarea{
     @include input-reset(); 
+    resize: none;
 }
 
 /* ---> : Elements of Component : <--- */
@@ -13,6 +12,9 @@ _______________*/
     &__classic{
         @include input-textarea-classic();
         height: 328px;
-        resize: none;
+    }
+    &__classic{
+        @include input-textarea-classic2();
+        height: 328px;
     }
 }

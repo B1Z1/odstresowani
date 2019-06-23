@@ -1,0 +1,17 @@
+@mixin input-textarea-classic2{
+    width: 100%;
+    padding-bottom: 8px;
+    font-size: 1rem;
+    border-bottom: 2px solid $operative;
+    color: $operative;
+    background-color: transparent;
+    transition: color .3s ease-in-out, border-bottom-color .3s ease-in-out;
+    &::placeholder{
+        color: $operative;
+        transition: color .3s ease-in-out;
+    }
+    &:focus::placeholder, &:focus{
+        color: $black;
+        border-bottom-color: $black;
+    }
+}

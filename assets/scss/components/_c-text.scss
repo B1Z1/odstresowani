@@ -8,6 +8,23 @@ _______________*/
 
 }
 
+/* --> : Component Elements : <-- */
+.c-text{
+    &__line16{
+        position: relative;
+        &:after{
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 8px;
+            width: 16px;
+            height: 2px;
+            background-color: $operative;
+            transform: translateY(-50%);
+        }
+    }
+}
+
 /* --> : Component Modificators : <-- */
 .c-text{
     &--center{

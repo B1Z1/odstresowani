@@ -1,16 +1,13 @@
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { AxesHelper } from 'three/src/helpers/AxesHelper';
 import { FBXLoader } from 'three/examples/js/loaders/FBXLoader';
  
 class Brain{
     constructor(){
+        this.counter = 0;
         //-----------------THREE JS GENERAL OPTIONS
         this.scene = new THREE.Scene();
         this.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
         this.renderer = new THREE.WebGLRenderer();
         this.loader = new THREE.FBXLoader();
-        this.controls = new OrbitControls(this.camera, this.renderer.domElement);
-        this.axesHelper = new THREE.AxesHelper(5);
         //-----------------------------------------
 
         //-------------------------Model File
@@ -41,11 +38,17 @@ class Brain{
         this.lightScene();
         //-------------------
 
-        this.camera.position.z = 1000;
+        //------------Camera Position
+        this.cameraPosition();
+        //-------------------
+
+        window.addEventListener('resize', ()=>{
+            this.updateResize();
+        });
     }
 
     lightScene(){
-        let keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(30, 100%, 75%)'), 1.0);
+        let keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(30, 100%, 90%)'), 1);
         keyLight.position.set(-100,0,100);
         let fillLight = new THREE.DirectionalLight(new THREE.Color('hsl(240, 100%, 75%)'), .75);
         fillLight.position.set(100,0,100);
@@ -55,12 +58,31 @@ class Brain{
         this.scene.add(keyLight);
         this.scene.add(fillLight);
         this.scene.add(backLight);
+
+        this.scene.background = new THREE.Color(0xf8f8f8);
+    }
+
+    cameraPosition(){
+        this.camera.position.z = 8;
+        this.camera.position.y = 1;
     }
 
     getModel(){
         this.loader.load(this.modelLink, (fbx) => {
             this.object3D = fbx;
-            this.scene.add(fbx);
+            this.object3D.scale.x = .01;
+            this.object3D.scale.y = .01;
+            this.object3D.scale.z = .01;
+
+            this.object3D.rotation.x = .2;
+            this.object3D.rotation.y = -.8;
+            this.object3D.rotation.z = .1;
+
+            this.object3D.position.x = 5;
+            this.object3D.position.y = -.5;
+            this.object3D.position.z = 1;
+
+            this.scene.add(this.object3D);
 
             //------------Update Function
             this.update();
@@ -70,7 +92,24 @@ class Brain{
 
     update(){
         requestAnimationFrame(()=>{ this.update(); });
+        this.counter++;
+
+        this.object3D.rotation.x = Math.sin(this.counter / 1000) / 10 + .2
+        this.object3D.rotation.z = Math.sin(this.counter / 1000) / 10 + .1
+
+        this.object3D.position.x = Math.sin(this.counter / 10000) / 5 + 5;
+        this.object3D.position.y = Math.sin(this.counter / 100) / 5 - .5;
+
+
         this.renderer.render(this.scene, this.camera);
+    }
+
+    updateResize(){
+        this.camera.aspect = window.innerWidth / window.innerHeight;
+        this.camera.updateProjectionMatrix();
+        this.container.width = this.container.element.offsetWidth;
+        this.container.height = this.container.element.offsetHeight;
+        this.renderer.setSize( this.container.width, this.container.height );
     }
 
 }
