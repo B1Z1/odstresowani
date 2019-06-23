@@ -1,6 +1,6 @@
 //Import VideoGallery Component
 import VideoGallery from './components/videogallery';
-
+import Brain from './components/brain';
 
 window.addEventListener('load', ()=>{
     /**
@@ -380,16 +380,6 @@ window.addEventListener('load', ()=>{
      * Initialize Relax function
      * 
      */
-    new MExtentions.relax({
-        slide: '.block-relax__slide',
-        svg: '.block-relax__logo',
-    });
-
-    /**
-     * 
-     * Initialize Relax function
-     * 
-     */
     new MExtentions.infinityScroll({
         container: '.infinity-scroll',
     });
@@ -446,5 +436,12 @@ window.addEventListener('load', ()=>{
             },
         }
     });
+
+    /**
+     * 
+     * Brain
+     * 
+     */
+    new Brain()
 });
 
