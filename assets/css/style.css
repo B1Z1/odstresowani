@@ -1742,6 +1742,26 @@ _______________*/
 
 /* ---> : Layout Modificators Start : <--- */
 
+/*_________________________
+Layout DNA Start
+_______________*/
+
+.l-dna {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 32px);
+}
+
+/* ---> : Layout Elements Start : <--- */
+
+.l-dna__canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /* --> : Components Start : <-- */
 
 .fade {

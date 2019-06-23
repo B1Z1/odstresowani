@@ -1,6 +1,5 @@
 //Import VideoGallery Component
 import VideoGallery from './components/videogallery';
-import Brain from './components/brain';
 
 window.addEventListener('load', ()=>{
     /**
@@ -436,12 +435,5 @@ window.addEventListener('load', ()=>{
             },
         }
     });
-
-    /**
-     * 
-     * Brain
-     * 
-     */
-    new Brain()
 });
 

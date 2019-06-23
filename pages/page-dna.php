@@ -23,7 +23,9 @@ get_header();
         <!-- Main section start -->
         <!-- ------------------ -->
 
-        <div data-dna-three></div>
+        <div class="l-dna">
+            <div class="l-dna__canvas" data-dna-three></div>
+        </div>
 
         <!-- ------------------ -->
         <!--  Main section end  -->
@@ -31,5 +33,7 @@ get_header();
 <script src="<?php echo get_template_directory_uri() . '/assets/lib/Three/three.js/build/three.min.js' ?>"></script>
 <script src="<?php echo get_template_directory_uri() . '/assets/lib/Three/zlib/bin/inflate.min.js' ?>"></script>
 <script src="<?php echo get_template_directory_uri() . '/assets/lib/Three/three.js/examples/js/loaders/FBXLoader.js' ?>"></script>
+<script src="<?php echo get_template_directory_uri() . '/assets/lib/Three/three.js/examples/js/controls/OrbitControls.js' ?>"></script>
+<script src="<?php echo get_template_directory_uri() . '/assets/lib/Three/three.js/src/helpers/AxesHelper.js' ?>"></script>
 <?php
 get_footer();

@@ -30,6 +30,9 @@ function scripts(){
                     mode: 'production',
                     output: {
                         filename: '[name].js'
+                    },
+                    performance: {
+                        hints: false
                     }
                 }))
                 .pipe(babel({
