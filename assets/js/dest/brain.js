@@ -77,7 +77,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       value: function init() {
         var _this = this;
 
-        this.renderer.setSize(this.container.width, this.container.height), this.container.element.appendChild(this.renderer.domElement), this.scene.add(this.axesHelper), this.getModel(), this.lightScene(), this.cameraPosition(), window.addEventListener("resize", function () {
+        this.renderer.setSize(this.container.width, this.container.height), this.container.element.appendChild(this.renderer.domElement), this.scene.add(this.axesHelper), this.getModel(), this.lightScene(), this.cameraPosition(), this.changePositionObject3D(), window.addEventListener("resize", function () {
           _this.updateResize();
         });
       }
@@ -108,18 +108,31 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         });
       }
     }, {
+      key: "updateResize",
+      value: function updateResize() {
+        this.camera.aspect = window.innerWidth / window.innerHeight, this.camera.updateProjectionMatrix(), this.container.width = this.container.element.offsetWidth, this.container.height = this.container.element.offsetHeight, this.renderer.setSize(this.container.width, this.container.height);
+      }
+    }, {
       key: "update",
       value: function update() {
         var _this3 = this;
 
         requestAnimationFrame(function () {
           _this3.update();
-        }), this.counter++, this.object3D.rotation.x = Math.sin(this.counter / 1e3) / 10 + .2, this.object3D.rotation.z = Math.sin(this.counter / 1e3) / 10 + .1, this.object3D.position.x = Math.sin(this.counter / 1e4) / 5 + 5, this.object3D.position.y = Math.sin(this.counter / 100) / 5 - .5, this.renderer.render(this.scene, this.camera);
+        }), this.counter++, this.renderer.render(this.scene, this.camera);
       }
     }, {
-      key: "updateResize",
-      value: function updateResize() {
-        this.camera.aspect = window.innerWidth / window.innerHeight, this.camera.updateProjectionMatrix(), this.container.width = this.container.element.offsetWidth, this.container.height = this.container.element.offsetHeight, this.renderer.setSize(this.container.width, this.container.height);
+      key: "changePositionObject3D",
+      value: function changePositionObject3D() {
+        var _this4 = this;
+
+        window.addEventListener("mousemove", function (e) {
+          var t = e.clientX / 5,
+              r = e.clientY / 5,
+              n = t / window.innerWidth,
+              a = r / window.innerHeight;
+          _this4.object3D.rotation.y = n - .8, _this4.object3D.rotation.x = a + .2, _this4.object3D.rotation.z = a + .1;
+        });
       }
     }]);
 

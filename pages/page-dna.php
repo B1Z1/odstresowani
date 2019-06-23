@@ -154,8 +154,8 @@ get_header();
         <!-- ------------------ -->
         <!--  Main section end  -->
         <!-- ------------------ -->
-        <script src="<?php echo get_template_directory_uri() . '/assets/lin/THREEFBX/three.min.js' ?>"></script>
-        <script src="<?php echo get_template_directory_uri() . '/assets/lin/THREEFBX/inflate.min.js' ?>"></script>
+        <script src="<?php echo get_template_directory_uri() . '/assets/lib/THREEFBX/three.min.js' ?>"></script>
+        <script src="<?php echo get_template_directory_uri() . '/assets/lib/THREEFBX/inflate.min.js' ?>"></script>
         <script src="<?php echo get_template_directory_uri() . '/assets/js/dest/brain.js' ?>"></script>
 <?php
 get_footer();

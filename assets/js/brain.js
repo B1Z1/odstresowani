@@ -41,7 +41,7 @@ class Brain{
         //------------Camera Position
         this.cameraPosition();
         //-------------------
-
+        this.changePositionObject3D();
         window.addEventListener('resize', ()=>{
             this.updateResize();
         });
@@ -90,20 +90,7 @@ class Brain{
         }, undefined, (er) => { console.log(er); })
     }
 
-    update(){
-        requestAnimationFrame(()=>{ this.update(); });
-        this.counter++;
-
-        this.object3D.rotation.x = Math.sin(this.counter / 1000) / 10 + .2
-        this.object3D.rotation.z = Math.sin(this.counter / 1000) / 10 + .1
-
-        this.object3D.position.x = Math.sin(this.counter / 10000) / 5 + 5;
-        this.object3D.position.y = Math.sin(this.counter / 100) / 5 - .5;
-
-
-        this.renderer.render(this.scene, this.camera);
-    }
-
+    //-------------Updates size of canvas when window is resizes
     updateResize(){
         this.camera.aspect = window.innerWidth / window.innerHeight;
         this.camera.updateProjectionMatrix();
@@ -111,7 +98,30 @@ class Brain{
         this.container.height = this.container.element.offsetHeight;
         this.renderer.setSize( this.container.width, this.container.height );
     }
+    //----------------------------------------
 
+    //-------------------Animation function
+    update(){
+        requestAnimationFrame(()=>{ this.update(); });
+        this.counter++;
+        this.renderer.render(this.scene, this.camera);
+    }
+    //-----------------------------------------
+
+    //------------------Changed position of object3D
+    changePositionObject3D(){
+        window.addEventListener('mousemove', (ev) => {
+            let clientX = ev.clientX / 5,
+                clientY = ev.clientY / 5,
+                positionX = clientX / window.innerWidth,
+                positionY = clientY / window.innerHeight;
+                
+            this.object3D.rotation.y = positionX - .8;
+            this.object3D.rotation.x = positionY + .2;
+            this.object3D.rotation.z = positionY + .1;
+        });
+    }
+    //-----------------------------------------
 }
 
 
