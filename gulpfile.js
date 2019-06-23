@@ -28,6 +28,10 @@ function scripts(){
     return gulp.src('./assets/js/*.js')
                 .pipe(webpack({
                     mode: 'production',
+                    entry: {
+                        main: './assets/js/main.js',
+                        brain: './assets/js/brain.js'
+                    },
                     output: {
                         filename: '[name].js'
                     },

@@ -30,10 +30,8 @@ get_header();
         <!-- ------------------ -->
         <!--  Main section end  -->
         <!-- ------------------ -->
-<script src="<?php echo get_template_directory_uri() . '/assets/lib/Three/three.js/build/three.min.js' ?>"></script>
-<script src="<?php echo get_template_directory_uri() . '/assets/lib/Three/zlib/bin/inflate.min.js' ?>"></script>
-<script src="<?php echo get_template_directory_uri() . '/assets/lib/Three/three.js/examples/js/loaders/FBXLoader.js' ?>"></script>
-<script src="<?php echo get_template_directory_uri() . '/assets/lib/Three/three.js/examples/js/controls/OrbitControls.js' ?>"></script>
-<script src="<?php echo get_template_directory_uri() . '/assets/lib/Three/three.js/src/helpers/AxesHelper.js' ?>"></script>
+        <script src="<?php echo get_template_directory_uri() . '/assets/js/three.min.js' ?>"></script>
+        <script src="<?php echo get_template_directory_uri() . '/assets/js/inflate.min.js' ?>"></script>
+        <script src="<?php echo get_template_directory_uri() . '/assets/js/dest/brain.js' ?>"></script>
 <?php
 get_footer();

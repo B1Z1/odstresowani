@@ -1,16 +1,14 @@
-import * as THREE from 'three';
-import 'zlib/test/inflate.test';
-import { FBXLoader } from 'three/examples/js/loaders/FBXLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-// import { AxesHelper } from 'three/src/helpers/AxesHelper';
-
+import { AxesHelper } from 'three/src/helpers/AxesHelper';
+import { FBXLoader } from 'three/examples/js/loaders/FBXLoader';
+ 
 class Brain{
     constructor(){
         //-----------------THREE JS GENERAL OPTIONS
         this.scene = new THREE.Scene();
         this.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
         this.renderer = new THREE.WebGLRenderer();
-        this.loader = new FBXLoader();
+        this.loader = new THREE.FBXLoader();
         this.controls = new OrbitControls(this.camera, this.renderer.domElement);
         this.axesHelper = new THREE.AxesHelper(5);
         //-----------------------------------------
@@ -73,7 +71,6 @@ class Brain{
     update(){
         requestAnimationFrame(()=>{ this.update(); });
         this.renderer.render(this.scene, this.camera);
-        this.object3D.rotation.x += .01;
     }
 
 }
