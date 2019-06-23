@@ -11,7 +11,7 @@ class Brain{
         //-----------------------------------------
 
         //-------------------------Model File
-        this.modelLink = 'http://odstresowani.portal.local.pl/wp-content/themes/odstresowani/assets/models/Mozgani/brain.fbx';
+        this.modelLink = 'https://odstresowani.pl/wp-content/uploads/brain.fbx';
         this.object3D = [];
         //-----------------------------------
 

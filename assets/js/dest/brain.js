@@ -67,7 +67,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     function n() {
       _classCallCheck(this, n);
 
-      this.counter = 0, this.scene = new THREE.Scene(), this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, .1, 1e3), this.renderer = new THREE.WebGLRenderer(), this.loader = new THREE.FBXLoader(), this.modelLink = "http://odstresowani.portal.local.pl/wp-content/themes/odstresowani/assets/models/Mozgani/brain.fbx", this.object3D = [], this.container = {
+      this.counter = 0, this.scene = new THREE.Scene(), this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, .1, 1e3), this.renderer = new THREE.WebGLRenderer(), this.loader = new THREE.FBXLoader(), this.modelLink = "https://odstresowani.pl/wp-content/uploads/brain.fbx", this.object3D = [], this.container = {
         element: document.querySelector("[data-dna-three]")
       }, this.container.width = this.container.element.offsetWidth, this.container.height = this.container.element.offsetHeight, this.init();
     }
