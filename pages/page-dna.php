@@ -34,7 +34,7 @@ get_header();
                         <section class="block block--full d-flex fd-col jce pb32">
                             <h2 class="block__title mt0">Badanie genetyczne iDNA stres</h2>
                             <div class="block__content">
-                                <p>
+                                <p class="mt0">
                                     Nie ignoruj stresu i sukcesywnie z nim walcz, gdyż ma on destrukcyjny wpływ na organizm. Zadanie nie należy 
                                     do prostych, ale na wszystko jest sposób. Postaw na podstawy i wykonaj badanie genetyczne, które jest kluczem 
                                     do osiągnięcia spokoju. 
