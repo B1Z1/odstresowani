@@ -190,7 +190,7 @@ if ( !function_exists('crb_register_block_advanced') ){
                     //Block columns options end
             ))
             ->set_render_callback(function ($block) {
-                include(locate_template('template-parts/blocks/block-advanced-block.php',false, false) );
+                include(locate_template('template-parts/blocks/block-advanced.php',false, false) );
             });
     }
 }
