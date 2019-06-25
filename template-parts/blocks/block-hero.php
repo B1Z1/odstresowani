@@ -1,51 +1,29 @@
 <?php
-$check = $block['hero_check']; //Which options is need video:photo
-$links = carbon_get_theme_option('footer_social'); //Link if exist
-$title = $block['hero_heading']; //Title of block
-$content = $block['hero_content']; //Content of block
-$link = $block['hero_link'];
-$buttonText = $block['hero_button-text'];
-if ($check == 'video') {
-    $videos = $block['hero_videos'];
-    $video = videoByDate($videos); //Get video by date of year
-} else {
-    $back_image = wp_get_attachment_image_url($block['hero_photo'], 'full'); //Get image
-}
+$container = $block['container'];
 $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
 ?>
 </div>
 <!-- Hero banner start -->
-<section class="m-Hero d-flex aic jcc c-wh <?php echo $gapsClasses; ?>" <?php if ($back_image) : ?>style="background-image: url( <?php echo $back_image; ?> )" <?php endif; ?>>
-    <div class="filter filter-back filter--zmax bck-blck"></div>
-
-    <?php if ($check == 'video') : ?>
-
-        <video class="filter filter-video" muted autoplay loop>
-            <source src="<?php echo $video; ?>" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-
-    <?php endif; ?>
-
-    <div class="m-Hero__content">
-        <div class="c-container">
-
-            <?php if ($title) : ?>
-                <h3 class="reset-top f-san"><?php echo $title; ?></h3>
-            <?php endif; ?>
-
-            <?php if ($content) : ?>
-                <h1 class="reset f-vr"><?php echo $content; ?></h1>
-            <?php endif; ?>
-
-            <?php if ( $link && $buttonText ): ?>
-                <span class="c-wh d-ib pt32">
-                    <a href="<?php echo $link; ?>" class='c-link c-button__buy c-button--br4 bck-gradient--blue'><?php echo $buttonText; ?></a>
-                </span>
-            <?php endif; ?>
-
+<section class="m-Hero d-flex fwrap c-wh <?php echo $gapsClasses; ?>" <?php if ($back_image) : ?>style="background-image: url( <?php echo $back_image; ?> )" <?php endif; ?>>
+    <?php foreach($container as $element): 
+        $title = $element['title'];
+        $describe = $element['describe'];
+        $image = $element['image'];
+        $buttonText = $element['buttonText'];
+        $buttonLink = $element['buttonLink'];
+        if ( count($container) === 1 )
+            $columnClass = 'ntb-col-12';
+        else
+            $columnClass = 'ntb-col-6';
+        ?>
+        <div class="<?php echo $columnClass; ?>">
+            <div class="m-Hero__side">
+                <div class="d-flex aic jcc">
+                    
+                </div>
+            </div>
         </div>
-    </div>
+    <?php endforeach; ?>
 </section>
 <!-- Hero banner end -->
 <div class="c-container">

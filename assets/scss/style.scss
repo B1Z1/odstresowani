@@ -79,9 +79,6 @@ ________*/
 @import "modules/_video/video";
 @import "modules/_video/video-controls";
 
-/* : Hero modules : */
- 
-
 /* : Mind modules : */ 
 @import "modules/_mind/mind";
 
@@ -125,7 +122,7 @@ ________*/
 /*_______________________
     Modules Start
 ________*/
-@import "modules/Hero/style";
+@import "./modules/Hero/style";
 
 //-----------------------Modules End
 
