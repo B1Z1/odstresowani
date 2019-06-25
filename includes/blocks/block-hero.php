@@ -1,5 +1,4 @@
 <?php
-use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 use Carbon_Fields\Block;
 
@@ -17,11 +16,11 @@ if ( !function_exists('crb_register_block_banner') ){
             ->add_fields(array(
                 Field::make('complex', 'container', __('Kontejnery dla hero bannera'))
                     ->set_max(2)
-                    ->add_fields('block' ,array(
+                    ->add_fields('side', array(
                         Field::make('text', 'title', __('Tytuł')),
                         Field::make('textarea', 'describe', __('Opis')),
-                        Field::make('text', 'buttonText', __('Tekst Przycisku')),
-                        Field::make('text', 'buttonLink', __('Link')),
+                        Field::make('text', 'button_text', __('Tekst Przycisku')),
+                        Field::make('text', 'button_link', __('Link')),
                         Field::make('image', 'image', __('Tło'))
                     ))
             ))

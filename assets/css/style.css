@@ -1693,10 +1693,10 @@ ______*/
 
 /* ---> :Elements of Module: <--- */
 
-.m-Hero__content {
+.m-Hero__side {
   position: relative;
-  text-align: center;
-  z-index: 12;
+  background-size: cover;
+  background-position: center;
 }
 
 /* ---> :Modificators of Module: <--- */
@@ -3732,6 +3732,10 @@ ________*/
 
   .l-dna__content {
     margin-left: 64px;
+  }
+
+  .m-Hero__content {
+    max-width: 80%;
   }
 
   .c-wrapper {

@@ -13,7 +13,14 @@ ______*/
 /* ---> :Elements of Module: <--- */
 .m-Hero{
     &__side{
-        
+        position: relative;
+        background-size: cover;
+        background-position: center;
+    }
+    &__content{
+        @media only screen and (min-width: $bpoint-ntb) {
+            max-width: 80%;
+        }
     }
 }
 
