@@ -21,7 +21,7 @@ if ( !function_exists('crb_register_block_genoraport') ){
                 Field::make('text', 'genoraport_text', __('Text dla pobrania')),
             ))
             ->set_render_callback(function ($block) {
-                include(locate_template('template-parts/block-parts/part-genoraport.php',false, false) );
+                include(locate_template('template-parts/blocks/block-genoraport.php',false, false) );
             });
 
     }

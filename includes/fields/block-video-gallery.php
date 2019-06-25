@@ -24,7 +24,7 @@ if (!function_exists('crb_register_block_video_gallery')) {
                     ))
             ))
             ->set_render_callback(function ($block) {
-                include(locate_template('template-parts/block-parts/part-videogallery.php', false, false));
+                include(locate_template('template-parts/blocks/block-video-gallery.php', false, false));
             });
     }
 }

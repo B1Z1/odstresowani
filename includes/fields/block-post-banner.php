@@ -28,7 +28,7 @@ if (!function_exists('crb_register_block_post_banner')) {
                     ->set_option_value('Tak')
             ))
             ->set_render_callback(function ($block) {
-                include(locate_template('template-parts/block-parts/part-banner.php', false, false));
+                include(locate_template('template-parts/blocks/block-banner.php', false, false));
             });
     }
 }

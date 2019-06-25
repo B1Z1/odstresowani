@@ -37,7 +37,7 @@ if (!function_exists('crb_register_block_image_gallery')) {
                     )),
             ))
             ->set_render_callback(function ($block) {
-                include(locate_template('template-parts/block-parts/part-mini-images.php', false, false));
+                include(locate_template('template-parts/blocks/block-mini-images.php', false, false));
             });
     }
 }

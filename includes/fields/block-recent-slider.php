@@ -16,7 +16,7 @@ if (!function_exists('crb_register_block_recent_slider')) {
         Block::make(__('Ostatnio dodane posty w slajderze'))
             ->add_fields(FieldsGlobal::getGaps())
             ->set_render_callback(function ($block) {
-                include(locate_template('template-parts/block-parts/part-recent-posts.php', false, false));
+                include(locate_template('template-parts/blocks/block-recent-slider.php', false, false));
             });
     }
 }

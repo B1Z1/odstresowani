@@ -21,7 +21,7 @@ if ( !function_exists('crb_register_block_gallery_image') ){
                     ))
             ))
             ->set_render_callback(function ($block) {
-                include(locate_template('template-parts/block-parts/part-gallery-image.php',false, false) );
+                include(locate_template('template-parts/blocks/block-gallery-image.php',false, false) );
             });
 
     }

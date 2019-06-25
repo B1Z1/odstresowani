@@ -23,7 +23,7 @@ if ( !function_exists('crb_register_custom_card') ){
                     ))
             ))
             ->set_render_callback(function ($block) {
-                include(locate_template('template-parts/block-parts/part-custom-card.php',false, false) );
+                include(locate_template('template-parts/blocks/block-custom-card.php',false, false) );
             });
     }
 }

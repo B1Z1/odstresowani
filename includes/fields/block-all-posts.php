@@ -27,7 +27,7 @@ if (!function_exists('crb_register_block_all_posts')) {
                     )),
             ))
             ->set_render_callback(function ($block) {
-                include(locate_template('template-parts/block-parts/part-posts.php', false, false));
+                include(locate_template('template-parts/blocks/block-all-posts.php', false, false));
             });
     }
 }
