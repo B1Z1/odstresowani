@@ -14,7 +14,7 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
 ?>
 </div>
 <!-- Hero banner start -->
-<section class="hero c-wh <?php echo $gapsClasses; ?>" <?php if ($back_image) : ?>style="background-image: url( <?php echo $back_image; ?> )" <?php endif; ?>>
+<section class="m-Hero d-flex aic jcc c-wh <?php echo $gapsClasses; ?>" <?php if ($back_image) : ?>style="background-image: url( <?php echo $back_image; ?> )" <?php endif; ?>>
     <div class="filter filter-back filter--zmax bck-blck"></div>
 
     <?php if ($check == 'video') : ?>
@@ -26,19 +26,15 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
 
     <?php endif; ?>
 
-    <div class="hero__content">
+    <div class="m-Hero__content">
         <div class="c-container">
 
             <?php if ($title) : ?>
-
                 <h3 class="reset-top f-san"><?php echo $title; ?></h3>
-
             <?php endif; ?>
 
             <?php if ($content) : ?>
-
                 <h1 class="reset f-vr"><?php echo $content; ?></h1>
-
             <?php endif; ?>
 
         </div>

@@ -1,0 +1,24 @@
+/*__________________
+    Module Hero
+______*/
+
+.m-Hero{
+    position: relative;
+    min-height: calc(100vh - 32px);
+    background-size: cover;
+    background-position: 0 0;
+    overflow: hidden;
+}
+
+/* ---> :Elements of Module: <--- */
+.m-Hero{
+    &__content{
+        position: relative;
+        text-align: center; 
+        z-index: 12;
+    }
+}
+
+/* ---> :Modificators of Module: <--- */
+.m-Hero{
+}

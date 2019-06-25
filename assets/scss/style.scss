@@ -48,7 +48,7 @@
 @import "modules/_video/video-controls";
 
 /* : Hero modules : */
-@import "modules/_hero/hero"; 
+ 
 
 /* : Mind modules : */ 
 @import "modules/_mind/mind";
@@ -84,6 +84,9 @@
 @import "./layouts/l-welcome";
 @import "./layouts/l-contact";
 @import "./layouts/l-dna";
+
+/* --> :Modules Start: <-- */
+@import "modules/Hero/style";
 
 /* --> : Components Start : <-- */
 @import "./components/c-animations";
