@@ -3,7 +3,8 @@ $check = $block['hero_check']; //Which options is need video:photo
 $links = carbon_get_theme_option('footer_social'); //Link if exist
 $title = $block['hero_heading']; //Title of block
 $content = $block['hero_content']; //Content of block
-$link = $block['hero_url'];
+$link = $block['hero_link'];
+$buttonText = $block['hero_button-text'];
 if ($check == 'video') {
     $videos = $block['hero_videos'];
     $video = videoByDate($videos); //Get video by date of year
@@ -35,6 +36,12 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
 
             <?php if ($content) : ?>
                 <h1 class="reset f-vr"><?php echo $content; ?></h1>
+            <?php endif; ?>
+
+            <?php if ( $link && $buttonText ): ?>
+                <span class="c-wh d-ib">
+                    <a href="<?php echo $link; ?>" class='c-link c-button__buy c-button--br4 bck-gradient--blue'><?php echo $buttonText; ?></a>
+                </span>
             <?php endif; ?>
 
         </div>
