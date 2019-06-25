@@ -296,7 +296,7 @@ window.addEventListener('load', ()=>{
         function infinityScroll(object){
             const container = document.querySelector(object.container),
                   cards = container ? [... container.children]:null;
-            let newCards = [];
+            let newCards = []; 
             
             if ( cards ){
                 //Clear container

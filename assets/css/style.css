@@ -1677,8 +1677,9 @@ _______________*/
   font-size: .8rem;
 }
 
-<<<<<<< HEAD
-/* --> :Modules Start: <-- */
+/*_______________________
+    Modules Start
+________*/
 
 /*__________________
     Module Hero
@@ -1702,12 +1703,9 @@ ______*/
 
 /* ---> :Modificators of Module: <--- */
 
-/* --> : Components Start : <-- */
-=======
 /*_______________________
     Components Start
 ________*/
->>>>>>> pages/THREE-Dna
 
 .fade {
   opacity: 0;
