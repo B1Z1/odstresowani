@@ -1,5 +1,6 @@
 //Import VideoGallery Component
 import VideoGallery from './components/videogallery';
+import { FullPage } from './components/FullPage/index';
 
 window.addEventListener('load', ()=>{
     /**
@@ -435,5 +436,11 @@ window.addEventListener('load', ()=>{
             },
         }
     });
+
+    //--------FullPage by [data-fullpage]
+    let fullPage = new FullPage('[data-fullpage]', {
+        buttons: '[data-fullpage-to]'
+    });
+
 });
 

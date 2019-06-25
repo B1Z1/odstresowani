@@ -41,7 +41,7 @@ class Brain{
         //------------Camera Position
         this.cameraPosition();
         //-------------------
-        this.changePositionObject3D();
+
         window.addEventListener('resize', ()=>{
             this.updateResize();
         });
@@ -84,6 +84,10 @@ class Brain{
 
             this.scene.add(this.object3D);
 
+            //------------Change Rotation by mouse move
+            this.changeRotationObject3D();
+            //-------------------
+            
             //------------Update Function
             this.update();
             //-------------------
@@ -104,20 +108,31 @@ class Brain{
     update(){
         requestAnimationFrame(()=>{ this.update(); });
         this.counter++;
+
+        //------------Change Position
+        this.changePositionObject3D();
+        //-------------------
+
         this.renderer.render(this.scene, this.camera);
     }
     //-----------------------------------------
 
-    //------------------Changed position of object3D
+    //------------------Changed Position of object3D
     changePositionObject3D(){
+        this.object3D.position.y = Math.sin(this.counter / 100) / 3 - .5;
+    }
+
+
+    //------------------Changed Rotation of object3D
+    changeRotationObject3D(){
         window.addEventListener('mousemove', (ev) => {
             let clientX = ev.clientX / 5,
                 clientY = ev.clientY / 5,
                 positionX = clientX / window.innerWidth,
                 positionY = clientY / window.innerHeight;
                 
-            this.object3D.rotation.y = positionX - .8;
             this.object3D.rotation.x = positionY + .2;
+            this.object3D.rotation.y = positionX - .8;
             this.object3D.rotation.z = positionY + .1;
         });
     }
