@@ -77,7 +77,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       value: function init() {
         var _this = this;
 
-        this.renderer.setSize(this.container.width, this.container.height), this.container.element.appendChild(this.renderer.domElement), this.scene.add(this.axesHelper), this.getModel(), this.lightScene(), this.cameraPosition(), this.changePositionObject3D(), window.addEventListener("resize", function () {
+        this.renderer.setSize(this.container.width, this.container.height), this.container.element.appendChild(this.renderer.domElement), this.scene.add(this.axesHelper), this.getModel(), this.lightScene(), this.cameraPosition(), window.addEventListener("resize", function () {
           _this.updateResize();
         });
       }
@@ -102,7 +102,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         var _this2 = this;
 
         this.loader.load(this.modelLink, function (e) {
-          _this2.object3D = e, _this2.object3D.scale.x = .01, _this2.object3D.scale.y = .01, _this2.object3D.scale.z = .01, _this2.object3D.rotation.x = .2, _this2.object3D.rotation.y = -.8, _this2.object3D.rotation.z = .1, _this2.object3D.position.x = 5, _this2.object3D.position.y = -.5, _this2.object3D.position.z = 1, _this2.scene.add(_this2.object3D), _this2.update();
+          _this2.object3D = e, _this2.object3D.scale.x = .01, _this2.object3D.scale.y = .01, _this2.object3D.scale.z = .01, _this2.object3D.rotation.x = .2, _this2.object3D.rotation.y = -.8, _this2.object3D.rotation.z = .1, _this2.object3D.position.x = 5, _this2.object3D.position.y = -.5, _this2.object3D.position.z = 1, _this2.scene.add(_this2.object3D), _this2.changeRotationObject3D(), _this2.update();
         }, void 0, function (e) {
           console.log(e);
         });
@@ -119,11 +119,16 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
         requestAnimationFrame(function () {
           _this3.update();
-        }), this.counter++, this.renderer.render(this.scene, this.camera);
+        }), this.counter++, this.changePositionObject3D(), this.renderer.render(this.scene, this.camera);
       }
     }, {
       key: "changePositionObject3D",
       value: function changePositionObject3D() {
+        this.object3D.position.y = Math.sin(this.counter / 100) / 3 - .5;
+      }
+    }, {
+      key: "changeRotationObject3D",
+      value: function changeRotationObject3D() {
         var _this4 = this;
 
         window.addEventListener("mousemove", function (e) {
@@ -131,7 +136,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
               r = e.clientY / 5,
               n = t / window.innerWidth,
               a = r / window.innerHeight;
-          _this4.object3D.rotation.y = n - .8, _this4.object3D.rotation.x = a + .2, _this4.object3D.rotation.z = a + .1;
+          _this4.object3D.rotation.x = a + .2, _this4.object3D.rotation.y = n - .8, _this4.object3D.rotation.z = a + .1;
         });
       }
     }]);

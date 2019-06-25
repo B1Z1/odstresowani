@@ -1,39 +1,69 @@
-/* ---> : Variables : <--- */
+/*_______________________
+    Variables Start
+________*/
 @import "./base/variables";
 
-/* ---> : Mixins : <--- */
+//-----------------------Variables End
+
+/*_______________________
+    Mixins Start
+________*/
+
 @import "./mixins/input-res";
 @import "./mixins/inp-text-classic";
 @import "./mixins/inp-text-classic2";
 
-/* ---> : Font includes : <--- */
+//-----------------------Mixins End
+
+/*_______________________
+    Fonts Start
+________*/
+
 @import "./fonts/fonts";
 
-/* ---> : Colors UI : <---*/
-@import "./colors/colors";
+//-----------------------Fonts End
 
-/*--------------> Base styles start <--------------*/
-/* Include Reset */
+/*_______________________
+    Libraries Start
+________*/
+
 @import "./reset";
 
-/* Include Base styles */
+//-----------------------Libraries End
+
+/*_______________________
+    Base Start
+________*/
+
 @import "./base/base";
 
-/************  Base styles end  ****************/
+//-----------------------Base End
 
-/* Include grid */
+/*_______________________
+    Grid Start
+________*/
+
 @import "./grid/grid";
 @import "./grid/columns";
- 
+
+//-----------------------Grid End
 
 /* --------------------------> Modules <------------------------ */
 
-/* : Filter modules : */
+/*_______________________
+    Filter Start
+________*/
+
 @import "modules/_filter/filter";
 @import "modules/_filter/filter-back";
 @import "modules/_filter/filter-video";
 
-/* : Blocks modules : */
+//-----------------------Filter End
+
+/*_______________________
+    Blocks Start
+________*/
+
 @import "modules/_block/block"; 
 @import "modules/_block/block-image";
 @import "modules/_block/block-operation";
@@ -42,6 +72,8 @@
 @import "modules/_block/block-genoraport";
 @import "modules/_block/block-genoraport";
 @import "modules/_block/block-videogallery";
+
+//-----------------------Blocks End
 
 /* : Video modules : */
 @import "modules/_video/video";
@@ -72,7 +104,10 @@
 @import "modules/_breadcrumbs/breadcrumbs";
 
 
-/* --> : Layouts Start : <-- */
+/*_______________________
+    Layouts Start
+________*/
+
 @import "./layouts/l-header";
 @import "./layouts/l-footer";
 @import "./layouts/l-pubimage";
@@ -85,10 +120,19 @@
 @import "./layouts/l-contact";
 @import "./layouts/l-dna";
 
-/* --> :Modules Start: <-- */
+//-----------------------Layouts End
+
+/*_______________________
+    Modules Start
+________*/
 @import "modules/Hero/style";
 
-/* --> : Components Start : <-- */
+//-----------------------Modules End
+
+/*_______________________
+    Components Start
+________*/
+
 @import "./components/c-animations";
 @import "./components/c-button";
 @import "./components/c-input";
@@ -108,13 +152,16 @@
 @import "./components/c-map";
 @import "./components/c-marker";
 
-/* --> Resets or colors UI <-- */
-/* Myreset */
+//-----------------------Layouts End
+
+/*_______________________
+    UI Start
+________*/
+
 @import "myreset";
-
-/* Include Fonts */
-@import "fonts/fonts-el";
-
-/* Include paddings/margins */
+@import "./colors/colors";
 @import "pad-marg/paddings"; 
 @import "pad-marg/margins";
+@import "fonts/fonts-el";
+
+//-----------------------UI End
