@@ -15,40 +15,15 @@ if ( !function_exists('crb_register_block_banner') ){
         Block::make(__('Hero Banner'))
             ->add_fields(FieldsGlobal::getGaps())
             ->add_fields(array(
-                Field::make('select', 'hero_check', __('Wybierz co chcesz'))
-                    ->set_options(array(
-                    'photo' => 'Zdjęcie',
-                    'video' => 'Video',
-                    )),
-                Field::make('complex', 'hero_videos', __('Filmiki na codzien, może być tylko 7'))
-                    ->add_fields(array(
-                        Field::make( 'file', 'hero_video_mp4', __('Wybierz filmik MP4') )
+                Field::make('complex', 'container', __('Kontejnery dla hero bannera'))
+                    ->set_max(2)
+                    ->add_fields('block' ,array(
+                        Field::make('text', 'title', __('Tytuł')),
+                        Field::make('textarea', 'describe', __('Opis')),
+                        Field::make('text', 'buttonText', __('Tekst Przycisku')),
+                        Field::make('text', 'buttonLink', __('Link')),
+                        Field::make('image', 'image', __('Tło'))
                     ))
-                    ->set_conditional_logic(array(
-                        'relation' => 'OR',
-                        array(
-                            'field' => 'hero_check',
-                            'value' => 'video',
-                            'compare' => '=',
-                        )
-                    )),
-                Field::make( 'image', 'hero_photo', __('Wybierz zdjęcie') )
-                    ->set_conditional_logic(array(
-                        'relation' => 'OR',
-                        array(
-                            'field' => 'hero_check',
-                            'value' => 'photo',
-                            'compare' => '=',
-                        )
-                    )),
-                Field::make('text', 'hero_heading', __('Tytuł'))
-                    ->set_attribute('maxLength', '60'),
-                Field::make('text', 'hero_content', __('Mały opis'))
-                    ->set_attribute('maxLength', '140'),
-                Field::make('text', 'hero_link', __('Link'))
-                    ->set_attribute('maxLength', '140'),
-                Field::make('text', 'hero_button-text', __('Text buttonu'))
-                    ->set_attribute('maxLength', '140')
             ))
             ->set_render_callback(function ($block) {
                 include(locate_template('template-parts/blocks/block-hero.php',false, false) );
