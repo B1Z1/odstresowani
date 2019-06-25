@@ -39,7 +39,7 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
             <?php endif; ?>
 
             <?php if ( $link && $buttonText ): ?>
-                <span class="c-wh d-ib">
+                <span class="c-wh d-ib pt32">
                     <a href="<?php echo $link; ?>" class='c-link c-button__buy c-button--br4 bck-gradient--blue'><?php echo $buttonText; ?></a>
                 </span>
             <?php endif; ?>
