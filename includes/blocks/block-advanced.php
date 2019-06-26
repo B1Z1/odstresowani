@@ -143,16 +143,6 @@ if ( !function_exists('crb_register_block_advanced') ){
                                     'compare' => '=',
                                 ),
                             )),
-                        //If type of column "text" generate image under the text
-                        Field::make('image', 'advanced_image_under_text', __('Obrazek pod tekstem'))
-                            ->set_conditional_logic(array(
-                                'relation' => 'OR',
-                                array(
-                                    'field' => 'advanced_choose_text',
-                                    'value' => 'text',
-                                    'compare' => '=',
-                                ),
-                            )),
                         //If type of column "hidden" generate text for this column
                         Field::make('text', 'advanced_hidden_title', __('Tytuł ukrytej kolumny'))
                             ->set_conditional_logic(array(

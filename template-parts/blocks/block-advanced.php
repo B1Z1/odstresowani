@@ -47,7 +47,7 @@ $image_under = wp_get_attachment_image_url($block['advanced_blockimage'], 'full'
         <?php if ( $columns ): ?>
 
             <!-- Main block start -->
-            <div class="d-flex fwrap row mt64 <?php echo $string_flex_classes ?>">
+            <div class="d-flex fwrap row <?php echo $string_flex_classes ?>">
                 <?php foreach ($columns as $column): ?>
                 <?php 
                     //Columns classes
@@ -144,13 +144,6 @@ $image_under = wp_get_attachment_image_url($block['advanced_blockimage'], 'full'
         <?php endif; ?>
 
     </div>
-
-    
-    <?php if ( $image_under ): ?>
-        <!-- Image block start -->
-        <img src="<?php echo $image_under; ?>" alt="Odstresowani Image" class="block-image__underblock">
-        <!--  Image block end  -->
-    <?php endif; ?>
 
 </section>
 <div class="c-container">
