@@ -1294,8 +1294,8 @@ _______________*/
 /* ---> : Layout Modificators Start : <--- */
 
 .l-header--active {
-  background-color: white;
-  color: black;
+  background-color: white !important;
+  color: black !important;
 }
 
 .l-header--active .c-flip__back {
@@ -1697,6 +1697,10 @@ ______*/
   position: relative;
   background-size: cover;
   background-position: center;
+}
+
+.m-Hero__content {
+  position: relative;
 }
 
 /* ---> :Modificators of Module: <--- */

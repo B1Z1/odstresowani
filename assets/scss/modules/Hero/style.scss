@@ -18,10 +18,11 @@ ______*/
         background-position: center;
     }
     &__content{
+        position: relative;
         @media only screen and (min-width: $bpoint-ntb) {
             max-width: 80%;
         }
-    }
+    } 
 }
 
 /* ---> :Modificators of Module: <--- */
