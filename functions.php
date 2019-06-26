@@ -90,7 +90,6 @@ require get_template_directory() . '/includes/blocks/block-video-gallery.php';
 require get_template_directory() . '/includes/blocks/block-gallery-image.php';
 require get_template_directory() . '/includes/blocks/block-custom-card.php';
 require get_template_directory() . '/includes/blocks/block-welcome.php';
-require get_template_directory() . '/includes/blocks/block-genoraport.php';
 
 /**
  *
