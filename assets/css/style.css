@@ -1065,51 +1065,6 @@ _______________*/
 
 /*_________________________
 
-Layout Public Image Start
-
-_______________*/
-
-/* --> : Component Elements : <-- */
-
-.l-pubimage__container {
-  position: relative;
-}
-
-.l-pubimage__sygnet {
-  position: absolute;
-  left: calc(50% - 32px);
-  bottom: -32px;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  z-index: 999;
-}
-
-/* --> : Component Modificators : <-- */
-
-.l-pubimage--2xfull {
-  height: 160vh;
-}
-
-.l-pubimage--full {
-  height: 80vh;
-}
-
-.l-pubimage--small {
-  height: 40vh;
-}
-
-.l-pubimage--256 {
-  height: 256px;
-}
-
-.l-pubimage--boxsh {
-  -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.16);
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.16);
-}
-
-/*_________________________
-
 Layout 404 Start
 
 _______________*/
@@ -1537,6 +1492,47 @@ _______________*/
 
 .m-GalleryWithThumbs__prev {
   left: 16px;
+}
+
+/*_________________________
+
+Layout Public Image Start
+
+_______________*/
+
+/* --> : Component Elements : <-- */
+
+.m-Banner__sygnet {
+  position: absolute;
+  left: calc(50% - 32px);
+  bottom: -32px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  z-index: 999;
+}
+
+/* --> : Component Modificators : <-- */
+
+.m-Banner--2xfull {
+  height: 160vh;
+}
+
+.m-Banner--full {
+  height: 80vh;
+}
+
+.m-Banner--small {
+  height: 40vh;
+}
+
+.m-Banner--256 {
+  height: 256px;
+}
+
+.m-Banner--boxsh {
+  -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.16);
 }
 
 /*_______________________

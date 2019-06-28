@@ -4,15 +4,12 @@ Layout Public Image Start
 
 _______________*/
 
-.l-pubimage{
+.m-Banner{
 
 }
 
 /* --> : Component Elements : <-- */
-.l-pubimage{
-    &__container{
-        position: relative;
-    }
+.m-Banner{
     &__sygnet{
         position: absolute;
         left: calc(50% - 32px);
@@ -25,7 +22,7 @@ _______________*/
 }
 
 /* --> : Component Modificators : <-- */
-.l-pubimage{
+.m-Banner{
     &--2xfull{
         height: 160vh;
     }

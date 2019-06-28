@@ -54,7 +54,7 @@ class GeneralOptions
     }
 
     static public function post_category_sygnet(){
-        $post_cat = post_get_cat();
+        $post_cat = self::post_get_cat();
 
         if ( $post_cat == 'post' ){
             $cat_image_id = carbon_get_term_meta($post_cat[0], 'category_sygnet');
