@@ -313,85 +313,12 @@ ________*/
     Blocks Start
 ________*/
 
-.block {
-  position: relative;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.block__title {
-  font-family: value-regular !important;
-}
-
-.block__photo > .card:last-of-type {
-  margin-bottom: 0;
-}
-
 .block--full {
   min-height: calc(100vh - 32px);
 }
 
-.block--texleft {
-  text-align: left;
-}
-
-.block--texcen {
-  text-align: center;
-}
-
-.block--texright {
-  text-align: right;
-}
-
 .block--hidden {
   overflow: hidden;
-}
-
-/* : Image block : */
-
-.block-image {
-  position: relative;
-  width: 100%;
-}
-
-.block-image--full {
-  height: 80vh;
-}
-
-.block-image--small {
-  height: 40vh;
-}
-
-.block-image--256 {
-  height: 256px;
-}
-
-.block-image--boxsh {
-  -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.16);
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.16);
-}
-
-.block-image__el {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
-}
-
-.block-image__el--contain {
-  -o-object-fit: contain;
-  object-fit: contain;
-}
-
-.block-image__underblock {
-  position: absolute;
-  top: calc(100% - 190px);
-  left: calc(50% - 190px);
-  max-width: 380px;
-  max-height: 380px;
 }
 
 .block-videogallery__element {
@@ -3654,24 +3581,6 @@ ________*/
 
   .c-card--328 {
     height: 288px;
-  }
-}
-
-@media only screen and (max-width: 769px) {
-  .block-image__advanced {
-    width: 50%;
-  }
-
-  .block-image__underblock {
-    top: calc(100% - 128px);
-    left: calc(50% - 128px);
-    max-width: 256px;
-    max-height: 256px;
-  }
-
-  .block-image--full,
-  .block-image--small {
-    height: 50vh;
   }
 }
 
