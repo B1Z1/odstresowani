@@ -18,32 +18,20 @@
 get_header();
 ?>
 
-    <div class="l-Wrapper">
-
-        <!-- ------------------ -->
-        <!-- Main section start -->
-        <!-- ------------------ -->
-
-        <main class="main">
-
-            <section class="l-contact">
-                <div class="pt64 pb128 c-gt bck-gm">
-                    <div class="l-Container l-Container--480">
-                        <h3 class="f-vb">
-                            <span class="c-op f-vb">
-                                <?php echo pll__('Wyślij do nas swoją wiadomość'); ?>
-                            </span>
-                        </h3>
-                        <?php echo do_shortcode('[contact-form-7 id="1781" title="Formularz"]'); ?>
-                    </div>
+    <main class="l-Wrapper">
+        <section class="l-contact">
+            <div class="pt64 pb128 c-gt bck-gm">
+                <div class="l-Container l-Container--480">
+                    <h3 class="f-vb">
+                        <span class="c-op f-vb">
+                            <?php echo pll__('Wyślij do nas swoją wiadomość'); ?>
+                        </span>
+                    </h3>
+                    <?php echo do_shortcode('[contact-form-7 id="1781" title="Formularz"]'); ?>
                 </div>
-            </section>
-
-        </main>
-
-        <!-- ------------------ -->
-        <!--  Main section end  -->
-        <!-- ------------------ -->
+            </div>
+        </section>
+    </main>
 
 <?php
 get_footer();
