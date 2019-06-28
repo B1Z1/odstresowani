@@ -253,34 +253,34 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
                   n = "" != t.slider_has_back;
 
               if (i) {
-                l.forEach(function (l, r) {
-                  var a = l,
-                      c = a.dataset.title,
-                      d = a.dataset.name,
+                l.forEach(function (l, a) {
+                  var r = l,
+                      c = r.dataset.title,
+                      d = r.dataset.name,
                       u = "";
-                  e.removeClass(o.card_active, a), n && (u = a.querySelector(".".concat(t.slider_has_back)).dataset.back, n = !0), 0 == r && (e.addClass(o.card_active, a), n && (i.style.backgroundImage = "url(".concat(u, ")"))), function (t, i, l, s, o, n) {
-                    var r = document.createElement("li"),
-                        a = "";
-                    e.addClass(o.pagination_el, r), r.className += " ".concat(o.extra), 0 == s && e.addClass(o.pag_active, r), r.dataset.name = i, "" != n ? (a = document.createElement(n.wrapper), "" != n.classes && (a.className += n.classes), a.textContent = l, r.appendChild(a)) : r.textContent = l;
-                    t.appendChild(r);
-                  }(s, d, c, r, o, t.pagination_wrap);
+                  e.removeClass(o.card_active, r), n && (u = r.querySelector(".".concat(t.slider_has_back)).dataset.back, n = !0), 0 == a && (e.addClass(o.card_active, r), n && (i.style.backgroundImage = "url(".concat(u, ")"))), function (t, i, l, s, o, n) {
+                    var a = document.createElement("li"),
+                        r = "";
+                    e.addClass(o.pagination_el, a), a.className += " ".concat(o.extra), 0 == s && e.addClass(o.pag_active, a), a.dataset.name = i, "" != n ? (r = document.createElement(n.wrapper), "" != n.classes && (r.className += n.classes), r.textContent = l, a.appendChild(r)) : a.textContent = l;
+                    t.appendChild(a);
+                  }(s, d, c, a, o, t.pagination_wrap);
                 });
 
-                var r = _toConsumableArray(s.children);
+                var a = _toConsumableArray(s.children);
 
-                r.forEach(function (s) {
-                  var a = s,
-                      c = a.dataset.name,
+                a.forEach(function (s) {
+                  var r = s,
+                      c = r.dataset.name,
                       d = l.find(function (e) {
                     if (e.dataset.name == c) return e;
                   }),
                       u = "";
-                  n && (u = d.querySelector(".".concat(t.slider_has_back)).dataset.back), a.addEventListener("click", function () {
+                  n && (u = d.querySelector(".".concat(t.slider_has_back)).dataset.back), r.addEventListener("click", function () {
                     l.map(function (t) {
                       e.removeClass(o.card_active, t);
-                    }), r.map(function (t) {
+                    }), a.map(function (t) {
                       e.removeClass(o.pag_active, t);
-                    }), e.addClass(o.card_active, d), e.addClass(o.pag_active, a), n && (i.style.backgroundImage = "url(".concat(u, ")"));
+                    }), e.addClass(o.card_active, d), e.addClass(o.pag_active, r), n && (i.style.backgroundImage = "url(".concat(u, ")"));
                   });
                 });
               }
@@ -330,18 +330,18 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       setTimeout(function () {
         new i.init({
           slider_block: "swiper-recent_posts",
-          slider_cards: "recent-posts_vh",
-          slider_pagination: "recent-posts_vh_pagination",
+          slider_cards: "m-TabGallery_vh",
+          slider_pagination: "m-TabGallery_vh_pagination",
           slider_has_back: "",
-          slider_title: "recent-posts_vh",
+          slider_title: "m-TabGallery_vh",
           pagination_wrap: {
             wrapper: "h3",
             classes: "reset"
           },
           classes: {
-            pag_active: "recent-posts_nav__active",
-            card_active: "recent-posts_vh__active",
-            pagination_el: "recent-posts_nav__el",
+            pag_active: "m-TabGallery_nav__active",
+            card_active: "m-TabGallery_vh__active",
+            pagination_el: "m-TabGallery_nav__el",
             extra: "ml16 mr16"
           }
         });

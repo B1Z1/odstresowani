@@ -351,18 +351,18 @@ window.addEventListener('load', ()=>{
     setTimeout(()=>{
         let recentSlider = new Mslider.init({
             slider_block: 'swiper-recent_posts',
-            slider_cards: 'recent-posts_vh',
-            slider_pagination: 'recent-posts_vh_pagination',
+            slider_cards: 'm-TabGallery_vh',
+            slider_pagination: 'm-TabGallery_vh_pagination',
             slider_has_back: '',
-            slider_title: 'recent-posts_vh',
+            slider_title: 'm-TabGallery_vh',
             pagination_wrap: {
                 wrapper: 'h3',
                 classes: 'reset'
             },
             classes: {
-                pag_active: 'recent-posts_nav__active',
-                card_active: 'recent-posts_vh__active',
-                pagination_el: 'recent-posts_nav__el',
+                pag_active: 'm-TabGallery_nav__active',
+                card_active: 'm-TabGallery_vh__active',
+                pagination_el: 'm-TabGallery_nav__el',
                 extra: 'ml16 mr16',
             }
         });
