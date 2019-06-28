@@ -36,9 +36,12 @@ $sygnet = carbon_get_post_meta(get_the_ID(), 'page_sygnet');
 
                             <?php while (have_posts()): the_post(); ?>
 
-                                <!--  Breadcrumbs start  --> 
-                                <?php yoast_breadcrumb( '<div id="breadcrumbs" class="m-Breadcrumbs reset-top f-vb c-gs mb64 p">','</div>' ); ?>
-                                <!--  Breadcrumbs end  --> 
+                                <?php 
+                                    /**
+                                     * Yoast Breadcrumbs Module 
+                                     */
+                                    get_template_part('template-parts/modules/Breadcrumbs/index.php');
+                                ?>
                                 
                                 <?php the_content(); ?>
                                 <?php get_template_part('template-parts/content', 'share'); ?>

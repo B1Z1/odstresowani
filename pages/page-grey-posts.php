@@ -29,11 +29,12 @@ $sygnet = carbon_get_post_meta(get_the_ID(), 'page_sygnet');
                         <img src="<?php echo wp_get_attachment_image_src($sygnet,'full')[0]; ?>" alt="Page sygnet" class="post__sygnet">
                     </div>
                 </div>
-                <div class="page__breadcrumbs">
-                    <!--  Breadcrumbs start  --> 
-                    <?php yoast_breadcrumb( '<div id="breadcrumbs" class="m-Breadcrumbs reset-top f-vb c-gs mb64">','</div>' ); ?>
-                    <!--  Breadcrumbs end  --> 
-                </div>
+                <?php 
+                    /**
+                     * Yoast Breadcrumbs Module 
+                     */
+                    get_template_part('template-parts/modules/Breadcrumbs/index.php');
+                ?>
                 <!-- Main Content Start -->
                 <div class="page__content">
                     <div class="c-container c-container--posts header__triger">

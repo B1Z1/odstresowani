@@ -36,9 +36,12 @@ get_header();
                     </div>
                     <div class="post__content header__triger">
                         <div class="c-container c-container--960">
-                            <!--  Breadcrumbs start  --> 
-                            <?php yoast_breadcrumb( '<div id="breadcrumbs" class="m-Breadcrumbs reset-top f-vb c-gs mb64">','</div>' ); ?>
-                            <!--  Breadcrumbs end  --> 
+                            <?php 
+                                /**
+                                 * Yoast Breadcrumbs Module 
+                                 */
+                                get_template_part('template-parts/modules/Breadcrumbs/index.php');
+                            ?>
                             <?php the_content(); ?>
                             <?php get_template_part('template-parts/content', 'share'); ?>
                         </div> 
