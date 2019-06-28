@@ -13,7 +13,7 @@ $posts = new WP_Query($args_q);
 $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
 ?>
 
-<section class="block header__triger <?php echo $gapsClasses; ?>">
+<section class="m-AllPosts header__triger <?php echo $gapsClasses; ?>">
 
 
     <div class="d-flex fwrap row infinity-scroll">
@@ -32,18 +32,6 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
                 } else {
                     $args['category'] = wp_get_post_terms(get_the_ID(), $post_type . '-kategorie');
                 }
-                /**
-                 *
-                 * Action gets arguments
-                 * @url
-                 * @title
-                 * @describe
-                 * @image
-                 * @date
-                 * @category
-                 *
-                 *
-                 */
                 $column = $block['posts_position']; ?>
                 <div class="ntb-col-6 pc-col-<?php echo $column ?> mb64">
                     <?php do_action('post_card_block', $args); ?>
