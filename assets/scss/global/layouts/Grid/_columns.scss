@@ -1,0 +1,45 @@
+$columns: '';
+@for $i from 1 through 12{
+    @each $name, $size in $bpoints{
+        @if $i == 1 and first($bpoints) == $name{
+            $columns: '#{$columns}.#{$name}-col-#{$i},';
+        }
+        @else if $i == 12 and last($bpoints) == $name{
+            $columns: '#{$columns}, .#{$name}-col-#{$i}';
+        }
+        @else{
+            $columns: '#{$columns} .#{$name}-col-#{$i},';
+        }
+    }
+}
+
+#{$columns}{
+    box-sizing: border-box;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-right: 16px;
+    padding-left: 16px;
+}
+
+@each $name, $size in $bpoints{
+    @if $size != 0{
+        @media screen and (min-width: $size){
+            @for $i from 1 through 12{
+                $width: ($i / 12) * 100%;
+                .#{$name}-col-#{$i}{
+                    flex: 0 0 $width;
+                    max-width: $width;
+                }
+            }
+        }
+    }
+    @else{
+        @for $i from 1 through 12{
+            $width: ($i / 12) * 100%;
+            .#{$name}-col-#{$i}{
+                flex: 0 0 $width;
+                max-width: $width;
+            }
+        }
+    }
+}

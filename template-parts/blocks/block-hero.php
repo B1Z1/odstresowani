@@ -33,4 +33,4 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
     <?php endforeach; ?>
 </section>
 <!-- Hero banner end -->
-<div class="c-container">
+<div class="l-Container">

@@ -24,7 +24,7 @@ $sygnet = carbon_get_post_meta(get_the_ID(), 'page_sygnet');
         <main class="main mb64">
             <section class="page">
                 <div class="page__title mb160 pt128 pb160 bck-gm">
-                    <div class="c-container c-container--960">
+                    <div class="l-Container l-Container--960">
                         <h3 class="reset f-san"><?php the_title(); ?></h3>
                         <img src="<?php echo wp_get_attachment_image_src($sygnet,'full')[0]; ?>" alt="Page sygnet" class="post__sygnet">
                     </div>
@@ -37,7 +37,7 @@ $sygnet = carbon_get_post_meta(get_the_ID(), 'page_sygnet');
                 ?>
                 <!-- Main Content Start -->
                 <div class="page__content">
-                    <div class="c-container c-container--posts header__triger">
+                    <div class="l-Container l-Container--posts header__triger">
                         
                         <?php if ( have_posts() ):  ?>
 

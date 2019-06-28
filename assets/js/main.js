@@ -9,7 +9,7 @@ window.addEventListener('load', ()=>{
      *
      */
     (function () {
-        let containers = [... document.querySelectorAll('.c-container')],
+        let containers = [... document.querySelectorAll('.l-Container')],
             p_el = [... document.querySelectorAll('p')];
         containers.forEach(function (el) {
             if ( el.children.length == 0 ){

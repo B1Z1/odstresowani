@@ -45,7 +45,7 @@ if ($cat_check === 'film') {
 
             <?php endif; ?>
             <div class="hero__content">
-                <div class="c-container">
+                <div class="l-Container">
                     <h3 class="reset-top f-san"><?php echo single_cat_title(); ?></h3>
                     <?php if (category_description()) : ?>
                         <h1 class="reset"><?php echo wp_strip_all_tags(category_description()); ?></h1>
@@ -55,7 +55,7 @@ if ($cat_check === 'film') {
         </section>
         <!-- Hero banner end -->
 
-        <div class="c-container c-container--posts pt32 header__triger">
+        <div class="l-Container l-Container--posts pt32 header__triger">
             <div class="d-flex fwrap row infinity-scroll">
                 <?php if (have_posts()) :  ?>
                     <?php while (have_posts()) : the_post(); ?>

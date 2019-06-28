@@ -1,10 +1,5 @@
-/*_________________________
-
-Component Container Start
-
-_______________*/
-
-.c-container{
+/* Layouts Container */
+.l-Container{
     box-sizing: border-box;
     max-width: 1200px;
     padding-right: 16px;
@@ -14,7 +9,7 @@ _______________*/
 }
 
 /* --> : Modificators of Element : <-- */
-.c-container{
+.l-Container{
     &--960{
         max-width: 960px;
     }

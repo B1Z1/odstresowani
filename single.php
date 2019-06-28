@@ -27,7 +27,7 @@ get_header();
                     ?>
 
                     <div class="post__title mb160 pt128 pb160 bck-gm">
-                        <div class="c-container">
+                        <div class="l-Container">
                             <h3 class="reset f-san"><?php the_title(); ?></h3>
                             <?php if ( $cat_sygnet ): ?>
                                 <img src="<?php echo $cat_sygnet; ?>" alt="Category sygnet" class="post__sygnet">
@@ -41,7 +41,7 @@ get_header();
                         get_template_part('template-parts/modules/Breadcrumbs/index');
                     ?>
                     <div class="post__content header__triger">
-                        <div class="c-container c-container--960">
+                        <div class="l-Container l-Container--960">
                             <?php the_content(); ?>
                             <?php get_template_part('template-parts/content', 'share'); ?>
                         </div> 
@@ -55,7 +55,7 @@ get_header();
             <?php endif; ?>
 
         </article>
-        <div class="c-container">
+        <div class="l-Container">
         <?php
             /**
              *

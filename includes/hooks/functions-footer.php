@@ -13,7 +13,7 @@ add_action('odstresowani_footer_upper_start', 'footer_upper_start', 10);
 if ( !function_exists('footer_upper_start') ){
     function footer_upper_start(){ ?>
     <div class="l-footer__upper bck-gradient--operative pt64 pb32 c-wh">
-        <div class="c-container">
+        <div class="l-Container">
             <div class="row">
     <?php }
 }
@@ -65,7 +65,7 @@ if ( !function_exists('footer_upper_social') ){
                         <li class="c-list__element mr16 ml16">
                             <a href="<?php echo $footer_list['footer_social_url']; ?>" class="c-link c-link--diblock">
                                 <?php $footer_social_icon = wp_get_attachment_image_url($footer_list['footer_social_image'], 'full'); ?>
-                                <img src="<?php echo $footer_social_icon; ?>" alt="Icon" class="c-image c-image--24wh">
+                                <img src="<?php echo $footer_social_icon; ?>" alt="Icon" class="c-Image c-Image--24wh">
                             </a>
                         </li>
                     <?php endforeach; ?>
@@ -89,7 +89,7 @@ add_action('odstresowani_footer_bottom_start', 'footer_bottom_start', 10);
 if ( !function_exists('footer_bottom_start') ){
     function footer_bottom_start(){ ?>
         <div class="l-footer__bottom mt32 mb16 c-blck">
-            <div class="c-container">
+            <div class="l-Container">
                 <div class="row flex-kit aic jcsb fwrap">
     <?php }
 }

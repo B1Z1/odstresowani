@@ -49,5 +49,5 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
 </div>
 
 <?php if ($block['most_viewed_posts']) : ?>
-    <div class="c-container">
+    <div class="l-Container">
 <?php endif; ?>

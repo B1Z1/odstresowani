@@ -83,7 +83,7 @@ if ( !function_exists( 'post_card_block' ) ){
             <div class="c-card">
                 <div class="c-card__image c-card--192">
                     <?php if ( $image ): ?>
-                        <img src="<?php echo $image; ?>" alt="<?php echo $title; ?>" class="c-image">
+                        <img src="<?php echo $image; ?>" alt="<?php echo $title; ?>" class="c-Image">
                     <?php endif; ?>
                 </div>
                 <div class="c-card__title mt16">
@@ -93,7 +93,7 @@ if ( !function_exists( 'post_card_block' ) ){
                     <?php if ( $cat_list ): ?>
                         <li class="c-card__cat pr16 mr16 f-san">
                             <?php if ( $wave ): ?>
-                                <object data="<?php echo $wave; ?>" class="c-image__wave" type="image/svg+xml"></object>
+                                <object data="<?php echo $wave; ?>" class="c-Image__wave" type="image/svg+xml"></object>
                             <?php endif; ?>
                             <span class="c-text-size--h6">
                                 <?php echo $cat_list; ?>
@@ -135,7 +135,7 @@ if ( !function_exists( 'post_card_mini' ) ){
             <div class="c-card mb32">
                 <div class="c-card__image c-card--192 mb32">
                     <?php if ( $image ): ?>
-                        <img src="<?php echo $image; ?>" alt="<?php echo $title; ?>" class="c-image">
+                        <img src="<?php echo $image; ?>" alt="<?php echo $title; ?>" class="c-Image">
                     <?php endif; ?>
                 </div>
                 <div class="c-card__title c-text--center">

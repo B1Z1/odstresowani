@@ -25,6 +25,13 @@ $bpoint-full: 1600px;
 $bpoint-ntb: 1366px;
 $bpoint-tab: 768px;
 
+$bpoints: (
+    pc: 1600px,
+    ntb: 1366px,
+    tbl: 768px,
+    mbl: 0
+);
+
 /* ---> : Colors : <--- */
 $black: black;
 $white: white;

@@ -31,6 +31,6 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
             </div>
         <?php endforeach; ?>
     </div>
-    <div class="c-container header__triger">
+    <div class="l-Container header__triger">
 
 <?php endif; ?>

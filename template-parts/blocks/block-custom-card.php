@@ -6,7 +6,7 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
 
 </div>
 
-<div class="c-container header__triger <?php echo $gapsClasses; ?>">
+<div class="l-Container header__triger <?php echo $gapsClasses; ?>">
     <div class="row">
         <div class="d-flex jcc fwrap">
             <?php foreach ( $card_list as $card ):
@@ -26,4 +26,4 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
     </div>
 </div>
 
-<div class="c-container c-container--960">
+<div class="l-Container l-Container--960">

@@ -174,7 +174,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
     window.addEventListener("load", function () {
       !function () {
-        var e = _toConsumableArray(document.querySelectorAll(".c-container")),
+        var e = _toConsumableArray(document.querySelectorAll(".l-Container")),
             t = _toConsumableArray(document.querySelectorAll("p"));
 
         e.forEach(function (e) {
