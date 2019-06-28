@@ -97,10 +97,10 @@ $image_under = wp_get_attachment_image_url($block['advanced_blockimage'], 'full'
                             //If column type == list
                             else if( $col_type == 'list'  ){ ?>
 
-                                <ul class="c-list block-list reset">
+                                <ul class="c-list reset">
                                     <?php foreach ( $col_list as $el ): ?>
                                         <?php $list_text = $el['advanced_list_el']; ?>
-                                        <li class="block-list__el block-list__el--underline pb16"><?php echo $list_text; ?></li>
+                                        <li class="pb16"><?php echo $list_text; ?></li>
                                     <?php endforeach; ?>
                                 </ul>
 

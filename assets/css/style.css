@@ -647,23 +647,6 @@ ________*/
   max-height: 380px;
 }
 
-/* Block for page "River Operation" */
-
-.block-operation {
-  text-align: center;
-}
-
-.block-operation__wrapper {
-  text-align: left;
-  overflow: hidden;
-  -webkit-transition: .8s all;
-  transition: .8s all;
-}
-
-.block-operation__wrapper--disabled {
-  max-height: 0;
-}
-
 /* : Block advanced used in "advanced block" : */
 
 .block-advanced p {
