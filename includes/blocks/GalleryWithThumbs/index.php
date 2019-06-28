@@ -1,5 +1,4 @@
 <?php
-use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 use Carbon_Fields\Block;
 
@@ -21,7 +20,7 @@ if ( !function_exists('crb_register_block_gallery_image') ){
                     ))
             ))
             ->set_render_callback(function ($block) {
-                include(locate_template('template-parts/blocks/block-gallery-image.php',false, false) );
+                include(locate_template('template-parts/blocks/GalleryWithThumbs/index.php',false, false) );
             });
 
     }

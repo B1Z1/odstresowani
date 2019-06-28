@@ -4,7 +4,7 @@ Layout Gallery Start
 
 _______________*/
 
-.l-gallery-image{
+.m-GalleryWithThumbs{
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -19,7 +19,7 @@ _______________*/
 }
 
 /* ---> : Layout Elements Start : <--- */
-.l-gallery-image{
+.m-GalleryWithThumbs{
     &__top{
         position: relative;
         width: 100%;
@@ -37,27 +37,21 @@ _______________*/
     &__next, &__prev{
         position: absolute;
         top: 50%;
-        width: 32px;
-        height: 64px;
+        width: 16px;
+        height: 32px;
         outline: none;
         transform: translateY(-50%);
         z-index: 99;
         cursor: pointer;
+        @media screen and ( min-width: $bpoint-tab ){
+            width: 32px;
+            height: 64px;
+        }
     }
     &__next{
         right: 16px;
     }
     &__prev{
         left: 16px;
-    }
-}
-
-@media only screen and ( max-width: 768px ){
-    /* ---> : Layout Elements Start : <--- */
-    .l-gallery-image{
-        &__next, &__prev{
-            width: 16px;
-            height: 32px;
-        }
     }
 }

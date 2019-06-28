@@ -5,14 +5,14 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block); ?>
 
 </div>
 
-<div class="l-gallery-image <?php echo $gapsClasses; ?>">
+<div class="m-GalleryWithThumbs <?php echo $gapsClasses; ?>">
     
     <!-- : Upper Swiper Start : -->
-    <div class="l-gallery-image__top">
+    <div class="m-GalleryWithThumbs__top">
 
         <!-- : Buttons Start : -->
-        <div class="l-gallery-image__next"><img src="<?php echo get_template_directory_uri() ?>/assets/img/arrows/next.svg" alt="" class="c-Image"></div>
-        <div class="l-gallery-image__prev"><img src="<?php echo get_template_directory_uri() ?>/assets/img/arrows/back.svg" alt="" class="c-Image"></div>
+        <div class="m-GalleryWithThumbs__next"><img src="<?php echo get_template_directory_uri() ?>/assets/img/arrows/next.svg" alt="" class="c-Image"></div>
+        <div class="m-GalleryWithThumbs__prev"><img src="<?php echo get_template_directory_uri() ?>/assets/img/arrows/back.svg" alt="" class="c-Image"></div>
         <!-- : Buttons End : -->
 
         <div class="swiper-wrapper">
@@ -28,12 +28,12 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block); ?>
     <!-- : Upper Swiper End : -->
 
     <!-- : Bottom Swiper Start : -->
-    <div class="l-gallery-image__bottom mt16">
+    <div class="m-GalleryWithThumbs__bottom mt16">
         <div class="swiper-wrapper">
             <?php foreach ( $gallery as $element ): 
                 $image = wp_get_attachment_image_url($element['gallery_image'], 'full');
                 ?>
-                <div class="swiper-slide l-gallery-image__thumb">
+                <div class="swiper-slide m-GalleryWithThumbs__thumb">
                     <img src="<?php echo $image; ?>" alt="Operacja Rzeka" class="c-Image">
                 </div>
             <?php endforeach; ?>
@@ -42,7 +42,7 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block); ?>
     <!-- : Bottom Swiper End : -->
 
     <script>
-    var galleryThumbs = new Swiper('.l-gallery-image__bottom', {
+    var galleryThumbs = new Swiper('.m-GalleryWithThumbs__bottom', {
         spaceBetween: 16,
         slidesPerView: 6,
         freeMode: true,
@@ -58,12 +58,12 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block); ?>
             }
         }
     });
-    var galleryTop = new Swiper('.l-gallery-image__top', {
+    var galleryTop = new Swiper('.m-GalleryWithThumbs__top', {
         spaceBetween: 16,
         allowTouchMove: false,
         navigation: {
-            nextEl: '.l-gallery-image__next',
-            prevEl: '.l-gallery-image__prev',
+            nextEl: '.m-GalleryWithThumbs__next',
+            prevEl: '.m-GalleryWithThumbs__prev',
         },
         thumbs: {
             swiper: galleryThumbs
