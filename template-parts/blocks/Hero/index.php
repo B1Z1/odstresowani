@@ -9,9 +9,8 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
     <?php foreach ($container as $element) :
         $title = $element['title'];
         $describe = $element['describe'];
+        $buttons = $element['buttons'];
         $image = wp_get_attachment_image_url($element['image'], 'full');
-        $buttonText = $element['button_text'];
-        $buttonLink = $element['button_link'];
         if (count($container) === 1)
             $columnClass = 'ntb-col-12';
         else
@@ -23,11 +22,22 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
                 <?php if ($title) : ?>
                     <h2 class="m-Hero__title mb16"><?php echo $title; ?></h2>
                 <?php endif; ?>
+
                 <?php if ($describe) : ?>
                     <h4 class="m-Hero__describe f-vr mt0"><?php echo $describe; ?></h4>
                 <?php endif; ?>
-                <?php if ($buttonLink && $buttonText) : ?>
-                    <a href="<?php echo $buttonLink; ?>" class='c-link c-button__buy c-button--br4 bck-gradient--blue'><?php echo $buttonText; ?></a>
+
+                <?php if (count($buttons) > 0): ?>
+                    <ul class="c-list d-flex jcc aic">
+                        <?php foreach($buttons as $button): 
+                            $link = $button['link'];
+                            $text = $button['text'];
+                            ?>
+                            <li class="c-list__element mr32">
+                                <a href="<?php echo $link; ?>" class='c-link c-button__buy c-button--br4 bck-gradient--blue'><?php echo $text; ?></a>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
                 <?php endif; ?>
             </div>
         </div>

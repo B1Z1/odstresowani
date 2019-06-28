@@ -19,9 +19,12 @@ if ( !function_exists('crb_register_block_banner') ){
                     ->add_fields('side', array(
                         Field::make('text', 'title', __('Tytuł')),
                         Field::make('textarea', 'describe', __('Opis')),
-                        Field::make('text', 'button_text', __('Tekst Przycisku')),
-                        Field::make('text', 'button_link', __('Link')),
-                        Field::make('image', 'image', __('Tło'))
+                        Field::make('image', 'image', __('Tło')),
+                        Field::make('complex', 'buttons', __('Przyciski'))
+                            ->add_fields(array(
+                                Field::make('text', 'text', __('Tekst Przycisku')),
+                                Field::make('text', 'link', __('Link')),
+                            ))
                     ))
             ))
             ->set_render_callback(function ($block) {
