@@ -1123,28 +1123,6 @@ _______________*/
 }
 
 /*_________________________
-
-Layout Team Start
-
-_______________*/
-
-.l-team {
-  position: relative;
-}
-
-/* ---> : Layout Elements Start : <--- */
-
-.l-team__vehicle {
-  position: absolute;
-  top: 12%;
-  left: 40%;
-  width: 20%;
-  height: 20%;
-  -webkit-animation: rotate360 5s infinite linear;
-  animation: rotate360 5s infinite linear;
-}
-
-/*_________________________
 Layout DNA Start
 _______________*/
 
@@ -3419,10 +3397,6 @@ ________*/
   }
 
   .l-head {
-    display: none;
-  }
-
-  .l-team {
     display: none;
   }
 }
