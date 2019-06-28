@@ -75,7 +75,7 @@ $cat_describe = $cat_object->category_description;
                 $args['describe'] = wp_trim_words(get_the_content(), 20);
                 $args['image'] = get_the_post_thumbnail_url(get_the_ID(), 'full');
                 $args['date'] = get_the_date('j M Y', get_the_ID());
-                $args['category'] = post_get_cat(); ?>
+                $args['category'] = GeneralOptions::post_get_cat(); ?>
                 <div class="ntb-col-6 pc-col-4 mb64">
                     <?php do_action('post_card_block', $args); ?>
                 </div>

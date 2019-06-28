@@ -17,7 +17,7 @@ get_header();
         <?php if (have_posts()) :  ?>
 
             <?php while (have_posts()) : the_post();
-                $cat_image_id = post_category_sygnet();
+                $cat_image_id = GeneralOptions::post_category_sygnet();
                 $cat_sygnet = wp_get_attachment_image_src($cat_image_id, 'full')[0];
                 ?>
 
