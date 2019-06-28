@@ -33,7 +33,7 @@ $sygnet = carbon_get_post_meta(get_the_ID(), 'page_sygnet');
                     /**
                      * Yoast Breadcrumbs Module 
                      */
-                    get_template_part('template-parts/modules/Breadcrumbs/index.php');
+                    get_template_part('template-parts/modules/Breadcrumbs/index');
                 ?>
                 <!-- Main Content Start -->
                 <div class="page__content">

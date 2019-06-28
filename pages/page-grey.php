@@ -29,19 +29,18 @@ $sygnet = carbon_get_post_meta(get_the_ID(), 'page_sygnet');
                         <img src="<?php echo wp_get_attachment_image_src($sygnet,'full')[0]; ?>" alt="Page sygnet" class="post__sygnet">
                     </div>
                 </div>
+                <?php 
+                    /**
+                     * Yoast Breadcrumbs Module 
+                     */
+                    get_template_part('template-parts/modules/Breadcrumbs/index');
+                ?>
                 <div class="page__content">
                     <div class="c-container c-container--960 header__triger">
 
                         <?php if ( have_posts() ):  ?>
 
                             <?php while (have_posts()): the_post(); ?>
-
-                                <?php 
-                                    /**
-                                     * Yoast Breadcrumbs Module 
-                                     */
-                                    get_template_part('template-parts/modules/Breadcrumbs/index.php');
-                                ?>
                                 
                                 <?php the_content(); ?>
                                 <?php get_template_part('template-parts/content', 'share'); ?>
