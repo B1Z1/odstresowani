@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying all pages
  *
@@ -15,25 +16,15 @@
 get_header();
 ?>
 
-    <div class="l-Wrapper">
-
-        <!-- ------------------ -->
-        <!-- Main section start -->
-        <!-- ------------------ -->
-
-        <main class="main">
-            <div class="l-Container">
-                <?php if ( have_posts() ):  ?>
-                    <?php while (have_posts()): the_post(); ?>
-                        <?php the_content(); ?>
-                    <?php endwhile; ?>
-                <?php endif; ?>
-            </div>
-        </main>
-
-        <!-- ------------------ -->
-        <!--  Main section end  -->
-        <!-- ------------------ -->
+<main class="l-Wrapper">
+    <div class="l-Container">
+        <?php if (have_posts()) :  ?>
+            <?php while (have_posts()) : the_post(); ?>
+                <?php the_content(); ?>
+            <?php endwhile; ?>
+        <?php endif; ?>
+    </div>
+</main>
 
 <?php
 get_footer();
