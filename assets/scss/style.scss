@@ -91,8 +91,8 @@ ________*/
 @import "./layouts/l-welcome";
 @import "./layouts/l-contact";
 @import "./layouts/l-dna";
-@import "./layouts/Post/style.scss";
-@import "./layouts/Page/style.scss";
+@import "./elements/layouts/Post/style.scss";
+@import "./elements/layouts/Page/style.scss";
 
 //-----------------------Layouts End
 
@@ -101,13 +101,13 @@ ________*/
 ________*/
 
 //Modules
-@import "./modules/Hero/style.scss";
-@import "./modules/Breadcrumbs/style.scss";
-@import "./modules/SmallGallery/style.scss";
-@import "./modules/GreyTitle/style.scss";
-@import "./modules/WYSIWYG/style.scss";
-@import "./modules/AllPosts/style.scss";
-@import "./modules/CustomCards/style.scss";
+@import "./elements/modules/Hero/style.scss";
+@import "./elements/modules/Breadcrumbs/style.scss";
+@import "./elements/modules/SmallGallery/style.scss";
+@import "./elements/modules/GreyTitle/style.scss";
+@import "./elements/modules/WYSIWYG/style.scss";
+@import "./elements/modules/AllPosts/style.scss";
+@import "./elements/modules/CustomCards/style.scss";
 
 
 /*_______________________
@@ -125,10 +125,8 @@ ________*/
 @import "./components/c-list";
 @import "./components/c-link";
 @import "./components/c-form";
-@import "./components/c-map";
-@import "./components/c-marker";
-@import "./components/Card/style.scss";
-@import "./components/Buttons/style.scss";
+@import "./elements/components/Card/style.scss";
+@import "./elements/components/Buttons/style.scss";
 
 //-----------------------Layouts End
 
