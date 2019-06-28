@@ -28,7 +28,7 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
                 <?php endif; ?>
 
                 <?php if (count($buttons) > 0): ?>
-                    <ul class="c-list d-flex jcc aic">
+                    <ul class="c-list d-flex jcc aic fwrap">
                         <?php foreach($buttons as $button): 
                             $link = $button['link'];
                             $text = $button['text'];
