@@ -35,7 +35,7 @@ get_header();
                 /**
                  * Yoast Breadcrumbs Module 
                  */
-                get_template_part('template-parts/modules/Breadcrumbs/index');
+                get_template_part('template-parts/components/Breadcrumbs/index');
                 ?>
 
                 <!-- Post Content -->

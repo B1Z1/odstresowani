@@ -101,13 +101,18 @@ require get_template_directory() . '/includes/hooks/functions-header.php';
  */
 require get_template_directory() . '/includes/hooks/functions-footer.php';
 /**
- *
  * Require Posts Hooks
- *
  */
 require get_template_directory() . '/includes/hooks/Cards/card-mini.php';
 require get_template_directory() . '/includes/hooks/Cards/card-normal.php';
 
+/**
+ * Components
+ */
+require get_template_directory() . '/template-parts/components/GreyTitle/' . $INDEX;
+require get_template_directory() . '/template-parts/components/Buttons/Normal/' . $INDEX;
+
+ 
 /**
  *
  * Require Translations
@@ -124,4 +129,3 @@ require get_template_directory() . '/includes/functions-shortcodes.php';
 /**
  * Modules
  */
-require get_template_directory() . '/template-parts/modules/GreyTitle/' . $INDEX;

@@ -28,13 +28,15 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
                 <?php endif; ?>
 
                 <?php if (count($buttons) > 0): ?>
-                    <ul class="c-list d-flex jcc aic fwrap">
+                    <ul class="m-Hero__buttons c-list d-flex jcc aic fwrap">
                         <?php foreach($buttons as $button): 
                             $link = $button['link'];
                             $text = $button['text'];
                             ?>
                             <li class="c-list__element mr32">
-                                <a href="<?php echo $link; ?>" class='c-link c-button__buy c-button--br4 bck-gradient--blue'><?php echo $text; ?></a>
+                                <?php 
+                                    do_action('odstresowani_button_normal', 'a', $link, $text);
+                                ?>
                             </li>
                         <?php endforeach; ?>
                     </ul>

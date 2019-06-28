@@ -1979,6 +1979,11 @@ _______________*/
   font-size: 1.15rem;
 }
 
+.c-text-size--normal {
+  line-height: 1.5em;
+  font-size: 1rem;
+}
+
 /*_________________________
 
 Component Flip Start
@@ -2510,6 +2515,16 @@ _______________*/
 
 .c-Card--192 {
   height: 192px;
+}
+
+.c-Button__normal {
+  padding-top: 8px;
+  padding-right: 32px;
+  padding-bottom: 8px;
+  padding-left: 32px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#4693ff), to(#0051c3));
+  background: linear-gradient(to bottom, #4693ff 0%, #0051c3 100%);
+  border-radius: 4px;
 }
 
 /*_______________________
