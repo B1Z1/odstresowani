@@ -40,7 +40,9 @@ get_header();
                     <!-- Post Content -->
                     <div class="l-Post__content header__triger">
                         <div class="l-Container l-Container--960">
-                            <?php the_content(); ?>
+                            <div class="m-WYSIWYG">
+                                <?php the_content(); ?>
+                            </div>
                             <?php get_template_part('template-parts/content', 'share'); ?>
                         </div> 
                     </div>

@@ -1420,24 +1420,6 @@ _______________*/
   font-size: .8rem;
 }
 
-.l-Post__content p {
-  margin-top: 1em;
-  margin-bottom: 1em;
-  font-size: 1.5rem;
-  line-height: 1.5em;
-}
-
-.l-Post__content ul,
-.l-Post__content ol {
-  font-size: 1.5rem;
-  line-height: 2.25rem;
-}
-
-.l-Post__content a {
-  font-family: value-black;
-  color: inherit;
-}
-
 .l-Post__avatar {
   position: relative;
   width: 64px;
@@ -1542,6 +1524,24 @@ ______*/
   left: calc(50% - 96px);
   width: 192px;
   height: 192px;
+}
+
+.m-WYSIWYG p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 1.5rem;
+  line-height: 1.5em;
+}
+
+.m-WYSIWYG ul,
+.m-WYSIWYG ol {
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+}
+
+.m-WYSIWYG a {
+  font-family: value-black;
+  color: inherit;
 }
 
 /*_______________________
