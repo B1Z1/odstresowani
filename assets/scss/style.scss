@@ -66,8 +66,6 @@ ________*/
 
 @import "modules/_block/block"; 
 @import "modules/_block/block-image";
-@import "modules/_block/block-advanced"; 
-@import "modules/_block/block-hidden";
 @import "modules/_block/block-videogallery";
 
 //-----------------------Blocks End
@@ -91,9 +89,6 @@ ________*/
 /* : Search modules : */
 @import "modules/_search/search";
 
-/* : Breadcrumbs modules : */
-@import "modules/_breadcrumbs/breadcrumbs";
-
 
 /*_______________________
     Layouts Start
@@ -116,9 +111,10 @@ ________*/
 /*_______________________
     Modules Start
 ________*/
-@import "./modules/Hero/style";
 
-//-----------------------Modules End
+@import "./modules/Hero/style.scss";
+@import "modules/Breadcrumbs/style.scss";
+
 
 /*_______________________
     Components Start

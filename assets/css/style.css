@@ -647,59 +647,6 @@ ________*/
   max-height: 380px;
 }
 
-/* : Block advanced used in "advanced block" : */
-
-.block-advanced p {
-  margin-top: 0 !important;
-}
-
-.block-advanced__icon {
-  position: relative;
-  margin-right: auto;
-  margin-left: auto;
-  width: 64px;
-  height: auto;
-}
-
-/* : BLock hidden, used in "advanced block" : */
-
-.block-hidden {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.block-hidden__title {
-  margin-top: 0 !important;
-  margin-bottom: 16px !important;
-  cursor: pointer;
-}
-
-.block-hidden__title:hover ~ .block-hidden__describe {
-  opacity: 1;
-  visibility: visible;
-}
-
-.block-hidden__describe {
-  display: inline-block;
-  position: relative;
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transition: .3s all;
-  transition: .3s all;
-}
-
-.block-hidden__describe:after {
-  content: '';
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 2px;
-  background: #0052c3;
-}
-
 .block-videogallery__element {
   position: relative;
   width: 100%;
@@ -1100,22 +1047,6 @@ ________*/
   padding: 8px;
   cursor: pointer;
   font-size: 1rem;
-}
-
-/* : Breadcrumbs modules : */
-
-.breadcrumbs {
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.breadcrumbs strong {
-  color: #B9B9B9;
-}
-
-.breadcrumbs a {
-  color: inherit;
-  text-decoration: none;
 }
 
 /*_______________________
@@ -1574,6 +1505,25 @@ ______*/
 }
 
 /* ---> :Modificators of Module: <--- */
+
+/* 	____
+	Breadcrumbs Module
+	____
+*/
+
+.m-Breadcrumbs {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.m-Breadcrumbs strong {
+  color: #B9B9B9;
+}
+
+.m-Breadcrumbs a {
+  color: inherit;
+  text-decoration: none;
+}
 
 /*_______________________
     Components Start
@@ -3720,16 +3670,6 @@ ________*/
   .block-image--full,
   .block-image--small {
     height: 50vh;
-  }
-
-  .block-hidden {
-    margin-bottom: 0;
-    text-align: left;
-  }
-
-  .block-hidden__describe {
-    opacity: 1;
-    visibility: visible;
   }
 }
 
