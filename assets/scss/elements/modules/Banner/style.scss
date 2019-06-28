@@ -10,6 +10,9 @@ _______________*/
 
 /* --> : Component Elements : <-- */
 .m-Banner{
+    &__image{
+        position: relative;
+    }
     &__sygnet{
         position: absolute;
         left: calc(50% - 32px);
