@@ -1,7 +1,8 @@
 <?php
+
 /**
  *
- * Template name: Szablon z szarym tłem dla postow
+ * Template name: Szablon z szarym tłem
  *
  * The template for displaying all single posts
  *
@@ -12,52 +13,41 @@
 
 get_header();
 
-$sygnet = carbon_get_post_meta(get_the_ID(), 'page_sygnet');
+$sygnet = wp_get_attachment_image_src(carbon_get_post_meta(get_the_ID(), 'page_sygnet'), 'full')[0];
 ?>
 
-    <div class="l-Wrapper">
+<?php if (have_posts()) :  ?>
 
-        <!-- ------------------ -->
-        <!-- Main section start -->
-        <!-- ------------------ -->
-
-        <main class="main mb64">
-            <section class="l-Page">
-                <div class="l-Page__title mb160 pt128 pb160 bck-gm">
-                    <div class="l-Container l-Container--960">
-                        <h3 class="reset f-san"><?php the_title(); ?></h3>
-                        <img src="<?php echo wp_get_attachment_image_src($sygnet,'full')[0]; ?>" alt="Page sygnet" class="l-Post__sygnet">
-                    </div>
-                </div>
-                <?php 
+    <?php while (have_posts()) : the_post(); ?>
+        <main class="l-Wrapper mb64">
+            <article class="l-Page">
+                <div class="l-Page__title">
+                    <?php
                     /**
-                     * Yoast Breadcrumbs Module 
+                     *  GreyTitle Module
                      */
-                    get_template_part('template-parts/modules/Breadcrumbs/index');
+                    do_action('odstresowani_GreyTitle', get_the_title(), $sygnet);
+                    ?>
+                </div>
+
+                <?php
+                /**
+                 * Yoast Breadcrumbs Module 
+                 */
+                get_template_part('template-parts/modules/Breadcrumbs/index');
                 ?>
-                <!-- Main Content Start -->
+
                 <div class="l-Page__content">
                     <div class="l-Container l-Container--posts header__triger">
-                        
-                        <?php if ( have_posts() ):  ?>
-
-                            <?php while (have_posts()): the_post(); ?>
-                                
-                                <?php the_content(); ?>
-
-                            <?php endwhile; ?>
-
-                        <?php endif; ?>
-
+                        <?php the_content(); ?>
+                        <?php get_template_part('template-parts/content', 'share'); ?>
                     </div>
                 </div>
-                <!-- Main Content End -->
-            </section>
+            </article>
         </main>
+    <?php endwhile; ?>
 
-        <!-- ------------------ -->
-        <!--  Main section end  -->
-        <!-- ------------------ -->
+<?php endif; ?>
 
 <?php
 get_footer();
