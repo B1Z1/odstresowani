@@ -77,7 +77,6 @@ require get_template_directory() . '/includes/fields/fields-taxonomy-places.php'
 require get_template_directory() . '/includes/fields/fields-taxonomy-page.php';
 require get_template_directory() . '/includes/fields/fields-navmenu.php';
 //Blocks
-require get_template_directory() . '/includes/blocks/block-video-gallery.php';
 require get_template_directory() . '/includes/blocks/Hero/' . $INDEX;
 require get_template_directory() . '/includes/blocks/SmallGallery/' . $INDEX;
 require get_template_directory() . '/includes/blocks/AllPosts/' . $INDEX;

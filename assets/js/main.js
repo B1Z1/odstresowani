@@ -1,5 +1,3 @@
-//Import VideoGallery Component
-import VideoGallery from './components/videogallery';
 import { FullPage } from './components/FullPage/index';
 
 window.addEventListener('load', ()=>{
@@ -366,26 +364,6 @@ window.addEventListener('load', ()=>{
      * 
      */
     new Mheader.header_scroll();
-
-    /**
-     * Init VideoGallery Class
-     * @constructor
-     */
-    let videogallery = new VideoGallery({
-        element: {
-            container: 'block-videogallery__element',
-            active: 'block-videogallery__element--active'
-        },
-        video: 'block-videogallery__video',
-        controls: {
-            container: 'block-videogallery__controls',
-            play: 'video-controls__play',
-            stop: {
-                el: 'video-controls__stop',
-                active: 'video-controls__stop--active'
-            },
-        }
-    });
 
     /**
      * 

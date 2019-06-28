@@ -19,20 +19,20 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 !function (e) {
   var t = {};
 
-  function l(i) {
-    if (t[i]) return t[i].exports;
-    var o = t[i] = {
-      i: i,
+  function l(n) {
+    if (t[n]) return t[n].exports;
+    var i = t[n] = {
+      i: n,
       l: !1,
       exports: {}
     };
-    return e[i].call(o.exports, o, o.exports, l), o.l = !0, o.exports;
+    return e[n].call(i.exports, i, i.exports, l), i.l = !0, i.exports;
   }
 
-  l.m = e, l.c = t, l.d = function (e, t, i) {
+  l.m = e, l.c = t, l.d = function (e, t, n) {
     l.o(e, t) || Object.defineProperty(e, t, {
       enumerable: !0,
-      get: i
+      get: n
     });
   }, l.r = function (e) {
     "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
@@ -43,16 +43,16 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   }, l.t = function (e, t) {
     if (1 & t && (e = l(e)), 8 & t) return e;
     if (4 & t && "object" == _typeof(e) && e && e.__esModule) return e;
-    var i = Object.create(null);
-    if (l.r(i), Object.defineProperty(i, "default", {
+    var n = Object.create(null);
+    if (l.r(n), Object.defineProperty(n, "default", {
       enumerable: !0,
       value: e
-    }), 2 & t && "string" != typeof e) for (var o in e) {
-      l.d(i, o, function (t) {
+    }), 2 & t && "string" != typeof e) for (var i in e) {
+      l.d(n, i, function (t) {
         return e[t];
-      }.bind(null, o));
+      }.bind(null, i));
     }
-    return i;
+    return n;
   }, l.n = function (e) {
     var t = e && e.__esModule ? function () {
       return e["default"];
@@ -69,11 +69,11 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
     l.r(t);
 
-    var i =
+    var n =
     /*#__PURE__*/
     function () {
-      function i(e, t) {
-        _classCallCheck(this, i);
+      function n(e, t) {
+        _classCallCheck(this, n);
 
         this.global = {
           behavior: "smooth",
@@ -89,7 +89,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         }, this.fullpage.children = this.fullpage.container.children, this.init();
       }
 
-      _createClass(i, [{
+      _createClass(n, [{
         key: "init",
         value: function init() {
           var _this = this;
@@ -169,7 +169,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         }
       }]);
 
-      return i;
+      return n;
     }();
 
     window.addEventListener("load", function () {
@@ -201,37 +201,37 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
           t = function () {
         var t = document.querySelector(".l-header"),
             l = document.querySelector(".c-navigation__mobile"),
-            i = {
+            n = {
           close: document.querySelector(".c-navigation__close"),
           open: document.querySelector(".c-hamburger")
         };
         return {
           mobileList: function mobileList() {
             t && l && function (t, l) {
-              var i = l.close;
+              var n = l.close;
               l.open.addEventListener("click", function () {
                 e.containClass("c-navigation--mobactive", t) ? e.removeClass("c-navigation--mobactive", t) : e.addClass("c-navigation--mobactive", t);
-              }), i.addEventListener("click", function () {
+              }), n.addEventListener("click", function () {
                 e.removeClass("c-navigation--mobactive", t);
               });
-            }(l, i);
+            }(l, n);
           },
           header_scroll: function header_scroll() {
             t && function (t) {
               var l = _toConsumableArray(document.querySelectorAll(".header__triger")),
-                  i = 0 - (window.innerHeight - t.offsetHeight - 50),
-                  o = new IntersectionObserver(function (l) {
+                  n = 0 - (window.innerHeight - t.offsetHeight - 50),
+                  i = new IntersectionObserver(function (l) {
                 l.forEach(function (l) {
-                  var i = l.isIntersecting;
-                  i ? e.addClass("l-header--active", t) : e.removeClass("l-header--active", t);
+                  var n = l.isIntersecting;
+                  n ? e.addClass("l-header--active", t) : e.removeClass("l-header--active", t);
                 });
               }, {
                 threshold: [0],
-                rootMargin: "0px 0px ".concat(i, "px 0px")
+                rootMargin: "0px 0px ".concat(n, "px 0px")
               });
 
               l.forEach(function (e) {
-                o.observe(e);
+                i.observe(e);
               });
             }(t);
           }
@@ -242,45 +242,45 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
           init: function init(t) {
             !function (t) {
               var l = document.querySelector(".".concat(t.slider_block)),
-                  i = _toConsumableArray(document.querySelectorAll(".".concat(t.slider_cards))),
-                  o = document.querySelector(".".concat(t.slider_pagination)),
-                  n = {
+                  n = _toConsumableArray(document.querySelectorAll(".".concat(t.slider_cards))),
+                  i = document.querySelector(".".concat(t.slider_pagination)),
+                  a = {
                 pag_active: t.classes.pag_active,
                 card_active: t.classes.card_active,
                 pagination_el: t.classes.pagination_el,
                 extra: t.classes.extra
               },
-                  s = "" !== t.slider_has_back;
+                  o = "" !== t.slider_has_back;
 
               if (l) {
-                i.forEach(function (i, a) {
-                  var r = i,
+                n.forEach(function (n, s) {
+                  var r = n,
                       c = r.dataset.title,
                       u = r.dataset.name,
                       d = "";
-                  e.removeClass(n.card_active, r), s && (d = r.querySelector(".".concat(t.slider_has_back)).dataset.back, s = !0), 0 == a && (e.addClass(n.card_active, r), s && (l.style.backgroundImage = "url(".concat(d, ")"))), function (t, l, i, o, n, s) {
-                    var a = document.createElement("li"),
+                  e.removeClass(a.card_active, r), o && (d = r.querySelector(".".concat(t.slider_has_back)).dataset.back, o = !0), 0 == s && (e.addClass(a.card_active, r), o && (l.style.backgroundImage = "url(".concat(d, ")"))), function (t, l, n, i, a, o) {
+                    var s = document.createElement("li"),
                         r = "";
-                    e.addClass(n.pagination_el, a), a.className += " ".concat(n.extra), 0 == o && e.addClass(n.pag_active, a), a.dataset.name = l, "" != s ? (r = document.createElement(s.wrapper), "" != s.classes && (r.className += s.classes), r.textContent = i, a.appendChild(r)) : a.textContent = i;
-                    t.appendChild(a);
-                  }(o, u, c, a, n, t.pagination_wrap);
+                    e.addClass(a.pagination_el, s), s.className += " ".concat(a.extra), 0 == i && e.addClass(a.pag_active, s), s.dataset.name = l, "" != o ? (r = document.createElement(o.wrapper), "" != o.classes && (r.className += o.classes), r.textContent = n, s.appendChild(r)) : s.textContent = n;
+                    t.appendChild(s);
+                  }(i, u, c, s, a, t.pagination_wrap);
                 });
 
-                var a = _toConsumableArray(o.children);
+                var s = _toConsumableArray(i.children);
 
-                a.forEach(function (o) {
-                  var r = o,
+                s.forEach(function (i) {
+                  var r = i,
                       c = r.dataset.name,
-                      u = i.find(function (e) {
+                      u = n.find(function (e) {
                     if (e.dataset.name == c) return e;
                   }),
                       d = "";
-                  s && (d = u.querySelector(".".concat(t.slider_has_back)).dataset.back), r.addEventListener("click", function () {
-                    i.map(function (t) {
-                      e.removeClass(n.card_active, t);
-                    }), a.map(function (t) {
-                      e.removeClass(n.pag_active, t);
-                    }), e.addClass(n.card_active, u), e.addClass(n.pag_active, r), s && (l.style.backgroundImage = "url(".concat(d, ")"));
+                  o && (d = u.querySelector(".".concat(t.slider_has_back)).dataset.back), r.addEventListener("click", function () {
+                    n.map(function (t) {
+                      e.removeClass(a.card_active, t);
+                    }), s.map(function (t) {
+                      e.removeClass(a.pag_active, t);
+                    }), e.addClass(a.card_active, u), e.addClass(a.pag_active, r), o && (l.style.backgroundImage = "url(".concat(d, ")"));
                   });
                 });
               }
@@ -288,20 +288,20 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
           }
         };
       }(),
-          o = function () {
+          i = function () {
         return {
           infinityScroll: function infinityScroll(e) {
             !function (e) {
               var t = document.querySelector(e.container),
                   l = t ? _toConsumableArray(t.children) : null;
-              var i = [];
-              l && (t.innerHTML = "", o(), window.addEventListener("scroll", function (e) {
-                var i = 0 - (t.getBoundingClientRect().top - this.innerHeight);
-                i > t.offsetHeight && l.length > 0 && o();
+              var n = [];
+              l && (t.innerHTML = "", i(), window.addEventListener("scroll", function (e) {
+                var n = 0 - (t.getBoundingClientRect().top - this.innerHeight);
+                n > t.offsetHeight && l.length > 0 && i();
               }));
 
-              function o() {
-                i = l.slice(0, 9), l.splice(0, 9), i.forEach(function (e) {
+              function i() {
+                n = l.slice(0, 9), l.splice(0, 9), n.forEach(function (e) {
                   t.appendChild(e);
                 });
               }
@@ -327,79 +327,10 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
             extra: "ml16 mr16"
           }
         });
-      }, 500), new t.mobileList(), new o.infinityScroll({
+      }, 500), new t.mobileList(), new i.infinityScroll({
         container: ".infinity-scroll"
       }), new t.header_scroll();
-      new (
-      /*#__PURE__*/
-      function () {
-        function _class(e) {
-          _classCallCheck(this, _class);
-
-          this.elements = document.querySelectorAll(".".concat(e.element.container)) ? _toConsumableArray(document.querySelectorAll(".".concat(e.element.container))) : null, this.activeElement = e.element.active, this.video = e.video, this.controls = e.controls, this.currentTime = 1, this.currentVolume = .1, this.last, this.elements && this.init();
-        }
-
-        _createClass(_class, [{
-          key: "init",
-          value: function init() {
-            var _this5 = this;
-
-            this.elements.forEach(function (e) {
-              var t = e.querySelector(".".concat(_this5.video, " video")),
-                  l = t.dataset.src,
-                  i = e.querySelector(".".concat(_this5.controls.container)),
-                  o = i.querySelector(".".concat(_this5.controls.play)),
-                  n = i.querySelector(".".concat(_this5.controls.stop.el));
-              _this5.installCurrentTime(t), t.volume = _this5.currentVolume, _this5.onPlay(o, t, l, n, e), _this5.onStop(t, n, e);
-            });
-          }
-        }, {
-          key: "onStop",
-          value: function onStop(e, t, l) {
-            var _this6 = this;
-
-            t.addEventListener("click", function () {
-              _this6.last = void 0, l.classList.remove(_this6.activeElement), setTimeout(function () {
-                e.pause(), t.classList.remove(_this6.controls.stop.active), _this6.installCurrentTime(e), l.querySelector(".filter-back").classList.remove("fade");
-              }, 500);
-            });
-          }
-        }, {
-          key: "onPlay",
-          value: function onPlay(e, t, l, i, o) {
-            var _this7 = this;
-
-            e.addEventListener("click", function () {
-              void 0 !== _this7.last && (_this7.last.querySelector("video").pause(), _this7.installCurrentTime(_this7.last.querySelector("video")), _this7.last.classList.remove(_this7.activeElement), _this7.last.querySelector(".".concat(_this7.controls.stop.el)).classList.remove(_this7.controls.stop.active)), _this7.installCurrentTime(t), o.classList.add(_this7.activeElement), _this7.last = o, t.querySelector('source[type="video/mp4"]').src = l, setTimeout(function () {
-                window.scrollTo({
-                  top: o.getBoundingClientRect().top + window.scrollY
-                }), t.load(), t.play(), i.classList.add(_this7.controls.stop.active), o.querySelector(".filter-back").classList.add("fade");
-              }, 500);
-            });
-          }
-        }, {
-          key: "installCurrentTime",
-          value: function installCurrentTime(e) {
-            e.currentTime = this.currentTime;
-          }
-        }]);
-
-        return _class;
-      }())({
-        element: {
-          container: "block-videogallery__element",
-          active: "block-videogallery__element--active"
-        },
-        video: "block-videogallery__video",
-        controls: {
-          container: "block-videogallery__controls",
-          play: "video-controls__play",
-          stop: {
-            el: "video-controls__stop",
-            active: "video-controls__stop--active"
-          }
-        }
-      }), new i("[data-fullpage]", {
+      new n("[data-fullpage]", {
         buttons: "[data-fullpage-to]"
       });
     });
