@@ -26,7 +26,7 @@ $sygnet = wp_get_attachment_image_src(carbon_get_theme_option('general_sygnet_se
             <?php if (have_posts()): ?>
 
                 <div class="post__title mb160 pt128 pb160 bck-gm">
-                    <div class="c-container c-container--960">
+                    <div class="l-Container l-Container--960">
                         <h3 class="reset f-san">Posty szukane według: "<?php echo get_search_query(); ?>"</h3>
                         <img src="<?php echo $sygnet; ?>" alt="Category sygnet" class="post__sygnet">
                     </div>
@@ -82,7 +82,7 @@ $sygnet = wp_get_attachment_image_src(carbon_get_theme_option('general_sygnet_se
                         </video>
                     <?php endif; ?>
                     <div class="search-page_content block">
-                        <div class="c-container">
+                        <div class="l-Container">
                             <div class="row">
                                 <div class="ntb-col-6">
                                     <h1 class="reset">Nie znależliśmy posta, którego właśnie szukałeś</h1>

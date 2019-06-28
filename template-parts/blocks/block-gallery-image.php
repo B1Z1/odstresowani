@@ -73,4 +73,4 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block); ?>
 
 </div>
 
-<div class="c-container">
+<div class="l-Container">

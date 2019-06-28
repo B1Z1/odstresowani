@@ -7,6 +7,7 @@
  * @package OdstresowaniPortal
  */
 $currlang = pll_current_language();
+$INDEX = 'index.php';
 
 //Libs
 require get_template_directory() . '/includes/functions-fields.php';
@@ -81,11 +82,11 @@ require get_template_directory() . '/includes/blocks/block-recent-slider.php';
 require get_template_directory() . '/includes/blocks/block-all-posts.php';
 require get_template_directory() . '/includes/blocks/block-most-viewed.php';
 require get_template_directory() . '/includes/blocks/block-post-banner.php';
-require get_template_directory() . '/includes/blocks/block-image-gallery.php';
 require get_template_directory() . '/includes/blocks/block-video-gallery.php';
 require get_template_directory() . '/includes/blocks/block-gallery-image.php';
 require get_template_directory() . '/includes/blocks/block-custom-card.php';
 require get_template_directory() . '/includes/blocks/block-welcome.php';
+require get_template_directory() . '/includes/blocks/SmallGallery/' . $INDEX;
 
 /**
  *

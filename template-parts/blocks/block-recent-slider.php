@@ -8,7 +8,7 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
 <!-- Recent posts slider start -->
 <section class="recent-posts swiper-recent_posts header__triger">
     <div class="bck-gm <?php echo $gapsClasses; ?>">
-        <div class="c-container">
+        <div class="l-Container">
             <div class="row">
                 <div class="pb128">
                     <ul class="c-list recent-posts_vh_pagination flex-kit jcc fwrap">
@@ -86,4 +86,4 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
     </script>
 </section>
 <!--  Recent posts slider end  -->
-<div class="c-container">
+<div class="l-Container">

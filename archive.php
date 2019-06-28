@@ -31,7 +31,7 @@ $cat_describe = $cat_id->description;
         <section class="hero hero--backcenter c-wh mb64" style="background-image: url( <?php echo wp_get_attachment_image_src($cat_image, 'full')[0]; ?> )">
             <div class="filter-back bck-blck"></div>
             <div class="hero__content">
-                <div class="c-container">
+                <div class="l-Container">
                     <h3 class="reset-top f-san"><?php echo $cat_title; ?></h3>
                     <h1 class="reset"><?php echo $cat_describe; ?></h1>
                 </div>
@@ -39,7 +39,7 @@ $cat_describe = $cat_id->description;
         </section>
         <!-- Hero banner end -->
 
-        <div class="c-container c-container--posts pt32 header__triger">
+        <div class="l-Container l-Container--posts pt32 header__triger">
             <div class="d-flex fwrap infinity-scroll">
                 <?php if (have_posts()) : ?>
                     <?php while (have_posts()) : the_post(); ?>

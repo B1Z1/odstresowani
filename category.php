@@ -46,7 +46,7 @@ $cat_describe = $cat_object->category_description;
 
             <?php endif; ?>
             <div class="hero__content">
-                <div class="c-container">
+                <div class="l-Container">
                     <?php if (strlen($cat_title) > 0) : ?>
                         <h3 class="reset-top f-san"><?php echo $cat_title; ?></h3>
                     <?php endif; ?>
@@ -59,7 +59,7 @@ $cat_describe = $cat_object->category_description;
 </section>
 <!-- Hero banner end -->
 
-<div class="c-container c-container--posts pt32 header__triger">
+<div class="l-Container l-Container--posts pt32 header__triger">
     <div class="d-flex fwrap infinity-scroll">
         <?php if (have_posts()) :  ?>
             <?php while (have_posts()) : the_post(); ?>

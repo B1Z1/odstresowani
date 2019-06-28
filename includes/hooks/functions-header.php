@@ -26,7 +26,7 @@ function submenu($items, $item){
     ?>
     <?php if ( !empty($children) ): ?>
         <nav class="c-navigation c-navigation__submenu c-wh bck-gradient--operative">
-            <div class="c-container c-container--968">
+            <div class="l-Container l-Container--968">
                 <ul class="c-list mauto pt32 pb32 flex-kit">
                     <?php foreach ( $children as $child ): ?>
                         <li class="c-list__element mr16 ml16">

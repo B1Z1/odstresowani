@@ -7,10 +7,8 @@
  * Images. Used in "Operation river"
  * 
  */
-$images = $block['mini_images'];
-$gapsClasses = GeneralOptions::getAllGapsFromArray($block);
-
-?>
+$images = $block['container'];
+$gapsClasses = GeneralOptions::getAllGapsFromArray($block); ?>
 
 <div class="block d-flex jcc fwrap <?php echo $gapsClasses; ?>">
     <?php foreach ($images as $image) :

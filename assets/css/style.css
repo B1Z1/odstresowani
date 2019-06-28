@@ -1050,6 +1050,38 @@ ________*/
 }
 
 /*_______________________
+    Global Layouts Start
+________*/
+
+/* Layouts Container */
+
+.l-Container {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: 1200px;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* --> : Modificators of Element : <-- */
+
+.l-Container--960 {
+  max-width: 960px;
+}
+
+.l-Container--480 {
+  max-width: 480px;
+}
+
+.l-Container--posts {
+  max-width: 100%;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+/*_______________________
     Layouts Start
 ________*/
 
@@ -3171,6 +3203,11 @@ ________*/
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
     max-width: 100%;
+  }
+
+  .l-Container--posts {
+    padding-right: 48px;
+    padding-left: 48px;
   }
 
   .l-welcome__image {

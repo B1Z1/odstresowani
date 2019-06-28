@@ -28,7 +28,7 @@ get_header();
 
             <section class="l-contact">
                 <div class="pt64 pb128 c-gt bck-gm">
-                    <div class="c-container c-container--480">
+                    <div class="l-Container l-Container--480">
                         <h3 class="f-vb">
                             <span class="c-op f-vb">
                                 <?php echo pll__('Wyślij do nas swoją wiadomość'); ?>
