@@ -17,8 +17,8 @@ get_header();
 ?>
 <?php if (have_posts()) :  ?>
     <?php while (have_posts()) : the_post(); ?>
-        <main class="l-Wrapper">
-            <div class="l-Container m-WYSIWYG">
+        <main class="l-Wrapper m-WYSIWYG">
+            <div class="l-Container">
                 <?php the_content(); ?>
             </div>
         </main>

@@ -39,8 +39,8 @@ get_header();
                 ?>
 
                 <!-- Post Content -->
-                <div class="l-Post__content header__triger">
-                    <div class="l-Container l-Container--960 m-WYSIWYG">
+                <div class="l-Post__content header__triger m-WYSIWYG">
+                    <div class="l-Container l-Container--960">
                         <?php the_content(); ?>
                         <?php get_template_part('template-parts/content', 'share'); ?>
                     </div>
