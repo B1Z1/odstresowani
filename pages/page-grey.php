@@ -30,12 +30,14 @@ $sygnet = wp_get_attachment_image_src(carbon_get_post_meta(get_the_ID(), 'page_s
                     ?>
                 </div>
 
-                <?php
-                /**
-                 * Yoast Breadcrumbs Module 
-                 */
-                get_template_part('template-parts/modules/Breadcrumbs/index');
-                ?>
+                <div class="l-Page__breadcrumbs">
+                    <?php
+                    /**
+                     * Yoast Breadcrumbs Module 
+                     */
+                    get_template_part('template-parts/modules/Breadcrumbs/index');
+                    ?>
+                </div>
 
                 <div class="l-Page__content">
                     <div class="l-Container l-Container--960 header__triger">
