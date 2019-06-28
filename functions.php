@@ -86,6 +86,7 @@ require get_template_directory() . '/includes/blocks/AllPosts/' . $INDEX;
 require get_template_directory() . '/includes/blocks/CustomCard/' . $INDEX;
 require get_template_directory() . '/includes/blocks/GalleryWithThumbs/' . $INDEX;
 require get_template_directory() . '/includes/blocks/Banner/' . $INDEX;
+require get_template_directory() . '/includes/blocks/TabGallery/' . $INDEX;
 
 /**
  *
