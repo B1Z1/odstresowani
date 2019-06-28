@@ -11,7 +11,7 @@ get_header();
 ?>
 
     <main class="l-Wrapper mb64">
-        <article class="post">
+        <article class="l-Post">
 
             <?php if ( have_posts() ):  ?>
 
@@ -20,27 +20,33 @@ get_header();
                     $cat_sygnet = wp_get_attachment_image_src($cat_image_id, 'full')[0];
                     ?>
 
-                    <div class="post__title mb160 pt128 pb160 bck-gm">
-                        <div class="l-Container">
-                            <h3 class="reset f-san"><?php the_title(); ?></h3>
-                            <?php if ( $cat_sygnet ): ?>
-                                <img src="<?php echo $cat_sygnet; ?>" alt="Category sygnet" class="post__sygnet">
-                            <?php endif; ?>
-                        </div>
+                    <!-- Post Title -->
+                    <div class="l-Post__title">
+                        <?php
+                            /**
+                             *  GreyTitle Module
+                             */
+                            do_action('odstresowani_GreyTitle', get_the_title(), $cat_sygnet);
+                        ?>
                     </div>
+                    
                     <?php 
                         /**
                          * Yoast Breadcrumbs Module 
                          */
                         get_template_part('template-parts/modules/Breadcrumbs/index');
                     ?>
-                    <div class="post__content header__triger">
+
+                    <!-- Post Content -->
+                    <div class="l-Post__content header__triger">
                         <div class="l-Container l-Container--960">
                             <?php the_content(); ?>
                             <?php get_template_part('template-parts/content', 'share'); ?>
                         </div> 
                     </div>
-                    <div class="post__avatar mt64 mb64 mauto">
+
+                    <!-- Post Avatar -->
+                    <div class="l-Post__avatar mt64 mb64 mauto">
                         <img src="<?php echo get_avatar_url(get_the_author_meta('id')); ?>" alt="Avatar">
                     </div>
 

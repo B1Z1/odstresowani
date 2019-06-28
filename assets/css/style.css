@@ -505,57 +505,6 @@ ________*/
   height: 60vh;
 }
 
-/* : Post modules : */
-
-.post__title {
-  position: relative;
-  text-align: center;
-}
-
-.post__sygnet {
-  position: absolute;
-  bottom: -96px;
-  left: calc(50% - 96px);
-  width: 192px;
-  height: 192px;
-}
-
-.post__content p {
-  margin-top: 1em;
-  margin-bottom: 1em;
-  font-size: 1.5rem;
-  line-height: 1.5em;
-}
-
-.post__content ul,
-.post__content ol {
-  font-size: 1.5rem;
-  line-height: 2.25rem;
-}
-
-.post__content a {
-  font-family: value-black;
-  color: inherit;
-}
-
-.post__avatar {
-  position: relative;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-.post__avatar img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
-}
-
 /* : Prop slider modules : */
 
 .prop-slider {
@@ -1567,6 +1516,42 @@ _______________*/
   font-size: .8rem;
 }
 
+.l-Post__content p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 1.5rem;
+  line-height: 1.5em;
+}
+
+.l-Post__content ul,
+.l-Post__content ol {
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+}
+
+.l-Post__content a {
+  font-family: value-black;
+  color: inherit;
+}
+
+.l-Post__avatar {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.l-Post__avatar img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
 /*_______________________
     Modules Start
 ________*/
@@ -1625,6 +1610,24 @@ ______*/
 
 .m-SmallGallery__item {
   position: relative;
+}
+
+/* 	____
+	Breadcrumbs Module
+	____
+*/
+
+.m-GreyTitle {
+  position: relative;
+  text-align: center;
+}
+
+.m-GreyTitle__image {
+  position: absolute;
+  bottom: -96px;
+  left: calc(50% - 96px);
+  width: 192px;
+  height: 192px;
 }
 
 /*_______________________
@@ -3786,7 +3789,7 @@ ________*/
 }
 
 @media only screen and (max-width: 425px) {
-  .post__sygnet {
+  .l-Post__sygnet {
     bottom: -80px;
     left: calc(50% - 80px);
     width: 160px;

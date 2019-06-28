@@ -25,10 +25,10 @@ $sygnet = wp_get_attachment_image_src(carbon_get_theme_option('general_sygnet_se
         <main class="main">
             <?php if (have_posts()): ?>
 
-                <div class="post__title mb160 pt128 pb160 bck-gm">
+                <div class="l-Post__title mb160 pt128 pb160 bck-gm">
                     <div class="l-Container l-Container--960">
                         <h3 class="reset f-san">Posty szukane według: "<?php echo get_search_query(); ?>"</h3>
-                        <img src="<?php echo $sygnet; ?>" alt="Category sygnet" class="post__sygnet">
+                        <img src="<?php echo $sygnet; ?>" alt="Category sygnet" class="l-Post__sygnet">
                     </div>
                 </div>
                 <!-- Search block -->

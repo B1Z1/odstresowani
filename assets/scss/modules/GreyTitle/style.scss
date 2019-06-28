@@ -1,0 +1,19 @@
+/* 	____
+	Breadcrumbs Module
+	____
+*/
+
+.m-GreyTitle{
+    position: relative;
+    text-align: center;
+}
+
+.m-GreyTitle{
+    &__image{
+        position: absolute; 
+        bottom: -96px;
+        left: calc(50% - 96px);
+        width: 192px;
+        height: 192px;
+    }
+}

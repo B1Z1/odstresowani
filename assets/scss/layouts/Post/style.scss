@@ -1,15 +1,4 @@
-.post{
-    &__title{
-        position: relative;
-        text-align: center;
-    }
-    &__sygnet{
-        position: absolute; 
-        bottom: -96px;
-        left: calc(50% - 96px);
-        width: 192px;
-        height: 192px;
-    }
+.l-Post{
     &__content{
         p{
             margin-top: 1em;
@@ -43,7 +32,7 @@
     }
 }
 @media only screen and (max-width: 425px){
-    .post{
+    .l-Post{
         &__sygnet{
             bottom: -80px;
             left: calc(50% - 80px);

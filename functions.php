@@ -119,4 +119,7 @@ require get_template_directory() . '/includes/functions-translates.php';
  */
 require get_template_directory() . '/includes/functions-shortcodes.php';
 
-
+/**
+ * Modules
+ */
+require get_template_directory() . '/template-parts/modules/GreyTitle/' . $INDEX;

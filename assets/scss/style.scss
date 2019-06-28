@@ -59,9 +59,6 @@ ________*/
 /* : Page modules : */
 @import "modules/_page/page";
 
-/* : Post modules : */
-@import "modules/_post/post";
-
 /* : Prop slider modules : */
 @import "modules/_prop-slider/prop-slider";
 
@@ -98,6 +95,7 @@ ________*/
 @import "./layouts/l-welcome";
 @import "./layouts/l-contact";
 @import "./layouts/l-dna";
+@import "./layouts/Post/style.scss";
 
 //-----------------------Layouts End
 
@@ -109,6 +107,7 @@ ________*/
 @import "./modules/Hero/style.scss";
 @import "./modules/Breadcrumbs/style.scss";
 @import "./modules/SmallGallery/style.scss";
+@import "./modules/GreyTitle/style.scss";
 
 
 /*_______________________
