@@ -700,38 +700,6 @@ ________*/
   background: #0052c3;
 }
 
-/* : Block for Genoraport page : */
-
-.block-genoraport {
-  position: relative;
-}
-
-.block-genoraport__arrow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  -webkit-transform: translate(-12%, -40%);
-  transform: translate(-12%, -40%);
-  z-index: -1;
-}
-
-/* : Block for Genoraport page : */
-
-.block-genoraport {
-  position: relative;
-}
-
-.block-genoraport__arrow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  -webkit-transform: translate(-12%, -40%);
-  transform: translate(-12%, -40%);
-  z-index: -1;
-}
-
 .block-videogallery__element {
   position: relative;
   width: 100%;
@@ -3692,14 +3660,6 @@ ________*/
 }
 
 @media only screen and (max-width: 1367px) {
-  .block-genoraport {
-    display: none;
-  }
-
-  .block-genoraport {
-    display: none;
-  }
-
   .l-brain {
     display: none;
   }
