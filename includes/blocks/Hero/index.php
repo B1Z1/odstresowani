@@ -25,7 +25,7 @@ if ( !function_exists('crb_register_block_banner') ){
                     ))
             ))
             ->set_render_callback(function ($block) {
-                include(locate_template('template-parts/blocks/block-hero.php',false, false) );
+                include(locate_template('template-parts/blocks/Hero/index.php',false, false) );
             });
     }
 }

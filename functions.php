@@ -77,7 +77,6 @@ require get_template_directory() . '/includes/fields/fields-taxonomy-places.php'
 require get_template_directory() . '/includes/fields/fields-taxonomy-page.php';
 require get_template_directory() . '/includes/fields/fields-navmenu.php';
 //Blocks
-require get_template_directory() . '/includes/blocks/block-hero.php';
 require get_template_directory() . '/includes/blocks/block-recent-slider.php';
 require get_template_directory() . '/includes/blocks/block-all-posts.php';
 require get_template_directory() . '/includes/blocks/block-most-viewed.php';
@@ -86,6 +85,7 @@ require get_template_directory() . '/includes/blocks/block-video-gallery.php';
 require get_template_directory() . '/includes/blocks/block-gallery-image.php';
 require get_template_directory() . '/includes/blocks/block-custom-card.php';
 require get_template_directory() . '/includes/blocks/block-welcome.php';
+require get_template_directory() . '/includes/blocks/Hero/' . $INDEX;
 require get_template_directory() . '/includes/blocks/SmallGallery/' . $INDEX;
 
 /**
