@@ -20,22 +20,25 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
             <div class="filter-back bck-gradient--operative"></div>
             <div class="m-Hero__content">
                 <?php if ($title) : ?>
-                    <h2 class="m-Hero__title mb16"><?php echo $title; ?></h2>
+                    <h2 class="m-Hero__title mb16 f-vr"><?php echo $title; ?></h2>
                 <?php endif; ?>
 
                 <?php if ($describe) : ?>
-                    <h4 class="m-Hero__describe f-vr mt0"><?php echo $describe; ?></h4>
+                    <h4 class="m-Hero__describe mt0 f-vr"><?php echo $describe; ?></h4>
                 <?php endif; ?>
 
-                <?php if (count($buttons) > 0): ?>
+                <?php if (count($buttons) > 0) : ?>
                     <ul class="m-Hero__buttons c-list d-flex jcc aic fwrap">
-                        <?php foreach($buttons as $button): 
+                        <?php foreach ($buttons as $button) :
                             $link = $button['link'];
                             $text = $button['text'];
                             ?>
-                            <li class="c-list__element mr32">
-                                <?php 
-                                    do_action('odstresowani_button_normal', 'a', $link, $text);
+                            <li class="c-list__element mr32 c-text-size--normal">
+                                <?php
+                                /**
+                                 * Button Normal Component
+                                 */
+                                do_action('odstresowani_button_normal', 'a', $link, $text);
                                 ?>
                             </li>
                         <?php endforeach; ?>

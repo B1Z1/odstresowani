@@ -10,7 +10,7 @@ let gulp                = require('gulp'),
 
 function style(){
     return gulp.src('./assets/scss/style.scss')
-            .pipe(wait(400))
+            .pipe(wait(600))
             .pipe(sass().on('error', sass.logError))
             .pipe(autoprefixer({
                 overrideBrowserslist: ['last 2 versions'],
