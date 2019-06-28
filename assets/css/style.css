@@ -1438,16 +1438,6 @@ _______________*/
   object-fit: cover;
 }
 
-.l-Page__content {
-  font-size: 1.5rem;
-  line-height: 1.5em;
-}
-
-.l-Page__content a {
-  font-family: value-black;
-  color: inherit;
-}
-
 /*_______________________
     Modules Start
 ________*/
