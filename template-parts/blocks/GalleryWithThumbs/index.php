@@ -9,10 +9,9 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block); ?>
     
     <!-- : Upper Swiper Start : -->
     <div class="m-GalleryWithThumbs__top">
-
         <!-- : Buttons Start : -->
-        <div class="m-GalleryWithThumbs__next"><img src="<?php echo get_template_directory_uri() ?>/assets/img/arrows/next.svg" alt="" class="c-Image"></div>
-        <div class="m-GalleryWithThumbs__prev"><img src="<?php echo get_template_directory_uri() ?>/assets/img/arrows/back.svg" alt="" class="c-Image"></div>
+        <div class="m-GalleryWithThumbs__next"><img src="<?php echo get_template_directory_uri() ?>/assets/img/arrows/next.svg" alt="Następny" class="c-Image"></div>
+        <div class="m-GalleryWithThumbs__prev"><img src="<?php echo get_template_directory_uri() ?>/assets/img/arrows/back.svg" alt="Zeszły" class="c-Image"></div>
         <!-- : Buttons End : -->
 
         <div class="swiper-wrapper">

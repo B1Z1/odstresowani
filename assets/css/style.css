@@ -1110,69 +1110,6 @@ _______________*/
 
 /*_________________________
 
-Layout Gallery Start
-
-_______________*/
-
-.l-gallery-image {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.l-gallery-image .swiper-slide-thumb-active {
-  opacity: 1;
-  cursor: default;
-}
-
-.l-gallery-image .swiper-button-disabled {
-  opacity: .5;
-  cursor: default;
-}
-
-/* ---> : Layout Elements Start : <--- */
-
-.l-gallery-image__top {
-  position: relative;
-  width: 100%;
-  height: 70vh;
-}
-
-.l-gallery-image__bottom {
-  width: 100%;
-  height: 100px;
-}
-
-.l-gallery-image__thumb {
-  opacity: .5;
-  -webkit-transition: opacity .3s ease-in-out;
-  transition: opacity .3s ease-in-out;
-  cursor: pointer;
-}
-
-.l-gallery-image__next,
-.l-gallery-image__prev {
-  position: absolute;
-  top: 50%;
-  width: 32px;
-  height: 64px;
-  outline: none;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  z-index: 99;
-  cursor: pointer;
-}
-
-.l-gallery-image__next {
-  right: 16px;
-}
-
-.l-gallery-image__prev {
-  left: 16px;
-}
-
-/*_________________________
-
 Layout 404 Start
 
 _______________*/
@@ -1538,6 +1475,69 @@ ______*/
 	Custom Cards Module
 	____
 */
+
+/*_________________________
+
+Layout Gallery Start
+
+_______________*/
+
+.m-GalleryWithThumbs {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.m-GalleryWithThumbs .swiper-slide-thumb-active {
+  opacity: 1;
+  cursor: default;
+}
+
+.m-GalleryWithThumbs .swiper-button-disabled {
+  opacity: .5;
+  cursor: default;
+}
+
+/* ---> : Layout Elements Start : <--- */
+
+.m-GalleryWithThumbs__top {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+}
+
+.m-GalleryWithThumbs__bottom {
+  width: 100%;
+  height: 100px;
+}
+
+.m-GalleryWithThumbs__thumb {
+  opacity: .5;
+  -webkit-transition: opacity .3s ease-in-out;
+  transition: opacity .3s ease-in-out;
+  cursor: pointer;
+}
+
+.m-GalleryWithThumbs__next,
+.m-GalleryWithThumbs__prev {
+  position: absolute;
+  top: 50%;
+  width: 16px;
+  height: 32px;
+  outline: none;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 99;
+  cursor: pointer;
+}
+
+.m-GalleryWithThumbs__next {
+  right: 16px;
+}
+
+.m-GalleryWithThumbs__prev {
+  left: 16px;
+}
 
 /*_______________________
     Components Start
@@ -2415,88 +2415,6 @@ _______________*/
 
 /*_________________________
 
-Component Map Start
-_______________*/
-
-.c-map {
-  position: absolute !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* ---> :Elements of Component: <--- */
-
-/*_________________________
-
-Component Map Start
-_______________*/
-
-.c-marker {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  position: relative;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background-color: #0052c3;
-  color: white;
-  font-size: 1rem;
-}
-
-/* ---> :Elements of Component: <--- */
-
-.c-marker__circle {
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 1px solid #0052c3;
-  -webkit-animation: pulse 2s infinite ease-in-out;
-  animation: pulse 2s infinite ease-in-out;
-}
-
-.c-marker__circle:nth-of-type(1) {
-  -webkit-animation-delay: 0.4s;
-  animation-delay: 0.4s;
-}
-
-.c-marker__circle:nth-of-type(2) {
-  -webkit-animation-delay: 0.8s;
-  animation-delay: 0.8s;
-}
-
-.c-marker__circle:nth-of-type(3) {
-  -webkit-animation-delay: 1.2s;
-  animation-delay: 1.2s;
-}
-
-@-webkit-keyframes pulse {
-  to {
-    -webkit-transform: scale(2);
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-
-@keyframes pulse {
-  to {
-    -webkit-transform: scale(2);
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-
-/*_________________________
-
 Component Card Start
 
 _______________*/
@@ -3332,6 +3250,12 @@ ________*/
     flex: 0 0 100%;
     max-width: 100%;
   }
+
+  .m-GalleryWithThumbs__next,
+  .m-GalleryWithThumbs__prev {
+    width: 32px;
+    height: 64px;
+  }
 }
 
 @media screen and (min-width: 1366px) {
@@ -3655,14 +3579,6 @@ ________*/
     width: 36px;
     height: 36px;
     margin-right: 8px;
-  }
-
-  /* ---> : Layout Elements Start : <--- */
-
-  .l-gallery-image__next,
-  .l-gallery-image__prev {
-    width: 16px;
-    height: 32px;
   }
 
   .c-flip__front {
