@@ -1015,8 +1015,7 @@ ________*/
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   position: relative;
-  width: calc(100% - 32px);
-  height: 100%;
+  width: 100%;
   overflow-x: hidden;
 }
 
@@ -3482,6 +3481,7 @@ ________*/
 
 @media only screen and (min-width: 1366px) {
   .l-Wrapper {
+    width: calc(100% - 32px);
     margin-top: 16px;
     margin-right: 16px;
     margin-left: 16px;
