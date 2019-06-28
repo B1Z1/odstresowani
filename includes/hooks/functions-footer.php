@@ -5,7 +5,8 @@ global $currlang;
 add_action('odstresowani_footer_start', 'footer_wrapper_start', 10);
 if ( !function_exists('footer_wrapper_start') ){
     function footer_wrapper_start(){ ?>
-        <footer class="l-footer">
+        <div class="l-Wrapper">
+            <footer class="l-footer">
     <?php }
 }
 

@@ -4,28 +4,29 @@
 */
 
 .l-Wrapper{
+    box-sizing: border-box;
     position: relative;
-    width: 100%;
+    width: calc(100% - #{$wrapperGap * 2});
     height: 100%;
     overflow-x: hidden;
     @media only screen and ( min-width: $bpoint-ntb ) {
-        padding-top: 16px;
-        padding-right: 16px;
-        padding-left: 16px;
-        padding-bottom: 16px;
+        margin-top: $wrapperGap;
+        margin-right: $wrapperGap;
+        margin-left: $wrapperGap;
+        margin-bottom: $wrapperGap;
     }
 }
 
 /* --> : Component Modificators : <-- */
 .l-Wrapper{
     &--fullscreen{
-        width: calc(100vw - 32px);
-        height: calc(100vh - 32px);
+        width: calc(100vw - #{$wrapperGap * 2});
+        height: calc(100vh - #{$wrapperGap * 2});
         @media only screen and ( min-width: $bpoint-ntb ) {
-            margin-top: 16px;
-            margin-right: 16px;
-            margin-left: 16px;
-            margin-bottom: 16px;
+            margin-top: $wrapperGap;
+            margin-right: $wrapperGap;
+            margin-left: $wrapperGap;
+            margin-bottom: $wrapperGap;
         }
     }
 }
