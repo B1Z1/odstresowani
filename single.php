@@ -37,7 +37,7 @@ get_header();
                     <div class="post__content header__triger">
                         <div class="c-container c-container--960">
                             <!--  Breadcrumbs start  --> 
-                            <?php yoast_breadcrumb( '<div id="breadcrumbs" class="breadcrumbs reset-top f-vb c-gs mb64">','</div>' ); ?>
+                            <?php yoast_breadcrumb( '<div id="breadcrumbs" class="m-Breadcrumbs reset-top f-vb c-gs mb64">','</div>' ); ?>
                             <!--  Breadcrumbs end  --> 
                             <?php the_content(); ?>
                             <?php get_template_part('template-parts/content', 'share'); ?>
