@@ -483,28 +483,6 @@ ________*/
   transform: translateY(-65%);
 }
 
-/* : Page modules : */
-
-.page__title {
-  position: relative;
-  text-align: center;
-}
-
-.page__content {
-  font-size: 1.5rem;
-  line-height: 1.5em;
-}
-
-.page__content a {
-  font-family: value-black;
-  color: inherit;
-}
-
-.page__mind {
-  position: relative;
-  height: 60vh;
-}
-
 /* : Prop slider modules : */
 
 .prop-slider {
@@ -1550,6 +1528,16 @@ _______________*/
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+}
+
+.l-Page__content {
+  font-size: 1.5rem;
+  line-height: 1.5em;
+}
+
+.l-Page__content a {
+  font-family: value-black;
+  color: inherit;
 }
 
 /*_______________________

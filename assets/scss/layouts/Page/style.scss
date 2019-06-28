@@ -1,8 +1,4 @@
-.page{
-    &__title{
-        position: relative;
-        text-align: center;
-    }
+.l-Page{
     &__content{
         font-size: 1.5rem;
         line-height: 1.5em;
@@ -10,9 +6,5 @@
             font-family: value-black;
             color: inherit;
         }
-    }
-    &__mind{
-        position: relative;
-        height: 60vh;
     }
 }
