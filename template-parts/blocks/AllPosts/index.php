@@ -14,11 +14,8 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
 ?>
 
 <section class="m-AllPosts header__triger <?php echo $gapsClasses; ?>">
-
-
     <div class="d-flex fwrap row infinity-scroll">
-        <?php
-        if ($posts->have_posts()) {
+        <?php if ($posts->have_posts()) {
             while ($posts->have_posts()) {
                 $posts->the_post();
                 $args['url'] = get_permalink();
@@ -32,14 +29,18 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
                 } else {
                     $args['category'] = wp_get_post_terms(get_the_ID(), $post_type . '-kategorie');
                 }
+
                 $column = $block['posts_position']; ?>
+
                 <div class="ntb-col-6 pc-col-<?php echo $column ?> mb64">
                     <?php do_action('post_card_block', $args); ?>
                 </div>
-            <?php }
-        } ?>
+                
+            <?php
+            }
+        }
+        ?>
     </div>
-
 </section>
 
 <?php wp_reset_postdata(); ?>
