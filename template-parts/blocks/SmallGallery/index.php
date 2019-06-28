@@ -1,27 +1,20 @@
 <?php
+$imageClasses = 'c-Image c-Image--contain';
 
-/**
- * 
- * This is the block gallery of images
- * That block gallery created for insert
- * Images. Used in "Operation river"
- * 
- */
-$images = $block['container'];
+$container = $block['container'];
 $gapsClasses = GeneralOptions::getAllGapsFromArray($block); ?>
 
-<div class="block d-flex jcc fwrap <?php echo $gapsClasses; ?>">
-    <?php foreach ($images as $image) :
-        $img = wp_get_attachment_image($image['mini_images_image'], 'full', false, array('class' => 'block-image__el block-image__el--contain'));
-        $size = $image['mini_images_size'];
-        $link = $image['mini_images_url'];
+<div class="b-SmallGallery d-flex jcc fwrap <?php echo $gapsClasses; ?>">
+    <?php foreach ($container as $element) :
+        $image = wp_get_attachment_image($element['image'], 'full', false, array('class' => $imageClasses));
+        $link = $element['link'];
         if ($link) {
-            $img = '<a href="' . $link . '">' . $img . '</a>';
+            $image = '<a href="' . $link . '">' . $image . '</a>';
         }
         ?>
-        <div class="mbl-col-8 tbl-col-<?Php echo $size; ?>">
-            <div class="block-image block-image--256">
-                <?php echo $img; ?>
+        <div class="mbl-col-8 tbl-col-2">
+            <div class="b-SmallGallery__item">
+                <?php echo $image; ?>
             </div>
         </div>
     <?php endforeach; ?>

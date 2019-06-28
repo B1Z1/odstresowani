@@ -3,8 +3,6 @@
 ________*/
 @import "./base/variables";
 
-//-----------------------Variables End
-
 /*_______________________
     Mixins Start
 ________*/
@@ -13,15 +11,11 @@ ________*/
 @import "./mixins/inp-text-classic";
 @import "./mixins/inp-text-classic2";
 
-//-----------------------Mixins End
-
 /*_______________________
     Fonts Start
 ________*/
  
 @import "./fonts/fonts";
-
-//-----------------------Fonts End
 
 /*_______________________
     Libraries Start
@@ -29,24 +23,12 @@ ________*/
 
 @import "./reset";
 
-//-----------------------Libraries End
-
 /*_______________________
     Base Start
 ________*/
 
 @import "./base/base";
 
-//-----------------------Base End
-
-/*_______________________
-    Grid Start
-________*/
-
-@import "./grid/grid";
-@import "./grid/columns";
-
-//-----------------------Grid End
 
 /* --------------------------> Modules <------------------------ */
 
@@ -90,9 +72,15 @@ ________*/
 @import "modules/_search/search";
 
 /*_______________________
-    Global Layouts Start
+    Global Elements Start
 ________*/
+
+//Layouts
 @import "./global/layouts/Container/style.scss";
+@import "./global/layouts/Grid/style.scss";
+
+//Components
+@import "./global/components/Image/style.scss";
 
 /*_______________________
     Layouts Start
@@ -116,8 +104,10 @@ ________*/
     Modules Start
 ________*/
 
+//Modules
 @import "./modules/Hero/style.scss";
-@import "modules/Breadcrumbs/style.scss";
+@import "./modules/Breadcrumbs/style.scss";
+@import "./modules/SmallGallery/style.scss";
 
 
 /*_______________________
@@ -130,14 +120,12 @@ ________*/
 @import "./components/c-wrapper";
 @import "./components/c-text";
 @import "./components/c-text-size";
-@import "./components/c-image";
 @import "./components/c-flip";
 @import "./components/c-hamburger";
 @import "./components/c-navigation";
 @import "./components/c-list";
 @import "./components/c-link";
 @import "./components/c-card"; 
-@import "./components/c-container";
 @import "./components/c-form";
 @import "./components/c-map";
 @import "./components/c-marker";

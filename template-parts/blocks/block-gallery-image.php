@@ -11,8 +11,8 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block); ?>
     <div class="l-gallery-image__top">
 
         <!-- : Buttons Start : -->
-        <div class="l-gallery-image__next"><img src="<?php echo get_template_directory_uri() ?>/assets/img/arrows/next.svg" alt="" class="c-image"></div>
-        <div class="l-gallery-image__prev"><img src="<?php echo get_template_directory_uri() ?>/assets/img/arrows/back.svg" alt="" class="c-image"></div>
+        <div class="l-gallery-image__next"><img src="<?php echo get_template_directory_uri() ?>/assets/img/arrows/next.svg" alt="" class="c-Image"></div>
+        <div class="l-gallery-image__prev"><img src="<?php echo get_template_directory_uri() ?>/assets/img/arrows/back.svg" alt="" class="c-Image"></div>
         <!-- : Buttons End : -->
 
         <div class="swiper-wrapper">
@@ -20,7 +20,7 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block); ?>
                 $image = wp_get_attachment_image_url($element['gallery_image'], 'full');
                 ?>
                 <div class="swiper-slide">
-                    <img src="<?php echo $image; ?>" alt="Operacja Rzeka" class="c-image">
+                    <img src="<?php echo $image; ?>" alt="Operacja Rzeka" class="c-Image">
                 </div>
             <?php endforeach; ?>
         </div>
@@ -34,7 +34,7 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block); ?>
                 $image = wp_get_attachment_image_url($element['gallery_image'], 'full');
                 ?>
                 <div class="swiper-slide l-gallery-image__thumb">
-                    <img src="<?php echo $image; ?>" alt="Operacja Rzeka" class="c-image">
+                    <img src="<?php echo $image; ?>" alt="Operacja Rzeka" class="c-Image">
                 </div>
             <?php endforeach; ?>
         </div>

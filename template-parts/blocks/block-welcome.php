@@ -11,7 +11,7 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
 <section class="l-welcome <?php echo $gapsClasses; ?>">
     <div class="bck-gm">
         <div class="l-welcome__phone ntb-col-6">
-            <img src="<?php echo $image ?>" class="l-welcome__image c-image" alt="Odstresowani Welcom Blog">
+            <img src="<?php echo $image ?>" class="l-welcome__image c-Image" alt="Odstresowani Welcom Blog">
         </div>
         <div class="l-welcome__content">
             <div class="l-Container">

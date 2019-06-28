@@ -123,7 +123,7 @@ if ( !function_exists('nav_mobile') ) {
             <nav class="c-navigation__mobile c-blck bck-wh p32">
                 <div class="c-navigation__close">
                     <?php $close_button = carbon_get_theme_option('general_close_button'); ?>
-                    <img src="<?php echo wp_get_attachment_image_src($close_button, 'full')[0]; ?>" class="c-image" alt="Close button">
+                    <img src="<?php echo wp_get_attachment_image_src($close_button, 'full')[0]; ?>" class="c-Image" alt="Close button">
                 </div>
                 <ul class="c-list c-list--tabcol2">
                     <?php foreach ($pages as $page):
@@ -182,10 +182,10 @@ if ( !function_exists('header_sygnet') ){
                         $sygnet_back = wp_get_attachment_image_src(carbon_get_theme_option('general_sygnet_back'), 'full')[0];
                         ?>
                         <?php if ( $sygnet_front ): ?>
-                            <img class="c-image c-image--contain c-flip__front" src="<?php echo $sygnet_front; ?>" alt="Sygnet">
+                            <img class="c-Image c-Image--contain c-flip__front" src="<?php echo $sygnet_front; ?>" alt="Sygnet">
                         <?php endif; ?>
                         <?php if ( $sygnet_back ): ?>
-                            <img class="c-image c-image--contain c-flip__back" src="<?php echo $sygnet_back; ?>" alt="Sygnet">
+                            <img class="c-Image c-Image--contain c-flip__back" src="<?php echo $sygnet_back; ?>" alt="Sygnet">
                         <?php endif; ?>
                     </div>
                     <h4 class="reset f-vb"><?php echo get_bloginfo('name'); ?></h4>
