@@ -159,7 +159,7 @@ window.addEventListener('load', ()=>{
                     pagination_el:  object.classes.pagination_el,
                     extra: object.classes.extra,
                 },
-                has_back = object.slider_has_back == '' ? false:true;
+                has_back = object.slider_has_back === '' ? false:true;
             if ( slider ){
                 /**
                  *
@@ -322,47 +322,23 @@ window.addEventListener('load', ()=>{
 
     /**
      * 
-     * Initialize slider proposition posts
-     * 
-     */
-    let propSlider = new Mslider.init({
-        slider_block: 'prop-slider',
-        slider_cards: 'prop-slider_card',
-        slider_pagination: 'prop-slider_pagination',
-        slider_has_back: 'prop-slider_card__back',
-        slider_title: 'prop-slider_card__title',
-        pagination_wrap: {
-            wrapper: 'span',
-            classes: '',
-        },
-        classes: {
-            pag_active: 'prop-slider_pagination__active',
-            card_active: 'prop-slider_card__active',
-            pagination_el: 'prop-slider_pagination__el',
-            extra: 'ml16 mr16',
-        }
-    });
-
-    /**
-     * 
      * Initialize slider Recent posts
      * 
      */
     setTimeout(()=>{
         let recentSlider = new Mslider.init({
-            slider_block: 'swiper-recent_posts',
-            slider_cards: 'm-TabGallery_vh',
-            slider_pagination: 'm-TabGallery_vh_pagination',
+            slider_block: 'm-TabGallery',
+            slider_cards: 'm-TabGallery__slider',
+            slider_pagination: 'm-TabGallery__navigation',
             slider_has_back: '',
-            slider_title: 'm-TabGallery_vh',
             pagination_wrap: {
                 wrapper: 'h3',
                 classes: 'reset'
             },
             classes: {
-                pag_active: 'm-TabGallery_nav__active',
-                card_active: 'm-TabGallery_vh__active',
-                pagination_el: 'm-TabGallery_nav__el',
+                pag_active: 'm-TabGallery__navigation--active',
+                card_active: 'm-TabGallery__slider--active',
+                pagination_el: 'm-TabGallery__navigation__element',
                 extra: 'ml16 mr16',
             }
         });

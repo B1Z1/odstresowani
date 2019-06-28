@@ -1429,60 +1429,33 @@ _______________*/
 .m-TabGallery {
   position: relative;
   overflow: hidden;
-  /* For recent double slider */
-  /* For recent normal slider */
 }
 
-.m-TabGallery_nav__el {
-  position: relative;
+.m-TabGallery__navigation__element {
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  color: #B9B9B9;
-  -webkit-transition: .3s all;
-  transition: .3s all;
 }
 
-.m-TabGallery_nav__el:after {
-  content: '';
-  position: absolute;
-  bottom: 4px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: black;
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: .3s all;
-  transition: .3s all;
+.m-TabGallery__navigation--active {
+  text-decoration: underline;
 }
 
-.m-TabGallery_nav__active {
-  color: black;
-}
-
-.m-TabGallery_nav__active:after {
-  visibility: visible;
-  opacity: 1;
-}
-
-.m-TabGallery_vh {
+.m-TabGallery__slider {
   position: absolute;
   top: 0;
   left: 0;
   visibility: hidden;
   opacity: 0;
+  -webkit-transition: opacity .6s ease-in-out, visibility .6s ease-in-out;
+  transition: opacity .6s ease-in-out, visibility .6s ease-in-out;
 }
 
-.m-TabGallery_vh__active {
+.m-TabGallery__slider--active {
   position: relative;
   visibility: visible;
   opacity: 1;
 }
 
-.m-TabGallery_vh_pagination > .swiper-pagination-bullet {
+.m-TabGallery__pagination > .swiper-pagination-bullet {
   width: 8px !important;
   height: 8px !important;
   background: #0052c3 !important;
@@ -1494,47 +1467,10 @@ _______________*/
   transition: opacity .3s ease-in-out, transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
 }
 
-.m-TabGallery_vh_pagination > .swiper-pagination-bullet-active {
+.m-TabGallery__pagination > .swiper-pagination-bullet-active {
   opacity: 1 !important;
   -webkit-transform: scale(2);
   transform: scale(2);
-}
-
-.m-TabGallery_s496 {
-  position: relative;
-  width: 100%;
-  height: 496px;
-  cursor: default;
-}
-
-.m-TabGallery_s496_pagination {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 999;
-}
-
-.m-TabGallery_s496_pagination > .swiper-pagination-bullet {
-  width: 8px !important;
-  height: 8px !important;
-  margin-right: 10px !important;
-  margin-left: 10px !important;
-  background: rgba(255, 255, 255, 0.25) !important;
-  cursor: pointer;
-  opacity: 1 !important;
-  -webkit-transition: .3s all;
-  transition: .3s all;
-}
-
-.m-TabGallery_s496_pagination > .swiper-pagination-bullet-active {
-  -webkit-transform: scale(2);
-  transform: scale(2);
-  background: white !important;
-}
-
-.m-TabGallery_s496 > .swiper-pagination-bullets {
-  bottom: 0 !important;
-  width: 50% !important;
 }
 
 /*_______________________
@@ -3499,10 +3435,6 @@ ________*/
     display: none;
   }
 
-  .recent-posts_vh_pagination {
-    padding-top: 64px;
-  }
-
   .c-text-size--h1 {
     font-size: 2.3rem;
   }
@@ -3515,6 +3447,12 @@ ________*/
 
   .c-navigation__mobile {
     display: block;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .m-TabGallery__pagination {
+    padding-top: 64px;
   }
 }
 
@@ -3569,14 +3507,6 @@ ________*/
     width: 36px;
     height: 36px;
     margin-right: 8px;
-  }
-
-  .recent-posts_s496 {
-    height: auto;
-  }
-
-  .recent-posts_s496_pagination {
-    display: none;
   }
 
   .c-flip__front {

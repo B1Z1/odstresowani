@@ -19,61 +19,61 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 !function (e) {
   var t = {};
 
-  function i(l) {
-    if (t[l]) return t[l].exports;
-    var s = t[l] = {
-      i: l,
+  function l(i) {
+    if (t[i]) return t[i].exports;
+    var o = t[i] = {
+      i: i,
       l: !1,
       exports: {}
     };
-    return e[l].call(s.exports, s, s.exports, i), s.l = !0, s.exports;
+    return e[i].call(o.exports, o, o.exports, l), o.l = !0, o.exports;
   }
 
-  i.m = e, i.c = t, i.d = function (e, t, l) {
-    i.o(e, t) || Object.defineProperty(e, t, {
+  l.m = e, l.c = t, l.d = function (e, t, i) {
+    l.o(e, t) || Object.defineProperty(e, t, {
       enumerable: !0,
-      get: l
+      get: i
     });
-  }, i.r = function (e) {
+  }, l.r = function (e) {
     "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
       value: "Module"
     }), Object.defineProperty(e, "__esModule", {
       value: !0
     });
-  }, i.t = function (e, t) {
-    if (1 & t && (e = i(e)), 8 & t) return e;
+  }, l.t = function (e, t) {
+    if (1 & t && (e = l(e)), 8 & t) return e;
     if (4 & t && "object" == _typeof(e) && e && e.__esModule) return e;
-    var l = Object.create(null);
-    if (i.r(l), Object.defineProperty(l, "default", {
+    var i = Object.create(null);
+    if (l.r(i), Object.defineProperty(i, "default", {
       enumerable: !0,
       value: e
-    }), 2 & t && "string" != typeof e) for (var s in e) {
-      i.d(l, s, function (t) {
+    }), 2 & t && "string" != typeof e) for (var o in e) {
+      l.d(i, o, function (t) {
         return e[t];
-      }.bind(null, s));
+      }.bind(null, o));
     }
-    return l;
-  }, i.n = function (e) {
+    return i;
+  }, l.n = function (e) {
     var t = e && e.__esModule ? function () {
       return e["default"];
     } : function () {
       return e;
     };
-    return i.d(t, "a", t), t;
-  }, i.o = function (e, t) {
+    return l.d(t, "a", t), t;
+  }, l.o = function (e, t) {
     return Object.prototype.hasOwnProperty.call(e, t);
-  }, i.p = "", i(i.s = 2);
+  }, l.p = "", l(l.s = 2);
 }({
-  2: function _(e, t, i) {
+  2: function _(e, t, l) {
     "use strict";
 
-    i.r(t);
+    l.r(t);
 
-    var l =
+    var i =
     /*#__PURE__*/
     function () {
-      function l(e, t) {
-        _classCallCheck(this, l);
+      function i(e, t) {
+        _classCallCheck(this, i);
 
         this.global = {
           behavior: "smooth",
@@ -89,7 +89,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         }, this.fullpage.children = this.fullpage.container.children, this.init();
       }
 
-      _createClass(l, [{
+      _createClass(i, [{
         key: "init",
         value: function init() {
           var _this = this;
@@ -120,9 +120,9 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
             this.blockFakeScroll();
 
             var _t = window.event || e,
-                _i = _t.detail ? 120 * _t.detail : _t.deltaY;
+                _l = _t.detail ? 120 * _t.detail : _t.deltaY;
 
-            this.removeActiveClass(), _i > 0 && this.fullpage.current < this.fullpage.children.length - 1 ? this.fullpage.current++ : _i < 0 && this.fullpage.current > 0 && this.fullpage.current--, this.addActiveClass(), this.scrollToActive();
+            this.removeActiveClass(), _l > 0 && this.fullpage.current < this.fullpage.children.length - 1 ? this.fullpage.current++ : _l < 0 && this.fullpage.current > 0 && this.fullpage.current--, this.addActiveClass(), this.scrollToActive();
           }
         }
       }, {
@@ -141,9 +141,9 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
           this.buttons.forEach(function (e) {
             var t = e,
-                i = Number(t.dataset.fullpageTo);
+                l = Number(t.dataset.fullpageTo);
             t.addEventListener("click", function (e) {
-              _this4.fullpage.current = i, _this4.addActiveClass(), _this4.scrollToActive();
+              _this4.fullpage.current = l, _this4.addActiveClass(), _this4.scrollToActive();
             });
           });
         }
@@ -169,7 +169,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         }
       }]);
 
-      return l;
+      return i;
     }();
 
     window.addEventListener("load", function () {
@@ -200,87 +200,87 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       },
           t = function () {
         var t = document.querySelector(".l-header"),
-            i = document.querySelector(".c-navigation__mobile"),
-            l = {
+            l = document.querySelector(".c-navigation__mobile"),
+            i = {
           close: document.querySelector(".c-navigation__close"),
           open: document.querySelector(".c-hamburger")
         };
         return {
           mobileList: function mobileList() {
-            t && i && function (t, i) {
-              var l = i.close;
-              i.open.addEventListener("click", function () {
+            t && l && function (t, l) {
+              var i = l.close;
+              l.open.addEventListener("click", function () {
                 e.containClass("c-navigation--mobactive", t) ? e.removeClass("c-navigation--mobactive", t) : e.addClass("c-navigation--mobactive", t);
-              }), l.addEventListener("click", function () {
+              }), i.addEventListener("click", function () {
                 e.removeClass("c-navigation--mobactive", t);
               });
-            }(i, l);
+            }(l, i);
           },
           header_scroll: function header_scroll() {
             t && function (t) {
-              var i = _toConsumableArray(document.querySelectorAll(".header__triger")),
-                  l = 0 - (window.innerHeight - t.offsetHeight - 50),
-                  s = new IntersectionObserver(function (i) {
-                i.forEach(function (i) {
-                  var l = i.isIntersecting;
-                  l ? e.addClass("l-header--active", t) : e.removeClass("l-header--active", t);
+              var l = _toConsumableArray(document.querySelectorAll(".header__triger")),
+                  i = 0 - (window.innerHeight - t.offsetHeight - 50),
+                  o = new IntersectionObserver(function (l) {
+                l.forEach(function (l) {
+                  var i = l.isIntersecting;
+                  i ? e.addClass("l-header--active", t) : e.removeClass("l-header--active", t);
                 });
               }, {
                 threshold: [0],
-                rootMargin: "0px 0px ".concat(l, "px 0px")
+                rootMargin: "0px 0px ".concat(i, "px 0px")
               });
 
-              i.forEach(function (e) {
-                s.observe(e);
+              l.forEach(function (e) {
+                o.observe(e);
               });
             }(t);
           }
         };
       }(),
-          i = function () {
+          l = function () {
         return {
           init: function init(t) {
             !function (t) {
-              var i = document.querySelector(".".concat(t.slider_block)),
-                  l = _toConsumableArray(document.querySelectorAll(".".concat(t.slider_cards))),
-                  s = document.querySelector(".".concat(t.slider_pagination)),
-                  o = {
+              var l = document.querySelector(".".concat(t.slider_block)),
+                  i = _toConsumableArray(document.querySelectorAll(".".concat(t.slider_cards))),
+                  o = document.querySelector(".".concat(t.slider_pagination)),
+                  n = {
                 pag_active: t.classes.pag_active,
                 card_active: t.classes.card_active,
                 pagination_el: t.classes.pagination_el,
                 extra: t.classes.extra
               },
-                  n = "" != t.slider_has_back;
+                  s = "" !== t.slider_has_back;
 
-              if (i) {
-                l.forEach(function (l, a) {
-                  var r = l,
+              if (l) {
+                i.forEach(function (i, a) {
+                  var r = i,
                       c = r.dataset.title,
-                      d = r.dataset.name,
-                      u = "";
-                  e.removeClass(o.card_active, r), n && (u = r.querySelector(".".concat(t.slider_has_back)).dataset.back, n = !0), 0 == a && (e.addClass(o.card_active, r), n && (i.style.backgroundImage = "url(".concat(u, ")"))), function (t, i, l, s, o, n) {
+                      u = r.dataset.name,
+                      d = "";
+                  e.removeClass(n.card_active, r), s && (d = r.querySelector(".".concat(t.slider_has_back)).dataset.back, s = !0), 0 == a && (e.addClass(n.card_active, r), s && (l.style.backgroundImage = "url(".concat(d, ")"))), function (t, l, i, o, n, s) {
                     var a = document.createElement("li"),
                         r = "";
-                    e.addClass(o.pagination_el, a), a.className += " ".concat(o.extra), 0 == s && e.addClass(o.pag_active, a), a.dataset.name = i, "" != n ? (r = document.createElement(n.wrapper), "" != n.classes && (r.className += n.classes), r.textContent = l, a.appendChild(r)) : a.textContent = l;
+                    e.addClass(n.pagination_el, a), a.className += " ".concat(n.extra), 0 == o && e.addClass(n.pag_active, a), a.dataset.name = l, "" != s ? (r = document.createElement(s.wrapper), "" != s.classes && (r.className += s.classes), r.textContent = i, a.appendChild(r)) : a.textContent = i;
                     t.appendChild(a);
-                  }(s, d, c, a, o, t.pagination_wrap);
+                  }(o, u, c, a, n, t.pagination_wrap);
                 });
 
-                var a = _toConsumableArray(s.children);
+                var a = _toConsumableArray(o.children);
 
-                a.forEach(function (s) {
-                  var r = s,
+                a.forEach(function (o) {
+                  var r = o,
                       c = r.dataset.name,
-                      d = l.find(function (e) {
+                      u = i.find(function (e) {
                     if (e.dataset.name == c) return e;
                   }),
-                      u = "";
-                  n && (u = d.querySelector(".".concat(t.slider_has_back)).dataset.back), r.addEventListener("click", function () {
-                    l.map(function (t) {
-                      e.removeClass(o.card_active, t);
+                      d = "";
+                  s && (d = u.querySelector(".".concat(t.slider_has_back)).dataset.back), r.addEventListener("click", function () {
+                    i.map(function (t) {
+                      e.removeClass(n.card_active, t);
                     }), a.map(function (t) {
-                      e.removeClass(o.pag_active, t);
-                    }), e.addClass(o.card_active, d), e.addClass(o.pag_active, r), n && (i.style.backgroundImage = "url(".concat(u, ")"));
+                      e.removeClass(n.pag_active, t);
+                    }), e.addClass(n.card_active, u), e.addClass(n.pag_active, r), s && (l.style.backgroundImage = "url(".concat(d, ")"));
                   });
                 });
               }
@@ -288,20 +288,20 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
           }
         };
       }(),
-          s = function () {
+          o = function () {
         return {
           infinityScroll: function infinityScroll(e) {
             !function (e) {
               var t = document.querySelector(e.container),
-                  i = t ? _toConsumableArray(t.children) : null;
-              var l = [];
-              i && (t.innerHTML = "", s(), window.addEventListener("scroll", function (e) {
-                var l = 0 - (t.getBoundingClientRect().top - this.innerHeight);
-                l > t.offsetHeight && i.length > 0 && s();
+                  l = t ? _toConsumableArray(t.children) : null;
+              var i = [];
+              l && (t.innerHTML = "", o(), window.addEventListener("scroll", function (e) {
+                var i = 0 - (t.getBoundingClientRect().top - this.innerHeight);
+                i > t.offsetHeight && l.length > 0 && o();
               }));
 
-              function s() {
-                l = i.slice(0, 9), i.splice(0, 9), l.forEach(function (e) {
+              function o() {
+                i = l.slice(0, 9), l.splice(0, 9), i.forEach(function (e) {
                   t.appendChild(e);
                 });
               }
@@ -310,42 +310,24 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         };
       }();
 
-      new i.init({
-        slider_block: "prop-slider",
-        slider_cards: "prop-slider_card",
-        slider_pagination: "prop-slider_pagination",
-        slider_has_back: "prop-slider_card__back",
-        slider_title: "prop-slider_card__title",
-        pagination_wrap: {
-          wrapper: "span",
-          classes: ""
-        },
-        classes: {
-          pag_active: "prop-slider_pagination__active",
-          card_active: "prop-slider_card__active",
-          pagination_el: "prop-slider_pagination__el",
-          extra: "ml16 mr16"
-        }
-      });
       setTimeout(function () {
-        new i.init({
-          slider_block: "swiper-recent_posts",
-          slider_cards: "m-TabGallery_vh",
-          slider_pagination: "m-TabGallery_vh_pagination",
+        new l.init({
+          slider_block: "m-TabGallery",
+          slider_cards: "m-TabGallery__slider",
+          slider_pagination: "m-TabGallery__navigation",
           slider_has_back: "",
-          slider_title: "m-TabGallery_vh",
           pagination_wrap: {
             wrapper: "h3",
             classes: "reset"
           },
           classes: {
-            pag_active: "m-TabGallery_nav__active",
-            card_active: "m-TabGallery_vh__active",
-            pagination_el: "m-TabGallery_nav__el",
+            pag_active: "m-TabGallery__navigation--active",
+            card_active: "m-TabGallery__slider--active",
+            pagination_el: "m-TabGallery__navigation__element",
             extra: "ml16 mr16"
           }
         });
-      }, 500), new t.mobileList(), new s.infinityScroll({
+      }, 500), new t.mobileList(), new o.infinityScroll({
         container: ".infinity-scroll"
       }), new t.header_scroll();
       new (
@@ -364,34 +346,34 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
             this.elements.forEach(function (e) {
               var t = e.querySelector(".".concat(_this5.video, " video")),
-                  i = t.dataset.src,
-                  l = e.querySelector(".".concat(_this5.controls.container)),
-                  s = l.querySelector(".".concat(_this5.controls.play)),
-                  o = l.querySelector(".".concat(_this5.controls.stop.el));
-              _this5.installCurrentTime(t), t.volume = _this5.currentVolume, _this5.onPlay(s, t, i, o, e), _this5.onStop(t, o, e);
+                  l = t.dataset.src,
+                  i = e.querySelector(".".concat(_this5.controls.container)),
+                  o = i.querySelector(".".concat(_this5.controls.play)),
+                  n = i.querySelector(".".concat(_this5.controls.stop.el));
+              _this5.installCurrentTime(t), t.volume = _this5.currentVolume, _this5.onPlay(o, t, l, n, e), _this5.onStop(t, n, e);
             });
           }
         }, {
           key: "onStop",
-          value: function onStop(e, t, i) {
+          value: function onStop(e, t, l) {
             var _this6 = this;
 
             t.addEventListener("click", function () {
-              _this6.last = void 0, i.classList.remove(_this6.activeElement), setTimeout(function () {
-                e.pause(), t.classList.remove(_this6.controls.stop.active), _this6.installCurrentTime(e), i.querySelector(".filter-back").classList.remove("fade");
+              _this6.last = void 0, l.classList.remove(_this6.activeElement), setTimeout(function () {
+                e.pause(), t.classList.remove(_this6.controls.stop.active), _this6.installCurrentTime(e), l.querySelector(".filter-back").classList.remove("fade");
               }, 500);
             });
           }
         }, {
           key: "onPlay",
-          value: function onPlay(e, t, i, l, s) {
+          value: function onPlay(e, t, l, i, o) {
             var _this7 = this;
 
             e.addEventListener("click", function () {
-              void 0 !== _this7.last && (_this7.last.querySelector("video").pause(), _this7.installCurrentTime(_this7.last.querySelector("video")), _this7.last.classList.remove(_this7.activeElement), _this7.last.querySelector(".".concat(_this7.controls.stop.el)).classList.remove(_this7.controls.stop.active)), _this7.installCurrentTime(t), s.classList.add(_this7.activeElement), _this7.last = s, t.querySelector('source[type="video/mp4"]').src = i, setTimeout(function () {
+              void 0 !== _this7.last && (_this7.last.querySelector("video").pause(), _this7.installCurrentTime(_this7.last.querySelector("video")), _this7.last.classList.remove(_this7.activeElement), _this7.last.querySelector(".".concat(_this7.controls.stop.el)).classList.remove(_this7.controls.stop.active)), _this7.installCurrentTime(t), o.classList.add(_this7.activeElement), _this7.last = o, t.querySelector('source[type="video/mp4"]').src = l, setTimeout(function () {
                 window.scrollTo({
-                  top: s.getBoundingClientRect().top + window.scrollY
-                }), t.load(), t.play(), l.classList.add(_this7.controls.stop.active), s.querySelector(".filter-back").classList.add("fade");
+                  top: o.getBoundingClientRect().top + window.scrollY
+                }), t.load(), t.play(), i.classList.add(_this7.controls.stop.active), o.querySelector(".filter-back").classList.add("fade");
               }, 500);
             });
           }
@@ -417,7 +399,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
             active: "video-controls__stop--active"
           }
         }
-      }), new l("[data-fullpage]", {
+      }), new i("[data-fullpage]", {
         buttons: "[data-fullpage-to]"
       });
     });
