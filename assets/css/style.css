@@ -647,20 +647,6 @@ ________*/
   max-height: 380px;
 }
 
-/* : Block advanced used in "advanced block" : */
-
-.block-advanced p {
-  margin-top: 0 !important;
-}
-
-.block-advanced__icon {
-  position: relative;
-  margin-right: auto;
-  margin-left: auto;
-  width: 64px;
-  height: auto;
-}
-
 /* : BLock hidden, used in "advanced block" : */
 
 .block-hidden {
