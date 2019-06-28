@@ -1145,37 +1145,6 @@ _______________*/
 }
 
 /*_________________________
-
-Layout Welcome Start
-
-_______________*/
-
-.l-welcome {
-  position: relative;
-}
-
-/* ---> : Layout Elements Start : <--- */
-
-.l-welcome__phone {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  overflow: hidden;
-}
-
-.l-welcome__content {
-  position: relative;
-}
-
-.l-welcome__image {
-  -webkit-transform: translateY(55%) scale(1.5);
-  transform: translateY(55%) scale(1.5);
-}
-
-/* ---> : Layout Modificators Start : <--- */
-
-/*_________________________
 Layout DNA Start
 _______________*/
 
@@ -1425,6 +1394,36 @@ _______________*/
   -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.16);
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.16);
 }
+
+/*  ___
+    Layout Welcome Start
+    ___
+*/
+
+.m-Welcome {
+  position: relative;
+}
+
+/* ---> : Layout Elements Start : <--- */
+
+.m-Welcome__phone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.m-Welcome__content {
+  position: relative;
+}
+
+.m-Welcome__image {
+  -webkit-transform: translateY(55%) scale(1.5);
+  transform: translateY(55%) scale(1.5);
+}
+
+/* ---> : Layout Modificators Start : <--- */
 
 .m-TabGallery {
   position: relative;
@@ -2880,7 +2879,7 @@ ________*/
     padding-left: 48px;
   }
 
-  .l-welcome__image {
+  .m-Welcome__image {
     -webkit-transform: translateY(0) scale(1.5);
     transform: translateY(0) scale(1.5);
   }
