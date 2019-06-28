@@ -48,12 +48,10 @@ require get_template_directory() . '/includes/functions-nav-menu.php';
 /**
  *
  * Require Taxonomies
- *  ->Markers
  *  ->Knowledge
  *  ->News
  *
  */
-require get_template_directory() . '/includes/taxonomies/taxonomy-places.php';
 require get_template_directory() . '/includes/taxonomies/taxonomy-knowledge.php';
 require get_template_directory() . '/includes/taxonomies/taxonomy-news.php';
 /**

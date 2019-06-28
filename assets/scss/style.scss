@@ -79,9 +79,6 @@ ________*/
 @import "modules/_video/video";
 @import "modules/_video/video-controls";
 
-/* : Mind modules : */ 
-@import "modules/_mind/mind";
-
 /* : Page modules : */
 @import "modules/_page/page";
 
@@ -130,7 +127,6 @@ ________*/
     Components Start
 ________*/
 
-@import "./components/c-animations";
 @import "./components/c-button";
 @import "./components/c-input";
 @import "./components/c-textarea";
