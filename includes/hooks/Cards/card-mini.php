@@ -15,13 +15,13 @@ if (!function_exists('post_card_mini')) {
         $url = $args['url'];
         ?>
         <a href="<?php echo $url; ?>" class="c-link">
-            <div class="c-card mb32">
-                <div class="c-card__image c-card--192 mb32">
+            <div class="c-Card mb32">
+                <div class="c-Card__image c-Card--192 mb32">
                     <?php if ($image) : ?>
                         <img src="<?php echo $image; ?>" alt="<?php echo $title; ?>" class="c-Image">
                     <?php endif; ?>
                 </div>
-                <div class="c-card__title c-text--center">
+                <div class="c-Card__title c-text--center">
                     <h2 class="f-vb"><?php echo $title; ?></h2>
                 </div>
             </div>

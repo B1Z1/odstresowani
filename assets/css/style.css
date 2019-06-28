@@ -2229,33 +2229,6 @@ _______________*/
 
 /*_________________________
 
-Component Card Start
-
-_______________*/
-
-.c-card {
-  position: relative;
-}
-
-/* --> : Component Elements : <-- */
-
-.c-card__cat {
-  position: relative;
-  border-right: 1px dotted #B9B9B9;
-}
-
-/* --> : Component Modificators : <-- */
-
-.c-card--328 {
-  height: 328px;
-}
-
-.c-card--192 {
-  height: 192px;
-}
-
-/*_________________________
-
 Component Form Start
 
 _______________*/
@@ -2510,6 +2483,33 @@ _______________*/
     transform: scale(2);
     opacity: 0;
   }
+}
+
+/*_________________________
+
+Component Card Start
+
+_______________*/
+
+.c-Card {
+  position: relative;
+}
+
+/* --> : Component Elements : <-- */
+
+.c-Card__cat {
+  position: relative;
+  border-right: 1px dotted #B9B9B9;
+}
+
+/* --> : Component Modificators : <-- */
+
+.c-Card--328 {
+  height: 256px;
+}
+
+.c-Card--192 {
+  height: 192px;
 }
 
 /*_______________________
@@ -3023,6 +3023,10 @@ ________*/
     margin-right: 0;
   }
 
+  .c-Card--328 {
+    height: 288px;
+  }
+
   .p32 {
     padding: 32px;
   }
@@ -3440,6 +3444,10 @@ ________*/
     flex: 0 0 50%;
     max-width: 50%;
   }
+
+  .c-Card--328 {
+    height: 328px;
+  }
 }
 
 @media screen and (min-width: 1600px) {
@@ -3566,12 +3574,6 @@ ________*/
   .c-navigation__mobile {
     display: block;
   }
-
-  /* --> : Component Modificators : <-- */
-
-  .c-card--328 {
-    height: 288px;
-  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -3666,12 +3668,6 @@ ________*/
   .c-navigation__mobile {
     right: -100vw;
     width: 100vw;
-  }
-
-  /* --> : Component Modificators : <-- */
-
-  .c-card--328 {
-    height: 256px;
   }
 }
 

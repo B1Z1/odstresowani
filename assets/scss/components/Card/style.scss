@@ -1,0 +1,33 @@
+/*_________________________
+
+Component Card Start
+
+_______________*/
+
+.c-Card{
+    position: relative;
+}
+
+/* --> : Component Elements : <-- */
+.c-Card{
+    &__cat{  
+        position: relative;
+        border-right: 1px dotted $grey-tertiary;
+    }
+}
+
+/* --> : Component Modificators : <-- */
+.c-Card{
+    &--328{
+        height: 256px;
+        @media only screen and (min-width: $bpoint-tab){
+            height: 288px;
+        }
+        @media only screen and (min-width: $bpoint-ntb){
+            height: 328px;
+        }
+    }
+    &--192{
+        height: 192px;
+    }
+}
