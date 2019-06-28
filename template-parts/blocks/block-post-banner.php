@@ -16,7 +16,7 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
                 </div>
             </div>
             <?php if ( $autor ): ?>
-                <h4 class="block--texcen f-san c-gt">Autor obrazu: <?php echo $autor; ?></h4>
+                <h4 class="c-text--center f-san c-gt">Autor obrazu: <?php echo $autor; ?></h4>
             <?php endif; ?>
         </section>
     <div class="l-Container l-Container--960 header__triger">

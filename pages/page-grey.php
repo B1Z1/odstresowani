@@ -39,7 +39,7 @@ $sygnet = wp_get_attachment_image_src(carbon_get_post_meta(get_the_ID(), 'page_s
                     ?>
                 </div>
 
-                <div class="l-Page__content">
+                <div class="l-Page__content m-WYSIWYG">
                     <div class="l-Container l-Container--960 header__triger">
                         <?php the_content(); ?>
                         <?php get_template_part('template-parts/content', 'share'); ?>

@@ -23,7 +23,7 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
 <?php endif; ?>
 
 <div class="most-viewed block <?php echo $gapsClasses; ?>">
-    <h3 class="reset-top block--texcen mb64"><?php pll_e('Najchętniej czytane'); ?></h3>
+    <h3 class="reset-top c-text--center mb64"><?php pll_e('Najchętniej czytane'); ?></h3>
     <div class="d-flex fwrap row jcc">
         <?php if ($posts->have_posts()) : ?>
             <?php while ($posts->have_posts()) : $posts->the_post(); ?>

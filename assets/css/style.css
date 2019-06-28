@@ -313,85 +313,12 @@ ________*/
     Blocks Start
 ________*/
 
-.block {
-  position: relative;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.block__title {
-  font-family: value-regular !important;
-}
-
-.block__photo > .card:last-of-type {
-  margin-bottom: 0;
-}
-
 .block--full {
   min-height: calc(100vh - 32px);
 }
 
-.block--texleft {
-  text-align: left;
-}
-
-.block--texcen {
-  text-align: center;
-}
-
-.block--texright {
-  text-align: right;
-}
-
 .block--hidden {
   overflow: hidden;
-}
-
-/* : Image block : */
-
-.block-image {
-  position: relative;
-  width: 100%;
-}
-
-.block-image--full {
-  height: 80vh;
-}
-
-.block-image--small {
-  height: 40vh;
-}
-
-.block-image--256 {
-  height: 256px;
-}
-
-.block-image--boxsh {
-  -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.16);
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.16);
-}
-
-.block-image__el {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
-}
-
-.block-image__el--contain {
-  -o-object-fit: contain;
-  object-fit: contain;
-}
-
-.block-image__underblock {
-  position: absolute;
-  top: calc(100% - 190px);
-  left: calc(50% - 190px);
-  max-width: 380px;
-  max-height: 380px;
 }
 
 .block-videogallery__element {
@@ -1015,8 +942,7 @@ ________*/
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   position: relative;
-  width: calc(100% - 32px);
-  height: 100%;
+  width: 100%;
   overflow-x: hidden;
 }
 
@@ -1494,24 +1420,6 @@ _______________*/
   font-size: .8rem;
 }
 
-.l-Post__content p {
-  margin-top: 1em;
-  margin-bottom: 1em;
-  font-size: 1.5rem;
-  line-height: 1.5em;
-}
-
-.l-Post__content ul,
-.l-Post__content ol {
-  font-size: 1.5rem;
-  line-height: 2.25rem;
-}
-
-.l-Post__content a {
-  font-family: value-black;
-  color: inherit;
-}
-
 .l-Post__avatar {
   position: relative;
   width: 64px;
@@ -1528,16 +1436,6 @@ _______________*/
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
-}
-
-.l-Page__content {
-  font-size: 1.5rem;
-  line-height: 1.5em;
-}
-
-.l-Page__content a {
-  font-family: value-black;
-  color: inherit;
 }
 
 /*_______________________
@@ -1616,6 +1514,24 @@ ______*/
   left: calc(50% - 96px);
   width: 192px;
   height: 192px;
+}
+
+.m-WYSIWYG p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 1.5rem;
+  line-height: 1.5em;
+}
+
+.m-WYSIWYG ul,
+.m-WYSIWYG ol {
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+}
+
+.m-WYSIWYG a {
+  font-family: value-black;
+  color: inherit;
 }
 
 /*_______________________
@@ -2313,33 +2229,6 @@ _______________*/
 
 /*_________________________
 
-Component Card Start
-
-_______________*/
-
-.c-card {
-  position: relative;
-}
-
-/* --> : Component Elements : <-- */
-
-.c-card__cat {
-  position: relative;
-  border-right: 1px dotted #B9B9B9;
-}
-
-/* --> : Component Modificators : <-- */
-
-.c-card--328 {
-  height: 328px;
-}
-
-.c-card--192 {
-  height: 192px;
-}
-
-/*_________________________
-
 Component Form Start
 
 _______________*/
@@ -2594,6 +2483,33 @@ _______________*/
     transform: scale(2);
     opacity: 0;
   }
+}
+
+/*_________________________
+
+Component Card Start
+
+_______________*/
+
+.c-Card {
+  position: relative;
+}
+
+/* --> : Component Elements : <-- */
+
+.c-Card__cat {
+  position: relative;
+  border-right: 1px dotted #B9B9B9;
+}
+
+/* --> : Component Modificators : <-- */
+
+.c-Card--328 {
+  height: 256px;
+}
+
+.c-Card--192 {
+  height: 192px;
 }
 
 /*_______________________
@@ -3107,6 +3023,10 @@ ________*/
     margin-right: 0;
   }
 
+  .c-Card--328 {
+    height: 288px;
+  }
+
   .p32 {
     padding: 32px;
   }
@@ -3482,6 +3402,7 @@ ________*/
 
 @media only screen and (min-width: 1366px) {
   .l-Wrapper {
+    width: calc(100% - 32px);
     margin-top: 16px;
     margin-right: 16px;
     margin-left: 16px;
@@ -3522,6 +3443,10 @@ ________*/
     -ms-flex: 0 0 50%;
     flex: 0 0 50%;
     max-width: 50%;
+  }
+
+  .c-Card--328 {
+    height: 328px;
   }
 }
 
@@ -3649,30 +3574,6 @@ ________*/
   .c-navigation__mobile {
     display: block;
   }
-
-  /* --> : Component Modificators : <-- */
-
-  .c-card--328 {
-    height: 288px;
-  }
-}
-
-@media only screen and (max-width: 769px) {
-  .block-image__advanced {
-    width: 50%;
-  }
-
-  .block-image__underblock {
-    top: calc(100% - 128px);
-    left: calc(50% - 128px);
-    max-width: 256px;
-    max-height: 256px;
-  }
-
-  .block-image--full,
-  .block-image--small {
-    height: 50vh;
-  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -3767,12 +3668,6 @@ ________*/
   .c-navigation__mobile {
     right: -100vw;
     width: 100vw;
-  }
-
-  /* --> : Component Modificators : <-- */
-
-  .c-card--328 {
-    height: 256px;
   }
 }
 

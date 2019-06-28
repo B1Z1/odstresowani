@@ -1,24 +1,6 @@
 .block{
-    position: relative;
-    margin-right: auto;
-    margin-left: auto;
-    &__title{
-        font-family: value-regular!important;
-    }
-    &__photo > .card:last-of-type{  
-        margin-bottom: 0;
-    }
     &--full{
         min-height: calc(100vh - 32px);
-    }
-    &--texleft{
-        text-align: left;
-    }
-    &--texcen{
-        text-align: center;
-    }
-    &--texright{
-        text-align: right;
     }
     &--hidden{
         overflow: hidden;

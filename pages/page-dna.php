@@ -32,7 +32,7 @@ get_header();
                     <div data-fullpage>
 
                         <section class="block block--full d-flex fd-col jce pb32">
-                            <h2 class="block__title mt0">Badanie genetyczne iDNA stres</h2>
+                            <h2 class="mt0">Badanie genetyczne iDNA stres</h2>
                             <div class="block__content">
                                 <p class="mt0">
                                     Nie ignoruj stresu i sukcesywnie z nim walcz, gdyż ma on destrukcyjny wpływ na organizm. Zadanie nie należy 
@@ -51,7 +51,7 @@ get_header();
                         </section>
 
                         <section class="block block--full d-flex fd-col jce pb32">
-                            <h2 class="block__title mt0">Czego się dowiesz w badaniu genetycznym</h2>
+                            <h2 class="mt0">Czego się dowiesz w badaniu genetycznym</h2>
                             <div class="block__content">
                                 <ul class="c-list">
                                     <li class="c-list__element mb16">
@@ -93,7 +93,7 @@ get_header();
                         </section>
 
                         <section class="block block--full d-flex fd-col jce pb32">
-                            <h2 class="block__title mt0">W teście Stres badamy geny</h2>
+                            <h2 class="mt0">W teście Stres badamy geny</h2>
                             <div class="block__content">
                                 <ul class="c-list">
                                     <li class="c-list__element mb16">
@@ -116,7 +116,7 @@ get_header();
                         </section>            
 
                         <section class="block block--full d-flex fd-col jce pb32">
-                            <h2 class="block__title mt0">Konsultacja z Genodoradcą</h2>
+                            <h2 class="mt0">Konsultacja z Genodoradcą</h2>
                             <div class="block__content">
                                 <p>
                                     Wraz z <a href="https://odstresowani.pl/wp-content/uploads/2019/04/Stres_przykładowy_raport.pdf" class="c-link c-link--tdu">badaniem</a> otrzymasz możliwość konsultacji z ekspertem. Podczas 30 minutowej 
@@ -137,7 +137,7 @@ get_header();
                         </section>            
 
                         <section class="block block--full d-flex fd-col jce pb32">
-                            <h2 class="block__title mt0">W ramach wybranego pakietu otrzymasz</h2>
+                            <h2 class="mt0">W ramach wybranego pakietu otrzymasz</h2>
                             <div class="block__content">
                                 <ul class="c-list c-op">
                                     <li class="c-list__element mb16">
@@ -154,7 +154,7 @@ get_header();
                         </section>            
 
                         <section id="buy" class="block block--full d-flex fd-col jce pb32">
-                            <h2 class="block__title mt0">Chcesz wiedzieć więcej?</h2>
+                            <h2 class="mt0">Chcesz wiedzieć więcej?</h2>
                             <div class="block__content">
                                 <p>Nasi specjaliści są do twojej dyspozycji.</p>
                                 <p>

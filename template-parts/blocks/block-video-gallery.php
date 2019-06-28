@@ -6,7 +6,7 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
 <?php if ( $gallery ): ?>
 
     </div>
-    <div class="block block--texcen block-videogallery <?php echo $gapsClasses; ?>">
+    <div class="block c-text--center block-videogallery <?php echo $gapsClasses; ?>">
         <?php foreach( $gallery as $post ): 
             $name = $post['videogallery_name'];
             $poster = wp_get_attachment_url($post['videogallery_poster'], 'full');

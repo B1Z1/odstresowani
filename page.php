@@ -15,16 +15,14 @@
 
 get_header();
 ?>
-
-<main class="l-Wrapper">
-    <div class="l-Container">
-        <?php if (have_posts()) :  ?>
-            <?php while (have_posts()) : the_post(); ?>
+<?php if (have_posts()) :  ?>
+    <?php while (have_posts()) : the_post(); ?>
+        <main class="l-Wrapper m-WYSIWYG">
+            <div class="l-Container">
                 <?php the_content(); ?>
-            <?php endwhile; ?>
-        <?php endif; ?>
-    </div>
-</main>
-
+            </div>
+        </main>
+    <?php endwhile; ?>
+<?php endif; ?>
 <?php
 get_footer();

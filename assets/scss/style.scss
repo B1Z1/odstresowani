@@ -47,7 +47,6 @@ ________*/
 ________*/
 
 @import "modules/_block/block"; 
-@import "modules/_block/block-image";
 @import "modules/_block/block-videogallery";
 
 //-----------------------Blocks End
@@ -106,6 +105,8 @@ ________*/
 @import "./modules/Breadcrumbs/style.scss";
 @import "./modules/SmallGallery/style.scss";
 @import "./modules/GreyTitle/style.scss";
+@import "./modules/WYSIWYG/style.scss";
+@import "./modules/AllPosts/style.scss";
 
 
 /*_______________________
@@ -122,10 +123,10 @@ ________*/
 @import "./components/c-navigation";
 @import "./components/c-list";
 @import "./components/c-link";
-@import "./components/c-card"; 
 @import "./components/c-form";
 @import "./components/c-map";
 @import "./components/c-marker";
+@import "./components/Card/style.scss";
 
 //-----------------------Layouts End
 
