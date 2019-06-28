@@ -17,7 +17,7 @@
 get_header();
 ?>
 
-    <div class="c-wrapper bck-gm">
+    <div class="l-Wrapper bck-gm">
 
         <!-- ------------------ -->
         <!-- Main section start -->

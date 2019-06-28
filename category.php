@@ -27,7 +27,7 @@ $cat_describe = $cat_object->category_description;
 
 ?>
 
-<div class="c-wrapper">
+<div class="l-Wrapper">
 
     <!-- ------------------ -->
     <!-- Main section start -->

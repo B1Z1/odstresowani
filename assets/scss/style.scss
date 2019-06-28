@@ -78,6 +78,7 @@ ________*/
 //Layouts
 @import "./global/layouts/Container/style.scss";
 @import "./global/layouts/Grid/style.scss";
+@import "./global/layouts/Wrapper/style.scss";
 
 //Components
 @import "./global/components/Image/style.scss";
@@ -117,7 +118,6 @@ ________*/
 @import "./components/c-button";
 @import "./components/c-input";
 @import "./components/c-textarea";
-@import "./components/c-wrapper";
 @import "./components/c-text";
 @import "./components/c-text-size";
 @import "./components/c-flip";

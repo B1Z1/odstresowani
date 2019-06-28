@@ -1078,6 +1078,25 @@ ________*/
 }
 
 /*  ___
+    Component Wrapper Start
+    ___
+*/
+
+.l-Wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* --> : Component Modificators : <-- */
+
+.l-Wrapper--fullscreen {
+  width: calc(100vw - 32px);
+  height: calc(100vh - 32px);
+}
+
+/*  ___
     Component Image Start
     ___
 */
@@ -1966,28 +1985,6 @@ _______________*/
 .c-textarea__classic:focus {
   color: black;
   border-bottom-color: black;
-}
-
-/*_________________________
-
-Component Wrapper Start
-
-_______________*/
-
-.c-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-}
-
-/* --> : Component Elements : <-- */
-
-/* --> : Component Modificators : <-- */
-
-.c-wrapper--fullscreen {
-  width: calc(100vw - 32px);
-  height: calc(100vh - 32px);
 }
 
 /*_________________________
@@ -3489,6 +3486,20 @@ ________*/
 }
 
 @media only screen and (min-width: 1366px) {
+  .l-Wrapper {
+    padding-top: 16px;
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-bottom: 16px;
+  }
+
+  .l-Wrapper--fullscreen {
+    margin-top: 16px;
+    margin-right: 16px;
+    margin-left: 16px;
+    margin-bottom: 16px;
+  }
+
   .l-header {
     margin-right: 16px;
     margin-left: 16px;
@@ -3509,20 +3520,6 @@ ________*/
 
   .m-Hero__content {
     max-width: 80%;
-  }
-
-  .c-wrapper {
-    padding-top: 16px;
-    padding-right: 16px;
-    padding-left: 16px;
-    padding-bottom: 16px;
-  }
-
-  .c-wrapper--fullscreen {
-    margin-top: 16px;
-    margin-right: 16px;
-    margin-left: 16px;
-    margin-bottom: 16px;
   }
 
   .c-form__calendar .wpbc_booking_form_structure .form-group {

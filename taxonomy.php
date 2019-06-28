@@ -25,7 +25,7 @@ if ($cat_check === 'film') {
 
 ?>
 
-<div class="c-wrapper">
+<div class="l-Wrapper">
 
     <!-- ------------------ -->
     <!-- Main section start -->
