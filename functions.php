@@ -111,6 +111,9 @@ require get_template_directory() . '/template-parts/layouts/Container/' . $INDEX
  */
 require get_template_directory() . '/template-parts/modules/Hero/' . $INDEX;
 require get_template_directory() . '/template-parts/modules/GreyTitle/' . $INDEX;
+require get_template_directory() . '/template-parts/modules/Navigation/' . $INDEX;
+require get_template_directory() . '/template-parts/modules/SocialNavigation/' . $INDEX;
+require get_template_directory() . '/template-parts/modules/HorizontalNavigation/' . $INDEX;
 
 /**
  * Components
