@@ -1013,53 +1013,6 @@ _______________*/
 
 /* ---> : Layout Modificators Start : <--- */
 
-.m-TabGallery {
-  position: relative;
-  overflow: hidden;
-}
-
-.m-TabGallery__navigation__element {
-  cursor: pointer;
-}
-
-.m-TabGallery__navigation--active {
-  text-decoration: underline;
-}
-
-.m-TabGallery__slider {
-  position: absolute;
-  top: 0;
-  left: 0;
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: opacity .6s ease-in-out, visibility .6s ease-in-out;
-  transition: opacity .6s ease-in-out, visibility .6s ease-in-out;
-}
-
-.m-TabGallery__slider--active {
-  position: relative;
-  visibility: visible;
-  opacity: 1;
-}
-
-.m-TabGallery__pagination > .swiper-pagination-bullet {
-  width: 8px !important;
-  height: 8px !important;
-  background: #0052c3 !important;
-  cursor: pointer;
-  opacity: 0.25 !important;
-  -webkit-transition: opacity .3s ease-in-out, -webkit-transform .3s ease-in-out;
-  transition: opacity .3s ease-in-out, -webkit-transform .3s ease-in-out;
-  transition: opacity .3s ease-in-out, transform .3s ease-in-out;
-  transition: opacity .3s ease-in-out, transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
-}
-
-.m-TabGallery__pagination > .swiper-pagination-bullet-active {
-  opacity: 1 !important;
-  -webkit-transform: scale(2);
-  transform: scale(2);
-}
-
 .m-SearchForm {
   text-align: right;
 }
@@ -3059,12 +3012,6 @@ ________*/
 
   .c-navigation__mobile {
     display: block;
-  }
-}
-
-@media screen and (max-width: 1366px) {
-  .m-TabGallery__pagination {
-    padding-top: 64px;
   }
 }
 
