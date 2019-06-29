@@ -12,14 +12,6 @@ ________*/
 
 /* ---> : Colors : <--- */
 
-/*_______________________
-    Mixins Start
-________*/
-
-/*_______________________
-    Fonts Start
-________*/
-
 @font-face {
   font-family: 'value-black';
   src: url("../fonts/Value/value-black-web/value-black.eot"), url("../fonts/Value/value-black-web/value-black.eot?#iefix") format("embedded-opentype"), url("../fonts/Value/value-black-web/value-black.woff") format("woff"), url("../fonts/Value/value-black-web/value-black.woff2") format("woff2"), url("../fonts/Value/value-black-web/value-black.ttf") format("truetype");
@@ -774,6 +766,11 @@ _______________*/
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+}
+
+.l-Search__content {
+  position: relative;
+  z-index: 1000;
 }
 
 /*_______________________

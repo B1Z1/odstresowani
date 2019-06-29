@@ -2,19 +2,9 @@
     Variables Start
 ________*/
 @import "./base/variables";
-
-/*_______________________
-    Mixins Start
-________*/
-
 @import "./mixins/input-res";
 @import "./mixins/inp-text-classic";
 @import "./mixins/inp-text-classic2";
-
-/*_______________________
-    Fonts Start
-________*/
- 
 @import "./fonts/fonts";
 
 /*_______________________
@@ -56,7 +46,6 @@ ________*/
 @import "./global/layouts/Container/style.scss";
 @import "./global/layouts/Grid/style.scss";
 @import "./global/layouts/Wrapper/style.scss";
-
 //Components
 @import "./global/components/Image/style.scss";
 
@@ -70,14 +59,14 @@ ________*/
 @import "./elements/layouts/Post/style.scss";
 @import "./elements/layouts/Page/style.scss";
 @import "./elements/layouts/Footer/style.scss";
+@import "./elements/layouts/Search/style.scss";
 
-//-----------------------Layouts End
 
 /*_______________________
     Modules Start
 ________*/
 
-//Modules
+//Modules 
 @import "./elements/modules/Hero/style.scss";
 @import "./elements/modules/Breadcrumbs/style.scss";
 @import "./elements/modules/SmallGallery/style.scss";
@@ -110,7 +99,6 @@ ________*/
 @import "./elements/components/Card/style.scss";
 @import "./elements/components/Buttons/style.scss";
 
-//-----------------------Layouts End
 
 /*_______________________
     UI Start
@@ -121,5 +109,3 @@ ________*/
 @import "pad-marg/paddings"; 
 @import "pad-marg/margins";
 @import "fonts/fonts-el";
-
-//-----------------------UI End
