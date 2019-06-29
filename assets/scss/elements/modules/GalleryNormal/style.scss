@@ -1,3 +1,41 @@
 .m-GalleryNormal{
-    
+    &__swiper{
+        position: relative;
+    }
+    &__pagination{
+        position: absolute;
+        bottom: -32px!important;
+        left: 50%!important;
+        text-align: center;
+        transform: translateX(-50%);
+        z-index: 1;
+        .swiper-pagination-bullet{
+            width: 8px;
+            height: 8px;
+            margin-right: 8px!important;
+            margin-left: 8px!important;
+            background-color: $operative;
+            opacity: .25;
+            transition: transform, opacity;
+            transition-duration: .4s;
+            transition-timing-function: ease-in-out;
+            &-active{
+                opacity: 1;
+                transform: scale(2);
+                animation: jump .4s ease-in-out;
+            }
+        }
+    }
+}
+
+@keyframes jump{
+    0%{
+        transform: translateY(0) scale(1);
+    }
+    50%{
+        transform: translateY(-10px) scale(2);
+    }
+    100%{
+        transform: translateY(0) scale(2);
+    }
 }

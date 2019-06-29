@@ -56,7 +56,10 @@ if (!function_exists('odstresowani_module_gallery_normal')) {
                             ?>
                         </div>
                     <?php endforeach; ?>
+
                 </div>
+                <!-- Pagination -->
+                <div class="m-GalleryNormal__pagination" data-gallery-normal-pagination></div>
             </div>
 
             <?php

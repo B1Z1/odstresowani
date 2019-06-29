@@ -3161,7 +3161,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         this.scrollbar.disableDraggable();
       }
     };
-    var Y = {
+    var V = {
       setTransform: function setTransform(e, t) {
         var s = this.rtl,
             i = l(e),
@@ -3209,7 +3209,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         });
       }
     };
-    var V = {
+    var Y = {
       getDistanceBetweenTouches: function getDistanceBetweenTouches(e) {
         if (e.targetTouches.length < 2) return 1;
         var t = e.targetTouches[0].pageX,
@@ -3226,7 +3226,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
         if (i.fakeGestureTouched = !1, i.fakeGestureMoved = !1, !p.gestures) {
           if ("touchstart" !== e.type || "touchstart" === e.type && e.targetTouches.length < 2) return;
-          i.fakeGestureTouched = !0, a.scaleStart = V.getDistanceBetweenTouches(e);
+          i.fakeGestureTouched = !0, a.scaleStart = Y.getDistanceBetweenTouches(e);
         }
 
         a.$slideEl && a.$slideEl.length || (a.$slideEl = l(e.target).closest(".swiper-slide"), 0 === a.$slideEl.length && (a.$slideEl = t.slides.eq(t.activeIndex)), a.$imageEl = a.$slideEl.find("img, svg, canvas"), a.$imageWrapEl = a.$imageEl.parent(".".concat(s.containerClass)), a.maxRatio = a.$imageWrapEl.attr("data-swiper-zoom") || s.maxRatio, 0 !== a.$imageWrapEl.length) ? (a.$imageEl.transition(0), t.zoom.isScaling = !0) : a.$imageEl = void 0;
@@ -3238,7 +3238,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
         if (!p.gestures) {
           if ("touchmove" !== e.type || "touchmove" === e.type && e.targetTouches.length < 2) return;
-          s.fakeGestureMoved = !0, i.scaleMove = V.getDistanceBetweenTouches(e);
+          s.fakeGestureMoved = !0, i.scaleMove = Y.getDistanceBetweenTouches(e);
         }
 
         i.$imageEl && 0 !== i.$imageEl.length && (p.gestures ? s.scale = e.scale * s.currentScale : s.scale = i.scaleMove / i.scaleStart * s.currentScale, s.scale > i.maxRatio && (s.scale = i.maxRatio - 1 + Math.pow(s.scale - i.maxRatio + 1, .5)), s.scale < t.minRatio && (s.scale = t.minRatio + 1 - Math.pow(t.minRatio - s.scale + 1, .5)), i.$imageEl.transform("translate3d(0,0,0) scale(".concat(s.scale, ")")));
@@ -4173,9 +4173,9 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       create: function create() {
         c.extend(this, {
           parallax: {
-            setTransform: Y.setTransform.bind(this),
-            setTranslate: Y.setTranslate.bind(this),
-            setTransition: Y.setTransition.bind(this)
+            setTransform: V.setTransform.bind(this),
+            setTranslate: V.setTranslate.bind(this),
+            setTransition: V.setTransition.bind(this)
           }
         });
       },
@@ -4245,7 +4245,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
           }
         };
         "onGestureStart onGestureChange onGestureEnd onTouchStart onTouchMove onTouchEnd onTransitionEnd toggle enable disable in out".split(" ").forEach(function (s) {
-          t[s] = V[s].bind(e);
+          t[s] = Y[s].bind(e);
         }), c.extend(e, {
           zoom: t
         });
@@ -4827,7 +4827,17 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
           direction: "horizontal",
           loop: "true",
           slidesPerView: 2,
-          spaceBetween: 32
+          spaceBetween: 32,
+          pagination: {
+            el: "[data-gallery-normal-pagination]",
+            type: "bullets",
+            clickable: !0
+          },
+          breakpoints: {
+            768: {
+              slidesPerView: 1
+            }
+          }
         });
       });
     });
