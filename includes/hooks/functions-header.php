@@ -30,7 +30,7 @@ function submenu($items, $item){
                 <ul class="c-list mauto pt32 pb32 flex-kit">
                     <?php foreach ( $children as $child ): ?>
                         <li class="c-list__element mr16 ml16">
-                            <a href="<?php echo $child['url']; ?>" class="c-link c-link__circle c-link--backbefwhite"><?php echo $child['title']; ?></a>
+                            <a href="<?php echo $child['url']; ?>" class="c-Link c-Link__circle c-Link--backbefwhite"><?php echo $child['title']; ?></a>
                         </li>
                     <?php endforeach; ?>
                 </ul>
@@ -53,7 +53,7 @@ function submenu_category($post_type, $url, $title){
     ));
     ?>
     <li class="c-navigation__trigger c-list__element mr16 ml16">
-        <a href="<?php echo $url; ?>" class="c-link c-link__circle"><?php echo $title; ?></a>
+        <a href="<?php echo $url; ?>" class="c-Link c-Link__circle"><?php echo $title; ?></a>
         <nav class="c-navigation__submenu pt24 pr24 pb24 pl24 c-wh bck-gradient--operative">
             <div class="d-flex fwrap row">
                 <div class="ntb-col-1">
@@ -64,9 +64,9 @@ function submenu_category($post_type, $url, $title){
                         <?php foreach ( $categories as $category ):
                             $title = $category->name;
                             $url = get_term_link($category->slug, $post_type);
-                            $active = ' c-link--catactive'; ?>
+                            $active = ' c-Link--catactive'; ?>
                             <li class="c-list__element mr16 mb8">
-                                <a href="<?php echo $url; ?>" class="c-link c-link__category<?php
+                                <a href="<?php echo $url; ?>" class="c-Link c-Link__category<?php
                                 if ( is_tax($post_type, $category->slug) || is_category($category->slug) ){
                                     echo $active;
                                 }; ?>"><?php echo $title; ?></a>
@@ -138,7 +138,7 @@ if ( !function_exists('nav_mobile') ) {
                         ?>
                         <?php if ( $cat_tax ): ?>
                             </ul>
-                            <h3 class="mt16 mb16 f-vb"><a href="<?php echo $url; ?>" class="c-link"><?php echo $title; ?></a></h3>
+                            <h3 class="mt16 mb16 f-vb"><a href="<?php echo $url; ?>" class="c-Link"><?php echo $title; ?></a></h3>
                             <ul class="c-list c-list--tabcol2">
 
                                 <?php foreach ($categories as $category):
@@ -146,13 +146,13 @@ if ( !function_exists('nav_mobile') ) {
                                     $url_tax = get_term_link($category->slug, $cat_tax); ?>
 
                                     <li class="c-list__element mt16">
-                                        <a href="<?php echo $url_tax; ?>" class="c-link"><?php echo $title_tax; ?></a>
+                                        <a href="<?php echo $url_tax; ?>" class="c-Link"><?php echo $title_tax; ?></a>
                                     </li>
 
                                 <?php endforeach; ?>
                         <?php else: ?>
                             <li class="c-list__element mb16">
-                                <a href="<?php echo $url; ?>" class="c-link"><?php echo $title; ?></a>
+                                <a href="<?php echo $url; ?>" class="c-Link"><?php echo $title; ?></a>
                             </li>
                         <?php endif; ?>
                     <?php endforeach; ?>
@@ -175,7 +175,7 @@ add_action('odstresowani_header_inside', 'header_sygnet', 10);
 if ( !function_exists('header_sygnet') ){
     function header_sygnet(){ ?>
             <figure class="l-header__logo mbl-col-9 tbl-col-3 pc-col-3">
-                <a href="<?php echo get_home_url(); ?>" class="c-link flex-kit">
+                <a href="<?php echo get_home_url(); ?>" class="c-Link flex-kit">
                     <div class="l-header__sygnets c-flip__container">
                         <?php
                         $sygnet_front = wp_get_attachment_image_src(carbon_get_theme_option('general_sygnet_front'), 'full')[0];
@@ -212,7 +212,7 @@ if ( !function_exists('header_menu') ){
                                 <?php if ( $post_type ): submenu_category($post_type, $url, $title);
                                 elseif ( $item->menu_item_parent == 0 ): ?>
                                     <li class="c-navigation__trigger c-list__element mr16 ml16">
-                                        <a href="<?php echo $url; ?>" class="c-link c-link__circle"><?php echo $title; ?></a>
+                                        <a href="<?php echo $url; ?>" class="c-Link c-Link__circle"><?php echo $title; ?></a>
                                         <?php submenu($items, $item);  ?>
                                     </li>
                                 <?php endif; ?>
@@ -239,7 +239,7 @@ if ( !function_exists('header_extra_menu') ){
                                     $url = $item->url;
                                     $title = $item->title;
                                     ?>
-                                    <li class="mr16 ml16"><a href="<?php echo $url; ?>" class="c-link"><?php echo $title; ?></a></li>
+                                    <li class="mr16 ml16"><a href="<?php echo $url; ?>" class="c-Link"><?php echo $title; ?></a></li>
                                 <?php endforeach; ?>
                             <?php endif; ?>
                         </ul>

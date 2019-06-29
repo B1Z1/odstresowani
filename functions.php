@@ -110,7 +110,9 @@ require get_template_directory() . '/template-parts/modules/Navigations/Horizont
 require get_template_directory() . '/template-parts/modules/Navigations/Social/' . $INDEX;
 require get_template_directory() . '/template-parts/modules/SearchForm/' . $INDEX;
 require get_template_directory() . '/template-parts/modules/Cards/Normal/' . $INDEX;
+require get_template_directory() . '/template-parts/modules/Cards/Normal2/' . $INDEX;
 require get_template_directory() . '/template-parts/modules/Cards/Mini/' . $INDEX;
+require get_template_directory() . '/template-parts/modules/GalleryNormal/' . $INDEX;
 
 /**
  * Components

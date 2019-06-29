@@ -14,7 +14,7 @@ if (!function_exists('post_card_mini')) {
         $title = $args['title'];
         $url = $args['url'];
         ?>
-        <a href="<?php echo $url; ?>" class="c-link">
+        <a href="<?php echo $url; ?>" class="c-Link">
             <div class="c-Card mb32">
                 <div class="c-Card__image c-Card--192 mb32">
                     <?php if ($image) : ?>

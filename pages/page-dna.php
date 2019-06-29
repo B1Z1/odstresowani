@@ -119,7 +119,7 @@ get_header();
                             <h2 class="mt0">Konsultacja z Genodoradcą</h2>
                             <div class="block__content">
                                 <p>
-                                    Wraz z <a href="https://odstresowani.pl/wp-content/uploads/2019/04/Stres_przykładowy_raport.pdf" class="c-link c-link--tdu">badaniem</a> otrzymasz możliwość konsultacji z ekspertem. Podczas 30 minutowej 
+                                    Wraz z <a href="https://odstresowani.pl/wp-content/uploads/2019/04/Stres_przykładowy_raport.pdf" class="c-Link c-Link--tdu">badaniem</a> otrzymasz możliwość konsultacji z ekspertem. Podczas 30 minutowej 
                                     rozmowy telefonicznej nasz specjalista odpowie na Twoje pytania dotyczące otrzymanego Genoraportu:
                                 </p>
                                 <ul class="c-list c-gt mt64">

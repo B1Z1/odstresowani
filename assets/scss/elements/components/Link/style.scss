@@ -4,14 +4,14 @@ Component List Start
 
 _______________*/
 
-.c-link{
+.c-Link{
     color: inherit;
     text-decoration: inherit;
     font-size: inherit;
 }
 
 /* --> : Component Elements : <-- */
-.c-link{
+.c-Link{
     &__share{
         display: flex;
         justify-content: center;
@@ -75,7 +75,7 @@ _______________*/
 }
 
 /* ---> : Component Modificators Start : <--- */
-.c-link{
+.c-Link{
     &--backbefwhite:before{
         background: $white;
     }

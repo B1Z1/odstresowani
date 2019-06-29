@@ -9,7 +9,7 @@ if ( !function_exists('odstresowani_module_social_navigation') ){
                     $icon = wp_get_attachment_image_url($element['footer_social_image'], 'full');
                     ?>
                     <li class="c-list__element mr16 ml16">
-                        <a href="<?php echo $link; ?>" class="c-link c-link--diblock">
+                        <a href="<?php echo $link; ?>" class="c-Link c-Link--diblock">
                             <img src="<?php echo $icon; ?>" alt="Icon" class="c-Image c-Image--24wh">
                         </a>
                     </li>

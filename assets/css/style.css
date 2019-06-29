@@ -1621,109 +1621,6 @@ _______________*/
 
 /*_________________________
 
-Component List Start
-
-_______________*/
-
-.c-link {
-  color: inherit;
-  text-decoration: inherit;
-  font-size: inherit;
-}
-
-/* --> : Component Elements : <-- */
-
-.c-link__share {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 176px;
-  height: 64px;
-  margin-right: 0;
-  margin-left: 0;
-  text-transform: lowercase;
-  border-radius: 12px;
-  border: 2px solid #DFE0DE;
-}
-
-.c-link__share:last-child {
-  margin-top: 16px;
-}
-
-.c-link__circle {
-  position: relative;
-}
-
-.c-link__circle:before {
-  content: '';
-  position: absolute;
-  bottom: -7px;
-  left: calc(50% - 2px);
-  width: 4px;
-  height: 4px;
-  background: #0052c3;
-  border-radius: 50%;
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: .3s all;
-  transition: .3s all;
-  z-index: 99;
-}
-
-.c-link__circle:hover:before {
-  visibility: visible;
-  opacity: 1;
-}
-
-.c-link__category {
-  display: inline-block;
-  padding-top: 8px;
-  padding-right: 24px;
-  padding-bottom: 8px;
-  padding-left: 24px;
-  border: 1px solid white;
-  border-radius: 4px;
-  color: white;
-  -webkit-transition: .3s all;
-  transition: .3s all;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c-link__category:hover {
-  color: #0052c3;
-  background: white;
-}
-
-/* ---> : Component Modificators Start : <--- */
-
-.c-link--backbefwhite:before {
-  background: white;
-}
-
-.c-link--catactive {
-  color: #0052c3;
-  background: white;
-}
-
-.c-link--diblock {
-  display: inline-block;
-}
-
-.c-link--tdu {
-  text-decoration: underline;
-}
-
-/*_________________________
-
 Component Form Start
 
 _______________*/
@@ -1961,6 +1858,109 @@ _______________*/
   background: -webkit-gradient(linear, left top, left bottom, from(#4693ff), to(#0051c3));
   background: linear-gradient(to bottom, #4693ff 0%, #0051c3 100%);
   border-radius: 4px;
+}
+
+/*_________________________
+
+Component List Start
+
+_______________*/
+
+.c-link {
+  color: inherit;
+  text-decoration: inherit;
+  font-size: inherit;
+}
+
+/* --> : Component Elements : <-- */
+
+.c-link__share {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 176px;
+  height: 64px;
+  margin-right: 0;
+  margin-left: 0;
+  text-transform: lowercase;
+  border-radius: 12px;
+  border: 2px solid #DFE0DE;
+}
+
+.c-link__share:last-child {
+  margin-top: 16px;
+}
+
+.c-link__circle {
+  position: relative;
+}
+
+.c-link__circle:before {
+  content: '';
+  position: absolute;
+  bottom: -7px;
+  left: calc(50% - 2px);
+  width: 4px;
+  height: 4px;
+  background: #0052c3;
+  border-radius: 50%;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+  z-index: 99;
+}
+
+.c-link__circle:hover:before {
+  visibility: visible;
+  opacity: 1;
+}
+
+.c-link__category {
+  display: inline-block;
+  padding-top: 8px;
+  padding-right: 24px;
+  padding-bottom: 8px;
+  padding-left: 24px;
+  border: 1px solid white;
+  border-radius: 4px;
+  color: white;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c-link__category:hover {
+  color: #0052c3;
+  background: white;
+}
+
+/* ---> : Component Modificators Start : <--- */
+
+.c-link--backbefwhite:before {
+  background: white;
+}
+
+.c-link--catactive {
+  color: #0052c3;
+  background: white;
+}
+
+.c-link--diblock {
+  display: inline-block;
+}
+
+.c-link--tdu {
+  text-decoration: underline;
 }
 
 /*_______________________
@@ -2464,6 +2464,10 @@ ________*/
     transform: translateY(0) scale(1.5);
   }
 
+  .c-Card--328 {
+    height: 288px;
+  }
+
   .c-link__share {
     margin-right: 16px;
     margin-left: 16px;
@@ -2472,10 +2476,6 @@ ________*/
   .c-link__share:last-child {
     margin-top: 0;
     margin-right: 0;
-  }
-
-  .c-Card--328 {
-    height: 288px;
   }
 
   .p32 {

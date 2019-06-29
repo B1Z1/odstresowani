@@ -1,36 +1,19 @@
 <?php
-/**
- *
- * Hook
- * -> card normal
- *
- */
-add_action('post_card_block', 'post_card_block', 10, 1);
-if ( !function_exists( 'post_card_block' ) ){
-    function post_card_block($args){
-        $wave = wp_get_attachment_url(carbon_get_theme_option('general_post_wave'), 'full');
-        $url = $args['url'];
+
+add_action('odstresowani_module_card_normal2', 'odstresowani_module_card_normal2', 10, 1);
+if (!function_exists('odstresowani_module_card_normal2')) {
+    function odstresowani_module_card_normal2($args)
+    {
         $title = $args['title'];
-        $describe = $args['describe'];
+        $categories = $args['categories'];
         $image = $args['image'];
-        $date = $args['date'];
-        $category = $args['category'];
-
-        if ( $category ){
-            $cat_list = '';
-            foreach ($category as $cat){
-                $cat_list .= $cat->name . ', ';
-            }
-            $cat_list = substr($cat_list, 0, -2);
-        }
-        ?>
-
-        <!-- Post card for posts start -->
+        $description = $args['description'];
+        $link = $args['link']; ?>
 
         <a href="<?php echo $url; ?>" class="c-Link">
             <div class="c-Card">
                 <div class="c-Card__image c-Card--192">
-                    <?php if ( $image ): ?>
+                    <?php if ($image) : ?>
                         <img src="<?php echo $image; ?>" alt="<?php echo $title; ?>" class="c-Image">
                     <?php endif; ?>
                 </div>
@@ -38,9 +21,9 @@ if ( !function_exists( 'post_card_block' ) ){
                     <h3 class="reset f-vb"><?php echo $title; ?></h3>
                 </div>
                 <ul class="c-list flex-kit c-gt mt16">
-                    <?php if ( $cat_list ): ?>
+                    <?php if ($cat_list) : ?>
                         <li class="c-Card__cat pr16 mr16 f-san">
-                            <?php if ( $wave ): ?>
+                            <?php if ($wave) : ?>
                                 <object data="<?php echo $wave; ?>" class="c-Image__wave" type="image/svg+xml"></object>
                             <?php endif; ?>
                             <span class="c-text-size--h6">
@@ -61,10 +44,5 @@ if ( !function_exists( 'post_card_block' ) ){
             </div>
         </a>
 
-        <!--  Post card for posts end  -->
-
     <?php }
 }
-
-
-

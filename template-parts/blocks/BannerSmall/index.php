@@ -18,7 +18,7 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
                 <div class="d-flex fd-rr">
                     <div class="ntb-col-6">
                         <div class="pt128 pb128 c-op">
-                            <h2 class="c-text--right f-vr"><?php echo $enjoy_text; ?> <a class="c-link c-link--tdu" href="<?php echo $link; ?>"><?php echo $blog_text; ?></a></h2>
+                            <h2 class="c-text--right f-vr"><?php echo $enjoy_text; ?> <a class="c-Link c-Link--tdu" href="<?php echo $link; ?>"><?php echo $blog_text; ?></a></h2>
                         </div>
                     </div>
                 </div>

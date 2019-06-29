@@ -13,7 +13,7 @@ if (!function_exists('odstresowani_module_horizontal_navigation')) {
                     $page = get_post(pll_get_post($page->ID,  $currlang));
                     $url = get_permalink($page->ID);
                     $title = $page->post_title; ?>
-                    <li class="mr16 ml16"><a href="<?php echo $url; ?>" class="c-link"><?php echo $title; ?></a></li>
+                    <li class="mr16 ml16"><a href="<?php echo $url; ?>" class="c-Link"><?php echo $title; ?></a></li>
                     <?php wp_reset_postdata();
                 endforeach; ?>
             </ul>

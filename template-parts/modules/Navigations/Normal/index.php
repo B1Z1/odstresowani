@@ -25,7 +25,7 @@ if ( !function_exists('odstresowani_module_navigation') ){
                         ?>
                         <li class="c-list__element mb16">
                             <h3 class="reset f-vr">
-                                <a href="<?php echo $url; ?>" class="c-link">
+                                <a href="<?php echo $url; ?>" class="c-Link">
                                     <?php echo $title; ?>
                                 </a>
                             </h3>
