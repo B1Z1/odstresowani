@@ -22,6 +22,7 @@ $cat = get_queried_object();
     $container = [
         [
             'title' => $cat->name,
+            'description' => $cat->category_description,
             'image' => carbon_get_term_meta($cat->term_id, 'category_image'),
             'buttons' => []
         ]
