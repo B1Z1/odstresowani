@@ -1,5 +1,6 @@
 import { FullPage } from './components/FullPage/index';
 import { GalleryNormal } from './modules/GalleryNormal/index';
+import { Testimonial } from './modules/Testimonial/index';
 
 window.addEventListener('load', ()=>{
     /**
