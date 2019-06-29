@@ -29,7 +29,8 @@ if ( !function_exists('crb_register_theme_options') ){
                 )),
             Field::make( 'complex', 'footer_blocks', __( 'Bloki stopki' ) )
                 ->add_fields( array(
-                    Field::make( 'complex', 'footer_block', __( 'Strony bloku' ) )
+                    Field::make( 'text', 'footer_title', __( 'Tytuł' ) ),
+                    Field::make( 'complex', 'footer_block', __( 'Bloki' ) )
                         ->add_fields( array(
                             Field::make( 'select', 'footer_block_page', __( 'Wybierz strone' ) )
                                 ->set_options( $page_ids )

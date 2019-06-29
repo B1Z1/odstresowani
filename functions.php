@@ -54,6 +54,7 @@ require get_template_directory() . '/includes/functions-nav-menu.php';
  */
 require get_template_directory() . '/includes/taxonomies/taxonomy-knowledge.php';
 require get_template_directory() . '/includes/taxonomies/taxonomy-news.php';
+
 /**
  * Enqueue scripts and styles.
  */
@@ -92,17 +93,23 @@ require get_template_directory() . '/includes/blocks/BannerSmall/' . $INDEX;
  *
  */
 require get_template_directory() . '/includes/hooks/functions-header.php';
+
 /**
- *
- * Require Footer Hooks
- *
- */
-require get_template_directory() . '/includes/hooks/functions-footer.php';
-/**
- * Require Posts Hooks
+ * Require Cards Hooks
  */
 require get_template_directory() . '/includes/hooks/Cards/card-mini.php';
 require get_template_directory() . '/includes/hooks/Cards/card-normal.php';
+
+/**
+ * Layouts
+ */
+require get_template_directory() . '/template-parts/layouts/Wrapper/' . $INDEX;
+require get_template_directory() . '/template-parts/layouts/Container/' . $INDEX;
+
+/**
+ * Modules
+ */
+require get_template_directory() . '/template-parts/modules/Hero/' . $INDEX;
 
 /**
  * Components
@@ -110,21 +117,14 @@ require get_template_directory() . '/includes/hooks/Cards/card-normal.php';
 require get_template_directory() . '/template-parts/components/GreyTitle/' . $INDEX;
 require get_template_directory() . '/template-parts/components/Buttons/Normal/' . $INDEX;
  
-/**
- * Modules
- */
-require get_template_directory() . '/template-parts/modules/Hero/' . $INDEX;
 
 /**
- *
  * Require Translations
- *
  */
 require get_template_directory() . '/includes/functions-translates.php';
+
 /**
- *
  * Require ShortCodes
- *
  */
 require get_template_directory() . '/includes/functions-shortcodes.php';
 
