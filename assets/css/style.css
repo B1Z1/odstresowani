@@ -306,6 +306,7 @@ ________*/
 ________*/
 
 .block--full {
+  position: relative;
   min-height: calc(100vh - 32px);
 }
 
