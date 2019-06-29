@@ -10,37 +10,28 @@ if (!function_exists('odstresowani_module_card_normal2')) {
         $description = $args['description'];
         $link = $args['link']; ?>
 
-        <a href="<?php echo $url; ?>" class="c-Link">
-            <div class="c-Card">
-                <div class="c-Card__image c-Card--192">
-                    <?php if ($image) : ?>
-                        <img src="<?php echo $image; ?>" alt="<?php echo $title; ?>" class="c-Image">
+        <a href="<?php echo $link; ?>" class="c-Link d-ib mb32">
+            <div class="c-Card c-Card__normal2">
+                <div class="c-Card__content">
+                    <?php if ( $image ): ?>
+                        <div class="c-Card__image">
+                            <img src="<?php echo $image; ?>" alt="<?php echo $title ?>" class="c-Image">
+                        </div>
                     <?php endif; ?>
-                </div>
-                <div class="c-Card__title mt16">
-                    <h3 class="reset f-vb"><?php echo $title; ?></h3>
-                </div>
-                <ul class="c-list flex-kit c-gt mt16">
-                    <?php if ($cat_list) : ?>
-                        <li class="c-Card__cat pr16 mr16 f-san">
-                            <?php if ($wave) : ?>
-                                <object data="<?php echo $wave; ?>" class="c-Image__wave" type="image/svg+xml"></object>
-                            <?php endif; ?>
-                            <span class="c-text-size--h6">
-                                <?php echo $cat_list; ?>
+                    <?php if ( $categories ): ?>
+                        <div class="c-Card__categories f-vr c-gm">
+                            <span><?php echo $categories; ?></span>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ( $description ): ?>
+                        <div class="c-Card__description">
+                            <span class="f-vr c-wh c-text-size--normal">
+                                <?php echo $description; ?>
                             </span>
-                        </li>
+                        </div>
                     <?php endif; ?>
-                    <li class="c-Card__date">
-                        <span class="c-text-size--h6">
-                            <i class="mr8 far fa-calendar-alt"></i>
-                            <?php echo $date; ?>
-                        </span>
-                    </li>
-                </ul>
-                <div class="c-Card__describe mt32">
-                    <span class="c-text-size--h4 f-vr"><?php echo $describe; ?></span>
                 </div>
+                <h3 class="c-Card__title reset-bottom f-vb mt16"><?php echo $title; ?></h3>
             </div>
         </a>
 

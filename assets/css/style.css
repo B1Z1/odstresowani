@@ -1822,6 +1822,79 @@ _______________*/
   height: 192px;
 }
 
+.c-Card__normal2:hover .c-Card__image:after,
+.c-Card__normal2:hover .c-Card__image:before {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.c-Card__normal2:hover .c-Card__description {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.c-Card__normal2 .c-Card__content {
+  position: relative;
+  overflow: hidden;
+}
+
+.c-Card__normal2 .c-Card__image {
+  height: 224px;
+}
+
+.c-Card__normal2 .c-Card__image:before,
+.c-Card__normal2 .c-Card__image:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0052c3;
+  -webkit-transition: -webkit-transform .6s ease-in-out;
+  transition: -webkit-transform .6s ease-in-out;
+  transition: transform .6s ease-in-out;
+  transition: transform .6s ease-in-out, -webkit-transform .6s ease-in-out;
+}
+
+.c-Card__normal2 .c-Card__image:before {
+  opacity: .32;
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+}
+
+.c-Card__normal2 .c-Card__image:after {
+  opacity: .64;
+  -webkit-transform: translateY(130%);
+  transform: translateY(130%);
+}
+
+.c-Card__normal2 .c-Card__categories {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+}
+
+.c-Card__normal2 .c-Card__description {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 312px;
+  opacity: 0;
+  -webkit-transform: translateY(10px);
+  transform: translateY(10px);
+  -webkit-transition: opacity .6s ease-in-out, -webkit-transform .6s ease-in-out;
+  transition: opacity .6s ease-in-out, -webkit-transform .6s ease-in-out;
+  transition: opacity .6s ease-in-out, transform .6s ease-in-out;
+  transition: opacity .6s ease-in-out, transform .6s ease-in-out, -webkit-transform .6s ease-in-out;
+}
+
+.c-Card__normal2 .c-Card__description p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .c-Button {
   color: inherit;
   background: inherit;
@@ -1866,7 +1939,7 @@ Component List Start
 
 _______________*/
 
-.c-link {
+.c-Link {
   color: inherit;
   text-decoration: inherit;
   font-size: inherit;
@@ -1874,7 +1947,7 @@ _______________*/
 
 /* --> : Component Elements : <-- */
 
-.c-link__share {
+.c-Link__share {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1893,15 +1966,15 @@ _______________*/
   border: 2px solid #DFE0DE;
 }
 
-.c-link__share:last-child {
+.c-Link__share:last-child {
   margin-top: 16px;
 }
 
-.c-link__circle {
+.c-Link__circle {
   position: relative;
 }
 
-.c-link__circle:before {
+.c-Link__circle:before {
   content: '';
   position: absolute;
   bottom: -7px;
@@ -1917,12 +1990,12 @@ _______________*/
   z-index: 99;
 }
 
-.c-link__circle:hover:before {
+.c-Link__circle:hover:before {
   visibility: visible;
   opacity: 1;
 }
 
-.c-link__category {
+.c-Link__category {
   display: inline-block;
   padding-top: 8px;
   padding-right: 24px;
@@ -1939,27 +2012,27 @@ _______________*/
   user-select: none;
 }
 
-.c-link__category:hover {
+.c-Link__category:hover {
   color: #0052c3;
   background: white;
 }
 
 /* ---> : Component Modificators Start : <--- */
 
-.c-link--backbefwhite:before {
+.c-Link--backbefwhite:before {
   background: white;
 }
 
-.c-link--catactive {
+.c-Link--catactive {
   color: #0052c3;
   background: white;
 }
 
-.c-link--diblock {
+.c-Link--diblock {
   display: inline-block;
 }
 
-.c-link--tdu {
+.c-Link--tdu {
   text-decoration: underline;
 }
 
@@ -2468,12 +2541,12 @@ ________*/
     height: 288px;
   }
 
-  .c-link__share {
+  .c-Link__share {
     margin-right: 16px;
     margin-left: 16px;
   }
 
-  .c-link__share:last-child {
+  .c-Link__share:last-child {
     margin-top: 0;
     margin-right: 0;
   }

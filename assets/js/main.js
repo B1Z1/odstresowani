@@ -1,4 +1,5 @@
 import { FullPage } from './components/FullPage/index';
+import { GalleryNormal } from './modules/GalleryNormal/index';
 
 window.addEventListener('load', ()=>{
     /**
@@ -190,5 +191,7 @@ window.addEventListener('load', ()=>{
     let fullPage = new FullPage('[data-fullpage]', {
         buttons: '[data-fullpage-to]'
     });
+
+    GalleryNormal();
 });
 

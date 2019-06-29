@@ -1,0 +1,54 @@
+.c-Card__normal2{
+    &:hover .c-Card__image:after, &:hover .c-Card__image:before{
+        transform: translateY(0);
+    }
+    &:hover .c-Card__description{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .c-Card{
+        &__content{
+            position: relative;
+            overflow: hidden;
+        }
+        &__image{
+            height: 224px;
+            &:before, &:after{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: $operative;
+                transition: transform .6s ease-in-out;
+            }
+            &:before{
+                opacity: .32;
+                transform: translateY(100%);
+            }
+            &:after{
+                opacity: .64;
+                transform: translateY(130%);
+            }
+        }
+        &__categories{
+            position: absolute;
+            bottom: 8px;
+            left: 8px;
+        }
+        &__description{
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            width: 312px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity .6s ease-in-out, transform .6s ease-in-out;
+            p{
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+    }
+}

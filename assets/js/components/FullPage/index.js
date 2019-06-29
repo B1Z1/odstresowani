@@ -1,6 +1,6 @@
 export class FullPage{
     constructor(attr, object){
-        //---------Global variables
+        //Global variables
         this.global = {
             behavior: 'smooth',
             timeout: 300,
@@ -11,21 +11,19 @@ export class FullPage{
             mouseEvent: (/Firefox/i.test(navigator.userAgent))? "DOMMouseScroll" : "mousewheel"
         }
         this.scrollBlock = false;
-        //-------------------------------
         
-        //---------Variable with children and parent container
+        //Variable with children and parent container
         this.buttons = [... document.querySelectorAll(object.buttons)];
-        //-------------------------------
 
-        //---------Variable with children and parent container
+        //Variable with children and parent container
         this.fullpage = {
             container: document.querySelector(attr),
             current: 0
         };
-        this.fullpage.children = this.fullpage.container.children;
-        //-------------------------------
-
-        this.init();
+        if ( this.fullpage.container ){
+            this.fullpage.children = this.fullpage.container.children;
+            this.init();
+        }
     }
 
     init(){
