@@ -95,12 +95,6 @@ require get_template_directory() . '/includes/blocks/BannerSmall/' . $INDEX;
 require get_template_directory() . '/includes/hooks/functions-header.php';
 
 /**
- * Require Cards Hooks
- */
-require get_template_directory() . '/includes/hooks/Cards/card-mini.php';
-require get_template_directory() . '/includes/hooks/Cards/card-normal.php';
-
-/**
  * Layouts
  */
 require get_template_directory() . '/template-parts/layouts/Wrapper/' . $INDEX;
@@ -115,6 +109,8 @@ require get_template_directory() . '/template-parts/modules/Navigations/Normal/'
 require get_template_directory() . '/template-parts/modules/Navigations/Horizontal/' . $INDEX;
 require get_template_directory() . '/template-parts/modules/Navigations/Social/' . $INDEX;
 require get_template_directory() . '/template-parts/modules/SearchForm/' . $INDEX;
+require get_template_directory() . '/template-parts/modules/Cards/Normal/' . $INDEX;
+require get_template_directory() . '/template-parts/modules/Cards/Mini/' . $INDEX;
 
 /**
  * Components
