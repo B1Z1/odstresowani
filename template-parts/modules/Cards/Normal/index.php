@@ -16,7 +16,7 @@ if ( !function_exists( 'post_card_block' ) ){
         $date = $args['date'];
         $category = $args['category'];
 
-        if ( $category->name ){
+        if ( $category ){
             $cat_list = '';
             foreach ($category as $cat){
                 $cat_list .= $cat->name . ', ';
