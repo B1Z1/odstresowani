@@ -56,6 +56,6 @@ get_footer();
 //         [textarea* massage class:c-textarea class:c-textarea__classic placeholder "Wiadomość*"]
 //     </li>
 //     <li class="c-list__element mb32">
-//         [submit class:c-button class:c-button__operative class:c-button--full class:f-vb class:pt32 class:pb32 class:d-ib "Wyślij wiadomość"]             
+//         [submit class:c-Button class:c-Button__operative class:c-Button--full class:f-vb class:pt32 class:pb32 class:d-ib "Wyślij wiadomość"]             
 //     </li>
 // </ul>

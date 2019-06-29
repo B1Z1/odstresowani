@@ -40,7 +40,7 @@ get_header();
                                     do osiągnięcia spokoju. 
                                 </p>
                                 <div class="d-flex aic mt32">
-                                    <button data-fullpage-to="6" class="c-button c-button__buy c-button--br4 bck-gradient--blue">
+                                    <button data-fullpage-to="6" class="c-Button c-Button__normal">
                                         <span class="c-wh d-ib c-text-size--h4">
                                             Zamów badanie
                                         </span>

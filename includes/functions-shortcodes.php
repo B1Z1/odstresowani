@@ -13,7 +13,7 @@ function buy_button( $atts ){
 	), $atts );
     return "<div class='block d-flex aic mt16 mb16'>
                 <span class='c-wh d-ib'>
-                    <a href='{$a['link']}' class='c-link c-button__buy c-button--br4 bck-gradient--blue'>{$a['text']}</a>
+                    <a href='{$a['link']}' class='c-link c-Button__normal'>{$a['text']}</a>
                 </span>
                 <h2 class='reset-top reset-bottom d-ib pl32 f-vb'>{$a['price']} zł</h2>
             </div>";
@@ -31,7 +31,7 @@ function buttons( $atts ){
     ), $atts);
     return "<div class='c-text--center mt64 mb64'>
                 <span class='mr16 c-wh f-vb d-ib'>
-                    <a href='{$a['button-link']}' class='c-link c-button__operative c-button--br4'>{$words['contact_wu']}</a>
+                    <a href='{$a['button-link']}' class='c-link c-Button__operative c-Button--br4'>{$words['contact_wu']}</a>
                 </span>
                 albo
                 <span class='ml16 c-op f-vb c-text--ttu'>

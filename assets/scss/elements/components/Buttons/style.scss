@@ -1,1 +1,12 @@
+.c-Button{
+    @include input-reset();
+    cursor: pointer;
+    &--br4{
+        border-radius: 4px;
+    }
+    &--full{
+        width: 100%;
+    }
+}
+@import './operative';
 @import './normal';
