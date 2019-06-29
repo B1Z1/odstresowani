@@ -321,60 +321,6 @@ ________*/
   overflow: hidden;
 }
 
-.searchform {
-  text-align: right;
-}
-
-.searchform__button,
-.searchform__input {
-  border: none;
-  outline: none;
-  color: white;
-  background: transparent;
-}
-
-.searchform__input {
-  padding-top: 8px;
-  padding-right: 16px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  -webkit-transition: .3s all;
-  transition: .3s all;
-  font-family: value-regular;
-  font-size: .9rem;
-}
-
-.searchform__input:hover {
-  color: black;
-  background: white;
-}
-
-.searchform__input::-webkit-input-placeholder {
-  color: white;
-}
-
-.searchform__input::-moz-placeholder {
-  color: white;
-}
-
-.searchform__input:-ms-input-placeholder {
-  color: white;
-}
-
-.searchform__input::-ms-input-placeholder {
-  color: white;
-}
-
-.searchform__input::placeholder {
-  color: white;
-}
-
-.searchform__button {
-  padding: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
 /*_______________________
     Global Elements Start
 ________*/
@@ -1114,6 +1060,60 @@ _______________*/
   opacity: 1 !important;
   -webkit-transform: scale(2);
   transform: scale(2);
+}
+
+.m-SearchForm {
+  text-align: right;
+}
+
+.m-SearchForm__button,
+.m-SearchForm__input {
+  border: none;
+  outline: none;
+  color: white;
+  background: transparent;
+}
+
+.m-SearchForm__input {
+  padding-top: 8px;
+  padding-right: 16px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+  font-family: value-regular;
+  font-size: .9rem;
+}
+
+.m-SearchForm__input:hover {
+  color: black;
+  background: white;
+}
+
+.m-SearchForm__input::-webkit-input-placeholder {
+  color: white;
+}
+
+.m-SearchForm__input::-moz-placeholder {
+  color: white;
+}
+
+.m-SearchForm__input:-ms-input-placeholder {
+  color: white;
+}
+
+.m-SearchForm__input::-ms-input-placeholder {
+  color: white;
+}
+
+.m-SearchForm__input::placeholder {
+  color: white;
+}
+
+.m-SearchForm__button {
+  padding: 8px;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
 /*_______________________

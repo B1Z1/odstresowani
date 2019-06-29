@@ -47,7 +47,6 @@ ________*/
 ________*/
 
 @import "modules/_block/block"; 
-@import "modules/_search/search";
 
 /*_______________________
     Global Elements Start
@@ -90,6 +89,7 @@ ________*/
 @import "./elements/modules/Banner/style.scss";
 @import "./elements/modules/BannerSmall/style.scss";
 @import "./elements/modules/TabGallery/style.scss";
+@import "./elements/modules/SearchForm/style.scss";
 
 
 /*_______________________
