@@ -114,6 +114,7 @@ require get_template_directory() . '/template-parts/modules/GreyTitle/' . $INDEX
 require get_template_directory() . '/template-parts/modules/Navigations/Normal/' . $INDEX;
 require get_template_directory() . '/template-parts/modules/Navigations/Horizontal/' . $INDEX;
 require get_template_directory() . '/template-parts/modules/Navigations/Social/' . $INDEX;
+require get_template_directory() . '/template-parts/modules/SearchForm/' . $INDEX;
 
 /**
  * Components
