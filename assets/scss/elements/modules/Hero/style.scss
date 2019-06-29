@@ -16,6 +16,30 @@ ______*/
         position: relative;
         background-size: cover;
         background-position: center;
+        color: $black;
+        transition: color .4s ease-in-out;
+        &:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $white;
+            opacity: 1;
+            transition: background-color, opacity;
+            transition-duration: .6s;
+            transition-timing-function: ease-in-out;
+        }
+        @media only screen and ( min-width: $bpoint-ntb ){
+            &:hover{
+                color: $white;
+            }
+            &:hover:before{
+                background-color: $operative;
+                opacity: .72;
+            }
+        }
     }
     &__content{
         position: relative;

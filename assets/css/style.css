@@ -796,6 +796,26 @@ ______*/
   position: relative;
   background-size: cover;
   background-position: center;
+  color: black;
+  -webkit-transition: color .4s ease-in-out;
+  transition: color .4s ease-in-out;
+}
+
+.m-Hero__side:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  opacity: 1;
+  -webkit-transition: background-color, opacity;
+  transition: background-color, opacity;
+  -webkit-transition-duration: .6s;
+  transition-duration: .6s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
 .m-Hero__content {
@@ -3035,6 +3055,15 @@ ________*/
 
   .l-dna__content {
     margin-left: 64px;
+  }
+
+  .m-Hero__side:hover {
+    color: white;
+  }
+
+  .m-Hero__side:hover:before {
+    background-color: #0052c3;
+    opacity: .72;
   }
 
   .m-Hero__content {

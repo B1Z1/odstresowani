@@ -18,7 +18,6 @@ if ( !function_exists('odstresowani_hero_banner') ){
                     $columnClass = 'ntb-col-6';
                 ?>
                 <div class="m-Hero__side <?php echo $columnClass; ?> d-flex fd-col aic jcc" style="background-image: url(<?php echo $image; ?>);">
-                    <div class="filter-back bck-gradient--operative"></div>
                     <div class="m-Hero__content">
                         <?php if ($title) : ?>
                             <h2 class="m-Hero__title mb16 f-vr"><?php echo $title; ?></h2>
@@ -29,7 +28,7 @@ if ( !function_exists('odstresowani_hero_banner') ){
                         <?php endif; ?>
 
                         <?php if (count($buttons) > 0) : ?>
-                            <ul class="m-Hero__buttons c-list d-flex jcc aic fwrap">
+                            <ul class="m-Hero__buttons c-list c-wh d-flex jcc aic fwrap">
                                 <?php foreach ($buttons as $button) :
                                     $link = $button['link'];
                                     $text = $button['text'];
