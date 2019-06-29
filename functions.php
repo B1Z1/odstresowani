@@ -111,6 +111,11 @@ require get_template_directory() . '/template-parts/components/GreyTitle/' . $IN
 require get_template_directory() . '/template-parts/components/Buttons/Normal/' . $INDEX;
  
 /**
+ * Modules
+ */
+require get_template_directory() . '/template-parts/modules/Hero/' . $INDEX;
+
+/**
  *
  * Require Translations
  *
@@ -123,6 +128,3 @@ require get_template_directory() . '/includes/functions-translates.php';
  */
 require get_template_directory() . '/includes/functions-shortcodes.php';
 
-/**
- * Modules
- */
