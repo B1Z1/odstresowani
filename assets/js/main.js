@@ -319,9 +319,7 @@ window.addEventListener('load', ()=>{
     }());
 
     /**
-     * 
      * Initialize slider Recent posts
-     * 
      */
     setTimeout(()=>{
         let recentSlider = new Mslider.init({
@@ -340,38 +338,28 @@ window.addEventListener('load', ()=>{
                 extra: 'ml16 mr16',
             }
         });
-    }, 500);
+    }, 600);
 
     /**
-     * 
      * Initialize button press for mobile menu
-     * 
      */
     new Mheader.mobileList();
 
     /**
-     * 
      * Initialize Relax function
-     * 
      */
     new MExtentions.infinityScroll({
         container: '.infinity-scroll',
     });
 
     /**
-     * 
      * Initialize header on scroll function
-     * 
      */
     new Mheader.header_scroll();
 
-    /**
-     * 
-     * @constructor
-     */
+
     let fullPage = new FullPage('[data-fullpage]', {
         buttons: '[data-fullpage-to]'
     });
-
 });
 

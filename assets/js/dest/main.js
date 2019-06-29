@@ -327,7 +327,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
             extra: "ml16 mr16"
           }
         });
-      }, 500), new t.mobileList(), new i.infinityScroll({
+      }, 600), new t.mobileList(), new i.infinityScroll({
         container: ".infinity-scroll"
       }), new t.header_scroll();
       new n("[data-fullpage]", {
