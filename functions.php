@@ -110,11 +110,11 @@ require get_template_directory() . '/template-parts/layouts/Container/' . $INDEX
  * Modules
  */
 require get_template_directory() . '/template-parts/modules/Hero/' . $INDEX;
+require get_template_directory() . '/template-parts/modules/GreyTitle/' . $INDEX;
 
 /**
  * Components
  */
-require get_template_directory() . '/template-parts/components/GreyTitle/' . $INDEX;
 require get_template_directory() . '/template-parts/components/Buttons/Normal/' . $INDEX;
  
 

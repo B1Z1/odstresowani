@@ -35,7 +35,7 @@ $sygnet = wp_get_attachment_image_src(carbon_get_post_meta(get_the_ID(), 'page_s
                     /**
                      * Yoast Breadcrumbs Module 
                      */
-                    get_template_part('template-parts/components/Breadcrumbs/index');
+                    get_template_part('template-parts/modules/Breadcrumbs/index');
                     ?>
                 </div>
 
