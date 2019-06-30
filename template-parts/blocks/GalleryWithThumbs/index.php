@@ -1,11 +1,11 @@
 <?php 
 $gallery = $block['gallery'];
-$gapsClasses = GeneralOptions::getAllGapsFromArray($block); ?>
+$gapClasses = GeneralOptions::getAllGapsFromArray($block); ?>
 ?>
 
 </div>
 
-<div class="m-GalleryWithThumbs <?php echo $gapsClasses; ?>">
+<div class="m-GalleryWithThumbs <?php echo $gapClasses; ?>">
     
     <!-- : Upper Swiper Start : -->
     <div class="m-GalleryWithThumbs__top">

@@ -10,10 +10,10 @@ $args_q = array(
     'lang' => $currlang,
 );
 $posts = new WP_Query($args_q);
-$gapsClasses = GeneralOptions::getAllGapsFromArray($block);
+$gapClasses = GeneralOptions::getAllGapsFromArray($block);
 ?>
 
-<section class="m-AllPosts header__triger <?php echo $gapsClasses; ?>">
+<section class="m-AllPosts header__triger <?php echo $gapClasses; ?>">
     <div class="d-flex fwrap row infinity-scroll">
         <?php if ($posts->have_posts()) {
             while ($posts->have_posts()) {

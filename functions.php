@@ -86,6 +86,7 @@ require get_template_directory() . '/includes/blocks/GalleryWithThumbs/' . $INDE
 require get_template_directory() . '/includes/blocks/Banner/' . $INDEX;
 require get_template_directory() . '/includes/blocks/BannerSmall/' . $INDEX;
 require get_template_directory() . '/includes/blocks/GalleryNormal/' . $INDEX;
+require get_template_directory() . '/includes/blocks/Testimonial/' . $INDEX;
 
 /**
  *
@@ -113,6 +114,7 @@ require get_template_directory() . '/template-parts/modules/Cards/Normal/' . $IN
 require get_template_directory() . '/template-parts/modules/Cards/Normal2/' . $INDEX;
 require get_template_directory() . '/template-parts/modules/Cards/Mini/' . $INDEX;
 require get_template_directory() . '/template-parts/modules/GalleryNormal/' . $INDEX;
+require get_template_directory() . '/template-parts/modules/Testimonial/' . $INDEX;
 
 /**
  * Components

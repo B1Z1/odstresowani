@@ -4,11 +4,11 @@ $size = $block['size'] ? $block['size'] : 'full';
 $image = wp_get_attachment_image_src($block['image'], 'full')[0];
 $icon = wp_get_attachment_image_src(carbon_get_theme_option('general_sygnet_mini'), 'full')[0];
 $type = $block['type'];
-$gapsClasses = GeneralOptions::getAllGapsFromArray($block);
+$gapClasses = GeneralOptions::getAllGapsFromArray($block);
 ?>
 <?php if ($image) : ?>
     </div>
-    <section class="m-Banner <?php echo $gapsClasses; ?>">
+    <section class="m-Banner <?php echo $gapClasses; ?>">
         <div class="m-Banner__image m-Banner--<?php echo $size ?>">
             <img src="<?php echo $image; ?>" class="c-Image <?php if ($type) {
                                                                 echo 'c-Image--contain';

@@ -2,11 +2,11 @@
 add_action('odstresowani_hero_banner', 'odstresowani_hero_banner', 10, 1);
 if ( !function_exists('odstresowani_hero_banner') ){
     function odstresowani_hero_banner($args){ 
-        $gapsClasses = $args['gapsClasses'];
+        $gapClasses = $args['gapClasses'];
         $container = $args['container'];
         ?>
         <!-- Hero banner start -->
-        <section class="m-Hero c-text--center d-flex fwrap c-wh <?php echo $gapsClasses; ?>">
+        <section class="m-Hero c-text--center d-flex fwrap c-wh <?php echo $gapClasses; ?>">
             <?php foreach ($container as $element) :
                 $title = $element['title'];
                 $describe = $element['describe'];

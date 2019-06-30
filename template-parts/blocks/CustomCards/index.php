@@ -1,11 +1,11 @@
 <?php
 $container = $block['container'];
-$gapsClasses = GeneralOptions::getAllGapsFromArray($block);
+$gapClasses = GeneralOptions::getAllGapsFromArray($block);
 ?>
 
 </div>
 
-<div class="l-Container header__triger <?php echo $gapsClasses; ?>">
+<div class="l-Container header__triger <?php echo $gapClasses; ?>">
     <div class="m-CustomCards">
         <div class="row d-flex jcc fwrap">
             <?php if (count($container) > 0) : ?>

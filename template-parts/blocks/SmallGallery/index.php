@@ -2,9 +2,9 @@
 $imageClasses = 'c-Image c-Image--contain';
 
 $container = $block['container'];
-$gapsClasses = GeneralOptions::getAllGapsFromArray($block); ?>
+$gapClasses = GeneralOptions::getAllGapsFromArray($block); ?>
 
-<div class="b-SmallGallery d-flex jcc fwrap <?php echo $gapsClasses; ?>">
+<div class="b-SmallGallery d-flex jcc fwrap <?php echo $gapClasses; ?>">
     <?php foreach ($container as $element) :
         $image = wp_get_attachment_image($element['image'], 'full', false, array('class' => $imageClasses));
         $link = $element['link'];

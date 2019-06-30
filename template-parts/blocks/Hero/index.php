@@ -1,6 +1,6 @@
 <?php
 $container = $block['container'];
-$gapsClasses = GeneralOptions::getAllGapsFromArray($block);
+$gapClasses = GeneralOptions::getAllGapsFromArray($block);
 ?>
 </div>
 
@@ -9,7 +9,7 @@ $gapsClasses = GeneralOptions::getAllGapsFromArray($block);
      * Hero Banner Module
      */
     do_action('odstresowani_hero_banner', array(
-        'gapsClasses' => $gapsClasses,
+        'gapClasses' => $gapClasses,
         'container' => $container
     ));
 ?>

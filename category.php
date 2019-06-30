@@ -30,7 +30,7 @@ $cat = get_queried_object();
      * Hero Banner Module
      */
     do_action('odstresowani_hero_banner', array(
-        'gapsClasses' => '',
+        'gapClasses' => '',
         'container' => $container
     ));
     ?>

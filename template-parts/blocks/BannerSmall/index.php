@@ -3,12 +3,12 @@ $image = wp_get_attachment_image_src($block['image'], 'full')[0];
 $link = $block['link'];
 $enjoy_text = pll__('Zapraszamy na naszego');
 $blog_text = pll__('bloga');
-$gapsClasses = GeneralOptions::getAllGapsFromArray($block);
+$gapClasses = GeneralOptions::getAllGapsFromArray($block);
 ?>
 
 </div>
 
-<section class="m-Welcome <?php echo $gapsClasses; ?>">
+<section class="m-Welcome <?php echo $gapClasses; ?>">
     <div class="bck-gm">
         <div class="m-Welcome__phone ntb-col-6">
             <img src="<?php echo $image ?>" class="m-Welcome__image c-Image" alt="Odstresowani Welcom Blog">
