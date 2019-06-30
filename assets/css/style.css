@@ -1030,6 +1030,33 @@ _______________*/
   font-family: value-regular, sans-serif;
 }
 
+.m-BannerSmall__content a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.m-BannerSmall__content a:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: #0052c3;
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  transition: -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+}
+
+.m-BannerSmall__content a:hover:after {
+  -webkit-animation: slide-to-right 2s ease-in-out infinite;
+  animation: slide-to-right 2s ease-in-out infinite;
+}
+
 .m-BannerSmall__image {
   -webkit-transform: translateY(55%) scale(1.5);
   transform: translateY(55%) scale(1.5);
@@ -1038,6 +1065,30 @@ _______________*/
 }
 
 /* ---> : Layout Modificators Start : <--- */
+
+@-webkit-keyframes slide-to-right {
+  from {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  to {
+    -webkit-transform: translateX(210%);
+    transform: translateX(210%);
+  }
+}
+
+@keyframes slide-to-right {
+  from {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  to {
+    -webkit-transform: translateX(210%);
+    transform: translateX(210%);
+  }
+}
 
 @-webkit-keyframes fendoff-mobile {
   0% {

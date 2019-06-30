@@ -21,6 +21,26 @@
         *{
             font-family: value-regular, sans-serif;
         }
+        a{
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            overflow: hidden;
+            vertical-align: middle;
+            &:after{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: -100%;
+                width: 100%;
+                height: 2px;
+                background: $operative;
+                transition: transform 1s ease-in-out; 
+            }
+            &:hover:after{
+                animation: slide-to-right 2s ease-in-out infinite;
+            }
+        }
     }
     &__image{
         transform: translateY(55%) scale(1.5);
@@ -35,6 +55,15 @@
 /* ---> : Layout Modificators Start : <--- */
 .m-BannerSmall{
 
+}
+
+@keyframes slide-to-right{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(210%);
+    }
 }
 
 @keyframes fendoff-mobile{
