@@ -10,24 +10,28 @@ let gulp                = require('gulp'),
 
 function style(){
     return gulp.src('./assets/scss/style.scss')
-            .pipe(wait(600))
+            .pipe(wait(300))
             .pipe(sass().on('error', sass.logError))
             .pipe(autoprefixer({
                 overrideBrowserslist: ['last 2 versions'],
                 cascade: false
             }))
             .pipe(gcmq())
-            .pipe(gulp.dest('./assets/css'))
-            .pipe(gulp.src('./assets/css/style.css'))
-            .pipe(rename('style.min.css'))
-            .pipe(clean({compatibility: 'ie8'}))
             .pipe(gulp.dest('./assets/css'));
+}
+
+function minifyStyle(){
+    return gulp.src('./assets/css/style.css')
+        .pipe(wait(300))
+        .pipe(rename('style.min.css'))
+        .pipe(clean({compatibility: 'ie8'}))
+        .pipe(gulp.dest('./assets/css'));
 }
 
 function scripts(){
     return gulp.src('./assets/js/*.js')
                 .pipe(webpack({
-                    mode: 'production',
+                    mode: 'development',
                     entry: {
                         main: './assets/js/main.js',
                         brain: './assets/js/brain.js'
@@ -45,13 +49,20 @@ function scripts(){
                 .pipe(gulp.dest('assets/js/dest'))
 }
 
-function init(){
-    style();
+function build(){
+    gulp.series(style, minifyStyle);
     scripts();
 
     gulp.watch('./assets/js/*.js').on('change', scripts);
-    gulp.watch('./assets/js/components/*.js').on('change', scripts);
+    gulp.watch('./assets/js/modules/**/*.js').on('change', scripts);
+    gulp.watch('./assets/js/components/**/*.js').on('change', scripts);
     gulp.watch('./assets/scss/**/*.{scss,sass}').on('change', style);
 }
 
-exports.default = init;
+function prod(){
+    gulp.series(style, minifyStyle);
+    scripts();
+}
+
+exports.prod = prod;
+exports.build = build;
