@@ -1980,18 +1980,6 @@ _______________*/
   height: 192px;
 }
 
-.c-Card__normal2:hover .c-Card__image:after,
-.c-Card__normal2:hover .c-Card__image:before {
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-}
-
-.c-Card__normal2:hover .c-Card__description {
-  opacity: 1;
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-}
-
 .c-Card__normal2 .c-Card__content {
   position: relative;
   overflow: hidden;
@@ -2697,6 +2685,18 @@ ________*/
 
   .c-Card--328 {
     height: 288px;
+  }
+
+  .c-Card__normal2:hover .c-Card__image:after,
+  .c-Card__normal2:hover .c-Card__image:before {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  .c-Card__normal2:hover .c-Card__description {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
   }
 
   .c-Link__share {

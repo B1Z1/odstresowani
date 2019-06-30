@@ -1,10 +1,12 @@
 .c-Card__normal2{
-    &:hover .c-Card__image:after, &:hover .c-Card__image:before{
-        transform: translateY(0);
-    }
-    &:hover .c-Card__description{
-        opacity: 1;
-        transform: translateY(0);
+    @media only screen and ( min-width: $bpoint-tab ){
+        &:hover .c-Card__image:after, &:hover .c-Card__image:before{
+            transform: translateY(0);
+        }
+        &:hover .c-Card__description{
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
     .c-Card{
         &__content{
