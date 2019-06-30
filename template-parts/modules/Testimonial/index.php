@@ -37,6 +37,14 @@ if ( !function_exists('odstresowani_module_testiomonial') ){
             <p class="m-Testimonial__description c-text--center" data-testimonial-description>
                 <?php echo $description; ?>
             </p>
+            <div class="m-Testimonial__button">
+                <?php 
+                /**
+                 * Button Component
+                 */
+                do_action('odstresowani_button_normal', 'a', $link, $link_text)
+                ?>
+            </div>
         </section>
     <?php }
 }
