@@ -1120,8 +1120,8 @@ _______________*/
 
 .m-GalleryNormal__pagination .swiper-pagination-bullet-active {
   opacity: 1;
-  -webkit-transform: scale(2);
-  transform: scale(2);
+  -webkit-transform: translateY(0) scale(2);
+  transform: translateY(0) scale(2);
   -webkit-animation: jump .4s ease-in-out;
   animation: jump .4s ease-in-out;
 }
