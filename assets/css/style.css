@@ -1008,13 +1008,13 @@ _______________*/
     ___
 */
 
-.m-Welcome {
+.m-BannerSmall {
   position: relative;
 }
 
 /* ---> : Layout Elements Start : <--- */
 
-.m-Welcome__phone {
+.m-BannerSmall__phone {
   position: absolute;
   top: 0;
   left: 0;
@@ -1022,16 +1022,90 @@ _______________*/
   overflow: hidden;
 }
 
-.m-Welcome__content {
+.m-BannerSmall__content {
   position: relative;
 }
 
-.m-Welcome__image {
+.m-BannerSmall__content * {
+  font-family: value-regular, sans-serif;
+}
+
+.m-BannerSmall__image {
   -webkit-transform: translateY(55%) scale(1.5);
   transform: translateY(55%) scale(1.5);
+  -webkit-animation: fendoff-mobile 8s ease-in-out infinite;
+  animation: fendoff-mobile 8s ease-in-out infinite;
 }
 
 /* ---> : Layout Modificators Start : <--- */
+
+@-webkit-keyframes fendoff-mobile {
+  0% {
+    -webkit-transform: translateY(55%) scale(1.5);
+    transform: translateY(55%) scale(1.5);
+  }
+
+  50% {
+    -webkit-transform: translateY(50%) scale(1.5);
+    transform: translateY(50%) scale(1.5);
+  }
+
+  100% {
+    -webkit-transform: translateY(55%) scale(1.5);
+    transform: translateY(55%) scale(1.5);
+  }
+}
+
+@keyframes fendoff-mobile {
+  0% {
+    -webkit-transform: translateY(55%) scale(1.5);
+    transform: translateY(55%) scale(1.5);
+  }
+
+  50% {
+    -webkit-transform: translateY(50%) scale(1.5);
+    transform: translateY(50%) scale(1.5);
+  }
+
+  100% {
+    -webkit-transform: translateY(55%) scale(1.5);
+    transform: translateY(55%) scale(1.5);
+  }
+}
+
+@-webkit-keyframes fendoff {
+  0% {
+    -webkit-transform: translateY(0) scale(1.5);
+    transform: translateY(0) scale(1.5);
+  }
+
+  50% {
+    -webkit-transform: translateY(-10px) scale(1.5);
+    transform: translateY(-10px) scale(1.5);
+  }
+
+  100% {
+    -webkit-transform: translateY(0) scale(1.5);
+    transform: translateY(0) scale(1.5);
+  }
+}
+
+@keyframes fendoff {
+  0% {
+    -webkit-transform: translateY(0) scale(1.5);
+    transform: translateY(0) scale(1.5);
+  }
+
+  50% {
+    -webkit-transform: translateY(-10px) scale(1.5);
+    transform: translateY(-10px) scale(1.5);
+  }
+
+  100% {
+    -webkit-transform: translateY(0) scale(1.5);
+    transform: translateY(0) scale(1.5);
+  }
+}
 
 .m-SearchForm {
   text-align: right;
@@ -2678,9 +2752,11 @@ ________*/
     padding-left: 48px;
   }
 
-  .m-Welcome__image {
+  .m-BannerSmall__image {
     -webkit-transform: translateY(0) scale(1.5);
     transform: translateY(0) scale(1.5);
+    -webkit-animation: fendoff 8s ease-in-out infinite;
+    animation: fendoff 8s ease-in-out infinite;
   }
 
   .c-Card--328 {

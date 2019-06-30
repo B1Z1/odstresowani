@@ -115,6 +115,7 @@ require get_template_directory() . '/template-parts/modules/Cards/Normal2/' . $I
 require get_template_directory() . '/template-parts/modules/Cards/Mini/' . $INDEX;
 require get_template_directory() . '/template-parts/modules/GalleryNormal/' . $INDEX;
 require get_template_directory() . '/template-parts/modules/Testimonial/' . $INDEX;
+require get_template_directory() . '/template-parts/modules/BannerSmall/' . $INDEX;
 
 /**
  * Components

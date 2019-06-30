@@ -15,7 +15,7 @@ if (!function_exists('crb_register_block_welcome')) {
         Block::make(__('Mały banner'))
             ->add_fields(FieldsGlobal::getGaps())
             ->add_fields(array(
-                Field::make('text', 'link', __('Link do blogu')),
+                Field::make('rich_text', 'text', __('Napis')),
                 Field::make('image', 'image', __('Obrazek'))
             ))
             ->set_render_callback(function ($block) {

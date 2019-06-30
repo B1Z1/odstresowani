@@ -3,12 +3,12 @@
     ___
 */
 
-.m-Welcome{
+.m-BannerSmall{
     position: relative;
 }
 
 /* ---> : Layout Elements Start : <--- */
-.m-Welcome{
+.m-BannerSmall{
     &__phone{
         position: absolute;
         top: 0;
@@ -18,16 +18,45 @@
     }
     &__content{
         position: relative;
+        *{
+            font-family: value-regular, sans-serif;
+        }
     }
     &__image{
         transform: translateY(55%) scale(1.5);
+        animation: fendoff-mobile 8s ease-in-out infinite;
         @media only screen and ( min-width: $bpoint-tab ){
             transform: translateY(0) scale(1.5);
+            animation: fendoff 8s ease-in-out infinite;
         }
     }
 }
 
 /* ---> : Layout Modificators Start : <--- */
-.m-Welcome{
+.m-BannerSmall{
 
+}
+
+@keyframes fendoff-mobile{
+    0%{
+        transform: translateY(55%) scale(1.5);
+    }
+    50%{
+        transform: translateY(50%) scale(1.5);
+    }
+    100%{
+        transform: translateY(55%) scale(1.5);
+    }
+}
+
+@keyframes fendoff{
+    0%{
+        transform: translateY(0) scale(1.5);
+    }
+    50%{
+        transform: translateY(-10px) scale(1.5);
+    }
+    100%{
+        transform: translateY(0) scale(1.5);
+    }
 }
