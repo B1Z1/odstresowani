@@ -15,9 +15,9 @@ if ( !function_exists('odstresowani_module_testiomonial') ){
                 <button class="m-Testimonial__button c-Button f-vr d-ib" data-testimonial-button>Zobacz naszego terapeutę</button>
             </div>
 
-            <h2 class="m-Testimonial__name c-text--center" data-testimonial-name><?php echo $name; ?></h2>
+            <h2 class="m-Testimonial__name c-text--center m-Testimonial--hidden" data-testimonial-name><?php echo $name; ?></h2>
             <div class="m-Testimonial__author-block c-text--center">
-                <div class="m-Testimonial__author" data-testimonial-author>
+                <div class="m-Testimonial__author m-Testimonial--hidden" data-testimonial-author>
                     <img src="<?php echo $image; ?>" alt="<?php echo $name; ?>" class="c-Image">
                 </div>
                 <svg class="m-Testimonial__wave" data-testimonial-wave xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1168.496 94.965">
@@ -34,10 +34,10 @@ if ( !function_exists('odstresowani_module_testiomonial') ){
                     <rect x="0" y="0" width="100%" height="100%" fill="white" data-testimonial-rect></rect>
                 </svg>
             </div>
-            <p class="m-Testimonial__description c-text--center" data-testimonial-description>
+            <p class="m-Testimonial__description m-Testimonial--hidden c-text--center" data-testimonial-description>
                 <?php echo $description; ?>
             </p>
-            <div class="m-Testimonial__button">
+            <div class="m-Testimonial__link m-Testimonial--hidden" data-testimonial-link>
                 <?php 
                 /**
                  * Button Component

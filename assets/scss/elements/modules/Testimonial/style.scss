@@ -20,11 +20,6 @@
             right: 0;
         }
     }
-    &__name{
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(10px);
-    }
     &__author-block{
         position: relative;
     }
@@ -35,10 +30,7 @@
         margin-right: auto;
         margin-left: auto;
         border-radius: 50%;
-        opacity: 0;
         overflow: hidden;
-        visibility: hidden;
-        transform: translateY(10px);
     }
     &__wave{
         position: absolute;
@@ -49,7 +41,7 @@
         opacity: 0;
         visibility: hidden;
     }
-    &__description{
+    &--hidden{
         opacity: 0;
         visibility: hidden;
         transform: translateY(10px);

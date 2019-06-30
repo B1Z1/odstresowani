@@ -12,7 +12,8 @@ export const Testimonial = function() {
         "[data-testimonial-description]"
       ),
       $TestimonialRect = $el.querySelector("[data-testimonial-rect]"),
-      $TestimonialButton = $el.querySelector("[data-testimonial-button]");
+      $TestimonialButton = $el.querySelector("[data-testimonial-button]"),
+      $TestimonialLink = $el.querySelector("[data-testimonial-link]");
 
     $TestimonialButton.onclick = () => {
       let tll = new TimelineLite(),
@@ -58,6 +59,16 @@ export const Testimonial = function() {
             visibility: "visible"
           },
           "-=6"
+        )
+        .to(
+          $TestimonialLink,
+          2,
+          {
+            y: "0",
+            opacity: "1",
+            visibility: "visible"
+          },
+          "-=5.5"
         );
     };
   });
