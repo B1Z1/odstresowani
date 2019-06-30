@@ -8552,20 +8552,24 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         var e = new se();
         new ie.f(n, 1, {
           y: -10,
-          opacity: 0
+          opacity: 0,
+          visibility: "hidden"
         }), e.to(t, 1, {
           opacity: 1
         }).to(r, 7, {
           x: "100%"
         }).to(i, 2, {
           y: "0",
-          opacity: "1"
+          opacity: "1",
+          visibility: "visible"
         }, "-=7").to(s, 2, {
           y: "0",
-          opacity: "1"
+          opacity: "1",
+          visibility: "visible"
         }, "-=6.5").to(a, 2, {
           y: "0",
-          opacity: "1"
+          opacity: "1",
+          visibility: "visible"
         }, "-=6");
       };
     });

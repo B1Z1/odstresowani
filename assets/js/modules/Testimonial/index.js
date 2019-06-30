@@ -18,7 +18,8 @@ export const Testimonial = function() {
       let tll = new TimelineLite(),
         tl = new TweenLite($TestimonialButton, 1, {
           y: -10,
-          opacity: 0
+          opacity: 0,
+          visibility: "hidden"
         });
       tll
         .to($TestimonialWave, 1, {
@@ -32,7 +33,8 @@ export const Testimonial = function() {
           2,
           {
             y: "0",
-            opacity: "1"
+            opacity: "1",
+            visibility: "visible"
           },
           "-=7"
         )
@@ -41,7 +43,8 @@ export const Testimonial = function() {
           2,
           {
             y: "0",
-            opacity: "1"
+            opacity: "1",
+            visibility: "visible"
           },
           "-=6.5"
         )
@@ -50,7 +53,8 @@ export const Testimonial = function() {
           2,
           {
             y: "0",
-            opacity: "1"
+            opacity: "1",
+            visibility: "visible"
           },
           "-=6"
         );

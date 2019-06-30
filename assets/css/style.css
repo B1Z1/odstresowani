@@ -1191,6 +1191,7 @@ _______________*/
 
 .m-Testimonial__name {
   opacity: 0;
+  visibility: hidden;
   -webkit-transform: translateY(10px);
   transform: translateY(10px);
 }
@@ -1204,7 +1205,8 @@ _______________*/
   width: 128px;
   height: 128px;
   border-radius: 50%;
-  opacity: 0 !important;
+  opacity: 0;
+  visibility: hidden;
   -webkit-transform: translateY(10px);
   transform: translateY(10px);
 }
@@ -1216,10 +1218,12 @@ _______________*/
   width: 100%;
   z-index: -1;
   opacity: 0;
+  visibility: hidden;
 }
 
 .m-Testimonial__description {
   opacity: 0;
+  visibility: hidden;
   -webkit-transform: translateY(10px);
   transform: translateY(10px);
 }
