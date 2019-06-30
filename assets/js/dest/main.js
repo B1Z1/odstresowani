@@ -8546,15 +8546,16 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
           s = e.querySelector("[data-testimonial-author]"),
           a = e.querySelector("[data-testimonial-description]"),
           r = e.querySelector("[data-testimonial-rect]"),
-          n = e.querySelector("[data-testimonial-button]");
+          n = e.querySelector("[data-testimonial-button]"),
+          o = e.querySelector("[data-testimonial-link]");
 
       n.onclick = function () {
-        var e = new se();
-        new ie.f(n, 1, {
+        new se().to(n, 1, {
           y: -10,
-          opacity: 0,
+          opacity: 0
+        }).to(n, .1, {
           visibility: "hidden"
-        }), e.to(t, 1, {
+        }).to(t, 1, {
           opacity: 1,
           visibility: "visible"
         }).to(r, 7, {
@@ -8571,7 +8572,11 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
           y: "0",
           opacity: "1",
           visibility: "visible"
-        }, "-=6");
+        }, "-=6").to(o, 2, {
+          y: "0",
+          opacity: "1",
+          visibility: "visible"
+        }, "-=5.5");
       };
     });
   });

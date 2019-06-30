@@ -37,7 +37,7 @@ if ( !function_exists('odstresowani_module_testiomonial') ){
             <p class="m-Testimonial__description m-Testimonial--hidden c-text--center" data-testimonial-description>
                 <?php echo $description; ?>
             </p>
-            <div class="m-Testimonial__link m-Testimonial--hidden" data-testimonial-link>
+            <div class="m-Testimonial__link m-Testimonial--hidden mt32" data-testimonial-link>
                 <?php 
                 /**
                  * Button Component

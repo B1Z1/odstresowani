@@ -1213,6 +1213,11 @@ _______________*/
   visibility: hidden;
 }
 
+.m-Testimonial__link {
+  text-align: center;
+  color: white;
+}
+
 .m-Testimonial--hidden {
   opacity: 0;
   visibility: hidden;

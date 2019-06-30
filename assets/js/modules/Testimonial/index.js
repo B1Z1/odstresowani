@@ -16,13 +16,15 @@ export const Testimonial = function() {
       $TestimonialLink = $el.querySelector("[data-testimonial-link]");
 
     $TestimonialButton.onclick = () => {
-      let tll = new TimelineLite(),
-        tl = new TweenLite($TestimonialButton, 1, {
-          y: -10,
-          opacity: 0,
-          visibility: "hidden"
-        });
+      let tll = new TimelineLite();
       tll
+        .to($TestimonialButton, 1, {
+          y: -10,
+          opacity: 0
+        })
+        .to($TestimonialButton, .1, {
+          visibility: "hidden"
+        })
         .to($TestimonialWave, 1, {
           opacity: 1,
           visibility: "visible"

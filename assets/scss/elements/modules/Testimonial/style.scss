@@ -41,6 +41,10 @@
         opacity: 0;
         visibility: hidden;
     }
+    &__link{
+        text-align: center;
+        color: $white;
+    }
     &--hidden{
         opacity: 0;
         visibility: hidden;
