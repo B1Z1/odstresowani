@@ -56,7 +56,7 @@ function build(){
     gulp.watch('./assets/js/*.js').on('change', scripts);
     gulp.watch('./assets/js/modules/**/*.js').on('change', scripts);
     gulp.watch('./assets/js/components/**/*.js').on('change', scripts);
-    gulp.watch('./assets/scss/**/*.{scss,sass}').on('change', style);
+    gulp.watch('./assets/scss/**/*.{scss,sass}').on('change', gulp.series(style, minifyStyle));
 }
 
 function prod(){
