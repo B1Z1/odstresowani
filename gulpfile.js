@@ -8,6 +8,7 @@ let gulp                = require('gulp'),
     wait                = require('gulp-wait'),
     gcmq                = require('gulp-group-css-media-queries');
 
+
 function style(){
     return gulp.src('./assets/scss/style.scss')
             .pipe(wait(300))
@@ -31,7 +32,7 @@ function minifyStyle(){
 function scripts(){
     return gulp.src('./assets/js/*.js')
                 .pipe(webpack({
-                    mode: 'development',
+                    mode: 'production',
                     entry: {
                         main: './assets/js/main.js',
                         brain: './assets/js/brain.js'
@@ -59,10 +60,4 @@ function build(){
     gulp.watch('./assets/scss/**/*.{scss,sass}').on('change', gulp.series(style, minifyStyle));
 }
 
-function prod(){
-    gulp.series(style, minifyStyle);
-    scripts();
-}
-
-exports.prod = prod;
 exports.build = build;
