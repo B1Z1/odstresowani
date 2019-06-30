@@ -8543,7 +8543,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     }), _toConsumableArray(document.querySelectorAll('[data-jsmodule="Testiomonial"]')).forEach(function (e) {
       var t = e.querySelector("[data-testimonial-wave]"),
           i = e.querySelector("[data-testimonial-name]"),
-          s = e.querySelector("[data-testimonial-image]"),
+          s = e.querySelector("[data-testimonial-author]"),
           a = e.querySelector("[data-testimonial-description]"),
           r = e.querySelector("[data-testimonial-rect]"),
           n = e.querySelector("[data-testimonial-button]");
@@ -8555,7 +8555,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
           opacity: 0,
           visibility: "hidden"
         }), e.to(t, 1, {
-          opacity: 1
+          opacity: 1,
+          visibility: "visible"
         }).to(r, 7, {
           x: "100%"
         }).to(i, 2, {

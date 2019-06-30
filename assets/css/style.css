@@ -1204,8 +1204,11 @@ _______________*/
   position: relative;
   width: 128px;
   height: 128px;
+  margin-right: auto;
+  margin-left: auto;
   border-radius: 50%;
   opacity: 0;
+  overflow: hidden;
   visibility: hidden;
   -webkit-transform: translateY(10px);
   transform: translateY(10px);

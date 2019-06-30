@@ -7,7 +7,7 @@ export const Testimonial = function() {
   $Testimonial.forEach($el => {
     const $TestimonialWave = $el.querySelector("[data-testimonial-wave]"),
       $TestimonialName = $el.querySelector("[data-testimonial-name]"),
-      $TestimonialImage = $el.querySelector("[data-testimonial-image]"),
+      $TestimonialAuthor = $el.querySelector("[data-testimonial-author]"),
       $TestimonialDescription = $el.querySelector(
         "[data-testimonial-description]"
       ),
@@ -23,7 +23,8 @@ export const Testimonial = function() {
         });
       tll
         .to($TestimonialWave, 1, {
-          opacity: 1
+          opacity: 1,
+          visibility: "visible"
         })
         .to($TestimonialRect, 7, {
           x: "100%"
@@ -39,7 +40,7 @@ export const Testimonial = function() {
           "-=7"
         )
         .to(
-          $TestimonialImage,
+          $TestimonialAuthor,
           2,
           {
             y: "0",

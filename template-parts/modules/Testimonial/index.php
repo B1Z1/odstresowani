@@ -17,7 +17,9 @@ if ( !function_exists('odstresowani_module_testiomonial') ){
 
             <h2 class="m-Testimonial__name c-text--center" data-testimonial-name><?php echo $name; ?></h2>
             <div class="m-Testimonial__author-block c-text--center">
-                <img src="<?php echo $image; ?>" alt="<?php echo $name; ?>" data-testimonial-image class="m-Testimonial__author c-Image">
+                <div class="m-Testimonial__author" data-testimonial-author>
+                    <img src="<?php echo $image; ?>" alt="<?php echo $name; ?>" class="c-Image">
+                </div>
                 <svg class="m-Testimonial__wave" data-testimonial-wave xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1168.496 94.965">
                     <defs>
                         <style>
