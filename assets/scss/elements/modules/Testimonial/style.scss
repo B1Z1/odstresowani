@@ -1,30 +1,50 @@
 .m-Testimonial{
-    &__author-block{
-        position: relative;
-        &:after{
+    position: relative;
+    &__button{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        &:before{
             content: '';
             position: absolute;
-            top: 50%;
+            bottom: 0;
             left: 0;
-            width: 100%;
-            height: 4px;
+            right: 50%;
+            height: 3px;
             background-color: $operative;
-            transform: translateY(-50%);
+            transition: right .6s ease-in-out;
         }
+        &:hover:before{
+            right: 0;
+        }
+    }
+    &__name{
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    &__author-block{
+        position: relative;
     }
     &__author{
         position: relative;
         width: 128px;
         height: 128px;
         border-radius: 50%;
-        &:after{
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: $operative;
-        }
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    &__wave{
+        position: absolute;
+        top: -3px;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+        opacity: 0;
+    }
+    &__description{
+        opacity: 0;
+        transform: translateY(10px);
     }
 }

@@ -194,5 +194,6 @@ window.addEventListener('load', ()=>{
     });
 
     GalleryNormal();
+    Testimonial();
 });
 

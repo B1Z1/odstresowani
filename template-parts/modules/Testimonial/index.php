@@ -10,12 +10,29 @@ if ( !function_exists('odstresowani_module_testiomonial') ){
         $link = $args['link'];
         $gapClasses = $args['gapClasses'];
         ?>
-        <section class="m-Testiomonial <?php echo $gapClasses; ?>" data-jsmodule="Testiomonial">
-            <h2 class="m-Testiomonial__name c-text--center"><?php echo $name; ?></h2>
-            <div class="m-Testiomonial__author-block c-text--center">
-                <img src="<?php echo $image; ?>" alt="<?php echo $name; ?>" class="m-Testiomonial__author c-Image">
+        <section class="m-Testimonial <?php echo $gapClasses; ?>" data-jsmodule="Testiomonial">
+            <div class="c-text-size--h2">
+                <button class="m-Testimonial__button c-Button f-vr d-ib" data-testimonial-button>Zobacz naszego terapeutę</button>
             </div>
-            <p class="m-Testiomonial__description c-text--center">
+
+            <h2 class="m-Testimonial__name c-text--center" data-testimonial-name><?php echo $name; ?></h2>
+            <div class="m-Testimonial__author-block c-text--center">
+                <img src="<?php echo $image; ?>" alt="<?php echo $name; ?>" data-testimonial-image class="m-Testimonial__author c-Image">
+                <svg class="m-Testimonial__wave" data-testimonial-wave xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1168.496 94.965">
+                    <defs>
+                        <style>
+                            .cls-1 {
+                                fill: none;
+                                stroke: #0052c3;
+                                stroke-width: 3px;
+                            }
+                        </style>
+                    </defs>
+                    <path id="Path_1130" class="cls-1" d="M0,0S282.992-27.768,518.793-.033C522.582-49.387,558.407-65.3,585.857-65.3c16.936,0,61.383,13.262,63.277,65.268C918.992,59.749,1168,0,1168,0" transform="translate(0.146 66.801)"/>
+                    <rect x="0" y="0" width="100%" height="100%" fill="white" data-testimonial-rect></rect>
+                </svg>
+            </div>
+            <p class="m-Testimonial__description c-text--center" data-testimonial-description>
                 <?php echo $description; ?>
             </p>
         </section>
